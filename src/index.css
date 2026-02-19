@@ -2,95 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core palette – dark academic */
+    --background: 222 18% 7%;
+    --background-card: 222 16% 10%;
+    --background-surface: 222 14% 13%;
+    --foreground: 210 20% 94%;
+    --foreground-muted: 220 10% 55%;
+    --foreground-subtle: 220 8% 38%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Shadcn semantic aliases */
+    --card: 222 16% 10%;
+    --card-foreground: 210 20% 94%;
+    --popover: 222 16% 10%;
+    --popover-foreground: 210 20% 94%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 270 38% 68%;
+    --primary-foreground: 222 18% 7%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --secondary: 222 14% 13%;
+    --secondary-foreground: 210 20% 94%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 222 14% 13%;
+    --muted-foreground: 220 10% 55%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 270 38% 68%;
+    --accent-foreground: 222 18% 7%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 62% 55%;
+    --destructive-foreground: 210 20% 94%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --border: 220 12% 18%;
+    --input: 220 12% 18%;
+    --ring: 270 38% 68%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --radius: 0.375rem;
 
-    --radius: 0.5rem;
+    /* Brand tokens */
+    --lilac: 270 38% 68%;
+    --lilac-soft: 270 30% 80%;
+    --lilac-dim: 270 20% 30%;
+    --lilac-glow: 270 50% 72%;
 
-    --sidebar-background: 0 0% 98%;
+    /* Typography */
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --font-mono: 'Space Mono', 'Courier New', monospace;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar (unused but required by shadcn) */
+    --sidebar-background: 222 18% 7%;
+    --sidebar-foreground: 210 20% 94%;
+    --sidebar-primary: 270 38% 68%;
+    --sidebar-primary-foreground: 222 18% 7%;
+    --sidebar-accent: 222 14% 13%;
+    --sidebar-accent-foreground: 210 20% 94%;
+    --sidebar-border: 220 12% 18%;
+    --sidebar-ring: 270 38% 68%;
   }
 }
 
@@ -99,7 +69,105 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  code, pre, .mono {
+    font-family: var(--font-mono);
+  }
+
+  ::selection {
+    background-color: hsl(var(--lilac) / 0.25);
+  }
+}
+
+@layer components {
+  /* Nav blur backdrop */
+  .nav-blur {
+    @apply backdrop-blur-md;
+    background: hsl(var(--background) / 0.85);
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  /* Stat block – the locked copy presentation */
+  .stat-block {
+    font-family: var(--font-mono);
+    background: hsl(var(--background-card));
+    border: 1px solid hsl(var(--border));
+    border-left: 3px solid hsl(var(--lilac));
+  }
+
+  /* Gated callout component */
+  .gated-callout {
+    background: hsl(var(--lilac-dim) / 0.3);
+    border: 1px solid hsl(var(--lilac) / 0.3);
+  }
+
+  /* Section divider */
+  .section-rule {
+    border-color: hsl(var(--border));
+  }
+
+  /* Link style */
+  .link-lilac {
+    color: hsl(var(--lilac));
+    text-underline-offset: 3px;
+    transition: color 0.15s;
+  }
+  .link-lilac:hover {
+    color: hsl(var(--lilac-soft));
+  }
+
+  /* Subtle gradient for hero */
+  .hero-gradient {
+    background: radial-gradient(
+      ellipse 80% 60% at 50% -10%,
+      hsl(var(--lilac) / 0.12),
+      transparent 70%
+    );
+  }
+
+  /* Input field */
+  .field {
+    @apply w-full rounded bg-background-surface border border-border px-3 py-2.5 text-sm text-foreground placeholder:text-foreground-subtle focus:outline-none focus:ring-1 focus:ring-ring transition;
+    font-family: var(--font-body);
+  }
+
+  /* Card surface */
+  .card-surface {
+    background: hsl(var(--background-card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+  }
+
+  /* Fade-up animation */
+  .fade-up {
+    animation: fadeUp 0.55s ease both;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
