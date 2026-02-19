@@ -4,24 +4,34 @@ import { CheckCircle2 } from "lucide-react";
 
 type FormState = "idle" | "submitting" | "done";
 
+const domains = [
+  "Healthcare",
+  "Human Resources",
+  "Finance",
+  "Legal",
+  "Education",
+  "Government / Public Sector",
+  "Other",
+];
+
+const timelines = [
+  "Immediately (within 2 weeks)",
+  "1–3 months",
+  "3–6 months",
+  "Exploratory — no fixed timeline",
+];
+
 export default function Contact() {
   const [form, setForm] = useState({
     name: "",
     email: "",
     org: "",
-    subject: "",
-    message: "",
+    system_description: "",
+    domain: "",
+    what_they_need: "",
+    timeline: "",
   });
   const [state, setState] = useState<FormState>("idle");
-
-  const subjects = [
-    "Research inquiry",
-    "Artifact request",
-    "Press / media",
-    "Partnership or collaboration",
-    "Application to evaluate",
-    "Other",
-  ];
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -39,10 +49,11 @@ export default function Contact() {
       <section className="pt-14 pb-12 border-b border-border">
         <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Intake</p>
         <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4 leading-tight max-w-2xl">
-          Contact / Apply
+          Apply for Evaluation
         </h1>
         <p className="text-base text-foreground-muted max-w-xl leading-relaxed">
-          One intake form for all inquiries — research, press, partnerships, and evaluation applications.
+          Submit your system for consideration. We evaluate AI deployments in high-trust environments — 
+          healthcare, HR, finance, legal, and adjacent domains.
         </p>
       </section>
 
@@ -51,16 +62,17 @@ export default function Contact() {
         {state === "done" ? (
           <div className="flex flex-col items-start gap-4 max-w-lg">
             <CheckCircle2 size={32} className="text-lilac" />
-            <h2 className="font-display text-2xl text-foreground">Message received</h2>
+            <h2 className="font-display text-2xl text-foreground">Application received</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              We review all inquiries and respond selectively. If your message warrants a reply, 
+              We review all applications and respond selectively. If your system is a strong candidate, 
               you'll hear from us within 5 business days.
             </p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6 max-w-lg">
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest">Inquiry Form</p>
+            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest">Evaluation Application</p>
 
+            {/* Name + Email */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs text-foreground-muted mb-1.5">Full Name *</label>
@@ -87,6 +99,7 @@ export default function Contact() {
               </div>
             </div>
 
+            {/* Organization */}
             <div>
               <label className="block text-xs text-foreground-muted mb-1.5">Organization</label>
               <input
@@ -98,33 +111,65 @@ export default function Contact() {
               />
             </div>
 
+            {/* System Description */}
             <div>
-              <label className="block text-xs text-foreground-muted mb-1.5">Subject *</label>
+              <label className="block text-xs text-foreground-muted mb-1.5">System Description *</label>
+              <textarea
+                required
+                name="system_description"
+                value={form.system_description}
+                onChange={handleChange}
+                rows={3}
+                placeholder="Describe the AI system you want evaluated — what it does, the model(s) used, and how it is deployed."
+                className="field resize-none"
+              />
+            </div>
+
+            {/* Domain */}
+            <div>
+              <label className="block text-xs text-foreground-muted mb-1.5">Deployment Domain *</label>
               <select
                 required
-                name="subject"
-                value={form.subject}
+                name="domain"
+                value={form.domain}
                 onChange={handleChange}
                 className="field"
               >
-                <option value="">Select subject…</option>
-                {subjects.map((s) => (
-                  <option key={s} value={s}>{s}</option>
+                <option value="">Select domain…</option>
+                {domains.map((d) => (
+                  <option key={d} value={d}>{d}</option>
                 ))}
               </select>
             </div>
 
+            {/* What they need */}
             <div>
-              <label className="block text-xs text-foreground-muted mb-1.5">Message *</label>
+              <label className="block text-xs text-foreground-muted mb-1.5">What Do You Need? *</label>
               <textarea
                 required
-                name="message"
-                value={form.message}
+                name="what_they_need"
+                value={form.what_they_need}
                 onChange={handleChange}
-                rows={5}
-                placeholder="Describe your inquiry…"
+                rows={3}
+                placeholder="What are you hoping to learn or validate? E.g. pre-deployment safety audit, benchmark comparison, incident review…"
                 className="field resize-none"
               />
+            </div>
+
+            {/* Timeline */}
+            <div>
+              <label className="block text-xs text-foreground-muted mb-1.5">Timeline</label>
+              <select
+                name="timeline"
+                value={form.timeline}
+                onChange={handleChange}
+                className="field"
+              >
+                <option value="">Select timeline…</option>
+                {timelines.map((t) => (
+                  <option key={t} value={t}>{t}</option>
+                ))}
+              </select>
             </div>
 
             <button
@@ -133,11 +178,11 @@ export default function Contact() {
               className="rounded bg-lilac px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors disabled:opacity-50"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              {state === "submitting" ? "Sending…" : "Send Message"}
+              {state === "submitting" ? "Submitting…" : "Apply for Evaluation"}
             </button>
 
             <p className="text-xs text-foreground-subtle">
-              We respond selectively. Press inquiries: please include publication name and deadline.
+              Applications are reviewed selectively. We work with a small number of clients at any given time.
             </p>
           </form>
         )}

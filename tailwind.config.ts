@@ -57,10 +57,14 @@ export default {
         },
         lilac: {
           DEFAULT: "hsl(var(--lilac))",
+          bright: "hsl(var(--lilac-bright))",
           soft: "hsl(var(--lilac-soft))",
           dim: "hsl(var(--lilac-dim))",
           glow: "hsl(var(--lilac-glow))",
         },
+        safe: "hsl(var(--safe))",
+        danger: "hsl(var(--danger))",
+        "border-2": "hsl(var(--border-2))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

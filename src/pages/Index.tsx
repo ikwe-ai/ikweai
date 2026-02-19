@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import PageShell from "@/components/PageShell";
-import StatCard from "@/components/StatCard";
+import StatSplit from "@/components/StatSplit";
 import GatedCallout from "@/components/GatedCallout";
+import { CANONICAL_STAT } from "@/lib/content-locks";
 
 export default function Home() {
   return (
@@ -10,61 +11,60 @@ export default function Home() {
       <div className="hero-gradient">
         <PageShell>
           <section className="pt-20 pb-24">
-            <div className="max-w-3xl">
-              <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-6 fade-up">
-                Independent AI Safety Research
-              </p>
-              <h1
-                className="font-display text-5xl md:text-6xl text-foreground mb-6 leading-none fade-up"
-                style={{ animationDelay: "80ms" }}
-              >
-                Measuring harm before deployment.
-              </h1>
-              <p
-                className="text-lg text-foreground-muted leading-relaxed max-w-xl mb-10 fade-up"
-                style={{ animationDelay: "160ms" }}
-              >
-                Ikwe.ai runs structured adversarial evaluations against large language models. 
-                Our EQ Safety Benchmark quantifies failure modes across 79 real-world scenarios.
-              </p>
-              <div className="flex flex-wrap gap-4 fade-up" style={{ animationDelay: "240ms" }}>
-                <Link
-                  to="/research"
-                  className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
-                  style={{ fontFamily: "var(--font-body)" }}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+              {/* Left — copy + CTAs */}
+              <div>
+                <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-6 fade-up">
+                  Independent AI Safety Research
+                </p>
+                <h1
+                  className="font-display text-4xl md:text-5xl text-foreground mb-6 leading-tight fade-up"
+                  style={{ animationDelay: "80ms" }}
                 >
-                  View Study I →
-                </Link>
-                <Link
-                  to="/reports"
-                  className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
-                  style={{ fontFamily: "var(--font-body)" }}
+                  You're willing to scale AI fast. Are you willing to scale risk just as fast?
+                </h1>
+                <p
+                  className="text-lg text-foreground-muted leading-relaxed max-w-lg mb-10 fade-up"
+                  style={{ animationDelay: "160ms" }}
                 >
-                  Request Artifacts
-                </Link>
+                  Ikwe.ai runs independent behavioral safety evaluations for high-trust environments. 
+                  Our EQ Safety Benchmark quantifies failure modes across 79 real-world scenarios.
+                </p>
+                <div className="flex flex-wrap gap-4 fade-up" style={{ animationDelay: "240ms" }}>
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    Apply for Evaluation →
+                  </Link>
+                  <Link
+                    to="/research"
+                    className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    View Study I
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right — StatSplit card */}
+              <div className="fade-up" style={{ animationDelay: "300ms" }}>
+                <StatSplit />
               </div>
             </div>
           </section>
 
-          {/* Study I metrics */}
+          {/* Study I metrics (row summary below hero) */}
           <section className="pb-20 border-t border-border pt-14">
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">
-              Study I — Headline Metrics
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-              <StatCard value="54.7%" label="Passed the Safety Gate" sub="Did not introduce harm at first contact" delay={0} />
-              <StatCard value="45.3%" label="Introduced harm" sub="Failed Safety Gate at first contact" delay={80} />
-              <StatCard value="n=948" label="Total responses evaluated" sub="79 scenarios · Study I (2024–2025)" delay={160} />
-            </div>
-
             {/* Locked stat block */}
             <div className="stat-block rounded p-5 mb-8">
               <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-2">Canonical Reference</p>
               <p className="text-sm text-foreground leading-relaxed">
-                "54.7% passed the Safety Gate; 45.3% introduced harm."
+                "{CANONICAL_STAT.headline}"
               </p>
               <p className="text-xs text-foreground-subtle mt-2">
-                Study I (EQ Safety Benchmark, 2024–2025): n=948 responses · 79 scenarios.
+                {CANONICAL_STAT.citation}
               </p>
             </div>
 
