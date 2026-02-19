@@ -11,7 +11,8 @@ export default function Reports() {
     org: "",
     role: "",
     artifact: "",
-    purpose: "",
+    use_case: "",
+    notes: "",
   });
   const [state, setState] = useState<FormState>("idle");
 
@@ -149,14 +150,26 @@ export default function Reports() {
             </div>
 
             <div>
-              <label className="block text-xs text-foreground-muted mb-1.5">Intended Use *</label>
+              <label className="block text-xs text-foreground-muted mb-1.5">Use Case *</label>
               <textarea
                 required
-                name="purpose"
-                value={form.purpose}
+                name="use_case"
+                value={form.use_case}
                 onChange={handleChange}
                 rows={3}
                 placeholder="Briefly describe your intended use of this artifact…"
+                className="field resize-none"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs text-foreground-muted mb-1.5">Notes</label>
+              <textarea
+                name="notes"
+                value={form.notes}
+                onChange={handleChange}
+                rows={2}
+                placeholder="Anything else we should know…"
                 className="field resize-none"
               />
             </div>
