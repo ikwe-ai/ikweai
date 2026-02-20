@@ -41,7 +41,12 @@ for pat in \
   "capped at 50/100" \
   "Override thresholds" \
   "weight schema version" \
-  "override rule version"; do
+  "override rule version" \
+  "internalNotes" \
+  "Internal Notes" \
+  "internal calibration notes" \
+  "judge prompt structure" \
+  "threshold calibration notes"; do
   if rg -n -i "$pat" . \
     --glob '*.html' --glob '*.md' --glob 'src/**/*.tsx' \
     --glob '!governance/**' --glob '!scripts/**' --glob '!dist/**' --glob '!node_modules/**' >/tmp/release_guard_ip.txt; then
