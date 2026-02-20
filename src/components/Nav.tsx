@@ -6,7 +6,7 @@ const routes = [
   { path: "/reports", label: "Reports" },
   { path: "/technology/architecture", label: "Architecture" },
   { path: "/about", label: "About" },
-  { path: "/contact", label: "Contact" },
+  { path: "/consult", label: "Consultation" },
 ];
 
 const researchMenu = [
@@ -168,7 +168,7 @@ export default function Nav() {
                           Start with research overview, then move into writings and case-study details.
                         </p>
                         <a href="/consult" className="text-sm link-lilac">
-                          Request consultation →
+                          Request Consultation →
                         </a>
                       </div>
                     </div>

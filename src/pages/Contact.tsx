@@ -63,7 +63,7 @@ export default function Contact() {
       <PageMeta
         title="Consultation Intake | Ikwe.ai"
         description="Share your system context and request an independent consultation for behavioral safety evaluation."
-        path="/contact"
+        path="/consult"
       />
       <SummaryHero
         kicker="Consultation"
@@ -75,7 +75,7 @@ export default function Contact() {
           "High-trust deployment focus",
         ]}
         primaryAction={{ href: "#application-form", label: "Open Intake Form ↓" }}
-        secondaryAction={{ href: "/consult", label: "Open Consult Experience" }}
+        secondaryAction={{ href: "/audit", label: "View Audit Pathway" }}
       />
 
       <section className="py-14">
@@ -115,10 +115,10 @@ export default function Contact() {
               <article className="card-surface p-6">
                 <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Prefer Guided Intake?</p>
                 <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-                  Use the interactive consultation flow if you want a guided path instead of a standard form.
+                  If you want a quick overview before submitting details, review the audit pathway first.
                 </p>
-                <a href="/consult" className="text-sm link-lilac">
-                  Open consult flow →
+                <a href="/audit" className="text-sm link-lilac">
+                  Open audit pathway →
                 </a>
               </article>
             </div>
