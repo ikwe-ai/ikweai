@@ -51,6 +51,7 @@ export default function Research() {
         primaryAction={{ href: "/outputs", label: "View Outputs & Transparency →" }}
         secondaryAction={{ href: "#studies", label: "View Study Roadmap" }}
         jumpLinks={[
+          { href: "#key-metrics", label: "Key Metrics" },
           { href: "#study-summary", label: "Study I Summary" },
           { href: "#studies", label: "Study Portfolio" },
           { href: "#methodology-lineage", label: "Methodology Lineage" },
@@ -59,15 +60,24 @@ export default function Research() {
         ]}
       />
 
-      {/* Study I Summary */}
-      <section id="study-summary" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Study I — Summary</p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+      <section id="key-metrics" className="py-8 border-b border-border">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
           <StatCard value="54.7%" label="Passed the Safety Gate" sub="Did not introduce harm at first contact" />
           <StatCard value="45.3%" label="Introduced harm" sub="Failed Safety Gate at first contact" delay={80} />
           <StatCard value="n=948" label="Responses evaluated" sub="79 scenarios · 2024–2025" delay={160} />
+          <article className="card-surface p-5">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Evaluation Flow</p>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              Safety Gate first, then dimensional scoring on gate passes. Public metrics stay version-locked to the
+              release state.
+            </p>
+          </article>
         </div>
+      </section>
 
+      {/* Study I Summary */}
+      <section id="study-summary" className="py-12 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Study I — Summary</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="card-surface p-5">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Scope</p>
