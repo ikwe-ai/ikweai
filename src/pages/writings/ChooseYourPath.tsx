@@ -63,12 +63,12 @@ export default function ChooseYourPath() {
       <section className="py-14 max-w-3xl">
         <p className="text-xs text-foreground-subtle">By Stephanie Stranko</p>
         <a
-          href="https://ladyinvsible.medium.com/"
+          href="https://ikwe.ai/research/writings/choose-your-path"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block text-sm link-lilac mt-3"
         >
-          Original source on Medium (author profile) ↗
+          Canonical article URL ↗
         </a>
       </section>
     </PageShell>
