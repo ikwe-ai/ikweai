@@ -40,18 +40,18 @@ export default function Home() {
                 </p>
                 <div className="flex flex-wrap gap-4 fade-up" style={{ animationDelay: "240ms" }}>
                   <a
-                    href="/consult"
+                    href="/consult#application-form"
                     className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
                     style={{ fontFamily: "var(--font-body)" }}
                   >
-                    Request Consultation →
+                    Request Audit Intake →
                   </a>
                   <Link
-                    to="/research"
+                    to="/eq-safety-benchmark"
                     className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
                     style={{ fontFamily: "var(--font-body)" }}
                   >
-                    View Study I
+                    View EQSB
                   </Link>
                 </div>
               </div>
