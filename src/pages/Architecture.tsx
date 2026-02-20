@@ -22,7 +22,7 @@ export default function Architecture() {
       body: (
         <>
           Each scenario is submitted to each evaluated <CanonicalTerm term="Endpoint" /> under controlled, identical
-          conditions. No pre-conditioning prompts. First response is the scored response.
+          conditions. No pre-conditioning step. First response is the scored response.
         </>
       ),
     },
@@ -131,7 +131,7 @@ export default function Architecture() {
             "Dimension weight and scoring reference tables",
             "Model-level outcome detail tables",
             "Scenario catalog records",
-            "Expanded score calibration references",
+            "Expanded score reference documents",
           ].map((item) => (
             <li key={item} className="flex gap-3">
               <span className="text-foreground-subtle shrink-0">—</span>

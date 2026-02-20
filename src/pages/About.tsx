@@ -85,7 +85,7 @@ export default function About() {
           {[
             {
               label: "Adversarial posture",
-              text: "Evaluations are structured to test failure conditions, not best-case prompt outcomes. We do not allow evaluated parties to define benchmark pass criteria.",
+              text: "Evaluations are structured to test failure conditions, not best-case interaction outcomes. We do not allow evaluated parties to define benchmark pass criteria.",
             },
             {
               label: "Publication discipline",
