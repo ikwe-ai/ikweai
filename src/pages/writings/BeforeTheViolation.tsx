@@ -7,42 +7,82 @@ export default function BeforeTheViolation() {
     <PageShell>
       <PageMeta
         title="Before the Violation | Ikwe.ai"
-        description="Founder writing on measuring behavioral safety before visible policy failure."
+        description="Why AI safety needs harm floors, not perfection: full founder writing from Ikwe.ai research."
         path="/research/writings/before-the-violation"
       />
       <SummaryHero
         kicker="Founder Writing"
         title="Before the Violation"
-        summary="Why behavioral safety must be measured before visible policy failure, not only after it."
+        summary="Why AI safety needs harm floors, not perfection. Most deployed harm emerges through interaction drift before explicit violation."
         highlights={[
-          "Pre-deployment measurement posture",
-          "Evidence-first governance framing",
-          "Behavioral risk before incident visibility",
+          "Capability governance and trajectory governance",
+          "Intervention windows before visible policy failure",
+          "Harm floors as enforceable minimums",
         ]}
         primaryAction={{ href: "/research#writings", label: "Back to Writings" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
       />
 
       <section className="py-14 border-b border-border max-w-3xl">
+        <h2 className="font-display text-2xl text-foreground mb-4">Harm Begins Inside Ordinary Interaction</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-          Most organizations still treat behavioral failure as a post-incident problem. That delay is the governance
-          gap. By the time a visible violation appears, institutional trust has already been consumed.
+          AI safety conversations often center on catastrophic capability: whether a model can execute extreme harmful
+          actions at scale. That framing is important, but most real-world harm in deployed systems starts earlier.
+          It starts in ordinary interaction, accumulates across turns, and forms a trajectory.
         </p>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-          The practical question is not whether a model can sound empathetic. The practical question is whether it can
-          consistently avoid high-risk behavior under pressure, ambiguity, and emotionally loaded context.
+          Before a visible policy violation, there is drift: increasing dependency language, reduced external grounding,
+          authority inflation in sensitive contexts, and escalation loops. If governance only reacts at the spike, it
+          misses the intervention moment that matters most.
         </p>
+
+        <h2 className="font-display text-2xl text-foreground mb-4 mt-10">The Intervention Window</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-5">
+          Between apparently safe behavior and explicit violation, there is a measurable window where an interaction can
+          still be redirected. This is where harm floors operate: minimum enforceable safety behavior before a
+          violation threshold is crossed.
+        </p>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-5">
+          The key governance question is not only what a model can do at its outer limits. It is what an interaction is
+          becoming while risk is still manageable.
+        </p>
+
+        <h2 className="font-display text-2xl text-foreground mb-4 mt-10">Capability vs. Trajectory Governance</h2>
+        <div className="space-y-3 text-sm text-foreground-muted leading-relaxed mb-5">
+          <p>
+            <strong className="text-foreground">Capability governance asks:</strong> What can the model do?
+          </p>
+          <p>
+            <strong className="text-foreground">Trajectory governance asks:</strong> What is this interaction becoming?
+          </p>
+          <p>
+            Both are necessary. Capability governance manages systemic exposure, while trajectory governance manages
+            live interaction risk before explicit violation.
+          </p>
+        </div>
+
+        <h2 className="font-display text-2xl text-foreground mb-4 mt-10">Harm Floors, Not Perfection</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-5">
+          A harm floor is a minimum enforceable threshold of interaction safety. It does not claim perfection; it
+          prevents known failure classes from scaling unnoticed.
+        </p>
+        <ol className="space-y-2 text-sm text-foreground-muted mb-5">
+          <li>1. Failure class taxonomy</li>
+          <li>2. Multi-turn trajectory modeling</li>
+          <li>3. Drift threshold detection</li>
+          <li>4. Intervention triggers</li>
+          <li>5. Constraint application</li>
+          <li>6. Audit logging</li>
+        </ol>
+
+        <h2 className="font-display text-2xl text-foreground mb-4 mt-10">Conclusion</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           Safety review should begin before deployment and continue after deployment through scheduled re-evaluation.
-          Without that cadence, organizations are measuring communication quality while missing behavior risk.
-        </p>
-        <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-          Governance teams need evidence that is repeatable, versioned, and attributable to a defined evaluation
-          state. Point-in-time assertions are not enough for institutional oversight.
+          Without that cadence, organizations measure communication quality while missing behavior risk.
         </p>
         <p className="text-sm text-foreground-muted leading-relaxed">
-          This benchmark exists to move safety review forward in time: from retrospective interpretation to
-          pre-deployment measurement and ongoing evidence discipline.
+          The future of AI safety will not be defined only by capability thresholds. It will be defined by whether
+          systems are instrumented to detect drift before harm.
         </p>
       </section>
 
