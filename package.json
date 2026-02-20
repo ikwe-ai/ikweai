@@ -9,6 +9,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
+    "release:guard": "bash scripts/release_guard.sh",
     "test": "vitest run",
     "test:watch": "vitest"
   },

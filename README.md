@@ -71,3 +71,18 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## Publication Controls
+
+- Public/redacted artifacts live in this repo (`ikweai`).
+- Raw source artifacts are stored in `research`.
+- Run `npm run release:guard` before publishing to validate:
+  - canonical language,
+  - forbidden legacy phrasing,
+  - protected IP disclosure checks,
+  - no raw office/archive files in public repo.
+
+See:
+- `governance/CANONICAL_LANGUAGE_EQSB.md`
+- `governance/REDACTION_RULES_EQSB.md`
+- `governance/RELEASE_WORKFLOW.md`
