@@ -1,6 +1,8 @@
 import PageShell from "@/components/PageShell";
 import StatCard from "@/components/StatCard";
 import GatedCallout from "@/components/GatedCallout";
+import CanonicalTerm from "@/components/CanonicalTerm";
+import { CANONICAL_TERM_ORDER, CANONICAL_TERMS } from "@/lib/canonical-terms";
 
 export default function Research() {
   return (
@@ -39,9 +41,15 @@ export default function Research() {
           <div className="card-surface p-5">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Scoring Model</p>
             <ul className="space-y-2 text-sm text-foreground-muted">
-              <li>— SSF taxonomy (Scenario Safety Framework)</li>
-              <li>— EQSB v2.1 Safety Gate (10 violations)</li>
-              <li>— 8-dimension scorecard (A–H, weighted)</li>
+              <li>
+                — <CanonicalTerm term="SSF" /> taxonomy (Scenario Safety Framework)
+              </li>
+              <li>
+                — EQSB v2.1 <CanonicalTerm term="Safety Gate" /> (10 violations)
+              </li>
+              <li>
+                — <CanonicalTerm term="Dimensional Scoring" /> (8 dimensions, A–H weighted)
+              </li>
               <li>— Binary gate applied at first contact</li>
               <li>— Full scorecard on gate-passing responses</li>
             </ul>
@@ -65,32 +73,19 @@ export default function Research() {
       {/* Glossary */}
       <section className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Terminology Glossary</p>
+        <p className="text-xs text-foreground-subtle mb-5 max-w-2xl">
+          Public layer uses canonical labels with plain-language hover clarification. Hover or focus the highlighted
+          terms.
+        </p>
         <div className="space-y-0 divide-y divide-border max-w-2xl">
-          {[
-            {
-              term: "Safety Gate",
-              def: "Binary pass/fail applied at first model contact. A response that introduces harm at initial output fails the gate regardless of subsequent recovery.",
-            },
-            {
-              term: "SSF",
-              def: "Scenario Safety Framework. The taxonomy used to classify scenario types and harm vectors in Study I.",
-            },
-            {
-              term: "EQSB v2.1",
-              def: "EQ Safety Benchmark version 2.1. Current evaluation framework incorporating the updated Safety Gate (10 violations) and 8-dimension scorecard.",
-            },
-            {
-              term: "Introduced harm",
-              def: "A model response that triggers one or more of the 10 Safety Gate violations at first contact. Equivalent to 'failed Safety Gate at first contact.'",
-            },
-            {
-              term: "8-Dimension Scorecard (A–H)",
-              def: "Weighted rubric applied to gate-passing responses across eight dimensions. Weights and thresholds are not publicly disclosed.",
-            },
-          ].map(({ term, def }) => (
+          {CANONICAL_TERM_ORDER.map((term) => (
             <div key={term} className="py-5 grid grid-cols-1 md:grid-cols-3 gap-3">
-              <p className="font-mono text-xs text-lilac self-start pt-0.5">{term}</p>
-              <p className="md:col-span-2 text-sm text-foreground-muted leading-relaxed">{def}</p>
+              <div className="self-start pt-0.5">
+                <CanonicalTerm term={term} className="font-mono text-xs text-lilac" />
+              </div>
+              <p className="md:col-span-2 text-sm text-foreground-muted leading-relaxed">
+                {CANONICAL_TERMS[term].publicDescription}
+              </p>
             </div>
           ))}
         </div>
