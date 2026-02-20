@@ -21,16 +21,16 @@ export default function SummaryHero({
   secondaryAction,
 }: SummaryHeroProps) {
   return (
-    <section className="summary-hero pt-14 pb-12 border-b border-border">
+    <section className="summary-hero pt-10 pb-8 border-b border-border">
       <div className="relative z-10">
-        <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">{kicker}</p>
-        <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4 leading-tight max-w-3xl">
+        <p className="font-mono text-[11px] text-lilac uppercase tracking-widest mb-3">{kicker}</p>
+        <h1 className="font-display text-3xl md:text-4xl text-foreground mb-3 leading-tight max-w-3xl">
           {title}
         </h1>
-        <p className="text-base text-foreground-muted max-w-2xl leading-relaxed">{summary}</p>
+        <p className="text-sm text-foreground-muted max-w-2xl leading-relaxed">{summary}</p>
 
         {(primaryAction || secondaryAction) && (
-          <div className="flex flex-wrap gap-3 mt-7">
+          <div className="flex flex-wrap gap-3 mt-5">
             {primaryAction ? (
               <a
                 href={primaryAction.href}
@@ -53,7 +53,7 @@ export default function SummaryHero({
         )}
 
         {highlights.length > 0 ? (
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl">
+          <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl">
             {highlights.map((item) => (
               <div key={item} className="summary-chip">
                 <p className="text-xs text-foreground-muted leading-relaxed">{item}</p>

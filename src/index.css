@@ -112,19 +112,16 @@
 
   .mega-panel {
     position: absolute;
-    top: calc(100% + 2px);
+    top: calc(100% + 10px);
     left: 50%;
-    transform: translateX(-42%);
-    width: min(760px, 76vw);
+    transform: translateX(-50%);
+    width: min(860px, 88vw);
     border: 1px solid hsl(var(--border));
     border-radius: 12px;
-    background: linear-gradient(
-      145deg,
-      hsl(var(--background-card) / 0.98),
-      hsl(var(--background-surface) / 0.94)
-    );
+    background: hsl(var(--background-card) / 0.995);
+    backdrop-filter: blur(10px);
     padding: 16px;
-    box-shadow: 0 26px 50px hsl(var(--background) / 0.58);
+    box-shadow: 0 30px 52px hsl(var(--background) / 0.68);
     z-index: 120;
     pointer-events: auto;
   }
@@ -134,7 +131,7 @@
     border: 1px solid hsl(var(--border));
     border-radius: 10px;
     padding: 10px 12px;
-    background: hsl(var(--background) / 0.28);
+    background: hsl(var(--background) / 0.42);
     transition: border-color 0.15s, background-color 0.15s;
   }
 
@@ -162,11 +159,7 @@
     border: 1px solid hsl(var(--border));
     border-radius: 10px;
     padding: 12px;
-    background: radial-gradient(
-      ellipse 80% 80% at 18% 6%,
-      hsl(var(--lilac) / 0.1),
-      transparent 75%
-    );
+    background: hsl(var(--background-surface) / 0.55);
   }
 
   /* Stat block – the locked copy presentation */

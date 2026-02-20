@@ -18,21 +18,21 @@ export default function Home() {
       {/* Hero */}
       <div className="hero-gradient">
         <PageShell>
-          <section className="pt-20 pb-24">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+          <section className="pt-14 pb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
               {/* Left — copy + CTAs */}
               <div>
                 <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-6 fade-up">
                   Independent AI Behavioral Validation
                 </p>
                 <h1
-                  className="font-display text-4xl md:text-5xl text-foreground mb-6 leading-tight fade-up"
+                  className="font-display text-3xl md:text-5xl text-foreground mb-5 leading-tight fade-up"
                   style={{ animationDelay: "80ms" }}
                 >
                   AI behavioral risk is real, measurable, and now auditable. We build the independent proof.
                 </h1>
                 <p
-                  className="text-lg text-foreground-muted leading-relaxed max-w-lg mb-10 fade-up"
+                  className="text-base md:text-lg text-foreground-muted leading-relaxed max-w-lg mb-8 fade-up"
                   style={{ animationDelay: "160ms" }}
                 >
                   The independent third-party validation layer for AI systems that need to measure behavioral safety
@@ -89,7 +89,7 @@ export default function Home() {
           </section>
 
           {/* Study I metrics (row summary below hero) */}
-          <section className="pb-20 border-t border-border pt-14">
+          <section className="pb-14 border-t border-border pt-10">
             {/* Locked stat block */}
             <div className="stat-block rounded p-5 mb-8">
               <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-2">Canonical Reference</p>
@@ -105,7 +105,7 @@ export default function Home() {
           </section>
 
           {/* What we do */}
-          <section className="pb-20 border-t border-border pt-14">
+          <section className="pb-14 border-t border-border pt-10">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-10">
               Compliance infrastructure · Research moat
             </p>
@@ -136,7 +136,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="pb-20 border-t border-border pt-14">
+          <section className="pb-14 border-t border-border pt-10">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-10">
               Publication Library
             </p>
