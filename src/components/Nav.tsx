@@ -33,12 +33,22 @@ export default function Nav() {
     >
       <div className="container mx-auto max-w-5xl px-6">
         <div className="flex h-14 items-center justify-between">
-          {/* Wordmark */}
+          {/* Logo + Wordmark */}
           <Link
             to="/"
-            className="font-display text-lg font-medium tracking-tight text-foreground hover:text-lilac transition-colors"
+            className="flex items-center gap-2.5 hover:opacity-90 transition-opacity"
+            aria-label="Ikwe.ai home"
           >
-            Ikwe<span className="text-lilac">.ai</span>
+            <img
+              src="/ikwe_logo_dark.png"
+              alt="Ikwe.ai"
+              width={32}
+              height={32}
+              style={{ borderRadius: "50%", display: "block" }}
+            />
+            <span className="font-display text-lg font-medium tracking-tight text-foreground">
+              Ikwe<span className="text-lilac">.ai</span>
+            </span>
           </Link>
 
           {/* Desktop nav */}

@@ -7,9 +7,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Brand */}
           <div>
-            <p className="font-display text-base text-foreground mb-2">
-              Ikwe<span className="text-lilac">.ai</span>
-            </p>
+            <div className="flex items-center gap-2 mb-2">
+              <img
+                src="/ikwe_logo_dark.png"
+                alt="Ikwe.ai"
+                width={24}
+                height={24}
+                style={{ borderRadius: "50%", display: "block" }}
+              />
+              <p className="font-display text-base text-foreground">
+                Ikwe<span className="text-lilac">.ai</span>
+              </p>
+            </div>
             <p className="text-xs text-foreground-subtle leading-relaxed max-w-xs">
               Independent AI safety research. EQ Safety Benchmark — Study I (2024–2025).
             </p>
