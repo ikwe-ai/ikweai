@@ -17,12 +17,15 @@ export default function Reports() {
   const [state, setState] = useState<FormState>("idle");
 
   const artifacts = [
-    "Board Brief (PDF)",
-    "Audit Report (PDF)",
-    "Preview Sample Pack",
-    "Citation Guide",
-    "Scorecard Snapshot",
-    "Full Artifact Bundle",
+    { label: "Public Preview", file: "ikwe_public_preview.pdf", desc: "Overview of Study I findings — suitable for general distribution" },
+    { label: "Board Brief", file: "ikwe_board_brief.pdf", desc: "Executive summary for board-level governance review" },
+    { label: "Audit Report", file: "ikwe_audit_report.pdf", desc: "Detailed behavioral safety findings with scenario-level analysis" },
+    { label: "Scorecard Sample", file: "ikwe_scorecard_sample.pdf", desc: "Sample of the 8-dimension scoring instrument (A–H weighted)" },
+    { label: "Full Research Report", file: "ikwe_full_research_report.pdf", desc: "Complete Study I report — n=948, 79 scenarios, full methodology" },
+    { label: "Behavioral Governance Briefing", file: "ikwe_behavioral_governance_executive_briefing_2026.pdf", desc: "2026 executive briefing on AI behavioral governance frameworks" },
+    { label: "Report Sample", file: "ikwe_report_sample.pdf", desc: "Sample evaluation report structure and format" },
+    { label: "Action Plan Sample", file: "ikwe_action_plan_sample.pdf", desc: "Sample remediation and action plan template" },
+    { label: "Citation Guide", file: "04_Ikwe_Citation_Guide.pdf", desc: "Approved citation formats and research access terms" },
   ];
 
   const handleChange = (
@@ -59,8 +62,8 @@ export default function Reports() {
           Request Artifacts
         </h1>
         <p className="text-base text-foreground-muted max-w-xl leading-relaxed">
-          All PDFs and sample packs are distributed as version-controlled releases. 
-          No direct downloads. Requests are reviewed and fulfilled manually.
+          All artifacts are distributed as version-controlled releases. Submit a request and we'll
+          send the current versioned file to you directly. Requests are reviewed individually.
         </p>
       </section>
 
@@ -162,9 +165,14 @@ export default function Reports() {
               >
                 <option value="">Select artifact…</option>
                 {artifacts.map((a) => (
-                  <option key={a} value={a}>{a}</option>
+                  <option key={a.file} value={a.file}>{a.label}</option>
                 ))}
               </select>
+              {form.artifact && (
+                <p className="mt-2 text-xs text-foreground-subtle">
+                  {artifacts.find((a) => a.file === form.artifact)?.desc}
+                </p>
+              )}
             </div>
 
             <div>
