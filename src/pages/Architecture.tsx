@@ -1,6 +1,7 @@
 import PageShell from "@/components/PageShell";
 import GatedCallout from "@/components/GatedCallout";
 import CanonicalTerm from "@/components/CanonicalTerm";
+import PageMeta from "@/components/PageMeta";
 
 export default function Architecture() {
   const pipeline = [
@@ -58,6 +59,11 @@ export default function Architecture() {
 
   return (
     <PageShell>
+      <PageMeta
+        title="Architecture — Evaluation Pipeline | Ikwe.ai"
+        description="Public architecture overview for the EQSB evaluation pipeline, controls, and versioned governance posture."
+        path="/technology/architecture"
+      />
       {/* Header */}
       <section className="pt-14 pb-12 border-b border-border">
         <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">System Overview</p>

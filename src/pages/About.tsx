@@ -1,9 +1,15 @@
 import PageShell from "@/components/PageShell";
 import CanonicalTerm from "@/components/CanonicalTerm";
+import PageMeta from "@/components/PageMeta";
 
 export default function About() {
   return (
     <PageShell>
+      <PageMeta
+        title="About — Independence & Governance | Ikwe.ai"
+        description="Institutional independence, conflict-of-interest policy, and version-lock governance for benchmark releases."
+        path="/about"
+      />
       {/* Header */}
       <section className="pt-14 pb-12 border-b border-border">
         <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Institutional Posture</p>

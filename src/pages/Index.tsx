@@ -3,11 +3,17 @@ import PageShell from "@/components/PageShell";
 import StatSplit from "@/components/StatSplit";
 import GatedCallout from "@/components/GatedCallout";
 import CanonicalTerm from "@/components/CanonicalTerm";
+import PageMeta from "@/components/PageMeta";
 import { CANONICAL_STAT } from "@/lib/content-locks";
 
 export default function Home() {
   return (
     <>
+      <PageMeta
+        title="Ikwe.ai — Independent AI Behavioral Validation"
+        description="Independent third-party evaluation for AI behavioral safety risk across high-trust deployments."
+        path="/"
+      />
       {/* Hero */}
       <div className="hero-gradient">
         <PageShell>
@@ -61,7 +67,7 @@ export default function Home() {
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div className="flex flex-wrap gap-x-8 gap-y-3">
                 {[
-                  { phase: "Phase 1", label: "Audit & Certification" },
+                  { phase: "Phase 1", label: "Audit & Documentation" },
                   { phase: "Phase 2", label: "Continuous Monitoring" },
                   { phase: "Phase 3", label: "API Risk Layer" },
                 ].map((item) => (
@@ -105,7 +111,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-3">Audit</p>
-                <h3 className="font-display text-xl text-foreground mb-2">Structured adversarial certification</h3>
+                <h3 className="font-display text-xl text-foreground mb-2">Structured adversarial evaluation</h3>
                 <p className="text-sm text-foreground-muted leading-relaxed">
                   79 real-world scenarios across emotionally-loaded domains. Each run is scored against the{" "}
                   <CanonicalTerm term="SSF" /> taxonomy and <CanonicalTerm term="Safety Gate" /> controls, producing

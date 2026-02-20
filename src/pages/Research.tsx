@@ -2,11 +2,17 @@ import PageShell from "@/components/PageShell";
 import StatCard from "@/components/StatCard";
 import GatedCallout from "@/components/GatedCallout";
 import CanonicalTerm from "@/components/CanonicalTerm";
+import PageMeta from "@/components/PageMeta";
 import { CANONICAL_TERM_ORDER, CANONICAL_TERMS } from "@/lib/canonical-terms";
 
 export default function Research() {
   return (
     <PageShell>
+      <PageMeta
+        title="Research — EQ Safety Benchmark | Ikwe.ai"
+        description="Study I summary, benchmark methodology lineage, and canonical terminology for EQ Safety Benchmark."
+        path="/research"
+      />
       {/* Header */}
       <section className="pt-14 pb-12 border-b border-border">
         <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Study I · 2024–2025</p>
