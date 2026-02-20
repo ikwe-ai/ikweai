@@ -35,7 +35,7 @@ export default function Footer() {
                 Study I
               </Link>
               <a href="/research#writings" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
-                Founder Writings
+                Writing Library
               </a>
               <a href="/research#case-studies" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Case Studies
