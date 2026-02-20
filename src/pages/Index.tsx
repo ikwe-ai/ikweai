@@ -29,7 +29,7 @@ export default function Home() {
                   className="font-display text-3xl md:text-5xl text-foreground mb-5 leading-tight fade-up max-w-xl"
                   style={{ animationDelay: "80ms" }}
                 >
-                  Behavioral safety compliance you can prove.
+                  Behavioral safety references and audit traceability.
                 </h1>
                 <p
                   className="text-base md:text-lg text-foreground-muted leading-relaxed max-w-lg mb-8 fade-up"
