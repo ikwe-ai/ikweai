@@ -111,7 +111,7 @@ const hubs: Hub[] = [
       {
         path: "/audit",
         label: "Audit Pathway",
-        desc: "Audit structure and workflow framing.",
+        desc: "Audit structure and delivery process.",
       },
       {
         path: "/outputs",
