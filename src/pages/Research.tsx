@@ -13,7 +13,7 @@ export default function Research() {
       title: "Study I — EQ Safety Benchmark Baseline (2024–2025)",
       body:
         "Canonical baseline release with locked headline metrics and documented methodology lineage.",
-      cta: "View outputs hub →",
+      cta: "View deliverables hub →",
       href: "/deliverables",
     },
     {
@@ -193,7 +193,7 @@ export default function Research() {
         <GatedCallout
           title="Detailed Methods Reference"
           body="Detailed methods tables and extended result sets are available through formal report releases and audit engagement."
-          ctaLabel="Open outputs and access pathway →"
+          ctaLabel="Open deliverables and access pathway →"
         />
       </section>
     </PageShell>
