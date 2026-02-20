@@ -59,7 +59,7 @@ const hubs: Hub[] = [
     ctaPath: "/consult",
   },
   {
-    id: "reports",
+    id: "outputs",
     label: "Outputs",
     path: "/outputs",
     desc: "IP-safe output previews and gated artifact access pathways.",
