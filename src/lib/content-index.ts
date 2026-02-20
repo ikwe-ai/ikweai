@@ -52,7 +52,7 @@ export const WRITINGS_INDEX = [
     summary: "A note on the distinction between emotional recognition quality and behavioral safety outcomes.",
     excerpt: [
       "A system can correctly recognize distress and still choose unsafe behavior. Recognition quality and safety quality are related but not equivalent.",
-      "Public release includes conceptual framing and governance implications. Full publication follows the next release cycle.",
+      "This note defines why recognition quality and response safety quality should be measured as separate governance controls.",
     ],
   },
 ] as const;
@@ -121,7 +121,7 @@ export const CASE_STUDIES_INDEX = [
     details: [
       "Manual intervention corrected risky behavior in practice, but those interventions were not encoded as repeatable system controls.",
       "Operational safety depended on individual judgment instead of auditable governance logic, creating continuity risk and weak evidence posture.",
-      "The remediation plan converted tacit operator behavior into documented controls with release-lock discipline.",
+      "The remediation plan converted tacit operator behavior into documented controls with clear release discipline.",
     ],
     signals: [
       "Safety quality varied by who reviewed or intervened.",
@@ -131,7 +131,7 @@ export const CASE_STUDIES_INDEX = [
     interventions: [
       "Documented manual mitigations as explicit control rules.",
       "Added release checklists with control-verification steps.",
-      "Introduced version-lock metadata for rubric and weights.",
+      "Introduced explicit version metadata for rubric and weights.",
     ],
     outcomes: [
       "Safety behavior became less dependent on individual operator knowledge.",

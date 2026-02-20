@@ -17,14 +17,14 @@ export default function RecognitionIsNotSafety() {
         highlights={[
           "Recognition does not equal safe response",
           "Behavior quality is measured separately",
-          "Public abstract; full essay forthcoming",
+          "Research note with governance framing",
         ]}
         primaryAction={{ href: "/research/writings", label: "Back to Writings" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
       />
 
       <section className="py-14 border-b border-border max-w-3xl">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Public Abstract</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Research Note</p>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           A system can correctly detect emotional distress and still fail at behavioral safety. Recognition quality and
           safety quality are related, but they are not the same control objective.
@@ -34,8 +34,8 @@ export default function RecognitionIsNotSafety() {
           behavioral response quality under risk-sensitive conditions.
         </p>
         <p className="text-sm text-foreground-muted leading-relaxed">
-          Full publication is forthcoming. This page provides the current public abstract so terms remain aligned
-          with the live benchmark language.
+          The governance implication is practical: recognition metrics and response-safety metrics must be tracked
+          independently so organizations can see detection quality and intervention quality as separate controls.
         </p>
       </section>
 
