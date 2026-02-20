@@ -85,13 +85,13 @@ export default function Contact() {
       <SummaryHero
         kicker="Audit Request"
         title="Request Audit"
-        summary="Submit your deployment context and review objective. Consultation support is included for scope alignment and next-step planning."
+        summary="Submit deployment context and review objective. Consultation support follows intake for scope alignment."
         highlights={[
-          "Independent review posture",
-          "Governance-ready documentation",
+          "Independent review",
+          "Governance-ready outputs",
           "High-trust deployment focus",
         ]}
-        primaryAction={{ href: "#application-form", label: "Open Request Form ↓" }}
+        primaryAction={{ href: "#application-form", label: "Open Form ↓" }}
         secondaryAction={{ href: "/audit", label: "View Audit Pathway" }}
         jumpLinks={[
           { href: "#intake-overview", label: "Intake Overview" },

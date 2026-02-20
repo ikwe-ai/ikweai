@@ -33,21 +33,21 @@ export default function SummaryHero({
   return (
     <section className="summary-hero border-b border-border">
       <div
-        className={`relative z-10 py-8 md:py-9 ${
+        className={`relative z-10 py-6 md:py-8 ${
           hasJumpLinks ? "grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8" : ""
         }`}
       >
         <div className="max-w-3xl">
           <p className="font-mono text-[11px] text-lilac uppercase tracking-widest mb-3">{kicker}</p>
           <h1 className="font-display text-3xl md:text-[2.7rem] text-foreground mb-3 leading-tight">{title}</h1>
-          <p className="text-sm md:text-base text-foreground-muted max-w-2xl leading-relaxed">{summary}</p>
+          <p className="text-[0.95rem] md:text-base text-foreground-muted max-w-2xl leading-relaxed">{summary}</p>
 
           {(primaryAction || secondaryAction) && (
-            <div className="flex flex-wrap gap-3 mt-6">
+            <div className="flex flex-wrap gap-2.5 mt-5">
               {primaryAction ? (
                 <a
                   href={primaryAction.href}
-                  className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+                  className="inline-flex items-center rounded bg-lilac px-4 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
                   style={{ fontFamily: "var(--font-body)" }}
                 >
                   {primaryAction.label}
@@ -56,7 +56,7 @@ export default function SummaryHero({
               {secondaryAction ? (
                 <a
                   href={secondaryAction.href}
-                  className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
+                  className="inline-flex items-center rounded border border-border px-4 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
                   style={{ fontFamily: "var(--font-body)" }}
                 >
                   {secondaryAction.label}
@@ -77,7 +77,7 @@ export default function SummaryHero({
         </div>
 
         {hasJumpLinks ? (
-          <aside className="summary-context">
+          <aside className="summary-context hidden lg:flex">
             <div className="summary-context-section">
               <p className="summary-context-title">On This Page</p>
               <div className="flex flex-wrap gap-2">

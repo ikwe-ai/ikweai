@@ -311,24 +311,25 @@
   }
 
   .summary-headline-strip {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 8px;
     max-width: 42rem;
   }
 
   .summary-headline-item {
+    flex: 1 1 170px;
     border: 1px solid hsl(var(--border));
     border-radius: 10px;
-    padding: 9px 11px;
-    font-size: 0.84rem;
+    padding: 8px 10px;
+    font-size: 0.8rem;
     line-height: 1.45;
     color: hsl(var(--foreground-muted));
     background: hsl(var(--background-card) / 0.66);
   }
 
   .summary-hero + section {
-    padding-top: 2rem !important;
+    padding-top: 1.5rem !important;
   }
 
   .summary-chip {
@@ -406,8 +407,8 @@
   }
 
   @media (min-width: 768px) {
-    .summary-headline-strip {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    .summary-hero + section {
+      padding-top: 2rem !important;
     }
   }
 }

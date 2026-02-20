@@ -43,7 +43,7 @@ export default function Audit() {
       <SummaryHero
         kicker="Certification Pathway"
         title="Ikwe Certified™ — Independent Third-Party Behavioral Validation"
-        summary="Governance-grade evaluation and certification for AI systems deployed in healthcare and other high-trust, regulated environments."
+        summary="Governance-grade evaluation and certification for AI systems in healthcare and other high-trust regulated environments."
         highlights={[
           "Evidence-backed",
           "Version-locked",
