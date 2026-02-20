@@ -92,7 +92,7 @@ export default function Nav() {
             className="hidden md:inline-flex items-center gap-1.5 shrink-0 rounded bg-lilac px-4 py-2 text-xs font-medium text-primary-foreground uppercase tracking-widest hover:bg-lilac-glow transition-colors"
             style={{ fontFamily: "var(--font-mono)" }}
           >
-            Start Consult
+            Request Consultation
           </a>
 
           {/* Mobile toggle */}
@@ -131,7 +131,7 @@ export default function Nav() {
               className="mt-2 inline-flex w-full items-center justify-center rounded bg-lilac px-4 py-2.5 text-xs font-medium text-primary-foreground uppercase tracking-widest hover:bg-lilac-glow transition-colors"
               style={{ fontFamily: "var(--font-mono)" }}
             >
-              Start Consultation →
+              Request Consultation →
             </a>
           </nav>
         </div>

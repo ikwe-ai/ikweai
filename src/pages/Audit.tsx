@@ -34,7 +34,7 @@ export default function Audit() {
           "Benchmark-based evidence structure",
           "Governance-ready reporting format",
         ]}
-        primaryAction={{ href: "/consult", label: "Start Consultation →" }}
+        primaryAction={{ href: "/consult", label: "Request Consultation →" }}
         secondaryAction={{ href: "/reports", label: "View Reports & Releases" }}
       />
 
