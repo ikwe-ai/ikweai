@@ -155,7 +155,7 @@ export default function Home() {
 
           <section id="proof-artifacts" className="pb-14 border-t border-border pt-10">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-10">
-              Proof Artifacts (Public Preview)
+              Proof Artifacts Preview
             </p>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
               {[
@@ -177,14 +177,14 @@ export default function Home() {
                 },
               ].map((item) => (
                 <article key={item.title} className="card-surface p-4">
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Public</p>
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Preview</p>
                   <h3 className="font-display text-lg text-foreground mb-2">{item.title}</h3>
                   <p className="text-sm text-foreground-muted leading-relaxed">{item.body}</p>
                 </article>
               ))}
             </div>
             <p className="text-xs text-foreground-subtle max-w-3xl">
-              Public pages show output standards and report structure. Full report packages are shared with
+              Site pages show output standards and report structure. Full report packages are shared with
               organizations through audit engagement.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
@@ -202,7 +202,7 @@ export default function Home() {
                 <p className="font-mono text-[10px] uppercase tracking-widest text-lilac">Published</p>
                 <h3 className="font-display text-xl text-foreground">Writing Library</h3>
                 <p className="text-sm text-foreground-muted leading-relaxed flex-1">
-                  Public essays, research notes, and opinion pieces with full-page access.
+                  Published essays, research notes, and opinion pieces with full-page access.
                 </p>
                 <a href="/research/writings" className="text-sm link-lilac">
                   Open Writing Library →
@@ -222,7 +222,7 @@ export default function Home() {
                 <p className="font-mono text-[10px] uppercase tracking-widest text-lilac">Published</p>
                 <h3 className="font-display text-xl text-foreground">Press & Updates</h3>
                 <p className="text-sm text-foreground-muted leading-relaxed flex-1">
-                  Media routing and communications pages linked to full live public content.
+                  Media routing and communications pages linked to full live site content.
                 </p>
                 <a href="/research/press" className="text-sm link-lilac">
                   Open Press & Updates →
