@@ -37,6 +37,10 @@ const App = () => (
           <Route path="/audit" element={<Navigate to="/research" replace />} />
           <Route path="/proof" element={<Navigate to="/research" replace />} />
           <Route path="/inquiry" element={<Navigate to="/contact" replace />} />
+          <Route path="/enterprise" element={<Navigate to="/about" replace />} />
+          <Route path="/why-independent" element={<Navigate to="/about" replace />} />
+          <Route path="/terms" element={<Navigate to="/privacy" replace />} />
+          <Route path="/research-access-terms" element={<Navigate to="/reports" replace />} />
           <Route path="/press" element={<Navigate to="/about" replace />} />
           <Route path="/downloads/*" element={<Navigate to="/reports" replace />} />
 
