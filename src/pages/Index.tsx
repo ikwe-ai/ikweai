@@ -70,9 +70,10 @@ export default function Home() {
                     <a href="#publication-library" className="summary-jump">Publication Library</a>
                   </div>
                   <div className="space-y-1.5">
+                    <a href="/eq-safety-benchmark" className="block text-sm link-lilac">Open EQSB page →</a>
                     <a href="/research" className="block text-sm link-lilac">Open Research Overview →</a>
                     <a href="/outputs" className="block text-sm link-lilac">Open Outputs & Transparency →</a>
-                    <a href="/consult" className="block text-sm link-lilac">Open Consultation Intake →</a>
+                    <a href="/consult#application-form" className="block text-sm link-lilac">Request audit intake →</a>
                   </div>
                 </div>
               </div>

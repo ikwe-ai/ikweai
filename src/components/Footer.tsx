@@ -50,6 +50,9 @@ export default function Footer() {
               <Link to="/research" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Study I
               </Link>
+              <Link to="/eq-safety-benchmark" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                EQ Safety Benchmark
+              </Link>
               <a href="/research/writings" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Writing Library
               </a>
@@ -81,8 +84,8 @@ export default function Footer() {
               <Link to="/consult" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Consultation
               </Link>
-              <a href="/consult" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
-                Request Consultation
+              <a href="/consult#application-form" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                Request Audit
               </a>
             </nav>
           </div>
