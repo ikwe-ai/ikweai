@@ -29,7 +29,8 @@ export default function Home() {
                   className="font-display text-3xl md:text-5xl text-foreground mb-5 leading-tight fade-up max-w-xl"
                   style={{ animationDelay: "80ms" }}
                 >
-                  AI behavioral risk is real, measurable, and now auditable. We build the independent proof.
+                  AI behavioral risk is real, measurable, and audit-certifiable. 
+                  <br/> We deliver the independent third-party validation layer for AI systems that need to measure behavioral safety risk for regulators, insurers, investors, and boards. Any industry. Any deployment.
                 </h1>
                 <p
                   className="text-base md:text-lg text-foreground-muted leading-relaxed max-w-lg mb-8 fade-up"
