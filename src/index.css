@@ -106,6 +106,68 @@
     border-bottom: 1px solid hsl(var(--border));
   }
 
+  .nav-pill {
+    box-shadow: inset 0 0 0 1px hsl(var(--border) / 0.35), 0 8px 24px hsl(var(--background) / 0.35);
+  }
+
+  .mega-panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-42%);
+    width: min(760px, 76vw);
+    border: 1px solid hsl(var(--border));
+    border-radius: 12px;
+    background: linear-gradient(
+      145deg,
+      hsl(var(--background-card) / 0.98),
+      hsl(var(--background-surface) / 0.94)
+    );
+    padding: 16px;
+    box-shadow: 0 26px 50px hsl(var(--background) / 0.58);
+    z-index: 65;
+  }
+
+  .mega-link {
+    display: block;
+    border: 1px solid hsl(var(--border));
+    border-radius: 10px;
+    padding: 10px 12px;
+    background: hsl(var(--background) / 0.28);
+    transition: border-color 0.15s, background-color 0.15s;
+  }
+
+  .mega-link:hover {
+    border-color: hsl(var(--lilac) / 0.4);
+    background: hsl(var(--lilac) / 0.08);
+  }
+
+  .mega-link-title {
+    display: block;
+    color: hsl(var(--foreground));
+    font-size: 0.9rem;
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+
+  .mega-link-desc {
+    display: block;
+    color: hsl(var(--foreground-subtle));
+    font-size: 0.76rem;
+    line-height: 1.35;
+  }
+
+  .mega-side {
+    border: 1px solid hsl(var(--border));
+    border-radius: 10px;
+    padding: 12px;
+    background: radial-gradient(
+      ellipse 80% 80% at 18% 6%,
+      hsl(var(--lilac) / 0.1),
+      transparent 75%
+    );
+  }
+
   /* Stat block – the locked copy presentation */
   .stat-block {
     font-family: var(--font-mono);
@@ -158,6 +220,17 @@
       transparent 72%
     );
     pointer-events: none;
+  }
+  .summary-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(hsl(var(--border) / 0.18) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.18) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(circle at 18% 12%, black, transparent 68%);
+    pointer-events: none;
+    opacity: 0.18;
   }
 
   .summary-chip {
