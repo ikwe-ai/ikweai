@@ -131,7 +131,7 @@ export const CASE_STUDIES_INDEX = [
     interventions: [
       "Documented manual mitigations as explicit control rules.",
       "Added release checklists with control-verification steps.",
-      "Introduced explicit version metadata for rubric and weights.",
+      "Introduced explicit version metadata for scoring framework updates.",
     ],
     outcomes: [
       "Safety behavior became less dependent on individual operator knowledge.",
