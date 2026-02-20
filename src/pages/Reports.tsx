@@ -113,10 +113,10 @@ export default function Reports() {
         </div>
 
         <div className="space-y-0 divide-y divide-border max-w-3xl">
-          {extendedReports.map((artifact) => (
-            <div key={artifact.title} className="py-5">
-              <p className="font-mono text-xs text-lilac mb-1.5">{artifact.title}</p>
-              <p className="text-sm text-foreground-muted leading-relaxed">{artifact.desc}</p>
+          {extendedReports.map((reportItem) => (
+            <div key={reportItem.title} className="py-5">
+              <p className="font-mono text-xs text-lilac mb-1.5">{reportItem.title}</p>
+              <p className="text-sm text-foreground-muted leading-relaxed">{reportItem.desc}</p>
             </div>
           ))}
         </div>
