@@ -68,7 +68,7 @@ export default function Audit() {
           "Governance-ready reporting format",
         ]}
         primaryAction={{ href: "#request-start", label: "Start Audit Request ↓" }}
-        secondaryAction={{ href: "/outputs", label: "View Reports & Releases" }}
+        secondaryAction={{ href: "/outputs", label: "View Outputs & Transparency" }}
         jumpLinks={[
           { href: "#audit-overview", label: "Audit Overview" },
           { href: "#engagement-stages", label: "Engagement Stages" },
@@ -121,7 +121,7 @@ export default function Audit() {
 
       <section id="request-start" className="py-14 max-w-3xl">
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-          Final scope, timeline, and report package are confirmed during consultation. Requests are reviewed against
+          Final scope, timeline, and output package are confirmed during consultation. Requests are reviewed against
           deployment context and institutional fit.
         </p>
         <div className="flex flex-wrap gap-3">
@@ -137,7 +137,7 @@ export default function Audit() {
             className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Review live report pages
+            Review outputs hub
           </a>
         </div>
       </section>

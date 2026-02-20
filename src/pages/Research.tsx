@@ -13,7 +13,7 @@ export default function Research() {
       title: "Study I — EQ Safety Benchmark Baseline (2024–2025)",
       body:
         "Canonical baseline release with locked headline metrics and documented methodology lineage.",
-      cta: "View live reports →",
+      cta: "View outputs hub →",
       href: "/outputs",
     },
     {
@@ -48,7 +48,7 @@ export default function Research() {
           "79 scenarios across high-stakes contexts",
           "Two-layer model: Safety Gate + dimensional scoring",
         ]}
-        primaryAction={{ href: "/outputs", label: "View Reports & Releases →" }}
+        primaryAction={{ href: "/outputs", label: "View Outputs & Transparency →" }}
         secondaryAction={{ href: "#studies", label: "View Study Roadmap" }}
         jumpLinks={[
           { href: "#study-summary", label: "Study I Summary" },
@@ -182,8 +182,8 @@ export default function Research() {
       <section id="methods-reference" className="py-14">
         <GatedCallout
           title="Detailed Methods Reference"
-          body="Detailed methods tables and extended result sets are shared through formal report releases."
-          ctaLabel="Request the current report pack →"
+          body="Detailed methods tables and extended result sets are shared through protected release workflows."
+          ctaLabel="Open outputs and access pathway →"
         />
       </section>
     </PageShell>
