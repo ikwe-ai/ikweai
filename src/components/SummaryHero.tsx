@@ -27,13 +27,15 @@ export default function SummaryHero({
   secondaryAction,
   jumpLinks = [],
 }: SummaryHeroProps) {
-  const hasContext = highlights.length > 0 || jumpLinks.length > 0;
+  const hasHeadlineStrip = highlights.length > 0;
+  const hasJumpLinks = jumpLinks.length > 0;
+  const hasContext = hasHeadlineStrip || hasJumpLinks;
 
   return (
     <section className="summary-hero border-b border-border">
       <div
-        className={`relative z-10 py-10 ${
-          hasContext ? "grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-10" : ""
+        className={`relative z-10 py-8 md:py-9 ${
+          hasJumpLinks ? "grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8" : ""
         }`}
       >
         <div className="max-w-3xl">
@@ -63,33 +65,30 @@ export default function SummaryHero({
               ) : null}
             </div>
           )}
+
+          {hasHeadlineStrip ? (
+            <div className="summary-headline-strip mt-6">
+              {highlights.slice(0, 3).map((item) => (
+                <div key={item} className="summary-headline-item">
+                  {item}
+                </div>
+              ))}
+            </div>
+          ) : null}
         </div>
 
-        {hasContext ? (
+        {hasJumpLinks ? (
           <aside className="summary-context">
-            {highlights.length > 0 ? (
-              <div className="summary-context-section">
-                <p className="summary-context-title">In Brief</p>
-                <ul className="summary-context-list">
-                  {highlights.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+            <div className="summary-context-section">
+              <p className="summary-context-title">On This Page</p>
+              <div className="flex flex-wrap gap-2">
+                {jumpLinks.map((item) => (
+                  <a key={item.href} href={item.href} className="summary-jump">
+                    {item.label}
+                  </a>
+                ))}
               </div>
-            ) : null}
-
-            {jumpLinks.length > 0 ? (
-              <div className="summary-context-section">
-                <p className="summary-context-title">On This Page</p>
-                <div className="flex flex-wrap gap-2">
-                  {jumpLinks.map((item) => (
-                    <a key={item.href} href={item.href} className="summary-jump">
-                      {item.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            ) : null}
+            </div>
           </aside>
         ) : null}
       </div>
