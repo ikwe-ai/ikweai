@@ -17,7 +17,7 @@ export default function Press() {
     {
       label: "Newsletter",
       title: "Release Notes Digest",
-      body: "Periodic digest of new pages, terminology changes, and release-scope updates.",
+      body: "Periodic digest of new pages, terminology updates, and publication releases.",
     },
   ] as const;
 
@@ -25,19 +25,19 @@ export default function Press() {
     <PageShell>
       <PageMeta
         title="Press & Updates | Ikwe.ai"
-        description="Team updates, media access information, and release-note newsletter guidance."
+        description="Team updates, media information, and publication digest access."
         path="/research/press"
       />
       <SummaryHero
         kicker="Research Communications"
         title="Press & Updates"
-        summary="Media information, team updates, and release-note communications are managed here."
+        summary="Media information, team updates, and publication-digest access are managed here."
         highlights={[
           "Press and media inquiry routing",
           "Team publication updates",
-          "Release-note newsletter track",
+          "Publication digest updates",
         ]}
-        primaryAction={{ href: "/contact", label: "Contact Team →" }}
+        primaryAction={{ href: "/consult", label: "Request Consultation →" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
       />
 
@@ -56,11 +56,11 @@ export default function Press() {
 
       <section className="py-14 max-w-3xl">
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-          For media requests, include your outlet, deadline, and topic scope. For newsletter participation, request
-          the release-note digest through the contact form.
+          For media requests, include your outlet, deadline, and topic scope. For digest access, submit a
+          consultation request with your organization details.
         </p>
-        <a href="/contact" className="text-sm link-lilac">
-          Request press or newsletter access →
+        <a href="/consult" className="text-sm link-lilac">
+          Request press or digest access →
         </a>
       </section>
     </PageShell>

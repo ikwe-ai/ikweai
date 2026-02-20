@@ -13,7 +13,7 @@ export const WRITINGS_INDEX = [
   },
   {
     slug: "recognition-is-not-safety",
-    label: "Research Note · In Preparation (Public Abstract)",
+    label: "Research Note · Forthcoming (Public Abstract)",
     title: "Recognition Is Not Safety",
     href: "/research/writings/recognition-is-not-safety",
     cta: "Read full abstract →",

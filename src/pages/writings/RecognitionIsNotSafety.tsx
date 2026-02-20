@@ -11,13 +11,13 @@ export default function RecognitionIsNotSafety() {
         path="/research/writings/recognition-is-not-safety"
       />
       <SummaryHero
-        kicker="Founder Writing"
+        kicker="Research Note"
         title="Recognition Is Not Safety"
         summary="A system can correctly recognize distress and still choose unsafe behavior. Recognition quality and safety quality are related but not equivalent."
         highlights={[
           "Recognition does not equal safe response",
           "Behavior quality is measured separately",
-          "Public abstract; full essay in preparation",
+          "Public abstract; full essay forthcoming",
         ]}
         primaryAction={{ href: "/research/writings", label: "Back to Writings" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
@@ -34,7 +34,7 @@ export default function RecognitionIsNotSafety() {
           behavioral response quality under risk-sensitive conditions.
         </p>
         <p className="text-sm text-foreground-muted leading-relaxed">
-          Full publication is in preparation. This page provides the current public abstract so terms remain aligned
+          Full publication is forthcoming. This page provides the current public abstract so terms remain aligned
           with the live benchmark language.
         </p>
       </section>

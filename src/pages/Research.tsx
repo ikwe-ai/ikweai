@@ -17,7 +17,7 @@ export default function Research() {
       href: "/reports",
     },
     {
-      label: "In Preparation",
+      label: "Forthcoming",
       title: "Study II — Mechanism & Trajectory Analysis",
       body:
         "Longer-horizon analysis focused on failure mechanisms and trajectory-level risk patterns. Publication is scheduled in a future release cycle.",
