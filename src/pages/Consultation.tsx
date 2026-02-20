@@ -50,7 +50,7 @@ export default function Consultation() {
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-2">03</p>
             <h2 className="font-display text-lg mb-2">Audit Pathway</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Move into the formal audit sequence and output delivery workflow.
+              Move into the formal audit sequence and output delivery process.
             </p>
           </article>
         </div>

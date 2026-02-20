@@ -15,7 +15,7 @@ export default function GatedCallout({
   ctaPath = "/outputs",
 }: GatedCalloutProps) {
   return (
-    <div className="gated-callout rounded p-5 flex gap-4">
+    <div className="access-callout rounded p-5 flex gap-4">
       <Lock size={16} className="text-lilac mt-0.5 shrink-0" />
       <div>
         <p className="text-sm font-medium text-foreground mb-1">{title}</p>

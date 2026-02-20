@@ -69,6 +69,9 @@ export default function Audit() {
             and completed follow-up retest after remediation. Certification is issued by Ikwe as an independent evaluator,
             with reproducible evidence suitable for compliance and governance review.
           </p>
+          <p className="text-xs text-foreground-subtle leading-relaxed mb-4">
+            Ikwe Certified is a proprietary certification program name of Visible Healing Inc.
+          </p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
             This pathway is designed to lower avoidable exposure by identifying severe risks before they escalate into
             costly legal, regulatory, and incident-response events.
@@ -125,7 +128,7 @@ export default function Audit() {
             <ul className="space-y-2 text-sm text-foreground-muted">
               <li>• Healthcare AI and digital health platforms</li>
               <li>• Patient and member-facing conversational systems</li>
-              <li>• Enterprise copilots in regulated workflows</li>
+              <li>• Enterprise copilots in regulated operations</li>
               <li>• Organizations preparing for AI governance requirements</li>
             </ul>
           </article>

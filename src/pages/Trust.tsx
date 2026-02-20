@@ -107,6 +107,10 @@ export default function Trust() {
               label: "Version discipline",
               text: "Published outputs are versioned so language and evidence can be attributed to a specific release state.",
             },
+            {
+              label: "Name usage",
+              text: "Ikwe.ai, EQ Safety Benchmark, and Ikwe Certified are proprietary names of Visible Healing Inc. Reuse requires written permission.",
+            },
           ].map((item) => (
             <div key={item.label} className="py-5">
               <p className="font-mono text-xs text-lilac mb-1.5">{item.label}</p>

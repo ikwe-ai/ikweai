@@ -67,7 +67,7 @@ export default function Reports() {
           { href: "#public-previews", label: "Public Previews" },
           { href: "#artifact-schema", label: "Artifact Schema" },
           { href: "#transparency-boundary", label: "Boundary" },
-          { href: "#gated-access", label: "Request Path" },
+          { href: "#request-access", label: "Request Path" },
         ]}
       />
 
@@ -145,9 +145,9 @@ export default function Reports() {
         </div>
       </section>
 
-      <section id="gated-access" className="py-14 border-b border-border">
+      <section id="request-access" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">How To Request Full Reports</p>
-        <div className="gated-callout rounded p-5 flex gap-4 max-w-3xl mb-8">
+        <div className="access-callout rounded p-5 flex gap-4 max-w-3xl mb-8">
           <Lock size={16} className="text-lilac mt-0.5 shrink-0" />
           <div>
             <p className="text-sm font-medium text-foreground mb-1">Full Report Request Path</p>

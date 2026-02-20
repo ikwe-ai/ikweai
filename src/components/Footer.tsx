@@ -41,6 +41,10 @@ export default function Footer() {
             <p className="text-xs text-foreground-subtle mt-4">
               © {new Date().getFullYear()} Visible Healing Inc. (dba Ikwe.ai)
             </p>
+            <p className="text-xs text-foreground-subtle mt-2 leading-relaxed">
+              Ikwe.ai, EQ Safety Benchmark, and Ikwe Certified are proprietary names of Visible Healing Inc.
+              Use by written permission only.
+            </p>
           </div>
 
           {/* Research */}

@@ -201,7 +201,7 @@
     border-left: 3px solid hsl(var(--lilac));
   }
 
-  .gated-callout {
+  .access-callout {
     background: hsl(var(--lilac-dim) / 0.3);
     border: 1px solid hsl(var(--lilac) / 0.3);
   }
