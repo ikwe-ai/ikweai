@@ -63,6 +63,11 @@ const App = () => (
           <Route path="/writing-library" element={<Navigate to="/research/writings" replace />} />
           <Route path="/research/before-the-violation/*" element={<Navigate to="/research/writings/before-the-violation" replace />} />
           <Route
+            path="/research/canon/ai-governance-compliance/*"
+            element={<Navigate to="/research/writings/ai-governance-is-becoming-a-compliance-issue" replace />}
+          />
+          <Route path="/choose-your-path/*" element={<Navigate to="/research/writings/choose-your-path" replace />} />
+          <Route
             path="/research/recognition-is-not-safety/*"
             element={<Navigate to="/research/writings/recognition-is-not-safety" replace />}
           />
