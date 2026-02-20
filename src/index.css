@@ -310,6 +310,27 @@
     background: hsl(var(--lilac) / 0.82);
   }
 
+  .summary-headline-strip {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 8px;
+    max-width: 42rem;
+  }
+
+  .summary-headline-item {
+    border: 1px solid hsl(var(--border));
+    border-radius: 10px;
+    padding: 9px 11px;
+    font-size: 0.84rem;
+    line-height: 1.45;
+    color: hsl(var(--foreground-muted));
+    background: hsl(var(--background-card) / 0.66);
+  }
+
+  .summary-hero + section {
+    padding-top: 2rem !important;
+  }
+
   .summary-chip {
     background: hsl(var(--background-card));
     border: 1px solid hsl(var(--border));
@@ -381,6 +402,12 @@
   @media (max-width: 1023px) {
     .summary-context {
       margin-top: 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .summary-headline-strip {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 }

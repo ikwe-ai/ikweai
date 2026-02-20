@@ -29,7 +29,6 @@ export default function SummaryHero({
 }: SummaryHeroProps) {
   const hasHeadlineStrip = highlights.length > 0;
   const hasJumpLinks = jumpLinks.length > 0;
-  const hasContext = hasHeadlineStrip || hasJumpLinks;
 
   return (
     <section className="summary-hero border-b border-border">
