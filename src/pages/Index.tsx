@@ -36,7 +36,7 @@ export default function Home() {
                   style={{ animationDelay: "160ms" }}
                 >
                   Independent third-party evaluation for institutions that need board-ready and insurance-ready
-                  behavioral safety evidence without exposing protected implementation internals.
+                  behavioral safety evidence with clear findings and practical governance next steps.
                 </p>
                 <div className="flex flex-wrap gap-4 fade-up" style={{ animationDelay: "240ms" }}>
                   <a
@@ -184,8 +184,8 @@ export default function Home() {
               ))}
             </div>
             <p className="text-xs text-foreground-subtle max-w-3xl">
-              Public pages show output standards and structure. Detailed scenario content and implementation specifics
-              remain protected and are distributed only through controlled workflows.
+              Public pages show output standards and report structure. Full report packages are shared with
+              organizations through audit engagement.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <a href="/outputs" className="text-sm link-lilac">Open Outputs Hub →</a>
