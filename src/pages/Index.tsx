@@ -31,8 +31,7 @@ export default function Home() {
                 >
                   AI behavioral risk is real, measurable, and audit-certifiable. 
                 </h1>
-                <h2/> We deliver the independent third-party validation layer for AI systems that need to measure behavioral safety risk for regulators, insurers, investors, and boards. Any industry. Any deployment.
-</h2>
+                <h2> We deliver the independent third-party validation layer for AI systems that need to measure behavioral safety risk for regulators, insurers, investors, and boards. Any industry. Any deployment.</h2>
                 <div className="flex flex-wrap gap-4 fade-up" style={{ animationDelay: "240ms" }}>
                   <a
                     href="/request-audit#application-form"
