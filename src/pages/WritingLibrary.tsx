@@ -79,6 +79,17 @@ export default function WritingLibrary() {
           </a>
         </div>
       </section>
+
+      <section className="py-14">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">Press & Updates</p>
+        <p className="text-sm text-foreground-muted leading-relaxed max-w-2xl mb-4">
+          Team media notes, release updates, and newsletter-style publication updates are published in the Research
+          press section.
+        </p>
+        <a href="/research/press" className="text-sm link-lilac">
+          Open Press & Updates →
+        </a>
+      </section>
     </PageShell>
   );
 }

@@ -19,9 +19,9 @@ export default function Reports() {
     },
     {
       label: "Live Page",
-      title: "Founder Writings & Case Studies",
-      href: "/research#writings",
-      desc: "Published writing excerpts and public case-study summaries.",
+      title: "Writings, Cases, and Press",
+      href: "/research/writings",
+      desc: "Writing library with linked essays, case analyses, and press/update routing.",
     },
     {
       label: "Live Page",

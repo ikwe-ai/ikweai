@@ -158,9 +158,17 @@ export default function Research() {
           Opinions, research notes, and case analyses are maintained in a separate writing library to keep benchmark
           methodology and publication content clearly separated.
         </p>
-        <a href="/writing-library" className="text-sm link-lilac">
-          Open Writing Library →
-        </a>
+        <div className="flex flex-wrap gap-4">
+          <a href="/research/writings" className="text-sm link-lilac">
+            Open Writing Library →
+          </a>
+          <a href="/research/case-studies" className="text-sm link-lilac">
+            Open Case Studies →
+          </a>
+          <a href="/research/press" className="text-sm link-lilac">
+            Open Press & Updates →
+          </a>
+        </div>
       </section>
 
       {/* Artifact gating */}

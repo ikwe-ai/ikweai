@@ -17,6 +17,7 @@ import Audit from "./pages/Audit";
 import NotFound from "./pages/NotFound";
 import WritingLibrary from "./pages/WritingLibrary";
 import CaseStudies from "./pages/CaseStudies";
+import Press from "./pages/Press";
 import BeforeTheViolation from "./pages/writings/BeforeTheViolation";
 import RecognitionIsNotSafety from "./pages/writings/RecognitionIsNotSafety";
 import CaseStudyDetail from "./pages/cases/CaseStudyDetail";
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/research/writings" element={<WritingLibrary />} />
           <Route path="/research/case-studies" element={<CaseStudies />} />
           <Route path="/research/case-studies/:slug" element={<CaseStudyDetail />} />
+          <Route path="/research/press" element={<Press />} />
           <Route path="/research/writings/before-the-violation" element={<BeforeTheViolation />} />
           <Route path="/research/writings/recognition-is-not-safety" element={<RecognitionIsNotSafety />} />
 
@@ -61,7 +63,7 @@ const App = () => (
           <Route path="/founder" element={<Navigate to="/about" replace />} />
           <Route path="/terms" element={<Navigate to="/about" replace />} />
           <Route path="/research-access-terms" element={<Navigate to="/reports" replace />} />
-          <Route path="/press" element={<Navigate to="/about" replace />} />
+          <Route path="/press" element={<Navigate to="/research/press" replace />} />
           <Route path="/downloads/*" element={<Navigate to="/reports" replace />} />
 
           {/* Catch-all */}
