@@ -199,6 +199,7 @@ export default function Nav() {
   const [mobileOpenHub, setMobileOpenHub] = useState<string | null>(null);
   const [openHub, setOpenHub] = useState<string | null>(null);
   const headerRef = useRef<HTMLElement | null>(null);
+  const closeTimerRef = useRef<number | null>(null);
 
   const isRouteActive = (path: string) =>
     path === "/"
@@ -253,6 +254,37 @@ export default function Nav() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [mobileOpen]);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current !== null) {
+        window.clearTimeout(closeTimerRef.current);
+      }
+    };
+  }, []);
+
+  const clearCloseTimer = () => {
+    if (closeTimerRef.current !== null) {
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  };
+
+  const scheduleClose = () => {
+    clearCloseTimer();
+    closeTimerRef.current = window.setTimeout(() => {
+      setOpenHub(null);
+    }, 120);
+  };
+
   return (
     <header
       ref={headerRef}
@@ -280,7 +312,11 @@ export default function Nav() {
           </Link>
 
           <nav className="hidden lg:flex items-center justify-center flex-1 min-w-0">
-            <div className="relative" onMouseLeave={() => setOpenHub(null)}>
+            <div
+              className="relative"
+              onMouseEnter={clearCloseTimer}
+              onMouseLeave={scheduleClose}
+            >
               <div className="inline-flex items-center gap-1 rounded-full border border-border bg-background-card/80 p-1 nav-pill">
                 <Link
                   to="/"
@@ -303,14 +339,20 @@ export default function Nav() {
                         : "text-foreground-muted hover:text-foreground"
                     }`}
                     style={{ fontFamily: "var(--font-body)" }}
-                    onMouseEnter={() => setOpenHub(hub.id)}
+                    onMouseEnter={() => {
+                      clearCloseTimer();
+                      setOpenHub(hub.id);
+                    }}
                   >
                     <Link to={hub.path} className="px-3 py-1.5 rounded-l-full">
                       {hub.label}
                     </Link>
                     <button
                       type="button"
-                      onClick={() => setOpenHub((v) => (v === hub.id ? null : hub.id))}
+                      onClick={() => {
+                        clearCloseTimer();
+                        setOpenHub((v) => (v === hub.id ? null : hub.id));
+                      }}
                       className="inline-flex items-center pr-2 py-1.5 rounded-r-full"
                       aria-haspopup="menu"
                       aria-expanded={openHub === hub.id}
@@ -328,6 +370,8 @@ export default function Nav() {
                   className="mega-panel"
                   role="menu"
                   aria-label={`${selectedHub.label} menu`}
+                  onMouseEnter={clearCloseTimer}
+                  onMouseLeave={scheduleClose}
                 >
                   <div className="grid grid-cols-2 gap-6">
                     <div>
@@ -393,7 +437,7 @@ export default function Nav() {
 
       {mobileOpen && (
         <div className="lg:hidden nav-blur border-t border-border">
-          <nav className="container mx-auto max-w-6xl px-6 py-5 flex flex-col gap-3">
+          <nav className="container mx-auto max-w-6xl px-6 py-5 flex flex-col gap-3 max-h-[calc(100vh-4rem)] overflow-auto">
             <Link
               to="/"
               className={`rounded border px-3 py-2 text-sm ${
@@ -404,7 +448,7 @@ export default function Nav() {
             </Link>
 
             {hubs.map((hub) => (
-              <div key={hub.id} className="rounded border border-border p-2">
+              <div key={hub.id} className="rounded border border-border p-2 bg-background-card/40">
                 <div className="flex items-center gap-2">
                   <Link
                     to={hub.path}
@@ -423,9 +467,21 @@ export default function Nav() {
                     <ChevronDown size={15} className={`transition-transform ${mobileOpenHub === hub.id ? "rotate-180" : ""}`} />
                   </button>
                 </div>
+                <p className="text-xs text-foreground-subtle px-2 pb-1">{hub.desc}</p>
 
                 {mobileOpenHub === hub.id && (
                   <div className="mt-2 space-y-2">
+                    <Link
+                      to={hub.path}
+                      className={`block rounded border px-3 py-2 text-sm ${
+                        isRouteActive(hub.path)
+                          ? "border-lilac/40 text-lilac bg-lilac/10"
+                          : "border-border text-foreground-muted"
+                      }`}
+                    >
+                      <span className="block">Open {hub.label} Overview</span>
+                      <span className="block text-xs text-foreground-subtle mt-1">{hub.desc}</span>
+                    </Link>
                     {hub.children.map((item) => (
                       <Link
                         key={item.path}
@@ -440,6 +496,17 @@ export default function Nav() {
                         <span className="block text-xs text-foreground-subtle mt-1">{item.desc}</span>
                       </Link>
                     ))}
+                    <div className="rounded border border-border px-3 py-2 bg-background/40">
+                      <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-1">{hub.asideHeading}</p>
+                      <p className="text-xs text-foreground-subtle leading-relaxed mb-2">{hub.asideBody}</p>
+                      <div className="space-y-1.5">
+                        {hub.asideLinks.map((item) => (
+                          <Link key={item.path} to={item.path} className="block text-xs text-foreground-muted hover:text-foreground">
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>

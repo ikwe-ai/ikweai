@@ -2,8 +2,23 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border mt-24">
+    <footer className="border-t border-border mt-20 bg-background-card/35">
       <div className="container mx-auto max-w-6xl px-6 py-12">
+        <div className="card-surface p-4 mb-10">
+          <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-foreground-subtle">
+              Public Site Map
+            </p>
+            <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm">
+              <Link to="/research" className="text-foreground-muted hover:text-foreground transition-colors">Research</Link>
+              <Link to="/reports" className="text-foreground-muted hover:text-foreground transition-colors">Reports</Link>
+              <Link to="/technology/architecture" className="text-foreground-muted hover:text-foreground transition-colors">Architecture</Link>
+              <Link to="/about" className="text-foreground-muted hover:text-foreground transition-colors">About</Link>
+              <Link to="/consult" className="text-foreground-muted hover:text-foreground transition-colors">Consultation</Link>
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="sm:col-span-2 md:col-span-1">

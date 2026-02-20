@@ -18,15 +18,15 @@ export default function Home() {
       {/* Hero */}
       <div className="hero-gradient">
         <PageShell>
-          <section className="pt-14 pb-16">
+          <section className="pt-12 pb-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
               {/* Left — copy + CTAs */}
-              <div>
+              <div className="lg:pt-2">
                 <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-6 fade-up">
                   Independent AI Behavioral Validation
                 </p>
                 <h1
-                  className="font-display text-3xl md:text-5xl text-foreground mb-5 leading-tight fade-up"
+                  className="font-display text-3xl md:text-5xl text-foreground mb-5 leading-tight fade-up max-w-xl"
                   style={{ animationDelay: "80ms" }}
                 >
                   AI behavioral risk is real, measurable, and now auditable. We build the independent proof.
@@ -54,16 +54,26 @@ export default function Home() {
                     View Study I
                   </Link>
                 </div>
-                <div className="flex flex-wrap gap-2 mt-5 fade-up" style={{ animationDelay: "280ms" }}>
-                  <a href="#study-reference" className="summary-jump">Study Reference</a>
-                  <a href="#what-we-do" className="summary-jump">What We Do</a>
-                  <a href="#publication-library" className="summary-jump">Publication Library</a>
-                </div>
               </div>
 
-              {/* Right — StatSplit card */}
-              <div className="fade-up" style={{ animationDelay: "300ms" }}>
+              {/* Right — metrics + quick routes */}
+              <div className="fade-up space-y-4" style={{ animationDelay: "300ms" }}>
                 <StatSplit />
+                <div className="card-surface p-4">
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-foreground-subtle mb-2">
+                    Start Here
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <a href="#study-reference" className="summary-jump">Study Reference</a>
+                    <a href="#what-we-do" className="summary-jump">What We Do</a>
+                    <a href="#publication-library" className="summary-jump">Publication Library</a>
+                  </div>
+                  <div className="space-y-1.5">
+                    <a href="/research" className="block text-sm link-lilac">Open Research Overview →</a>
+                    <a href="/reports" className="block text-sm link-lilac">Open Reports & Releases →</a>
+                    <a href="/consult" className="block text-sm link-lilac">Open Consultation Intake →</a>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
