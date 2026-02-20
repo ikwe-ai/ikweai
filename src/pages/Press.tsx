@@ -34,7 +34,7 @@ export default function Press() {
     },
   ] as const;
 
-  const forthcoming = [
+  const upcoming = [
     {
       title: "Release Notes Digest",
       body: "Recurring digest page is scheduled for a future publication cycle.",
@@ -82,9 +82,9 @@ export default function Press() {
       </section>
 
       <section className="py-14 border-b border-border max-w-3xl">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Forthcoming</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Upcoming</p>
         <div className="space-y-0 divide-y divide-border">
-          {forthcoming.map((item) => (
+          {upcoming.map((item) => (
             <div key={item.title} className="py-5">
               <p className="font-mono text-xs text-lilac mb-2">{item.title}</p>
               <p className="text-sm text-foreground-muted leading-relaxed">{item.body}</p>
