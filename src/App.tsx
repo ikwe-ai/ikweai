@@ -20,6 +20,8 @@ import CaseStudies from "./pages/CaseStudies";
 import Press from "./pages/Press";
 import BeforeTheViolation from "./pages/writings/BeforeTheViolation";
 import RecognitionIsNotSafety from "./pages/writings/RecognitionIsNotSafety";
+import AIGovernanceCompliance from "./pages/writings/AIGovernanceCompliance";
+import ChooseYourPath from "./pages/writings/ChooseYourPath";
 import CaseStudyDetail from "./pages/cases/CaseStudyDetail";
 
 const queryClient = new QueryClient();
@@ -46,6 +48,11 @@ const App = () => (
           <Route path="/research/case-studies/:slug" element={<CaseStudyDetail />} />
           <Route path="/research/press" element={<Press />} />
           <Route path="/research/writings/before-the-violation" element={<BeforeTheViolation />} />
+          <Route
+            path="/research/writings/ai-governance-is-becoming-a-compliance-issue"
+            element={<AIGovernanceCompliance />}
+          />
+          <Route path="/research/writings/choose-your-path" element={<ChooseYourPath />} />
           <Route path="/research/writings/recognition-is-not-safety" element={<RecognitionIsNotSafety />} />
 
           {/* Legacy redirects */}

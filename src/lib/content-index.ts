@@ -12,6 +12,32 @@ export const WRITINGS_INDEX = [
     ],
   },
   {
+    slug: "ai-governance-is-becoming-a-compliance-issue",
+    label: "Canon Essay · Published",
+    title: "AI Governance Is Becoming a Compliance Issue",
+    href: "/research/writings/ai-governance-is-becoming-a-compliance-issue",
+    cta: "Read full essay →",
+    summary:
+      "A trust-layer thesis on why governance now requires auditable behavioral instrumentation and evidence discipline.",
+    excerpt: [
+      "Governance is no longer only model quality. It is whether organizations can demonstrate auditable, repeatable, and defensible oversight.",
+      "Confidence signaling and deference risk appear before visible policy breach, which is why intervention has to happen upstream.",
+    ],
+  },
+  {
+    slug: "choose-your-path",
+    label: "Opinion Essay · Published",
+    title: "Choose Your Path",
+    href: "/research/writings/choose-your-path",
+    cta: "Read full essay →",
+    summary:
+      "An essay on interruption, cumulative risk, and how institutional trust is built through repeated operational choices.",
+    excerpt: [
+      "History is shaped by paths, not headlines. Harm compounds through tolerated distortion, and repair compounds through deliberate interruption.",
+      "Integrity is not declared once. It is constructed through recurring governance decisions that hold under pressure.",
+    ],
+  },
+  {
     slug: "recognition-is-not-safety",
     label: "Research Note · Forthcoming (Public Abstract)",
     title: "Recognition Is Not Safety",
