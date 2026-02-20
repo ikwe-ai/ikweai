@@ -23,19 +23,18 @@ export default function Home() {
               {/* Left — copy + CTAs */}
               <div className="lg:pt-2">
                 <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-6 fade-up">
-                  Independent AI Behavioral Validation
+                  Independent AI Behavioral Audit and Compliance
                 </p>
                 <h1
                   className="font-display text-3xl md:text-5xl text-foreground mb-5 leading-tight fade-up max-w-xl"
                   style={{ animationDelay: "80ms" }}
                 >
-                  Behavioral safety trust audit for traceability and compliance.
+                  AI behavioral risk is real, measurable, and now auditable. We build the independent proof.
                 </h1>
                 <p
                   className="text-base md:text-lg text-foreground-muted leading-relaxed max-w-lg mb-8 fade-up"
                   style={{ animationDelay: "160ms" }}
                 >
-                  AI behavioral risk is real, measurable, and now auditable. We build the independent proof.
                   The independent third-party validation layer for AI systems that need to measure behavioral safety risk for regulators, insurers, investors, and boards. Any industry. Any deployment.
                 </p>
                 <div className="flex flex-wrap gap-4 fade-up" style={{ animationDelay: "240ms" }}>
