@@ -116,7 +116,7 @@ export default function Home() {
                 <p className="text-sm text-foreground-muted leading-relaxed">
                   79 real-world scenarios across emotionally-loaded domains. Each run is scored against the{" "}
                   <CanonicalTerm term="SSF" /> taxonomy and <CanonicalTerm term="Safety Gate" /> controls, producing
-                  a verifiable audit artifact.
+                  a verifiable audit record.
                 </p>
               </div>
               <div>
