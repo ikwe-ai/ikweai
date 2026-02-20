@@ -29,11 +29,13 @@ npm run preview
 - Public-facing language only on live pages.
 - No internal implementation notes, calibration notes, or prompt mechanics on public routes.
 - Reports page links to live, current pages when PDF packs are not fully refreshed.
+- Outputs hub (`/outputs`) provides public artifact previews while keeping implementation internals protected.
 - Research content is split into clear hubs:
   - `/research`
   - `/research/writings`
   - `/research/case-studies`
   - `/research/press`
+- Trust and confidentiality posture is published at `/trust`.
 
 ## SEO, Metadata, and Indexing
 

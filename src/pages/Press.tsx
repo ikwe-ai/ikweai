@@ -20,10 +20,10 @@ export default function Press() {
     },
     {
       label: "Published",
-      title: "Reports & Releases",
-      body: "Live report-page index linking to current benchmark, architecture, and governance pages.",
+      title: "Outputs & Transparency",
+      body: "Public output-preview hub linking to benchmark, architecture, and trust pages.",
       href: "/outputs",
-      cta: "Open reports page →",
+      cta: "Open outputs hub →",
     },
     {
       label: "Published",
