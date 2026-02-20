@@ -20,9 +20,7 @@ export default function Research() {
       label: "In Preparation",
       title: "Study II — Mechanism & Trajectory Analysis",
       body:
-        "Longer-horizon analysis focused on failure mechanisms and trajectory-level risk patterns. Public claims remain withheld until release lock.",
-      cta: "Request pre-release summary access →",
-      href: "/reports",
+        "Longer-horizon analysis focused on failure mechanisms and trajectory-level risk patterns. Publication is scheduled in a future release cycle.",
     },
     {
       label: "Planned",
@@ -53,7 +51,7 @@ export default function Research() {
         "A note on the distinction between emotional recognition quality and behavioral safety outcomes.",
       excerpt: [
         "A system can correctly recognize distress and still choose unsafe behavior. Recognition quality and safety quality are related but not equivalent.",
-        "Public release includes conceptual framing and governance implications. Protected implementation mechanics remain in controlled artifacts.",
+        "Public release includes conceptual framing and governance implications. Full publication follows the next release cycle.",
       ],
     },
   ] as const;
@@ -95,7 +93,7 @@ export default function Research() {
           "79 scenarios across high-stakes contexts",
           "Two-layer model: Safety Gate + dimensional scoring",
         ]}
-        primaryAction={{ href: "/reports", label: "Request Study Artifacts →" }}
+        primaryAction={{ href: "/reports", label: "View Reports & Releases →" }}
         secondaryAction={{ href: "#studies", label: "View Study Roadmap" }}
       />
 
@@ -149,15 +147,19 @@ export default function Research() {
               </span>
               <h3 className="font-display text-lg text-foreground leading-tight">{study.title}</h3>
               <p className="text-sm text-foreground-muted leading-relaxed flex-1">{study.body}</p>
-              <a href={study.href} className="text-sm link-lilac">
-                {study.cta}
-              </a>
+              {study.href && study.cta ? (
+                <a href={study.href} className="text-sm link-lilac">
+                  {study.cta}
+                </a>
+              ) : (
+                <p className="text-xs text-foreground-subtle uppercase tracking-wide">Publication pending</p>
+              )}
             </article>
           ))}
         </div>
         <p className="text-xs text-foreground-subtle mt-5 max-w-2xl">
-          Roadmap listings are included for transparency. Unpublished studies are visible by status but do not expose
-          unreleased claims, constants, or scoring internals.
+          Roadmap listings are included for transparency. Unpublished studies are shown by status and do not include
+          unpublished findings or detailed scoring specifications.
         </p>
       </section>
 
@@ -199,7 +201,7 @@ export default function Research() {
       <section id="writings" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Founder Writings</p>
         <p className="text-xs text-foreground-subtle mb-5 max-w-2xl">
-          Published writing is shown directly on this page. Request workflows are reserved for protected IP artifacts.
+          Published writing appears directly on this page. Additional reports are listed in the reports library.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
           {writings.map((writing) => (
@@ -238,7 +240,7 @@ export default function Research() {
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Request case study packet →
+            View reports library →
           </a>
           <a
             href="/contact"
