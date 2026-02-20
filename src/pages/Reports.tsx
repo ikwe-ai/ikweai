@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PageShell from "@/components/PageShell";
 import { Lock, CheckCircle2 } from "lucide-react";
+import PageMeta from "@/components/PageMeta";
 
 type FormState = "idle" | "submitting" | "done" | "error";
 
@@ -55,6 +56,11 @@ export default function Reports() {
 
   return (
     <PageShell>
+      <PageMeta
+        title="Reports & Artifacts | Ikwe.ai"
+        description="Request versioned benchmark artifacts, board briefs, and report samples for governance review."
+        path="/reports"
+      />
       {/* Header */}
       <section className="pt-14 pb-12 border-b border-border">
         <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Artifact Distribution</p>
