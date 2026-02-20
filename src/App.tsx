@@ -41,7 +41,7 @@ const App = () => (
 
           {/* Legacy redirects */}
           <Route path="/proof" element={<Navigate to="/research#case-studies" replace />} />
-          <Route path="/inquiry" element={<Navigate to="/contact" replace />} />
+          <Route path="/inquiry" element={<Navigate to="/consult" replace />} />
           <Route path="/case-studies" element={<Navigate to="/research#case-studies" replace />} />
           <Route path="/research/before-the-violation/*" element={<Navigate to="/research/writings/before-the-violation" replace />} />
           <Route

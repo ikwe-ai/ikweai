@@ -111,7 +111,7 @@ export default function Reports() {
 
         <div className="mt-8 flex flex-wrap gap-3">
           <a
-            href="/contact"
+            href="/consult"
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
             style={{ fontFamily: "var(--font-body)" }}
           >

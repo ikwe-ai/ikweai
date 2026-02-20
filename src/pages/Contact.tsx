@@ -61,164 +61,193 @@ export default function Contact() {
   return (
     <PageShell>
       <PageMeta
-        title="Request Consultation | Ikwe.ai"
-        description="Request a consultation for independent behavioral safety risk evaluation in high-trust domains."
+        title="Consultation Intake | Ikwe.ai"
+        description="Share your system context and request an independent consultation for behavioral safety evaluation."
         path="/contact"
       />
       <SummaryHero
-        kicker="Consultation Intake"
-        title="Request Consultation"
-        summary="Share your system context and goals. We review consultation requests for AI deployments in high-trust environments."
+        kicker="Consultation"
+        title="Consultation Intake"
+        summary="Tell us what you are building, where it is deployed, and what you need reviewed. We respond selectively with scope and next steps."
         highlights={[
-          "Selective intake and scoped consultation",
           "Independent review posture",
-          "Institutional governance documentation",
+          "Governance-ready documentation",
+          "High-trust deployment focus",
         ]}
-        primaryAction={{ href: "#application-form", label: "Start Consultation Request ↓" }}
-        secondaryAction={{ href: "/reports", label: "View Available Artifacts" }}
+        primaryAction={{ href: "#application-form", label: "Open Intake Form ↓" }}
+        secondaryAction={{ href: "/consult", label: "Open Consult Experience" }}
       />
 
-      {/* Form */}
       <section className="py-14">
         {state === "done" ? (
-          <div className="flex flex-col items-start gap-4 max-w-lg">
-            <CheckCircle2 size={32} className="text-lilac" />
-            <h2 className="font-display text-2xl text-foreground">Request received</h2>
-            <p className="text-sm text-foreground-muted leading-relaxed">
-              We review all requests and respond selectively. If your system is a strong candidate, 
-              you'll hear from us within 5 business days.
-            </p>
+          <div className="card-surface p-8 max-w-2xl">
+            <div className="flex items-start gap-4">
+              <CheckCircle2 size={32} className="text-lilac mt-1" />
+              <div>
+                <h2 className="font-display text-2xl text-foreground mb-2">Request received</h2>
+                <p className="text-sm text-foreground-muted leading-relaxed">
+                  Thank you. We review submissions selectively and respond within 5 business days when there is a fit.
+                </p>
+              </div>
+            </div>
           </div>
         ) : (
-          <form
-            id="application-form"
-            onSubmit={handleSubmit}
-            name="evaluation-application"
-            data-netlify="true"
-            className="space-y-6 max-w-lg"
-          >
-            <input type="hidden" name="form-name" value="evaluation-application" />
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest">Consultation Request</p>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-8 lg:gap-10 items-start">
+            <div className="space-y-6">
+              <article className="card-surface p-6">
+                <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">What To Include</p>
+                <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
+                  <li>— System purpose, model type, and deployment surface</li>
+                  <li>— Domain context and risk sensitivity</li>
+                  <li>— What decision you need to make next</li>
+                </ul>
+              </article>
 
-            {/* Name + Email */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs text-foreground-muted mb-1.5">Full Name *</label>
-                <input
-                  required
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  placeholder="Jane Smith"
-                  className="field"
-                />
-              </div>
-              <div>
-                <label className="block text-xs text-foreground-muted mb-1.5">Email *</label>
-                <input
-                  required
-                  type="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder="jane@org.com"
-                  className="field"
-                />
-              </div>
+              <article className="card-surface p-6">
+                <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Typical Next Steps</p>
+                <ol className="space-y-2 text-sm text-foreground-muted leading-relaxed">
+                  <li>1. Consultation review and fit check</li>
+                  <li>2. Scope recommendation and timeline options</li>
+                  <li>3. Audit pathway and reporting plan</li>
+                </ol>
+              </article>
+
+              <article className="card-surface p-6">
+                <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Prefer Guided Intake?</p>
+                <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+                  Use the interactive consultation flow if you want a guided path instead of a standard form.
+                </p>
+                <a href="/consult" className="text-sm link-lilac">
+                  Open consult flow →
+                </a>
+              </article>
             </div>
 
-            {/* Organization */}
-            <div>
-              <label className="block text-xs text-foreground-muted mb-1.5">Organization</label>
-              <input
-                name="org"
-                value={form.org}
-                onChange={handleChange}
-                placeholder="Institution / Company"
-                className="field"
-              />
-            </div>
-
-            {/* System Description */}
-            <div>
-              <label className="block text-xs text-foreground-muted mb-1.5">System Description *</label>
-              <textarea
-                required
-                name="system_description"
-                value={form.system_description}
-                onChange={handleChange}
-                rows={3}
-                placeholder="Describe the AI system you want evaluated — what it does, the model(s) used, and how it is deployed."
-                className="field resize-none"
-              />
-            </div>
-
-            {/* Domain */}
-            <div>
-              <label className="block text-xs text-foreground-muted mb-1.5">Deployment Domain *</label>
-              <select
-                required
-                name="domain"
-                value={form.domain}
-                onChange={handleChange}
-                className="field"
-              >
-                <option value="">Select domain…</option>
-                {domains.map((d) => (
-                  <option key={d} value={d}>{d}</option>
-                ))}
-              </select>
-            </div>
-
-            {/* What they need */}
-            <div>
-              <label className="block text-xs text-foreground-muted mb-1.5">What Do You Need? *</label>
-              <textarea
-                required
-                name="what_they_need"
-                value={form.what_they_need}
-                onChange={handleChange}
-                rows={3}
-                placeholder="What are you hoping to learn or validate? E.g. pre-deployment safety audit, benchmark comparison, incident review…"
-                className="field resize-none"
-              />
-            </div>
-
-            {/* Timeline */}
-            <div>
-              <label className="block text-xs text-foreground-muted mb-1.5">Timeline</label>
-              <select
-                name="timeline"
-                value={form.timeline}
-                onChange={handleChange}
-                className="field"
-              >
-                <option value="">Select timeline…</option>
-                {timelines.map((t) => (
-                  <option key={t} value={t}>{t}</option>
-                ))}
-              </select>
-            </div>
-
-            <button
-              type="submit"
-              disabled={state === "submitting"}
-              className="rounded bg-lilac px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors disabled:opacity-50"
-              style={{ fontFamily: "var(--font-body)" }}
+            <form
+              id="application-form"
+              onSubmit={handleSubmit}
+              name="evaluation-application"
+              data-netlify="true"
+              className="card-surface p-6 space-y-5 lg:sticky lg:top-24"
             >
-              {state === "submitting" ? "Submitting…" : "Submit Consultation Request"}
-            </button>
+              <input type="hidden" name="form-name" value="evaluation-application" />
+              <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest">Intake Form</p>
 
-            {state === "error" && (
-              <p className="text-xs text-red-500">
-                Submission failed. Please try again or email us directly.
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs text-foreground-muted mb-1.5">Full Name *</label>
+                  <input
+                    required
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    placeholder="Jane Smith"
+                    className="field"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs text-foreground-muted mb-1.5">Email *</label>
+                  <input
+                    required
+                    type="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder="jane@org.com"
+                    className="field"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs text-foreground-muted mb-1.5">Organization</label>
+                <input
+                  name="org"
+                  value={form.org}
+                  onChange={handleChange}
+                  placeholder="Institution / Company"
+                  className="field"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs text-foreground-muted mb-1.5">System Description *</label>
+                <textarea
+                  required
+                  name="system_description"
+                  value={form.system_description}
+                  onChange={handleChange}
+                  rows={3}
+                  placeholder="Describe the system, model(s), and where it is deployed."
+                  className="field resize-none"
+                />
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs text-foreground-muted mb-1.5">Deployment Domain *</label>
+                  <select
+                    required
+                    name="domain"
+                    value={form.domain}
+                    onChange={handleChange}
+                    className="field"
+                  >
+                    <option value="">Select domain…</option>
+                    {domains.map((d) => (
+                      <option key={d} value={d}>{d}</option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-xs text-foreground-muted mb-1.5">Timeline</label>
+                  <select
+                    name="timeline"
+                    value={form.timeline}
+                    onChange={handleChange}
+                    className="field"
+                  >
+                    <option value="">Select timeline…</option>
+                    {timelines.map((t) => (
+                      <option key={t} value={t}>{t}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs text-foreground-muted mb-1.5">What Do You Need? *</label>
+                <textarea
+                  required
+                  name="what_they_need"
+                  value={form.what_they_need}
+                  onChange={handleChange}
+                  rows={3}
+                  placeholder="What decision are you trying to make or de-risk?"
+                  className="field resize-none"
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={state === "submitting"}
+                className="w-full rounded bg-lilac px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors disabled:opacity-50"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                {state === "submitting" ? "Submitting…" : "Submit Request"}
+              </button>
+
+              {state === "error" && (
+                <p className="text-xs text-red-500">
+                  Submission failed. Please try again or email us directly.
+                </p>
+              )}
+
+              <p className="text-xs text-foreground-subtle">
+                Requests are reviewed selectively. We work with a limited number of organizations at a time.
               </p>
-            )}
-
-            <p className="text-xs text-foreground-subtle">
-              Requests are reviewed selectively. We work with a small number of clients at any given time.
-            </p>
-          </form>
+            </form>
+          </div>
         )}
       </section>
     </PageShell>
