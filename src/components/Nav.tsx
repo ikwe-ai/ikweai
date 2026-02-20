@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 const routes = [
   { path: "/", label: "Home" },
   { path: "/research", label: "Research" },
+  { path: "/writing-library", label: "Writing Library" },
   { path: "/reports", label: "Reports" },
   { path: "/technology/architecture", label: "Architecture" },
   { path: "/about", label: "About" },
