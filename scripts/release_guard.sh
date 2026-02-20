@@ -15,9 +15,11 @@ fi
 echo "[2/6] Blocking forbidden legacy framing..."
 for pat in \
   "54\.7% introduced emotional risk" \
+  "54\.7%.*introduce emotional risk" \
   "54\.7%.*flagged for emotional risk" \
   "54\.7% failed" \
   "54\.7% flagged" \
+  "EQSB Certified" \
   "Certified Safe" \
   "Ensures compliance" \
   "Prevents harm" \
