@@ -73,7 +73,7 @@ export default function Footer() {
             <p className="text-xs font-mono text-foreground-subtle uppercase tracking-widest mb-3">Posture</p>
             <p className="text-xs text-foreground-subtle leading-relaxed">
               No commercial affiliations with AI developers evaluated.
-              Artifacts distributed as versioned releases only.
+              Reports distributed as versioned releases only.
               Results are not shared with evaluated parties before publication.
             </p>
           </div>
