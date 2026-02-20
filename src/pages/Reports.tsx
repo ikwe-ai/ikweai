@@ -62,7 +62,7 @@ export default function Reports() {
           "Gated access for detailed artifact sets",
         ]}
         primaryAction={{ href: "#public-previews", label: "View Public Previews ↓" }}
-        secondaryAction={{ href: "/consult#application-form", label: "Request Audit Intake" }}
+        secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit Intake" }}
         jumpLinks={[
           { href: "#public-previews", label: "Public Previews" },
           { href: "#artifact-schema", label: "Artifact Schema" },
@@ -160,7 +160,7 @@ export default function Reports() {
         </div>
         <div className="mt-2 flex flex-wrap gap-3">
           <a
-            href="/consult#application-form"
+            href="/request-audit#application-form"
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
             style={{ fontFamily: "var(--font-body)" }}
           >

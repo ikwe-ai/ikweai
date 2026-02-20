@@ -46,8 +46,9 @@ const App = () => (
           <Route path="/technology/architecture" element={<Architecture />} />
           <Route path="/about" element={<About />} />
           <Route path="/trust" element={<Trust />} />
+          <Route path="/request-audit" element={<Contact />} />
           <Route path="/consult" element={<Contact />} />
-          <Route path="/contact" element={<Navigate to="/consult" replace />} />
+          <Route path="/contact" element={<Navigate to="/request-audit" replace />} />
           <Route path="/audit" element={<Audit />} />
           <Route path="/research/writings" element={<WritingLibrary />} />
           <Route path="/research/case-studies" element={<CaseStudies />} />
@@ -63,7 +64,7 @@ const App = () => (
 
           {/* Legacy redirects */}
           <Route path="/proof" element={<Navigate to="/research/case-studies" replace />} />
-          <Route path="/inquiry" element={<Navigate to="/consult" replace />} />
+          <Route path="/inquiry" element={<Navigate to="/request-audit" replace />} />
           <Route path="/case-studies" element={<Navigate to="/research/case-studies" replace />} />
           <Route path="/writings" element={<Navigate to="/research/writings" replace />} />
           <Route path="/writing-library" element={<Navigate to="/research/writings" replace />} />
@@ -80,7 +81,7 @@ const App = () => (
           <Route path="/enterprise" element={<Navigate to="/" replace />} />
           <Route path="/explorer" element={<Navigate to="/research" replace />} />
           <Route path="/research-summary" element={<Navigate to="/research" replace />} />
-          <Route path="/support" element={<Navigate to="/consult" replace />} />
+          <Route path="/support" element={<Navigate to="/request-audit" replace />} />
           <Route path="/faq" element={<Navigate to="/trust" replace />} />
           <Route path="/about.html" element={<Navigate to="/about" replace />} />
           <Route path="/why-independent" element={<Navigate to="/about" replace />} />

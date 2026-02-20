@@ -40,7 +40,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-wrap gap-4 fade-up" style={{ animationDelay: "240ms" }}>
                   <a
-                    href="/consult#application-form"
+                    href="/request-audit#application-form"
                     className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
                     style={{ fontFamily: "var(--font-body)" }}
                   >
@@ -73,7 +73,7 @@ export default function Home() {
                     <a href="/eq-safety-benchmark" className="block text-sm link-lilac">Open EQSB page →</a>
                     <a href="/research" className="block text-sm link-lilac">Open Research Overview →</a>
                     <a href="/outputs" className="block text-sm link-lilac">Open Outputs & Transparency →</a>
-                    <a href="/consult#application-form" className="block text-sm link-lilac">Request audit intake →</a>
+                    <a href="/request-audit#application-form" className="block text-sm link-lilac">Request audit intake →</a>
                   </div>
                 </div>
               </div>

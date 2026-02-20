@@ -32,7 +32,7 @@ export default function Trust() {
           "Independent third-party evaluation posture",
         ]}
         primaryAction={{ href: "#handling-boundary", label: "View Handling Boundary ↓" }}
-        secondaryAction={{ href: "/consult#application-form", label: "Request Audit Intake" }}
+        secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit Intake" }}
         jumpLinks={[
           { href: "#information-needs", label: "Information Needs" },
           { href: "#handling-boundary", label: "Public vs Protected" },
@@ -122,7 +122,7 @@ export default function Trust() {
           access routing.
         </p>
         <a
-          href="/consult#application-form"
+          href="/request-audit#application-form"
           className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
           style={{ fontFamily: "var(--font-body)" }}
         >

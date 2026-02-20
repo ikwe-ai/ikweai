@@ -78,24 +78,24 @@ export default function Contact() {
   return (
     <PageShell>
       <PageMeta
-        title="Consultation Intake | Ikwe.ai"
-        description="Share your system context and request an independent consultation for behavioral safety evaluation."
-        path="/consult"
+        title="Request Audit | Ikwe.ai"
+        description="Start an audit request. Consultation support is included for scope and pathway alignment."
+        path="/request-audit"
       />
       <SummaryHero
-        kicker="Consultation"
-        title="Consultation Intake"
-        summary="Tell us what you are building, where it is deployed, and what you need reviewed. We respond selectively with scope and next steps."
+        kicker="Audit Request"
+        title="Request Audit"
+        summary="Submit your deployment context and review objective. Consultation support is included for scope alignment and next-step planning."
         highlights={[
           "Independent review posture",
           "Governance-ready documentation",
           "High-trust deployment focus",
         ]}
-        primaryAction={{ href: "#application-form", label: "Open Intake Form ↓" }}
+        primaryAction={{ href: "#application-form", label: "Open Request Form ↓" }}
         secondaryAction={{ href: "/audit", label: "View Audit Pathway" }}
         jumpLinks={[
           { href: "#intake-overview", label: "Intake Overview" },
-          { href: "#application-form", label: "Application Form" },
+          { href: "#application-form", label: "Request Form" },
           { href: "#next-steps", label: "Process & Next Steps" },
         ]}
       />
@@ -106,7 +106,7 @@ export default function Contact() {
             <div className="flex items-start gap-4">
               <CheckCircle2 size={32} className="text-lilac mt-1" />
               <div>
-                <h2 className="font-display text-2xl text-foreground mb-2">Request received</h2>
+                <h2 className="font-display text-2xl text-foreground mb-2">Audit request received</h2>
                 <p className="text-sm text-foreground-muted leading-relaxed">
                   Thank you. We review submissions selectively and respond within 5 business days when there is a fit.
                 </p>
@@ -128,16 +128,17 @@ export default function Contact() {
               <article id="next-steps" className="card-surface p-6">
                 <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Typical Next Steps</p>
                 <ol className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-                  <li>1. Consultation review and fit check</li>
+                  <li>1. Audit request review and fit check</li>
                   <li>2. Scope recommendation and timeline options</li>
-                  <li>3. Audit pathway and reporting plan</li>
+                  <li>3. Consultation alignment and delivery plan</li>
                 </ol>
               </article>
 
               <article className="card-surface p-6">
-                <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Prefer Guided Intake?</p>
+                <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Consultation Support</p>
                 <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-                  Use a guided prefill to start with a standard intake baseline, then edit before submitting.
+                  Guided intake helps prefill a standard baseline before submission. Consultation remains part of the
+                  process for scope clarity.
                 </p>
                 <button type="button" onClick={startGuidedIntake} className="text-sm link-lilac">
                   Start guided intake →
@@ -260,7 +261,7 @@ export default function Contact() {
                 className="w-full rounded bg-lilac px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors disabled:opacity-50"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                {state === "submitting" ? "Submitting…" : "Submit Request"}
+                {state === "submitting" ? "Submitting…" : "Submit Audit Request"}
               </button>
 
               {state === "error" && (

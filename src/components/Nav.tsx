@@ -61,8 +61,8 @@ const hubs: Hub[] = [
       { label: "Case Studies", path: "/research/case-studies" },
       { label: "Press & Updates", path: "/research/press" },
     ],
-    ctaLabel: "Request Consultation →",
-    ctaPath: "/consult",
+    ctaLabel: "Request Audit →",
+    ctaPath: "/request-audit#application-form",
   },
   {
     id: "outputs",
@@ -95,7 +95,7 @@ const hubs: Hub[] = [
       { label: "Architecture", path: "/technology/architecture" },
     ],
     ctaLabel: "Request Audit Intake →",
-    ctaPath: "/consult#application-form",
+    ctaPath: "/request-audit#application-form",
   },
   {
     id: "architecture",
@@ -127,8 +127,8 @@ const hubs: Hub[] = [
       { label: "Outputs Hub", path: "/outputs" },
       { label: "Research Glossary", path: "/research" },
     ],
-    ctaLabel: "Request Consultation →",
-    ctaPath: "/consult",
+    ctaLabel: "Request Audit →",
+    ctaPath: "/request-audit#application-form",
   },
   {
     id: "about",
@@ -164,21 +164,21 @@ const hubs: Hub[] = [
       { label: "Trust & Confidentiality", path: "/trust" },
       { label: "Press & Updates", path: "/research/press" },
       { label: "Outputs Hub", path: "/outputs" },
-      { label: "Consultation Intake", path: "/consult" },
+      { label: "Consultation Page", path: "/consult" },
     ],
-    ctaLabel: "Contact Governance Team →",
-    ctaPath: "/consult",
+    ctaLabel: "Request Audit →",
+    ctaPath: "/request-audit#application-form",
   },
   {
     id: "consultation",
-    label: "Consultation",
+    label: "Consult",
     path: "/consult",
-    desc: "Guided intake and audit-start workflow.",
+    desc: "Consultation context and intake support for audit requests.",
     children: [
       {
         path: "/consult",
-        label: "Consultation Hub",
-        desc: "Intake form and scope request flow.",
+        label: "Consultation Page",
+        desc: "Brand and consultation context for audit engagement.",
       },
       {
         path: "/audit",
@@ -191,16 +191,16 @@ const hubs: Hub[] = [
         desc: "Review public output formats before intake.",
       },
     ],
-    asideHeading: "Consultation Quick Start",
-    asideBody: "Share deployment context and review goals to receive scope guidance.",
+    asideHeading: "Consultation Context",
+    asideBody: "Consultation remains available for scope alignment after audit request intake.",
     asideLinks: [
-      { label: "Consultation Intake", path: "/consult#application-form" },
+      { label: "Consultation Intake", path: "/request-audit#application-form" },
       { label: "Audit Pathway", path: "/audit" },
       { label: "Outputs Hub", path: "/outputs" },
       { label: "Research Overview", path: "/research" },
     ],
-    ctaLabel: "Open Consultation Intake →",
-    ctaPath: "/consult",
+    ctaLabel: "Open Request Audit →",
+    ctaPath: "/request-audit#application-form",
   },
 ];
 
@@ -429,7 +429,7 @@ export default function Nav() {
           </nav>
 
           <Link
-            to="/consult#application-form"
+            to="/request-audit#application-form"
             className="hidden md:inline-flex items-center gap-1.5 shrink-0 rounded bg-lilac px-4 py-2 text-xs font-medium text-primary-foreground uppercase tracking-widest hover:bg-lilac-glow transition-colors"
             style={{ fontFamily: "var(--font-mono)" }}
           >
@@ -525,7 +525,7 @@ export default function Nav() {
             ))}
 
             <Link
-              to="/consult#application-form"
+              to="/request-audit#application-form"
               className="mt-2 inline-flex w-full items-center justify-center rounded bg-lilac px-4 py-2.5 text-xs font-medium text-primary-foreground uppercase tracking-widest hover:bg-lilac-glow transition-colors"
               style={{ fontFamily: "var(--font-mono)" }}
             >
