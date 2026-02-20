@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import PageShell from "@/components/PageShell";
 import StatSplit from "@/components/StatSplit";
 import GatedCallout from "@/components/GatedCallout";
+import CanonicalTerm from "@/components/CanonicalTerm";
 import { CANONICAL_STAT } from "@/lib/content-locks";
 
 export default function Home() {
@@ -21,14 +22,14 @@ export default function Home() {
                   className="font-display text-4xl md:text-5xl text-foreground mb-6 leading-tight fade-up"
                   style={{ animationDelay: "80ms" }}
                 >
-                  AI behavioral risk is real, measurable, and now certifiable. We build the independent proof.
+                  AI behavioral risk is real, measurable, and now auditable. We build the independent proof.
                 </h1>
                 <p
                   className="text-lg text-foreground-muted leading-relaxed max-w-lg mb-10 fade-up"
                   style={{ animationDelay: "160ms" }}
                 >
-                  The independent third-party validation layer for AI systems that need to prove behavioral safety —
-                  to regulators, insurers, investors, and boards. Any industry. Any deployment.
+                  The independent third-party validation layer for AI systems that need to measure behavioral safety
+                  risk for regulators, insurers, investors, and boards. Any industry. Any deployment.
                 </p>
                 <div className="flex flex-wrap gap-4 fade-up" style={{ animationDelay: "240ms" }}>
                   <a
@@ -106,7 +107,9 @@ export default function Home() {
                 <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-3">Audit</p>
                 <h3 className="font-display text-xl text-foreground mb-2">Structured adversarial certification</h3>
                 <p className="text-sm text-foreground-muted leading-relaxed">
-                  79 real-world scenarios across emotionally-loaded domains. Each run is scored against the SSF taxonomy and EQSB v2.1 Safety Gate — producing a verifiable audit artifact.
+                  79 real-world scenarios across emotionally-loaded domains. Each run is scored against the{" "}
+                  <CanonicalTerm term="SSF" /> taxonomy and <CanonicalTerm term="Safety Gate" /> controls, producing
+                  a verifiable audit artifact.
                 </p>
               </div>
               <div>
