@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PageShell from "@/components/PageShell";
 import { CheckCircle2 } from "lucide-react";
+import PageMeta from "@/components/PageMeta";
 
 type FormState = "idle" | "submitting" | "done" | "error";
 
@@ -58,6 +59,11 @@ export default function Contact() {
 
   return (
     <PageShell>
+      <PageMeta
+        title="Apply for Evaluation | Ikwe.ai"
+        description="Submit your AI system for independent behavioral safety risk evaluation in high-trust domains."
+        path="/contact"
+      />
       {/* Header */}
       <section className="pt-14 pb-12 border-b border-border">
         <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Intake</p>
