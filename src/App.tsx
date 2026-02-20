@@ -15,6 +15,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Audit from "./pages/Audit";
 import NotFound from "./pages/NotFound";
+import WritingLibrary from "./pages/WritingLibrary";
 import BeforeTheViolation from "./pages/writings/BeforeTheViolation";
 import RecognitionIsNotSafety from "./pages/writings/RecognitionIsNotSafety";
 
@@ -36,13 +37,15 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/audit" element={<Audit />} />
+          <Route path="/writing-library" element={<WritingLibrary />} />
           <Route path="/research/writings/before-the-violation" element={<BeforeTheViolation />} />
           <Route path="/research/writings/recognition-is-not-safety" element={<RecognitionIsNotSafety />} />
 
           {/* Legacy redirects */}
-          <Route path="/proof" element={<Navigate to="/research#case-studies" replace />} />
+          <Route path="/proof" element={<Navigate to="/writing-library#case-analyses" replace />} />
           <Route path="/inquiry" element={<Navigate to="/consult" replace />} />
-          <Route path="/case-studies" element={<Navigate to="/research#case-studies" replace />} />
+          <Route path="/case-studies" element={<Navigate to="/writing-library#case-analyses" replace />} />
+          <Route path="/writings" element={<Navigate to="/writing-library" replace />} />
           <Route path="/research/before-the-violation/*" element={<Navigate to="/research/writings/before-the-violation" replace />} />
           <Route
             path="/research/recognition-is-not-safety/*"
