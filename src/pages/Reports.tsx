@@ -4,24 +4,24 @@ import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 
 export default function Reports() {
-  const publicOutputs = [
+  const outputPreviews = [
     {
-      label: "Public Preview",
+      label: "Preview",
       title: "Board Brief Structure",
       desc: "Executive summary format with risk posture, key findings, and governance-next-step framing.",
     },
     {
-      label: "Public Preview",
+      label: "Preview",
       title: "Risk Scorecard Snapshot",
       desc: "Dimension-level summary format showing evaluation outcomes in plain institutional language.",
     },
     {
-      label: "Public Preview",
+      label: "Preview",
       title: "Evidence Pack Index",
       desc: "Table-of-contents structure for release references, run IDs, and version attribution.",
     },
     {
-      label: "Public Preview",
+      label: "Preview",
       title: "Monitoring Drift Alert",
       desc: "Operational alert format showing changed risk patterns and recommended response pathway.",
     },
@@ -36,7 +36,7 @@ export default function Reports() {
     {
       title: "Architecture Overview",
       href: "/technology/architecture",
-      desc: "Public evaluation flow and control-language framing.",
+      desc: "Evaluation flow and control-language framing.",
     },
     {
       title: "Audit Pathway",
@@ -55,26 +55,26 @@ export default function Reports() {
       <SummaryHero
         kicker="Deliverables Hub"
         title="Deliverables & Transparency"
-        summary="Public output previews show what institutions receive. Full report packages are available through audit engagement."
+        summary="Output previews show what institutions receive. Full report packages are available through audit engagement."
         highlights={[
           "Board-ready output formats",
           "Clear transparency standards",
           "Full report packages available through engagement",
         ]}
-        primaryAction={{ href: "#public-previews", label: "View Public Previews ↓" }}
+        primaryAction={{ href: "#output-previews", label: "View Output Previews ↓" }}
         secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
         jumpLinks={[
-          { href: "#public-previews", label: "Public Previews" },
+          { href: "#output-previews", label: "Output Previews" },
           { href: "#artifact-schema", label: "Data Structure" },
           { href: "#transparency-boundary", label: "Boundary" },
           { href: "#request-access", label: "Request Path" },
         ]}
       />
 
-      <section id="public-previews" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Public Output Previews</p>
+      <section id="output-previews" className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Output Previews</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mb-8">
-          {publicOutputs.map((item) => (
+          {outputPreviews.map((item) => (
             <article key={item.title} className="card-surface p-5 flex flex-col gap-3">
               <span className="inline-flex w-fit rounded border border-border px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-lilac">
                 {item.label}
@@ -103,7 +103,7 @@ export default function Reports() {
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Deliverable Data Structure</p>
         <div className="card-surface p-6 max-w-3xl">
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-            Public field layout shown for transparency. This schema reflects the standard structure used in released deliverables.
+            Field layout shown for transparency. This schema reflects the standard structure used in released deliverables.
           </p>
           <pre className="rounded border border-border bg-background/40 p-4 text-xs text-foreground-muted overflow-x-auto">
 {`{
@@ -127,7 +127,7 @@ export default function Reports() {
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Transparency Boundary</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-5xl">
           <article className="card-surface p-6">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Public Standard</p>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Release Standard</p>
             <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
               <li>• Evaluation framework and control-language definitions</li>
               <li>• Canonical benchmark outcomes and version references</li>
@@ -176,7 +176,7 @@ export default function Reports() {
 
       <section className="py-14">
         <p className="text-xs text-foreground-subtle max-w-2xl leading-relaxed">
-          Public release note: Output previews are published for transparency and institutional clarity. Full report
+          Release note: Output previews are published for transparency and institutional clarity. Full report
           materials are available through audit engagement.
         </p>
       </section>
