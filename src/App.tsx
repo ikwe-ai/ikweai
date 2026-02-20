@@ -44,6 +44,7 @@ const App = () => (
           <Route path="/eq-safety-benchmark" element={<EqSafetyBenchmark />} />
           <Route path="/eqsb" element={<Navigate to="/eq-safety-benchmark" replace />} />
           <Route path="/deliverables" element={<Reports />} />
+          <Route path="/outputs" element={<Navigate to="/deliverables" replace />} />
           <Route path="/reports" element={<Navigate to="/deliverables" replace />} />
           <Route path="/technology/architecture" element={<Architecture />} />
           <Route path="/about" element={<About />} />
