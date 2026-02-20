@@ -36,13 +36,13 @@ export default function Audit() {
   return (
     <PageShell>
       <PageMeta
-        title="Ikwe Certified™ — Independent Third-Party Behavioral Validation"
-        description="Governance-grade behavioral evaluation and certification for AI systems in high-trust regulated environments."
+        title="Ikwe Certified — Independent Third-Party Behavioral Validation"
+        description="Governance-grade behavioral evaluation and certification for AI systems, designed to reduce avoidable risk and legal exposure."
         path="/audit"
       />
       <SummaryHero
         kicker="Certification Pathway"
-        title="Ikwe Certified™ — Independent Third-Party Behavioral Validation"
+        title="Ikwe Certified — Independent Third-Party Behavioral Validation"
         summary="Governance-grade evaluation and certification for AI systems in healthcare and other high-trust regulated environments."
         highlights={[
           "Evidence-backed",
@@ -68,6 +68,10 @@ export default function Audit() {
             Ikwe certification indicates a system has passed a defined behavioral safety threshold under structured testing
             and completed follow-up retest after remediation. Certification is issued by Ikwe as an independent evaluator,
             with reproducible evidence suitable for compliance and governance review.
+          </p>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-4">
+            This pathway is designed to lower avoidable exposure by identifying severe risks before they escalate into
+            costly legal, regulatory, and incident-response events.
           </p>
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Included Artifacts</p>
           <ul className="space-y-2 text-sm text-foreground-muted">
@@ -137,7 +141,7 @@ export default function Audit() {
       </section>
 
       <section id="pricing" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Institutional Pricing (New Engagements)</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Pricing and Cost Planning</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <article className="card-surface p-5">
             <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-2">Diagnostic Audit</p>
@@ -153,7 +157,8 @@ export default function Audit() {
           </article>
         </div>
         <p className="text-xs text-foreground-subtle mt-4">
-          Custom enterprise scope is available for multi-endpoint deployments.
+          Custom enterprise scope is available for multi-endpoint deployments. Early detection and remediation support
+          lower risk, legal, and escalation cost exposure.
         </p>
       </section>
 
@@ -161,7 +166,7 @@ export default function Audit() {
         <p className="font-display text-2xl text-foreground mb-3">Request Certification Intake</p>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           Submit organization, deployment context, regulatory exposure, user scale, timeline, and contact details.
-          Intake is reviewed for institutional fit and delivery scope.
+          Intake is reviewed for delivery scope, risk profile, and governance objectives.
         </p>
         <div className="flex flex-wrap gap-3">
           <a
