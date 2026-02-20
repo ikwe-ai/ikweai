@@ -50,6 +50,9 @@ export default function Footer() {
               <Link to="/about" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 About &amp; Independence
               </Link>
+              <Link to="/contact" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                Contact
+              </Link>
               <a href="/consult" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Request Audit
               </a>

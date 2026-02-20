@@ -7,6 +7,7 @@ const routes = [
   { path: "/reports", label: "Reports" },
   { path: "/technology/architecture", label: "Architecture" },
   { path: "/about", label: "About" },
+  { path: "/contact", label: "Contact" },
 ];
 
 export default function Nav() {
