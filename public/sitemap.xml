@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://ikwe.ai/</loc></url>
+  <url><loc>https://ikwe.ai/research</loc></url>
+  <url><loc>https://ikwe.ai/reports</loc></url>
+  <url><loc>https://ikwe.ai/technology/architecture</loc></url>
+  <url><loc>https://ikwe.ai/about</loc></url>
+  <url><loc>https://ikwe.ai/consult</loc></url>
+  <url><loc>https://ikwe.ai/audit</loc></url>
+
+  <url><loc>https://ikwe.ai/research/writings</loc></url>
+  <url><loc>https://ikwe.ai/research/writings/before-the-violation</loc></url>
+  <url><loc>https://ikwe.ai/research/writings/ai-governance-is-becoming-a-compliance-issue</loc></url>
+  <url><loc>https://ikwe.ai/research/writings/choose-your-path</loc></url>
+  <url><loc>https://ikwe.ai/research/writings/recognition-is-not-safety</loc></url>
+
+  <url><loc>https://ikwe.ai/research/case-studies</loc></url>
+  <url><loc>https://ikwe.ai/research/case-studies/authority-drift</loc></url>
+  <url><loc>https://ikwe.ai/research/case-studies/emotional-escalation</loc></url>
+  <url><loc>https://ikwe.ai/research/case-studies/founder-as-safety-mechanism</loc></url>
+  <url><loc>https://ikwe.ai/research/case-studies/scale-amplification</loc></url>
+  <url><loc>https://ikwe.ai/research/case-studies/handoff-friction</loc></url>
+
+  <url><loc>https://ikwe.ai/research/press</loc></url>
+</urlset>
