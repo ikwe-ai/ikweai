@@ -53,11 +53,23 @@ if find . -type f \( -name '*.docx' -o -name '*.xlsx' -o -name '*.xls' -o -name 
   errors=$((errors + 1))
 fi
 
-echo "[5/5] Ensuring redacted report exists..."
+echo "[5/6] Ensuring redacted report exists..."
 if [ ! -f "public/reports/eqsb-series-a-data-room-v2-redacted.md" ]; then
   echo "ERROR: missing public redacted data room report"
   errors=$((errors + 1))
 fi
+
+echo "[6/6] Scanning public PDFs for protected/forbidden phrases..."
+for pdf in public/artifacts/*.pdf; do
+  [ -e "$pdf" ] || continue
+  if strings "$pdf" | rg -n -i \
+    "54\\.7% introduced emotional risk|54\\.7% failed|54\\.7% flagged|Score[[:space:]]*[≤<=]+[[:space:]]*1\\.5|Score[[:space:]]*[≤<=]+[[:space:]]*2\\.5|capped at 30/100|capped at 50/100|Override thresholds|weight schema version|override rule version" \
+    >/tmp/release_guard_pdf_hits.txt; then
+    echo "ERROR: protected/forbidden phrase found in PDF: $pdf"
+    cat /tmp/release_guard_pdf_hits.txt
+    errors=$((errors + 1))
+  fi
+done
 
 if [ "$errors" -gt 0 ]; then
   echo "Release guard FAILED with $errors error(s)."

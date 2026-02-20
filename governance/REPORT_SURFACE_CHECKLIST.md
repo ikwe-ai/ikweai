@@ -8,6 +8,10 @@ Use this before each release.
 - [ ] `public/audit/index.html`
 - [ ] `public/consult.html`
 - [ ] `public/consult/index.html`
+- [ ] `public/artifacts/ikwe_public_preview.pdf`
+- [ ] `public/artifacts/ikwe_full_research_report.pdf`
+- [ ] `public/artifacts/ikwe_audit_report.pdf`
+- [ ] `public/artifacts/ikwe_board_brief.pdf`
 - [ ] `src/pages/Research.tsx`
 - [ ] `src/pages/About.tsx`
 - [ ] `src/lib/content-locks.ts`
@@ -21,6 +25,7 @@ Use this before each release.
 - [ ] No raw threshold constants disclosed
 - [ ] No internal override calibration details disclosed
 - [ ] No raw draft files (`.docx`, `.xlsx`, `.zip`) in `ikweai`
+- [ ] Public PDFs pass phrase scan for forbidden/protected terms
 
 ## Release gate
 - [ ] `npm run release:guard` passes
