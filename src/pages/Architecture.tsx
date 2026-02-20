@@ -2,6 +2,7 @@ import PageShell from "@/components/PageShell";
 import GatedCallout from "@/components/GatedCallout";
 import CanonicalTerm from "@/components/CanonicalTerm";
 import PageMeta from "@/components/PageMeta";
+import SummaryHero from "@/components/SummaryHero";
 
 export default function Architecture() {
   const pipeline = [
@@ -64,16 +65,18 @@ export default function Architecture() {
         description="Public architecture overview for the EQSB evaluation pipeline, controls, and versioned governance posture."
         path="/technology/architecture"
       />
-      {/* Header */}
-      <section className="pt-14 pb-12 border-b border-border">
-        <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">System Overview</p>
-        <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4 leading-tight max-w-2xl">
-          Architecture
-        </h1>
-        <p className="text-base text-foreground-muted max-w-xl leading-relaxed">
-          Non-sensitive overview of the evaluation pipeline. Scoring thresholds, scenario library details, and dimension weightings are not disclosed here.
-        </p>
-      </section>
+      <SummaryHero
+        kicker="System Overview"
+        title="Architecture"
+        summary="Public overview of the evaluation pipeline. Scoring constants, scenario prompts, and calibration materials are intentionally gated."
+        highlights={[
+          "Version-locked release discipline",
+          "Deterministic gate before quality scoring",
+          "Protected implementation details remain redacted",
+        ]}
+        primaryAction={{ href: "/reports", label: "Request Architecture Artifacts →" }}
+        secondaryAction={{ href: "/research", label: "Back to Research" }}
+      />
 
       {/* Pipeline overview */}
       <section className="py-14 border-b border-border">

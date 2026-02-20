@@ -3,6 +3,7 @@ import StatCard from "@/components/StatCard";
 import GatedCallout from "@/components/GatedCallout";
 import CanonicalTerm from "@/components/CanonicalTerm";
 import PageMeta from "@/components/PageMeta";
+import SummaryHero from "@/components/SummaryHero";
 import { CANONICAL_TERM_ORDER, CANONICAL_TERMS } from "@/lib/canonical-terms";
 
 export default function Research() {
@@ -13,16 +14,18 @@ export default function Research() {
         description="Study I summary, benchmark methodology lineage, and canonical terminology for EQ Safety Benchmark."
         path="/research"
       />
-      {/* Header */}
-      <section className="pt-14 pb-12 border-b border-border">
-        <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Study I · 2024–2025</p>
-        <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4 leading-tight max-w-2xl">
-          EQ Safety Benchmark
-        </h1>
-        <p className="text-base text-foreground-muted max-w-xl leading-relaxed">
-          Study I summary, methodology lineage, and terminology. All data is locked to the canonical stat block.
-        </p>
-      </section>
+      <SummaryHero
+        kicker="Study I · 2024–2025"
+        title="EQ Safety Benchmark"
+        summary="Study I summary, methodology lineage, and terminology. All data is locked to the canonical stat block."
+        highlights={[
+          "n=948 model responses scored",
+          "79 scenarios across high-stakes contexts",
+          "Two-layer model: Safety Gate + dimensional scoring",
+        ]}
+        primaryAction={{ href: "/reports", label: "Request Study Artifacts →" }}
+        secondaryAction={{ href: "/technology/architecture", label: "View Architecture" }}
+      />
 
       {/* Study I Summary */}
       <section className="py-14 border-b border-border">

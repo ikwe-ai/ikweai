@@ -144,6 +144,29 @@
     );
   }
 
+  .summary-hero {
+    position: relative;
+    overflow: hidden;
+  }
+  .summary-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse 65% 52% at 12% 6%,
+      hsl(var(--lilac) / 0.1),
+      transparent 72%
+    );
+    pointer-events: none;
+  }
+
+  .summary-chip {
+    background: hsl(var(--background-card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 10px 12px;
+  }
+
   /* Input field */
   .field {
     @apply w-full rounded bg-background-surface border border-border px-3 py-2.5 text-sm text-foreground placeholder:text-foreground-subtle focus:outline-none focus:ring-1 focus:ring-ring transition;

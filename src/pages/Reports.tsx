@@ -2,6 +2,7 @@ import { useState } from "react";
 import PageShell from "@/components/PageShell";
 import { Lock, CheckCircle2 } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
+import SummaryHero from "@/components/SummaryHero";
 
 type FormState = "idle" | "submitting" | "done" | "error";
 
@@ -61,17 +62,18 @@ export default function Reports() {
         description="Request versioned benchmark artifacts, board briefs, and report samples for governance review."
         path="/reports"
       />
-      {/* Header */}
-      <section className="pt-14 pb-12 border-b border-border">
-        <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Artifact Distribution</p>
-        <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4 leading-tight max-w-2xl">
-          Request Artifacts
-        </h1>
-        <p className="text-base text-foreground-muted max-w-xl leading-relaxed">
-          All artifacts are distributed as version-controlled releases. Submit a request and we'll
-          send the current versioned file to you directly. Requests are reviewed individually.
-        </p>
-      </section>
+      <SummaryHero
+        kicker="Artifact Distribution"
+        title="Request Artifacts"
+        summary="All artifacts are distributed as version-controlled releases. Submit a request and we will send the current file after review."
+        highlights={[
+          "Each artifact includes a version identifier",
+          "Canonical stat block included in releases",
+          "Manual review before distribution",
+        ]}
+        primaryAction={{ href: "#request-form", label: "Open Request Form ↓" }}
+        secondaryAction={{ href: "/contact", label: "General Contact" }}
+      />
 
       {/* Policy callout */}
       <section className="py-10 border-b border-border">
@@ -103,6 +105,7 @@ export default function Reports() {
           </div>
         ) : (
           <form
+            id="request-form"
             onSubmit={handleSubmit}
             name="artifact-request"
             data-netlify="true"
