@@ -75,7 +75,7 @@ export default function Architecture() {
           "Public framework language with release discipline",
         ]}
         primaryAction={{ href: "/reports", label: "View Reports & Releases →" }}
-        secondaryAction={{ href: "/research", label: "Back to Research" }}
+        secondaryAction={{ href: "/consult", label: "Request Consultation" }}
       />
 
       {/* Pipeline overview */}
@@ -138,8 +138,9 @@ export default function Architecture() {
       <section className="py-14">
         <GatedCallout
           title="Detailed Architecture Documentation"
-          body="Extended architecture documentation is distributed through formal report releases."
-          ctaLabel="View release options →"
+          body="Extended architecture documentation is distributed through formal report releases. For audit access and scope review, use consultation intake."
+          ctaLabel="Request consultation for access →"
+          ctaPath="/consult"
         />
       </section>
     </PageShell>
