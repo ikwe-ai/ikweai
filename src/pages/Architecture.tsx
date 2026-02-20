@@ -114,17 +114,18 @@ export default function Architecture() {
 
       {/* What's not here */}
       <section className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Publication Boundary</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Public Scope</p>
         <p className="text-sm text-foreground-muted max-w-xl leading-relaxed mb-6">
-          The following details are not published on this page:
+          This page provides public architecture framing. Detailed technical specification sets are released through
+          formal report publications.
         </p>
         <ul className="space-y-2 text-sm text-foreground-muted max-w-lg">
           {[
-            "Individual Safety Gate violation definitions",
-            "Dimension weights and sub-rubric scoring",
-            "Per-model result breakdowns",
-            "Scenario library contents",
-            "Pass/fail thresholds for the 8-dimension scorecard",
+            "Safety Gate violation definition set",
+            "Dimension-weight and sub-rubric specification tables",
+            "Per-model outcome breakdown tables",
+            "Scenario-library record set",
+            "Scorecard threshold calibration sheets",
           ].map((item) => (
             <li key={item} className="flex gap-3">
               <span className="text-foreground-subtle shrink-0">—</span>

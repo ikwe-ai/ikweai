@@ -28,7 +28,7 @@ export default function Research() {
       body:
         "Scheduled re-evaluation program for behavioral drift tracking across model and deployment changes.",
       cta: "Register interest →",
-      href: "/contact",
+      href: "/consult",
     },
   ] as const;
 
@@ -113,8 +113,8 @@ export default function Research() {
           ))}
         </div>
         <p className="text-xs text-foreground-subtle mt-5 max-w-2xl">
-          Roadmap listings are included for transparency. Unpublished studies are shown by status and do not include
-          unpublished findings or detailed scoring specifications.
+          Roadmap listings are included for transparency. Forthcoming studies are listed by status, and full study
+          pages are published when releases are finalized.
         </p>
       </section>
 
