@@ -12,30 +12,30 @@ export default function Trust() {
   const notRequired = [
     "No request for proprietary model weights or training data",
     "No request for production user conversation exports by default",
-    "No requirement to expose internal evaluation formulas to begin scope review",
+    "No requirement to share scoring formulas to begin scope review",
   ] as const;
 
   return (
     <PageShell>
       <PageMeta
         title="Trust & Confidentiality | Ikwe.ai"
-        description="Public trust posture for data handling, confidentiality boundaries, and protected artifact access."
+        description="Customer-facing trust posture for data handling, confidentiality boundaries, and report access."
         path="/trust"
       />
       <SummaryHero
         kicker="Trust Posture"
         title="Trust & Confidentiality"
-        summary="Public summary of how Ikwe.ai handles intake information, protects protected artifacts, and maintains independence in evaluation and publication."
+        summary="Clear summary of how Ikwe.ai handles intake information, report sharing, and independent evaluation standards."
         highlights={[
-          "IP-safe public transparency model",
-          "Protected details shared only through gated workflow",
+          "Clear transparency model",
+          "Detailed materials shared with authorized stakeholders",
           "Independent third-party evaluation posture",
         ]}
         primaryAction={{ href: "#handling-boundary", label: "View Handling Boundary ↓" }}
         secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
         jumpLinks={[
           { href: "#information-needs", label: "Information Needs" },
-          { href: "#handling-boundary", label: "Public vs Protected" },
+          { href: "#handling-boundary", label: "Public and Client Materials" },
           { href: "#confidentiality", label: "Confidentiality" },
           { href: "#contact-path", label: "Contact Path" },
         ]}
@@ -70,7 +70,7 @@ export default function Trust() {
       </section>
 
       <section id="handling-boundary" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Public vs Protected Boundary</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Public Information and Client Materials</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-5xl">
           <article className="card-surface p-6">
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Public Transparency</p>
@@ -81,11 +81,11 @@ export default function Trust() {
             </ul>
           </article>
           <article className="card-surface p-6">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Protected Distribution</p>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Client Materials</p>
             <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-              <li>• Detailed scenario sets and execution details</li>
-              <li>• Internal scoring mechanics and release-control internals</li>
-              <li>• Extended institution-specific reporting materials</li>
+              <li>• Detailed scenario sets and extended documentation</li>
+              <li>• Full scoring appendices and report support tables</li>
+              <li>• Organization-specific reporting materials</li>
             </ul>
           </article>
         </div>
@@ -101,7 +101,7 @@ export default function Trust() {
             },
             {
               label: "Access control",
-              text: "Protected artifacts are distributed through controlled request workflows tied to review scope and institutional need.",
+              text: "Detailed client materials are shared through controlled request steps tied to review scope and institutional need.",
             },
             {
               label: "Version discipline",
@@ -118,15 +118,14 @@ export default function Trust() {
 
       <section id="contact-path" className="py-14 max-w-3xl">
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-          Use consultation intake to request audit scope review, redacted output walkthrough, or protected artifact
-          access routing.
+          Use audit intake to request scope review, redacted output walkthrough, and full report package options.
         </p>
         <a
           href="/request-audit#application-form"
           className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
           style={{ fontFamily: "var(--font-body)" }}
         >
-          Start consultation intake →
+          Start audit intake →
         </a>
       </section>
     </PageShell>

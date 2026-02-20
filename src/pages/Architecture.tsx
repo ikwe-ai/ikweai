@@ -42,7 +42,7 @@ export default function Architecture() {
       body: (
         <>
           Gate-passing responses are scored through <CanonicalTerm term="Dimensional Scoring" />. Dimension definitions
-          and detailed scoring references are handled through protected release workflows.
+          and detailed scoring references are available in report documentation.
         </>
       ),
     },
@@ -68,7 +68,7 @@ export default function Architecture() {
       <SummaryHero
         kicker="System Overview"
         title="Architecture"
-        summary="Public overview of the evaluation pipeline. Detailed scoring specifications are distributed through protected release workflows."
+        summary="Public overview of the evaluation pipeline. Detailed scoring specifications are available in full report documentation."
         highlights={[
           "Version-locked release discipline",
           "Deterministic gate before quality scoring",
@@ -145,8 +145,8 @@ export default function Architecture() {
       <section id="architecture-access" className="py-14">
         <GatedCallout
           title="Detailed Architecture Documentation"
-          body="Extended architecture documentation is distributed through controlled access workflows. For audit access and scope review, submit an audit request."
-          ctaLabel="Request audit for access →"
+          body="Extended architecture documentation is available through audit engagement. Submit an audit request to review scope and delivery options."
+          ctaLabel="Request audit →"
           ctaPath="/request-audit#application-form"
         />
       </section>

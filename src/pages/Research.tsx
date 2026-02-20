@@ -192,7 +192,7 @@ export default function Research() {
       <section id="methods-reference" className="py-14">
         <GatedCallout
           title="Detailed Methods Reference"
-          body="Detailed methods tables and extended result sets are shared through protected release workflows."
+          body="Detailed methods tables and extended result sets are available through formal report releases and audit engagement."
           ctaLabel="Open outputs and access pathway →"
         />
       </section>

@@ -49,17 +49,17 @@ export default function Reports() {
     <PageShell>
       <PageMeta
         title="Outputs & Transparency | Ikwe.ai"
-        description="IP-safe output previews, public transparency boundary, and gated artifact access pathways."
+        description="Output previews, transparency standards, and full report request pathways."
         path="/outputs"
       />
       <SummaryHero
         kicker="Outputs Hub"
         title="Outputs & Transparency"
-        summary="Public output previews show what institutions receive. Detailed implementation artifacts remain protected and are distributed through controlled access workflows."
+        summary="Public output previews show what institutions receive. Full report packages are available through audit engagement."
         highlights={[
           "Board-ready output formats",
-          "Public transparency with protected internals",
-          "Gated access for detailed artifact sets",
+          "Clear transparency standards",
+          "Full report packages available through engagement",
         ]}
         primaryAction={{ href: "#public-previews", label: "View Public Previews ↓" }}
         secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
@@ -67,7 +67,7 @@ export default function Reports() {
           { href: "#public-previews", label: "Public Previews" },
           { href: "#artifact-schema", label: "Artifact Schema" },
           { href: "#transparency-boundary", label: "Boundary" },
-          { href: "#gated-access", label: "Gated Access" },
+          { href: "#gated-access", label: "Request Path" },
         ]}
       />
 
@@ -103,8 +103,7 @@ export default function Reports() {
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Artifact Structure Example</p>
         <div className="card-surface p-6 max-w-3xl">
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-            Example fields shown for transparency. This schema preview demonstrates output structure, not scoring
-            mechanics.
+            Example fields shown for transparency. This schema preview demonstrates output structure and delivery format.
           </p>
           <pre className="rounded border border-border bg-background/40 p-4 text-xs text-foreground-muted overflow-x-auto">
 {`{
@@ -136,25 +135,24 @@ export default function Reports() {
             </ul>
           </article>
           <article className="card-surface p-6">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Protected Distribution</p>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Full Report Package</p>
             <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-              <li>• Detailed scenario content and execution internals</li>
-              <li>• Internal scoring controls and implementation specifics</li>
-              <li>• Extended institution-specific artifact packages</li>
+              <li>• Detailed scenario sets and extended documentation</li>
+              <li>• Full scoring appendices and supporting report tables</li>
+              <li>• Organization-specific delivery package for governance review</li>
             </ul>
           </article>
         </div>
       </section>
 
       <section id="gated-access" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Gated Access</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">How To Request Full Reports</p>
         <div className="gated-callout rounded p-5 flex gap-4 max-w-3xl mb-8">
           <Lock size={16} className="text-lilac mt-0.5 shrink-0" />
           <div>
-            <p className="text-sm font-medium text-foreground mb-1">Protected Artifact Workflow</p>
+            <p className="text-sm font-medium text-foreground mb-1">Full Report Request Path</p>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Detailed documentation and extended packs are provided through consultation intake and controlled access
-              routing.
+              Detailed documentation and extended packs are provided to organizations in active audit or scoped review.
             </p>
           </div>
         </div>
@@ -164,7 +162,7 @@ export default function Reports() {
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Request protected access →
+            Request full report access →
           </a>
           <a
             href="/trust"
@@ -178,8 +176,8 @@ export default function Reports() {
 
       <section className="py-14">
         <p className="text-xs text-foreground-subtle max-w-2xl leading-relaxed">
-          Public release note: Output previews are published for transparency and institutional clarity. Protected
-          materials are distributed only through controlled workflow.
+          Public release note: Output previews are published for transparency and institutional clarity. Full report
+          materials are available through audit engagement.
         </p>
       </section>
     </PageShell>

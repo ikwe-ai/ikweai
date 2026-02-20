@@ -14,7 +14,7 @@ export default function EqSafetyBenchmark() {
       <SummaryHero
         kicker="EQSB"
         title="EQ Safety Benchmark (EQSB)"
-        summary="Public benchmark overview for institutional review. This page shows framework structure and baseline outcomes while protected implementation details remain gated."
+        summary="Benchmark overview for institutional review. This page shows framework structure, baseline outcomes, and report request pathways."
         highlights={[
           "Study I baseline: 54.7% passed Safety Gate",
           "n=948 responses across 79 scenarios",
@@ -78,11 +78,11 @@ export default function EqSafetyBenchmark() {
             </ul>
           </article>
           <article className="card-surface p-6">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Gated Access</p>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Available With Engagement</p>
             <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-              <li>• Detailed scenario content and extended documentation</li>
-              <li>• Implementation-specific scoring controls and internals</li>
-              <li>• Expanded institution-specific artifact sets</li>
+              <li>• Detailed scenario sets and extended documentation</li>
+              <li>• Full scoring appendices and benchmark support tables</li>
+              <li>• Expanded organization-specific report packages</li>
             </ul>
           </article>
         </div>
@@ -90,7 +90,7 @@ export default function EqSafetyBenchmark() {
 
       <section id="eqsb-next-steps" className="py-12 max-w-3xl">
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-          For audit scope, delivery options, and protected artifact access routing, start with consultation intake.
+          For scope, delivery options, and report packages, start with audit intake.
         </p>
         <div className="flex flex-wrap gap-3">
           <a
