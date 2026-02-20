@@ -5,6 +5,7 @@ import GatedCallout from "@/components/GatedCallout";
 import CanonicalTerm from "@/components/CanonicalTerm";
 import PageMeta from "@/components/PageMeta";
 import { CANONICAL_STAT } from "@/lib/content-locks";
+import { CASE_STUDIES_INDEX, WRITINGS_INDEX } from "@/lib/content-index";
 
 export default function Home() {
   return (
@@ -131,6 +132,82 @@ export default function Home() {
                 <p className="text-sm text-foreground-muted leading-relaxed">
                   Ikwe.ai has no financial or operational relationships with any AI developer evaluated. Results are never shared with evaluated parties before publication.
                 </p>
+              </div>
+            </div>
+          </section>
+
+          <section className="pb-20 border-t border-border pt-14">
+            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-10">
+              Publication Library
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+              <article className="card-surface p-5 flex flex-col gap-3">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-lilac">Published</p>
+                <h3 className="font-display text-xl text-foreground">Writing Library</h3>
+                <p className="text-sm text-foreground-muted leading-relaxed flex-1">
+                  Public essays, research notes, and opinion pieces with full-page access.
+                </p>
+                <a href="/research/writings" className="text-sm link-lilac">
+                  Open Writing Library →
+                </a>
+              </article>
+              <article className="card-surface p-5 flex flex-col gap-3">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-lilac">Published</p>
+                <h3 className="font-display text-xl text-foreground">Case Studies</h3>
+                <p className="text-sm text-foreground-muted leading-relaxed flex-1">
+                  Trajectory-level case analyses with governance interventions and outcomes.
+                </p>
+                <a href="/research/case-studies" className="text-sm link-lilac">
+                  Open Case Studies →
+                </a>
+              </article>
+              <article className="card-surface p-5 flex flex-col gap-3">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-lilac">Published</p>
+                <h3 className="font-display text-xl text-foreground">Press & Updates</h3>
+                <p className="text-sm text-foreground-muted leading-relaxed flex-1">
+                  Media routing and communications pages linked to full live public content.
+                </p>
+                <a href="/research/press" className="text-sm link-lilac">
+                  Open Press & Updates →
+                </a>
+              </article>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">
+                  Featured Writings
+                </p>
+                <div className="space-y-3">
+                  {WRITINGS_INDEX.slice(0, 3).map((item) => (
+                    <article key={item.slug} className="card-surface p-4">
+                      <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">{item.label}</p>
+                      <h4 className="font-display text-lg text-foreground mb-2">{item.title}</h4>
+                      <p className="text-sm text-foreground-muted leading-relaxed mb-2">{item.summary}</p>
+                      <a href={item.href} className="text-sm link-lilac">
+                        {item.cta}
+                      </a>
+                    </article>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">
+                  Featured Case Studies
+                </p>
+                <div className="space-y-3">
+                  {CASE_STUDIES_INDEX.slice(0, 3).map((item) => (
+                    <article key={item.slug} className="card-surface p-4">
+                      <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">{item.label}</p>
+                      <h4 className="font-display text-lg text-foreground mb-2">{item.title}</h4>
+                      <p className="text-sm text-foreground-muted leading-relaxed mb-2">{item.summary}</p>
+                      <a href={`/research/case-studies/${item.slug}`} className="text-sm link-lilac">
+                        Read full case →
+                      </a>
+                    </article>
+                  ))}
+                </div>
               </div>
             </div>
           </section>

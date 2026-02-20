@@ -55,6 +55,45 @@ export default function CaseStudyDetail() {
             </p>
           ))}
         </div>
+
+        {"signals" in entry && entry.signals ? (
+          <div className="mt-10">
+            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">
+              Observed Signals
+            </p>
+            <ul className="space-y-2 text-sm text-foreground-muted">
+              {entry.signals.map((signal) => (
+                <li key={signal}>— {signal}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+
+        {"interventions" in entry && entry.interventions ? (
+          <div className="mt-10">
+            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">
+              Governance Interventions
+            </p>
+            <ul className="space-y-2 text-sm text-foreground-muted">
+              {entry.interventions.map((item) => (
+                <li key={item}>— {item}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+
+        {"outcomes" in entry && entry.outcomes ? (
+          <div className="mt-10">
+            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">
+              Outcome Snapshot
+            </p>
+            <ul className="space-y-2 text-sm text-foreground-muted">
+              {entry.outcomes.map((item) => (
+                <li key={item}>— {item}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </section>
     </PageShell>
   );

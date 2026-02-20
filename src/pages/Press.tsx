@@ -3,21 +3,45 @@ import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 
 export default function Press() {
-  const updates = [
+  const publications = [
     {
-      label: "Team Update",
-      title: "Research Publishing Cycle",
-      body: "Rolling updates on publication milestones across benchmark studies, writing releases, and case analysis additions.",
+      label: "Published",
+      title: "Writing Library",
+      body: "Full public essays, opinions, and research notes with direct page links.",
+      href: "/research/writings",
+      cta: "Open writing library →",
     },
     {
-      label: "Media Brief",
-      title: "Institutional Summary Pack",
-      body: "Short-format briefing materials for media, board stakeholders, and policy-facing audiences.",
+      label: "Published",
+      title: "Case Studies Index",
+      body: "Full case-study pages with trajectory context, interventions, and outcome snapshots.",
+      href: "/research/case-studies",
+      cta: "Open case index →",
     },
     {
-      label: "Newsletter",
+      label: "Published",
+      title: "Reports & Releases",
+      body: "Live report-page index linking to current benchmark, architecture, and governance pages.",
+      href: "/reports",
+      cta: "Open reports page →",
+    },
+    {
+      label: "Published",
+      title: "Research Overview",
+      body: "Canonical Study I benchmark summary, methodology lineage, and glossary terms.",
+      href: "/research",
+      cta: "Open research overview →",
+    },
+  ] as const;
+
+  const forthcoming = [
+    {
       title: "Release Notes Digest",
-      body: "Periodic digest of new pages, terminology updates, and publication releases.",
+      body: "Recurring digest page is scheduled for a future publication cycle.",
+    },
+    {
+      title: "Institutional Media Brief",
+      body: "Expanded short-format media briefing page is in editorial review.",
     },
   ] as const;
 
@@ -25,42 +49,57 @@ export default function Press() {
     <PageShell>
       <PageMeta
         title="Press & Updates | Ikwe.ai"
-        description="Team updates, media information, and publication digest access."
+        description="Published communications and media routing for Ikwe.ai research releases."
         path="/research/press"
       />
       <SummaryHero
         kicker="Research Communications"
         title="Press & Updates"
-        summary="Media information, team updates, and publication-digest access are managed here."
+        summary="Published communications and release surfaces. All listed published items link to full live pages."
         highlights={[
-          "Press and media inquiry routing",
-          "Team publication updates",
-          "Publication digest updates",
+          "Published items link to full pages",
+          "Release routing for media and stakeholders",
+          "Forthcoming items marked by status only",
         ]}
         primaryAction={{ href: "/consult", label: "Request Consultation →" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
       />
 
       <section className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Communications Index</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {updates.map((item) => (
-            <article key={item.title} className="card-surface p-5">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Published Communications</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
+          {publications.map((item) => (
+            <article key={item.title} className="card-surface p-5 flex flex-col gap-3">
               <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">{item.label}</p>
               <h2 className="font-display text-lg text-foreground mb-2">{item.title}</h2>
-              <p className="text-sm text-foreground-muted leading-relaxed">{item.body}</p>
+              <p className="text-sm text-foreground-muted leading-relaxed flex-1">{item.body}</p>
+              <a href={item.href} className="text-sm link-lilac">
+                {item.cta}
+              </a>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-14 border-b border-border max-w-3xl">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Forthcoming</p>
+        <div className="space-y-0 divide-y divide-border">
+          {forthcoming.map((item) => (
+            <div key={item.title} className="py-5">
+              <p className="font-mono text-xs text-lilac mb-2">{item.title}</p>
+              <p className="text-sm text-foreground-muted leading-relaxed">{item.body}</p>
+            </div>
           ))}
         </div>
       </section>
 
       <section className="py-14 max-w-3xl">
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-          For media requests, include your outlet, deadline, and topic scope. For digest access, submit a
-          consultation request with your organization details.
+          For media requests, include your outlet, deadline, and topic scope. Consultation intake is the primary
+          channel for institutional briefings and release coordination.
         </p>
         <a href="/consult" className="text-sm link-lilac">
-          Request press or digest access →
+          Request media consultation →
         </a>
       </section>
     </PageShell>

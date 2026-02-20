@@ -19,9 +19,21 @@ export default function Reports() {
     },
     {
       label: "Live Page",
-      title: "Writings, Cases, and Press",
+      title: "Writing Library",
       href: "/research/writings",
-      desc: "Writing library with linked essays, case analyses, and press/update routing.",
+      desc: "Published essays and notes with full live pages for each writing entry.",
+    },
+    {
+      label: "Live Page",
+      title: "Case Studies",
+      href: "/research/case-studies",
+      desc: "Indexed case pages with full case-analysis detail and governance outcomes.",
+    },
+    {
+      label: "Live Page",
+      title: "Press & Updates",
+      href: "/research/press",
+      desc: "Published communications index linking directly to live public content.",
     },
     {
       label: "Live Page",
