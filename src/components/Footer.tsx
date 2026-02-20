@@ -23,7 +23,7 @@ export default function Footer() {
               Independent AI behavioral validation. EQ Safety Benchmark — Study I (2024–2025).
             </p>
             <p className="text-xs text-foreground-subtle mt-4">
-              © {new Date().getFullYear()} Visible Healing Inc.
+              © {new Date().getFullYear()} Visible Healing Inc. (dba Ikwe.ai)
             </p>
           </div>
 
