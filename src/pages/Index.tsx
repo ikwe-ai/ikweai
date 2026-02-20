@@ -32,7 +32,10 @@ export default function Home() {
                   AI behavioral risk is real, measurable, and audit-certifiable. 
                 </h1>
                 <h2> We deliver the independent third-party validation layer for AI systems that need to measure behavioral safety risk for regulators, insurers, investors, and boards. Any industry. Any deployment.</h2>
-                <p/>
+                <p
+                  className="text-lg text-foreground-muted leading-relaxed max-w-lg mb-10 fade-up"
+                  style={{ animationDelay: "160ms" }}
+                >
                   You're willing to scale AI fast. Are you willing to scale risk just as fast?
                 </p>
                 <div className="flex flex-wrap gap-4 fade-up" style={{ animationDelay: "240ms" }}>
