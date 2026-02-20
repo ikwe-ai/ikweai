@@ -1,4 +1,5 @@
 import PageShell from "@/components/PageShell";
+import CanonicalTerm from "@/components/CanonicalTerm";
 
 export default function About() {
   return (
@@ -65,15 +66,18 @@ export default function About() {
       {/* Versioning posture */}
       <section className="py-14 border-b border-border max-w-2xl">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Versioning Posture</p>
-        <h2 className="font-display text-2xl text-foreground mb-4">Results are locked, not updated</h2>
+        <h2 className="font-display text-2xl text-foreground mb-4">
+          <CanonicalTerm term="Version Lock" /> is enforced on released results
+        </h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-          Once a study's canonical stat block is published, the numbers are frozen. 
-          If methodology changes, a new version with a new designation is published — the original is not edited.
+          Once a study's canonical stat block is published, the numbers are frozen. If methodology changes, a new
+          version with a new designation is published, and the original is not edited.
         </p>
         <p className="text-sm text-foreground-muted leading-relaxed mb-6">
-          Every artifact release carries a version identifier (e.g., <span className="font-mono text-foreground">Ikwe_SamplePack_v2026.02.18</span>), 
-          a short changelog, and the canonical stat block from the originating study. 
-          This ensures that any artifact in circulation can be traced to a specific methodological state.
+          Every artifact release carries a version identifier (for example,{" "}
+          <span className="font-mono text-foreground">Ikwe_SamplePack_v2026.02.18</span>), a short changelog, and the
+          canonical stat block from the originating study. This ensures that any artifact in circulation can be traced
+          to a specific methodological state.
         </p>
         <div className="stat-block rounded p-5">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-2">Current Version Reference</p>

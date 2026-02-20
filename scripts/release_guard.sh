@@ -6,18 +6,24 @@ cd "$ROOT"
 
 errors=0
 
-echo "[1/5] Checking canonical phrasing..."
+echo "[1/6] Checking canonical phrasing..."
 if ! rg -q "54\.7% passed the Safety Gate; 45\.3% introduced harm" src/lib/content-locks.ts; then
   echo "ERROR: canonical baseline phrasing missing from src/lib/content-locks.ts"
   errors=$((errors + 1))
 fi
 
-echo "[2/5] Blocking forbidden legacy framing..."
+echo "[2/6] Blocking forbidden legacy framing..."
 for pat in \
   "54\.7% introduced emotional risk" \
   "54\.7%.*flagged for emotional risk" \
   "54\.7% failed" \
-  "54\.7% flagged"; do
+  "54\.7% flagged" \
+  "Certified Safe" \
+  "Ensures compliance" \
+  "Prevents harm" \
+  "Guarantees safety" \
+  "AI safety standard" \
+  "certifiable"; do
   if rg -n -i "$pat" . \
     --glob '*.html' --glob '*.md' --glob 'src/**/*.tsx' \
     --glob '!governance/**' --glob '!scripts/**' --glob '!dist/**' --glob '!node_modules/**' >/tmp/release_guard_forbidden.txt; then
@@ -27,7 +33,7 @@ for pat in \
   fi
 done
 
-echo "[3/5] Blocking protected implementation disclosure..."
+echo "[3/6] Blocking protected implementation disclosure..."
 for pat in \
   "Score[[:space:]]*[≤<=]+[[:space:]]*1\\.5" \
   "Score[[:space:]]*[≤<=]+[[:space:]]*2\\.5" \
@@ -45,7 +51,7 @@ for pat in \
   fi
 done
 
-echo "[4/5] Blocking raw office artifacts in public repo..."
+echo "[4/6] Blocking raw office artifacts in public repo..."
 if find . -type f \( -name '*.docx' -o -name '*.xlsx' -o -name '*.xls' -o -name '*.pptx' -o -name '*.zip' \) \
   -not -path './node_modules/*' -not -path './dist/*' >/tmp/release_guard_rawfiles.txt && [ -s /tmp/release_guard_rawfiles.txt ]; then
   echo "ERROR: raw office/archive files found in ikweai"
@@ -63,7 +69,7 @@ echo "[6/6] Scanning public PDFs for protected/forbidden phrases..."
 for pdf in public/artifacts/*.pdf; do
   [ -e "$pdf" ] || continue
   if strings "$pdf" | rg -n -i \
-    "54\\.7% introduced emotional risk|54\\.7% failed|54\\.7% flagged|Score[[:space:]]*[≤<=]+[[:space:]]*1\\.5|Score[[:space:]]*[≤<=]+[[:space:]]*2\\.5|capped at 30/100|capped at 50/100|Override thresholds|weight schema version|override rule version" \
+    "54\\.7% introduced emotional risk|54\\.7% failed|54\\.7% flagged|Certified Safe|Ensures compliance|Prevents harm|Guarantees safety|AI safety standard|certifiable|Score[[:space:]]*[≤<=]+[[:space:]]*1\\.5|Score[[:space:]]*[≤<=]+[[:space:]]*2\\.5|capped at 30/100|capped at 50/100|Override thresholds|weight schema version|override rule version" \
     >/tmp/release_guard_pdf_hits.txt; then
     echo "ERROR: protected/forbidden phrase found in PDF: $pdf"
     cat /tmp/release_guard_pdf_hits.txt
