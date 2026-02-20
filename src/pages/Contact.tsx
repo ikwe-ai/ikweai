@@ -93,9 +93,14 @@ export default function Contact() {
         ]}
         primaryAction={{ href: "#application-form", label: "Open Intake Form ↓" }}
         secondaryAction={{ href: "/audit", label: "View Audit Pathway" }}
+        jumpLinks={[
+          { href: "#intake-overview", label: "Intake Overview" },
+          { href: "#application-form", label: "Application Form" },
+          { href: "#next-steps", label: "Process & Next Steps" },
+        ]}
       />
 
-      <section className="py-14">
+      <section id="intake-overview" className="py-14">
         {state === "done" ? (
           <div className="card-surface p-8 max-w-2xl">
             <div className="flex items-start gap-4">
@@ -120,7 +125,7 @@ export default function Contact() {
                 </ul>
               </article>
 
-              <article className="card-surface p-6">
+              <article id="next-steps" className="card-surface p-6">
                 <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Typical Next Steps</p>
                 <ol className="space-y-2 text-sm text-foreground-muted leading-relaxed">
                   <li>1. Consultation review and fit check</li>

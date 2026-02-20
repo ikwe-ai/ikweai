@@ -27,6 +27,19 @@ export default function CaseStudyDetail() {
     );
   }
 
+  const jumpLinks = [
+    { href: "#case-summary", label: "Case Summary" },
+    ...(("signals" in entry && entry.signals?.length)
+      ? [{ href: "#observed-signals", label: "Observed Signals" }]
+      : []),
+    ...(("interventions" in entry && entry.interventions?.length)
+      ? [{ href: "#governance-interventions", label: "Interventions" }]
+      : []),
+    ...(("outcomes" in entry && entry.outcomes?.length)
+      ? [{ href: "#outcome-snapshot", label: "Outcomes" }]
+      : []),
+  ];
+
   return (
     <PageShell>
       <PageMeta
@@ -45,9 +58,10 @@ export default function CaseStudyDetail() {
         ]}
         primaryAction={{ href: "/research/case-studies", label: "Back to Case Index" }}
         secondaryAction={{ href: "/research/writings", label: "Back to Writing Library" }}
+        jumpLinks={jumpLinks}
       />
 
-      <section className="py-14 border-b border-border max-w-3xl">
+      <section id="case-summary" className="py-14 border-b border-border max-w-3xl article-reading">
         <div className="space-y-5">
           {entry.details.map((paragraph) => (
             <p key={paragraph} className="text-sm text-foreground-muted leading-relaxed">
@@ -57,7 +71,7 @@ export default function CaseStudyDetail() {
         </div>
 
         {"signals" in entry && entry.signals ? (
-          <div className="mt-10">
+          <div id="observed-signals" className="mt-10 scroll-mt-24">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">
               Observed Signals
             </p>
@@ -70,7 +84,7 @@ export default function CaseStudyDetail() {
         ) : null}
 
         {"interventions" in entry && entry.interventions ? (
-          <div className="mt-10">
+          <div id="governance-interventions" className="mt-10 scroll-mt-24">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">
               Governance Interventions
             </p>
@@ -83,7 +97,7 @@ export default function CaseStudyDetail() {
         ) : null}
 
         {"outcomes" in entry && entry.outcomes ? (
-          <div className="mt-10">
+          <div id="outcome-snapshot" className="mt-10 scroll-mt-24">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">
               Outcome Snapshot
             </p>

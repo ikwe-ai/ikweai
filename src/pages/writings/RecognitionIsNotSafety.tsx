@@ -21,9 +21,13 @@ export default function RecognitionIsNotSafety() {
         ]}
         primaryAction={{ href: "/research/writings", label: "Back to Writings" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
+        jumpLinks={[
+          { href: "#research-note", label: "Research Note" },
+          { href: "#author", label: "Author" },
+        ]}
       />
 
-      <section className="py-14 border-b border-border max-w-3xl">
+      <section id="research-note" className="py-14 border-b border-border max-w-3xl article-reading">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Research Note</p>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           A system can correctly detect emotional distress and still fail at behavioral safety. Recognition quality and
@@ -39,7 +43,7 @@ export default function RecognitionIsNotSafety() {
         </p>
       </section>
 
-      <section className="py-14 max-w-3xl">
+      <section id="author" className="py-14 max-w-3xl">
         <p className="text-xs text-foreground-subtle">By Stephanie Stranko</p>
       </section>
     </PageShell>

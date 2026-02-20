@@ -76,6 +76,11 @@ export default function Reports() {
         ]}
         primaryAction={{ href: "#live-reports", label: "View Live Reports ↓" }}
         secondaryAction={{ href: "#extended-reports", label: "View Extended Access" }}
+        jumpLinks={[
+          { href: "#live-reports", label: "Live Report Pages" },
+          { href: "#extended-reports", label: "Extended Access" },
+          { href: "#release-note", label: "Release Note" },
+        ]}
       />
 
       <section id="live-reports" className="py-14 border-b border-border">
@@ -139,7 +144,7 @@ export default function Reports() {
         </div>
       </section>
 
-      <section className="py-14">
+      <section id="release-note" className="py-14">
         <p className="text-xs text-foreground-subtle max-w-2xl leading-relaxed">
           Release note: Live pages are the source of truth for public language and benchmark framing.
         </p>

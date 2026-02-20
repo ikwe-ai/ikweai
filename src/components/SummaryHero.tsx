@@ -3,6 +3,11 @@ type HeroAction = {
   label: string;
 };
 
+type JumpLink = {
+  href: string;
+  label: string;
+};
+
 type SummaryHeroProps = {
   kicker: string;
   title: string;
@@ -10,6 +15,7 @@ type SummaryHeroProps = {
   highlights?: string[];
   primaryAction?: HeroAction;
   secondaryAction?: HeroAction;
+  jumpLinks?: JumpLink[];
 };
 
 export default function SummaryHero({
@@ -19,6 +25,7 @@ export default function SummaryHero({
   highlights = [],
   primaryAction,
   secondaryAction,
+  jumpLinks = [],
 }: SummaryHeroProps) {
   return (
     <section className="summary-hero pt-10 pb-8 border-b border-border">
@@ -59,6 +66,21 @@ export default function SummaryHero({
                 <p className="text-xs text-foreground-muted leading-relaxed">{item}</p>
               </div>
             ))}
+          </div>
+        ) : null}
+
+        {jumpLinks.length > 0 ? (
+          <div className="mt-5 max-w-3xl">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-foreground-subtle mb-2">
+              On This Page
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {jumpLinks.map((item) => (
+                <a key={item.href} href={item.href} className="summary-jump">
+                  {item.label}
+                </a>
+              ))}
+            </div>
           </div>
         ) : null}
       </div>

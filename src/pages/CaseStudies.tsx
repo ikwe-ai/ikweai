@@ -22,6 +22,9 @@ export default function CaseStudies() {
         ]}
         primaryAction={{ href: "#cases", label: "View Case Index ↓" }}
         secondaryAction={{ href: "/research/writings", label: "Back to Writing Library" }}
+        jumpLinks={[
+          { href: "#cases", label: "Case Index" },
+        ]}
       />
 
       <section id="cases" className="py-14 border-b border-border">

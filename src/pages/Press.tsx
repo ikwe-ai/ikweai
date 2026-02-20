@@ -63,9 +63,14 @@ export default function Press() {
         ]}
         primaryAction={{ href: "/consult", label: "Request Consultation →" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
+        jumpLinks={[
+          { href: "#published-communications", label: "Published" },
+          { href: "#upcoming-communications", label: "Upcoming" },
+          { href: "#media-routing", label: "Media Routing" },
+        ]}
       />
 
-      <section className="py-14 border-b border-border">
+      <section id="published-communications" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Published Communications</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
           {publications.map((item) => (
@@ -81,7 +86,7 @@ export default function Press() {
         </div>
       </section>
 
-      <section className="py-14 border-b border-border max-w-3xl">
+      <section id="upcoming-communications" className="py-14 border-b border-border max-w-3xl">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Upcoming</p>
         <div className="space-y-0 divide-y divide-border">
           {upcoming.map((item) => (
@@ -93,7 +98,7 @@ export default function Press() {
         </div>
       </section>
 
-      <section className="py-14 max-w-3xl">
+      <section id="media-routing" className="py-14 max-w-3xl">
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
           For media requests, include your outlet, deadline, and topic scope. Consultation intake is the primary
           channel for institutional briefings and release coordination.

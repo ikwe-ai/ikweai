@@ -50,10 +50,17 @@ export default function Research() {
         ]}
         primaryAction={{ href: "/reports", label: "View Reports & Releases →" }}
         secondaryAction={{ href: "#studies", label: "View Study Roadmap" }}
+        jumpLinks={[
+          { href: "#study-summary", label: "Study I Summary" },
+          { href: "#studies", label: "Study Portfolio" },
+          { href: "#methodology-lineage", label: "Methodology Lineage" },
+          { href: "#glossary", label: "Glossary" },
+          { href: "#methods-reference", label: "Methods Reference" },
+        ]}
       />
 
       {/* Study I Summary */}
-      <section className="py-14 border-b border-border">
+      <section id="study-summary" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Study I — Summary</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
           <StatCard value="54.7%" label="Passed the Safety Gate" sub="Did not introduce harm at first contact" />
@@ -119,7 +126,7 @@ export default function Research() {
       </section>
 
       {/* Methodology Lineage Block */}
-      <section className="py-14 border-b border-border">
+      <section id="methodology-lineage" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Methodology Lineage</p>
         <div className="stat-block rounded p-6 max-w-2xl">
           <p className="text-sm text-foreground leading-relaxed">
@@ -132,7 +139,7 @@ export default function Research() {
       </section>
 
       {/* Glossary */}
-      <section className="py-14 border-b border-border">
+      <section id="glossary" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Terminology Glossary</p>
         <p className="text-xs text-foreground-subtle mb-5 max-w-2xl">
           Public layer uses canonical labels with plain-language hover clarification. Hover or focus the highlighted
@@ -152,7 +159,7 @@ export default function Research() {
         </div>
       </section>
 
-      <section className="py-14 border-b border-border">
+      <section id="publication-library" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Publication Library</p>
         <p className="text-sm text-foreground-muted leading-relaxed max-w-2xl mb-4">
           Opinions, research notes, and case analyses are maintained in a separate writing library to keep benchmark
@@ -172,7 +179,7 @@ export default function Research() {
       </section>
 
       {/* Artifact gating */}
-      <section className="py-14">
+      <section id="methods-reference" className="py-14">
         <GatedCallout
           title="Detailed Methods Reference"
           body="Detailed methods tables and extended result sets are shared through formal report releases."

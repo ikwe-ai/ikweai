@@ -22,6 +22,11 @@ export default function WritingLibrary() {
         ]}
         primaryAction={{ href: "#writings", label: "View Writings ↓" }}
         secondaryAction={{ href: "#case-analyses", label: "View Case Analyses" }}
+        jumpLinks={[
+          { href: "#writings", label: "Writings" },
+          { href: "#case-analyses", label: "Case Analyses" },
+          { href: "#press-updates", label: "Press & Updates" },
+        ]}
       />
 
       <section id="writings" className="py-14 border-b border-border">
@@ -92,7 +97,7 @@ export default function WritingLibrary() {
         </div>
       </section>
 
-      <section className="py-14">
+      <section id="press-updates" className="py-14">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">Press & Updates</p>
         <p className="text-sm text-foreground-muted leading-relaxed max-w-2xl mb-4">
           Team media notes, release updates, and newsletter-style publication updates are published in the Research

@@ -21,10 +21,17 @@ export default function BeforeTheViolation() {
         ]}
         primaryAction={{ href: "/research/writings", label: "Back to Writings" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
+        jumpLinks={[
+          { href: "#harm-begins", label: "Harm Begins" },
+          { href: "#intervention-window", label: "Intervention Window" },
+          { href: "#trajectory-governance", label: "Trajectory Governance" },
+          { href: "#harm-floors", label: "Harm Floors" },
+          { href: "#conclusion", label: "Conclusion" },
+        ]}
       />
 
-      <section className="py-14 border-b border-border max-w-3xl">
-        <h2 className="font-display text-2xl text-foreground mb-4">Harm Begins Inside Ordinary Interaction</h2>
+      <section className="py-14 border-b border-border max-w-3xl article-reading">
+        <h2 id="harm-begins" className="font-display text-2xl text-foreground mb-4 scroll-mt-24">Harm Begins Inside Ordinary Interaction</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           AI safety conversations often center on catastrophic capability: whether a model can execute extreme harmful
           actions at scale. That framing is important, but most real-world harm in deployed systems starts earlier.
@@ -36,7 +43,7 @@ export default function BeforeTheViolation() {
           misses the intervention moment that matters most.
         </p>
 
-        <h2 className="font-display text-2xl text-foreground mb-4 mt-10">The Intervention Window</h2>
+        <h2 id="intervention-window" className="font-display text-2xl text-foreground mb-4 mt-10 scroll-mt-24">The Intervention Window</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           Between apparently safe behavior and explicit violation, there is a measurable window where an interaction can
           still be redirected. This is where harm floors operate: minimum enforceable safety behavior before a
@@ -47,7 +54,7 @@ export default function BeforeTheViolation() {
           becoming while risk is still manageable.
         </p>
 
-        <h2 className="font-display text-2xl text-foreground mb-4 mt-10">Capability vs. Trajectory Governance</h2>
+        <h2 id="trajectory-governance" className="font-display text-2xl text-foreground mb-4 mt-10 scroll-mt-24">Capability vs. Trajectory Governance</h2>
         <div className="space-y-3 text-sm text-foreground-muted leading-relaxed mb-5">
           <p>
             <strong className="text-foreground">Capability governance asks:</strong> What can the model do?
@@ -61,7 +68,7 @@ export default function BeforeTheViolation() {
           </p>
         </div>
 
-        <h2 className="font-display text-2xl text-foreground mb-4 mt-10">Harm Floors, Not Perfection</h2>
+        <h2 id="harm-floors" className="font-display text-2xl text-foreground mb-4 mt-10 scroll-mt-24">Harm Floors, Not Perfection</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           A harm floor is a minimum enforceable threshold of interaction safety. It does not claim perfection; it
           prevents known failure classes from scaling unnoticed.
@@ -75,7 +82,7 @@ export default function BeforeTheViolation() {
           <li>6. Audit logging</li>
         </ol>
 
-        <h2 className="font-display text-2xl text-foreground mb-4 mt-10">Conclusion</h2>
+        <h2 id="conclusion" className="font-display text-2xl text-foreground mb-4 mt-10 scroll-mt-24">Conclusion</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           Safety review should begin before deployment and continue after deployment through scheduled re-evaluation.
           Without that cadence, organizations measure communication quality while missing behavior risk.

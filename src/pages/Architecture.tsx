@@ -76,10 +76,16 @@ export default function Architecture() {
         ]}
         primaryAction={{ href: "/reports", label: "View Reports & Releases →" }}
         secondaryAction={{ href: "/consult", label: "Request Consultation" }}
+        jumpLinks={[
+          { href: "#pipeline", label: "Pipeline" },
+          { href: "#control-terms", label: "Control Terms" },
+          { href: "#public-scope", label: "Public Scope" },
+          { href: "#architecture-access", label: "Access" },
+        ]}
       />
 
       {/* Pipeline overview */}
-      <section className="py-14 border-b border-border">
+      <section id="pipeline" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Evaluation Pipeline</p>
         <div className="space-y-0 max-w-2xl">
           {pipeline.map(({ step, title, body }) => (
@@ -94,7 +100,7 @@ export default function Architecture() {
         </div>
       </section>
 
-      <section className="py-14 border-b border-border">
+      <section id="control-terms" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Control Terms</p>
         <div className="space-y-2 text-sm text-foreground-muted max-w-2xl">
           <p>
@@ -113,7 +119,7 @@ export default function Architecture() {
       </section>
 
       {/* What's not here */}
-      <section className="py-14 border-b border-border">
+      <section id="public-scope" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Public Scope</p>
         <p className="text-sm text-foreground-muted max-w-xl leading-relaxed mb-6">
           This page provides public architecture framing. Detailed technical specification sets are released through
@@ -136,7 +142,7 @@ export default function Architecture() {
       </section>
 
       {/* CTA */}
-      <section className="py-14">
+      <section id="architecture-access" className="py-14">
         <GatedCallout
           title="Detailed Architecture Documentation"
           body="Extended architecture documentation is distributed through formal report releases. For audit access and scope review, use consultation intake."

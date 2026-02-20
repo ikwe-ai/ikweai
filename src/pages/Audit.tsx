@@ -36,9 +36,13 @@ export default function Audit() {
         ]}
         primaryAction={{ href: "/consult", label: "Request Consultation →" }}
         secondaryAction={{ href: "/reports", label: "View Reports & Releases" }}
+        jumpLinks={[
+          { href: "#audit-structure", label: "Audit Structure" },
+          { href: "#audit-next-steps", label: "Next Steps" },
+        ]}
       />
 
-      <section className="py-14 border-b border-border">
+      <section id="audit-structure" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Audit Structure</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {tracks.map((track) => (
@@ -50,7 +54,7 @@ export default function Audit() {
         </div>
       </section>
 
-      <section className="py-14 max-w-3xl">
+      <section id="audit-next-steps" className="py-14 max-w-3xl">
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
           This page describes the current public audit pathway. Final scope, timeline, and report package are confirmed
           during consultation.

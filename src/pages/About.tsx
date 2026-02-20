@@ -22,10 +22,16 @@ export default function About() {
         ]}
         primaryAction={{ href: "/consult", label: "Contact Governance Team →" }}
         secondaryAction={{ href: "/reports", label: "View Reports & Releases" }}
+        jumpLinks={[
+          { href: "#independence", label: "Independence" },
+          { href: "#coi-policy", label: "COI Policy" },
+          { href: "#operating-principles", label: "Operating Principles" },
+          { href: "#versioning", label: "Versioning" },
+        ]}
       />
 
       {/* Independence */}
-      <section className="py-14 border-b border-border max-w-2xl">
+      <section id="independence" className="py-14 border-b border-border max-w-2xl">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Independence</p>
         <h2 className="font-display text-2xl text-foreground mb-4">No commercial affiliations</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
@@ -43,7 +49,7 @@ export default function About() {
       </section>
 
       {/* COI Policy */}
-      <section className="py-14 border-b border-border max-w-2xl">
+      <section id="coi-policy" className="py-14 border-b border-border max-w-2xl">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Conflict of Interest Policy</p>
         <div className="space-y-0 divide-y divide-border">
           {[
@@ -73,7 +79,7 @@ export default function About() {
       </section>
 
       {/* Operating principles */}
-      <section className="py-14 border-b border-border max-w-2xl">
+      <section id="operating-principles" className="py-14 border-b border-border max-w-2xl">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Operating Principles</p>
         <div className="space-y-0 divide-y divide-border">
           {[
@@ -103,7 +109,7 @@ export default function About() {
       </section>
 
       {/* Versioning posture */}
-      <section className="py-14 border-b border-border max-w-2xl">
+      <section id="versioning" className="py-14 border-b border-border max-w-2xl">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Versioning Posture</p>
         <h2 className="font-display text-2xl text-foreground mb-4">
           <CanonicalTerm term="Version Lock" /> is enforced on released results

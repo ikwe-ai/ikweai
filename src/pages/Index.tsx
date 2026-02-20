@@ -54,6 +54,11 @@ export default function Home() {
                     View Study I
                   </Link>
                 </div>
+                <div className="flex flex-wrap gap-2 mt-5 fade-up" style={{ animationDelay: "280ms" }}>
+                  <a href="#study-reference" className="summary-jump">Study Reference</a>
+                  <a href="#what-we-do" className="summary-jump">What We Do</a>
+                  <a href="#publication-library" className="summary-jump">Publication Library</a>
+                </div>
               </div>
 
               {/* Right — StatSplit card */}
@@ -64,7 +69,7 @@ export default function Home() {
           </section>
 
           {/* Positioning strip */}
-          <section className="border-t border-border py-6">
+          <section id="program-phases" className="border-t border-border py-6">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div className="flex flex-wrap gap-x-8 gap-y-3">
                 {[
@@ -89,7 +94,7 @@ export default function Home() {
           </section>
 
           {/* Study I metrics (row summary below hero) */}
-          <section className="pb-14 border-t border-border pt-10">
+          <section id="study-reference" className="pb-14 border-t border-border pt-10">
             {/* Locked stat block */}
             <div className="stat-block rounded p-5 mb-8">
               <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-2">Canonical Reference</p>
@@ -105,7 +110,7 @@ export default function Home() {
           </section>
 
           {/* What we do */}
-          <section className="pb-14 border-t border-border pt-10">
+          <section id="what-we-do" className="pb-14 border-t border-border pt-10">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-10">
               Compliance infrastructure · Research moat
             </p>
@@ -136,7 +141,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="pb-14 border-t border-border pt-10">
+          <section id="publication-library" className="pb-14 border-t border-border pt-10">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-10">
               Publication Library
             </p>

@@ -21,10 +21,17 @@ export default function AIGovernanceCompliance() {
         ]}
         primaryAction={{ href: "/research/writings", label: "Back to Writings" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
+        jumpLinks={[
+          { href: "#trust-layer-thesis", label: "Thesis" },
+          { href: "#risk-instrumentation", label: "Instrumentation" },
+          { href: "#compliance-problem", label: "Compliance" },
+          { href: "#confidence-risk", label: "Confidence Risk" },
+          { href: "#trust-layer", label: "Trust Layer" },
+        ]}
       />
 
-      <section className="py-14 border-b border-border max-w-3xl">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">
+      <section className="py-14 border-b border-border max-w-3xl article-reading">
+        <p id="trust-layer-thesis" className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6 scroll-mt-24">
           Trust-Layer Thesis
         </p>
 
@@ -33,7 +40,7 @@ export default function AIGovernanceCompliance() {
           look compliant, but whether the operating organization can demonstrate consistent and auditable oversight.
         </p>
 
-        <h2 className="font-display text-2xl text-foreground mb-4 mt-10">
+        <h2 id="risk-instrumentation" className="font-display text-2xl text-foreground mb-4 mt-10 scroll-mt-24">
           From Output Monitoring to Behavioral Risk Instrumentation
         </h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
@@ -46,7 +53,7 @@ export default function AIGovernanceCompliance() {
           incidents.
         </p>
 
-        <h2 className="font-display text-2xl text-foreground mb-4 mt-10">Why This Is a Compliance Problem</h2>
+        <h2 id="compliance-problem" className="font-display text-2xl text-foreground mb-4 mt-10 scroll-mt-24">Why This Is a Compliance Problem</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           Regulatory and enterprise governance frameworks increasingly require evidence of risk management, monitoring,
           documentation, and human oversight controls. That means governance programs need operational records, not
@@ -57,7 +64,7 @@ export default function AIGovernanceCompliance() {
           applied, and how decisions are traceable over time.
         </p>
 
-        <h2 className="font-display text-2xl text-foreground mb-4 mt-10">
+        <h2 id="confidence-risk" className="font-display text-2xl text-foreground mb-4 mt-10 scroll-mt-24">
           Confidence Without Governance Is Risk
         </h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
@@ -66,7 +73,7 @@ export default function AIGovernanceCompliance() {
           reliance shift and trigger safeguards before the interaction crosses a harm boundary.
         </p>
 
-        <h2 className="font-display text-2xl text-foreground mb-4 mt-10">The Trust Layer</h2>
+        <h2 id="trust-layer" className="font-display text-2xl text-foreground mb-4 mt-10 scroll-mt-24">The Trust Layer</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           A trust layer is the operational bridge between policy intent and verifiable execution. It combines signal
           tracking, intervention rules, and release discipline into a system that can be reviewed by risk, audit, and

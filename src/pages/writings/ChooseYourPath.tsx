@@ -21,10 +21,16 @@ export default function ChooseYourPath() {
         ]}
         primaryAction={{ href: "/research/writings", label: "Back to Writings" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
+        jumpLinks={[
+          { href: "#long-arc", label: "Long Arc" },
+          { href: "#interruption", label: "Interruption" },
+          { href: "#integrity-compounds", label: "Integrity Compounds" },
+          { href: "#the-question", label: "The Question" },
+        ]}
       />
 
-      <section className="py-14 border-b border-border max-w-3xl">
-        <h2 className="font-display text-2xl text-foreground mb-4">The Long Arc</h2>
+      <section className="py-14 border-b border-border max-w-3xl article-reading">
+        <h2 id="long-arc" className="font-display text-2xl text-foreground mb-4 scroll-mt-24">The Long Arc</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           Institutions are not defined by single announcements. They are defined by repeated operating choices.
           Distortion repeated over time becomes system behavior. Integrity repeated over time becomes trust.
@@ -33,7 +39,7 @@ export default function ChooseYourPath() {
           This is why governance work is cumulative. The visible event is usually late. The pattern forms earlier.
         </p>
 
-        <h2 className="font-display text-2xl text-foreground mb-4 mt-10">Interruption</h2>
+        <h2 id="interruption" className="font-display text-2xl text-foreground mb-4 mt-10 scroll-mt-24">Interruption</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           Interruption is the moment when an organization refuses to continue a known-risk path. In practice, that can
           mean tightening escalation thresholds, changing release controls, or setting clearer operational boundaries.
@@ -43,7 +49,7 @@ export default function ChooseYourPath() {
           incidents become irreversible.
         </p>
 
-        <h2 className="font-display text-2xl text-foreground mb-4 mt-10">Integrity Compounds</h2>
+        <h2 id="integrity-compounds" className="font-display text-2xl text-foreground mb-4 mt-10 scroll-mt-24">Integrity Compounds</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           Harm is often cumulative. Repair follows the same rule. One corrected decision creates capacity for the next
           corrected decision. Over time, that creates a different operating identity.
@@ -53,7 +59,7 @@ export default function ChooseYourPath() {
           time.
         </p>
 
-        <h2 className="font-display text-2xl text-foreground mb-4 mt-10">The Question</h2>
+        <h2 id="the-question" className="font-display text-2xl text-foreground mb-4 mt-10 scroll-mt-24">The Question</h2>
         <p className="text-sm text-foreground-muted leading-relaxed">
           What are you building that can survive reality? Better systems are not declared. They are constructed through
           consistent choices.

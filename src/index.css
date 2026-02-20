@@ -75,6 +75,10 @@
     scroll-behavior: smooth;
   }
 
+  :target {
+    scroll-margin-top: 6.25rem;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
@@ -232,6 +236,33 @@
     border: 1px solid hsl(var(--border));
     border-radius: var(--radius);
     padding: 10px 12px;
+  }
+
+  .summary-jump {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid hsl(var(--border));
+    border-radius: 999px;
+    padding: 5px 10px;
+    font-size: 0.72rem;
+    color: hsl(var(--foreground-muted));
+    transition: border-color 0.15s, color 0.15s, background-color 0.15s;
+  }
+
+  .summary-jump:hover {
+    border-color: hsl(var(--lilac) / 0.35);
+    color: hsl(var(--foreground));
+    background: hsl(var(--lilac) / 0.08);
+  }
+
+  .article-reading p {
+    font-size: 1rem;
+    line-height: 1.82;
+  }
+
+  .article-reading li {
+    font-size: 1rem;
+    line-height: 1.72;
   }
 
   /* Input field */
