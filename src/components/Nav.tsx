@@ -94,7 +94,7 @@ const hubs: Hub[] = [
       { label: "Trust & Confidentiality", path: "/trust" },
       { label: "Architecture", path: "/technology/architecture" },
     ],
-    ctaLabel: "Request Audit Intake →",
+    ctaLabel: "Request Audit →",
     ctaPath: "/request-audit#application-form",
   },
   {
@@ -171,7 +171,7 @@ const hubs: Hub[] = [
   },
   {
     id: "consultation",
-    label: "Consult",
+    label: "Consultation",
     path: "/consult",
     desc: "Consultation context and intake support for audit requests.",
     children: [
@@ -194,7 +194,7 @@ const hubs: Hub[] = [
     asideHeading: "Consultation Context",
     asideBody: "Consultation remains available for scope alignment after audit request intake.",
     asideLinks: [
-      { label: "Request Audit Intake", path: "/request-audit#application-form" },
+      { label: "Request Audit", path: "/request-audit#application-form" },
       { label: "Audit Pathway", path: "/audit" },
       { label: "Outputs Hub", path: "/outputs" },
       { label: "Research Overview", path: "/research" },

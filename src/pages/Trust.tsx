@@ -32,7 +32,7 @@ export default function Trust() {
           "Independent third-party evaluation posture",
         ]}
         primaryAction={{ href: "#handling-boundary", label: "View Handling Boundary ↓" }}
-        secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit Intake" }}
+        secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
         jumpLinks={[
           { href: "#information-needs", label: "Information Needs" },
           { href: "#handling-boundary", label: "Public vs Protected" },

@@ -44,7 +44,7 @@ export default function Home() {
                     className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
                     style={{ fontFamily: "var(--font-body)" }}
                   >
-                    Request Audit Intake →
+                    Request Audit →
                   </a>
                   <Link
                     to="/eq-safety-benchmark"

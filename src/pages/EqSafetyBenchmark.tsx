@@ -20,7 +20,7 @@ export default function EqSafetyBenchmark() {
           "n=948 responses across 79 scenarios",
           "Safety Gate + dimensional scoring structure",
         ]}
-        primaryAction={{ href: "/request-audit#application-form", label: "Request Audit Intake →" }}
+        primaryAction={{ href: "/request-audit#application-form", label: "Request Audit →" }}
         secondaryAction={{ href: "/outputs", label: "View Outputs & Transparency" }}
         jumpLinks={[
           { href: "#eqsb-metrics", label: "Baseline Metrics" },
@@ -98,7 +98,7 @@ export default function EqSafetyBenchmark() {
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Request Audit Intake →
+            Request Audit →
           </a>
           <a
             href="/research"

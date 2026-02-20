@@ -62,7 +62,7 @@ export default function Reports() {
           "Gated access for detailed artifact sets",
         ]}
         primaryAction={{ href: "#public-previews", label: "View Public Previews ↓" }}
-        secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit Intake" }}
+        secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
         jumpLinks={[
           { href: "#public-previews", label: "Public Previews" },
           { href: "#artifact-schema", label: "Artifact Schema" },
