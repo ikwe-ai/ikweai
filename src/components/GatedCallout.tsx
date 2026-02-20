@@ -10,8 +10,8 @@ interface GatedCalloutProps {
 
 export default function GatedCallout({
   title = "Report Distribution",
-  body = "Sample packs and PDF reports are shared as versioned releases to keep public references consistent.",
-  ctaLabel = "Request Current Report Pack →",
+  body = "Public pages show output structure. Protected documentation is shared through controlled access workflows.",
+  ctaLabel = "Open Outputs & Transparency →",
   ctaPath = "/outputs",
 }: GatedCalloutProps) {
   return (

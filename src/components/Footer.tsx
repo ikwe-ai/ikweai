@@ -11,8 +11,9 @@ export default function Footer() {
             </p>
             <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm">
               <Link to="/research" className="text-foreground-muted hover:text-foreground transition-colors">Research</Link>
-              <Link to="/outputs" className="text-foreground-muted hover:text-foreground transition-colors">Reports</Link>
+              <Link to="/outputs" className="text-foreground-muted hover:text-foreground transition-colors">Outputs</Link>
               <Link to="/technology/architecture" className="text-foreground-muted hover:text-foreground transition-colors">Architecture</Link>
+              <Link to="/trust" className="text-foreground-muted hover:text-foreground transition-colors">Trust</Link>
               <Link to="/about" className="text-foreground-muted hover:text-foreground transition-colors">About</Link>
               <Link to="/consult" className="text-foreground-muted hover:text-foreground transition-colors">Consultation</Link>
             </div>
@@ -62,7 +63,7 @@ export default function Footer() {
                 Architecture
               </Link>
               <Link to="/outputs" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
-                Reports &amp; Releases
+                Outputs &amp; Transparency
               </Link>
             </nav>
           </div>
@@ -73,6 +74,9 @@ export default function Footer() {
             <nav className="flex flex-col gap-2.5">
               <Link to="/about" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 About &amp; Independence
+              </Link>
+              <Link to="/trust" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                Trust &amp; Confidentiality
               </Link>
               <Link to="/consult" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Consultation
