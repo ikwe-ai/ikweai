@@ -43,7 +43,7 @@ export default function Nav() {
       }`}
     >
       <div className="container mx-auto max-w-6xl px-6">
-        <div className="flex h-14 items-center justify-between gap-6">
+        <div className="flex h-16 items-center justify-between gap-4">
 
           {/* Logo + Wordmark */}
           <Link
@@ -64,33 +64,35 @@ export default function Nav() {
           </Link>
 
           {/* Desktop nav links */}
-          <nav className="hidden md:flex items-center gap-5 flex-1">
-            {routes.map((r) => {
-              const active = location.pathname === r.path;
-              return (
-                <Link
-                  key={r.path}
-                  to={r.path}
-                  className={`text-sm transition-colors whitespace-nowrap ${
-                    active
-                      ? "text-lilac"
-                      : "text-foreground-muted hover:text-foreground"
-                  }`}
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  {r.label}
-                </Link>
-              );
-            })}
+          <nav className="hidden md:flex items-center justify-center flex-1 min-w-0">
+            <div className="inline-flex items-center gap-1 rounded-full border border-border bg-background-card/70 p-1">
+              {routes.map((r) => {
+                const active = location.pathname === r.path;
+                return (
+                  <Link
+                    key={r.path}
+                    to={r.path}
+                    className={`rounded-full px-3 py-1.5 text-sm transition-colors whitespace-nowrap ${
+                      active
+                        ? "bg-lilac/15 text-lilac"
+                        : "text-foreground-muted hover:text-foreground"
+                    }`}
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    {r.label}
+                  </Link>
+                );
+              })}
+            </div>
           </nav>
 
-          {/* Request Audit CTA */}
+          {/* Consultation CTA */}
           <a
-            href="/audit"
-            className="hidden md:inline-flex items-center gap-1.5 shrink-0 rounded border border-lilac/30 px-4 py-1.5 text-xs font-medium text-lilac uppercase tracking-widest hover:bg-lilac/10 transition-colors"
+            href="/consult"
+            className="hidden md:inline-flex items-center gap-1.5 shrink-0 rounded bg-lilac px-4 py-2 text-xs font-medium text-primary-foreground uppercase tracking-widest hover:bg-lilac-glow transition-colors"
             style={{ fontFamily: "var(--font-mono)" }}
           >
-            Request Audit
+            Start Consult
           </a>
 
           {/* Mobile toggle */}
@@ -108,15 +110,15 @@ export default function Nav() {
       {/* Mobile menu */}
       {open && (
         <div className="md:hidden nav-blur border-t border-border">
-          <nav className="container mx-auto max-w-6xl px-6 py-5 flex flex-col gap-4">
+          <nav className="container mx-auto max-w-6xl px-6 py-5 flex flex-col gap-3">
             {routes.map((r) => {
               const active = location.pathname === r.path;
               return (
                 <Link
                   key={r.path}
                   to={r.path}
-                  className={`text-sm py-1 border-b border-border/50 pb-3 ${
-                    active ? "text-lilac" : "text-foreground-muted"
+                  className={`rounded border px-3 py-2 text-sm ${
+                    active ? "border-lilac/40 text-lilac bg-lilac/10" : "border-border text-foreground-muted"
                   }`}
                 >
                   {r.label}
@@ -125,11 +127,11 @@ export default function Nav() {
             })}
             {/* CTA in mobile menu */}
             <a
-              href="/audit"
-              className="mt-2 inline-flex items-center justify-center rounded border border-lilac/40 px-4 py-2.5 text-xs font-medium text-lilac uppercase tracking-widest hover:bg-lilac/10 transition-colors self-start"
+              href="/consult"
+              className="mt-2 inline-flex w-full items-center justify-center rounded bg-lilac px-4 py-2.5 text-xs font-medium text-primary-foreground uppercase tracking-widest hover:bg-lilac-glow transition-colors"
               style={{ fontFamily: "var(--font-mono)" }}
             >
-              Request Audit →
+              Start Consultation →
             </a>
           </nav>
         </div>

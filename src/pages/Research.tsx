@@ -34,7 +34,7 @@ export default function Research() {
 
   const writings = [
     {
-      label: "Founder Writing · Published",
+      label: "Opinion · Published",
       title: "Before the Violation",
       href: "/research/writings/before-the-violation",
       cta: "Read full writing →",
@@ -47,7 +47,7 @@ export default function Research() {
       ],
     },
     {
-      label: "Founder Writing · In Preparation (Public Abstract)",
+      label: "Research Note · In Preparation (Public Abstract)",
       title: "Recognition Is Not Safety",
       href: "/research/writings/recognition-is-not-safety",
       cta: "Read full abstract →",
@@ -201,11 +201,11 @@ export default function Research() {
         </div>
       </section>
 
-      {/* Founder writings */}
+      {/* Writing library */}
       <section id="writings" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Founder Writings</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Writing Library</p>
         <p className="text-xs text-foreground-subtle mb-5 max-w-2xl">
-          Each writing includes an excerpt and links to a full content page.
+          Opinions, research notes, and case-oriented writing are published here with links to full content pages.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
           {writings.map((writing) => (
@@ -220,7 +220,7 @@ export default function Research() {
                   </p>
                 ))}
               </div>
-              <p className="text-xs text-foreground-subtle">By Stephanie Stranko</p>
+              <p className="text-xs text-foreground-subtle">By Stephanie Stranko · Ikwe.ai Research</p>
               <a href={writing.href} className="text-sm link-lilac">
                 {writing.cta}
               </a>
