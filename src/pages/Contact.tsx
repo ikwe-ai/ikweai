@@ -47,15 +47,32 @@ export default function Contact() {
         "form-name": "evaluation-application",
         ...form,
       });
-      await fetch("/", {
+      const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: body.toString(),
       });
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
       setState("done");
     } catch {
       setState("error");
     }
+  };
+
+  const startGuidedIntake = () => {
+    setForm((prev) => ({
+      ...prev,
+      domain: prev.domain || "Healthcare",
+      timeline: prev.timeline || "1–3 months",
+      what_they_need:
+        prev.what_they_need ||
+        "Independent behavioral safety audit scope, risk posture baseline, and governance-ready reporting for institutional review.",
+    }));
+
+    const node = document.getElementById("application-form");
+    node?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -115,11 +132,11 @@ export default function Contact() {
               <article className="card-surface p-6">
                 <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Prefer Guided Intake?</p>
                 <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-                  If you want a quick overview before submitting details, review the audit pathway first.
+                  Use a guided prefill to start with a standard intake baseline, then edit before submitting.
                 </p>
-                <a href="/audit" className="text-sm link-lilac">
-                  Open audit pathway →
-                </a>
+                <button type="button" onClick={startGuidedIntake} className="text-sm link-lilac">
+                  Start guided intake →
+                </button>
               </article>
             </div>
 
@@ -128,9 +145,13 @@ export default function Contact() {
               onSubmit={handleSubmit}
               name="evaluation-application"
               data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              method="POST"
+              action="/"
               className="card-surface p-6 space-y-5 lg:sticky lg:top-24"
             >
               <input type="hidden" name="form-name" value="evaluation-application" />
+              <input type="hidden" name="bot-field" />
               <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest">Intake Form</p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -238,9 +259,14 @@ export default function Contact() {
               </button>
 
               {state === "error" && (
-                <p className="text-xs text-red-500">
-                  Submission failed. Please try again or email us directly.
-                </p>
+                <div className="space-y-2">
+                  <p className="text-xs text-red-500">
+                    Submission failed. Please retry, or email us directly.
+                  </p>
+                  <a href="mailto:research@ikwe.ai" className="text-xs link-lilac">
+                    Email research@ikwe.ai →
+                  </a>
+                </div>
               )}
 
               <p className="text-xs text-foreground-subtle">
