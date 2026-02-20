@@ -2,7 +2,7 @@ import { useState } from "react";
 import PageShell from "@/components/PageShell";
 import { CheckCircle2 } from "lucide-react";
 
-type FormState = "idle" | "submitting" | "done";
+type FormState = "idle" | "submitting" | "done" | "error";
 
 const domains = [
   "Healthcare",
@@ -37,10 +37,23 @@ export default function Contact() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setState("submitting");
-    setTimeout(() => setState("done"), 1200);
+    try {
+      const body = new URLSearchParams({
+        "form-name": "evaluation-application",
+        ...form,
+      });
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+      setState("done");
+    } catch {
+      setState("error");
+    }
   };
 
   return (
@@ -69,7 +82,13 @@ export default function Contact() {
             </p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-6 max-w-lg">
+          <form
+            onSubmit={handleSubmit}
+            name="evaluation-application"
+            data-netlify="true"
+            className="space-y-6 max-w-lg"
+          >
+            <input type="hidden" name="form-name" value="evaluation-application" />
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest">Evaluation Application</p>
 
             {/* Name + Email */}
@@ -180,6 +199,12 @@ export default function Contact() {
             >
               {state === "submitting" ? "Submitting…" : "Apply for Evaluation"}
             </button>
+
+            {state === "error" && (
+              <p className="text-xs text-red-500">
+                Submission failed. Please try again or email us directly.
+              </p>
+            )}
 
             <p className="text-xs text-foreground-subtle">
               Applications are reviewed selectively. We work with a small number of clients at any given time.

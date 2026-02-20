@@ -21,14 +21,14 @@ export default function Home() {
                   className="font-display text-4xl md:text-5xl text-foreground mb-6 leading-tight fade-up"
                   style={{ animationDelay: "80ms" }}
                 >
-                  You're willing to scale AI fast. Are you willing to scale risk just as fast?
+                  Behavioral safety in AI systems is measurable. Study I establishes an independent baseline.
                 </h1>
                 <p
                   className="text-lg text-foreground-muted leading-relaxed max-w-lg mb-10 fade-up"
                   style={{ animationDelay: "160ms" }}
                 >
-                  Ikwe.ai runs independent behavioral safety evaluations for high-trust environments. 
-                  Our EQ Safety Benchmark quantifies failure modes across 79 real-world scenarios.
+                  Ikwe.ai conducts independent behavioral safety evaluations for AI systems in high-trust environments.
+                  The EQ Safety Benchmark covers 79 real-world scenarios across n=948 evaluated responses.
                 </p>
                 <div className="flex flex-wrap gap-4 fade-up" style={{ animationDelay: "240ms" }}>
                   <Link

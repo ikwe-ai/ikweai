@@ -31,11 +31,23 @@ export default function Reports() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setState("submitting");
-    // Simulate submission — replace with real endpoint when ready
-    setTimeout(() => setState("done"), 1200);
+    try {
+      const body = new URLSearchParams({
+        "form-name": "artifact-request",
+        ...form,
+      });
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+      setState("done");
+    } catch {
+      setState("error");
+    }
   };
 
   return (
@@ -81,7 +93,13 @@ export default function Reports() {
             </p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-6 max-w-lg">
+          <form
+            onSubmit={handleSubmit}
+            name="artifact-request"
+            data-netlify="true"
+            className="space-y-6 max-w-lg"
+          >
+            <input type="hidden" name="form-name" value="artifact-request" />
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest">Request Form</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -182,6 +200,12 @@ export default function Reports() {
             >
               {state === "submitting" ? "Submitting…" : "Submit Request"}
             </button>
+
+            {state === "error" && (
+              <p className="text-xs text-red-500">
+                Submission failed. Please try again or email us directly.
+              </p>
+            )}
 
             <p className="text-xs text-foreground-subtle">
               Requests are manually reviewed. Ikwe.ai reserves the right to decline distribution without explanation.

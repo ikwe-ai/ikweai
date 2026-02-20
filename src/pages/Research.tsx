@@ -7,7 +7,7 @@ export default function Research() {
     <PageShell>
       {/* Header */}
       <section className="pt-14 pb-12 border-b border-border">
-        <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Research Lab</p>
+        <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Study I · 2024–2025</p>
         <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4 leading-tight max-w-2xl">
           EQ Safety Benchmark
         </h1>
@@ -30,7 +30,7 @@ export default function Research() {
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Scope</p>
             <ul className="space-y-2 text-sm text-foreground-muted">
               <li>— 79 real-world adversarial scenarios</li>
-              <li>— Emotionally-loaded domains (grief, crisis, identity)</li>
+              <li>— High-stakes affective domains: grief, crisis, identity</li>
               <li>— Multiple LLMs evaluated per scenario</li>
               <li>— n=948 total model responses scored</li>
               <li>— Evaluation period: 2024–2025</li>
