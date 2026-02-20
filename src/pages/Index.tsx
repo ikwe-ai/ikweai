@@ -21,7 +21,7 @@ export default function Home() {
                   className="font-display text-4xl md:text-5xl text-foreground mb-6 leading-tight fade-up"
                   style={{ animationDelay: "80ms" }}
                 >
-                  Behavioral safety in AI systems is measurable. Study I establishes an independent baseline.
+                  AI behavioral risk is real, measurable, and now certifiable. We build the independent proof.
                 </h1>
                 <p
                   className="text-lg text-foreground-muted leading-relaxed max-w-lg mb-10 fade-up"
