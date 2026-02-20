@@ -4,6 +4,8 @@ type PageMetaProps = {
   title: string;
   description: string;
   path: string;
+  noIndex?: boolean;
+  ogImagePath?: string;
 };
 
 function upsertMetaByName(name: string, content: string) {
@@ -36,18 +38,47 @@ function upsertCanonical(url: string) {
   tag.setAttribute("href", url);
 }
 
-export default function PageMeta({ title, description, path }: PageMetaProps) {
+const SITE_URL = "https://ikwe.ai";
+const DEFAULT_OG_IMAGE = "/ikwe-og.png";
+
+function toAbsolute(pathOrUrl: string) {
+  if (pathOrUrl.startsWith("http://") || pathOrUrl.startsWith("https://")) {
+    return pathOrUrl;
+  }
+  return `${SITE_URL}${pathOrUrl.startsWith("/") ? pathOrUrl : `/${pathOrUrl}`}`;
+}
+
+export default function PageMeta({
+  title,
+  description,
+  path,
+  noIndex = false,
+  ogImagePath = DEFAULT_OG_IMAGE,
+}: PageMetaProps) {
   useEffect(() => {
-    const absoluteUrl = `https://ikwe.ai${path}`;
+    const absolutePath = path.startsWith("/") ? path : `/${path}`;
+    const absoluteUrl = `${SITE_URL}${absolutePath}`;
+    const absoluteImage = toAbsolute(ogImagePath);
+    const robotsValue = noIndex ? "noindex,nofollow" : "index,follow";
+
     document.title = title;
     upsertMetaByName("description", description);
+    upsertMetaByName("robots", robotsValue);
+    upsertMetaByName("theme-color", "#141218");
+    upsertMetaByName("twitter:card", "summary_large_image");
     upsertMetaByName("twitter:title", title);
     upsertMetaByName("twitter:description", description);
+    upsertMetaByName("twitter:image", absoluteImage);
+    upsertMetaByName("twitter:url", absoluteUrl);
     upsertMetaByProperty("og:title", title);
     upsertMetaByProperty("og:description", description);
     upsertMetaByProperty("og:url", absoluteUrl);
+    upsertMetaByProperty("og:type", "website");
+    upsertMetaByProperty("og:site_name", "Ikwe.ai");
+    upsertMetaByProperty("og:image", absoluteImage);
+    upsertMetaByProperty("og:image:alt", "Ikwe.ai brand image");
     upsertCanonical(absoluteUrl);
-  }, [title, description, path]);
+  }, [title, description, path, noIndex, ogImagePath]);
 
   return null;
 }
