@@ -65,7 +65,7 @@ export default function Reports() {
         secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
         jumpLinks={[
           { href: "#public-previews", label: "Public Previews" },
-          { href: "#artifact-schema", label: "Artifact Schema" },
+          { href: "#artifact-schema", label: "Data Structure" },
           { href: "#transparency-boundary", label: "Boundary" },
           { href: "#request-access", label: "Request Path" },
         ]}
@@ -100,18 +100,18 @@ export default function Reports() {
       </section>
 
       <section id="artifact-schema" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Artifact Structure Example</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Deliverable Data Structure</p>
         <div className="card-surface p-6 max-w-3xl">
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-            Example fields shown for transparency. This schema preview demonstrates output structure and delivery format.
+            Public field layout shown for transparency. This schema reflects the standard structure used in released deliverables.
           </p>
           <pre className="rounded border border-border bg-background/40 p-4 text-xs text-foreground-muted overflow-x-auto">
 {`{
   "artifact_type": "board_brief",
-  "release_version": "YYYY.MM.DD",
-  "run_id": "run_XXXX",
-  "model_version": "declared_by_client",
-  "scenario_pack_version": "locked_reference",
+  "release_version": "2026.02.20",
+  "run_id": "study1-release-q1",
+  "model_version": "client-declared-production",
+  "scenario_pack_version": "eqsb-study-i-v1-0",
   "output_sections": [
     "risk_summary",
     "dimension_snapshot",
