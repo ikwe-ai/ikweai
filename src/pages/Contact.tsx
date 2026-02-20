@@ -2,6 +2,7 @@ import { useState } from "react";
 import PageShell from "@/components/PageShell";
 import { CheckCircle2 } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
+import SummaryHero from "@/components/SummaryHero";
 
 type FormState = "idle" | "submitting" | "done" | "error";
 
@@ -64,17 +65,18 @@ export default function Contact() {
         description="Submit your AI system for independent behavioral safety risk evaluation in high-trust domains."
         path="/contact"
       />
-      {/* Header */}
-      <section className="pt-14 pb-12 border-b border-border">
-        <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Intake</p>
-        <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4 leading-tight max-w-2xl">
-          Apply for Evaluation
-        </h1>
-        <p className="text-base text-foreground-muted max-w-xl leading-relaxed">
-          Submit your system for consideration. We evaluate AI deployments in high-trust environments — 
-          healthcare, HR, finance, legal, and adjacent domains.
-        </p>
-      </section>
+      <SummaryHero
+        kicker="Intake"
+        title="Apply for Evaluation"
+        summary="Submit your system for consideration. We evaluate AI deployments in high-trust environments, including healthcare, HR, finance, legal, and adjacent domains."
+        highlights={[
+          "Selective intake and scoped evaluation",
+          "Independent review posture",
+          "Institutional governance documentation",
+        ]}
+        primaryAction={{ href: "#application-form", label: "Start Application ↓" }}
+        secondaryAction={{ href: "/reports", label: "View Available Artifacts" }}
+      />
 
       {/* Form */}
       <section className="py-14">
@@ -89,6 +91,7 @@ export default function Contact() {
           </div>
         ) : (
           <form
+            id="application-form"
             onSubmit={handleSubmit}
             name="evaluation-application"
             data-netlify="true"

@@ -1,6 +1,7 @@
 import PageShell from "@/components/PageShell";
 import CanonicalTerm from "@/components/CanonicalTerm";
 import PageMeta from "@/components/PageMeta";
+import SummaryHero from "@/components/SummaryHero";
 
 export default function About() {
   return (
@@ -10,16 +11,18 @@ export default function About() {
         description="Institutional independence, conflict-of-interest policy, and version-lock governance for benchmark releases."
         path="/about"
       />
-      {/* Header */}
-      <section className="pt-14 pb-12 border-b border-border">
-        <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Institutional Posture</p>
-        <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4 leading-tight max-w-2xl">
-          About Ikwe.ai
-        </h1>
-        <p className="text-base text-foreground-muted max-w-xl leading-relaxed">
-          Independence, conflict-of-interest policy, and versioning posture.
-        </p>
-      </section>
+      <SummaryHero
+        kicker="Institutional Posture"
+        title="About Ikwe.ai"
+        summary="Ikwe.ai is an independent behavioral AI evaluation organization. This page defines our conflict posture, release governance, and publication discipline."
+        highlights={[
+          "No financial ties to evaluated model developers",
+          "Version-locked release policy",
+          "Structured disclosure and COI recusal practices",
+        ]}
+        primaryAction={{ href: "/contact", label: "Contact Governance Team →" }}
+        secondaryAction={{ href: "/reports", label: "Request Governance Artifacts" }}
+      />
 
       {/* Independence */}
       <section className="py-14 border-b border-border max-w-2xl">
@@ -59,6 +62,36 @@ export default function About() {
             {
               label: "Disclosure updates",
               text: "COI disclosures are updated with each study. Any change to our funding or affiliation posture will be disclosed in the study versioning notes.",
+            },
+          ].map(({ label, text }) => (
+            <div key={label} className="py-5">
+              <p className="font-mono text-xs text-lilac mb-1.5">{label}</p>
+              <p className="text-sm text-foreground-muted leading-relaxed">{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Operating principles */}
+      <section className="py-14 border-b border-border max-w-2xl">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Operating Principles</p>
+        <div className="space-y-0 divide-y divide-border">
+          {[
+            {
+              label: "Adversarial posture",
+              text: "Evaluations are structured to test failure conditions, not best-case prompt outcomes. We do not allow evaluated parties to define benchmark pass criteria.",
+            },
+            {
+              label: "Publication discipline",
+              text: "Public materials provide framework clarity without exposing protected implementation mechanics. Sensitive scoring internals remain gated by policy.",
+            },
+            {
+              label: "Evidence traceability",
+              text: "Each release is versioned with changelog context so external reviewers can attribute language and numbers to a specific methodological state.",
+            },
+            {
+              label: "No guarantees",
+              text: "We measure behavioral safety risk and support governance review. We do not claim guaranteed safety, guaranteed compliance, or guaranteed harm prevention.",
             },
           ].map(({ label, text }) => (
             <div key={label} className="py-5">
