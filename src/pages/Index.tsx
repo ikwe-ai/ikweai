@@ -15,7 +15,7 @@ export default function Home() {
               {/* Left — copy + CTAs */}
               <div>
                 <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-6 fade-up">
-                  Independent AI Safety Research
+                  Independent AI Behavioral Validation
                 </p>
                 <h1
                   className="font-display text-4xl md:text-5xl text-foreground mb-6 leading-tight fade-up"
@@ -27,17 +27,17 @@ export default function Home() {
                   className="text-lg text-foreground-muted leading-relaxed max-w-lg mb-10 fade-up"
                   style={{ animationDelay: "160ms" }}
                 >
-                  Ikwe.ai conducts independent behavioral safety evaluations for AI systems in high-trust environments.
-                  The EQ Safety Benchmark covers 79 real-world scenarios across n=948 evaluated responses.
+                  The independent third-party validation layer for AI systems that need to prove behavioral safety —
+                  to regulators, insurers, investors, and boards. Any industry. Any deployment.
                 </p>
                 <div className="flex flex-wrap gap-4 fade-up" style={{ animationDelay: "240ms" }}>
-                  <Link
-                    to="/contact"
+                  <a
+                    href="/consult"
                     className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
                     style={{ fontFamily: "var(--font-body)" }}
                   >
-                    Apply for Evaluation →
-                  </Link>
+                    Request an Independent Audit →
+                  </a>
                   <Link
                     to="/research"
                     className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
@@ -51,6 +51,31 @@ export default function Home() {
               {/* Right — StatSplit card */}
               <div className="fade-up" style={{ animationDelay: "300ms" }}>
                 <StatSplit />
+              </div>
+            </div>
+          </section>
+
+          {/* Positioning strip */}
+          <section className="border-t border-border py-6">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div className="flex flex-wrap gap-x-8 gap-y-3">
+                {[
+                  { phase: "Phase 1", label: "Audit & Certification" },
+                  { phase: "Phase 2", label: "Continuous Monitoring" },
+                  { phase: "Phase 3", label: "API Risk Layer" },
+                ].map((item) => (
+                  <div key={item.phase} className="flex items-center gap-2">
+                    <span className="font-mono text-xs text-lilac uppercase tracking-widest">{item.phase}</span>
+                    <span className="font-mono text-xs text-foreground-subtle">—</span>
+                    <span className="font-mono text-xs text-foreground-muted">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-lilac" />
+                <span className="font-mono text-xs text-foreground-subtle uppercase tracking-widest">
+                  Independent · Third-party verified
+                </span>
               </div>
             </div>
           </section>
@@ -73,26 +98,29 @@ export default function Home() {
 
           {/* What we do */}
           <section className="pb-20 border-t border-border pt-14">
+            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-10">
+              Compliance infrastructure · Research moat
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
-                <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-3">Evaluation</p>
-                <h3 className="font-display text-xl text-foreground mb-2">Structured adversarial testing</h3>
+                <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-3">Audit</p>
+                <h3 className="font-display text-xl text-foreground mb-2">Structured adversarial certification</h3>
                 <p className="text-sm text-foreground-muted leading-relaxed">
-                  79 real-world scenarios across emotionally-loaded domains. Each run is scored against the SSF taxonomy and EQSB v2.1 Safety Gate.
+                  79 real-world scenarios across emotionally-loaded domains. Each run is scored against the SSF taxonomy and EQSB v2.1 Safety Gate — producing a verifiable audit artifact.
+                </p>
+              </div>
+              <div>
+                <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-3">Monitoring</p>
+                <h3 className="font-display text-xl text-foreground mb-2">Continuous behavioral surveillance</h3>
+                <p className="text-sm text-foreground-muted leading-relaxed">
+                  Post-deployment monitoring tracks behavioral drift across model versions. Organizations receive ongoing evidence for regulatory audits, insurance renewals, and board reporting.
                 </p>
               </div>
               <div>
                 <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-3">Independence</p>
                 <h3 className="font-display text-xl text-foreground mb-2">No commercial affiliations</h3>
                 <p className="text-sm text-foreground-muted leading-relaxed">
-                  Ikwe.ai has no financial or operational relationships with any AI developer evaluated. Results are published without sponsor review.
-                </p>
-              </div>
-              <div>
-                <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-3">Versioning</p>
-                <h3 className="font-display text-xl text-foreground mb-2">Version-controlled releases</h3>
-                <p className="text-sm text-foreground-muted leading-relaxed">
-                  All artifacts ship with a version number, changelog, and canonical stat block so published findings can never drift from source data.
+                  Ikwe.ai has no financial or operational relationships with any AI developer evaluated. Results are never shared with evaluated parties before publication.
                 </p>
               </div>
             </div>
