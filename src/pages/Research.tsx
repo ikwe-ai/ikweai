@@ -13,7 +13,7 @@ export default function Research() {
       title: "Study I — EQ Safety Benchmark Baseline (2024–2025)",
       body:
         "Canonical baseline release with locked headline metrics and documented methodology lineage.",
-      cta: "Request released artifacts →",
+      cta: "View live reports →",
       href: "/reports",
     },
     {
@@ -42,7 +42,7 @@ export default function Research() {
       <SummaryHero
         kicker="Study I · 2024–2025"
         title="EQ Safety Benchmark"
-        summary="Study I summary, methodology lineage, and terminology. All data is locked to the canonical stat block."
+        summary="Study I summary, methodology lineage, and terminology. Public metrics follow the canonical Study I reference line."
         highlights={[
           "n=948 model responses scored",
           "79 scenarios across high-stakes contexts",
@@ -118,7 +118,7 @@ export default function Research() {
         </p>
       </section>
 
-      {/* Methodology Lineage Block — LOCKED */}
+      {/* Methodology Lineage Block */}
       <section className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Methodology Lineage</p>
         <div className="stat-block rounded p-6 max-w-2xl">
@@ -127,7 +127,7 @@ export default function Research() {
           </p>
         </div>
         <p className="text-xs text-foreground-subtle mt-4 max-w-lg">
-          This block is the canonical methodology statement. It appears verbatim in all artifact releases and cross-references.
+          This block is the canonical methodology statement used across published benchmark pages.
         </p>
       </section>
 
@@ -174,9 +174,9 @@ export default function Research() {
       {/* Artifact gating */}
       <section className="py-14">
         <GatedCallout
-          title="Full Methodology & Scenario Library"
-          body="Detailed scoring thresholds, scenario descriptions, and individual model results are available as version-controlled artifact releases. Samples and PDFs are distributed to ensure accuracy."
-          ctaLabel="Request the current sample pack →"
+          title="Detailed Methods Reference"
+          body="Detailed methods tables and extended result sets are shared through formal report releases."
+          ctaLabel="Request the current report pack →"
         />
       </section>
     </PageShell>

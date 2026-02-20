@@ -8,7 +8,7 @@ export default function About() {
     <PageShell>
       <PageMeta
         title="About — Independence & Governance | Ikwe.ai"
-        description="Institutional independence, conflict-of-interest policy, and version-lock governance for benchmark releases."
+        description="Institutional independence, conflict-of-interest policy, and versioned governance for benchmark releases."
         path="/about"
       />
       <SummaryHero
@@ -17,7 +17,7 @@ export default function About() {
         summary="Ikwe.ai is an independent behavioral AI evaluation organization. This page defines our conflict posture, release governance, and publication discipline."
         highlights={[
           "No financial ties to evaluated model developers",
-          "Version-locked release policy",
+          "Versioned release policy",
           "Structured disclosure and COI recusal practices",
         ]}
         primaryAction={{ href: "/consult", label: "Contact Governance Team →" }}
@@ -57,7 +57,7 @@ export default function About() {
             },
             {
               label: "Artifact review",
-              text: "No evaluated party reviews or approves published findings, artifact copy, or canonical stat blocks before release.",
+              text: "No evaluated party reviews or approves published findings, release copy, or canonical stat blocks before publication.",
             },
             {
               label: "Disclosure updates",
@@ -113,9 +113,9 @@ export default function About() {
           version with a new designation is published, and the original is not edited.
         </p>
         <p className="text-sm text-foreground-muted leading-relaxed mb-6">
-          Every artifact release carries a version identifier (for example,{" "}
+          Every report release carries a version identifier (for example,{" "}
           <span className="font-mono text-foreground">Ikwe_SamplePack_v2026.02.18</span>), a short changelog, and the
-          canonical stat block from the originating study. This ensures that any artifact in circulation can be traced
+          canonical stat block from the originating study. This ensures that any published release can be traced
           to a specific methodological state.
         </p>
         <div className="stat-block rounded p-5">

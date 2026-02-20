@@ -121,11 +121,11 @@ export default function Architecture() {
         </p>
         <ul className="space-y-2 text-sm text-foreground-muted max-w-lg">
           {[
-            "Safety Gate violation definition set",
-            "Dimension-weight and sub-rubric specification tables",
-            "Per-model outcome breakdown tables",
-            "Scenario-library record set",
-            "Scorecard threshold calibration sheets",
+            "Detailed Safety Gate definition tables",
+            "Dimension weight and scoring reference tables",
+            "Model-level outcome detail tables",
+            "Scenario catalog records",
+            "Expanded score calibration references",
           ].map((item) => (
             <li key={item} className="flex gap-3">
               <span className="text-foreground-subtle shrink-0">—</span>

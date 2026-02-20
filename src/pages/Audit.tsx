@@ -52,7 +52,7 @@ export default function Audit() {
 
       <section className="py-14 max-w-3xl">
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-          This page describes the current public audit pathway. Final scope, timeline, and artifact set are confirmed
+          This page describes the current public audit pathway. Final scope, timeline, and report package are confirmed
           during consultation.
         </p>
         <a href="/consult" className="text-sm link-lilac">
