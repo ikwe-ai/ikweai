@@ -89,7 +89,7 @@ export default function Nav() {
   return (
     <header
       ref={headerRef}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         scrolled ? "nav-blur" : "bg-transparent"
       }`}
     >
@@ -127,11 +127,7 @@ export default function Nav() {
                 Home
               </Link>
 
-              <div
-                className="relative"
-                onMouseEnter={() => setMegaOpen(true)}
-                onMouseLeave={() => setMegaOpen(false)}
-              >
+              <div className="relative">
                 <button
                   type="button"
                   onClick={() => setMegaOpen((v) => !v)}
@@ -139,6 +135,7 @@ export default function Nav() {
                     researchActive ? "bg-lilac/15 text-lilac" : "text-foreground-muted hover:text-foreground"
                   }`}
                   style={{ fontFamily: "var(--font-body)" }}
+                  aria-haspopup="menu"
                   aria-expanded={megaOpen}
                   aria-controls="research-mega-menu"
                 >
@@ -147,7 +144,12 @@ export default function Nav() {
                 </button>
 
                 {megaOpen && (
-                  <div id="research-mega-menu" className="mega-panel">
+                  <div
+                    id="research-mega-menu"
+                    className="mega-panel"
+                    role="menu"
+                    aria-label="Research menu"
+                  >
                     <div className="grid grid-cols-2 gap-6">
                       <div>
                         <p className="font-mono text-[10px] uppercase tracking-widest text-foreground-subtle mb-3">
