@@ -61,20 +61,20 @@ export default function Contact() {
   return (
     <PageShell>
       <PageMeta
-        title="Apply for Evaluation | Ikwe.ai"
-        description="Submit your AI system for independent behavioral safety risk evaluation in high-trust domains."
+        title="Request Consultation | Ikwe.ai"
+        description="Request a consultation for independent behavioral safety risk evaluation in high-trust domains."
         path="/contact"
       />
       <SummaryHero
-        kicker="Intake"
-        title="Apply for Evaluation"
-        summary="Submit your system for consideration. We evaluate AI deployments in high-trust environments, including healthcare, HR, finance, legal, and adjacent domains."
+        kicker="Consultation Intake"
+        title="Request Consultation"
+        summary="Share your system context and goals. We review consultation requests for AI deployments in high-trust environments."
         highlights={[
-          "Selective intake and scoped evaluation",
+          "Selective intake and scoped consultation",
           "Independent review posture",
           "Institutional governance documentation",
         ]}
-        primaryAction={{ href: "#application-form", label: "Start Application ↓" }}
+        primaryAction={{ href: "#application-form", label: "Start Consultation Request ↓" }}
         secondaryAction={{ href: "/reports", label: "View Available Artifacts" }}
       />
 
@@ -83,9 +83,9 @@ export default function Contact() {
         {state === "done" ? (
           <div className="flex flex-col items-start gap-4 max-w-lg">
             <CheckCircle2 size={32} className="text-lilac" />
-            <h2 className="font-display text-2xl text-foreground">Application received</h2>
+            <h2 className="font-display text-2xl text-foreground">Request received</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              We review all applications and respond selectively. If your system is a strong candidate, 
+              We review all requests and respond selectively. If your system is a strong candidate, 
               you'll hear from us within 5 business days.
             </p>
           </div>
@@ -98,7 +98,7 @@ export default function Contact() {
             className="space-y-6 max-w-lg"
           >
             <input type="hidden" name="form-name" value="evaluation-application" />
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest">Evaluation Application</p>
+            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest">Consultation Request</p>
 
             {/* Name + Email */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -206,7 +206,7 @@ export default function Contact() {
               className="rounded bg-lilac px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors disabled:opacity-50"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              {state === "submitting" ? "Submitting…" : "Apply for Evaluation"}
+              {state === "submitting" ? "Submitting…" : "Submit Consultation Request"}
             </button>
 
             {state === "error" && (
@@ -216,7 +216,7 @@ export default function Contact() {
             )}
 
             <p className="text-xs text-foreground-subtle">
-              Applications are reviewed selectively. We work with a small number of clients at any given time.
+              Requests are reviewed selectively. We work with a small number of clients at any given time.
             </p>
           </form>
         )}
