@@ -84,9 +84,9 @@ export default function Nav() {
             })}
           </nav>
 
-          {/* Request Audit CTA — links to /consult (static page, not React route) */}
+          {/* Request Audit CTA */}
           <a
-            href="/consult"
+            href="/audit"
             className="hidden md:inline-flex items-center gap-1.5 shrink-0 rounded border border-lilac/30 px-4 py-1.5 text-xs font-medium text-lilac uppercase tracking-widest hover:bg-lilac/10 transition-colors"
             style={{ fontFamily: "var(--font-mono)" }}
           >
@@ -125,7 +125,7 @@ export default function Nav() {
             })}
             {/* CTA in mobile menu */}
             <a
-              href="/consult"
+              href="/audit"
               className="mt-2 inline-flex items-center justify-center rounded border border-lilac/40 px-4 py-2.5 text-xs font-medium text-lilac uppercase tracking-widest hover:bg-lilac/10 transition-colors self-start"
               style={{ fontFamily: "var(--font-mono)" }}
             >

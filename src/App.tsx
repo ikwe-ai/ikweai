@@ -13,6 +13,7 @@ import Reports from "./pages/Reports";
 import Architecture from "./pages/Architecture";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Audit from "./pages/Audit";
 import NotFound from "./pages/NotFound";
 import BeforeTheViolation from "./pages/writings/BeforeTheViolation";
 import RecognitionIsNotSafety from "./pages/writings/RecognitionIsNotSafety";
@@ -34,11 +35,11 @@ const App = () => (
           <Route path="/technology/architecture" element={<Architecture />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/audit" element={<Audit />} />
           <Route path="/research/writings/before-the-violation" element={<BeforeTheViolation />} />
           <Route path="/research/writings/recognition-is-not-safety" element={<RecognitionIsNotSafety />} />
 
           {/* Legacy redirects */}
-          <Route path="/audit" element={<Navigate to="/research" replace />} />
           <Route path="/proof" element={<Navigate to="/research#case-studies" replace />} />
           <Route path="/inquiry" element={<Navigate to="/contact" replace />} />
           <Route path="/case-studies" element={<Navigate to="/research#case-studies" replace />} />
