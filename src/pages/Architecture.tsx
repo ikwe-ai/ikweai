@@ -99,7 +99,7 @@ export default function Architecture() {
         <div className="space-y-2 text-sm text-foreground-muted max-w-2xl">
           <p>
             <CanonicalTerm term="PASS_QUALITY" /> and <CanonicalTerm term="FAIL_DIAGNOSTIC" /> route outputs into
-            quality scoring or diagnostic-only handling.
+            quality scoring or review-only handling.
           </p>
           <p>
             <CanonicalTerm term="Severity Cap" /> and <CanonicalTerm term="Override Logic" /> apply governance
