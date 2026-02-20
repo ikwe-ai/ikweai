@@ -9,9 +9,9 @@ interface GatedCalloutProps {
 }
 
 export default function GatedCallout({
-  title = "Artifact Distribution",
-  body = "Samples and PDFs are distributed as version-controlled releases to ensure accuracy. Request the current sample pack.",
-  ctaLabel = "Request Current Release →",
+  title = "Report Distribution",
+  body = "Sample packs and PDF reports are shared as versioned releases to keep public references consistent.",
+  ctaLabel = "Request Current Report Pack →",
   ctaPath = "/reports",
 }: GatedCalloutProps) {
   return (
