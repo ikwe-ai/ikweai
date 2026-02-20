@@ -29,14 +29,14 @@ export default function Home() {
                   className="font-display text-3xl md:text-5xl text-foreground mb-5 leading-tight fade-up max-w-xl"
                   style={{ animationDelay: "80ms" }}
                 >
-                  AI behavioral risk is real, measurable, and now auditable. We build the independent proof.
+                  Behavioral safety compliance you can prove.
                 </h1>
                 <p
                   className="text-base md:text-lg text-foreground-muted leading-relaxed max-w-lg mb-8 fade-up"
                   style={{ animationDelay: "160ms" }}
                 >
-                  The independent third-party validation layer for AI systems that need to measure behavioral safety
-                  risk for regulators, insurers, investors, and boards. Any industry. Any deployment.
+                  Independent third-party evaluation for institutions that need board-ready and insurance-ready
+                  behavioral safety evidence without exposing protected implementation internals.
                 </p>
                 <div className="flex flex-wrap gap-4 fade-up" style={{ animationDelay: "240ms" }}>
                   <a
@@ -66,11 +66,12 @@ export default function Home() {
                   <div className="flex flex-wrap gap-2 mb-3">
                     <a href="#study-reference" className="summary-jump">Study Reference</a>
                     <a href="#what-we-do" className="summary-jump">What We Do</a>
+                    <a href="#proof-artifacts" className="summary-jump">Proof Artifacts</a>
                     <a href="#publication-library" className="summary-jump">Publication Library</a>
                   </div>
                   <div className="space-y-1.5">
                     <a href="/research" className="block text-sm link-lilac">Open Research Overview →</a>
-                    <a href="/outputs" className="block text-sm link-lilac">Open Reports & Releases →</a>
+                    <a href="/outputs" className="block text-sm link-lilac">Open Outputs & Transparency →</a>
                     <a href="/consult" className="block text-sm link-lilac">Open Consultation Intake →</a>
                   </div>
                 </div>
@@ -148,6 +149,46 @@ export default function Home() {
                   Ikwe.ai has no financial or operational relationships with any AI developer evaluated. Results are never shared with evaluated parties before publication.
                 </p>
               </div>
+            </div>
+          </section>
+
+          <section id="proof-artifacts" className="pb-14 border-t border-border pt-10">
+            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-10">
+              Proof Artifacts (Public Preview)
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+              {[
+                {
+                  title: "Board Brief",
+                  body: "Executive risk summary format with governance-next-step framing.",
+                },
+                {
+                  title: "Risk Scorecard",
+                  body: "Dimension snapshot format for institutional review context.",
+                },
+                {
+                  title: "Evidence Pack Index",
+                  body: "Versioned index format for release references and audit traceability.",
+                },
+                {
+                  title: "Drift Alert",
+                  body: "Monitoring alert format for changed behavioral risk patterns.",
+                },
+              ].map((item) => (
+                <article key={item.title} className="card-surface p-4">
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Public</p>
+                  <h3 className="font-display text-lg text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-foreground-muted leading-relaxed">{item.body}</p>
+                </article>
+              ))}
+            </div>
+            <p className="text-xs text-foreground-subtle max-w-3xl">
+              Public pages show output standards and structure. Detailed scenario content and implementation specifics
+              remain protected and are distributed only through controlled workflows.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <a href="/outputs" className="text-sm link-lilac">Open Outputs Hub →</a>
+              <a href="/trust" className="text-sm link-lilac">View Trust & Confidentiality →</a>
             </div>
           </section>
 
