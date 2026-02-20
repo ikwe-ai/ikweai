@@ -36,6 +36,8 @@ export default function Research() {
     {
       label: "Founder Writing · Published",
       title: "Before the Violation",
+      href: "/research/writings/before-the-violation",
+      cta: "Read full writing →",
       summary:
         "Why behavioral safety must be measured before visible policy failure, not only after it.",
       excerpt: [
@@ -47,6 +49,8 @@ export default function Research() {
     {
       label: "Founder Writing · In Preparation (Public Abstract)",
       title: "Recognition Is Not Safety",
+      href: "/research/writings/recognition-is-not-safety",
+      cta: "Read full abstract →",
       summary:
         "A note on the distinction between emotional recognition quality and behavioral safety outcomes.",
       excerpt: [
@@ -201,7 +205,7 @@ export default function Research() {
       <section id="writings" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Founder Writings</p>
         <p className="text-xs text-foreground-subtle mb-5 max-w-2xl">
-          Published writing appears directly on this page. Related research materials are listed in the reports library.
+          Each writing includes an excerpt and links to a full content page.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
           {writings.map((writing) => (
@@ -217,6 +221,9 @@ export default function Research() {
                 ))}
               </div>
               <p className="text-xs text-foreground-subtle">By Stephanie Stranko</p>
+              <a href={writing.href} className="text-sm link-lilac">
+                {writing.cta}
+              </a>
             </article>
           ))}
         </div>
