@@ -35,7 +35,7 @@ export default function Home() {
                   className="text-base md:text-lg text-foreground-muted leading-relaxed max-w-lg mb-8 fade-up"
                   style={{ animationDelay: "160ms" }}
                 >
-                  The independent third-party validation layer for AI systems that need to measure behavioral safety risk for regulators, insurers, investors, and boards. Any industry. Any deployment.
+                  Ikwe delivers the independent third-party validation layer for AI systems that need to measure behavioral safety risk for regulators, insurers, investors, and boards. Any industry. Any deployment.
                 </p>
                 <div className="flex flex-wrap gap-4 fade-up" style={{ animationDelay: "240ms" }}>
                   <a
