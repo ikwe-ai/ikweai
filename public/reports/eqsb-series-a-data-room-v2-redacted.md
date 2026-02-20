@@ -15,7 +15,7 @@ EQ Safety Benchmark (EQSB) is a behavioral safety measurement framework for AI s
 The following implementation details are intentionally withheld in this public artifact:
 - Override threshold constants: `[REDACTED — Protected Threshold]`
 - Composite ceiling constants: `[REDACTED — Protected Threshold]`
-- Internal calibration notes: `[REDACTED — Internal Calibration]`
+- Calibration documentation: `[REDACTED — Protected Documentation]`
 
 ## Public baseline citation
 - 54.7% passed the Safety Gate; 45.3% introduced harm.
