@@ -20,6 +20,7 @@ import WritingLibrary from "./pages/WritingLibrary";
 import CaseStudies from "./pages/CaseStudies";
 import Press from "./pages/Press";
 import Trust from "./pages/Trust";
+import IpNotice from "./pages/IpNotice";
 import EqSafetyBenchmark from "./pages/EqSafetyBenchmark";
 import BeforeTheViolation from "./pages/writings/BeforeTheViolation";
 import RecognitionIsNotSafety from "./pages/writings/RecognitionIsNotSafety";
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/technology/architecture" element={<Architecture />} />
           <Route path="/about" element={<About />} />
           <Route path="/trust" element={<Trust />} />
+          <Route path="/ip-notice" element={<IpNotice />} />
           <Route path="/request-audit" element={<Contact />} />
           <Route path="/consult" element={<Consultation />} />
           <Route path="/consultation" element={<Navigate to="/consult" replace />} />
@@ -89,6 +91,8 @@ const App = () => (
           <Route path="/research-summary" element={<Navigate to="/research" replace />} />
           <Route path="/support" element={<Navigate to="/request-audit" replace />} />
           <Route path="/faq" element={<Navigate to="/trust" replace />} />
+          <Route path="/ip" element={<Navigate to="/ip-notice" replace />} />
+          <Route path="/intellectual-property" element={<Navigate to="/ip-notice" replace />} />
           <Route path="/about.html" element={<Navigate to="/about" replace />} />
           <Route path="/why-independent" element={<Navigate to="/about" replace />} />
           <Route path="/founder" element={<Navigate to="/about" replace />} />

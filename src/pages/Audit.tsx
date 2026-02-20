@@ -156,7 +156,7 @@ export default function Audit() {
           </article>
           <article className="card-surface p-5">
             <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-2">Monitoring Infrastructure</p>
-            <h3 className="font-display text-2xl text-foreground">$175K–$250K ARR / endpoint</h3>
+            <h3 className="font-display text-2xl text-foreground">$175K–$250K per endpoint / year</h3>
           </article>
         </div>
         <p className="text-xs text-foreground-subtle mt-4">

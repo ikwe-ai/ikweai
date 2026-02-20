@@ -88,6 +88,9 @@ export default function Footer() {
               <Link to="/consult" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Consultation
               </Link>
+              <Link to="/ip-notice" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                IP Notice
+              </Link>
               <a href="/request-audit#application-form" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Request Audit
               </a>
