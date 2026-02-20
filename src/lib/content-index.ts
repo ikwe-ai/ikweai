@@ -5,6 +5,8 @@ export const WRITINGS_INDEX = [
     title: "Before the Violation",
     href: "/research/writings/before-the-violation",
     cta: "Read full writing →",
+    sourceHref: "https://ladyinvsible.medium.com/",
+    sourceLabel: "Original source on Medium (author profile) ↗",
     summary: "Why behavioral safety must be measured before visible policy failure, not only after it.",
     excerpt: [
       "Most organizations still treat behavioral failure as a post-incident problem. That delay is the governance gap. By the time a visible violation appears, institutional trust has already been consumed.",
@@ -17,6 +19,8 @@ export const WRITINGS_INDEX = [
     title: "AI Governance Is Becoming a Compliance Issue",
     href: "/research/writings/ai-governance-is-becoming-a-compliance-issue",
     cta: "Read full essay →",
+    sourceHref: "https://ladyinvsible.medium.com/",
+    sourceLabel: "Original source on Medium (author profile) ↗",
     summary:
       "A trust-layer thesis on why governance now requires auditable behavioral instrumentation and evidence discipline.",
     excerpt: [
@@ -30,6 +34,8 @@ export const WRITINGS_INDEX = [
     title: "Choose Your Path",
     href: "/research/writings/choose-your-path",
     cta: "Read full essay →",
+    sourceHref: "https://ladyinvsible.medium.com/",
+    sourceLabel: "Original source on Medium (author profile) ↗",
     summary:
       "An essay on interruption, cumulative risk, and how institutional trust is built through repeated operational choices.",
     excerpt: [

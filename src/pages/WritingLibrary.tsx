@@ -40,9 +40,21 @@ export default function WritingLibrary() {
                 ))}
               </div>
               <p className="text-xs text-foreground-subtle">By Stephanie Stranko · Ikwe.ai Research</p>
-              <a href={writing.href} className="text-sm link-lilac">
-                {writing.cta}
-              </a>
+              <div className="flex flex-wrap gap-4">
+                <a href={writing.href} className="text-sm link-lilac">
+                  {writing.cta}
+                </a>
+                {"sourceHref" in writing && writing.sourceHref ? (
+                  <a
+                    href={writing.sourceHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm link-lilac"
+                  >
+                    {writing.sourceLabel}
+                  </a>
+                ) : null}
+              </div>
             </article>
           ))}
         </div>
