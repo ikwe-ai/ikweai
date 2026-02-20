@@ -19,7 +19,7 @@ export default function RecognitionIsNotSafety() {
           "Behavior quality is measured separately",
           "Public abstract; full essay in preparation",
         ]}
-        primaryAction={{ href: "/research#writings", label: "Back to Writings" }}
+        primaryAction={{ href: "/research/writings", label: "Back to Writings" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
       />
 
