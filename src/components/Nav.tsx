@@ -68,7 +68,7 @@ const hubs: Hub[] = [
     id: "outputs",
     label: "Outputs",
     path: "/outputs",
-    desc: "IP-safe output previews and gated artifact access pathways.",
+    desc: "Output previews and full report request pathways.",
     children: [
       {
         path: "/outputs",
@@ -83,11 +83,11 @@ const hubs: Hub[] = [
       {
         path: "/trust",
         label: "Trust & Confidentiality",
-        desc: "Public handling boundary and protected artifact posture.",
+        desc: "Data handling and confidentiality standards.",
       },
     ],
     asideHeading: "Outputs Navigation",
-    asideBody: "Show output structure publicly while keeping implementation mechanics protected.",
+    asideBody: "See public report formats and how to request full report packages.",
     asideLinks: [
       { label: "Outputs Hub", path: "/outputs" },
       { label: "Research Overview", path: "/research" },
@@ -144,7 +144,7 @@ const hubs: Hub[] = [
       {
         path: "/trust",
         label: "Trust & Confidentiality",
-        desc: "Public confidentiality and protected-access standards.",
+        desc: "Customer data handling and confidentiality standards.",
       },
       {
         path: "/research/press",
@@ -154,7 +154,7 @@ const hubs: Hub[] = [
       {
         path: "/outputs",
         label: "Outputs & Transparency",
-        desc: "Public output previews and gated artifact pathways.",
+        desc: "Public output previews and full report request pathways.",
       },
     ],
     asideHeading: "About Navigation",
