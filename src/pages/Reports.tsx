@@ -48,13 +48,13 @@ export default function Reports() {
   return (
     <PageShell>
       <PageMeta
-        title="Outputs & Transparency | Ikwe.ai"
+        title="Deliverables & Transparency | Ikwe.ai"
         description="Output previews, transparency standards, and full report request pathways."
-        path="/outputs"
+        path="/deliverables"
       />
       <SummaryHero
-        kicker="Outputs Hub"
-        title="Outputs & Transparency"
+        kicker="Deliverables Hub"
+        title="Deliverables & Transparency"
         summary="Public output previews show what institutions receive. Full report packages are available through audit engagement."
         highlights={[
           "Board-ready output formats",

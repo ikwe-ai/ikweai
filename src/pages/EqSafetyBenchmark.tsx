@@ -21,7 +21,7 @@ export default function EqSafetyBenchmark() {
           "Safety Gate + dimensional scoring structure",
         ]}
         primaryAction={{ href: "/request-audit#application-form", label: "Request Audit →" }}
-        secondaryAction={{ href: "/outputs", label: "View Outputs & Transparency" }}
+        secondaryAction={{ href: "/deliverables", label: "View Deliverables & Transparency" }}
         jumpLinks={[
           { href: "#eqsb-metrics", label: "Baseline Metrics" },
           { href: "#eqsb-structure", label: "Framework Structure" },

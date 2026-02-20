@@ -43,8 +43,8 @@ const App = () => (
           <Route path="/research" element={<Research />} />
           <Route path="/eq-safety-benchmark" element={<EqSafetyBenchmark />} />
           <Route path="/eqsb" element={<Navigate to="/eq-safety-benchmark" replace />} />
-          <Route path="/outputs" element={<Reports />} />
-          <Route path="/reports" element={<Navigate to="/outputs" replace />} />
+          <Route path="/deliverables" element={<Reports />} />
+          <Route path="/reports" element={<Navigate to="/deliverables" replace />} />
           <Route path="/technology/architecture" element={<Architecture />} />
           <Route path="/about" element={<About />} />
           <Route path="/trust" element={<Trust />} />
@@ -97,9 +97,9 @@ const App = () => (
           <Route path="/why-independent" element={<Navigate to="/about" replace />} />
           <Route path="/founder" element={<Navigate to="/about" replace />} />
           <Route path="/terms" element={<Navigate to="/privacy.html" replace />} />
-          <Route path="/research-access-terms" element={<Navigate to="/outputs" replace />} />
+          <Route path="/research-access-terms" element={<Navigate to="/deliverables" replace />} />
           <Route path="/press" element={<Navigate to="/research/press" replace />} />
-          <Route path="/downloads/*" element={<Navigate to="/outputs" replace />} />
+          <Route path="/downloads/*" element={<Navigate to="/deliverables" replace />} />
 
           {/* Catch-all */}
           <Route path="*" element={<NotFound />} />

@@ -21,7 +21,7 @@ export default function About() {
           "Structured disclosure and COI recusal practices",
         ]}
         primaryAction={{ href: "/request-audit#application-form", label: "Request Audit →" }}
-        secondaryAction={{ href: "/outputs", label: "View Outputs & Transparency" }}
+        secondaryAction={{ href: "/deliverables", label: "View Deliverables & Transparency" }}
         jumpLinks={[
           { href: "#independence", label: "Independence" },
           { href: "#coi-policy", label: "COI Policy" },

@@ -72,7 +72,7 @@ export default function Consultation() {
             <a href="/request-audit#application-form" className="link-lilac">
               Open request form →
             </a>
-            <a href="/outputs" className="link-lilac">
+            <a href="/deliverables" className="link-lilac">
               Review outputs →
             </a>
             <a href="/trust" className="link-lilac">

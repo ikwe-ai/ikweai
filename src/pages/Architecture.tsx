@@ -74,7 +74,7 @@ export default function Architecture() {
           "Deterministic gate before quality scoring",
           "Public framework language with release discipline",
         ]}
-        primaryAction={{ href: "/outputs", label: "View Outputs & Transparency →" }}
+        primaryAction={{ href: "/deliverables", label: "View Deliverables & Transparency →" }}
         secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
         jumpLinks={[
           { href: "#pipeline", label: "Pipeline" },

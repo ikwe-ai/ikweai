@@ -11,7 +11,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm">
               <Link to="/research" className="text-foreground-muted hover:text-foreground transition-colors">Research</Link>
-              <Link to="/outputs" className="text-foreground-muted hover:text-foreground transition-colors">Outputs</Link>
+              <Link to="/deliverables" className="text-foreground-muted hover:text-foreground transition-colors">Deliverables</Link>
               <Link to="/technology/architecture" className="text-foreground-muted hover:text-foreground transition-colors">Architecture</Link>
               <Link to="/trust" className="text-foreground-muted hover:text-foreground transition-colors">Trust</Link>
               <Link to="/about" className="text-foreground-muted hover:text-foreground transition-colors">About</Link>
@@ -69,8 +69,8 @@ export default function Footer() {
               <Link to="/technology/architecture" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Architecture
               </Link>
-              <Link to="/outputs" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
-                Outputs &amp; Transparency
+              <Link to="/deliverables" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                Deliverables &amp; Transparency
               </Link>
             </nav>
           </div>

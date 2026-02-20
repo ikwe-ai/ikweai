@@ -72,7 +72,7 @@ export default function Home() {
                   <div className="space-y-1.5">
                     <a href="/eq-safety-benchmark" className="block text-sm link-lilac">Open EQSB page →</a>
                     <a href="/research" className="block text-sm link-lilac">Open Research Overview →</a>
-                    <a href="/outputs" className="block text-sm link-lilac">Open Outputs & Transparency →</a>
+                    <a href="/deliverables" className="block text-sm link-lilac">Open Deliverables & Transparency →</a>
                     <a href="/request-audit#application-form" className="block text-sm link-lilac">Request audit intake →</a>
                   </div>
                 </div>
@@ -188,7 +188,7 @@ export default function Home() {
               organizations through audit engagement.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
-              <a href="/outputs" className="text-sm link-lilac">Open Outputs Hub →</a>
+              <a href="/deliverables" className="text-sm link-lilac">Open Deliverables Hub →</a>
               <a href="/trust" className="text-sm link-lilac">View Trust & Confidentiality →</a>
             </div>
           </section>
