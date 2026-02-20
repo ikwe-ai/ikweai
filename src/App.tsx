@@ -19,6 +19,7 @@ import WritingLibrary from "./pages/WritingLibrary";
 import CaseStudies from "./pages/CaseStudies";
 import Press from "./pages/Press";
 import Trust from "./pages/Trust";
+import EqSafetyBenchmark from "./pages/EqSafetyBenchmark";
 import BeforeTheViolation from "./pages/writings/BeforeTheViolation";
 import RecognitionIsNotSafety from "./pages/writings/RecognitionIsNotSafety";
 import AIGovernanceCompliance from "./pages/writings/AIGovernanceCompliance";
@@ -38,6 +39,8 @@ const App = () => (
           {/* Canonical public routes */}
           <Route path="/" element={<Index />} />
           <Route path="/research" element={<Research />} />
+          <Route path="/eq-safety-benchmark" element={<EqSafetyBenchmark />} />
+          <Route path="/eqsb" element={<Navigate to="/eq-safety-benchmark" replace />} />
           <Route path="/outputs" element={<Reports />} />
           <Route path="/reports" element={<Navigate to="/outputs" replace />} />
           <Route path="/technology/architecture" element={<Architecture />} />

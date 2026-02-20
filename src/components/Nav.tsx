@@ -32,6 +32,11 @@ const hubs: Hub[] = [
     desc: "Study I benchmark summary and publication library.",
     children: [
       {
+        path: "/eq-safety-benchmark",
+        label: "EQ Safety Benchmark",
+        desc: "Dedicated EQSB page with baseline metrics and framework boundary.",
+      },
+      {
         path: "/research/writings",
         label: "Writing Library",
         desc: "Published essays, notes, and opinion writing.",
@@ -50,6 +55,7 @@ const hubs: Hub[] = [
     asideHeading: "Research Quick Access",
     asideBody: "Start with benchmark context, then move into writing and case evidence.",
     asideLinks: [
+      { label: "EQ Safety Benchmark", path: "/eq-safety-benchmark" },
       { label: "Study I Overview", path: "/research" },
       { label: "Writing Library", path: "/research/writings" },
       { label: "Case Studies", path: "/research/case-studies" },
@@ -423,11 +429,11 @@ export default function Nav() {
           </nav>
 
           <Link
-            to="/consult"
+            to="/consult#application-form"
             className="hidden md:inline-flex items-center gap-1.5 shrink-0 rounded bg-lilac px-4 py-2 text-xs font-medium text-primary-foreground uppercase tracking-widest hover:bg-lilac-glow transition-colors"
             style={{ fontFamily: "var(--font-mono)" }}
           >
-            Request Consultation
+            Request Audit
           </Link>
 
           <button
@@ -519,11 +525,11 @@ export default function Nav() {
             ))}
 
             <Link
-              to="/consult"
+              to="/consult#application-form"
               className="mt-2 inline-flex w-full items-center justify-center rounded bg-lilac px-4 py-2.5 text-xs font-medium text-primary-foreground uppercase tracking-widest hover:bg-lilac-glow transition-colors"
               style={{ fontFamily: "var(--font-mono)" }}
             >
-              Request Consultation →
+              Request Audit →
             </Link>
           </nav>
         </div>
