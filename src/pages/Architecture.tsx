@@ -75,7 +75,7 @@ export default function Architecture() {
           "Public framework language with release discipline",
         ]}
         primaryAction={{ href: "/outputs", label: "View Outputs & Transparency →" }}
-        secondaryAction={{ href: "/consult", label: "Request Consultation" }}
+        secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
         jumpLinks={[
           { href: "#pipeline", label: "Pipeline" },
           { href: "#control-terms", label: "Control Terms" },
@@ -145,9 +145,9 @@ export default function Architecture() {
       <section id="architecture-access" className="py-14">
         <GatedCallout
           title="Detailed Architecture Documentation"
-          body="Extended architecture documentation is distributed through controlled access workflows. For audit access and scope review, use consultation intake."
-          ctaLabel="Request consultation for access →"
-          ctaPath="/consult"
+          body="Extended architecture documentation is distributed through controlled access workflows. For audit access and scope review, submit an audit request."
+          ctaLabel="Request audit for access →"
+          ctaPath="/request-audit#application-form"
         />
       </section>
     </PageShell>

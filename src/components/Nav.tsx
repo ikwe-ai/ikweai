@@ -164,7 +164,7 @@ const hubs: Hub[] = [
       { label: "Trust & Confidentiality", path: "/trust" },
       { label: "Press & Updates", path: "/research/press" },
       { label: "Outputs Hub", path: "/outputs" },
-      { label: "Consultation Page", path: "/consult" },
+      { label: "Consultation Overview", path: "/consult" },
     ],
     ctaLabel: "Request Audit →",
     ctaPath: "/request-audit#application-form",
@@ -177,8 +177,8 @@ const hubs: Hub[] = [
     children: [
       {
         path: "/consult",
-        label: "Consultation Page",
-        desc: "Brand and consultation context for audit engagement.",
+        label: "Consultation Overview",
+        desc: "Consultation context and planning support around audit requests.",
       },
       {
         path: "/audit",
@@ -194,7 +194,7 @@ const hubs: Hub[] = [
     asideHeading: "Consultation Context",
     asideBody: "Consultation remains available for scope alignment after audit request intake.",
     asideLinks: [
-      { label: "Consultation Intake", path: "/request-audit#application-form" },
+      { label: "Request Audit Intake", path: "/request-audit#application-form" },
       { label: "Audit Pathway", path: "/audit" },
       { label: "Outputs Hub", path: "/outputs" },
       { label: "Research Overview", path: "/research" },

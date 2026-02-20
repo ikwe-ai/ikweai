@@ -100,11 +100,11 @@ export default function Press() {
 
       <section id="media-routing" className="py-14 max-w-3xl">
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-          For media requests, include your outlet, deadline, and topic scope. Consultation intake is the primary
-          channel for institutional briefings and release coordination.
+          For media requests, include your outlet, deadline, and topic scope. Use the audit request form as the
+          primary intake path; consultation follows for briefing alignment.
         </p>
-        <a href="/consult" className="text-sm link-lilac">
-          Request media consultation →
+        <a href="/request-audit#application-form" className="text-sm link-lilac">
+          Open request intake →
         </a>
       </section>
     </PageShell>

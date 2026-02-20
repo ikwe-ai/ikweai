@@ -14,6 +14,7 @@ import Architecture from "./pages/Architecture";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Audit from "./pages/Audit";
+import Consultation from "./pages/Consultation";
 import NotFound from "./pages/NotFound";
 import WritingLibrary from "./pages/WritingLibrary";
 import CaseStudies from "./pages/CaseStudies";
@@ -47,8 +48,10 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/trust" element={<Trust />} />
           <Route path="/request-audit" element={<Contact />} />
-          <Route path="/consult" element={<Contact />} />
+          <Route path="/consult" element={<Consultation />} />
+          <Route path="/consultation" element={<Navigate to="/consult" replace />} />
           <Route path="/contact" element={<Navigate to="/request-audit" replace />} />
+          <Route path="/privacy" element={<Navigate to="/privacy.html" replace />} />
           <Route path="/audit" element={<Audit />} />
           <Route path="/research/writings" element={<WritingLibrary />} />
           <Route path="/research/case-studies" element={<CaseStudies />} />
@@ -65,6 +68,9 @@ const App = () => (
           {/* Legacy redirects */}
           <Route path="/proof" element={<Navigate to="/research/case-studies" replace />} />
           <Route path="/inquiry" element={<Navigate to="/request-audit" replace />} />
+          <Route path="/audit-request" element={<Navigate to="/request-audit" replace />} />
+          <Route path="/request-audit-intake" element={<Navigate to="/request-audit" replace />} />
+          <Route path="/request-consultation" element={<Navigate to="/consult" replace />} />
           <Route path="/case-studies" element={<Navigate to="/research/case-studies" replace />} />
           <Route path="/writings" element={<Navigate to="/research/writings" replace />} />
           <Route path="/writing-library" element={<Navigate to="/research/writings" replace />} />
@@ -86,7 +92,7 @@ const App = () => (
           <Route path="/about.html" element={<Navigate to="/about" replace />} />
           <Route path="/why-independent" element={<Navigate to="/about" replace />} />
           <Route path="/founder" element={<Navigate to="/about" replace />} />
-          <Route path="/terms" element={<Navigate to="/about" replace />} />
+          <Route path="/terms" element={<Navigate to="/privacy.html" replace />} />
           <Route path="/research-access-terms" element={<Navigate to="/outputs" replace />} />
           <Route path="/press" element={<Navigate to="/research/press" replace />} />
           <Route path="/downloads/*" element={<Navigate to="/outputs" replace />} />
