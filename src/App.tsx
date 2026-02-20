@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound";
 import WritingLibrary from "./pages/WritingLibrary";
 import CaseStudies from "./pages/CaseStudies";
 import Press from "./pages/Press";
+import Trust from "./pages/Trust";
 import BeforeTheViolation from "./pages/writings/BeforeTheViolation";
 import RecognitionIsNotSafety from "./pages/writings/RecognitionIsNotSafety";
 import AIGovernanceCompliance from "./pages/writings/AIGovernanceCompliance";
@@ -38,8 +39,10 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/research" element={<Research />} />
           <Route path="/outputs" element={<Reports />} />
+          <Route path="/reports" element={<Navigate to="/outputs" replace />} />
           <Route path="/technology/architecture" element={<Architecture />} />
           <Route path="/about" element={<About />} />
+          <Route path="/trust" element={<Trust />} />
           <Route path="/consult" element={<Contact />} />
           <Route path="/contact" element={<Navigate to="/consult" replace />} />
           <Route path="/audit" element={<Audit />} />
@@ -71,7 +74,12 @@ const App = () => (
             path="/research/recognition-is-not-safety/*"
             element={<Navigate to="/research/writings/recognition-is-not-safety" replace />}
           />
-          <Route path="/enterprise" element={<Navigate to="/about" replace />} />
+          <Route path="/enterprise" element={<Navigate to="/" replace />} />
+          <Route path="/explorer" element={<Navigate to="/research" replace />} />
+          <Route path="/research-summary" element={<Navigate to="/research" replace />} />
+          <Route path="/support" element={<Navigate to="/consult" replace />} />
+          <Route path="/faq" element={<Navigate to="/trust" replace />} />
+          <Route path="/about.html" element={<Navigate to="/about" replace />} />
           <Route path="/why-independent" element={<Navigate to="/about" replace />} />
           <Route path="/founder" element={<Navigate to="/about" replace />} />
           <Route path="/terms" element={<Navigate to="/about" replace />} />

@@ -4,149 +4,182 @@ import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 
 export default function Reports() {
-  const liveReports = [
+  const publicOutputs = [
     {
-      label: "Live Page",
-      title: "Study I Benchmark Summary",
-      href: "/research",
-      desc: "Current public summary of Study I findings, canonical baseline data, and terminology.",
+      label: "Public Preview",
+      title: "Board Brief Structure",
+      desc: "Executive summary format with risk posture, key findings, and governance-next-step framing.",
     },
     {
-      label: "Live Page",
-      title: "Architecture Overview",
-      href: "/technology/architecture",
-      desc: "Current pipeline overview, control terms, and public framework summary.",
+      label: "Public Preview",
+      title: "Risk Scorecard Snapshot",
+      desc: "Dimension-level summary format showing evaluation outcomes in plain institutional language.",
     },
     {
-      label: "Live Page",
-      title: "Writing Library",
-      href: "/research/writings",
-      desc: "Published essays and notes with full live pages for each writing entry.",
+      label: "Public Preview",
+      title: "Evidence Pack Index",
+      desc: "Table-of-contents structure for release references, run IDs, and version attribution.",
     },
     {
-      label: "Live Page",
-      title: "Case Studies",
-      href: "/research/case-studies",
-      desc: "Indexed case pages with full case-analysis detail and governance outcomes.",
-    },
-    {
-      label: "Live Page",
-      title: "Press & Updates",
-      href: "/research/press",
-      desc: "Published communications index linking directly to live public content.",
-    },
-    {
-      label: "Live Page",
-      title: "Independence & Governance",
-      href: "/about",
-      desc: "Current conflict posture, publication discipline, and versioning policy.",
+      label: "Public Preview",
+      title: "Monitoring Drift Alert",
+      desc: "Operational alert format showing changed risk patterns and recommended response pathway.",
     },
   ] as const;
 
-  const extendedReports = [
+  const livePages = [
     {
-      title: "Board Briefing Set",
-      desc: "Extended governance briefing package for institutional diligence.",
+      title: "Research Overview",
+      href: "/research",
+      desc: "Study I findings, methodology lineage, and canonical terminology.",
     },
     {
-      title: "Extended Case Packet",
-      desc: "Expanded case documentation with additional context and governance framing.",
+      title: "Architecture Overview",
+      href: "/technology/architecture",
+      desc: "Public evaluation flow and control-language framing.",
     },
     {
-      title: "Research Companion Materials",
-      desc: "Supplemental material set aligned to current live-page releases.",
+      title: "Audit Pathway",
+      href: "/audit",
+      desc: "Engagement structure, deliverables, and intake start path.",
     },
   ] as const;
 
   return (
     <PageShell>
       <PageMeta
-        title="Reports & Releases | Ikwe.ai"
-        description="Access current, live benchmark report pages. Extended report sets are available by request."
+        title="Outputs & Transparency | Ikwe.ai"
+        description="IP-safe output previews, public transparency boundary, and gated artifact access pathways."
         path="/outputs"
       />
       <SummaryHero
-        kicker="Live Reports"
-        title="Reports & Releases"
-        summary="This page links only to current live report pages. Extended report sets are available by request when needed."
+        kicker="Outputs Hub"
+        title="Outputs & Transparency"
+        summary="Public output previews show what institutions receive. Detailed implementation artifacts remain protected and are distributed through controlled access workflows."
         highlights={[
-          "Links point to live canonical pages",
-          "Current benchmark language only",
-          "Extended packs available on request",
+          "Board-ready output formats",
+          "Public transparency with protected internals",
+          "Gated access for detailed artifact sets",
         ]}
-        primaryAction={{ href: "#live-reports", label: "View Live Reports ↓" }}
-        secondaryAction={{ href: "#extended-reports", label: "View Extended Access" }}
+        primaryAction={{ href: "#public-previews", label: "View Public Previews ↓" }}
+        secondaryAction={{ href: "/consult#application-form", label: "Request Audit Intake" }}
         jumpLinks={[
-          { href: "#live-reports", label: "Live Report Pages" },
-          { href: "#extended-reports", label: "Extended Access" },
-          { href: "#release-note", label: "Release Note" },
+          { href: "#public-previews", label: "Public Previews" },
+          { href: "#artifact-schema", label: "Artifact Schema" },
+          { href: "#transparency-boundary", label: "Boundary" },
+          { href: "#gated-access", label: "Gated Access" },
         ]}
       />
 
-      <section id="live-reports" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Live Report Pages</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
-          {liveReports.map((report) => (
-            <article key={report.href} className="card-surface p-5 flex flex-col gap-3">
+      <section id="public-previews" className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Public Output Previews</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mb-8">
+          {publicOutputs.map((item) => (
+            <article key={item.title} className="card-surface p-5 flex flex-col gap-3">
               <span className="inline-flex w-fit rounded border border-border px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-lilac">
-                {report.label}
+                {item.label}
               </span>
-              <h2 className="font-display text-xl text-foreground">{report.title}</h2>
-              <p className="text-sm text-foreground-muted leading-relaxed flex-1">{report.desc}</p>
-              <a href={report.href} className="text-sm link-lilac">
-                Open page →
+              <h2 className="font-display text-xl text-foreground">{item.title}</h2>
+              <p className="text-sm text-foreground-muted leading-relaxed flex-1">{item.desc}</p>
+            </article>
+          ))}
+        </div>
+
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">Live Reference Pages</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl">
+          {livePages.map((item) => (
+            <article key={item.title} className="card-surface p-5 flex flex-col gap-3">
+              <h3 className="font-display text-lg text-foreground">{item.title}</h3>
+              <p className="text-sm text-foreground-muted leading-relaxed flex-1">{item.desc}</p>
+              <a href={item.href} className="text-sm link-lilac">
+                Open live page →
               </a>
             </article>
           ))}
         </div>
-        <p className="text-xs text-foreground-subtle mt-5 max-w-2xl">
-          PDF files are being reviewed and refreshed. Until that process is complete, report links route to live pages
-          with current language.
-        </p>
       </section>
 
-      <section id="extended-reports" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Extended Report Access</p>
+      <section id="artifact-schema" className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Artifact Structure Example</p>
+        <div className="card-surface p-6 max-w-3xl">
+          <p className="text-sm text-foreground-muted leading-relaxed mb-4">
+            Example fields shown for transparency. This schema preview demonstrates output structure, not scoring
+            mechanics.
+          </p>
+          <pre className="rounded border border-border bg-background/40 p-4 text-xs text-foreground-muted overflow-x-auto">
+{`{
+  "artifact_type": "board_brief",
+  "release_version": "YYYY.MM.DD",
+  "run_id": "run_XXXX",
+  "model_version": "declared_by_client",
+  "scenario_pack_version": "locked_reference",
+  "output_sections": [
+    "risk_summary",
+    "dimension_snapshot",
+    "governance_next_steps",
+    "monitoring_recommendations"
+  ]
+}`}
+          </pre>
+        </div>
+      </section>
+
+      <section id="transparency-boundary" className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Transparency Boundary</p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-5xl">
+          <article className="card-surface p-6">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Public Standard</p>
+            <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
+              <li>• Evaluation framework and control-language definitions</li>
+              <li>• Canonical benchmark outcomes and version references</li>
+              <li>• Redacted examples of report and evidence output formats</li>
+            </ul>
+          </article>
+          <article className="card-surface p-6">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Protected Distribution</p>
+            <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
+              <li>• Detailed scenario content and execution internals</li>
+              <li>• Internal scoring controls and implementation specifics</li>
+              <li>• Extended institution-specific artifact packages</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="gated-access" className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Gated Access</p>
         <div className="gated-callout rounded p-5 flex gap-4 max-w-3xl mb-8">
           <Lock size={16} className="text-lilac mt-0.5 shrink-0" />
           <div>
-            <p className="text-sm font-medium text-foreground mb-1">Access Policy</p>
+            <p className="text-sm font-medium text-foreground mb-1">Protected Artifact Workflow</p>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Extended report materials are available on request for institutional review.
+              Detailed documentation and extended packs are provided through consultation intake and controlled access
+              routing.
             </p>
           </div>
         </div>
-
-        <div className="space-y-0 divide-y divide-border max-w-3xl">
-          {extendedReports.map((reportItem) => (
-            <div key={reportItem.title} className="py-5">
-              <p className="font-mono text-xs text-lilac mb-1.5">{reportItem.title}</p>
-              <p className="text-sm text-foreground-muted leading-relaxed">{reportItem.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-2 flex flex-wrap gap-3">
           <a
-            href="/consult"
+            href="/consult#application-form"
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Request Extended Access →
+            Request protected access →
           </a>
           <a
-            href="/research"
+            href="/trust"
             className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Back to Research
+            View trust posture
           </a>
         </div>
       </section>
 
-      <section id="release-note" className="py-14">
+      <section className="py-14">
         <p className="text-xs text-foreground-subtle max-w-2xl leading-relaxed">
-          Release note: Live pages are the source of truth for public language and benchmark framing.
+          Public release note: Output previews are published for transparency and institutional clarity. Protected
+          materials are distributed only through controlled workflow.
         </p>
       </section>
     </PageShell>
