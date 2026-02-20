@@ -14,6 +14,14 @@ type Hub = {
   path: string;
   desc: string;
   children: HubChild[];
+  asideHeading: string;
+  asideBody: string;
+  asideLinks: Array<{
+    label: string;
+    path: string;
+  }>;
+  ctaLabel: string;
+  ctaPath: string;
 };
 
 const hubs: Hub[] = [
@@ -39,6 +47,16 @@ const hubs: Hub[] = [
         desc: "Published communications and media routing.",
       },
     ],
+    asideHeading: "Research Quick Access",
+    asideBody: "Start with benchmark context, then move into writing and case evidence.",
+    asideLinks: [
+      { label: "Study I Overview", path: "/research" },
+      { label: "Writing Library", path: "/research/writings" },
+      { label: "Case Studies", path: "/research/case-studies" },
+      { label: "Press & Updates", path: "/research/press" },
+    ],
+    ctaLabel: "Request Consultation →",
+    ctaPath: "/consult",
   },
   {
     id: "reports",
@@ -62,6 +80,16 @@ const hubs: Hub[] = [
         desc: "Linked case pages used in report context.",
       },
     ],
+    asideHeading: "Report Navigation",
+    asideBody: "All report entries route to current live pages with current language.",
+    asideLinks: [
+      { label: "Reports Hub", path: "/reports" },
+      { label: "Research Overview", path: "/research" },
+      { label: "Architecture", path: "/technology/architecture" },
+      { label: "About Governance", path: "/about" },
+    ],
+    ctaLabel: "Open Audit Pathway →",
+    ctaPath: "/audit",
   },
   {
     id: "architecture",
@@ -85,6 +113,16 @@ const hubs: Hub[] = [
         desc: "Linked release pages for architecture context.",
       },
     ],
+    asideHeading: "Architecture Navigation",
+    asideBody: "Use this hub for the pipeline, terms, and audit pathway context.",
+    asideLinks: [
+      { label: "Architecture Overview", path: "/technology/architecture" },
+      { label: "Audit Pathway", path: "/audit" },
+      { label: "Reports Hub", path: "/reports" },
+      { label: "Research Glossary", path: "/research" },
+    ],
+    ctaLabel: "Request Consultation →",
+    ctaPath: "/consult",
   },
   {
     id: "about",
@@ -108,6 +146,16 @@ const hubs: Hub[] = [
         desc: "Published report pages and release routing.",
       },
     ],
+    asideHeading: "About Navigation",
+    asideBody: "Company posture, governance commitments, and release discipline.",
+    asideLinks: [
+      { label: "About Overview", path: "/about" },
+      { label: "Press & Updates", path: "/research/press" },
+      { label: "Reports Hub", path: "/reports" },
+      { label: "Consultation Intake", path: "/consult" },
+    ],
+    ctaLabel: "Contact Governance Team →",
+    ctaPath: "/consult",
   },
   {
     id: "consultation",
@@ -131,6 +179,16 @@ const hubs: Hub[] = [
         desc: "Review live releases before intake.",
       },
     ],
+    asideHeading: "Consultation Quick Start",
+    asideBody: "Share deployment context and review goals to receive scope guidance.",
+    asideLinks: [
+      { label: "Consultation Intake", path: "/consult#application-form" },
+      { label: "Audit Pathway", path: "/audit" },
+      { label: "Reports Hub", path: "/reports" },
+      { label: "Research Overview", path: "/research" },
+    ],
+    ctaLabel: "Open Consultation Intake →",
+    ctaPath: "/consult",
   },
 ];
 
@@ -222,7 +280,7 @@ export default function Nav() {
           </Link>
 
           <nav className="hidden lg:flex items-center justify-center flex-1 min-w-0">
-            <div className="relative">
+            <div className="relative" onMouseLeave={() => setOpenHub(null)}>
               <div className="inline-flex items-center gap-1 rounded-full border border-border bg-background-card/80 p-1 nav-pill">
                 <Link
                   to="/"
@@ -237,23 +295,30 @@ export default function Nav() {
                 </Link>
 
                 {hubs.map((hub) => (
-                  <button
+                  <div
                     key={hub.id}
-                    type="button"
-                    onClick={() => setOpenHub((v) => (v === hub.id ? null : hub.id))}
-                    className={`inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-sm transition-colors whitespace-nowrap ${
+                    className={`inline-flex items-center rounded-full text-sm transition-colors whitespace-nowrap ${
                       isRouteActive(hub.path) || openHub === hub.id
                         ? "bg-lilac/15 text-lilac"
                         : "text-foreground-muted hover:text-foreground"
                     }`}
                     style={{ fontFamily: "var(--font-body)" }}
-                    aria-haspopup="menu"
-                    aria-expanded={openHub === hub.id}
-                    aria-controls={`hub-mega-${hub.id}`}
+                    onMouseEnter={() => setOpenHub(hub.id)}
                   >
-                    {hub.label}
-                    <ChevronDown size={14} className={`transition-transform ${openHub === hub.id ? "rotate-180" : ""}`} />
-                  </button>
+                    <Link to={hub.path} className="px-3 py-1.5 rounded-l-full">
+                      {hub.label}
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => setOpenHub((v) => (v === hub.id ? null : hub.id))}
+                      className="inline-flex items-center pr-2 py-1.5 rounded-r-full"
+                      aria-haspopup="menu"
+                      aria-expanded={openHub === hub.id}
+                      aria-controls={`hub-mega-${hub.id}`}
+                    >
+                      <ChevronDown size={14} className={`transition-transform ${openHub === hub.id ? "rotate-180" : ""}`} />
+                    </button>
+                  </div>
                 ))}
               </div>
 
@@ -284,18 +349,21 @@ export default function Nav() {
                     </div>
 
                     <div className="mega-side">
-                      <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Other Hubs</p>
+                      <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">
+                        {selectedHub.asideHeading}
+                      </p>
+                      <p className="text-xs text-foreground-subtle leading-relaxed mb-3">
+                        {selectedHub.asideBody}
+                      </p>
                       <div className="space-y-2 mb-4">
-                        {hubs
-                          .filter((hub) => hub.id !== selectedHub.id)
-                          .map((hub) => (
-                            <Link key={hub.id} to={hub.path} className="block text-sm text-foreground-muted hover:text-foreground transition-colors">
-                              {hub.label}
-                            </Link>
-                          ))}
+                        {selectedHub.asideLinks.map((item) => (
+                          <Link key={item.path} to={item.path} className="block text-sm text-foreground-muted hover:text-foreground transition-colors">
+                            {item.label}
+                          </Link>
+                        ))}
                       </div>
-                      <Link to="/consult" className="text-sm link-lilac">
-                        Request Consultation →
+                      <Link to={selectedHub.ctaPath} className="text-sm link-lilac">
+                        {selectedHub.ctaLabel}
                       </Link>
                     </div>
                   </div>
@@ -368,7 +436,8 @@ export default function Nav() {
                             : "border-border text-foreground-muted"
                         }`}
                       >
-                        {item.label}
+                        <span className="block">{item.label}</span>
+                        <span className="block text-xs text-foreground-subtle mt-1">{item.desc}</span>
                       </Link>
                     ))}
                   </div>
