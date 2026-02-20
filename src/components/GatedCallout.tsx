@@ -12,7 +12,7 @@ export default function GatedCallout({
   title = "Report Distribution",
   body = "Sample packs and PDF reports are shared as versioned releases to keep public references consistent.",
   ctaLabel = "Request Current Report Pack →",
-  ctaPath = "/reports",
+  ctaPath = "/outputs",
 }: GatedCalloutProps) {
   return (
     <div className="gated-callout rounded p-5 flex gap-4">

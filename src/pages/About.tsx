@@ -21,7 +21,7 @@ export default function About() {
           "Structured disclosure and COI recusal practices",
         ]}
         primaryAction={{ href: "/consult", label: "Contact Governance Team →" }}
-        secondaryAction={{ href: "/reports", label: "View Reports & Releases" }}
+        secondaryAction={{ href: "/outputs", label: "View Reports & Releases" }}
         jumpLinks={[
           { href: "#independence", label: "Independence" },
           { href: "#coi-policy", label: "COI Policy" },

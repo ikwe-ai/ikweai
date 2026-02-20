@@ -63,7 +63,7 @@ export default function Reports() {
       <PageMeta
         title="Reports & Releases | Ikwe.ai"
         description="Access current, live benchmark report pages. Extended report sets are available by request."
-        path="/reports"
+        path="/outputs"
       />
       <SummaryHero
         kicker="Live Reports"

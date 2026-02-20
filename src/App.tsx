@@ -37,7 +37,7 @@ const App = () => (
           {/* Canonical public routes */}
           <Route path="/" element={<Index />} />
           <Route path="/research" element={<Research />} />
-          <Route path="/reports" element={<Reports />} />
+          <Route path="/outputs" element={<Reports />} />
           <Route path="/technology/architecture" element={<Architecture />} />
           <Route path="/about" element={<About />} />
           <Route path="/consult" element={<Contact />} />
@@ -75,9 +75,9 @@ const App = () => (
           <Route path="/why-independent" element={<Navigate to="/about" replace />} />
           <Route path="/founder" element={<Navigate to="/about" replace />} />
           <Route path="/terms" element={<Navigate to="/about" replace />} />
-          <Route path="/research-access-terms" element={<Navigate to="/reports" replace />} />
+          <Route path="/research-access-terms" element={<Navigate to="/outputs" replace />} />
           <Route path="/press" element={<Navigate to="/research/press" replace />} />
-          <Route path="/downloads/*" element={<Navigate to="/reports" replace />} />
+          <Route path="/downloads/*" element={<Navigate to="/outputs" replace />} />
 
           {/* Catch-all */}
           <Route path="*" element={<NotFound />} />

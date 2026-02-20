@@ -61,11 +61,11 @@ const hubs: Hub[] = [
   {
     id: "reports",
     label: "Reports",
-    path: "/reports",
+    path: "/outputs",
     desc: "Live reports hub and release access pathways.",
     children: [
       {
-        path: "/reports",
+        path: "/outputs",
         label: "Reports Hub",
         desc: "Live report surfaces and release references.",
       },
@@ -83,7 +83,7 @@ const hubs: Hub[] = [
     asideHeading: "Report Navigation",
     asideBody: "All report entries route to current live pages with current language.",
     asideLinks: [
-      { label: "Reports Hub", path: "/reports" },
+      { label: "Reports Hub", path: "/outputs" },
       { label: "Research Overview", path: "/research" },
       { label: "Architecture", path: "/technology/architecture" },
       { label: "About Governance", path: "/about" },
@@ -108,7 +108,7 @@ const hubs: Hub[] = [
         desc: "Audit structure and workflow framing.",
       },
       {
-        path: "/reports",
+        path: "/outputs",
         label: "Release Surfaces",
         desc: "Linked release pages for architecture context.",
       },
@@ -118,7 +118,7 @@ const hubs: Hub[] = [
     asideLinks: [
       { label: "Architecture Overview", path: "/technology/architecture" },
       { label: "Audit Pathway", path: "/audit" },
-      { label: "Reports Hub", path: "/reports" },
+      { label: "Reports Hub", path: "/outputs" },
       { label: "Research Glossary", path: "/research" },
     ],
     ctaLabel: "Request Consultation →",
@@ -141,7 +141,7 @@ const hubs: Hub[] = [
         desc: "Public communications and external updates.",
       },
       {
-        path: "/reports",
+        path: "/outputs",
         label: "Governance Releases",
         desc: "Published report pages and release routing.",
       },
@@ -151,7 +151,7 @@ const hubs: Hub[] = [
     asideLinks: [
       { label: "About Overview", path: "/about" },
       { label: "Press & Updates", path: "/research/press" },
-      { label: "Reports Hub", path: "/reports" },
+      { label: "Reports Hub", path: "/outputs" },
       { label: "Consultation Intake", path: "/consult" },
     ],
     ctaLabel: "Contact Governance Team →",
@@ -174,7 +174,7 @@ const hubs: Hub[] = [
         desc: "Audit structure and engagement sequence.",
       },
       {
-        path: "/reports",
+        path: "/outputs",
         label: "Report Context",
         desc: "Review live releases before intake.",
       },
@@ -184,7 +184,7 @@ const hubs: Hub[] = [
     asideLinks: [
       { label: "Consultation Intake", path: "/consult#application-form" },
       { label: "Audit Pathway", path: "/audit" },
-      { label: "Reports Hub", path: "/reports" },
+      { label: "Reports Hub", path: "/outputs" },
       { label: "Research Overview", path: "/research" },
     ],
     ctaLabel: "Open Consultation Intake →",

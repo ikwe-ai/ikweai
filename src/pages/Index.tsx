@@ -70,7 +70,7 @@ export default function Home() {
                   </div>
                   <div className="space-y-1.5">
                     <a href="/research" className="block text-sm link-lilac">Open Research Overview →</a>
-                    <a href="/reports" className="block text-sm link-lilac">Open Reports & Releases →</a>
+                    <a href="/outputs" className="block text-sm link-lilac">Open Reports & Releases →</a>
                     <a href="/consult" className="block text-sm link-lilac">Open Consultation Intake →</a>
                   </div>
                 </div>

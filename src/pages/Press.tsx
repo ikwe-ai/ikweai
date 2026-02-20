@@ -22,7 +22,7 @@ export default function Press() {
       label: "Published",
       title: "Reports & Releases",
       body: "Live report-page index linking to current benchmark, architecture, and governance pages.",
-      href: "/reports",
+      href: "/outputs",
       cta: "Open reports page →",
     },
     {

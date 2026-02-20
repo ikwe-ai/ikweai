@@ -68,7 +68,7 @@ export default function Audit() {
           "Governance-ready reporting format",
         ]}
         primaryAction={{ href: "#request-start", label: "Start Audit Request ↓" }}
-        secondaryAction={{ href: "/reports", label: "View Reports & Releases" }}
+        secondaryAction={{ href: "/outputs", label: "View Reports & Releases" }}
         jumpLinks={[
           { href: "#audit-overview", label: "Audit Overview" },
           { href: "#engagement-stages", label: "Engagement Stages" },
@@ -133,7 +133,7 @@ export default function Audit() {
             Start consultation intake →
           </a>
           <a
-            href="/reports"
+            href="/outputs"
             className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
             style={{ fontFamily: "var(--font-body)" }}
           >

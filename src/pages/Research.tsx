@@ -14,7 +14,7 @@ export default function Research() {
       body:
         "Canonical baseline release with locked headline metrics and documented methodology lineage.",
       cta: "View live reports →",
-      href: "/reports",
+      href: "/outputs",
     },
     {
       label: "Forthcoming",
@@ -48,7 +48,7 @@ export default function Research() {
           "79 scenarios across high-stakes contexts",
           "Two-layer model: Safety Gate + dimensional scoring",
         ]}
-        primaryAction={{ href: "/reports", label: "View Reports & Releases →" }}
+        primaryAction={{ href: "/outputs", label: "View Reports & Releases →" }}
         secondaryAction={{ href: "#studies", label: "View Study Roadmap" }}
         jumpLinks={[
           { href: "#study-summary", label: "Study I Summary" },
