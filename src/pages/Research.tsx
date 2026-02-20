@@ -38,18 +38,23 @@ export default function Research() {
     {
       label: "Founder Writing · Published",
       title: "Before the Violation",
-      body:
-        "A governance framing note on why behavioral safety must be measured before visible policy failure, not only after it.",
-      href: "/reports",
-      cta: "Request writing pack →",
+      summary:
+        "Why behavioral safety must be measured before visible policy failure, not only after it.",
+      excerpt: [
+        "Most organizations still treat behavioral failure as a post-incident problem. That delay is the governance gap. By the time a visible violation appears, institutional trust has already been consumed.",
+        "The practical question is not whether a model can sound empathetic. The practical question is whether it can consistently avoid high-risk behavior under pressure, ambiguity, and emotionally loaded context.",
+        "This benchmark exists to move safety review forward in time: from retrospective interpretation to pre-deployment measurement and ongoing evidence discipline.",
+      ],
     },
     {
-      label: "Founder Writing · In Preparation",
+      label: "Founder Writing · In Preparation (Public Abstract)",
       title: "Recognition Is Not Safety",
-      body:
-        "Draft note on the distinction between emotional recognition quality and behavioral safety outcomes in evaluated systems.",
-      href: "/reports",
-      cta: "Request draft availability notice →",
+      summary:
+        "A note on the distinction between emotional recognition quality and behavioral safety outcomes.",
+      excerpt: [
+        "A system can correctly recognize distress and still choose unsafe behavior. Recognition quality and safety quality are related but not equivalent.",
+        "Public release includes conceptual framing and governance implications. Protected implementation mechanics remain in controlled artifacts.",
+      ],
     },
   ] as const;
 
@@ -193,16 +198,23 @@ export default function Research() {
       {/* Founder writings */}
       <section id="writings" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Founder Writings</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl">
+        <p className="text-xs text-foreground-subtle mb-5 max-w-2xl">
+          Published writing is shown directly on this page. Request workflows are reserved for protected IP artifacts.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
           {writings.map((writing) => (
-            <article key={writing.title} className="card-surface p-5">
+            <article key={writing.title} className="card-surface p-5 space-y-3">
               <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">{writing.label}</p>
-              <h3 className="font-display text-xl text-foreground mb-2">{writing.title}</h3>
-              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{writing.body}</p>
-              <p className="text-xs text-foreground-subtle mb-3">By Stephanie Stranko</p>
-              <a href={writing.href} className="text-sm link-lilac">
-                {writing.cta}
-              </a>
+              <h3 className="font-display text-xl text-foreground">{writing.title}</h3>
+              <p className="text-sm text-foreground-muted leading-relaxed">{writing.summary}</p>
+              <div className="space-y-3">
+                {writing.excerpt.map((paragraph) => (
+                  <p key={paragraph} className="text-sm text-foreground-muted leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+              <p className="text-xs text-foreground-subtle">By Stephanie Stranko</p>
             </article>
           ))}
         </div>
