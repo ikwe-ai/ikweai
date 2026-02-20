@@ -76,7 +76,7 @@ export const CASE_STUDIES_INDEX = [
     ],
     interventions: [
       "Reinforced role-boundary templates at high-risk turns.",
-      "Added grounding prompts requiring explicit uncertainty handling.",
+      "Added grounding controls requiring explicit uncertainty handling.",
       "Enabled escalation routes when user intent crossed sensitive scope limits.",
     ],
     outcomes: [
