@@ -35,10 +35,13 @@ const App = () => (
 
           {/* Legacy redirects */}
           <Route path="/audit" element={<Navigate to="/research" replace />} />
-          <Route path="/proof" element={<Navigate to="/research" replace />} />
+          <Route path="/proof" element={<Navigate to="/research#case-studies" replace />} />
           <Route path="/inquiry" element={<Navigate to="/contact" replace />} />
+          <Route path="/case-studies" element={<Navigate to="/research#case-studies" replace />} />
+          <Route path="/research/before-the-violation/*" element={<Navigate to="/research#writings" replace />} />
           <Route path="/enterprise" element={<Navigate to="/about" replace />} />
           <Route path="/why-independent" element={<Navigate to="/about" replace />} />
+          <Route path="/founder" element={<Navigate to="/about" replace />} />
           <Route path="/terms" element={<Navigate to="/about" replace />} />
           <Route path="/research-access-terms" element={<Navigate to="/reports" replace />} />
           <Route path="/press" element={<Navigate to="/about" replace />} />

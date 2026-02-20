@@ -7,6 +7,73 @@ import SummaryHero from "@/components/SummaryHero";
 import { CANONICAL_TERM_ORDER, CANONICAL_TERMS } from "@/lib/canonical-terms";
 
 export default function Research() {
+  const studies = [
+    {
+      label: "Published",
+      title: "Study I — EQ Safety Benchmark Baseline (2024–2025)",
+      body:
+        "Canonical baseline release with locked headline metrics and documented methodology lineage.",
+      cta: "Request released artifacts →",
+      href: "/reports",
+    },
+    {
+      label: "In Preparation",
+      title: "Study II — Mechanism & Trajectory Analysis",
+      body:
+        "Longer-horizon analysis focused on failure mechanisms and trajectory-level risk patterns. Public claims remain withheld until release lock.",
+      cta: "Request pre-release summary access →",
+      href: "/reports",
+    },
+    {
+      label: "Planned",
+      title: "Study III — Longitudinal Monitoring Program",
+      body:
+        "Scheduled re-evaluation program for behavioral drift tracking across model and deployment changes.",
+      cta: "Register interest →",
+      href: "/contact",
+    },
+  ] as const;
+
+  const writings = [
+    {
+      label: "Founder Writing · Published",
+      title: "Before the Violation",
+      body:
+        "A governance framing note on why behavioral safety must be measured before visible policy failure, not only after it.",
+      href: "/reports",
+      cta: "Request writing pack →",
+    },
+    {
+      label: "Founder Writing · In Preparation",
+      title: "Recognition Is Not Safety",
+      body:
+        "Draft note on the distinction between emotional recognition quality and behavioral safety outcomes in evaluated systems.",
+      href: "/reports",
+      cta: "Request draft availability notice →",
+    },
+  ] as const;
+
+  const caseStudies = [
+    {
+      label: "Redacted Case",
+      title: "Authority Drift",
+      body:
+        "Anonymized trajectory where confidence signaling outpaced safe-role boundaries and required governance correction.",
+    },
+    {
+      label: "Redacted Case",
+      title: "Emotional Escalation",
+      body:
+        "Anonymized trajectory where soothing language obscured rising risk without adequate de-escalation structure.",
+    },
+    {
+      label: "Redacted Case",
+      title: "Founder-as-Safety-Mechanism",
+      body:
+        "Anonymized case where safety depended on undocumented manual intervention rather than durable governance controls.",
+    },
+  ] as const;
+
   return (
     <PageShell>
       <PageMeta
@@ -24,7 +91,7 @@ export default function Research() {
           "Two-layer model: Safety Gate + dimensional scoring",
         ]}
         primaryAction={{ href: "/reports", label: "Request Study Artifacts →" }}
-        secondaryAction={{ href: "/technology/architecture", label: "View Architecture" }}
+        secondaryAction={{ href: "#studies", label: "View Study Roadmap" }}
       />
 
       {/* Study I Summary */}
@@ -66,6 +133,29 @@ export default function Research() {
         </div>
       </section>
 
+      {/* Study roadmap */}
+      <section id="studies" className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Study Portfolio</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {studies.map((study) => (
+            <article key={study.title} className="card-surface p-5 flex flex-col gap-3">
+              <span className="inline-flex w-fit rounded border border-border px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-lilac">
+                {study.label}
+              </span>
+              <h3 className="font-display text-lg text-foreground leading-tight">{study.title}</h3>
+              <p className="text-sm text-foreground-muted leading-relaxed flex-1">{study.body}</p>
+              <a href={study.href} className="text-sm link-lilac">
+                {study.cta}
+              </a>
+            </article>
+          ))}
+        </div>
+        <p className="text-xs text-foreground-subtle mt-5 max-w-2xl">
+          Roadmap listings are included for transparency. Unpublished studies are visible by status but do not expose
+          unreleased claims, constants, or scoring internals.
+        </p>
+      </section>
+
       {/* Methodology Lineage Block — LOCKED */}
       <section className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Methodology Lineage</p>
@@ -97,6 +187,54 @@ export default function Research() {
               </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Founder writings */}
+      <section id="writings" className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Founder Writings</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl">
+          {writings.map((writing) => (
+            <article key={writing.title} className="card-surface p-5">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">{writing.label}</p>
+              <h3 className="font-display text-xl text-foreground mb-2">{writing.title}</h3>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{writing.body}</p>
+              <p className="text-xs text-foreground-subtle mb-3">By Stephanie Stranko</p>
+              <a href={writing.href} className="text-sm link-lilac">
+                {writing.cta}
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Case studies */}
+      <section id="case-studies" className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Case Studies</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {caseStudies.map((item) => (
+            <article key={item.title} className="card-surface p-5">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">{item.label}</p>
+              <h3 className="font-display text-lg text-foreground mb-2">{item.title}</h3>
+              <p className="text-sm text-foreground-muted leading-relaxed">{item.body}</p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <a
+            href="/reports"
+            className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            Request case study packet →
+          </a>
+          <a
+            href="/contact"
+            className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            Ask about enterprise case review
+          </a>
         </div>
       </section>
 

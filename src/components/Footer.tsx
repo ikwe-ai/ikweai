@@ -34,6 +34,12 @@ export default function Footer() {
               <Link to="/research" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Study I
               </Link>
+              <a href="/research#writings" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                Founder Writings
+              </a>
+              <a href="/research#case-studies" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                Case Studies
+              </a>
               <Link to="/technology/architecture" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Architecture
               </Link>
