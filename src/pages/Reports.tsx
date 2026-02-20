@@ -15,7 +15,7 @@ export default function Reports() {
       label: "Live Page",
       title: "Architecture Overview",
       href: "/technology/architecture",
-      desc: "Current pipeline overview, control terms, and publication boundaries.",
+      desc: "Current pipeline overview, control terms, and public framework summary.",
     },
     {
       label: "Live Page",
