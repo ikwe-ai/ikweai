@@ -21,7 +21,7 @@ export default function About() {
           "Structured disclosure and COI recusal practices",
         ]}
         primaryAction={{ href: "/contact", label: "Contact Governance Team →" }}
-        secondaryAction={{ href: "/reports", label: "Request Governance Artifacts" }}
+        secondaryAction={{ href: "/reports", label: "View Reports & Releases" }}
       />
 
       {/* Independence */}
@@ -83,7 +83,7 @@ export default function About() {
             },
             {
               label: "Publication discipline",
-              text: "Public materials provide framework clarity without exposing protected implementation mechanics. Sensitive scoring internals remain gated by policy.",
+              text: "Public materials provide framework clarity while detailed scoring specifications are handled through formal release policy.",
             },
             {
               label: "Evidence traceability",

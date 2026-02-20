@@ -201,7 +201,7 @@ export default function Research() {
       <section id="writings" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Founder Writings</p>
         <p className="text-xs text-foreground-subtle mb-5 max-w-2xl">
-          Published writing appears directly on this page. Additional reports are listed in the reports library.
+          Published writing appears directly on this page. Related research materials are listed in the reports library.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
           {writings.map((writing) => (

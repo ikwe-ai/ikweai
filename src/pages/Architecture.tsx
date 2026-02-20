@@ -42,7 +42,7 @@ export default function Architecture() {
       body: (
         <>
           Gate-passing responses are scored through <CanonicalTerm term="Dimensional Scoring" />. Dimension definitions
-          and weights are contained in gated artifacts.
+          and weights are documented in formal report releases.
         </>
       ),
     },
@@ -68,13 +68,13 @@ export default function Architecture() {
       <SummaryHero
         kicker="System Overview"
         title="Architecture"
-        summary="Public overview of the evaluation pipeline. Scoring constants, scenario prompts, and calibration materials are intentionally gated."
+        summary="Public overview of the evaluation pipeline. Detailed scoring specifications are documented through formal report releases."
         highlights={[
           "Version-locked release discipline",
           "Deterministic gate before quality scoring",
-          "Protected implementation details remain redacted",
+          "Public framework language with release discipline",
         ]}
-        primaryAction={{ href: "/reports", label: "Request Architecture Artifacts →" }}
+        primaryAction={{ href: "/reports", label: "View Reports & Releases →" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
       />
 
@@ -114,9 +114,9 @@ export default function Architecture() {
 
       {/* What's not here */}
       <section className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Gated Information</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Publication Boundary</p>
         <p className="text-sm text-foreground-muted max-w-xl leading-relaxed mb-6">
-          The following are not disclosed on this page to prevent gaming of the benchmark:
+          The following details are not published on this page:
         </p>
         <ul className="space-y-2 text-sm text-foreground-muted max-w-lg">
           {[
@@ -138,8 +138,8 @@ export default function Architecture() {
       <section className="py-14">
         <GatedCallout
           title="Detailed Architecture Documentation"
-          body="Full pipeline specifications, dimension rubrics, and scoring implementation details are available in gated artifact releases."
-          ctaLabel="Request architecture documentation →"
+          body="Extended architecture documentation is distributed through formal report releases."
+          ctaLabel="View release options →"
         />
       </section>
     </PageShell>
