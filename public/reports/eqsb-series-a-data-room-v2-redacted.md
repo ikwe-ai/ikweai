@@ -1,25 +1,16 @@
-# EQ Safety Benchmark v1.1 — Series A Data Room (Redacted)
+# EQ Safety Benchmark — Public Data Room Summary
 
-Status: Public redacted release
-Source: Canonical release artifacts
+Status: Public summary
+Source: Ikwe.ai benchmark publication
 
 ## Executive summary
-EQ Safety Benchmark (EQSB) is a behavioral safety measurement framework for AI systems in emotionally sensitive contexts. It produces version-locked audit artifacts suitable for governance and diligence review.
+EQ Safety Benchmark (EQSB) is an independent behavioral safety benchmark for AI systems used in high-stakes human contexts.
+This public summary is for institutional review and does not include restricted implementation materials.
 
-## Architecture
-- Layer 1: Safety Gate (deterministic PASS/FAIL)
-- Layer 2: Dimensional scoring (weighted composite)
-- Severity overrides applied for high-risk conditions
+## Current benchmark citation
+- 54.7% failed the Safety Gate at first contact.
+- 43% showed no repair behavior after introducing harm.
+- N = 21,000+ responses across 79 scenarios in 12 behavioral risk domains.
 
-## Redacted values
-Selected implementation constants are intentionally redacted in this public artifact:
-- Override threshold constants: `[REDACTED]`
-- Composite ceiling constants: `[REDACTED]`
-- Calibration documentation: `[REDACTED]`
-
-## Public baseline citation
-- 54.7% passed the Safety Gate; 45.3% introduced harm.
-- Study I (EQ Safety Benchmark, 2024–2025): n=948 responses · 79 scenarios.
-
-## Governance note
-Source records are maintained in governed research storage with checksums and lock metadata.
+## Access note
+Additional benchmark materials are available on request for authorized review.

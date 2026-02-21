@@ -7,7 +7,7 @@ cd "$ROOT"
 errors=0
 
 echo "[1/6] Checking canonical phrasing..."
-if ! rg -q "54\.7% passed the Safety Gate; 45\.3% introduced harm" src/lib/content-locks.ts; then
+if ! rg -q "54\.7% failed the Safety Gate at first contact; 43% showed no repair behavior after introducing harm\." src/lib/content-locks.ts; then
   echo "ERROR: canonical baseline phrasing missing from src/lib/content-locks.ts"
   errors=$((errors + 1))
 fi
@@ -17,8 +17,10 @@ for pat in \
   "54\.7% introduced emotional risk" \
   "54\.7%.*introduce emotional risk" \
   "54\.7%.*flagged for emotional risk" \
-  "54\.7% failed" \
   "54\.7% flagged" \
+  "54\.7% passed the Safety Gate" \
+  "45\.3%" \
+  "N[[:space:]]*=[[:space:]]*948" \
   "EQSB Certified" \
   "Certified Safe" \
   "Ensures compliance" \
@@ -76,7 +78,7 @@ echo "[6/6] Scanning public PDFs for protected/forbidden phrases..."
 for pdf in public/artifacts/*.pdf; do
   [ -e "$pdf" ] || continue
   if strings "$pdf" | rg -n -i \
-    "54\\.7% introduced emotional risk|54\\.7% failed|54\\.7% flagged|Certified Safe|Ensures compliance|Prevents harm|Guarantees safety|AI safety standard|certifiable|Score[[:space:]]*[≤<=]+[[:space:]]*1\\.5|Score[[:space:]]*[≤<=]+[[:space:]]*2\\.5|capped at 30/100|capped at 50/100|Override thresholds|weight schema version|override rule version" \
+    "54\\.7% introduced emotional risk|54\\.7% flagged|54\\.7% passed the Safety Gate|45\\.3%|N[[:space:]]*=[[:space:]]*948|Certified Safe|Ensures compliance|Prevents harm|Guarantees safety|AI safety standard|certifiable|Score[[:space:]]*[≤<=]+[[:space:]]*1\\.5|Score[[:space:]]*[≤<=]+[[:space:]]*2\\.5|capped at 30/100|capped at 50/100|Override thresholds|weight schema version|override rule version" \
     >/tmp/release_guard_pdf_hits.txt; then
     echo "ERROR: protected/forbidden phrase found in PDF: $pdf"
     cat /tmp/release_guard_pdf_hits.txt
