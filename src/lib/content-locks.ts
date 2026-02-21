@@ -57,5 +57,5 @@ export const METHODOLOGY_LINEAGE = {
 export const ARTIFACT_GATING = {
   policy:
     "Samples are distributed through controlled access. " + "Request the current sample set.",
-  note: "Every artifact includes: version number · changelog · current stat block.",
+  note: "Every deliverable includes: version number · changelog · current stat block.",
 } as const;
