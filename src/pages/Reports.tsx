@@ -41,21 +41,21 @@ export default function Reports() {
     {
       title: "Audit Pathway",
       href: "/audit",
-      desc: "Engagement structure, artifact package scope, and intake start path.",
+      desc: "Engagement structure, deliverable package scope, and intake start path.",
     },
   ] as const;
 
   return (
     <PageShell>
       <PageMeta
-        title="Artifacts & Transparency | Ikwe.ai"
-        description="Artifact previews, transparency standards, and full report request pathways."
+        title="Deliverables & Transparency | Ikwe.ai"
+        description="Deliverables previews, transparency standards, and full report request pathways."
         path="/deliverables"
       />
       <SummaryHero
-        kicker="Artifact Hub"
-        title="Artifacts & Transparency"
-        summary="Artifact previews show what institutions receive. Full report packages are available through audit engagement."
+        kicker="Deliverables Hub"
+        title="Deliverables & Transparency"
+        summary="Deliverables previews show what institutions receive. Full report packages are available through audit engagement."
         highlights={[
           "Board-ready output formats",
           "Clear transparency standards",
@@ -64,15 +64,15 @@ export default function Reports() {
         primaryAction={{ href: "#output-previews", label: "View Output Previews ↓" }}
         secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
         jumpLinks={[
-          { href: "#output-previews", label: "Artifact Previews" },
-          { href: "#artifact-schema", label: "Artifact Format" },
+          { href: "#output-previews", label: "Deliverables Previews" },
+          { href: "#artifact-schema", label: "Deliverables Format" },
           { href: "#transparency-boundary", label: "Boundary" },
           { href: "#request-access", label: "Request Path" },
         ]}
       />
 
       <section id="output-previews" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Artifact Previews</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Deliverables Previews</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mb-8">
           {outputPreviews.map((item) => (
             <article key={item.title} className="card-surface p-5 flex flex-col gap-3">
@@ -100,7 +100,7 @@ export default function Reports() {
       </section>
 
       <section id="artifact-schema" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Artifact Format</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Deliverables Format</p>
         <div className="card-surface p-6 max-w-3xl">
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
             Public previews show format and structure only. Detailed implementation details are not published on the
@@ -147,7 +147,7 @@ export default function Reports() {
               Detailed documentation and extended packs are provided to organizations in active audit or scoped review.
             </p>
             <p className="text-xs text-foreground-subtle leading-relaxed mt-3">
-              If you need a PDF copy, send the artifact name to{" "}
+              If you need a PDF copy, send the deliverable name to{" "}
               <a href="mailto:research@ikwe.ai" className="link-lilac">research@ikwe.ai</a>. If a styled PDF is not
               available, we can send the equivalent web-copy version.
             </p>
@@ -173,7 +173,7 @@ export default function Reports() {
 
       <section className="py-14">
         <p className="text-xs text-foreground-subtle max-w-2xl leading-relaxed">
-          Note: Artifact previews are published for transparency and institutional clarity. Full report
+          Note: Deliverables previews are published for transparency and institutional clarity. Full report
           materials are available through audit engagement.
         </p>
       </section>

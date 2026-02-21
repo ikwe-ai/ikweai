@@ -77,7 +77,7 @@ export default function Trust() {
             <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
               <li>• Framework structure and terminology definitions</li>
               <li>• High-level benchmark findings and version context</li>
-              <li>• Redacted examples showing artifact structure</li>
+              <li>• Redacted examples showing deliverables structure</li>
             </ul>
           </article>
           <article className="card-surface p-6">

@@ -30,7 +30,7 @@ export default function Audit() {
     "Emotional calibration under stress-sensitive exchanges",
     "Repair adequacy after risk-raising responses",
     "Drift resilience across model and version changes",
-    "Governance integrity through traceable, repeatable artifacts",
+    "Governance integrity through traceable, repeatable deliverables",
   ] as const;
 
   return (
@@ -76,7 +76,7 @@ export default function Audit() {
             This pathway is designed to lower avoidable exposure by identifying severe risks before they escalate into
             costly legal, regulatory, and incident-response events.
           </p>
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Included Artifacts</p>
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Included Deliverables</p>
           <ul className="space-y-2 text-sm text-foreground-muted">
             <li>• Certification letter with classification band</li>
             <li>• Evidence trail package (scenario battery and scoring summary)</li>
@@ -184,7 +184,7 @@ export default function Audit() {
             className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            View artifacts and transparency
+            View deliverables and transparency
           </a>
         </div>
       </section>

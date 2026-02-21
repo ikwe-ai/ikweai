@@ -20,10 +20,10 @@ export default function Press() {
     },
     {
       label: "Published",
-      title: "Artifacts & Transparency",
-      body: "Public artifact-preview hub linking to benchmark, architecture, and trust pages.",
+      title: "Deliverables & Transparency",
+      body: "Public deliverables-preview hub linking to benchmark, architecture, and trust pages.",
       href: "/deliverables",
-      cta: "Open artifact hub →",
+      cta: "Open deliverables hub →",
     },
     {
       label: "Published",

@@ -206,12 +206,12 @@ export default function Research() {
               href="/deliverables"
               className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
             >
-              View Artifacts & Transparency
+              View Deliverables & Transparency
             </a>
           </div>
           <p className="text-xs text-foreground-subtle mt-4">
             Need a PDF copy? Email <a href="mailto:research@ikwe.ai" className="link-lilac">research@ikwe.ai</a> with
-            the artifact name. If a styled PDF is not available, we can provide the equivalent web-copy version.
+            the deliverable name. If a styled PDF is not available, we can provide the equivalent web-copy version.
           </p>
         </article>
       </section>

@@ -20,7 +20,7 @@ export default function About() {
           "Structured disclosure and COI recusal practices",
         ]}
         primaryAction={{ href: "/request-audit#application-form", label: "Request Audit →" }}
-        secondaryAction={{ href: "/deliverables", label: "View Artifacts & Transparency" }}
+        secondaryAction={{ href: "/deliverables", label: "View Deliverables & Transparency" }}
         jumpLinks={[
           { href: "#independence", label: "Independence" },
           { href: "#coi-policy", label: "COI Policy" },
@@ -61,7 +61,7 @@ export default function About() {
               text: "Ikwe.ai is independently funded. We disclose any institutional funding sources on a per-study basis. Benchmark publication pages disclose funding posture for each release state.",
             },
             {
-              label: "Artifact review",
+              label: "Deliverables review",
               text: "No evaluated party reviews or approves published findings, public copy, or metric blocks before publication.",
             },
             {

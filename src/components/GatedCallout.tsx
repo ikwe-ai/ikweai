@@ -11,7 +11,7 @@ interface GatedCalloutProps {
 export default function GatedCallout({
   title = "Report Distribution",
   body = "Site pages show report structure. Full report documentation is available through audit engagement.",
-  ctaLabel = "Open Artifacts & Transparency →",
+  ctaLabel = "Open Deliverables & Transparency →",
   ctaPath = "/deliverables",
 }: GatedCalloutProps) {
   return (

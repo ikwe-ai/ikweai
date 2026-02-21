@@ -73,7 +73,7 @@ export default function Consultation() {
               Open request form →
             </a>
             <a href="/deliverables" className="link-lilac">
-              Review artifacts →
+              Review deliverables →
             </a>
             <a href="/trust" className="link-lilac">
               Trust and confidentiality →

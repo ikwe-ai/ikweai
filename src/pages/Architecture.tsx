@@ -48,7 +48,7 @@ export default function Architecture() {
           "Safety Gate before broader scoring",
           "Governance-ready reporting outputs",
         ]}
-        primaryAction={{ href: "/deliverables", label: "View Artifacts & Transparency →" }}
+        primaryAction={{ href: "/deliverables", label: "View Deliverables & Transparency →" }}
         secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
         jumpLinks={[
           { href: "#pipeline", label: "Pipeline" },
@@ -88,7 +88,7 @@ export default function Architecture() {
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Public Scope</p>
         <p className="text-sm text-foreground-muted max-w-xl leading-relaxed mb-6">
           This page provides a public overview only. Detailed process documentation and implementation-specific technical
-          artifacts are not publicly displayed.
+          documents are not publicly displayed.
         </p>
         <ul className="space-y-2 text-sm text-foreground-muted max-w-lg">
           {[
