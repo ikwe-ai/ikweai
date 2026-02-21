@@ -15,8 +15,8 @@
 //     (weighting proprietary)."
 //
 // ✅ LOCKED ARTIFACT GATING:
-//    "Samples and PDFs are distributed as version-controlled releases to ensure accuracy.
-//     Request the current sample pack."
+//    "Samples are distributed through controlled access.
+//     Request the current sample set."
 //
 // EVERY ARTIFACT INCLUDES: version number · changelog · current stat block.
 // =============================================================================
@@ -56,7 +56,6 @@ export const METHODOLOGY_LINEAGE = {
 
 export const ARTIFACT_GATING = {
   policy:
-    "Samples and PDFs are distributed as version-controlled releases to ensure accuracy. " +
-    "Request the current sample pack.",
+    "Samples are distributed through controlled access. " + "Request the current sample set.",
   note: "Every artifact includes: version number · changelog · current stat block.",
 } as const;

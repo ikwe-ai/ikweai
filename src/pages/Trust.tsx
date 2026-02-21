@@ -83,8 +83,8 @@ export default function Trust() {
           <article className="card-surface p-6">
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Client Materials</p>
             <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-              <li>• Detailed scenario sets and extended documentation</li>
-              <li>• Full scoring appendices and report support tables</li>
+              <li>• Expanded benchmark documentation for authorized review</li>
+              <li>• Reporting appendices provided by approved access path</li>
               <li>• Organization-specific reporting materials</li>
             </ul>
           </article>
@@ -123,6 +123,10 @@ export default function Trust() {
       <section id="contact-path" className="py-14 max-w-3xl">
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           Use audit intake to request scope review, redacted output walkthrough, and full report package options.
+        </p>
+        <p className="text-xs text-foreground-subtle leading-relaxed mb-5">
+          PDF copies are provided on request. If a styled PDF is unavailable, we can send an equivalent web-copy
+          version for review.
         </p>
         <a
           href="/request-audit#application-form"
