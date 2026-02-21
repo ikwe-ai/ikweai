@@ -79,13 +79,13 @@ export default function Contact() {
     <PageShell>
       <PageMeta
         title="Request Audit | Ikwe.ai"
-        description="Start an audit request. Consultation support is included for scope and pathway alignment."
+        description="Start an audit request. Scope review support is included for pathway alignment."
         path="/request-audit"
       />
       <SummaryHero
         kicker="Audit Request"
         title="Request Audit"
-        summary="Submit deployment context and review objective. Consultation support follows intake for scope alignment."
+        summary="Submit deployment context and review objective. Scope review follows intake for alignment."
         highlights={[
           "Independent review",
           "Governance-ready outputs",
@@ -130,14 +130,14 @@ export default function Contact() {
                 <ol className="space-y-2 text-sm text-foreground-muted leading-relaxed">
                   <li>1. Audit request review and fit check</li>
                   <li>2. Scope recommendation and timeline options</li>
-                  <li>3. Consultation alignment and delivery plan</li>
+                  <li>3. Scope review alignment and delivery plan</li>
                 </ol>
               </article>
 
               <article className="card-surface p-6">
-                <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Consultation Support</p>
+                <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Scope Review Support</p>
                 <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-                  Guided intake helps prefill a standard baseline before submission. Consultation remains part of the
+                  Guided intake helps prefill a standard baseline before submission. Scope review remains part of the
                   process for scope clarity.
                 </p>
                 <button type="button" onClick={startGuidedIntake} className="text-sm link-lilac">

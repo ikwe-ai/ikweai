@@ -21,7 +21,7 @@ export default function EqSafetyBenchmark() {
           "N = 21,000+ outputs across 79 scenarios in 12 risk domains",
         ]}
         primaryAction={{ href: "/request-audit#application-form", label: "Request Audit →" }}
-        secondaryAction={{ href: "/deliverables", label: "View Deliverables & Transparency" }}
+        secondaryAction={{ href: "/deliverables", label: "View Artifacts & Transparency" }}
         jumpLinks={[
           { href: "#eqsb-metrics", label: "Baseline Metrics" },
           { href: "#eqsb-structure", label: "Framework Structure" },

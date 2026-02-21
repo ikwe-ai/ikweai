@@ -12,7 +12,7 @@ export default function WritingLibrary() {
         path="/research/writings"
       />
       <SummaryHero
-        kicker="Publication Index"
+        kicker="Research Index"
         title="Writing Library"
         summary="A public library of opinions, research notes, and case analyses aligned with current benchmark language."
         highlights={[
@@ -92,7 +92,7 @@ export default function WritingLibrary() {
             className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Request consultation
+            Request scope review
           </a>
         </div>
       </section>
@@ -100,7 +100,7 @@ export default function WritingLibrary() {
       <section id="press-updates" className="py-14">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">Press & Updates</p>
         <p className="text-sm text-foreground-muted leading-relaxed max-w-2xl mb-4">
-          Team media notes, release updates, and newsletter-style publication updates are published in the Research
+          Team media notes, benchmark updates, and newsletter-style publications are maintained in the Research
           press section.
         </p>
         <a href="/research/press" className="text-sm link-lilac">
