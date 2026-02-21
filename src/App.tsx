@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import SiteAssistant from "@/components/SiteAssistant";
 
 import Index from "./pages/Index";
 import Research from "./pages/Research";
@@ -106,6 +107,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
+        <SiteAssistant />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
