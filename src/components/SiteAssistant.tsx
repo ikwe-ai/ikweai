@@ -28,6 +28,8 @@ type GuideContext = {
 
 const GUIDE_TRIGGER_PATTERN = /\b(guide|walk\s?through|walkthrough|navigate this page|what'?s on this page|on this page)\b/i;
 const ASK_PREFIX = "ask://";
+const LAUNCHER_DELAY_MS = 9000;
+const LAUNCHER_SCROLL_THRESHOLD = 220;
 const LEAD_CAPTURE_LINKS: AssistantLink[] = [
   { label: "Request Audit Intake", href: "/request-audit#application-form" },
   { label: "Book Consultation", href: "/consult" },
@@ -143,11 +145,14 @@ export default function SiteAssistant() {
   const [pendingFallbackQuestion, setPendingFallbackQuestion] = useState("");
   const [followupEmail, setFollowupEmail] = useState("");
   const [followupState, setFollowupState] = useState<FollowupState>("idle");
+  const [showLauncher, setShowLauncher] = useState(false);
   const [hasGuideUpdate, setHasGuideUpdate] = useState(false);
   const [guideContext, setGuideContext] = useState<GuideContext>(() => normalizeGuideDetail());
   const nextIdRef = useRef(2);
   const openRef = useRef(false);
   const scrollAreaRef = useRef<HTMLDivElement | null>(null);
+  const hasSeenGuideContextRef = useRef(false);
+  const lastGuideContextKeyRef = useRef("");
 
   const postForm = async (formName: string, payload: Record<string, string>) => {
     const body = new URLSearchParams({
@@ -187,8 +192,29 @@ export default function SiteAssistant() {
     target.scrollTop = target.scrollHeight;
   }, [messages]);
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const revealLauncher = () => setShowLauncher(true);
+    const onScroll = () => {
+      if (window.scrollY >= LAUNCHER_SCROLL_THRESHOLD) {
+        revealLauncher();
+      }
+    };
+
+    const timerId = window.setTimeout(revealLauncher, LAUNCHER_DELAY_MS);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    return () => {
+      window.clearTimeout(timerId);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
   const openAssistantPanel = useCallback(() => {
     setOpen(true);
+    setShowLauncher(true);
     setHasGuideUpdate(false);
   }, []);
 
@@ -273,10 +299,21 @@ export default function SiteAssistant() {
     if (typeof window === "undefined") return;
     const onGuideContext = (event: Event) => {
       const detail = (event as CustomEvent<AssistantGuideDetail>).detail;
-      setGuideContext(normalizeGuideDetail(detail));
-      if (!openRef.current) {
-        setHasGuideUpdate(true);
+      const nextContext = normalizeGuideDetail(detail);
+      setGuideContext(nextContext);
+      const nextKey = `${nextContext.pageTitle}::${nextContext.sections.map((section) => `${section.label}|${section.href}`).join("::")}`;
+
+      if (!hasSeenGuideContextRef.current) {
+        hasSeenGuideContextRef.current = true;
+        lastGuideContextKeyRef.current = nextKey;
+        return;
       }
+
+      if (!openRef.current && nextKey !== lastGuideContextKeyRef.current) {
+        setHasGuideUpdate(true);
+        setShowLauncher(true);
+      }
+      lastGuideContextKeyRef.current = nextKey;
     };
     window.addEventListener("ikwe:assistant-guide-context", onGuideContext as EventListener);
     return () => {
@@ -421,6 +458,7 @@ export default function SiteAssistant() {
       }}
     >
       {!open ? (
+        showLauncher || hasGuideUpdate ? (
         <div className="flex flex-col items-end gap-2">
           <button
             type="button"
@@ -443,6 +481,7 @@ export default function SiteAssistant() {
             <span>Questions?</span>
           </button>
         </div>
+        ) : null
       ) : (
         <section className="w-[min(96vw,400px)] max-sm:w-full max-h-[min(86dvh,760px)] rounded-xl border border-border-2 bg-background-card shadow-[0_28px_70px_hsl(266_38%_4%_/_0.66)] overflow-hidden flex flex-col">
           <header className="flex items-start justify-between border-b border-border px-4 py-3 bg-background-card">
