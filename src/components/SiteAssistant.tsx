@@ -1,5 +1,5 @@
-import { FormEvent, useMemo, useRef, useState } from "react";
-import { MessageSquare, Send, ShieldAlert, X } from "lucide-react";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import { MessageSquare, RotateCcw, Send, ShieldAlert, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { resolveApprovedAnswer, type AssistantLink } from "@/lib/approved-answers";
 
@@ -7,7 +7,7 @@ type ChatMessage = {
   id: number;
   role: "assistant" | "user";
   text: string;
-  kind?: "default" | "restricted";
+  kind?: "default" | "restricted" | "fallback";
   links?: AssistantLink[];
 };
 
@@ -31,8 +31,15 @@ export default function SiteAssistant() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([START_MESSAGE]);
   const nextIdRef = useRef(2);
+  const scrollAreaRef = useRef<HTMLDivElement | null>(null);
 
   const hasUserMessages = useMemo(() => messages.some((message) => message.role === "user"), [messages]);
+
+  useEffect(() => {
+    const target = scrollAreaRef.current;
+    if (!target) return;
+    target.scrollTop = target.scrollHeight;
+  }, [messages]);
 
   const pushAssistantAnswer = (question: string) => {
     const trimmed = question.trim();
@@ -49,12 +56,17 @@ export default function SiteAssistant() {
     const assistantMessage: ChatMessage = {
       id: nextIdRef.current++,
       role: "assistant",
-      kind: resolution.kind === "restricted" ? "restricted" : "default",
+      kind:
+        resolution.kind === "restricted"
+          ? "restricted"
+          : resolution.kind === "fallback"
+            ? "fallback"
+            : "default",
       text: resolution.text,
       links: resolution.links,
     };
 
-    setMessages((prev) => [...prev.slice(-10), userMessage, assistantMessage]);
+    setMessages((prev) => [...prev.slice(-14), userMessage, assistantMessage]);
   };
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -65,47 +77,67 @@ export default function SiteAssistant() {
   };
 
   const onOpenLink = (href: string) => {
+    if (href.endsWith(".html") || href.startsWith("http://") || href.startsWith("https://")) {
+      window.location.href = href;
+      return;
+    }
     navigate(href);
   };
 
+  const resetAssistant = () => {
+    setMessages([START_MESSAGE]);
+    setInput("");
+  };
+
   return (
-    <div className="fixed bottom-5 right-5 z-[220]">
+    <div className="fixed bottom-4 right-4 z-[220] max-sm:left-3 max-sm:right-3 sm:bottom-5 sm:right-5">
       {!open ? (
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="inline-flex items-center gap-2 rounded-full border border-lilac/45 bg-background-card/95 px-4 py-2.5 text-sm text-foreground shadow-[0_10px_28px_hsl(268_35%_6%_/_0.48)] transition hover:border-lilac-bright/70"
+          className="inline-flex items-center gap-2 rounded-full border border-lilac/55 bg-background-card px-4 py-2.5 text-sm text-foreground shadow-[0_16px_34px_hsl(268_35%_6%_/_0.56)] transition hover:border-lilac-bright/80"
           aria-label="Open site assistant"
         >
           <MessageSquare size={15} className="text-lilac-bright" />
-          Ask Ikwe Assistant
+          <span className="max-sm:hidden">Ask Ikwe Assistant</span>
+          <span className="sm:hidden">Ask</span>
         </button>
       ) : (
-        <section className="w-[min(92vw,390px)] rounded-lg border border-border-2 bg-background-card/98 shadow-[0_24px_60px_hsl(266_38%_4%_/_0.62)]">
-          <header className="flex items-start justify-between border-b border-border px-4 py-3">
+        <section className="w-[min(95vw,420px)] max-sm:w-full rounded-xl border border-border-2 bg-background-card/96 backdrop-blur-md shadow-[0_28px_70px_hsl(266_38%_4%_/_0.66)]">
+          <header className="flex items-start justify-between border-b border-border px-4 py-3 bg-background/60">
             <div>
               <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-lilac-bright">Approved Answers</p>
               <p className="text-sm text-foreground">Ikwe Site Assistant</p>
             </div>
-            <button
-              type="button"
-              className="rounded border border-border px-2 py-1 text-foreground-muted hover:text-foreground"
-              onClick={() => setOpen(false)}
-              aria-label="Close site assistant"
-            >
-              <X size={14} />
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                className="rounded border border-border px-2 py-1 text-foreground-muted hover:text-foreground"
+                onClick={resetAssistant}
+                aria-label="Reset assistant messages"
+              >
+                <RotateCcw size={13} />
+              </button>
+              <button
+                type="button"
+                className="rounded border border-border px-2 py-1 text-foreground-muted hover:text-foreground"
+                onClick={() => setOpen(false)}
+                aria-label="Close site assistant"
+              >
+                <X size={14} />
+              </button>
+            </div>
           </header>
 
           {!hasUserMessages ? (
-            <div className="px-4 py-3 border-b border-border">
+            <div className="px-4 py-3 border-b border-border bg-background/45">
               <p className="text-xs text-foreground-subtle mb-2">Try a quick question</p>
               <div className="flex flex-wrap gap-2">
                 {QUICK_QUESTIONS.map((question) => (
                   <button
                     key={question}
                     type="button"
-                    className="btn-outline rounded-full px-3 py-1.5 text-xs text-foreground-muted hover:text-foreground"
+                    className="btn-outline rounded-full px-3 py-1.5 text-xs text-foreground hover:text-foreground"
                     onClick={() => pushAssistantAnswer(question)}
                   >
                     {question}
@@ -115,19 +147,21 @@ export default function SiteAssistant() {
             </div>
           ) : null}
 
-          <div className="max-h-[48vh] overflow-auto px-4 py-3 space-y-3">
+          <div ref={scrollAreaRef} className="max-h-[52vh] sm:max-h-[460px] overflow-auto px-4 py-3 space-y-3 bg-background/38">
             {messages.map((message) => (
               <article
                 key={message.id}
                 className={`rounded-md border px-3 py-2 ${
                   message.role === "user"
-                    ? "ml-6 border-lilac/45 bg-lilac-dim/35"
+                    ? "ml-4 border-lilac/55 bg-lilac-dim/72"
                     : message.kind === "restricted"
-                      ? "mr-6 border-danger/55 bg-danger/10"
-                      : "mr-6 border-border-2 bg-background-surface/72"
+                      ? "mr-4 border-danger/60 bg-danger/16"
+                      : message.kind === "fallback"
+                        ? "mr-4 border-amber/60 bg-amber/10"
+                        : "mr-4 border-border-2 bg-background-surface/92"
                 }`}
               >
-                <p className="text-xs text-foreground-muted leading-relaxed">{message.text}</p>
+                <p className="text-sm text-foreground leading-relaxed whitespace-pre-line break-words">{message.text}</p>
                 {message.kind === "restricted" ? (
                   <p className="mt-2 inline-flex items-center gap-1 text-[11px] text-danger">
                     <ShieldAlert size={12} />
@@ -140,7 +174,7 @@ export default function SiteAssistant() {
                       <button
                         key={`${message.id}-${link.href}`}
                         type="button"
-                        className="rounded border border-border-2 px-2 py-1 text-[11px] text-foreground-muted hover:text-foreground hover:border-lilac/50"
+                        className="rounded border border-border-2 px-2 py-1 text-[11px] text-foreground hover:text-foreground hover:border-lilac/50"
                         onClick={() => onOpenLink(link.href)}
                       >
                         {link.label}
@@ -152,7 +186,7 @@ export default function SiteAssistant() {
             ))}
           </div>
 
-          <form onSubmit={onSubmit} className="border-t border-border p-3">
+          <form onSubmit={onSubmit} className="border-t border-border p-3 bg-background/72">
             <label htmlFor="site-assistant-input" className="sr-only">
               Ask a question
             </label>
@@ -162,14 +196,14 @@ export default function SiteAssistant() {
                 value={input}
                 onChange={(event) => setInput(event.target.value)}
                 className="field h-10"
-                placeholder="Ask about audits, research, or deliverables..."
+                placeholder="Ask about any public page on Ikwe.ai..."
               />
               <button type="submit" className="rounded bg-lilac px-3 py-2 text-primary-foreground" aria-label="Send question">
                 <Send size={14} />
               </button>
             </div>
-            <p className="mt-2 text-[11px] text-foreground-subtle">
-              Public information only. For client-specific requests, use secure intake.
+            <p className="mt-2 text-[11px] text-foreground-muted">
+              Uses approved public site knowledge only. For client-specific requests, use secure intake.
             </p>
           </form>
         </section>
