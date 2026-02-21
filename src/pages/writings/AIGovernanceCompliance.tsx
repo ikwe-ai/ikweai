@@ -11,7 +11,7 @@ export default function AIGovernanceCompliance() {
         path="/research/writings/ai-governance-is-becoming-a-compliance-issue"
       />
       <SummaryHero
-        kicker="Canon Essay"
+        kicker="Published Essay"
         title="AI Governance Is Becoming a Compliance Issue"
         summary="Governance is no longer only model quality. It is whether organizations can show auditable, repeatable, and defensible oversight."
         highlights={[
@@ -93,7 +93,7 @@ export default function AIGovernanceCompliance() {
           rel="noopener noreferrer"
           className="inline-block text-sm link-lilac mt-3"
         >
-          Canonical article URL ↗
+          Primary article URL ↗
         </a>
       </section>
     </PageShell>

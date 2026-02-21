@@ -101,7 +101,7 @@ export default function BeforeTheViolation() {
           rel="noopener noreferrer"
           className="inline-block text-sm link-lilac mt-3"
         >
-          Canonical article URL ↗
+          Primary article URL ↗
         </a>
       </section>
     </PageShell>

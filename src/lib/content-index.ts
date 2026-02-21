@@ -6,7 +6,7 @@ export const WRITINGS_INDEX = [
     href: "/research/writings/before-the-violation",
     cta: "Read full writing →",
     sourceHref: "https://ikwe.ai/research/writings/before-the-violation",
-    sourceLabel: "Canonical article URL ↗",
+    sourceLabel: "Primary article URL ↗",
     summary: "Why behavioral safety must be measured before visible policy failure, not only after it.",
     excerpt: [
       "Most organizations still treat behavioral failure as a post-incident problem. That delay is the governance gap. By the time a visible violation appears, institutional trust has already been consumed.",
@@ -15,12 +15,12 @@ export const WRITINGS_INDEX = [
   },
   {
     slug: "ai-governance-is-becoming-a-compliance-issue",
-    label: "Canon Essay · Published",
+    label: "Published Essay",
     title: "AI Governance Is Becoming a Compliance Issue",
     href: "/research/writings/ai-governance-is-becoming-a-compliance-issue",
     cta: "Read full essay →",
     sourceHref: "https://ikwe.ai/research/writings/ai-governance-is-becoming-a-compliance-issue",
-    sourceLabel: "Canonical article URL ↗",
+    sourceLabel: "Primary article URL ↗",
     summary:
       "A trust-layer thesis on why governance now requires auditable behavioral instrumentation and evidence discipline.",
     excerpt: [
@@ -35,7 +35,7 @@ export const WRITINGS_INDEX = [
     href: "/research/writings/choose-your-path",
     cta: "Read full essay →",
     sourceHref: "https://ikwe.ai/research/writings/choose-your-path",
-    sourceLabel: "Canonical article URL ↗",
+    sourceLabel: "Primary article URL ↗",
     summary:
       "An essay on interruption, cumulative risk, and how institutional trust is built through repeated operational choices.",
     excerpt: [
