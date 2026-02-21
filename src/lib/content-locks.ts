@@ -8,13 +8,13 @@ import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 // public benchmark framing.
 //
 // ✅ LOCKED STAT:
-//    "54.7% failed the Safety Gate at first contact;
-//     43% showed no repair behavior after introducing harm."
+//    "X% failed the Safety Gate at first contact;
+//     Y% showed no repair behavior after introducing harm."
 //
 // ✅ LOCKED METHODOLOGY LINEAGE:
-//    "Current benchmark snapshot reflects 79 structured scenarios in 12 behavioral
-//     risk domains, scored through a Safety Gate and an 8-dimension weighted model
-//     (weighting proprietary)."
+//    "Current benchmark snapshot reflects [scenario count] structured scenarios in
+//     [domain count] behavioral risk domains, scored through a Safety Gate and an
+//     8-dimension weighted model (weighting proprietary)."
 //
 // ✅ LOCKED ARTIFACT GATING:
 //    "Samples are distributed through controlled access.
