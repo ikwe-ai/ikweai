@@ -38,6 +38,23 @@
     />
   </head>
   <body>
+    <form name="assistant-question-log" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="text" name="question" />
+      <input type="text" name="page" />
+      <input type="text" name="source" />
+      <input type="text" name="submitted_at" />
+      <input type="text" name="bot-field" />
+    </form>
+
+    <form name="assistant-team-followup" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="email" name="email" />
+      <input type="text" name="question" />
+      <input type="text" name="page" />
+      <input type="text" name="source" />
+      <input type="text" name="submitted_at" />
+      <input type="text" name="bot-field" />
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

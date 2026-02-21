@@ -11,6 +11,8 @@ type ChatMessage = {
   links?: AssistantLink[];
 };
 
+type FollowupState = "idle" | "sending" | "sent" | "error";
+
 const QUICK_QUESTIONS = [
   "What do the benchmark numbers mean?",
   "How does the audit process work?",
@@ -30,10 +32,41 @@ export default function SiteAssistant() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([START_MESSAGE]);
+  const [pendingFallbackQuestion, setPendingFallbackQuestion] = useState("");
+  const [followupEmail, setFollowupEmail] = useState("");
+  const [followupState, setFollowupState] = useState<FollowupState>("idle");
   const nextIdRef = useRef(2);
   const scrollAreaRef = useRef<HTMLDivElement | null>(null);
 
   const hasUserMessages = useMemo(() => messages.some((message) => message.role === "user"), [messages]);
+
+  const postForm = async (formName: string, payload: Record<string, string>) => {
+    const body = new URLSearchParams({
+      "form-name": formName,
+      ...payload,
+      "bot-field": "",
+    });
+    const response = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: body.toString(),
+    });
+    if (!response.ok) throw new Error(`Form submission failed: ${formName}`);
+  };
+
+  const captureFallbackQuestion = async (question: string) => {
+    const path = typeof window !== "undefined" ? window.location.pathname : "/";
+    try {
+      await postForm("assistant-question-log", {
+        question,
+        page: path,
+        source: "site-assistant",
+        submitted_at: new Date().toISOString(),
+      });
+    } catch {
+      // Silent fail: logging should not interrupt user interaction.
+    }
+  };
 
   useEffect(() => {
     const target = scrollAreaRef.current;
@@ -67,6 +100,18 @@ export default function SiteAssistant() {
     };
 
     setMessages((prev) => [...prev.slice(-14), userMessage, assistantMessage]);
+
+    if (resolution.kind === "fallback") {
+      setPendingFallbackQuestion(trimmed);
+      setFollowupEmail("");
+      setFollowupState("idle");
+      void captureFallbackQuestion(trimmed);
+      return;
+    }
+
+    setPendingFallbackQuestion("");
+    setFollowupEmail("");
+    setFollowupState("idle");
   };
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -95,9 +140,32 @@ export default function SiteAssistant() {
     navigate(href);
   };
 
+  const submitFollowup = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!pendingFallbackQuestion || !followupEmail.trim()) return;
+
+    setFollowupState("sending");
+    const path = typeof window !== "undefined" ? window.location.pathname : "/";
+    try {
+      await postForm("assistant-team-followup", {
+        email: followupEmail.trim(),
+        question: pendingFallbackQuestion,
+        page: path,
+        source: "site-assistant",
+        submitted_at: new Date().toISOString(),
+      });
+      setFollowupState("sent");
+    } catch {
+      setFollowupState("error");
+    }
+  };
+
   const resetAssistant = () => {
     setMessages([START_MESSAGE]);
     setInput("");
+    setPendingFallbackQuestion("");
+    setFollowupEmail("");
+    setFollowupState("idle");
   };
 
   return (
@@ -196,6 +264,47 @@ export default function SiteAssistant() {
               </article>
             ))}
           </div>
+
+          {pendingFallbackQuestion ? (
+            <form onSubmit={submitFollowup} className="border-t border-border p-3 bg-background-surface">
+              <p className="text-xs text-foreground mb-2">
+                This question has been captured for team review. Add your email for a direct reply.
+              </p>
+              <p className="text-[11px] text-foreground-subtle mb-2 break-words">
+                <span className="font-mono uppercase tracking-[0.1em]">Captured question:</span> {pendingFallbackQuestion}
+              </p>
+              <div className="flex items-center gap-2">
+                <input
+                  type="email"
+                  value={followupEmail}
+                  onChange={(event) => setFollowupEmail(event.target.value)}
+                  className="field h-10"
+                  placeholder="you@organization.com"
+                  required
+                  disabled={followupState === "sending" || followupState === "sent"}
+                />
+                <button
+                  type="submit"
+                  className="rounded bg-lilac px-3 py-2 text-xs font-medium text-primary-foreground disabled:opacity-60"
+                  disabled={followupState === "sending" || followupState === "sent"}
+                >
+                  {followupState === "sending" ? "Sending..." : followupState === "sent" ? "Sent" : "Send to Team"}
+                </button>
+              </div>
+              {followupState === "sent" ? (
+                <p className="mt-2 text-[11px] text-safe">Thanks. Your follow-up request was received.</p>
+              ) : null}
+              {followupState === "error" ? (
+                <p className="mt-2 text-[11px] text-danger">
+                  Submission did not complete. Please email{" "}
+                  <a href="mailto:research@ikwe.ai" className="link-lilac underline">
+                    research@ikwe.ai
+                  </a>{" "}
+                  and include your question.
+                </p>
+              ) : null}
+            </form>
+          ) : null}
 
           <form onSubmit={onSubmit} className="border-t border-border p-3 bg-background-card">
             <label htmlFor="site-assistant-input" className="sr-only">
