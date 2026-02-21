@@ -1,5 +1,4 @@
 import PageShell from "@/components/PageShell";
-import CanonicalTerm from "@/components/CanonicalTerm";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 
@@ -8,20 +7,20 @@ export default function About() {
     <PageShell>
       <PageMeta
         title="About — Independence & Governance | Ikwe.ai"
-        description="Institutional independence, conflict-of-interest policy, and versioned governance for benchmark releases."
+        description="Institutional independence, conflict-of-interest policy, and governance controls for benchmark evidence."
         path="/about"
       />
       <SummaryHero
         kicker="Institutional Posture"
         title="About Ikwe.ai"
-        summary="Ikwe.ai is an independent behavioral AI evaluation organization. This page defines our conflict posture, release governance, and publication discipline."
+        summary="Ikwe.ai is an independent behavioral AI evaluation organization. This page defines our conflict posture, governance controls, and evidence management standards."
         highlights={[
           "No financial ties to evaluated model developers",
-          "Versioned release policy",
+          "Versioned evidence policy",
           "Structured disclosure and COI recusal practices",
         ]}
         primaryAction={{ href: "/request-audit#application-form", label: "Request Audit →" }}
-        secondaryAction={{ href: "/deliverables", label: "View Deliverables & Transparency" }}
+        secondaryAction={{ href: "/deliverables", label: "View Artifacts & Transparency" }}
         jumpLinks={[
           { href: "#independence", label: "Independence" },
           { href: "#coi-policy", label: "COI Policy" },
@@ -63,11 +62,11 @@ export default function About() {
             },
             {
               label: "Artifact review",
-              text: "No evaluated party reviews or approves published findings, release copy, or canonical stat blocks before publication.",
+              text: "No evaluated party reviews or approves published findings, public copy, or metric blocks before publication.",
             },
             {
               label: "Disclosure updates",
-              text: "COI disclosures are updated with each study. Any change to our funding or affiliation posture will be disclosed in the study versioning notes.",
+              text: "COI disclosures are updated with each study. Any change to funding or affiliation posture is disclosed in version notes.",
             },
           ].map(({ label, text }) => (
             <div key={label} className="py-5">
@@ -89,11 +88,11 @@ export default function About() {
             },
             {
               label: "Publication discipline",
-              text: "Public materials provide framework clarity while detailed scoring specifications are handled through formal release policy.",
+              text: "Public materials provide framework clarity while detailed scoring specifications are managed through controlled documentation.",
             },
             {
               label: "Evidence traceability",
-              text: "Each release is versioned with changelog context so external reviewers can attribute language and numbers to a specific methodological state.",
+              text: "Each evidence package is versioned with change context so external reviewers can attribute language and numbers to a specific methodological state.",
             },
             {
               label: "No guarantees",
@@ -111,17 +110,15 @@ export default function About() {
       {/* Versioning posture */}
       <section id="versioning" className="py-14 border-b border-border max-w-2xl">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Versioning Posture</p>
-        <h2 className="font-display text-2xl text-foreground mb-4">
-          <CanonicalTerm term="Version Lock" /> is enforced on released results
-        </h2>
+        <h2 className="font-display text-2xl text-foreground mb-4">Version lock is enforced on released results</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-          Once a study's canonical stat block is published, the numbers are frozen. If methodology changes, a new
-          version with a new designation is published, and the original is not edited.
+          Once a study metric block is published, those values are frozen. If methodology changes, a new version is
+          published and the original is not edited.
         </p>
         <p className="text-sm text-foreground-muted leading-relaxed mb-6">
-          Every report release carries a version identifier (for example,{" "}
+          Every report package carries a version identifier (for example,{" "}
           <span className="font-mono text-foreground">Ikwe_SamplePack_v2026.02.18</span>), a short changelog, and the
-          canonical stat block from the originating study. This ensures that any published release can be traced
+          metric block from the originating study. This ensures that any published package can be traced
           to a specific methodological state.
         </p>
         <div className="stat-block rounded p-5">

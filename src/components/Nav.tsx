@@ -29,17 +29,17 @@ const hubs: Hub[] = [
     id: "research",
     label: "Research",
     path: "/research",
-    desc: "Benchmark summary and publication library.",
+    desc: "Benchmark findings, methods, and public documentation.",
     children: [
       {
         path: "/eq-safety-benchmark",
         label: "EQ Safety Benchmark",
-        desc: "Dedicated EQSB page with baseline metrics and framework boundary.",
+        desc: "Benchmark metrics, framework structure, and public boundary.",
       },
       {
         path: "/research/writings",
         label: "Writing Library",
-        desc: "Published essays, notes, and opinion writing.",
+        desc: "Published essays, notes, and analysis writing.",
       },
       {
         path: "/research/case-studies",
@@ -53,7 +53,7 @@ const hubs: Hub[] = [
       },
     ],
     asideHeading: "Research Quick Access",
-    asideBody: "Start with benchmark context, then move into writing and case evidence.",
+    asideBody: "Start with benchmark findings, then move into case and writing evidence.",
     asideLinks: [
       { label: "EQ Safety Benchmark", path: "/eq-safety-benchmark" },
       { label: "Research Overview", path: "/research" },
@@ -66,14 +66,14 @@ const hubs: Hub[] = [
   },
   {
     id: "outputs",
-    label: "Deliverables",
+    label: "Artifacts",
     path: "/deliverables",
-    desc: "Output previews and full report request pathways.",
+    desc: "Artifact previews and full report request pathways.",
     children: [
       {
         path: "/deliverables",
-        label: "Deliverables Hub",
-        desc: "Public preview of board-facing and governance-facing deliverables.",
+        label: "Artifact Hub",
+        desc: "Public preview of board-facing and governance-facing artifacts.",
       },
       {
         path: "/audit",
@@ -86,10 +86,10 @@ const hubs: Hub[] = [
         desc: "Data handling and confidentiality standards.",
       },
     ],
-    asideHeading: "Deliverables Navigation",
+    asideHeading: "Artifact Navigation",
     asideBody: "See public report formats and how to request full report packages.",
     asideLinks: [
-      { label: "Deliverables Hub", path: "/deliverables" },
+      { label: "Artifact Hub", path: "/deliverables" },
       { label: "Research Overview", path: "/research" },
       { label: "Trust & Confidentiality", path: "/trust" },
       { label: "Architecture", path: "/technology/architecture" },
@@ -116,7 +116,7 @@ const hubs: Hub[] = [
       {
         path: "/deliverables",
         label: "Deliverables Hub",
-        desc: "Public output preview and artifact-access boundary.",
+        desc: "Public artifact preview and access boundary.",
       },
     ],
     asideHeading: "Architecture Navigation",
@@ -124,7 +124,7 @@ const hubs: Hub[] = [
     asideLinks: [
       { label: "Architecture Overview", path: "/technology/architecture" },
       { label: "Audit Pathway", path: "/audit" },
-      { label: "Deliverables Hub", path: "/deliverables" },
+      { label: "Artifact Hub", path: "/deliverables" },
       { label: "Research Glossary", path: "/research" },
     ],
     ctaLabel: "Request Audit →",
@@ -153,17 +153,17 @@ const hubs: Hub[] = [
       },
       {
         path: "/deliverables",
-        label: "Deliverables & Transparency",
-        desc: "Public output previews and full report request pathways.",
+        label: "Artifacts & Transparency",
+        desc: "Public artifact previews and full report request pathways.",
       },
     ],
     asideHeading: "About Navigation",
-    asideBody: "Company posture, governance commitments, and release discipline.",
+    asideBody: "Company posture, governance commitments, and evidence discipline.",
     asideLinks: [
       { label: "About Overview", path: "/about" },
       { label: "Trust & Confidentiality", path: "/trust" },
       { label: "Press & Updates", path: "/research/press" },
-      { label: "Deliverables Hub", path: "/deliverables" },
+      { label: "Artifact Hub", path: "/deliverables" },
       { label: "Consultation Overview", path: "/consult" },
     ],
     ctaLabel: "Request Audit →",
@@ -173,12 +173,12 @@ const hubs: Hub[] = [
     id: "consultation",
     label: "Consultation",
     path: "/consult",
-    desc: "Consultation context and intake support for audit requests.",
+    desc: "Scope review context and intake support for audit requests.",
     children: [
       {
         path: "/consult",
-        label: "Consultation Overview",
-        desc: "Consultation context and planning support around audit requests.",
+        label: "Scope Review Overview",
+        desc: "Scope review context and planning support around audit requests.",
       },
       {
         path: "/audit",
@@ -187,16 +187,16 @@ const hubs: Hub[] = [
       },
       {
         path: "/deliverables",
-        label: "Deliverables Context",
-        desc: "Review public output formats before intake.",
+        label: "Artifact Context",
+        desc: "Review public artifact formats before intake.",
       },
     ],
-    asideHeading: "Consultation Context",
-    asideBody: "Consultation remains available for scope alignment after audit request intake.",
+    asideHeading: "Scope Review Context",
+    asideBody: "Scope review remains available for alignment after audit request intake.",
     asideLinks: [
       { label: "Request Audit", path: "/request-audit#application-form" },
       { label: "Audit Pathway", path: "/audit" },
-      { label: "Deliverables Hub", path: "/deliverables" },
+      { label: "Artifact Hub", path: "/deliverables" },
       { label: "Research Overview", path: "/research" },
     ],
     ctaLabel: "Open Request Audit →",

@@ -11,11 +11,11 @@ export default function Footer() {
             </p>
             <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm">
               <Link to="/research" className="text-foreground-muted hover:text-foreground transition-colors">Research</Link>
-              <Link to="/deliverables" className="text-foreground-muted hover:text-foreground transition-colors">Deliverables</Link>
+              <Link to="/deliverables" className="text-foreground-muted hover:text-foreground transition-colors">Artifacts</Link>
               <Link to="/technology/architecture" className="text-foreground-muted hover:text-foreground transition-colors">Architecture</Link>
               <Link to="/trust" className="text-foreground-muted hover:text-foreground transition-colors">Trust</Link>
               <Link to="/about" className="text-foreground-muted hover:text-foreground transition-colors">About</Link>
-              <Link to="/consult" className="text-foreground-muted hover:text-foreground transition-colors">Consultation</Link>
+              <Link to="/consult" className="text-foreground-muted hover:text-foreground transition-colors">Scope Review</Link>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ export default function Footer() {
                 Architecture
               </Link>
               <Link to="/deliverables" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
-                Deliverables &amp; Transparency
+                Artifacts &amp; Transparency
               </Link>
             </nav>
           </div>
@@ -86,7 +86,7 @@ export default function Footer() {
                 Trust &amp; Confidentiality
               </Link>
               <Link to="/consult" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
-                Consultation
+                Scope Review
               </Link>
               <Link to="/ip-notice" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 IP Notice
@@ -102,7 +102,7 @@ export default function Footer() {
             <p className="text-xs font-mono text-foreground-subtle uppercase tracking-widest mb-3">Posture</p>
             <p className="text-xs text-foreground-subtle leading-relaxed">
               No commercial affiliations with AI developers evaluated.
-              Reports distributed as versioned releases only.
+              Reports distributed through controlled, versioned documentation.
               Results are not shared with evaluated parties before publication.
             </p>
           </div>

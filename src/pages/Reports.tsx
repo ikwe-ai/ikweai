@@ -18,7 +18,7 @@ export default function Reports() {
     {
       label: "Preview",
       title: "Evidence Pack Index",
-      desc: "Table-of-contents structure for release references, run IDs, and version attribution.",
+      desc: "Table-of-contents structure for reference IDs and version attribution.",
     },
     {
       label: "Preview",
@@ -31,7 +31,7 @@ export default function Reports() {
     {
       title: "Research Overview",
       href: "/research",
-      desc: "Benchmark findings, methodology lineage, and canonical terminology.",
+      desc: "Benchmark findings, methodology lineage, and governance terminology.",
     },
     {
       title: "Architecture Overview",
@@ -41,21 +41,21 @@ export default function Reports() {
     {
       title: "Audit Pathway",
       href: "/audit",
-      desc: "Engagement structure, deliverables, and intake start path.",
+      desc: "Engagement structure, artifact package scope, and intake start path.",
     },
   ] as const;
 
   return (
     <PageShell>
       <PageMeta
-        title="Deliverables & Transparency | Ikwe.ai"
-        description="Output previews, transparency standards, and full report request pathways."
+        title="Artifacts & Transparency | Ikwe.ai"
+        description="Artifact previews, transparency standards, and full report request pathways."
         path="/deliverables"
       />
       <SummaryHero
-        kicker="Deliverables Hub"
-        title="Deliverables & Transparency"
-        summary="Output previews show what institutions receive. Full report packages are available through audit engagement."
+        kicker="Artifact Hub"
+        title="Artifacts & Transparency"
+        summary="Artifact previews show what institutions receive. Full report packages are available through audit engagement."
         highlights={[
           "Board-ready output formats",
           "Clear transparency standards",
@@ -64,7 +64,7 @@ export default function Reports() {
         primaryAction={{ href: "#output-previews", label: "View Output Previews ↓" }}
         secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
         jumpLinks={[
-          { href: "#output-previews", label: "Output Previews" },
+          { href: "#output-previews", label: "Artifact Previews" },
           { href: "#artifact-schema", label: "Data Structure" },
           { href: "#transparency-boundary", label: "Boundary" },
           { href: "#request-access", label: "Request Path" },
@@ -72,7 +72,7 @@ export default function Reports() {
       />
 
       <section id="output-previews" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Output Previews</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Artifact Previews</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mb-8">
           {outputPreviews.map((item) => (
             <article key={item.title} className="card-surface p-5 flex flex-col gap-3">
@@ -100,18 +100,18 @@ export default function Reports() {
       </section>
 
       <section id="artifact-schema" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Deliverable Data Structure</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Artifact Data Structure</p>
         <div className="card-surface p-6 max-w-3xl">
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-            Field layout shown for transparency. This schema reflects the standard structure used in released deliverables.
+            Field layout shown for transparency. This schema reflects the standard structure used in released artifact packages.
           </p>
           <pre className="rounded border border-border bg-background/40 p-4 text-xs text-foreground-muted overflow-x-auto">
 {`{
   "artifact_type": "board_brief",
   "release_version": "2026.02.20",
-  "run_id": "study1-release-q1",
+  "run_id": "benchmark-release-q1",
   "model_version": "client-declared-production",
-  "scenario_pack_version": "eqsb-study-i-v1-0",
+  "scenario_pack_version": "eqsb-current-v1-0",
   "output_sections": [
     "risk_summary",
     "dimension_snapshot",
@@ -130,7 +130,7 @@ export default function Reports() {
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Release Standard</p>
             <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
               <li>• Evaluation framework and control-language definitions</li>
-              <li>• Canonical benchmark outcomes and version references</li>
+              <li>• Benchmark outcomes and version references</li>
               <li>• Redacted examples of report and evidence output formats</li>
             </ul>
           </article>
@@ -176,7 +176,7 @@ export default function Reports() {
 
       <section className="py-14">
         <p className="text-xs text-foreground-subtle max-w-2xl leading-relaxed">
-          Release note: Output previews are published for transparency and institutional clarity. Full report
+          Note: Artifact previews are published for transparency and institutional clarity. Full report
           materials are available through audit engagement.
         </p>
       </section>

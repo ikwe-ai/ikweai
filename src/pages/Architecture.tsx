@@ -62,19 +62,19 @@ export default function Architecture() {
     <PageShell>
       <PageMeta
         title="Architecture — Evaluation Pipeline | Ikwe.ai"
-        description="Public architecture overview for the EQSB evaluation pipeline, controls, and versioned governance posture."
+        description="Public architecture overview for the EQ Safety Benchmark evaluation pipeline and governance controls."
         path="/technology/architecture"
       />
       <SummaryHero
         kicker="System Overview"
         title="Architecture"
-        summary="Public overview of the evaluation pipeline. Detailed scoring specifications are available in full report documentation."
+        summary="Public overview of the evaluation pipeline. Detailed scoring specifications are available through controlled report documentation."
         highlights={[
-          "Version-locked release discipline",
+          "Version-locked evidence control",
           "Deterministic gate before quality scoring",
-          "Public framework language with release discipline",
+          "Public framework language with governance discipline",
         ]}
-        primaryAction={{ href: "/deliverables", label: "View Deliverables & Transparency →" }}
+        primaryAction={{ href: "/deliverables", label: "View Artifacts & Transparency →" }}
         secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
         jumpLinks={[
           { href: "#pipeline", label: "Pipeline" },
@@ -122,8 +122,8 @@ export default function Architecture() {
       <section id="public-scope" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Public Scope</p>
         <p className="text-sm text-foreground-muted max-w-xl leading-relaxed mb-6">
-          This page provides public architecture framing. Detailed technical specification sets are released through
-          formal report publications.
+          This page provides public architecture framing. Detailed technical specification sets are shared through
+          controlled report documentation.
         </p>
         <ul className="space-y-2 text-sm text-foreground-muted max-w-lg">
           {[

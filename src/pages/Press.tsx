@@ -20,10 +20,10 @@ export default function Press() {
     },
     {
       label: "Published",
-      title: "Deliverables & Transparency",
-      body: "Public output-preview hub linking to benchmark, architecture, and trust pages.",
+      title: "Artifacts & Transparency",
+      body: "Public artifact-preview hub linking to benchmark, architecture, and trust pages.",
       href: "/deliverables",
-      cta: "Open deliverables hub →",
+      cta: "Open artifact hub →",
     },
     {
       label: "Published",
@@ -36,7 +36,7 @@ export default function Press() {
 
   const upcoming = [
     {
-      title: "Release Notes Digest",
+      title: "Benchmark Notes Digest",
       body: "Recurring digest page is scheduled for a future publication cycle.",
     },
     {
@@ -49,16 +49,16 @@ export default function Press() {
     <PageShell>
       <PageMeta
         title="Press & Updates | Ikwe.ai"
-        description="Published communications and media routing for Ikwe.ai research releases."
+        description="Published communications and media routing for Ikwe.ai benchmark publications."
         path="/research/press"
       />
       <SummaryHero
         kicker="Research Communications"
         title="Press & Updates"
-        summary="Published communications and release surfaces. All listed published items link to full live pages."
+        summary="Published communications and benchmark updates. All listed published items link to full live pages."
         highlights={[
           "Published items link to full pages",
-          "Release routing for media and stakeholders",
+          "Routing for media and stakeholders",
           "Forthcoming items marked by status only",
         ]}
         primaryAction={{ href: "/request-audit#application-form", label: "Request Audit →" }}
@@ -101,7 +101,7 @@ export default function Press() {
       <section id="media-routing" className="py-14 max-w-3xl">
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
           For media requests, include your outlet, deadline, and topic scope. Use the audit request form as the
-          primary intake path; consultation follows for briefing alignment.
+          primary intake path; scope review follows for briefing alignment.
         </p>
         <a href="/request-audit#application-form" className="text-sm link-lilac">
           Open request intake →
