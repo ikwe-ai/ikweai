@@ -498,9 +498,9 @@ export function resolveApprovedAnswer(rawQuery: string): AssistantResolution {
 
   const primary = rankedDocs[0].doc;
   const secondary = rankedDocs[1]?.doc;
-  const responseLines = [`Top public match: ${primary.title}. ${primary.summary}`];
+  const responseLines = [`Most relevant public page: ${primary.title}. ${primary.summary}`];
   if (secondary) {
-    responseLines.push(`Related: ${secondary.title}. ${secondary.summary}`);
+    responseLines.push(`Also useful: ${secondary.title}. ${secondary.summary}`);
   }
 
   return {

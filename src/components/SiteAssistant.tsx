@@ -268,7 +268,7 @@ export default function SiteAssistant() {
           {pendingFallbackQuestion ? (
             <form onSubmit={submitFollowup} className="border-t border-border p-3 bg-background-surface">
               <p className="text-xs text-foreground mb-2">
-                This question has been captured for team review. Add your email for a direct reply.
+                This question was captured for team review. Add your email for a direct reply.
               </p>
               <p className="text-[11px] text-foreground-subtle mb-2 break-words">
                 <span className="font-mono uppercase tracking-[0.1em]">Captured question:</span> {pendingFallbackQuestion}
@@ -306,7 +306,7 @@ export default function SiteAssistant() {
             </form>
           ) : null}
 
-          <form onSubmit={onSubmit} className="border-t border-border p-3 bg-background-card">
+          <form onSubmit={onSubmit} className={`p-3 bg-background-card ${pendingFallbackQuestion ? "" : "border-t border-border"}`}>
             <label htmlFor="site-assistant-input" className="sr-only">
               Ask a question
             </label>
