@@ -7,8 +7,16 @@ cd "$ROOT"
 errors=0
 
 echo "[1/6] Checking canonical phrasing..."
-if ! rg -q "54\.7% failed the Safety Gate at first contact; 43% showed no repair behavior after introducing harm\." src/lib/content-locks.ts; then
-  echo "ERROR: canonical baseline phrasing missing from src/lib/content-locks.ts"
+if ! rg -q "BENCHMARK_CURRENT\\.failedGatePct.*BENCHMARK_CURRENT\\.noRepairPct" src/lib/content-locks.ts; then
+  echo "ERROR: canonical stat lock is not wired to BENCHMARK_CURRENT in src/lib/content-locks.ts"
+  errors=$((errors + 1))
+fi
+if ! rg -q "failedGatePct: \"[0-9]+(\\.[0-9]+)?%\"" src/lib/benchmark-data.ts; then
+  echo "ERROR: failedGatePct missing or malformed in src/lib/benchmark-data.ts"
+  errors=$((errors + 1))
+fi
+if ! rg -q "noRepairPct: \"[0-9]+(\\.[0-9]+)?%\"" src/lib/benchmark-data.ts; then
+  echo "ERROR: noRepairPct missing or malformed in src/lib/benchmark-data.ts"
   errors=$((errors + 1))
 fi
 
