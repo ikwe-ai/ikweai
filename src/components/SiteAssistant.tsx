@@ -2,6 +2,7 @@ import { FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "re
 import { Compass, MessageSquare, RotateCcw, Send, ShieldAlert, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { resolveApprovedAnswer, type AssistantLink } from "@/lib/approved-answers";
+import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 type ChatMessage = {
   id: number;
@@ -27,18 +28,48 @@ type GuideContext = {
 
 const QUICK_QUESTIONS = [
   "Guide me through this page",
+  "Give me Ikwe quick facts",
   "What do the benchmark numbers mean?",
   "How does the audit process work?",
+  "What do teams receive in deliverables?",
   "What is public vs proprietary?",
   "Where are deliverables and reports?",
 ];
 const GUIDE_TRIGGER_PATTERN = /\b(guide|walk\s?through|walkthrough|navigate this page|what'?s on this page|on this page)\b/i;
+const ASK_PREFIX = "ask://";
+
+const IKWE_TOPIC_PROMPTS = [
+  { label: "Ikwe Quick Facts", prompt: "Give me Ikwe quick facts" },
+  { label: "Benchmark Numbers", prompt: "What do the benchmark numbers mean?" },
+  { label: "Audit Process", prompt: "How does the audit process work?" },
+  { label: "Deliverables", prompt: "What do teams receive in deliverables?" },
+  { label: "Public vs Proprietary", prompt: "What is public vs proprietary?" },
+  { label: "Request Audit", prompt: "How do we start an audit?" },
+] as const;
 
 const START_MESSAGE: ChatMessage = {
   id: 1,
   role: "assistant",
   text:
-    "Ask me approved public questions about audits, benchmark metrics, deliverables, and navigation. I do not expose private or proprietary details.",
+    "Ikwe Site Assistant: approved public facts only. I can walk you through benchmark evidence, audit process, deliverables, and request intake using one-click prompts.",
+};
+
+const toAskLink = (label: string, prompt: string): AssistantLink => ({
+  label,
+  href: `${ASK_PREFIX}${encodeURIComponent(prompt)}`,
+});
+
+const mergeLinks = (...groups: AssistantLink[][]): AssistantLink[] => {
+  const merged: AssistantLink[] = [];
+  const seen = new Set<string>();
+  for (const group of groups) {
+    for (const link of group) {
+      if (seen.has(link.href)) continue;
+      seen.add(link.href);
+      merged.push(link);
+    }
+  }
+  return merged.slice(0, 10);
 };
 
 const normalizeGuideDetail = (detail?: AssistantGuideDetail): GuideContext => {
@@ -72,6 +103,37 @@ const sectionHint = (label: string) => {
   if (normalized.includes("report")) return "Explains how to request full benchmark documentation.";
   if (normalized.includes("pricing")) return "Covers pricing structure and intake expectations.";
   return "Provides evidence and context for this part of the page.";
+};
+
+const buildFollowupAskLinks = (question: string): AssistantLink[] => {
+  const q = question.toLowerCase();
+  if (q.includes("benchmark") || q.includes("safety gate") || q.includes("numbers")) {
+    return [
+      toAskLink("Explain audit process", "How does the audit process work?"),
+      toAskLink("Show deliverables", "What do teams receive in deliverables?"),
+      toAskLink("Public vs proprietary", "What is public vs proprietary?"),
+    ];
+  }
+  if (q.includes("audit") || q.includes("certification") || q.includes("process")) {
+    return [
+      toAskLink("Benchmark numbers", "What do the benchmark numbers mean?"),
+      toAskLink("Show deliverables", "What do teams receive in deliverables?"),
+      toAskLink("Start intake", "How do we start an audit?"),
+    ];
+  }
+  if (q.includes("deliverable") || q.includes("report")) {
+    return [
+      toAskLink("Audit process", "How does the audit process work?"),
+      toAskLink("Public vs proprietary", "What is public vs proprietary?"),
+      toAskLink("Start intake", "How do we start an audit?"),
+    ];
+  }
+
+  return [
+    toAskLink("Ikwe quick facts", "Give me Ikwe quick facts"),
+    toAskLink("Benchmark numbers", "What do the benchmark numbers mean?"),
+    toAskLink("Audit process", "How does the audit process work?"),
+  ];
 };
 
 export default function SiteAssistant() {
@@ -122,6 +184,30 @@ export default function SiteAssistant() {
     target.scrollTop = target.scrollHeight;
   }, [messages]);
 
+  const buildPresentationMessage = useCallback((): ChatMessage => {
+    return {
+      id: nextIdRef.current++,
+      role: "assistant",
+      kind: "default",
+      text: [
+        "Ikwe walkthrough (public facts):",
+        `• ${BENCHMARK_CURRENT.failedGatePct} failed the Safety Gate at first contact`,
+        `• ${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm`,
+        `• ${BENCHMARK_CURRENT.nValue} model outputs evaluated across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} risk domains`,
+        "",
+        "Choose any step below to continue the presentation.",
+      ].join("\n"),
+      links: [
+        toAskLink("1. What Ikwe does", "What is Ikwe and what does it do?"),
+        toAskLink("2. Benchmark evidence", "What do the benchmark numbers mean?"),
+        toAskLink("3. Audit process", "How does the audit process work?"),
+        toAskLink("4. Deliverables", "What do teams receive in deliverables?"),
+        toAskLink("5. Public vs proprietary", "What is public vs proprietary?"),
+        toAskLink("6. Start audit intake", "How do we start an audit?"),
+      ],
+    };
+  }, []);
+
   const buildGuideMessage = useCallback((context: GuideContext): ChatMessage => {
     const sectionLines = context.sections.length
       ? context.sections.map((section, index) => `${index + 1}. ${section.label} — ${sectionHint(section.label)}`).join("\n")
@@ -155,6 +241,14 @@ export default function SiteAssistant() {
     setFollowupState("idle");
   }, [buildGuideMessage, guideContext]);
 
+  const openIkwePresentation = useCallback(() => {
+    setOpen(true);
+    setMessages((prev) => [...prev.slice(-14), buildPresentationMessage()]);
+    setPendingFallbackQuestion("");
+    setFollowupEmail("");
+    setFollowupState("idle");
+  }, [buildPresentationMessage]);
+
   useEffect(() => {
     if (typeof window === "undefined") return;
     const onGuideContext = (event: Event) => {
@@ -187,6 +281,7 @@ export default function SiteAssistant() {
     }
 
     const resolution = resolveApprovedAnswer(trimmed);
+    const followupLinks = buildFollowupAskLinks(trimmed);
 
     const assistantMessage: ChatMessage = {
       id: nextIdRef.current++,
@@ -198,7 +293,7 @@ export default function SiteAssistant() {
             ? "fallback"
             : "default",
       text: resolution.text,
-      links: resolution.links,
+      links: mergeLinks(resolution.links, followupLinks),
     };
 
     setMessages((prev) => [...prev.slice(-14), userMessage, assistantMessage]);
