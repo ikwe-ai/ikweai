@@ -135,8 +135,10 @@ export default function SiteAssistant() {
   const [pendingFallbackQuestion, setPendingFallbackQuestion] = useState("");
   const [followupEmail, setFollowupEmail] = useState("");
   const [followupState, setFollowupState] = useState<FollowupState>("idle");
+  const [hasGuideUpdate, setHasGuideUpdate] = useState(false);
   const [guideContext, setGuideContext] = useState<GuideContext>(() => normalizeGuideDetail());
   const nextIdRef = useRef(2);
+  const openRef = useRef(false);
   const scrollAreaRef = useRef<HTMLDivElement | null>(null);
 
   const postForm = async (formName: string, payload: Record<string, string>) => {
@@ -168,10 +170,23 @@ export default function SiteAssistant() {
   };
 
   useEffect(() => {
+    openRef.current = open;
+  }, [open]);
+
+  useEffect(() => {
     const target = scrollAreaRef.current;
     if (!target) return;
     target.scrollTop = target.scrollHeight;
   }, [messages]);
+
+  const openAssistantPanel = useCallback(() => {
+    setOpen(true);
+    setHasGuideUpdate(false);
+  }, []);
+
+  const closeAssistantPanel = useCallback(() => {
+    setOpen(false);
+  }, []);
 
   const buildPresentationMessage = useCallback((): ChatMessage => {
     return {
@@ -229,26 +244,29 @@ export default function SiteAssistant() {
   const openGuidedWalkthrough = useCallback((detail?: AssistantGuideDetail) => {
     const context = normalizeGuideDetail(detail ?? guideContext);
     setGuideContext(context);
-    setOpen(true);
+    openAssistantPanel();
     setMessages((prev) => [...prev.slice(-14), buildGuideMessage(context)]);
     setPendingFallbackQuestion("");
     setFollowupEmail("");
     setFollowupState("idle");
-  }, [buildGuideMessage, guideContext]);
+  }, [buildGuideMessage, guideContext, openAssistantPanel]);
 
   const openIkwePresentation = useCallback(() => {
-    setOpen(true);
+    openAssistantPanel();
     setMessages((prev) => [...prev.slice(-14), buildPresentationMessage()]);
     setPendingFallbackQuestion("");
     setFollowupEmail("");
     setFollowupState("idle");
-  }, [buildPresentationMessage]);
+  }, [buildPresentationMessage, openAssistantPanel]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     const onGuideContext = (event: Event) => {
       const detail = (event as CustomEvent<AssistantGuideDetail>).detail;
       setGuideContext(normalizeGuideDetail(detail));
+      if (!openRef.current) {
+        setHasGuideUpdate(true);
+      }
     };
     window.addEventListener("ikwe:assistant-guide-context", onGuideContext as EventListener);
     return () => {
