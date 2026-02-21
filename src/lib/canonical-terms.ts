@@ -74,7 +74,7 @@ export const CANONICAL_TERMS = {
     publicDescription:
       "Governance control that freezes released metrics and language to a declared version.",
     hoverText:
-      "Formal release discipline ensuring scoring logic does not change silently between evaluations.",
+      "Formal version governance ensuring scoring logic does not change silently between evaluations.",
   },
   "Override Logic": {
     canonicalLabel: "Override Logic",
