@@ -76,7 +76,7 @@ export default function AIGovernanceCompliance() {
         <h2 id="trust-layer" className="font-display text-2xl text-foreground mb-4 mt-10 scroll-mt-24">The Trust Layer</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           A trust layer is the operational bridge between policy intent and verifiable execution. It combines signal
-          tracking, intervention rules, and release discipline into a system that can be reviewed by risk, audit, and
+          tracking, intervention rules, and version governance into a system that can be reviewed by risk, audit, and
           governance teams.
         </p>
         <p className="text-sm text-foreground-muted leading-relaxed">

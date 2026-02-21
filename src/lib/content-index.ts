@@ -121,7 +121,7 @@ export const CASE_STUDIES_INDEX = [
     details: [
       "Manual intervention corrected risky behavior in practice, but those interventions were not encoded as repeatable system controls.",
       "Operational safety depended on individual judgment instead of auditable governance logic, creating continuity risk and weak evidence posture.",
-      "The remediation plan converted tacit operator behavior into documented controls with clear release discipline.",
+      "The remediation plan converted tacit operator behavior into documented controls with explicit version governance.",
     ],
     signals: [
       "Safety quality varied by who reviewed or intervened.",

@@ -68,7 +68,7 @@ export default function Contact() {
       timeline: prev.timeline || "1–3 months",
       what_they_need:
         prev.what_they_need ||
-        "Independent behavioral safety audit scope, risk posture baseline, and governance-ready reporting for institutional review.",
+        "Independent behavioral safety audit scope, risk posture snapshot, and governance-ready reporting for institutional review.",
     }));
 
     const node = document.getElementById("application-form");
@@ -137,8 +137,8 @@ export default function Contact() {
               <article className="card-surface p-6">
                 <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Scope Review Support</p>
                 <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-                  Guided intake helps prefill a standard baseline before submission. Scope review remains part of the
-                  process for scope clarity.
+                  Guided intake helps prefill a standard audit request profile before submission. Scope review remains
+                  part of the process for scope clarity.
                 </p>
                 <button type="button" onClick={startGuidedIntake} className="text-sm link-lilac">
                   Start guided intake →

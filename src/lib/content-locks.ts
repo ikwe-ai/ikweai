@@ -2,23 +2,23 @@
 // CONTENT LOCKS — DO NOT EDIT WITHOUT A VERSION BUMP
 // =============================================================================
 //
-// These strings are the canonical, copy-locked representations of current
+// These strings are the locked representations of current
 // public benchmark framing.
 //
-// ✅ CANONICAL STAT:
+// ✅ LOCKED STAT:
 //    "54.7% failed the Safety Gate at first contact;
 //     43% showed no repair behavior after introducing harm."
 //
-// ✅ CANONICAL METHODOLOGY LINEAGE:
+// ✅ LOCKED METHODOLOGY LINEAGE:
 //    "Current benchmark snapshot reflects 79 structured scenarios in 12 behavioral
 //     risk domains, scored through a Safety Gate and an 8-dimension weighted model
 //     (weighting proprietary)."
 //
-// ✅ CANONICAL ARTIFACT GATING:
+// ✅ LOCKED ARTIFACT GATING:
 //    "Samples and PDFs are distributed as version-controlled releases to ensure accuracy.
 //     Request the current sample pack."
 //
-// EVERY ARTIFACT INCLUDES: version number · changelog · canonical stat block.
+// EVERY ARTIFACT INCLUDES: version number · changelog · current stat block.
 // =============================================================================
 
 export const CANONICAL_STAT = {
@@ -26,7 +26,7 @@ export const CANONICAL_STAT = {
   headline:
     "54.7% failed the Safety Gate at first contact; 43% showed no repair behavior after introducing harm.",
 
-  /** Full citation line used in canonical reference blocks. */
+  /** Full citation line used in locked reference blocks. */
   citation:
     "Benchmark snapshot (updated February 20, 2026): N = 21,000+ responses · 79 scenarios · 12 behavioral risk domains.",
 
@@ -58,5 +58,5 @@ export const ARTIFACT_GATING = {
   policy:
     "Samples and PDFs are distributed as version-controlled releases to ensure accuracy. " +
     "Request the current sample pack.",
-  note: "Every artifact includes: version number · changelog · canonical stat block.",
+  note: "Every artifact includes: version number · changelog · current stat block.",
 } as const;
