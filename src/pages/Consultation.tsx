@@ -6,15 +6,15 @@ export default function Consultation() {
   return (
     <PageShell>
       <PageMeta
-        title="Consultation | Ikwe.ai"
-        description="Consultation overview for scope alignment, audit readiness, and delivery planning."
+        title="Scope Review | Ikwe.ai"
+        description="Scope review overview for audit alignment, readiness, and delivery planning."
         path="/consult"
       />
 
       <SummaryHero
-        kicker="Consultation"
-        title="Consultation"
-        summary="Consultation is the scope-alignment layer around an audit request. Start with request intake, then use consultation for planning and delivery fit."
+        kicker="Scope Review"
+        title="Scope Review"
+        summary="Scope review is the alignment layer around an audit request. Start with intake, then use scope review for planning and delivery fit."
         highlights={[
           "Audit-first engagement path",
           "Scope and timeline alignment",
@@ -24,7 +24,7 @@ export default function Consultation() {
         secondaryAction={{ href: "/audit", label: "View Audit Pathway" }}
         jumpLinks={[
           { href: "#how-it-fits", label: "How It Fits" },
-          { href: "#consultation-uses", label: "Use Cases" },
+          { href: "#scope-review-uses", label: "Use Cases" },
           { href: "#next-actions", label: "Next Actions" },
         ]}
       />
@@ -41,7 +41,7 @@ export default function Consultation() {
           </article>
           <article className="card-surface p-5">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-2">02</p>
-            <h2 className="font-display text-lg mb-2">Scope Consultation</h2>
+            <h2 className="font-display text-lg mb-2">Scope Review</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
               Align scope depth, output expectations, and timeline boundaries for the engagement.
             </p>
@@ -56,12 +56,12 @@ export default function Consultation() {
         </div>
       </section>
 
-      <section id="consultation-uses" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">When To Use Consultation</p>
+      <section id="scope-review-uses" className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">When To Use Scope Review</p>
         <div className="space-y-3 text-sm text-foreground-muted max-w-2xl">
-          <p>Use consultation when deployment context is complex, multi-surface, or institutionally high-sensitivity.</p>
-          <p>Use consultation when the organization needs audit outputs shaped for board, insurer, or governance review flows.</p>
-          <p>Use consultation when teams need a clear scope decision before entering a formal audit cycle.</p>
+          <p>Use scope review when deployment context is complex, multi-surface, or institutionally high-sensitivity.</p>
+          <p>Use scope review when the organization needs outputs shaped for board, insurer, or governance review flows.</p>
+          <p>Use scope review when teams need a clear scope decision before entering a formal audit cycle.</p>
         </div>
       </section>
 
@@ -73,7 +73,7 @@ export default function Consultation() {
               Open request form →
             </a>
             <a href="/deliverables" className="link-lilac">
-              Review deliverables →
+              Review artifacts →
             </a>
             <a href="/trust" className="link-lilac">
               Trust and confidentiality →
