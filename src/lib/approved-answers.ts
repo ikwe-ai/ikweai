@@ -49,10 +49,58 @@ const RESTRICTED_EXACT_PATTERNS = [
   "scoring rubric",
   "exact weighting",
   "weighted criteria",
+  "exact weights",
+  "8 dimension weights",
+  "dimension weights",
+  "proprietary method",
+  "proprietary methodology",
+  "full dataset",
+  "raw dataset",
+  "system prompt",
+  "developer prompt",
+  "ignore previous instructions",
+  "bypass safety",
+  "jailbreak",
+  "override policy",
 ];
 
-const RESTRICTED_INTENT_TOKENS = ["client", "internal", "confidential", "private"];
+const RESTRICTED_INTENT_TOKENS = ["client", "internal", "confidential", "private", "proprietary"];
 const RESTRICTED_TARGET_TOKENS = ["name", "list", "data", "result", "document", "notes", "method", "prompt", "id", "exact"];
+const EXFIL_ACTION_TOKENS = [
+  "show",
+  "give",
+  "list",
+  "dump",
+  "export",
+  "reveal",
+  "provide",
+  "disclose",
+  "share",
+  "leak",
+  "bypass",
+  "override",
+  "ignore",
+  "print",
+];
+const EXFIL_TARGET_TOKENS = [
+  "client",
+  "internal",
+  "confidential",
+  "private",
+  "scenario",
+  "prompt",
+  "rubric",
+  "weight",
+  "weights",
+  "weighting",
+  "proprietary",
+  "dataset",
+  "source",
+  "method",
+  "methodology",
+  "id",
+  "ids",
+];
 
 const APPROVED_ANSWERS: ApprovedAnswer[] = [
   {
@@ -311,7 +359,13 @@ function isRestrictedQuery(query: string, queryTokens: string[]) {
 
   const hasIntent = RESTRICTED_INTENT_TOKENS.some((token) => queryTokens.includes(token));
   const hasTarget = RESTRICTED_TARGET_TOKENS.some((token) => queryTokens.includes(token));
-  return hasIntent && hasTarget;
+  if (hasIntent && hasTarget) {
+    return true;
+  }
+
+  const hasExfilAction = EXFIL_ACTION_TOKENS.some((token) => queryTokens.includes(token));
+  const hasExfilTarget = EXFIL_TARGET_TOKENS.some((token) => queryTokens.includes(token));
+  return hasExfilAction && hasExfilTarget;
 }
 
 function searchableText(doc: KnowledgeDoc) {
@@ -359,10 +413,15 @@ function buildKnowledgeDocs(): KnowledgeDoc[] {
 
 const KNOWLEDGE_DOCS = buildKnowledgeDocs();
 
+function isSafeHref(href: string) {
+  return href.startsWith("/");
+}
+
 function uniqueLinks(items: AssistantLink[]) {
   const seen = new Set<string>();
   const links: AssistantLink[] = [];
   for (const item of items) {
+    if (!isSafeHref(item.href)) continue;
     if (seen.has(item.href)) continue;
     seen.add(item.href);
     links.push(item);

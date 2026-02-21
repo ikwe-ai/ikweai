@@ -77,7 +77,18 @@ export default function SiteAssistant() {
   };
 
   const onOpenLink = (href: string) => {
-    if (href.endsWith(".html") || href.startsWith("http://") || href.startsWith("https://")) {
+    const isInternalPath = href.startsWith("/");
+    const isSafeAbsolute =
+      href.startsWith("https://ikwe.ai/") ||
+      href.startsWith("http://ikwe.ai/") ||
+      href.startsWith("https://www.ikwe.ai/") ||
+      href.startsWith("http://www.ikwe.ai/");
+
+    if (!isInternalPath && !isSafeAbsolute) {
+      return;
+    }
+
+    if (href.endsWith(".html") || isSafeAbsolute) {
       window.location.href = href;
       return;
     }
