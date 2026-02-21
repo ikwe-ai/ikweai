@@ -218,10 +218,7 @@ export default function Nav() {
       ? location.pathname === "/"
       : location.pathname === path || location.pathname.startsWith(`${path}/`);
 
-  const activeHub = useMemo(
-    () => hubs.find((hub) => isRouteActive(hub.path)) ?? hubs[0],
-    [location.pathname]
-  );
+  const activeHub = hubs.find((hub) => isRouteActive(hub.path)) ?? hubs[0];
 
   const selectedHub = useMemo(
     () => hubs.find((hub) => hub.id === openHub) ?? activeHub,
