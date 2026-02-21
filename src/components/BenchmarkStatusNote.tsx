@@ -1,5 +1,4 @@
 import {
-  BENCHMARK_COPY,
   BENCHMARK_CURRENT,
   BENCHMARK_LOG_REQUEST,
   BENCHMARK_PUBLIC_LOG,
@@ -29,7 +28,6 @@ export default function BenchmarkStatusNote({ className = "" }: BenchmarkStatusN
         </a>
         .
       </p>
-      <p className="sr-only">{BENCHMARK_COPY.statsContext}</p>
     </aside>
   );
 }
