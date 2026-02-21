@@ -164,11 +164,11 @@ export default function SiteAssistant() {
                 key={message.id}
                 className={`rounded-md border px-3 py-2 ${
                   message.role === "user"
-                    ? "ml-4 border-lilac/55 bg-lilac-dim"
+                    ? "ml-4 border-lilac bg-lilac-dim"
                     : message.kind === "restricted"
-                      ? "mr-4 border-danger/60 bg-background-surface"
+                      ? "mr-4 border-danger bg-background-surface"
                       : message.kind === "fallback"
-                        ? "mr-4 border-amber/60 bg-background-surface"
+                        ? "mr-4 border-amber bg-background-surface"
                         : "mr-4 border-border-2 bg-background-surface"
                 }`}
               >
@@ -185,7 +185,7 @@ export default function SiteAssistant() {
                       <button
                         key={`${message.id}-${link.href}`}
                         type="button"
-                        className="rounded border border-border-2 px-2 py-1 text-[11px] text-foreground hover:text-foreground hover:border-lilac/50"
+                        className="rounded border border-border-2 px-2 py-1 text-[11px] text-foreground hover:text-foreground hover:border-lilac"
                         onClick={() => onOpenLink(link.href)}
                       >
                         {link.label}

@@ -150,8 +150,8 @@ export default function Home() {
                 key={item.label}
                 className={`card-surface p-6 ${
                   item.tone === "danger"
-                    ? "border-danger/55 bg-danger/5"
-                    : "border-safe/55 bg-safe/10"
+                    ? "border-danger bg-[hsl(8_34%_18%)]"
+                    : "border-safe bg-[hsl(176_30%_18%)]"
                 }`}
               >
                 <p
@@ -205,7 +205,7 @@ export default function Home() {
             <div className="lg:hidden space-y-3">
               {doomLoopStages.map((stage, index) => (
                 <div key={stage.title}>
-                  <article className={`card-surface p-4 ${index === 0 ? "border-safe/60 bg-safe/10" : "border-danger/40 bg-danger/5"}`}>
+                  <article className={`card-surface p-4 ${index === 0 ? "border-safe bg-[hsl(176_30%_18%)]" : "border-danger bg-[hsl(8_34%_18%)]"}`}>
                     <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-1">
                       {index + 1}. {stage.title}
                     </p>
@@ -222,7 +222,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
-            <article className="card-surface p-5 border-danger/40 bg-danger/5">
+            <article className="card-surface p-5 border-danger bg-[hsl(8_34%_18%)]">
               <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-danger mb-3">
                 When the loop goes unchecked
               </p>
@@ -231,7 +231,7 @@ export default function Home() {
               <p className="text-sm text-foreground-muted">Financial harm</p>
               <p className="text-sm text-foreground-muted">Crisis escalation</p>
             </article>
-            <article className="card-surface p-5 border-danger/40 bg-danger/5">
+            <article className="card-surface p-5 border-danger bg-[hsl(8_34%_18%)]">
               <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-danger mb-3">Which leads to</p>
               <p className="text-sm text-foreground-muted">Lawsuits and regulatory action</p>
               <p className="text-sm text-foreground-muted">Liability exposure</p>
@@ -275,10 +275,10 @@ export default function Home() {
                 key={phase.title}
                 className={`card-surface p-6 ${
                   phase.tone === "danger"
-                    ? "border-danger/50"
+                    ? "border-danger"
                     : phase.tone === "safe"
-                      ? "border-safe/55"
-                      : "border-lilac/50"
+                      ? "border-safe"
+                      : "border-lilac"
                 }`}
               >
                 <p

@@ -450,7 +450,7 @@ export default function Nav() {
             <Link
               to="/"
               className={`rounded border px-3 py-2 text-sm ${
-                isRouteActive("/") ? "border-lilac/60 text-lilac-bright bg-lilac-dim" : "border-border text-foreground-muted"
+                isRouteActive("/") ? "border-lilac text-lilac-bright bg-lilac-dim" : "border-border text-foreground-muted"
               }`}
             >
               Home
@@ -484,7 +484,7 @@ export default function Nav() {
                       to={hub.path}
                       className={`block rounded border px-3 py-2 text-sm ${
                         isRouteActive(hub.path)
-                          ? "border-lilac/60 text-lilac-bright bg-lilac-dim"
+                          ? "border-lilac text-lilac-bright bg-lilac-dim"
                           : "border-border text-foreground-muted"
                       }`}
                     >
@@ -497,7 +497,7 @@ export default function Nav() {
                         to={item.path}
                         className={`block rounded border px-3 py-2 text-sm ${
                           isRouteActive(item.path)
-                            ? "border-lilac/60 text-lilac-bright bg-lilac-dim"
+                            ? "border-lilac text-lilac-bright bg-lilac-dim"
                             : "border-border text-foreground-muted"
                         }`}
                       >
