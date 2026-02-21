@@ -51,7 +51,7 @@ export default function Research() {
           "79 structured scenarios across 12 behavioral risk domains",
           "Two-phase system: Safety Gate + 8-dimension weighted scoring",
         ]}
-        primaryAction={{ href: "/artifacts/ikwe_full_research_report.pdf", label: "Open Full EQ Safety Benchmark Report" }}
+        primaryAction={{ href: "/request-audit#application-form", label: "Request Full Report Access" }}
         secondaryAction={{ href: "/request-audit#application-form", label: "Request an Audit" }}
         jumpLinks={[
           { href: "#dataset-scope", label: "N and Scope" },
@@ -190,19 +190,17 @@ export default function Research() {
 
       <section id="full-report" className="py-14">
         <article className="card-surface p-6 max-w-4xl">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-[0.14em] mb-3">Full EQ Safety Benchmark Report</p>
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-[0.14em] mb-3">Full EQ Safety Benchmark Access</p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-            Full methodology, aggregate dimensional tables, phase-level appendices, and redaction boundary details are
-            documented in the complete report artifact.
+            Full benchmark materials are available on request for institutional review. Public pages remain the default
+            source for current benchmark framing.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
-              href="/artifacts/ikwe_full_research_report.pdf"
+              href="/request-audit#application-form"
               className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
-              target="_blank"
-              rel="noreferrer"
             >
-              Open Full Report PDF
+              Request Full Report Access
             </a>
             <a
               href="/deliverables"
@@ -211,6 +209,10 @@ export default function Research() {
               View Artifacts & Transparency
             </a>
           </div>
+          <p className="text-xs text-foreground-subtle mt-4">
+            Need a PDF copy? Email <a href="mailto:research@ikwe.ai" className="link-lilac">research@ikwe.ai</a> with
+            the artifact name. If a styled PDF is not available, we can provide the equivalent web-copy version.
+          </p>
         </article>
       </section>
     </PageShell>

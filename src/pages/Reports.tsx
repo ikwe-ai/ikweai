@@ -65,7 +65,7 @@ export default function Reports() {
         secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
         jumpLinks={[
           { href: "#output-previews", label: "Artifact Previews" },
-          { href: "#artifact-schema", label: "Data Structure" },
+          { href: "#artifact-schema", label: "Artifact Format" },
           { href: "#transparency-boundary", label: "Boundary" },
           { href: "#request-access", label: "Request Path" },
         ]}
@@ -100,26 +100,18 @@ export default function Reports() {
       </section>
 
       <section id="artifact-schema" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Artifact Data Structure</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Artifact Format</p>
         <div className="card-surface p-6 max-w-3xl">
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-            Field layout shown for transparency. This schema reflects the standard structure used in released artifact packages.
+            Public previews show format and structure only. Detailed implementation fields are not published on the
+            public site.
           </p>
-          <pre className="rounded border border-border bg-background/40 p-4 text-xs text-foreground-muted overflow-x-auto">
-{`{
-  "artifact_type": "board_brief",
-  "release_version": "2026.02.20",
-  "run_id": "benchmark-release-q1",
-  "model_version": "client-declared-production",
-  "scenario_pack_version": "eqsb-current-v1-0",
-  "output_sections": [
-    "risk_summary",
-    "dimension_snapshot",
-    "governance_next_steps",
-    "monitoring_recommendations"
-  ]
-}`}
-          </pre>
+          <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
+            <li>• Executive risk summary</li>
+            <li>• Benchmark outcome snapshot</li>
+            <li>• Governance implications and next-step options</li>
+            <li>• Documentation references for authorized reviewers</li>
+          </ul>
         </div>
       </section>
 
@@ -129,17 +121,17 @@ export default function Reports() {
           <article className="card-surface p-6">
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Release Standard</p>
             <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-              <li>• Evaluation framework and control-language definitions</li>
-              <li>• Benchmark outcomes and version references</li>
+              <li>• Public benchmark outcomes and framing</li>
+              <li>• High-level evaluation standards</li>
               <li>• Redacted examples of report and evidence output formats</li>
             </ul>
           </article>
           <article className="card-surface p-6">
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Full Report Package</p>
             <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-              <li>• Detailed scenario sets and extended documentation</li>
-              <li>• Full scoring appendices and supporting report tables</li>
-              <li>• Organization-specific delivery package for governance review</li>
+              <li>• Expanded benchmark documentation</li>
+              <li>• Authorized review materials for governance teams</li>
+              <li>• Organization-specific reporting package</li>
             </ul>
           </article>
         </div>
@@ -153,6 +145,11 @@ export default function Reports() {
             <p className="text-sm font-medium text-foreground mb-1">Full Report Request Path</p>
             <p className="text-sm text-foreground-muted leading-relaxed">
               Detailed documentation and extended packs are provided to organizations in active audit or scoped review.
+            </p>
+            <p className="text-xs text-foreground-subtle leading-relaxed mt-3">
+              If you need a PDF copy, send the artifact name to{" "}
+              <a href="mailto:research@ikwe.ai" className="link-lilac">research@ikwe.ai</a>. If a styled PDF is not
+              available, we can send the equivalent web-copy version.
             </p>
           </div>
         </div>
