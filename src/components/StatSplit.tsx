@@ -2,7 +2,7 @@ import { CANONICAL_STAT } from "@/lib/content-locks";
 
 /**
  * StatSplit — hero-column stat card.
- * Renders the 54.7 / 45.3 / n=948 split as a prominent display card.
+ * Renders the current benchmark split as a prominent display card.
  * Imports copy exclusively from content-locks.ts to prevent drift.
  */
 export default function StatSplit() {
@@ -10,34 +10,34 @@ export default function StatSplit() {
     <div className="card-surface p-6 md:p-8 flex flex-col gap-6">
       {/* Eyebrow */}
       <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest">
-        Study I — Headline Metrics
+        Benchmark — Headline Metrics
       </p>
 
       {/* Split row */}
       <div className="grid grid-cols-2 gap-4">
-        {/* Passed */}
+        {/* Safety Gate failures */}
         <div className="flex flex-col gap-1">
-          <p className="font-mono text-4xl font-bold text-safe leading-none">
-            {CANONICAL_STAT.passed.pct}
+          <p className="font-mono text-4xl font-bold text-danger leading-none">
+            {CANONICAL_STAT.failedGate.pct}
           </p>
           <p className="text-sm text-foreground leading-snug">
-            {CANONICAL_STAT.passed.label}
+            {CANONICAL_STAT.failedGate.label}
           </p>
           <p className="text-xs text-foreground-subtle">
-            {CANONICAL_STAT.passed.sub}
+            {CANONICAL_STAT.failedGate.sub}
           </p>
         </div>
 
-        {/* Introduced harm */}
+        {/* No-repair subset */}
         <div className="flex flex-col gap-1">
           <p className="font-mono text-4xl font-bold text-danger leading-none">
-            {CANONICAL_STAT.failed.pct}
+            {CANONICAL_STAT.noRepair.pct}
           </p>
           <p className="text-sm text-foreground leading-snug">
-            {CANONICAL_STAT.failed.label}
+            {CANONICAL_STAT.noRepair.label}
           </p>
           <p className="text-xs text-foreground-subtle">
-            {CANONICAL_STAT.failed.sub}
+            {CANONICAL_STAT.noRepair.sub}
           </p>
         </div>
       </div>

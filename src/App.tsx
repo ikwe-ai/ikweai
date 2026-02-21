@@ -97,8 +97,8 @@ const App = () => (
           <Route path="/about.html" element={<Navigate to="/about" replace />} />
           <Route path="/why-independent" element={<Navigate to="/about" replace />} />
           <Route path="/founder" element={<Navigate to="/about" replace />} />
-          <Route path="/terms" element={<Navigate to="/privacy.html" replace />} />
-          <Route path="/research-access-terms" element={<Navigate to="/deliverables" replace />} />
+          <Route path="/terms" element={<Navigate to="/terms.html" replace />} />
+          <Route path="/research-access-terms" element={<Navigate to="/research-access-terms.html" replace />} />
           <Route path="/press" element={<Navigate to="/research/press" replace />} />
           <Route path="/downloads/*" element={<Navigate to="/deliverables" replace />} />
 

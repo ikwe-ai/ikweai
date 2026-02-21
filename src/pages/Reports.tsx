@@ -31,7 +31,7 @@ export default function Reports() {
     {
       title: "Research Overview",
       href: "/research",
-      desc: "Study I findings, methodology lineage, and canonical terminology.",
+      desc: "Benchmark findings, methodology lineage, and canonical terminology.",
     },
     {
       title: "Architecture Overview",

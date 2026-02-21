@@ -2,23 +2,22 @@
 // CONTENT LOCKS — DO NOT EDIT WITHOUT A VERSION BUMP
 // =============================================================================
 //
-// These strings are the canonical, copy-locked representations of Study I data.
+// These strings are the canonical, copy-locked representations of current
+// public benchmark framing.
 //
 // ✅ CANONICAL STAT:
-//    "54.7% passed the Safety Gate; 45.3% introduced harm."
+//    "54.7% failed the Safety Gate at first contact;
+//     43% showed no repair behavior after introducing harm."
 //
 // ❌ FORBIDDEN VARIANTS — never use:
-//    "54.7% introduced harm"
-//    "54.7% introduced risk"
-//    "54.7% failed"
-//    "54.7% flagged"
-//    "54.7% unsafe"
-//    Any phrasing that places 54.7% on the harm/risk side.
+//    "54.7% passed the Safety Gate"
+//    "45.3% introduced harm"
+//    "n=948 responses"
 //
 // ✅ CANONICAL METHODOLOGY LINEAGE:
-//    "Methodology lineage: the 54.7% baseline derives from Study I (SSF taxonomy).
-//     Current evaluations use EQSB v2.1 with an updated Safety Gate (10 violations)
-//     plus an 8-dimension scorecard (A–H, weighted)."
+//    "Current benchmark snapshot reflects 79 structured scenarios in 12 behavioral
+//     risk domains, scored through a Safety Gate and an 8-dimension weighted model
+//     (weighting proprietary)."
 //
 // ✅ CANONICAL ARTIFACT GATING:
 //    "Samples and PDFs are distributed as version-controlled releases to ensure accuracy.
@@ -28,35 +27,36 @@
 // =============================================================================
 
 export const CANONICAL_STAT = {
-  /** The primary locked framing — safe side first, always. */
-  headline: "54.7% passed the Safety Gate; 45.3% introduced harm.",
+  /** The primary locked framing for current benchmark positioning. */
+  headline:
+    "54.7% failed the Safety Gate at first contact; 43% showed no repair behavior after introducing harm.",
 
   /** Full citation line used in canonical reference blocks. */
-  citation: "Study I (EQ Safety Benchmark, 2024–2025): n=948 responses · 79 scenarios.",
+  citation:
+    "Benchmark snapshot (updated February 20, 2026): N=21,000+ responses · 79 scenarios · 12 behavioral risk domains.",
 
   /** Individual values for display components. */
-  passed: {
+  failedGate: {
     pct: "54.7%",
-    label: "Passed Safety Gate",
-    sub: "Did not introduce harm at first contact",
+    label: "Failed Safety Gate",
+    sub: "Introduced harm at first contact",
   },
-  failed: {
-    pct: "45.3%",
-    label: "Introduced Harm",
-    sub: "Failed Safety Gate at first contact",
+  noRepair: {
+    pct: "43%",
+    label: "No Repair Behavior",
+    sub: "After introducing harm",
   },
   sample: {
-    value: "n=948",
+    value: "N=21,000+",
     label: "Total responses evaluated",
-    sub: "79 scenarios · Study I (2024–2025)",
+    sub: "79 scenarios · 12 behavioral risk domains",
   },
 } as const;
 
 export const METHODOLOGY_LINEAGE = {
   short:
-    "Methodology lineage: the 54.7% baseline derives from Study I (SSF taxonomy). " +
-    "Current evaluations use EQSB v2.1 with an updated Safety Gate (10 violations) " +
-    "plus an 8-dimension scorecard (A–H, weighted).",
+    "Current benchmark snapshot reflects 79 structured scenarios in 12 behavioral risk domains, " +
+    "scored through a Safety Gate and an 8-dimension weighted model (weighting proprietary).",
 } as const;
 
 export const ARTIFACT_GATING = {

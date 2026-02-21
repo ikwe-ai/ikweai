@@ -36,7 +36,7 @@ export default function Footer() {
               </p>
             </div>
             <p className="text-xs text-foreground-subtle leading-relaxed max-w-xs">
-              Independent AI behavioral validation. EQ Safety Benchmark — Study I (2024–2025).
+              Independent AI behavioral validation. Benchmark evidence across 79 scenarios in 12 behavioral risk domains.
             </p>
             <p className="text-xs text-foreground-subtle mt-4">
               © {new Date().getFullYear()} Visible Healing Inc. (dba Ikwe.ai)
@@ -52,7 +52,7 @@ export default function Footer() {
             <p className="text-xs font-mono text-foreground-subtle uppercase tracking-widest mb-3">Research</p>
             <nav className="flex flex-col gap-2.5">
               <Link to="/research" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
-                Study I
+                Research Overview
               </Link>
               <Link to="/eq-safety-benchmark" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 EQ Safety Benchmark

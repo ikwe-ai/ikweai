@@ -8,7 +8,7 @@ export default function EqSafetyBenchmark() {
     <PageShell>
       <PageMeta
         title="EQ Safety Benchmark (EQSB) | Ikwe.ai"
-        description="Public EQ Safety Benchmark overview with Study I baseline metrics, framework structure, and audit-start pathways."
+        description="Public EQ Safety Benchmark overview with current benchmark metrics, framework structure, and audit-start pathways."
         path="/eq-safety-benchmark"
       />
       <SummaryHero
@@ -31,7 +31,7 @@ export default function EqSafetyBenchmark() {
       />
 
       <section id="eqsb-metrics" className="py-10 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Study I Baseline</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Current Benchmark Snapshot</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <StatCard value="54.7%" label="Failed the Safety Gate" sub="Introduced harm at first contact" />
           <StatCard value="43%" label="No repair behavior after harm" sub="Post-harm subset result" delay={80} />

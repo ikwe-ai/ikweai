@@ -29,7 +29,7 @@ const hubs: Hub[] = [
     id: "research",
     label: "Research",
     path: "/research",
-    desc: "Study I benchmark summary and publication library.",
+    desc: "Benchmark summary and publication library.",
     children: [
       {
         path: "/eq-safety-benchmark",
@@ -56,7 +56,7 @@ const hubs: Hub[] = [
     asideBody: "Start with benchmark context, then move into writing and case evidence.",
     asideLinks: [
       { label: "EQ Safety Benchmark", path: "/eq-safety-benchmark" },
-      { label: "Study I Overview", path: "/research" },
+      { label: "Research Overview", path: "/research" },
       { label: "Writing Library", path: "/research/writings" },
       { label: "Case Studies", path: "/research/case-studies" },
       { label: "Press & Updates", path: "/research/press" },

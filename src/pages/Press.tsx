@@ -28,7 +28,7 @@ export default function Press() {
     {
       label: "Published",
       title: "Research Overview",
-      body: "Canonical Study I benchmark summary, methodology lineage, and glossary terms.",
+      body: "Benchmark summary, methodology lineage, and glossary terms.",
       href: "/research",
       cta: "Open research overview →",
     },

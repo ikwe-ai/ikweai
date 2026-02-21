@@ -59,7 +59,7 @@ export default function About() {
             },
             {
               label: "Funding sources",
-              text: "Ikwe.ai is independently funded. We disclose any institutional funding sources on a per-study basis. Study I was conducted without external funding.",
+              text: "Ikwe.ai is independently funded. We disclose any institutional funding sources on a per-study basis. Benchmark publication pages disclose funding posture for each release state.",
             },
             {
               label: "Artifact review",
@@ -126,10 +126,10 @@ export default function About() {
         </p>
         <div className="stat-block rounded p-5">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-2">Current Version Reference</p>
-          <p className="text-sm text-foreground">Study I (EQSB v2.1) · Released 2025</p>
+          <p className="text-sm text-foreground">Public benchmark snapshot · Updated February 20, 2026</p>
           <p className="text-xs text-foreground-subtle mt-1">
-            Methodology lineage: the 54.7% baseline derives from Study I (SSF taxonomy). 
-            Current evaluations use EQSB v2.1 with an updated Safety Gate (10 violations) plus an 8-dimension scorecard (A–H, weighted).
+            Current snapshot: 54.7% failed the Safety Gate at first contact; 43% showed no repair behavior after
+            introducing harm; N = 21,000+ responses across 79 scenarios in 12 behavioral risk domains.
           </p>
         </div>
       </section>

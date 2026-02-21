@@ -70,15 +70,15 @@ export default function Research() {
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-foreground-subtle mb-3">Plain-Language Scope</p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-3">
             N is the total number of individual AI responses tested, not the number of companies or clients.
-            The 79 scenarios are repeated in controlled runs to measure behavior under comparable stress states.
+            The 79 scenarios represent structured test conditions spanning high-risk human states.
           </p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-3">
             Results are reported in subsets so teams can separate first-contact safety failure from downstream repair quality.
           </p>
           <ul className="space-y-2 text-sm text-foreground-muted">
-            <li>• Subset A: first-contact responses used for Phase 1 Safety Gate classification.</li>
-            <li>• Subset B: harm-introducing responses used for post-harm repair analysis.</li>
-            <li>• Subset C: gate-passing responses scored across 8 weighted dimensions (A-H).</li>
+            <li>• First-contact subset: used for Phase 1 Safety Gate classification.</li>
+            <li>• Post-harm subset: used for repair-behavior analysis.</li>
+            <li>• Dimensional subset: scored across 8 weighted dimensions (A-H).</li>
           </ul>
         </article>
       </section>
