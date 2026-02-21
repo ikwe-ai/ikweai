@@ -319,6 +319,13 @@ export default function SiteAssistant() {
   };
 
   const onOpenLink = (href: string) => {
+    if (href.startsWith(ASK_PREFIX)) {
+      const encodedPrompt = href.slice(ASK_PREFIX.length);
+      if (!encodedPrompt) return;
+      pushAssistantAnswer(decodeURIComponent(encodedPrompt));
+      return;
+    }
+
     if (href.startsWith("#")) {
       if (typeof window === "undefined") return;
       const sectionId = href.slice(1);
