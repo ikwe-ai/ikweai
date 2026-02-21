@@ -1,5 +1,5 @@
+import { useEffect } from "react";
 import HeroVisualCard from "@/components/HeroVisualCard";
-import { MessageSquare } from "lucide-react";
 
 type HeroAction = {
   href: string;
@@ -59,19 +59,19 @@ export default function SummaryHero({
           ? "teal"
           : "violet");
   const hasVisual = inferredVisualPoints.length > 0;
-  const hasRail = hasJumpLinks || hasVisual;
+  const hasRail = hasVisual;
 
-  const openAssistantGuide = () => {
+  useEffect(() => {
     if (typeof window === "undefined") return;
     window.dispatchEvent(
-      new CustomEvent("ikwe:assistant-open-guide", {
+      new CustomEvent("ikwe:assistant-guide-context", {
         detail: {
           pageTitle: title,
-          sections: jumpLinks.map((item) => item.label),
+          sections: jumpLinks.map((item) => ({ label: item.label, href: item.href })),
         },
       })
     );
-  };
+  }, [jumpLinks, title]);
 
   return (
     <section className="summary-hero border-b border-border">
@@ -108,19 +108,6 @@ export default function SummaryHero({
             </div>
           )}
 
-          {hasJumpLinks ? (
-            <div className="mt-4 lg:hidden">
-              <button
-                type="button"
-                onClick={openAssistantGuide}
-                className="inline-flex items-center gap-2 rounded border border-border-2 bg-background-surface px-3 py-2 text-xs text-foreground hover:border-lilac transition-colors"
-              >
-                <MessageSquare size={13} className="text-lilac-bright" />
-                Need help navigating this page? Open assistant guide
-              </button>
-            </div>
-          ) : null}
-
           {hasHeadlineStrip ? (
             <div className="summary-headline-strip mt-6">
               {highlights.slice(0, 3).map((item) => (
@@ -153,34 +140,6 @@ export default function SummaryHero({
                 tone={inferredTone}
                 compact
               />
-            ) : null}
-            {hasJumpLinks ? (
-              <div className="summary-context-section">
-                <p className="summary-context-title">Need Assistance</p>
-                <p className="text-xs text-foreground-muted leading-relaxed mb-2">
-                  Need help navigating this page? The assistant can walk you through each section.
-                </p>
-                <button
-                  type="button"
-                  onClick={openAssistantGuide}
-                  className="inline-flex items-center gap-2 rounded border border-border-2 bg-background-card px-3 py-2 text-xs text-foreground hover:border-lilac transition-colors"
-                >
-                  <MessageSquare size={13} className="text-lilac-bright" />
-                  Open Assistant Guide
-                </button>
-              </div>
-            ) : null}
-            {hasJumpLinks ? (
-              <div className="summary-context-section">
-                <p className="summary-context-title">Navigate This Page</p>
-                <div className="flex flex-wrap gap-2">
-                  {jumpLinks.map((item) => (
-                    <a key={item.href} href={item.href} className="summary-jump">
-                      {item.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
             ) : null}
           </aside>
         ) : null}

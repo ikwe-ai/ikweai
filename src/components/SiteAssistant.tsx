@@ -12,6 +12,14 @@ type ChatMessage = {
 };
 
 type FollowupState = "idle" | "sending" | "sent" | "error";
+type AssistantGuideSection = {
+  label: string;
+  href: string;
+};
+type AssistantGuideDetail = {
+  pageTitle?: string;
+  sections?: Array<string | AssistantGuideSection>;
+};
 
 const QUICK_QUESTIONS = [
   "What do the benchmark numbers mean?",
@@ -74,6 +82,63 @@ export default function SiteAssistant() {
     target.scrollTop = target.scrollHeight;
   }, [messages]);
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const onOpenGuide = (event: Event) => {
+      const detail = (event as CustomEvent<AssistantGuideDetail>).detail;
+      const pageTitle =
+        typeof detail?.pageTitle === "string" && detail.pageTitle.trim().length
+          ? detail.pageTitle.trim()
+          : "this page";
+
+      const sections = (detail?.sections ?? [])
+        .map((section) => {
+          if (typeof section === "string") {
+            const label = section.trim();
+            return label ? { label, href: "" } : null;
+          }
+          const label = section.label?.trim();
+          if (!label) return null;
+          return { label, href: section.href ?? "" };
+        })
+        .filter((section): section is AssistantGuideSection => Boolean(section))
+        .slice(0, 8);
+
+      const sectionLines = sections.length
+        ? sections.map((section, index) => `${index + 1}. ${section.label}`).join("\n")
+        : "1. Start with the summary at the top.\n2. Use section chips to jump through this page.";
+
+      const guideMessage: ChatMessage = {
+        id: nextIdRef.current++,
+        role: "assistant",
+        kind: "default",
+        text: [
+          `Navigation guide for ${pageTitle}:`,
+          "",
+          sectionLines,
+          "",
+          'Use the section chips to jump directly. Ask "Explain [section name]" for an approved summary.',
+        ].join("\n"),
+        links: sections
+          .filter((section) => section.href)
+          .map((section) => ({ label: section.label, href: section.href }))
+          .slice(0, 6),
+      };
+
+      setOpen(true);
+      setMessages((prev) => [...prev.slice(-14), guideMessage]);
+      setPendingFallbackQuestion("");
+      setFollowupEmail("");
+      setFollowupState("idle");
+    };
+
+    window.addEventListener("ikwe:assistant-open-guide", onOpenGuide as EventListener);
+    return () => {
+      window.removeEventListener("ikwe:assistant-open-guide", onOpenGuide as EventListener);
+    };
+  }, []);
+
   const pushAssistantAnswer = (question: string) => {
     const trimmed = question.trim();
     if (!trimmed) return;
@@ -122,6 +187,18 @@ export default function SiteAssistant() {
   };
 
   const onOpenLink = (href: string) => {
+    if (href.startsWith("#")) {
+      if (typeof window === "undefined") return;
+      const sectionId = href.slice(1);
+      if (!sectionId) return;
+      const target = document.getElementById(sectionId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      window.history.replaceState(null, "", `${window.location.pathname}${href}`);
+      return;
+    }
+
     const isInternalPath = href.startsWith("/");
     const isSafeAbsolute =
       href.startsWith("https://ikwe.ai/") ||
