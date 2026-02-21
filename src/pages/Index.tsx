@@ -4,9 +4,9 @@ import PageShell from "@/components/PageShell";
 
 export default function Home() {
   const stats = [
-    { value: "54.7%", label: "Failed the Safety Gate at first contact", compact: false },
-    { value: "43%", label: "Showed no repair behavior after introducing harm", compact: false },
-    { value: "N = 21,000+", label: "Individual model outputs evaluated", compact: true },
+    { value: "54.7%", label: "Failed the Safety Gate at first contact", compact: false, tone: "danger" },
+    { value: "43%", label: "Showed no repair behavior after introducing harm", compact: false, tone: "danger" },
+    { value: "N = 21,000+", label: "Individual model outputs evaluated", compact: true, tone: "safe" },
   ] as const;
 
   const doomLoopStages = [
@@ -48,6 +48,7 @@ export default function Home() {
   const phases = [
     {
       title: "Phase 1 — Safety Gate",
+      tone: "danger",
       lines: [
         "Binary pass/fail evaluation.",
         "Did the AI introduce harm at first contact?",
@@ -56,6 +57,7 @@ export default function Home() {
     },
     {
       title: "Phase 2 — Multidimensional Scoring",
+      tone: "lilac",
       lines: [
         "8 behavioral dimensions evaluated.",
         "How well did the system behave, not just whether it avoided harm.",
@@ -65,6 +67,7 @@ export default function Home() {
     },
     {
       title: "Phase 3 — Real-Time Monitoring",
+      tone: "safe",
       lines: [
         "Continuous behavioral tracking once deployed.",
         "Escalates to human oversight when risk indicators rise.",
@@ -119,7 +122,7 @@ export default function Home() {
             </a>
             <Link
               to="/research"
-              className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
+              className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
             >
               View the Research
             </Link>
@@ -130,8 +133,19 @@ export default function Home() {
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">The Problem</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {stats.map((item) => (
-              <article key={item.label} className="card-surface p-6">
-                <p className={`${item.compact ? "text-2xl md:text-3xl" : "text-4xl md:text-5xl"} font-display text-danger mb-4`}>
+              <article
+                key={item.label}
+                className={`card-surface p-6 ${
+                  item.tone === "danger"
+                    ? "border-danger/55 bg-danger/5"
+                    : "border-safe/55 bg-safe/10"
+                }`}
+              >
+                <p
+                  className={`${item.compact ? "text-2xl md:text-3xl" : "text-4xl md:text-5xl"} font-display mb-4 ${
+                    item.tone === "danger" ? "text-danger" : "text-safe"
+                  }`}
+                >
                   {item.value}
                 </p>
                 <p className="text-sm text-foreground-muted leading-relaxed">{item.label}</p>
@@ -227,7 +241,10 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap gap-2 mb-6">
             {vulnerableStates.map((state) => (
-              <span key={state} className="inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs text-foreground-muted bg-background-card">
+              <span
+                key={state}
+                className="inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs text-foreground-muted bg-background-card"
+              >
                 {state}
               </span>
             ))}
@@ -241,8 +258,23 @@ export default function Home() {
           <h2 className="font-display text-3xl text-foreground mb-8">How the EQ Safety Benchmark Works</h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             {phases.map((phase, index) => (
-              <article key={phase.title} className="card-surface p-6">
-                <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-lilac mb-3">Step {index + 1}</p>
+              <article
+                key={phase.title}
+                className={`card-surface p-6 ${
+                  phase.tone === "danger"
+                    ? "border-danger/50"
+                    : phase.tone === "safe"
+                      ? "border-safe/55"
+                      : "border-lilac/50"
+                }`}
+              >
+                <p
+                  className={`font-mono text-[11px] uppercase tracking-[0.14em] mb-3 ${
+                    phase.tone === "danger" ? "text-danger" : phase.tone === "safe" ? "text-safe" : "text-lilac"
+                  }`}
+                >
+                  Step {index + 1}
+                </p>
                 <h3 className="font-display text-xl text-foreground mb-4">{phase.title}</h3>
                 <div className="space-y-2">
                   {phase.lines.map((line) => (
@@ -327,13 +359,13 @@ export default function Home() {
             </a>
             <a
               href="/research"
-              className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
+              className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
             >
               Read the Research
             </a>
             <a
               href="/contact"
-              className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
+              className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
             >
               Contact
             </a>

@@ -10,6 +10,11 @@ export default function PageShell({ children }: PageShellProps) {
   useEffect(() => {
     const shell = shellRef.current;
     if (!shell) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      shell.style.setProperty("--parallax-y-slow", "0px");
+      shell.style.setProperty("--parallax-y-fast", "0px");
+      return;
+    }
 
     let rafId = 0;
 

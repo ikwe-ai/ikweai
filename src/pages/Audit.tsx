@@ -181,7 +181,7 @@ export default function Audit() {
           </a>
           <a
             href="/deliverables"
-            className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
+            className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
             style={{ fontFamily: "var(--font-body)" }}
           >
             View deliverables and transparency
