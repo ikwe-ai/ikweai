@@ -21,7 +21,7 @@ export default function Consultation() {
           "Governance-oriented delivery planning",
         ]}
         primaryAction={{ href: "/request-audit#application-form", label: "Request Audit →" }}
-        secondaryAction={{ href: "/audit", label: "View Audit Pathway" }}
+        secondaryAction={{ href: "/audit", label: "View Audit Overview" }}
         jumpLinks={[
           { href: "#how-it-fits", label: "How It Fits" },
           { href: "#scope-review-uses", label: "Use Cases" },
@@ -48,7 +48,7 @@ export default function Consultation() {
           </article>
           <article className="card-surface p-5">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-2">03</p>
-            <h2 className="font-display text-lg mb-2">Audit Pathway</h2>
+            <h2 className="font-display text-lg mb-2">Audit Overview</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
               Move into the formal audit sequence and output delivery process.
             </p>

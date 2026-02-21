@@ -68,7 +68,7 @@ export default function Contact() {
       timeline: prev.timeline || "1–3 months",
       what_they_need:
         prev.what_they_need ||
-        "Independent behavioral safety audit scope, risk posture snapshot, and governance-ready reporting for institutional review.",
+        "Independent behavioral safety audit scope, risk profile snapshot, and governance-ready reporting for institutional review.",
     }));
 
     const node = document.getElementById("application-form");
@@ -79,7 +79,7 @@ export default function Contact() {
     <PageShell>
       <PageMeta
         title="Request Audit | Ikwe.ai"
-        description="Start an audit request. Scope review support is included for pathway alignment."
+        description="Start an audit request. Scope review support is included for process alignment."
         path="/request-audit"
       />
       <SummaryHero
@@ -92,7 +92,7 @@ export default function Contact() {
           "High-trust deployment focus",
         ]}
         primaryAction={{ href: "#application-form", label: "Open Form ↓" }}
-        secondaryAction={{ href: "/audit", label: "View Audit Pathway" }}
+        secondaryAction={{ href: "/audit", label: "View Audit Overview" }}
         jumpLinks={[
           { href: "#intake-overview", label: "Intake Overview" },
           { href: "#application-form", label: "Request Form" },

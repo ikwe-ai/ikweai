@@ -109,7 +109,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     text:
       "Ikwe is an independent third-party behavioral safety validator for human-facing AI systems. We audit model behavior, document risk, and deliver evidence boards and regulators can reference.",
     links: [
-      { label: "Audit Pathway", href: "/audit" },
+      { label: "Audit Overview", href: "/audit" },
       { label: "Research Overview", href: "/research" },
     ],
   },
@@ -490,7 +490,7 @@ export function resolveApprovedAnswer(rawQuery: string): AssistantResolution {
         "I do not have a high-confidence approved answer for that exact phrasing yet. Try asking with page terms like audit, research, benchmark, deliverables, trust, architecture, or legal.",
       links: [
         { label: "Research", href: "/research" },
-        { label: "Audit Pathway", href: "/audit" },
+        { label: "Audit Overview", href: "/audit" },
         { label: "Deliverables", href: "/deliverables" },
       ],
     };

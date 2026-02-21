@@ -23,7 +23,7 @@ export default function Trust() {
         path="/trust"
       />
       <SummaryHero
-        kicker="Trust Posture"
+        kicker="Trust Standards"
         title="Trust & Confidentiality"
         summary="Clear summary of how Ikwe.ai handles intake information, report sharing, and independent evaluation standards."
         highlights={[

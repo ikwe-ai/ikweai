@@ -97,9 +97,9 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Posture */}
+          {/* Standards */}
           <div>
-            <p className="text-xs font-mono text-foreground-subtle uppercase tracking-widest mb-3">Posture</p>
+            <p className="text-xs font-mono text-foreground-subtle uppercase tracking-widest mb-3">Standards</p>
             <p className="text-xs text-foreground-subtle leading-relaxed">
               No commercial affiliations with AI developers evaluated.
               Reports distributed through controlled, versioned documentation.
