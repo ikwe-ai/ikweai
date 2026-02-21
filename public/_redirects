@@ -1,5 +1,5 @@
 # Netlify SPA redirect — static files in /public are served first,
-# so /consult, /artifacts/, etc. are served as-is before this fires.
+# so /consult and legal static pages are served as-is before this fires.
 /privacy /privacy.html 200
 /terms /terms.html 200
 /research-access-terms /research-access-terms.html 200
