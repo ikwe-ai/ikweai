@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
-import { MessageSquare, RotateCcw, Send, ShieldAlert, X } from "lucide-react";
+import { Compass, MessageSquare, RotateCcw, Send, ShieldAlert, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { resolveApprovedAnswer, type AssistantLink } from "@/lib/approved-answers";
 
@@ -20,6 +20,10 @@ type AssistantGuideDetail = {
   pageTitle?: string;
   sections?: Array<string | AssistantGuideSection>;
 };
+type GuideContext = {
+  pageTitle: string;
+  sections: AssistantGuideSection[];
+};
 
 const QUICK_QUESTIONS = [
   "What do the benchmark numbers mean?",
@@ -27,12 +31,46 @@ const QUICK_QUESTIONS = [
   "What is public vs proprietary?",
   "Where are deliverables and reports?",
 ];
+const GUIDE_TRIGGER_PATTERN = /\b(guide|walk\s?through|walkthrough|navigate this page|what'?s on this page|on this page)\b/i;
 
 const START_MESSAGE: ChatMessage = {
   id: 1,
   role: "assistant",
   text:
     "Ask me approved public questions about audits, benchmark metrics, deliverables, and navigation. I do not expose private or proprietary details.",
+};
+
+const normalizeGuideDetail = (detail?: AssistantGuideDetail): GuideContext => {
+  const fallbackTitle =
+    typeof document !== "undefined" ? document.title.replace(/\s*\|.*/, "").trim() || "this page" : "this page";
+  const pageTitle =
+    typeof detail?.pageTitle === "string" && detail.pageTitle.trim().length ? detail.pageTitle.trim() : fallbackTitle;
+  const sections = (detail?.sections ?? [])
+    .map((section) => {
+      if (typeof section === "string") {
+        const label = section.trim();
+        return label ? { label, href: "" } : null;
+      }
+      const label = section.label?.trim();
+      if (!label) return null;
+      return { label, href: section.href ?? "" };
+    })
+    .filter((section): section is AssistantGuideSection => Boolean(section))
+    .slice(0, 8);
+
+  return { pageTitle, sections };
+};
+
+const sectionHint = (label: string) => {
+  const normalized = label.toLowerCase();
+  if (normalized.includes("scope") || normalized.includes("n and")) return "Defines the benchmark sample size and coverage.";
+  if (normalized.includes("phase 1")) return "Shows first-contact harm outcomes from the Safety Gate.";
+  if (normalized.includes("phase 2")) return "Shows post-harm repair behavior outcomes.";
+  if (normalized.includes("dimension")) return "Summarizes aggregate scoring across eight behavioral dimensions.";
+  if (normalized.includes("failure")) return "Breaks down where and how risk pathways appeared.";
+  if (normalized.includes("report")) return "Explains how to request full benchmark documentation.";
+  if (normalized.includes("pricing")) return "Covers pricing structure and intake expectations.";
+  return "Provides evidence and context for this part of the page.";
 };
 
 export default function SiteAssistant() {
@@ -43,6 +81,7 @@ export default function SiteAssistant() {
   const [pendingFallbackQuestion, setPendingFallbackQuestion] = useState("");
   const [followupEmail, setFollowupEmail] = useState("");
   const [followupState, setFollowupState] = useState<FollowupState>("idle");
+  const [guideContext, setGuideContext] = useState<GuideContext>(() => normalizeGuideDetail());
   const nextIdRef = useRef(2);
   const scrollAreaRef = useRef<HTMLDivElement | null>(null);
 
