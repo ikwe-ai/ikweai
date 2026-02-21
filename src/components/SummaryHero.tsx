@@ -56,7 +56,7 @@ export default function SummaryHero({
               {secondaryAction ? (
                 <a
                   href={secondaryAction.href}
-                  className="inline-flex items-center rounded border border-border px-4 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
+                  className="inline-flex items-center rounded border border-border px-4 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
                   style={{ fontFamily: "var(--font-body)" }}
                 >
                   {secondaryAction.label}

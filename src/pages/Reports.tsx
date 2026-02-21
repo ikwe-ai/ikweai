@@ -163,7 +163,7 @@ export default function Reports() {
           </a>
           <a
             href="/trust"
-            className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
+            className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
             style={{ fontFamily: "var(--font-body)" }}
           >
             View trust posture
