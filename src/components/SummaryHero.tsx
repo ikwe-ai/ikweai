@@ -1,3 +1,5 @@
+import HeroVisualCard from "@/components/HeroVisualCard";
+
 type HeroAction = {
   href: string;
   label: string;
@@ -16,6 +18,12 @@ type SummaryHeroProps = {
   primaryAction?: HeroAction;
   secondaryAction?: HeroAction;
   jumpLinks?: JumpLink[];
+  visual?: {
+    kicker?: string;
+    title?: string;
+    points?: string[];
+    tone?: "violet" | "teal" | "danger" | "safe";
+  };
 };
 
 export default function SummaryHero({
@@ -26,15 +34,35 @@ export default function SummaryHero({
   primaryAction,
   secondaryAction,
   jumpLinks = [],
+  visual,
 }: SummaryHeroProps) {
   const hasHeadlineStrip = highlights.length > 0;
   const hasJumpLinks = jumpLinks.length > 0;
+  const inferredVisualPoints = (
+    visual?.points?.length
+      ? visual.points
+      : hasJumpLinks
+        ? jumpLinks.map((item) => item.label)
+        : highlights
+  ).slice(0, 4);
+  const contextText = `${kicker} ${title}`.toLowerCase();
+  const inferredTone =
+    visual?.tone ??
+    (contextText.includes("trust") || contextText.includes("confidential")
+      ? "safe"
+      : contextText.includes("audit") || contextText.includes("risk") || contextText.includes("compliance")
+        ? "danger"
+        : contextText.includes("research") || contextText.includes("benchmark") || contextText.includes("data")
+          ? "teal"
+          : "violet");
+  const hasVisual = inferredVisualPoints.length > 0;
+  const hasRail = hasJumpLinks || hasVisual;
 
   return (
     <section className="summary-hero border-b border-border">
       <div
         className={`relative z-10 py-6 md:py-8 ${
-          hasJumpLinks ? "grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8" : ""
+          hasRail ? "grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8" : ""
         }`}
       >
         <div className="max-w-3xl">
@@ -74,20 +102,42 @@ export default function SummaryHero({
               ))}
             </div>
           ) : null}
+
+          {hasVisual ? (
+            <div className="mt-5 lg:hidden">
+              <HeroVisualCard
+                kicker={visual?.kicker}
+                title={visual?.title}
+                points={inferredVisualPoints}
+                tone={inferredTone}
+              />
+            </div>
+          ) : null}
         </div>
 
-        {hasJumpLinks ? (
+        {hasRail ? (
           <aside className="summary-context hidden lg:flex">
-            <div className="summary-context-section">
-              <p className="summary-context-title">On This Page</p>
-              <div className="flex flex-wrap gap-2">
-                {jumpLinks.map((item) => (
-                  <a key={item.href} href={item.href} className="summary-jump">
-                    {item.label}
-                  </a>
-                ))}
+            {hasVisual ? (
+              <HeroVisualCard
+                kicker={visual?.kicker}
+                title={visual?.title}
+                points={inferredVisualPoints}
+                tone={inferredTone}
+                compact
+              />
+            ) : null}
+            {hasJumpLinks ? (
+              <div className="summary-context-section">
+                <p className="summary-context-title">On This Page</p>
+                <div className="flex flex-wrap gap-2">
+                  {jumpLinks.map((item) => (
+                    <a key={item.href} href={item.href} className="summary-jump">
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
+            ) : null}
           </aside>
         ) : null}
       </div>

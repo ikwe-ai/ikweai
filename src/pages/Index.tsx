@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import PageMeta from "@/components/PageMeta";
 import PageShell from "@/components/PageShell";
+import HeroVisualCard from "@/components/HeroVisualCard";
 
 export default function Home() {
   const stats = [
@@ -126,6 +127,19 @@ export default function Home() {
             >
               View the Research
             </Link>
+          </div>
+          <div className="mt-7 max-w-3xl">
+            <HeroVisualCard
+              kicker="Visual Guide"
+              title="Institutional Read Path"
+              tone="teal"
+              points={[
+                "Benchmark evidence and failure rates",
+                "Behavioral risk loop and intervention point",
+                "Audit methodology and deliverables",
+                "Request intake and governance pathway",
+              ]}
+            />
           </div>
         </section>
 
