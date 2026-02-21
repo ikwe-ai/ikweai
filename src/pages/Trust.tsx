@@ -84,7 +84,7 @@ export default function Trust() {
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Client Materials</p>
             <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
               <li>• Expanded benchmark documentation for authorized review</li>
-              <li>• Reporting appendices provided by approved access path</li>
+              <li>• Additional reporting materials provided by approved access path</li>
               <li>• Organization-specific reporting materials</li>
             </ul>
           </article>

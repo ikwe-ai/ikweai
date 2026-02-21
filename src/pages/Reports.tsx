@@ -36,7 +36,7 @@ export default function Reports() {
     {
       title: "Architecture Overview",
       href: "/technology/architecture",
-      desc: "Evaluation flow and control-language framing.",
+      desc: "Evaluation approach and governance overview.",
     },
     {
       title: "Audit Pathway",
@@ -103,7 +103,7 @@ export default function Reports() {
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Artifact Format</p>
         <div className="card-surface p-6 max-w-3xl">
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-            Public previews show format and structure only. Detailed implementation fields are not published on the
+            Public previews show format and structure only. Detailed implementation details are not published on the
             public site.
           </p>
           <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
