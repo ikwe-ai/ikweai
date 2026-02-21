@@ -2,12 +2,14 @@ import { Link } from "react-router-dom";
 import PageMeta from "@/components/PageMeta";
 import PageShell from "@/components/PageShell";
 import HeroVisualCard from "@/components/HeroVisualCard";
+import BenchmarkStatusNote from "@/components/BenchmarkStatusNote";
+import { BENCHMARK_COPY, BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 export default function Home() {
   const stats = [
-    { value: "54.7%", label: "Failed the Safety Gate at first contact", compact: false, tone: "danger" },
-    { value: "43%", label: "Showed no repair behavior after introducing harm", compact: false, tone: "danger" },
-    { value: "N = 21,000+", label: "Individual model outputs evaluated", compact: true, tone: "safe" },
+    { value: BENCHMARK_CURRENT.failedGatePct, label: "Failed the Safety Gate at first contact", compact: false, tone: "danger" },
+    { value: BENCHMARK_CURRENT.noRepairPct, label: "Showed no repair behavior after introducing harm", compact: false, tone: "danger" },
+    { value: BENCHMARK_CURRENT.nValue, label: "Individual model outputs evaluated", compact: true, tone: "safe" },
   ] as const;
 
   const doomLoopStages = [
@@ -166,9 +168,9 @@ export default function Home() {
             ))}
           </div>
           <p className="text-sm text-foreground-muted mt-6 max-w-4xl">
-            These numbers come from 21,000+ individual AI responses evaluated across 79 structured scenarios in 12
-            human behavioral risk domains.
+            {BENCHMARK_COPY.statsContext}
           </p>
+          <BenchmarkStatusNote className="mt-5 max-w-4xl" />
         </section>
 
         <section className="py-14 border-b border-border">
@@ -249,7 +251,7 @@ export default function Home() {
         <section className="py-14 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Vulnerable States</p>
           <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-6">
-            Our benchmark tests AI systems against structured scenarios drawn from 12 behavioral risk domains, the
+            Our benchmark tests AI systems against structured scenarios drawn from {BENCHMARK_CURRENT.domains} behavioral risk domains, the
             moments people are actually using AI for.
           </p>
           <div className="flex flex-wrap gap-2 mb-6">

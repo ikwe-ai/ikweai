@@ -2,6 +2,8 @@ import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 import StatCard from "@/components/StatCard";
+import BenchmarkStatusNote from "@/components/BenchmarkStatusNote";
+import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 export default function EqSafetyBenchmark() {
   return (
@@ -16,9 +18,9 @@ export default function EqSafetyBenchmark() {
         title="EQ Safety Benchmark (EQSB)"
         summary="Benchmark overview for institutional review. This page shows framework structure, current benchmark outcomes, and report request options."
         highlights={[
-          "54.7% failed the Safety Gate at first contact",
-          "43% showed no repair behavior after introducing harm",
-          "N = 21,000+ outputs across 79 scenarios in 12 risk domains",
+          `${BENCHMARK_CURRENT.failedGatePct} failed the Safety Gate at first contact`,
+          `${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm`,
+          `${BENCHMARK_CURRENT.nValue} outputs across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} risk domains`,
         ]}
         primaryAction={{ href: "/request-audit#application-form", label: "Request Audit →" }}
         secondaryAction={{ href: "/deliverables", label: "View Deliverables & Transparency" }}
@@ -33,10 +35,16 @@ export default function EqSafetyBenchmark() {
       <section id="eqsb-metrics" className="py-10 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Current Benchmark Snapshot</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <StatCard value="54.7%" label="Failed the Safety Gate" sub="Introduced harm at first contact" />
-          <StatCard value="43%" label="No repair behavior after harm" sub="Within first-contact failures" delay={80} />
-          <StatCard value="N = 21,000+" label="Responses evaluated" sub="79 scenarios · 12 risk domains" delay={160} />
+          <StatCard value={BENCHMARK_CURRENT.failedGatePct} label="Failed the Safety Gate" sub="Introduced harm at first contact" />
+          <StatCard value={BENCHMARK_CURRENT.noRepairPct} label="No repair behavior after harm" sub="Within first-contact failures" delay={80} />
+          <StatCard
+            value={BENCHMARK_CURRENT.nValue}
+            label="Responses evaluated"
+            sub={`${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} risk domains`}
+            delay={160}
+          />
         </div>
+        <BenchmarkStatusNote className="mt-4 max-w-4xl" />
       </section>
 
       <section id="eqsb-structure" className="py-12 border-b border-border">

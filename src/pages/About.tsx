@@ -1,6 +1,7 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
+import { BENCHMARK_COPY, BENCHMARK_CURRENT, BENCHMARK_LOG_REQUEST } from "@/lib/benchmark-data";
 
 export default function About() {
   return (
@@ -123,10 +124,16 @@ export default function About() {
         </p>
         <div className="stat-block rounded p-5">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-2">Current Version Reference</p>
-          <p className="text-sm text-foreground">Public benchmark snapshot · Updated February 20, 2026</p>
+          <p className="text-sm text-foreground">Public benchmark snapshot · Updated {BENCHMARK_CURRENT.lastUpdated}</p>
           <p className="text-xs text-foreground-subtle mt-1">
-            Current snapshot: 54.7% failed the Safety Gate at first contact; 43% showed no repair behavior after
-            introducing harm; N = 21,000+ responses across 79 scenarios in 12 behavioral risk domains.
+            {BENCHMARK_COPY.snapshotLine}
+          </p>
+          <p className="text-xs text-foreground-subtle mt-2">
+            Need full version/change history?{" "}
+            <a href={BENCHMARK_LOG_REQUEST.href} className="link-lilac underline">
+              {BENCHMARK_LOG_REQUEST.label}
+            </a>
+            .
           </p>
         </div>
       </section>

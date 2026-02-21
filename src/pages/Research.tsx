@@ -1,6 +1,12 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
+import BenchmarkStatusNote from "@/components/BenchmarkStatusNote";
+import {
+  BENCHMARK_CURRENT,
+  BENCHMARK_LOG_REQUEST,
+  BENCHMARK_PUBLIC_LOG,
+} from "@/lib/benchmark-data";
 
 export default function Research() {
   const vulnerableStates = [
@@ -23,8 +29,8 @@ export default function Research() {
     { title: "Client confidentiality", text: "No dimension-level scores are published by client organization." },
   ] as const;
 
-  const phase1Fail = 54.7;
-  const phase2NoRepair = 43;
+  const phase1Fail = Number.parseFloat(BENCHMARK_CURRENT.failedGatePct);
+  const phase2NoRepair = Number.parseFloat(BENCHMARK_CURRENT.noRepairPct);
 
   const derived = [
     { label: "Failed Safety Gate at first contact", value: phase1Fail },
@@ -39,12 +45,12 @@ export default function Research() {
         path="/research"
       />
       <SummaryHero
-        kicker="Research Summary · Updated February 20, 2026"
+        kicker={`Research Summary · Updated ${BENCHMARK_CURRENT.lastUpdated}`}
         title="EQ Safety Benchmark"
         summary="This page explains benchmark-level evidence in plain language: what N means, how scenarios are structured, what Phase 1 and Phase 2 measured, and how aggregate dimensional scoring is reported."
         highlights={[
-          "N = 21,000+ individual model outputs evaluated",
-          "79 structured scenarios across 12 behavioral risk domains",
+          `${BENCHMARK_CURRENT.nValue} individual model outputs evaluated`,
+          `${BENCHMARK_CURRENT.scenarios} structured scenarios across ${BENCHMARK_CURRENT.domains} behavioral risk domains`,
           "Two-phase system: Safety Gate + 8-dimension weighted scoring",
         ]}
         primaryAction={{ href: "/request-audit#application-form", label: "Request Full Report Access" }}
@@ -60,10 +66,10 @@ export default function Research() {
         visual={{
           title: "Benchmark Snapshot",
           points: [
-            "N = 21,000+ model outputs evaluated",
-            "79 structured scenarios across 12 risk domains",
-            "54.7% failed Safety Gate at first contact",
-            "43% showed no repair behavior after harm",
+            `${BENCHMARK_CURRENT.nValue} model outputs evaluated`,
+            `${BENCHMARK_CURRENT.scenarios} structured scenarios across ${BENCHMARK_CURRENT.domains} risk domains`,
+            `${BENCHMARK_CURRENT.failedGatePct} failed Safety Gate at first contact`,
+            `${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after harm`,
           ],
           tone: "teal",
         }}
@@ -73,15 +79,15 @@ export default function Research() {
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">N and Scenario Scope</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <article className="card-surface p-5">
-            <p className="font-display text-3xl text-foreground mb-2">N = 21,000+</p>
+            <p className="font-display text-3xl text-foreground mb-2">{BENCHMARK_CURRENT.nValue}</p>
             <p className="text-sm text-foreground-muted">Individual model outputs evaluated</p>
           </article>
           <article className="card-surface p-5">
-            <p className="font-display text-3xl text-foreground mb-2">79</p>
+            <p className="font-display text-3xl text-foreground mb-2">{BENCHMARK_CURRENT.scenarios}</p>
             <p className="text-sm text-foreground-muted">Structured benchmark scenarios</p>
           </article>
           <article className="card-surface p-5">
-            <p className="font-display text-3xl text-foreground mb-2">12</p>
+            <p className="font-display text-3xl text-foreground mb-2">{BENCHMARK_CURRENT.domains}</p>
             <p className="text-sm text-foreground-muted">Human behavioral risk domains</p>
           </article>
         </div>
@@ -89,10 +95,10 @@ export default function Research() {
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-foreground-subtle mb-3">Plain-Language Scope</p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-3">
             N is the total number of individual AI responses tested, not the number of companies or clients.
-            The 79 scenarios represent structured test conditions spanning high-risk human states.
+            The {BENCHMARK_CURRENT.scenarios} scenarios represent structured test conditions spanning high-risk human states.
           </p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-            Our benchmark tests AI systems against structured scenarios drawn from 12 behavioral risk domains, the
+            Our benchmark tests AI systems against structured scenarios drawn from {BENCHMARK_CURRENT.domains} behavioral risk domains, the
             moments people are actually using AI for.
           </p>
           <div className="flex flex-wrap gap-2 mb-4">
@@ -109,13 +115,14 @@ export default function Research() {
             These are not random prompts. They are structured representations of real human stress states.
           </p>
         </article>
+        <BenchmarkStatusNote className="mt-4 max-w-4xl" />
       </section>
 
       <section id="phase-1-results" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Phase 1 — Safety Gate Results</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <article className="card-surface p-6">
-            <p className="font-display text-5xl text-danger mb-2">54.7%</p>
+            <p className="font-display text-5xl text-danger mb-2">{BENCHMARK_CURRENT.failedGatePct}</p>
             <p className="text-sm text-foreground-muted">Failed the Safety Gate at first contact</p>
           </article>
           <article className="card-surface p-6">
@@ -131,7 +138,7 @@ export default function Research() {
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Phase 2 — Post-Harm Behavior</p>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           <article className="card-surface p-6">
-            <p className="font-display text-5xl text-danger mb-2">43%</p>
+            <p className="font-display text-5xl text-danger mb-2">{BENCHMARK_CURRENT.noRepairPct}</p>
             <p className="text-sm text-foreground-muted">Showed no repair behavior after introducing harm</p>
           </article>
           <article className="card-surface p-6">
@@ -146,7 +153,7 @@ export default function Research() {
           </article>
         </div>
         <p className="text-xs text-foreground-subtle mt-5">
-          57% is shown as the complement of the 43% no-repair result within the Phase 1 harm population.
+          57% is shown as the complement of the {BENCHMARK_CURRENT.noRepairPct} no-repair result within the Phase 1 harm population.
         </p>
       </section>
 
@@ -171,7 +178,7 @@ export default function Research() {
 
       <section id="failure-breakdown" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">
-          Visual Breakdown of the 54.7% First-Contact Failures
+          Visual Breakdown of the {BENCHMARK_CURRENT.failedGatePct} First-Contact Failures
         </p>
         <div className="card-surface p-6 max-w-4xl mb-6">
           <div className="space-y-4">
@@ -219,6 +226,21 @@ export default function Research() {
             Need a PDF copy? Email <a href="mailto:research@ikwe.ai" className="link-lilac">research@ikwe.ai</a> with
             the deliverable name. If a styled PDF is not available, we can provide the equivalent web-copy version.
           </p>
+          <div className="mt-5 pt-4 border-t border-border">
+            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-2">Public Update Log</p>
+            {BENCHMARK_PUBLIC_LOG.map((entry) => (
+              <p key={`${entry.date}-${entry.label}`} className="text-xs text-foreground-muted leading-relaxed mb-1">
+                <span className="text-foreground">{entry.date}</span> · {entry.label}
+              </p>
+            ))}
+            <p className="text-xs text-foreground-subtle leading-relaxed mt-2">
+              Need full version history and change notes?{" "}
+              <a href={BENCHMARK_LOG_REQUEST.href} className="link-lilac underline">
+                {BENCHMARK_LOG_REQUEST.label}
+              </a>
+              .
+            </p>
+          </div>
         </article>
       </section>
     </PageShell>

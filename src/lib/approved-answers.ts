@@ -1,4 +1,5 @@
 import { CASE_STUDIES_INDEX, WRITINGS_INDEX } from "@/lib/content-index";
+import { BENCHMARK_CURRENT, BENCHMARK_LOG_REQUEST } from "@/lib/benchmark-data";
 
 export type AssistantLink = {
   label: string;
@@ -115,12 +116,21 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
   },
   {
     id: "benchmark-stats",
-    keywords: ["benchmark numbers", "what do the benchmark numbers mean", "stats", "54.7", "43%", "n = 21,000"],
+    keywords: [
+      "benchmark numbers",
+      "what do the benchmark numbers mean",
+      "stats",
+      "failed safety gate",
+      "no repair behavior",
+      "responses evaluated",
+      "n value",
+    ],
     text:
-      "Current benchmark framing: 54.7% failed the Safety Gate at first contact, 43% showed no repair behavior after introducing harm, and N = 21,000+ model outputs evaluated across 79 scenarios in 12 behavioral risk domains.",
+      `Current benchmark framing (updated ${BENCHMARK_CURRENT.lastUpdated}): ${BENCHMARK_CURRENT.failedGatePct} failed the Safety Gate at first contact, ${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm, and ${BENCHMARK_CURRENT.nValue} model outputs evaluated across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} behavioral risk domains.`,
     links: [
       { label: "EQ Safety Benchmark", href: "/eq-safety-benchmark" },
       { label: "Research Details", href: "/research" },
+      { label: BENCHMARK_LOG_REQUEST.label, href: BENCHMARK_LOG_REQUEST.href },
     ],
   },
   {
@@ -179,7 +189,7 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
     title: "Research Overview",
     href: "/research",
     summary:
-      "Research page explains N = 21,000+, 79 scenarios, 12 behavioral risk domains, Phase 1 and Phase 2 outcomes, and aggregate 8-dimension reporting boundaries.",
+      `Research page explains ${BENCHMARK_CURRENT.nValue}, ${BENCHMARK_CURRENT.scenarios} scenarios, ${BENCHMARK_CURRENT.domains} behavioral risk domains, Phase 1 and Phase 2 outcomes, and aggregate 8-dimension reporting boundaries.`,
     tags: ["research", "methodology", "numbers", "phase 1", "phase 2", "dimensions"],
   },
   {
