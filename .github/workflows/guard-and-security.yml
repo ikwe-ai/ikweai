@@ -49,8 +49,7 @@ jobs:
           server_port: ${{ secrets.SMTP_PORT || '587' }}
           username: ${{ secrets.SMTP_USERNAME }}
           password: ${{ secrets.SMTP_PASSWORD }}
-          subject: "[Ikwe CI] Guard And Security Checks - ${{ job.status }} (${{
-            github.ref_name }})"
+          subject: "[Ikwe CI] Guard And Security Checks - ${{ job.status }} (${{ github.ref_name }})"
           to: stephanie@ikwe.ai
           from: ${{ secrets.SMTP_FROM }}
           secure: false
