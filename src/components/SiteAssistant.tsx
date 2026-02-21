@@ -106,7 +106,7 @@ export default function SiteAssistant() {
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="inline-flex items-center gap-2 rounded-full border border-lilac/55 bg-background-card px-4 py-2.5 text-sm text-foreground shadow-[0_16px_34px_hsl(268_35%_6%_/_0.56)] transition hover:border-lilac-bright/80"
+          className="inline-flex items-center gap-2 rounded-full border border-border-2 bg-background-card px-4 py-2.5 text-sm text-foreground shadow-[0_16px_34px_hsl(268_35%_6%_/_0.56)] transition hover:border-lilac"
           aria-label="Open site assistant"
         >
           <MessageSquare size={15} className="text-lilac-bright" />
@@ -114,8 +114,8 @@ export default function SiteAssistant() {
           <span className="sm:hidden">Ask</span>
         </button>
       ) : (
-        <section className="w-[min(95vw,420px)] max-sm:w-full rounded-xl border border-border-2 bg-background-card/96 backdrop-blur-md shadow-[0_28px_70px_hsl(266_38%_4%_/_0.66)]">
-          <header className="flex items-start justify-between border-b border-border px-4 py-3 bg-background/60">
+        <section className="w-[min(95vw,420px)] max-sm:w-full rounded-xl border border-border-2 bg-background-card shadow-[0_28px_70px_hsl(266_38%_4%_/_0.66)] overflow-hidden">
+          <header className="flex items-start justify-between border-b border-border px-4 py-3 bg-background-card">
             <div>
               <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-lilac-bright">Approved Answers</p>
               <p className="text-sm text-foreground">Ikwe Site Assistant</p>
@@ -141,7 +141,7 @@ export default function SiteAssistant() {
           </header>
 
           {!hasUserMessages ? (
-            <div className="px-4 py-3 border-b border-border bg-background/45">
+            <div className="px-4 py-3 border-b border-border bg-background-surface">
               <p className="text-xs text-foreground-subtle mb-2">Try a quick question</p>
               <div className="flex flex-wrap gap-2">
                 {QUICK_QUESTIONS.map((question) => (
@@ -158,18 +158,18 @@ export default function SiteAssistant() {
             </div>
           ) : null}
 
-          <div ref={scrollAreaRef} className="max-h-[52vh] sm:max-h-[460px] overflow-auto px-4 py-3 space-y-3 bg-background/38">
+          <div ref={scrollAreaRef} className="max-h-[52vh] sm:max-h-[460px] overflow-auto px-4 py-3 space-y-3 bg-background-card">
             {messages.map((message) => (
               <article
                 key={message.id}
                 className={`rounded-md border px-3 py-2 ${
                   message.role === "user"
-                    ? "ml-4 border-lilac/55 bg-lilac-dim/72"
+                    ? "ml-4 border-lilac/55 bg-lilac-dim"
                     : message.kind === "restricted"
-                      ? "mr-4 border-danger/60 bg-danger/16"
+                      ? "mr-4 border-danger/60 bg-background-surface"
                       : message.kind === "fallback"
-                        ? "mr-4 border-amber/60 bg-amber/10"
-                        : "mr-4 border-border-2 bg-background-surface/92"
+                        ? "mr-4 border-amber/60 bg-background-surface"
+                        : "mr-4 border-border-2 bg-background-surface"
                 }`}
               >
                 <p className="text-sm text-foreground leading-relaxed whitespace-pre-line break-words">{message.text}</p>
@@ -197,7 +197,7 @@ export default function SiteAssistant() {
             ))}
           </div>
 
-          <form onSubmit={onSubmit} className="border-t border-border p-3 bg-background/72">
+          <form onSubmit={onSubmit} className="border-t border-border p-3 bg-background-card">
             <label htmlFor="site-assistant-input" className="sr-only">
               Ask a question
             </label>

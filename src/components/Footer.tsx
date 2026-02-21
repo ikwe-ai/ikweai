@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border mt-20 bg-background-card/35">
+    <footer className="border-t border-border mt-20 bg-background-card">
       <div className="container mx-auto max-w-6xl px-6 py-12">
         <div className="card-surface p-4 mb-10">
           <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">

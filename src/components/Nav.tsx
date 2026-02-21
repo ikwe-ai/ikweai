@@ -326,12 +326,12 @@ export default function Nav() {
               onMouseEnter={clearCloseTimer}
               onMouseLeave={scheduleClose}
             >
-              <div className="inline-flex items-center gap-1 rounded-full border border-border bg-background-card/80 p-1 nav-pill">
+              <div className="inline-flex items-center gap-1 rounded-full border border-border bg-background-card p-1 nav-pill">
                 <Link
                   to="/"
                   className={`rounded-full px-3 py-1.5 text-sm transition-colors whitespace-nowrap ${
                     isRouteActive("/")
-                      ? "bg-lilac/15 text-lilac"
+                      ? "bg-lilac-dim text-lilac-bright"
                       : "text-foreground-muted hover:text-foreground"
                   }`}
                   style={{ fontFamily: "var(--font-body)" }}
@@ -344,7 +344,7 @@ export default function Nav() {
                     key={hub.id}
                     className={`inline-flex items-center rounded-full text-sm transition-colors whitespace-nowrap ${
                       isRouteActive(hub.path) || openHub === hub.id
-                        ? "bg-lilac/15 text-lilac"
+                        ? "bg-lilac-dim text-lilac-bright"
                         : "text-foreground-muted hover:text-foreground"
                     }`}
                     style={{ fontFamily: "var(--font-body)" }}
@@ -450,19 +450,19 @@ export default function Nav() {
             <Link
               to="/"
               className={`rounded border px-3 py-2 text-sm ${
-                isRouteActive("/") ? "border-lilac/40 text-lilac bg-lilac/10" : "border-border text-foreground-muted"
+                isRouteActive("/") ? "border-lilac/60 text-lilac-bright bg-lilac-dim" : "border-border text-foreground-muted"
               }`}
             >
               Home
             </Link>
 
             {hubs.map((hub) => (
-              <div key={hub.id} className="rounded border border-border p-2 bg-background-card/40">
+              <div key={hub.id} className="rounded border border-border p-2 bg-background-card">
                 <div className="flex items-center gap-2">
                   <Link
                     to={hub.path}
                     className={`flex-1 rounded px-2 py-1.5 text-sm ${
-                      isRouteActive(hub.path) ? "text-lilac bg-lilac/10" : "text-foreground"
+                      isRouteActive(hub.path) ? "text-lilac-bright bg-lilac-dim" : "text-foreground"
                     }`}
                   >
                     {hub.label}
@@ -484,7 +484,7 @@ export default function Nav() {
                       to={hub.path}
                       className={`block rounded border px-3 py-2 text-sm ${
                         isRouteActive(hub.path)
-                          ? "border-lilac/40 text-lilac bg-lilac/10"
+                          ? "border-lilac/60 text-lilac-bright bg-lilac-dim"
                           : "border-border text-foreground-muted"
                       }`}
                     >
@@ -497,7 +497,7 @@ export default function Nav() {
                         to={item.path}
                         className={`block rounded border px-3 py-2 text-sm ${
                           isRouteActive(item.path)
-                            ? "border-lilac/40 text-lilac bg-lilac/10"
+                            ? "border-lilac/60 text-lilac-bright bg-lilac-dim"
                             : "border-border text-foreground-muted"
                         }`}
                       >
@@ -505,7 +505,7 @@ export default function Nav() {
                         <span className="block text-xs text-foreground-subtle mt-1">{item.desc}</span>
                       </Link>
                     ))}
-                    <div className="rounded border border-border px-3 py-2 bg-background/40">
+                    <div className="rounded border border-border px-3 py-2 bg-background-surface">
                       <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-1">{hub.asideHeading}</p>
                       <p className="text-xs text-foreground-subtle leading-relaxed mb-2">{hub.asideBody}</p>
                       <div className="space-y-1.5">
