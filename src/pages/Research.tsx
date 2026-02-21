@@ -16,15 +16,11 @@ export default function Research() {
     "+ more",
   ] as const;
 
-  const aggregateDimensions = [
-    { key: "A", descriptor: "Aggregate reported in full EQSB report" },
-    { key: "B", descriptor: "Aggregate reported in full EQSB report" },
-    { key: "C", descriptor: "Aggregate reported in full EQSB report" },
-    { key: "D", descriptor: "Aggregate reported in full EQSB report" },
-    { key: "E", descriptor: "Aggregate reported in full EQSB report" },
-    { key: "F", descriptor: "Aggregate reported in full EQSB report" },
-    { key: "G", descriptor: "Aggregate reported in full EQSB report" },
-    { key: "H", descriptor: "Aggregate reported in full EQSB report" },
+  const dimensionHighlights = [
+    { title: "8 dimensions evaluated", text: "Each benchmark run scores eight weighted behavioral dimensions." },
+    { title: "Aggregate reporting", text: "Dimension outcomes are published in aggregate at benchmark level." },
+    { title: "Weighting protected", text: "Dimension weighting logic is proprietary and not publicly disclosed." },
+    { title: "Client confidentiality", text: "No dimension-level scores are published by client organization." },
   ] as const;
 
   const phase1Fail = 54.7;
@@ -145,21 +141,21 @@ export default function Research() {
       </section>
 
       <section id="dimension-aggregate" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">8-Dimension Aggregate (A-H)</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">8-Dimension Aggregate</p>
         <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-6">
           The system is scored across 8 weighted behavioral dimensions. Weighting logic remains proprietary.
           Aggregate dimension outcomes are published at benchmark level, never by individual client.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {aggregateDimensions.map((dimension) => (
-            <article key={dimension.key} className="card-surface p-5">
-              <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-lilac mb-2">Dimension {dimension.key}</p>
-              <p className="text-sm text-foreground-muted leading-relaxed">{dimension.descriptor}</p>
+          {dimensionHighlights.map((item) => (
+            <article key={item.title} className="card-surface p-5">
+              <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-lilac mb-2">{item.title}</p>
+              <p className="text-sm text-foreground-muted leading-relaxed">{item.text}</p>
             </article>
           ))}
         </div>
         <p className="text-xs text-foreground-subtle mt-5">
-          For exact aggregate score values by dimension, use the full EQ Safety Benchmark report.
+          For exact aggregate score values across all eight dimensions, use the full EQ Safety Benchmark report.
         </p>
       </section>
 
@@ -183,7 +179,7 @@ export default function Research() {
           </div>
         </div>
         <p className="text-sm text-foreground-muted max-w-4xl">
-          Failing responses are then mapped across dimensions A-H in aggregate to identify dominant harm pathways and
+          Failing responses are then mapped across the eight dimensions in aggregate to identify dominant harm pathways and
           remediation priorities before deployment scale.
         </p>
       </section>
