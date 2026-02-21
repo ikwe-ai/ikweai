@@ -76,8 +76,8 @@ export default function Trust() {
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Public Transparency</p>
             <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
               <li>• Framework structure and terminology definitions</li>
-              <li>• High-level benchmark findings and release version context</li>
-              <li>• Redacted output examples showing artifact structure</li>
+              <li>• High-level benchmark findings and version context</li>
+              <li>• Redacted examples showing artifact structure</li>
             </ul>
           </article>
           <article className="card-surface p-6">
@@ -105,7 +105,7 @@ export default function Trust() {
             },
             {
               label: "Version discipline",
-              text: "Published outputs are versioned so language and evidence can be attributed to a specific release state.",
+              text: "Published outputs are versioned so language and evidence can be attributed to a specific benchmark state.",
             },
             {
               label: "Name usage",
