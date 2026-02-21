@@ -12,6 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
-Disallow: /artifacts/
 
 Sitemap: https://ikwe.ai/sitemap.xml

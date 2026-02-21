@@ -15,7 +15,7 @@ export default function Footer() {
               <Link to="/technology/architecture" className="text-foreground-muted hover:text-foreground transition-colors">Architecture</Link>
               <Link to="/trust" className="text-foreground-muted hover:text-foreground transition-colors">Trust</Link>
               <Link to="/about" className="text-foreground-muted hover:text-foreground transition-colors">About</Link>
-              <Link to="/consult" className="text-foreground-muted hover:text-foreground transition-colors">Scope Review</Link>
+              <Link to="/audit" className="text-foreground-muted hover:text-foreground transition-colors">Audit</Link>
             </div>
           </div>
         </div>
