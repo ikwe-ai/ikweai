@@ -117,7 +117,7 @@ export default function About() {
         </p>
         <p className="text-sm text-foreground-muted leading-relaxed mb-6">
           Every report package carries a version identifier (for example,{" "}
-          <span className="font-mono text-foreground">Ikwe_SamplePack_v2026.02.18</span>), a short changelog, and the
+          <span className="font-mono text-foreground">v2026.02.18</span>), a short changelog, and the
           metric block from the originating study. This ensures that any published package can be traced
           to a specific methodological state.
         </p>

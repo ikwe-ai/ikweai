@@ -57,6 +57,16 @@ export default function Research() {
           { href: "#failure-breakdown", label: "Failure Breakdown" },
           { href: "#full-report", label: "Full Report" },
         ]}
+        visual={{
+          title: "Benchmark Snapshot",
+          points: [
+            "N = 21,000+ model outputs evaluated",
+            "79 structured scenarios across 12 risk domains",
+            "54.7% failed Safety Gate at first contact",
+            "43% showed no repair behavior after harm",
+          ],
+          tone: "teal",
+        }}
       />
 
       <section id="dataset-scope" className="py-12 border-b border-border">

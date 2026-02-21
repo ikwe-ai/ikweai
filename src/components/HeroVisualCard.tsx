@@ -17,7 +17,7 @@ function normalizePoint(text: string) {
 
 export default function HeroVisualCard({
   kicker,
-  title = "Decision Path",
+  title = "Key Points",
   points,
   tone = "violet",
   compact = false,
