@@ -161,17 +161,11 @@ export default function SiteAssistant() {
       const detail = (event as CustomEvent<AssistantGuideDetail>).detail;
       setGuideContext(normalizeGuideDetail(detail));
     };
-    const onOpenGuide = (event: Event) => {
-      const detail = (event as CustomEvent<AssistantGuideDetail>).detail;
-      openGuidedWalkthrough(detail);
-    };
     window.addEventListener("ikwe:assistant-guide-context", onGuideContext as EventListener);
-    window.addEventListener("ikwe:assistant-open-guide", onOpenGuide as EventListener);
     return () => {
       window.removeEventListener("ikwe:assistant-guide-context", onGuideContext as EventListener);
-      window.removeEventListener("ikwe:assistant-open-guide", onOpenGuide as EventListener);
     };
-  }, [openGuidedWalkthrough]);
+  }, []);
 
   const pushAssistantAnswer = (question: string) => {
     const trimmed = question.trim();
