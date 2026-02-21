@@ -28,6 +28,10 @@ type GuideContext = {
 
 const GUIDE_TRIGGER_PATTERN = /\b(guide|walk\s?through|walkthrough|navigate this page|what'?s on this page|on this page)\b/i;
 const ASK_PREFIX = "ask://";
+const LEAD_CAPTURE_LINKS: AssistantLink[] = [
+  { label: "Request Audit Intake", href: "/request-audit#application-form" },
+  { label: "Book Consultation", href: "/consult" },
+];
 
 const IKWE_TOPIC_PROMPTS = [
   { label: "Ikwe Quick Facts", prompt: "Give me Ikwe quick facts" },
@@ -42,7 +46,7 @@ const START_MESSAGE: ChatMessage = {
   id: 1,
   role: "assistant",
   text:
-    "Ikwe Site Assistant: approved public facts only. I can walk you through benchmark evidence, audit process, deliverables, and request intake using one-click prompts.",
+    "Ikwe public questions only. Use quick prompts for benchmark facts, audit process, and deliverables. For direct engagement, use Request Audit Intake.",
 };
 
 const toAskLink = (label: string, prompt: string): AssistantLink => ({
@@ -103,6 +107,7 @@ const buildFollowupAskLinks = (question: string): AssistantLink[] => {
       toAskLink("Explain audit process", "How does the audit process work?"),
       toAskLink("Show deliverables", "What do teams receive in deliverables?"),
       toAskLink("Public vs proprietary", "What is public vs proprietary?"),
+      ...LEAD_CAPTURE_LINKS,
     ];
   }
   if (q.includes("audit") || q.includes("certification") || q.includes("process")) {
@@ -110,6 +115,7 @@ const buildFollowupAskLinks = (question: string): AssistantLink[] => {
       toAskLink("Benchmark numbers", "What do the benchmark numbers mean?"),
       toAskLink("Show deliverables", "What do teams receive in deliverables?"),
       toAskLink("Start intake", "How do we start an audit?"),
+      ...LEAD_CAPTURE_LINKS,
     ];
   }
   if (q.includes("deliverable") || q.includes("report")) {
@@ -117,6 +123,7 @@ const buildFollowupAskLinks = (question: string): AssistantLink[] => {
       toAskLink("Audit process", "How does the audit process work?"),
       toAskLink("Public vs proprietary", "What is public vs proprietary?"),
       toAskLink("Start intake", "How do we start an audit?"),
+      ...LEAD_CAPTURE_LINKS,
     ];
   }
 
@@ -124,6 +131,7 @@ const buildFollowupAskLinks = (question: string): AssistantLink[] => {
     toAskLink("Ikwe quick facts", "Give me Ikwe quick facts"),
     toAskLink("Benchmark numbers", "What do the benchmark numbers mean?"),
     toAskLink("Audit process", "How does the audit process work?"),
+    ...LEAD_CAPTURE_LINKS,
   ];
 };
 
@@ -208,6 +216,7 @@ export default function SiteAssistant() {
         toAskLink("4. Deliverables", "What do teams receive in deliverables?"),
         toAskLink("5. Public vs proprietary", "What is public vs proprietary?"),
         toAskLink("6. Start audit intake", "How do we start an audit?"),
+        ...LEAD_CAPTURE_LINKS,
       ],
     };
   }, []);
@@ -236,6 +245,7 @@ export default function SiteAssistant() {
           toAskLink("Ikwe quick facts", "Give me Ikwe quick facts"),
           toAskLink("Benchmark numbers", "What do the benchmark numbers mean?"),
           toAskLink("Audit process", "How does the audit process work?"),
+          ...LEAD_CAPTURE_LINKS,
         ]
       ),
     };
@@ -412,16 +422,6 @@ export default function SiteAssistant() {
     >
       {!open ? (
         <div className="flex flex-col items-end gap-2">
-          <div
-            className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] font-medium ${
-              hasGuideUpdate
-                ? "border-signal text-signal bg-background-card shadow-[0_0_0_1px_hsl(var(--signal)/0.25)]"
-                : "border-border-2 text-foreground-subtle bg-background-card"
-            }`}
-          >
-            <span className={`h-1.5 w-1.5 rounded-full ${hasGuideUpdate ? "bg-signal animate-pulse" : "bg-foreground-subtle"}`} />
-            {hasGuideUpdate ? "New page guidance available" : "Assistant inactive"}
-          </div>
           <button
             type="button"
             onClick={() => openGuidedWalkthrough()}
@@ -435,22 +435,21 @@ export default function SiteAssistant() {
           <button
             type="button"
             onClick={openAssistantPanel}
-            className="relative inline-flex items-center gap-2 rounded-full border border-border-2 bg-background-card px-4 py-2.5 text-sm text-foreground shadow-[0_16px_34px_hsl(268_35%_6%_/_0.56)] transition hover:border-lilac"
+            className="relative inline-flex items-center gap-2 rounded-full border border-border-2 bg-background-card px-3.5 py-2 text-xs text-foreground shadow-[0_16px_34px_hsl(268_35%_6%_/_0.56)] transition hover:border-lilac"
             aria-label="Open site assistant"
           >
             {hasGuideUpdate ? <span className="absolute -top-1 -right-1 h-2.5 w-2.5 rounded-full bg-lilac-bright animate-pulse" /> : null}
             <MessageSquare size={15} className="text-lilac-bright" />
-            <span className="max-sm:hidden">Ask Ikwe Assistant</span>
-            <span className="sm:hidden">Ask</span>
+            <span>Questions?</span>
           </button>
         </div>
       ) : (
-        <section className="w-[min(96vw,440px)] max-sm:w-full max-h-[min(86dvh,760px)] rounded-xl border border-border-2 bg-background-card shadow-[0_28px_70px_hsl(266_38%_4%_/_0.66)] overflow-hidden flex flex-col">
+        <section className="w-[min(96vw,400px)] max-sm:w-full max-h-[min(86dvh,760px)] rounded-xl border border-border-2 bg-background-card shadow-[0_28px_70px_hsl(266_38%_4%_/_0.66)] overflow-hidden flex flex-col">
           <header className="flex items-start justify-between border-b border-border px-4 py-3 bg-background-card">
             <div>
               <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-lilac-bright">Approved Answers</p>
               <div className="flex items-center gap-2">
-                <p className="text-sm text-foreground">Ikwe Site Assistant</p>
+                <p className="text-sm text-foreground">Questions for Ikwe</p>
                 <span className="inline-flex items-center rounded-full border border-safe bg-background-surface px-2 py-0.5 text-[10px] text-safe">
                   Active
                 </span>
@@ -501,6 +500,25 @@ export default function SiteAssistant() {
               >
                 Guide This Page
               </button>
+            </div>
+            <div className="rounded border border-border-2 bg-background-card p-2.5 mb-2">
+              <p className="text-[11px] text-foreground-subtle mb-1">Need direct support from our team?</p>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  type="button"
+                  className="rounded bg-lilac px-2.5 py-1.5 text-[11px] text-primary-foreground"
+                  onClick={() => onOpenLink("/request-audit#application-form")}
+                >
+                  Request Audit Intake
+                </button>
+                <button
+                  type="button"
+                  className="btn-outline rounded px-2.5 py-1.5 text-[11px] text-foreground"
+                  onClick={() => onOpenLink("/consult")}
+                >
+                  Book Consultation
+                </button>
+              </div>
             </div>
             <p className="text-xs text-foreground-subtle mb-2">Explore by topic</p>
             <div className="flex flex-wrap gap-2">
