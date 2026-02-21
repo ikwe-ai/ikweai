@@ -1,4 +1,4 @@
-import { FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { Compass, MessageSquare, RotateCcw, Send, ShieldAlert, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { resolveApprovedAnswer, type AssistantLink } from "@/lib/approved-answers";
@@ -147,8 +147,6 @@ export default function SiteAssistant() {
   const [guideContext, setGuideContext] = useState<GuideContext>(() => normalizeGuideDetail());
   const nextIdRef = useRef(2);
   const scrollAreaRef = useRef<HTMLDivElement | null>(null);
-
-  const hasUserMessages = useMemo(() => messages.some((message) => message.role === "user"), [messages]);
 
   const postForm = async (formName: string, payload: Record<string, string>) => {
     const body = new URLSearchParams({
@@ -390,6 +388,15 @@ export default function SiteAssistant() {
         <div className="flex flex-col items-end gap-2">
           <button
             type="button"
+            onClick={openIkwePresentation}
+            className="inline-flex items-center gap-2 rounded-full border border-lilac bg-background-card px-3.5 py-2 text-xs text-foreground shadow-[0_12px_26px_hsl(271_58%_10%_/_0.5)] transition hover:border-lilac-bright"
+            aria-label="Start Ikwe guided presentation"
+          >
+            <MessageSquare size={14} className="text-lilac-bright" />
+            Start Ikwe Walkthrough
+          </button>
+          <button
+            type="button"
             onClick={() => openGuidedWalkthrough()}
             className="inline-flex items-center gap-2 rounded-full border border-signal-soft bg-background-card px-3.5 py-2 text-xs text-foreground shadow-[0_12px_26px_hsl(188_50%_8%_/_0.46)] transition hover:border-signal"
             aria-label="Get a guided walkthrough of this page"
@@ -435,23 +442,54 @@ export default function SiteAssistant() {
             </div>
           </header>
 
-          {!hasUserMessages ? (
-            <div className="px-4 py-3 border-b border-border bg-background-surface">
-              <p className="text-xs text-foreground-subtle mb-2">Try a quick question</p>
-              <div className="flex flex-wrap gap-2">
-                {QUICK_QUESTIONS.map((question) => (
-                  <button
-                    key={question}
-                    type="button"
-                    className="btn-outline rounded-full px-3 py-1.5 text-xs text-foreground hover:text-foreground"
-                    onClick={() => pushAssistantAnswer(question)}
-                  >
-                    {question}
-                  </button>
-                ))}
-              </div>
+          <div className="px-4 py-3 border-b border-border bg-background-surface">
+            <p className="font-mono text-[11px] uppercase tracking-[0.13em] text-foreground-subtle mb-1">
+              Ikwe Quick Facts · Updated {BENCHMARK_CURRENT.lastUpdated}
+            </p>
+            <p className="text-xs text-foreground-muted leading-relaxed mb-2">
+              {BENCHMARK_CURRENT.failedGatePct} failed Safety Gate at first contact · {BENCHMARK_CURRENT.noRepairPct} showed no
+              repair behavior · {BENCHMARK_CURRENT.nValue} outputs evaluated.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-2">
+              <button
+                type="button"
+                className="btn-outline rounded-full px-3 py-1.5 text-xs text-foreground hover:text-foreground"
+                onClick={openIkwePresentation}
+              >
+                Start Ikwe Walkthrough
+              </button>
+              <button
+                type="button"
+                className="btn-outline rounded-full px-3 py-1.5 text-xs text-foreground hover:text-foreground"
+                onClick={() => openGuidedWalkthrough()}
+              >
+                Guide This Page
+              </button>
             </div>
-          ) : null}
+            <p className="text-xs text-foreground-subtle mb-2">Explore by topic</p>
+            <div className="flex flex-wrap gap-2">
+              {IKWE_TOPIC_PROMPTS.map((item) => (
+                <button
+                  key={item.label}
+                  type="button"
+                  className="btn-outline rounded-full px-3 py-1.5 text-xs text-foreground hover:text-foreground"
+                  onClick={() => pushAssistantAnswer(item.prompt)}
+                >
+                  {item.label}
+                </button>
+              ))}
+              {QUICK_QUESTIONS.map((question) => (
+                <button
+                  key={question}
+                  type="button"
+                  className="btn-outline rounded-full px-3 py-1.5 text-xs text-foreground hover:text-foreground"
+                  onClick={() => pushAssistantAnswer(question)}
+                >
+                  {question}
+                </button>
+              ))}
+            </div>
+          </div>
 
           <div ref={scrollAreaRef} className="max-h-[52vh] sm:max-h-[460px] overflow-auto px-4 py-3 space-y-3 bg-background-card">
             {messages.map((message) => (
