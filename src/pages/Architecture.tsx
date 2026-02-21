@@ -1,6 +1,5 @@
 import PageShell from "@/components/PageShell";
 import GatedCallout from "@/components/GatedCallout";
-import CanonicalTerm from "@/components/CanonicalTerm";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 
@@ -8,53 +7,28 @@ export default function Architecture() {
   const pipeline = [
     {
       step: "01",
-      title: "Scenario ingestion",
-      body: (
-        <>
-          Scenarios are drawn from the <CanonicalTerm term="SSF" /> library. Each scenario is classified by domain,
-          harm vector, and expected safe-response profile before evaluation.
-        </>
-      ),
+      title: "Scenario testing",
+      body: "Structured scenarios are run across high-risk behavioral states.",
     },
     {
       step: "02",
-      title: "Model execution",
-      body: (
-        <>
-          Each scenario is submitted to each evaluated <CanonicalTerm term="Endpoint" /> under controlled, identical
-          conditions. No pre-conditioning step. First response is the scored response.
-        </>
-      ),
+      title: "Independent evaluation",
+      body: "Responses are evaluated under consistent conditions for comparable outcomes.",
     },
     {
       step: "03",
-      title: "Safety Gate (EQSB v2.1)",
-      body: (
-        <>
-          First-contact response is evaluated against the <CanonicalTerm term="Safety Gate" />. Gate failure removes
-          the response from quality scorecard consideration.
-        </>
-      ),
+      title: "Safety Gate screening",
+      body: "First-contact responses are screened for harmful behavior before further assessment.",
     },
     {
       step: "04",
-      title: "Dimensional Scoring",
-      body: (
-        <>
-          Gate-passing responses are scored through <CanonicalTerm term="Dimensional Scoring" />. Dimension definitions
-          and detailed scoring references are available in report documentation.
-        </>
-      ),
+      title: "Behavioral scoring",
+      body: "Responses are scored across behavioral dimensions in aggregate benchmark reporting.",
     },
     {
       step: "05",
-      title: "Aggregation & versioning",
-      body: (
-        <>
-          Results are aggregated into a <CanonicalTerm term="Composite Score" /> and packaged under <CanonicalTerm term="Version Lock" />.
-          No post-hoc edits are made to locked results.
-        </>
-      ),
+      title: "Reporting and monitoring",
+      body: "Findings are documented for governance use, with optional monitoring for deployed systems.",
     },
   ] as const;
 
@@ -68,17 +42,17 @@ export default function Architecture() {
       <SummaryHero
         kicker="System Overview"
         title="Architecture"
-        summary="Public overview of the evaluation pipeline. Detailed scoring specifications are available through controlled report documentation."
+        summary="Public overview of the evaluation approach. Internal implementation details are not published on the public site."
         highlights={[
-          "Version-locked evidence control",
-          "Deterministic gate before quality scoring",
-          "Public framework language with governance discipline",
+          "Independent third-party evaluation flow",
+          "Safety Gate before broader scoring",
+          "Governance-ready reporting outputs",
         ]}
         primaryAction={{ href: "/deliverables", label: "View Artifacts & Transparency →" }}
         secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
         jumpLinks={[
           { href: "#pipeline", label: "Pipeline" },
-          { href: "#control-terms", label: "Control Terms" },
+          { href: "#control-terms", label: "Evaluation Standards" },
           { href: "#public-scope", label: "Public Scope" },
           { href: "#architecture-access", label: "Access" },
         ]}
@@ -101,20 +75,11 @@ export default function Architecture() {
       </section>
 
       <section id="control-terms" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Control Terms</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Evaluation Standards</p>
         <div className="space-y-2 text-sm text-foreground-muted max-w-2xl">
-          <p>
-            <CanonicalTerm term="PASS_QUALITY" /> and <CanonicalTerm term="FAIL_DIAGNOSTIC" /> route outputs into
-            quality scoring or review-only handling.
-          </p>
-          <p>
-            <CanonicalTerm term="Severity Cap" /> and <CanonicalTerm term="Override Logic" /> apply governance
-            constraints under defined conditions.
-          </p>
-          <p>
-            <CanonicalTerm term="Catastrophic Failure" /> captures highest-risk outcomes, and{" "}
-            <CanonicalTerm term="Synthetic Scenario Monitoring" /> is used for post-deployment drift tracking.
-          </p>
+          <p>Safety behavior is assessed first, before broader quality scoring is considered.</p>
+          <p>Published outputs are independent, documented, and designed for institutional review.</p>
+          <p>Detailed operational logic and implementation tables remain restricted to authorized engagements.</p>
         </div>
       </section>
 
@@ -122,16 +87,16 @@ export default function Architecture() {
       <section id="public-scope" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Public Scope</p>
         <p className="text-sm text-foreground-muted max-w-xl leading-relaxed mb-6">
-          This page provides public architecture framing. Detailed technical specification sets are shared through
-          controlled report documentation.
+          This page provides a public overview only. Internal process details and implementation-specific technical
+          artifacts are not publicly displayed.
         </p>
         <ul className="space-y-2 text-sm text-foreground-muted max-w-lg">
           {[
-            "Detailed Safety Gate definition tables",
-            "Dimension weight and scoring reference tables",
-            "Model-level outcome detail tables",
-            "Scenario catalog records",
-            "Expanded score reference documents",
+            "Internal testing workflows",
+            "Detailed scoring logic and weighting",
+            "Implementation-specific reference materials",
+            "Client-specific evaluation records",
+            "Restricted governance documentation",
           ].map((item) => (
             <li key={item} className="flex gap-3">
               <span className="text-foreground-subtle shrink-0">—</span>
