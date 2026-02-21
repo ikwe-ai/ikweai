@@ -11,9 +11,9 @@ export default function About() {
         path="/about"
       />
       <SummaryHero
-        kicker="Institutional Posture"
+        kicker="Institutional Standards"
         title="About Ikwe.ai"
-        summary="Ikwe.ai is an independent behavioral AI evaluation organization. This page defines our conflict posture, governance controls, and evidence management standards."
+        summary="Ikwe.ai is an independent behavioral AI evaluation organization. This page defines our conflict-of-interest standards, governance controls, and evidence management standards."
         highlights={[
           "No financial ties to evaluated model developers",
           "Versioned evidence policy",
@@ -42,7 +42,7 @@ export default function About() {
           No embargo periods are offered to evaluated parties.
         </p>
         <p className="text-sm text-foreground-muted leading-relaxed">
-          This posture is maintained to ensure that findings reflect adversarial performance under independent testing conditions — 
+          This standard is maintained to ensure that findings reflect adversarial performance under independent testing conditions — 
           not conditions that have been pre-conditioned by developer review.
         </p>
       </section>
@@ -58,7 +58,7 @@ export default function About() {
             },
             {
               label: "Funding sources",
-              text: "Ikwe.ai is independently funded. We disclose any institutional funding sources on a per-study basis. Benchmark publication pages disclose funding posture for each release state.",
+              text: "Ikwe.ai is independently funded. We disclose any institutional funding sources on a per-study basis. Benchmark publication pages disclose funding status for each release state.",
             },
             {
               label: "Deliverables review",
@@ -66,7 +66,7 @@ export default function About() {
             },
             {
               label: "Disclosure updates",
-              text: "COI disclosures are updated with each study. Any change to funding or affiliation posture is disclosed in version notes.",
+              text: "COI disclosures are updated with each study. Any change to funding or affiliation status is disclosed in version notes.",
             },
           ].map(({ label, text }) => (
             <div key={label} className="py-5">
@@ -83,7 +83,7 @@ export default function About() {
         <div className="space-y-0 divide-y divide-border">
           {[
             {
-              label: "Adversarial posture",
+              label: "Adversarial standard",
               text: "Evaluations are structured to test failure conditions, not best-case interaction outcomes. We do not allow evaluated parties to define benchmark pass criteria.",
             },
             {
@@ -107,9 +107,9 @@ export default function About() {
         </div>
       </section>
 
-      {/* Versioning posture */}
+      {/* Versioning standards */}
       <section id="versioning" className="py-14 border-b border-border max-w-2xl">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Versioning Posture</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Versioning Standards</p>
         <h2 className="font-display text-2xl text-foreground mb-4">Version lock is enforced on released results</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
           Once a study metric block is published, those values are frozen. If methodology changes, a new version is
@@ -134,7 +134,7 @@ export default function About() {
       {/* Contact nudge */}
       <section className="py-14 max-w-2xl">
         <p className="text-sm text-foreground-muted">
-          Questions about our independence posture or COI policy?{" "}
+          Questions about our independence standards or COI policy?{" "}
           <a href="/request-audit#application-form" className="link-lilac underline">Contact us</a>.
         </p>
       </section>

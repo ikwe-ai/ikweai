@@ -19,7 +19,7 @@ export default function Trust() {
     <PageShell>
       <PageMeta
         title="Trust & Confidentiality | Ikwe.ai"
-        description="Customer-facing trust posture for data handling, confidentiality boundaries, and report access."
+        description="Customer-facing trust standards for data handling, confidentiality boundaries, and report access."
         path="/trust"
       />
       <SummaryHero
@@ -29,7 +29,7 @@ export default function Trust() {
         highlights={[
           "Clear transparency model",
           "Detailed materials shared with authorized stakeholders",
-          "Independent third-party evaluation posture",
+          "Independent third-party evaluation standards",
         ]}
         primaryAction={{ href: "#handling-boundary", label: "View Handling Boundary ↓" }}
         secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
@@ -97,7 +97,7 @@ export default function Trust() {
           {[
             {
               label: "Independence",
-              text: "Ikwe.ai maintains an independent evaluation posture and does not share draft findings with evaluated model developers before publication.",
+              text: "Ikwe.ai maintains an independent evaluation standard and does not share pre-publication findings with evaluated model developers.",
             },
             {
               label: "Access control",

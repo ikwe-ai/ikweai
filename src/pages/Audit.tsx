@@ -6,8 +6,8 @@ export default function Audit() {
   const pathway = [
     {
       step: "01",
-      title: "Baseline Audit",
-      body: "Establish behavioral risk exposure, classify failure modes, and set the initial governance baseline.",
+      title: "Initial Audit",
+      body: "Establish behavioral risk exposure, classify failure modes, and set an initial governance reference point.",
     },
     {
       step: "02",
@@ -41,7 +41,7 @@ export default function Audit() {
         path="/audit"
       />
       <SummaryHero
-        kicker="Certification Pathway"
+        kicker="Certification Process"
         title="Ikwe Certified — Independent Third-Party Behavioral Validation"
         summary="Governance-grade evaluation and certification for AI systems in healthcare and other high-trust regulated environments."
         highlights={[
@@ -53,7 +53,7 @@ export default function Audit() {
         secondaryAction={{ href: "/technology/architecture", label: "View Governance Framework" }}
         jumpLinks={[
           { href: "#certification-meaning", label: "What It Means" },
-          { href: "#pathway", label: "Pathway" },
+          { href: "#pathway", label: "Process" },
           { href: "#measure", label: "What We Measure" },
           { href: "#pricing", label: "Pricing" },
           { href: "#request-start", label: "Request Intake" },
@@ -73,7 +73,7 @@ export default function Audit() {
             Ikwe Certified is a proprietary certification program name of Visible Healing Inc.
           </p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-            This pathway is designed to lower avoidable exposure by identifying severe risks before they escalate into
+            This process is designed to lower avoidable exposure by identifying severe risks before they escalate into
             costly legal, regulatory, and incident-response events.
           </p>
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Included Deliverables</p>

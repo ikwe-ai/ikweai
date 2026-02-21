@@ -8,13 +8,13 @@ export default function EqSafetyBenchmark() {
     <PageShell>
       <PageMeta
         title="EQ Safety Benchmark (EQSB) | Ikwe.ai"
-        description="Public EQ Safety Benchmark overview with current benchmark metrics, framework structure, and audit-start pathways."
+        description="Public EQ Safety Benchmark overview with current benchmark metrics, framework structure, and audit-start process."
         path="/eq-safety-benchmark"
       />
       <SummaryHero
         kicker="EQSB"
         title="EQ Safety Benchmark (EQSB)"
-        summary="Benchmark overview for institutional review. This page shows framework structure, current benchmark outcomes, and report request pathways."
+        summary="Benchmark overview for institutional review. This page shows framework structure, current benchmark outcomes, and report request options."
         highlights={[
           "54.7% failed the Safety Gate at first contact",
           "43% showed no repair behavior after introducing harm",
@@ -53,7 +53,7 @@ export default function EqSafetyBenchmark() {
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Step 2</p>
             <h2 className="font-display text-xl text-foreground mb-2">Dimensional Scoring</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Eight weighted behavioral dimensions (A-H) scored in aggregate for benchmark-level reporting.
+              Eight weighted behavioral dimensions scored in aggregate for benchmark-level reporting.
             </p>
           </article>
           <article className="card-surface p-5">
@@ -105,7 +105,7 @@ export default function EqSafetyBenchmark() {
             className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Open full research hub
+            Open full research overview
           </a>
         </div>
       </section>
