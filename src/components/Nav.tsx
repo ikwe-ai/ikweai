@@ -68,16 +68,16 @@ const hubs: Hub[] = [
     id: "outputs",
     label: "Deliverables",
     path: "/deliverables",
-    desc: "Public deliverables previews and full report request pathways.",
+    desc: "Public deliverables previews and full report request options.",
     children: [
       {
         path: "/deliverables",
-        label: "Deliverables Hub",
+        label: "Deliverables Overview",
         desc: "Public preview of board-facing and governance-facing deliverables.",
       },
       {
         path: "/audit",
-        label: "Audit Pathway",
+        label: "Audit Overview",
         desc: "Engagement structure and audit delivery sequence.",
       },
       {
@@ -89,7 +89,7 @@ const hubs: Hub[] = [
     asideHeading: "Deliverables Navigation",
     asideBody: "See public report formats and how to request full report packages.",
     asideLinks: [
-      { label: "Deliverables Hub", path: "/deliverables" },
+      { label: "Deliverables Overview", path: "/deliverables" },
       { label: "Research Overview", path: "/research" },
       { label: "Trust & Confidentiality", path: "/trust" },
       { label: "Architecture", path: "/technology/architecture" },
@@ -105,26 +105,26 @@ const hubs: Hub[] = [
     children: [
       {
         path: "/technology/architecture",
-        label: "Architecture Hub",
+        label: "Architecture Overview",
         desc: "Public pipeline and control terms overview.",
       },
       {
         path: "/audit",
-        label: "Audit Pathway",
+        label: "Audit Overview",
         desc: "Audit structure and delivery process.",
       },
       {
         path: "/deliverables",
-        label: "Deliverables Hub",
+        label: "Deliverables Overview",
         desc: "Public deliverable preview and access boundary.",
       },
     ],
     asideHeading: "Architecture Navigation",
-    asideBody: "Use this hub for the pipeline, terms, and audit pathway context.",
+    asideBody: "Use this section for pipeline, terms, and audit process context.",
     asideLinks: [
       { label: "Architecture Overview", path: "/technology/architecture" },
-      { label: "Audit Pathway", path: "/audit" },
-      { label: "Deliverables Hub", path: "/deliverables" },
+      { label: "Audit Overview", path: "/audit" },
+      { label: "Deliverables Overview", path: "/deliverables" },
       { label: "Research Glossary", path: "/research" },
     ],
     ctaLabel: "Request Audit →",
@@ -134,12 +134,12 @@ const hubs: Hub[] = [
     id: "about",
     label: "About",
     path: "/about",
-    desc: "Independence posture and governance discipline.",
+    desc: "Independence standards and governance discipline.",
     children: [
       {
         path: "/about",
-        label: "About Hub",
-        desc: "Independence, COI policy, and version posture.",
+        label: "About Overview",
+        desc: "Independence, COI policy, and version standards.",
       },
       {
         path: "/trust",
@@ -154,16 +154,16 @@ const hubs: Hub[] = [
       {
         path: "/deliverables",
         label: "Deliverables & Transparency",
-        desc: "Public deliverables previews and full report request pathways.",
+        desc: "Public deliverables previews and full report request options.",
       },
     ],
     asideHeading: "About Navigation",
-    asideBody: "Company posture, governance commitments, and evidence discipline.",
+    asideBody: "Company standards, governance commitments, and evidence discipline.",
     asideLinks: [
       { label: "About Overview", path: "/about" },
       { label: "Trust & Confidentiality", path: "/trust" },
       { label: "Press & Updates", path: "/research/press" },
-      { label: "Deliverables Hub", path: "/deliverables" },
+      { label: "Deliverables Overview", path: "/deliverables" },
       { label: "Scope Review Overview", path: "/consult" },
     ],
     ctaLabel: "Request Audit →",
@@ -173,12 +173,12 @@ const hubs: Hub[] = [
     id: "audit",
     label: "Audit",
     path: "/audit",
-    desc: "Audit pathway, intake, and delivery context for institutional teams.",
+    desc: "Audit process, intake, and delivery context for institutional teams.",
     children: [
       {
         path: "/audit",
         label: "Audit Overview",
-        desc: "Audit pathway and delivery sequence for institutional review.",
+        desc: "Audit process and delivery sequence for institutional review.",
       },
       {
         path: "/request-audit#application-form",
@@ -192,11 +192,11 @@ const hubs: Hub[] = [
       },
     ],
     asideHeading: "Audit Access",
-    asideBody: "Start with audit pathway and request intake, then use deliverables and trust pages for context.",
+    asideBody: "Start with audit overview and request intake, then use deliverables and trust pages for context.",
     asideLinks: [
       { label: "Request Audit", path: "/request-audit#application-form" },
-      { label: "Audit Pathway", path: "/audit" },
-      { label: "Deliverables Hub", path: "/deliverables" },
+      { label: "Audit Overview", path: "/audit" },
+      { label: "Deliverables Overview", path: "/deliverables" },
       { label: "Scope Review", path: "/consult" },
     ],
     ctaLabel: "Open Request Audit →",
@@ -385,7 +385,7 @@ export default function Nav() {
                   <div className="grid grid-cols-2 gap-6">
                     <div>
                       <p className="font-mono text-[10px] uppercase tracking-widest text-foreground-subtle mb-3">
-                        {selectedHub.label} Hub
+                        {selectedHub.label} Overview
                       </p>
                       <Link to={selectedHub.path} className="mega-link mb-2">
                         <span className="mega-link-title">Open {selectedHub.label} Overview</span>

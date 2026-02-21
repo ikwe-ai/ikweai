@@ -8,7 +8,7 @@ export default function Reports() {
     {
       label: "Preview",
       title: "Board Brief Structure",
-      desc: "Executive summary format with risk posture, key findings, and governance-next-step framing.",
+      desc: "Executive summary format with risk profile, key findings, and governance-next-step framing.",
     },
     {
       label: "Preview",
@@ -23,7 +23,7 @@ export default function Reports() {
     {
       label: "Preview",
       title: "Monitoring Drift Alert",
-      desc: "Operational alert format showing changed risk patterns and recommended response pathway.",
+      desc: "Operational alert format showing changed risk patterns and recommended response process.",
     },
   ] as const;
 
@@ -39,9 +39,9 @@ export default function Reports() {
       desc: "Evaluation approach and governance overview.",
     },
     {
-      title: "Audit Pathway",
+      title: "Audit Overview",
       href: "/audit",
-      desc: "Engagement structure, deliverable package scope, and intake start path.",
+      desc: "Engagement structure, deliverable package scope, and intake start process.",
     },
   ] as const;
 
@@ -53,7 +53,7 @@ export default function Reports() {
         path="/deliverables"
       />
       <SummaryHero
-        kicker="Deliverables Hub"
+        kicker="Deliverables Overview"
         title="Deliverables & Transparency"
         summary="Deliverables previews show what institutions receive. Full report packages are available through audit engagement."
         highlights={[
@@ -67,7 +67,7 @@ export default function Reports() {
           { href: "#output-previews", label: "Deliverables Previews" },
           { href: "#deliverables-format", label: "Deliverables Format" },
           { href: "#transparency-boundary", label: "Boundary" },
-          { href: "#request-access", label: "Request Path" },
+          { href: "#request-access", label: "Request Process" },
         ]}
       />
 
@@ -166,7 +166,7 @@ export default function Reports() {
             className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            View trust posture
+            View trust standards
           </a>
         </div>
       </section>

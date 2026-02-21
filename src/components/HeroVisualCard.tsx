@@ -16,7 +16,7 @@ function normalizePoint(text: string) {
 }
 
 export default function HeroVisualCard({
-  kicker = "Visual Guide",
+  kicker,
   title = "Decision Path",
   points,
   tone = "violet",
@@ -28,7 +28,7 @@ export default function HeroVisualCard({
 
   return (
     <article className={`hero-visual hero-visual-${tone}${compact ? " is-compact" : ""}`}>
-      <p className="hero-visual-kicker">{kicker}</p>
+      {kicker ? <p className="hero-visual-kicker">{kicker}</p> : null}
       <p className="hero-visual-title">{title}</p>
       <div className="hero-visual-flow">
         {normalizedPoints.map((item, index) => (

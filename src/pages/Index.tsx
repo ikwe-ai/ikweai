@@ -130,7 +130,6 @@ export default function Home() {
           </div>
           <div className="mt-7 max-w-3xl">
             <HeroVisualCard
-              kicker="Visual Guide"
               title="Institutional Read Path"
               tone="teal"
               points={[
