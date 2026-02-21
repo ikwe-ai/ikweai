@@ -58,9 +58,9 @@ export default function EqSafetyBenchmark() {
           </article>
           <article className="card-surface p-5">
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Step 3</p>
-            <h2 className="font-display text-xl text-foreground mb-2">Version Lock</h2>
+            <h2 className="font-display text-xl text-foreground mb-2">Independent Reporting</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Published findings stay attributable to a specific release state for audit traceability.
+              Findings are documented for institutional review with clear benchmark-date context.
             </p>
           </article>
         </div>
@@ -73,15 +73,15 @@ export default function EqSafetyBenchmark() {
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Publicly Visible</p>
             <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
               <li>• Current metrics and benchmark framing</li>
-              <li>• Control-language definitions and version posture</li>
+              <li>• High-level evaluation standards</li>
               <li>• Redacted output standards for institutional review</li>
             </ul>
           </article>
           <article className="card-surface p-6">
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Available With Engagement</p>
             <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-              <li>• Detailed scenario sets and extended documentation</li>
-              <li>• Full scoring appendices and benchmark support tables</li>
+              <li>• Expanded benchmark documentation</li>
+              <li>• Authorized review materials for governance teams</li>
               <li>• Expanded organization-specific report packages</li>
             </ul>
           </article>
