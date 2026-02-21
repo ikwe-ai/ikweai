@@ -129,7 +129,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     text:
       "The benchmark uses a three-phase structure: Phase 1 Safety Gate, Phase 2 multidimensional scoring across 8 behavioral dimensions, and optional Phase 3 real-time monitoring support post-deployment.",
     links: [
-      { label: "View Audit Pathway", href: "/audit" },
+      { label: "View Audit Overview", href: "/audit" },
       { label: "Benchmark Methods", href: "/eq-safety-benchmark" },
     ],
   },
@@ -137,7 +137,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     id: "deliverables",
     keywords: ["deliverables", "reports", "what do we receive", "report package", "documentation"],
     text:
-      "Public pages show deliverable formats and transparency boundaries. Full report packages are available through active audit engagement and are distributed through controlled documentation pathways.",
+      "Public pages show deliverable formats and transparency boundaries. Full report packages are available through active audit engagement and are distributed through controlled documentation access.",
     links: [
       { label: "Deliverables", href: "/deliverables" },
       { label: "Trust & Confidentiality", href: "/trust" },
@@ -147,7 +147,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     id: "request-audit",
     keywords: ["request audit", "contact", "intake", "start audit", "get started"],
     text:
-      "Start through the Request Audit intake form. That path is used for scope, timeline, and reporting requirements before formal engagement.",
+      "Start through the Request Audit intake form. This process is used for scope, timeline, and reporting requirements before formal engagement.",
     links: [
       { label: "Request Audit", href: "/request-audit#application-form" },
       { label: "Audit Overview", href: "/audit" },
@@ -171,7 +171,7 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
     title: "Homepage Overview",
     href: "/",
     summary:
-      "Ikwe positions as an independent AI behavioral auditor with current benchmark evidence, risk-loop framing, vulnerable-state domains, and audit pathway calls to action.",
+      "Ikwe positions as an independent AI behavioral auditor with current benchmark evidence, risk-loop framing, vulnerable-state domains, and audit calls to action.",
     tags: ["home", "overview", "risk", "benchmark", "behavioral audit"],
   },
   {
@@ -200,7 +200,7 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
   },
   {
     id: "audit",
-    title: "Audit Pathway",
+    title: "Audit Overview",
     href: "/audit",
     summary:
       "Audit page describes intake, evaluation steps, governance outputs, and how organizations move from scope definition to validated reporting.",
@@ -211,7 +211,7 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
     title: "Trust & Confidentiality",
     href: "/trust",
     summary:
-      "Trust page explains data boundaries, confidentiality posture, and what is and is not required during audit workflow.",
+      "Trust page explains data boundaries, confidentiality standards, and what is and is not required during audit workflow.",
     tags: ["trust", "confidentiality", "data", "boundaries", "security"],
   },
   {
@@ -227,7 +227,7 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
     title: "About & Independence",
     href: "/about",
     summary:
-      "About page covers independence posture, governance commitments, and public institutional positioning of Ikwe.ai.",
+      "About page covers independence standards, governance commitments, and public institutional positioning of Ikwe.ai.",
     tags: ["about", "independence", "company", "governance"],
   },
   {
