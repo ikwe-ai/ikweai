@@ -26,6 +26,7 @@ type GuideContext = {
 };
 
 const QUICK_QUESTIONS = [
+  "Guide me through this page",
   "What do the benchmark numbers mean?",
   "How does the audit process work?",
   "What is public vs proprietary?",
@@ -121,62 +122,56 @@ export default function SiteAssistant() {
     target.scrollTop = target.scrollHeight;
   }, [messages]);
 
+  const buildGuideMessage = (context: GuideContext): ChatMessage => {
+    const sectionLines = context.sections.length
+      ? context.sections.map((section, index) => `${index + 1}. ${section.label} — ${sectionHint(section.label)}`).join("\n")
+      : "1. Start with the summary at the top.\n2. Continue section by section using page anchors.";
+
+    return {
+      id: nextIdRef.current++,
+      role: "assistant",
+      kind: "default",
+      text: [
+        `Guided walkthrough for ${context.pageTitle}:`,
+        "",
+        sectionLines,
+        "",
+        'Use the section buttons below to jump directly. Ask "Explain [section name]" for a focused summary.',
+      ].join("\n"),
+      links: context.sections
+        .filter((section) => section.href)
+        .map((section) => ({ label: section.label, href: section.href }))
+        .slice(0, 8),
+    };
+  };
+
+  const openGuidedWalkthrough = (detail?: AssistantGuideDetail) => {
+    const context = normalizeGuideDetail(detail ?? guideContext);
+    setGuideContext(context);
+    setOpen(true);
+    setMessages((prev) => [...prev.slice(-14), buildGuideMessage(context)]);
+    setPendingFallbackQuestion("");
+    setFollowupEmail("");
+    setFollowupState("idle");
+  };
+
   useEffect(() => {
     if (typeof window === "undefined") return;
-
+    const onGuideContext = (event: Event) => {
+      const detail = (event as CustomEvent<AssistantGuideDetail>).detail;
+      setGuideContext(normalizeGuideDetail(detail));
+    };
     const onOpenGuide = (event: Event) => {
       const detail = (event as CustomEvent<AssistantGuideDetail>).detail;
-      const pageTitle =
-        typeof detail?.pageTitle === "string" && detail.pageTitle.trim().length
-          ? detail.pageTitle.trim()
-          : "this page";
-
-      const sections = (detail?.sections ?? [])
-        .map((section) => {
-          if (typeof section === "string") {
-            const label = section.trim();
-            return label ? { label, href: "" } : null;
-          }
-          const label = section.label?.trim();
-          if (!label) return null;
-          return { label, href: section.href ?? "" };
-        })
-        .filter((section): section is AssistantGuideSection => Boolean(section))
-        .slice(0, 8);
-
-      const sectionLines = sections.length
-        ? sections.map((section, index) => `${index + 1}. ${section.label}`).join("\n")
-        : "1. Start with the summary at the top.\n2. Use section chips to jump through this page.";
-
-      const guideMessage: ChatMessage = {
-        id: nextIdRef.current++,
-        role: "assistant",
-        kind: "default",
-        text: [
-          `Navigation guide for ${pageTitle}:`,
-          "",
-          sectionLines,
-          "",
-          'Use the section chips to jump directly. Ask "Explain [section name]" for an approved summary.',
-        ].join("\n"),
-        links: sections
-          .filter((section) => section.href)
-          .map((section) => ({ label: section.label, href: section.href }))
-          .slice(0, 6),
-      };
-
-      setOpen(true);
-      setMessages((prev) => [...prev.slice(-14), guideMessage]);
-      setPendingFallbackQuestion("");
-      setFollowupEmail("");
-      setFollowupState("idle");
+      openGuidedWalkthrough(detail);
     };
-
+    window.addEventListener("ikwe:assistant-guide-context", onGuideContext as EventListener);
     window.addEventListener("ikwe:assistant-open-guide", onOpenGuide as EventListener);
     return () => {
+      window.removeEventListener("ikwe:assistant-guide-context", onGuideContext as EventListener);
       window.removeEventListener("ikwe:assistant-open-guide", onOpenGuide as EventListener);
     };
-  }, []);
+  }, [guideContext]);
 
   const pushAssistantAnswer = (question: string) => {
     const trimmed = question.trim();
@@ -187,6 +182,15 @@ export default function SiteAssistant() {
       role: "user",
       text: trimmed,
     };
+
+    if (GUIDE_TRIGGER_PATTERN.test(trimmed)) {
+      const guideMessage = buildGuideMessage(normalizeGuideDetail(guideContext));
+      setMessages((prev) => [...prev.slice(-14), userMessage, guideMessage]);
+      setPendingFallbackQuestion("");
+      setFollowupEmail("");
+      setFollowupState("idle");
+      return;
+    }
 
     const resolution = resolveApprovedAnswer(trimmed);
 
@@ -287,16 +291,27 @@ export default function SiteAssistant() {
   return (
     <div className="fixed bottom-4 right-4 z-[220] max-sm:left-3 max-sm:right-3 sm:bottom-5 sm:right-5">
       {!open ? (
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          className="inline-flex items-center gap-2 rounded-full border border-border-2 bg-background-card px-4 py-2.5 text-sm text-foreground shadow-[0_16px_34px_hsl(268_35%_6%_/_0.56)] transition hover:border-lilac"
-          aria-label="Open site assistant"
-        >
-          <MessageSquare size={15} className="text-lilac-bright" />
-          <span className="max-sm:hidden">Ask Ikwe Assistant</span>
-          <span className="sm:hidden">Ask</span>
-        </button>
+        <div className="flex flex-col items-end gap-2">
+          <button
+            type="button"
+            onClick={() => openGuidedWalkthrough()}
+            className="inline-flex items-center gap-2 rounded-full border border-signal-soft bg-background-card px-3.5 py-2 text-xs text-foreground shadow-[0_12px_26px_hsl(188_50%_8%_/_0.46)] transition hover:border-signal"
+            aria-label="Get a guided walkthrough of this page"
+          >
+            <Compass size={14} className="text-signal" />
+            Guide This Page
+          </button>
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className="inline-flex items-center gap-2 rounded-full border border-border-2 bg-background-card px-4 py-2.5 text-sm text-foreground shadow-[0_16px_34px_hsl(268_35%_6%_/_0.56)] transition hover:border-lilac"
+            aria-label="Open site assistant"
+          >
+            <MessageSquare size={15} className="text-lilac-bright" />
+            <span className="max-sm:hidden">Ask Ikwe Assistant</span>
+            <span className="sm:hidden">Ask</span>
+          </button>
+        </div>
       ) : (
         <section className="w-[min(95vw,420px)] max-sm:w-full rounded-xl border border-border-2 bg-background-card shadow-[0_28px_70px_hsl(266_38%_4%_/_0.66)] overflow-hidden">
           <header className="flex items-start justify-between border-b border-border px-4 py-3 bg-background-card">
