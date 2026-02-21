@@ -147,39 +147,35 @@ export default function Home() {
         <section className="py-14 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Doom Loop</p>
           <div className="doom-loop-shell">
-            <div className="doom-loop-visual hidden md:block" role="img" aria-label="Five-stage behavioral risk cycle with Stage 1 intervention point.">
-              <svg className="doom-loop-ring" viewBox="0 0 100 100" aria-hidden="true">
-                <circle cx="50" cy="50" r="33.5" fill="none" stroke="hsl(var(--danger) / 0.45)" strokeWidth="1.2" />
-              </svg>
-
-              <span className="doom-arrow doom-arrow-1">→</span>
-              <span className="doom-arrow doom-arrow-2">→</span>
-              <span className="doom-arrow doom-arrow-3">→</span>
-              <span className="doom-arrow doom-arrow-4">→</span>
-              <span className="doom-arrow doom-arrow-5">→</span>
-
+            <div className="doom-loop-map hidden lg:grid" role="img" aria-label="Five-stage behavioral risk cycle with Stage 1 intervention point.">
               {doomLoopStages.map((stage, index) => (
                 <article
                   key={stage.title}
-                  className={`doom-stage doom-stage-${index + 1}${index === 0 ? " is-gate" : ""}`}
+                  className={`doom-stage-card doom-stage-card-${index + 1}${index === 0 ? " is-gate" : ""}`}
                 >
                   <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-2">
                     {index + 1}. {stage.title}
                   </p>
-                  <p className="text-xs text-foreground-muted leading-relaxed">{stage.body}</p>
+                  <p className="text-sm text-foreground-muted leading-relaxed">{stage.body}</p>
                   {index === 0 ? (
                     <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-safe mt-3">Interruption Gate</p>
                   ) : null}
                 </article>
               ))}
 
-              <div className="doom-loop-center">
+              <span className="doom-flow doom-flow-1">→</span>
+              <span className="doom-flow doom-flow-2">↓</span>
+              <span className="doom-flow doom-flow-3">↙</span>
+              <span className="doom-flow doom-flow-4">↖</span>
+              <span className="doom-flow doom-flow-5">↗</span>
+
+              <div className="doom-loop-hub">
                 <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-foreground-subtle">Unchecked Loop</p>
                 <p className="text-xs text-foreground-muted mt-1">Behavioral risk compounds with each cycle.</p>
               </div>
             </div>
 
-            <div className="md:hidden space-y-3">
+            <div className="lg:hidden space-y-3">
               {doomLoopStages.map((stage, index) => (
                 <div key={stage.title}>
                   <article className={`card-surface p-4 ${index === 0 ? "border-safe/60 bg-safe/10" : "border-danger/40 bg-danger/5"}`}>
