@@ -65,7 +65,7 @@ export default function Reports() {
         secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
         jumpLinks={[
           { href: "#output-previews", label: "Deliverables Previews" },
-          { href: "#artifact-schema", label: "Deliverables Format" },
+          { href: "#deliverables-format", label: "Deliverables Format" },
           { href: "#transparency-boundary", label: "Boundary" },
           { href: "#request-access", label: "Request Path" },
         ]}
@@ -99,7 +99,7 @@ export default function Reports() {
         </div>
       </section>
 
-      <section id="artifact-schema" className="py-14 border-b border-border">
+      <section id="deliverables-format" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Deliverables Format</p>
         <div className="card-surface p-6 max-w-3xl">
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
