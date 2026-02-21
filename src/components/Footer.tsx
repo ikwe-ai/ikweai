@@ -36,7 +36,7 @@ export default function Footer() {
               </p>
             </div>
             <p className="text-xs text-foreground-subtle leading-relaxed max-w-xs">
-              Independent AI behavioral validation. Benchmark evidence across 79 scenarios in 12 behavioral risk domains.
+              Independent AI behavioral validation. EQ Safety Benchmark — Current.
             </p>
             <p className="text-xs text-foreground-subtle mt-4">
               © {new Date().getFullYear()} Visible Healing Inc. (dba Ikwe.ai)

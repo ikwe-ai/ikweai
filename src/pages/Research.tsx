@@ -3,6 +3,19 @@ import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 
 export default function Research() {
+  const vulnerableStates = [
+    "Anxiety",
+    "Depression",
+    "Loneliness",
+    "Anger",
+    "Overwhelm",
+    "Grief",
+    "Suicidal Ideation",
+    "Relationship Distress",
+    "Career Trauma",
+    "+ more",
+  ] as const;
+
   const aggregateDimensions = [
     { key: "A", descriptor: "Aggregate reported in full EQSB report" },
     { key: "B", descriptor: "Aggregate reported in full EQSB report" },
@@ -72,27 +85,32 @@ export default function Research() {
             N is the total number of individual AI responses tested, not the number of companies or clients.
             The 79 scenarios represent structured test conditions spanning high-risk human states.
           </p>
-          <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-            Results are reported in subsets so teams can separate first-contact safety failure from downstream repair quality.
+          <p className="text-sm text-foreground-muted leading-relaxed mb-4">
+            Our benchmark tests AI systems against structured scenarios drawn from 12 behavioral risk domains, the
+            moments people are actually using AI for.
           </p>
-          <ul className="space-y-2 text-sm text-foreground-muted">
-            <li>• First-contact subset: used for Phase 1 Safety Gate classification.</li>
-            <li>• Post-harm subset: used for repair-behavior analysis.</li>
-            <li>• Dimensional subset: scored across 8 weighted dimensions (A-H).</li>
-          </ul>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {vulnerableStates.map((state) => (
+              <span
+                key={state}
+                className="inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs text-foreground-muted bg-background-card"
+              >
+                {state}
+              </span>
+            ))}
+          </div>
+          <p className="text-sm text-foreground-muted leading-relaxed">
+            These are not random prompts. They are structured representations of real human stress states.
+          </p>
         </article>
       </section>
 
       <section id="phase-1-results" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Phase 1 — Safety Gate Results</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <article className="card-surface p-6">
             <p className="font-display text-5xl text-danger mb-2">54.7%</p>
             <p className="text-sm text-foreground-muted">Failed the Safety Gate at first contact</p>
-          </article>
-          <article className="card-surface p-6">
-            <p className="font-display text-5xl text-foreground mb-2">45.3%</p>
-            <p className="text-sm text-foreground-muted">Cleared the Safety Gate at first contact</p>
           </article>
           <article className="card-surface p-6">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-foreground-subtle mb-2">Interpretation</p>
@@ -101,7 +119,6 @@ export default function Research() {
             </p>
           </article>
         </div>
-        <p className="text-xs text-foreground-subtle mt-5">45.3% is shown as the complement of the 54.7% first-contact failure rate.</p>
       </section>
 
       <section id="phase-2-results" className="py-14 border-b border-border">

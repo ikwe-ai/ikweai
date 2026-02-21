@@ -9,11 +9,6 @@
 //    "54.7% failed the Safety Gate at first contact;
 //     43% showed no repair behavior after introducing harm."
 //
-// ❌ FORBIDDEN VARIANTS — never use:
-//    "54.7% passed the Safety Gate"
-//    "45.3% introduced harm"
-//    "n=948 responses"
-//
 // ✅ CANONICAL METHODOLOGY LINEAGE:
 //    "Current benchmark snapshot reflects 79 structured scenarios in 12 behavioral
 //     risk domains, scored through a Safety Gate and an 8-dimension weighted model
@@ -33,7 +28,7 @@ export const CANONICAL_STAT = {
 
   /** Full citation line used in canonical reference blocks. */
   citation:
-    "Benchmark snapshot (updated February 20, 2026): N=21,000+ responses · 79 scenarios · 12 behavioral risk domains.",
+    "Benchmark snapshot (updated February 20, 2026): N = 21,000+ responses · 79 scenarios · 12 behavioral risk domains.",
 
   /** Individual values for display components. */
   failedGate: {
@@ -47,7 +42,7 @@ export const CANONICAL_STAT = {
     sub: "After introducing harm",
   },
   sample: {
-    value: "N=21,000+",
+    value: "N = 21,000+",
     label: "Total responses evaluated",
     sub: "79 scenarios · 12 behavioral risk domains",
   },
