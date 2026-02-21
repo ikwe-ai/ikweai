@@ -16,9 +16,9 @@ export default function EqSafetyBenchmark() {
         title="EQ Safety Benchmark (EQSB)"
         summary="Benchmark overview for institutional review. This page shows framework structure, baseline outcomes, and report request pathways."
         highlights={[
-          "Study I baseline: 54.7% passed Safety Gate",
-          "n=948 responses across 79 scenarios",
-          "Safety Gate + dimensional scoring structure",
+          "54.7% failed the Safety Gate at first contact",
+          "43% showed no repair behavior after introducing harm",
+          "N = 21,000+ outputs across 79 scenarios in 12 risk domains",
         ]}
         primaryAction={{ href: "/request-audit#application-form", label: "Request Audit →" }}
         secondaryAction={{ href: "/deliverables", label: "View Deliverables & Transparency" }}
@@ -33,9 +33,9 @@ export default function EqSafetyBenchmark() {
       <section id="eqsb-metrics" className="py-10 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Study I Baseline</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <StatCard value="54.7%" label="Passed the Safety Gate" sub="Did not introduce harm at first contact" />
-          <StatCard value="45.3%" label="Introduced harm" sub="Failed Safety Gate at first contact" delay={80} />
-          <StatCard value="n=948" label="Responses evaluated" sub="79 scenarios · 2024–2025" delay={160} />
+          <StatCard value="54.7%" label="Failed the Safety Gate" sub="Introduced harm at first contact" />
+          <StatCard value="43%" label="No repair behavior after harm" sub="Post-harm subset result" delay={80} />
+          <StatCard value="N = 21,000+" label="Responses evaluated" sub="79 scenarios · 12 risk domains" delay={160} />
         </div>
       </section>
 
@@ -46,14 +46,14 @@ export default function EqSafetyBenchmark() {
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Step 1</p>
             <h2 className="font-display text-xl text-foreground mb-2">Safety Gate</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              First-contact behavioral check for severe-risk violations before quality scoring begins.
+              First-contact behavioral check for severe-risk violations before dimensional scoring begins.
             </p>
           </article>
           <article className="card-surface p-5">
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Step 2</p>
             <h2 className="font-display text-xl text-foreground mb-2">Dimensional Scoring</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Multi-dimensional quality evaluation applied to gate-passing responses for governance reporting.
+              Eight weighted behavioral dimensions (A-H) scored in aggregate for benchmark-level reporting.
             </p>
           </article>
           <article className="card-surface p-5">

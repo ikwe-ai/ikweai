@@ -1,200 +1,200 @@
 import PageShell from "@/components/PageShell";
-import StatCard from "@/components/StatCard";
-import GatedCallout from "@/components/GatedCallout";
-import CanonicalTerm from "@/components/CanonicalTerm";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
-import { CANONICAL_TERM_ORDER, CANONICAL_TERMS } from "@/lib/canonical-terms";
 
 export default function Research() {
-  const studies = [
-    {
-      label: "Published",
-      title: "Study I — EQ Safety Benchmark Baseline (2024–2025)",
-      body:
-        "Canonical baseline release with locked headline metrics and documented methodology lineage.",
-      cta: "View deliverables hub →",
-      href: "/deliverables",
-    },
-    {
-      label: "Forthcoming",
-      title: "Study II — Mechanism & Trajectory Analysis",
-      body:
-        "Longer-horizon analysis focused on failure mechanisms and trajectory-level risk patterns. Publication is scheduled in a future release cycle.",
-    },
-    {
-      label: "Planned",
-      title: "Study III — Longitudinal Monitoring Program",
-      body:
-        "Scheduled re-evaluation program for behavioral drift tracking across model and deployment changes.",
-      cta: "Register interest →",
-      href: "/consult",
-    },
+  const aggregateDimensions = [
+    { key: "A", descriptor: "Aggregate reported in full EQSB report" },
+    { key: "B", descriptor: "Aggregate reported in full EQSB report" },
+    { key: "C", descriptor: "Aggregate reported in full EQSB report" },
+    { key: "D", descriptor: "Aggregate reported in full EQSB report" },
+    { key: "E", descriptor: "Aggregate reported in full EQSB report" },
+    { key: "F", descriptor: "Aggregate reported in full EQSB report" },
+    { key: "G", descriptor: "Aggregate reported in full EQSB report" },
+    { key: "H", descriptor: "Aggregate reported in full EQSB report" },
+  ] as const;
+
+  const phase1Fail = 54.7;
+  const phase2NoRepair = 43;
+
+  const derived = [
+    { label: "Failed Safety Gate at first contact", value: phase1Fail },
+    { label: "Showed no repair behavior after introducing harm", value: phase2NoRepair },
   ] as const;
 
   return (
     <PageShell>
       <PageMeta
         title="Research — EQ Safety Benchmark | Ikwe.ai"
-        description="Study I summary, benchmark methodology lineage, and canonical terminology for EQ Safety Benchmark."
+        description="Benchmark-level research summary for EQ Safety Benchmark with dataset scope, phase breakdowns, dimensional reporting structure, and full report access."
         path="/research"
       />
       <SummaryHero
-        kicker="Study I · 2024–2025"
+        kicker="Research Summary · Updated February 20, 2026"
         title="EQ Safety Benchmark"
-        summary="Study I summary, methodology lineage, and terminology. Public metrics follow the canonical Study I reference line."
+        summary="This page explains benchmark-level evidence in plain language: what N means, how scenarios and subsets are defined, what Phase 1 and Phase 2 measured, and how aggregate dimensional scoring is reported."
         highlights={[
-          "n=948 model responses scored",
-          "79 scenarios across high-stakes contexts",
-          "Two-layer model: Safety Gate + dimensional scoring",
+          "N = 21,000+ individual model outputs evaluated",
+          "79 structured scenarios across 12 behavioral risk domains",
+          "Two-phase system: Safety Gate + 8-dimension weighted scoring",
         ]}
-        primaryAction={{ href: "/deliverables", label: "View Deliverables & Transparency →" }}
-        secondaryAction={{ href: "#studies", label: "View Study Roadmap" }}
+        primaryAction={{ href: "/artifacts/ikwe_full_research_report.pdf", label: "Open Full EQ Safety Benchmark Report" }}
+        secondaryAction={{ href: "/request-audit#application-form", label: "Request an Audit" }}
         jumpLinks={[
-          { href: "#key-metrics", label: "Key Metrics" },
-          { href: "#study-summary", label: "Study I Summary" },
-          { href: "#studies", label: "Study Portfolio" },
-          { href: "#methodology-lineage", label: "Methodology Lineage" },
-          { href: "#glossary", label: "Glossary" },
-          { href: "#methods-reference", label: "Methods Reference" },
+          { href: "#dataset-scope", label: "N and Scope" },
+          { href: "#phase-1-results", label: "Phase 1 Results" },
+          { href: "#phase-2-results", label: "Phase 2 Results" },
+          { href: "#dimension-aggregate", label: "8-Dimension Aggregate" },
+          { href: "#failure-breakdown", label: "Failure Breakdown" },
+          { href: "#full-report", label: "Full Report" },
         ]}
       />
 
-      <section id="key-metrics" className="py-8 border-b border-border">
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-          <StatCard value="54.7%" label="Passed the Safety Gate" sub="Did not introduce harm at first contact" />
-          <StatCard value="45.3%" label="Introduced harm" sub="Failed Safety Gate at first contact" delay={80} />
-          <StatCard value="n=948" label="Responses evaluated" sub="79 scenarios · 2024–2025" delay={160} />
+      <section id="dataset-scope" className="py-12 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">N, Scenarios, and Subsets</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <article className="card-surface p-5">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Evaluation Flow</p>
+            <p className="font-display text-3xl text-foreground mb-2">N = 21,000+</p>
+            <p className="text-sm text-foreground-muted">Individual model outputs evaluated</p>
+          </article>
+          <article className="card-surface p-5">
+            <p className="font-display text-3xl text-foreground mb-2">79</p>
+            <p className="text-sm text-foreground-muted">Structured benchmark scenarios</p>
+          </article>
+          <article className="card-surface p-5">
+            <p className="font-display text-3xl text-foreground mb-2">12</p>
+            <p className="text-sm text-foreground-muted">Human behavioral risk domains</p>
+          </article>
+        </div>
+        <article className="card-surface p-6 max-w-4xl">
+          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-foreground-subtle mb-3">Plain-Language Scope</p>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+            N is the total number of individual AI responses tested, not the number of companies or clients.
+            The 79 scenarios are repeated in controlled runs to measure behavior under comparable stress states.
+          </p>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+            Results are reported in subsets so teams can separate first-contact safety failure from downstream repair quality.
+          </p>
+          <ul className="space-y-2 text-sm text-foreground-muted">
+            <li>• Subset A: first-contact responses used for Phase 1 Safety Gate classification.</li>
+            <li>• Subset B: harm-introducing responses used for post-harm repair analysis.</li>
+            <li>• Subset C: gate-passing responses scored across 8 weighted dimensions (A-H).</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="phase-1-results" className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Phase 1 — Safety Gate Results</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+          <article className="card-surface p-6">
+            <p className="font-display text-5xl text-danger mb-2">54.7%</p>
+            <p className="text-sm text-foreground-muted">Failed the Safety Gate at first contact</p>
+          </article>
+          <article className="card-surface p-6">
+            <p className="font-display text-5xl text-foreground mb-2">45.3%</p>
+            <p className="text-sm text-foreground-muted">Cleared the Safety Gate at first contact</p>
+          </article>
+          <article className="card-surface p-6">
+            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-foreground-subtle mb-2">Interpretation</p>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Safety Gate first, then dimensional scoring on gate passes. Public metrics stay version-locked to the
-              release state.
+              Phase 1 is binary. It only asks whether harm was introduced at first contact.
             </p>
           </article>
         </div>
+        <p className="text-xs text-foreground-subtle mt-5">45.3% is shown as the complement of the 54.7% first-contact failure rate.</p>
       </section>
 
-      {/* Study I Summary */}
-      <section id="study-summary" className="py-12 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Study I — Summary</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="card-surface p-5">
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Scope</p>
-            <ul className="space-y-2 text-sm text-foreground-muted">
-              <li>— 79 real-world adversarial scenarios</li>
-              <li>— High-stakes affective domains: grief, crisis, identity</li>
-              <li>— Multiple LLMs evaluated per scenario</li>
-              <li>— n=948 total model responses scored</li>
-              <li>— Evaluation period: 2024–2025</li>
-            </ul>
-          </div>
-          <div className="card-surface p-5">
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Scoring Model</p>
-            <ul className="space-y-2 text-sm text-foreground-muted">
-              <li>
-                — <CanonicalTerm term="SSF" /> taxonomy (Scenario Safety Framework)
-              </li>
-              <li>
-                — EQSB v2.1 <CanonicalTerm term="Safety Gate" /> (10 violations)
-              </li>
-              <li>
-                — <CanonicalTerm term="Dimensional Scoring" /> (8 dimensions, A–H weighted)
-              </li>
-              <li>— Binary gate applied at first contact</li>
-              <li>— Full scorecard on gate-passing responses</li>
-            </ul>
-          </div>
+      <section id="phase-2-results" className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Phase 2 — Post-Harm Behavior</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+          <article className="card-surface p-6">
+            <p className="font-display text-5xl text-danger mb-2">43%</p>
+            <p className="text-sm text-foreground-muted">Showed no repair behavior after introducing harm</p>
+          </article>
+          <article className="card-surface p-6">
+            <p className="font-display text-5xl text-foreground mb-2">57%</p>
+            <p className="text-sm text-foreground-muted">Showed at least some repair signal after introducing harm</p>
+          </article>
+          <article className="card-surface p-6">
+            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-foreground-subtle mb-2">Subset Logic</p>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              Phase 2 behavior is evaluated on the subset of outputs that already introduced harm.
+            </p>
+          </article>
         </div>
+        <p className="text-xs text-foreground-subtle mt-5">
+          57% is shown as the complement of the 43% no-repair result within the post-harm subset.
+        </p>
       </section>
 
-      {/* Study roadmap */}
-      <section id="studies" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Study Portfolio</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {studies.map((study) => (
-            <article key={study.title} className="card-surface p-5 flex flex-col gap-3">
-              <span className="inline-flex w-fit rounded border border-border px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-lilac">
-                {study.label}
-              </span>
-              <h3 className="font-display text-lg text-foreground leading-tight">{study.title}</h3>
-              <p className="text-sm text-foreground-muted leading-relaxed flex-1">{study.body}</p>
-              {study.href && study.cta ? (
-                <a href={study.href} className="text-sm link-lilac">
-                  {study.cta}
-                </a>
-              ) : (
-                <p className="text-xs text-foreground-subtle uppercase tracking-wide">Publication pending</p>
-              )}
+      <section id="dimension-aggregate" className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">8-Dimension Aggregate (A-H)</p>
+        <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-6">
+          The system is scored across 8 weighted behavioral dimensions. Weighting logic remains proprietary.
+          Aggregate dimension outcomes are published at benchmark level, never by individual client.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {aggregateDimensions.map((dimension) => (
+            <article key={dimension.key} className="card-surface p-5">
+              <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-lilac mb-2">Dimension {dimension.key}</p>
+              <p className="text-sm text-foreground-muted leading-relaxed">{dimension.descriptor}</p>
             </article>
           ))}
         </div>
-        <p className="text-xs text-foreground-subtle mt-5 max-w-2xl">
-          Roadmap listings are included for transparency. Forthcoming studies are listed by status, and full study
-          pages are published when releases are finalized.
+        <p className="text-xs text-foreground-subtle mt-5">
+          For exact aggregate score values by dimension, use the full EQ Safety Benchmark report.
         </p>
       </section>
 
-      {/* Methodology Lineage Block */}
-      <section id="methodology-lineage" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Methodology Lineage</p>
-        <div className="stat-block rounded p-6 max-w-2xl">
-          <p className="text-sm text-foreground leading-relaxed">
-            "Methodology lineage: the 54.7% baseline derives from Study I (SSF taxonomy). Current evaluations use EQSB v2.1 with an updated Safety Gate (10 violations) plus an 8-dimension scorecard (A–H, weighted)."
-          </p>
-        </div>
-        <p className="text-xs text-foreground-subtle mt-4 max-w-lg">
-          This block is the canonical methodology statement used across published benchmark pages.
+      <section id="failure-breakdown" className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">
+          Visual Breakdown of the 54.7% First-Contact Failures
         </p>
-      </section>
-
-      {/* Glossary */}
-      <section id="glossary" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Terminology Glossary</p>
-        <p className="text-xs text-foreground-subtle mb-5 max-w-2xl">
-          Public layer uses canonical labels with plain-language hover clarification. Hover or focus the highlighted
-          terms.
-        </p>
-        <div className="space-y-0 divide-y divide-border max-w-2xl">
-          {CANONICAL_TERM_ORDER.map((term) => (
-            <div key={term} className="py-5 grid grid-cols-1 md:grid-cols-3 gap-3">
-              <div className="self-start pt-0.5">
-                <CanonicalTerm term={term} className="font-mono text-xs text-lilac" />
+        <div className="card-surface p-6 max-w-4xl mb-6">
+          <div className="space-y-4">
+            {derived.map((item) => (
+              <div key={item.label}>
+                <div className="flex items-center justify-between gap-3 mb-1">
+                  <p className="text-sm text-foreground-muted">{item.label}</p>
+                  <p className="font-mono text-xs text-foreground">{item.value.toFixed(1)}%</p>
+                </div>
+                <div className="h-2 rounded-full bg-background-surface">
+                  <div className="h-2 rounded-full bg-danger" style={{ width: `${item.value}%` }} />
+                </div>
               </div>
-              <p className="md:col-span-2 text-sm text-foreground-muted leading-relaxed">
-                {CANONICAL_TERMS[term].publicDescription}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </section>
-
-      <section id="publication-library" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Publication Library</p>
-        <p className="text-sm text-foreground-muted leading-relaxed max-w-2xl mb-4">
-          Opinions, research notes, and case analyses are maintained in a separate writing library to keep benchmark
-          methodology and publication content clearly separated.
+        <p className="text-sm text-foreground-muted max-w-4xl">
+          Failing responses are then mapped across dimensions A-H in aggregate to identify dominant harm pathways and
+          remediation priorities before deployment scale.
         </p>
-        <div className="flex flex-wrap gap-4">
-          <a href="/research/writings" className="text-sm link-lilac">
-            Open Writing Library →
-          </a>
-          <a href="/research/case-studies" className="text-sm link-lilac">
-            Open Case Studies →
-          </a>
-          <a href="/research/press" className="text-sm link-lilac">
-            Open Press & Updates →
-          </a>
-        </div>
       </section>
 
-      {/* Artifact gating */}
-      <section id="methods-reference" className="py-14">
-        <GatedCallout
-          title="Detailed Methods Reference"
-          body="Detailed methods tables and extended result sets are available through formal report releases and audit engagement."
-          ctaLabel="Open deliverables and access pathway →"
-        />
+      <section id="full-report" className="py-14">
+        <article className="card-surface p-6 max-w-4xl">
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-[0.14em] mb-3">Full EQ Safety Benchmark Report</p>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-5">
+            Full methodology, aggregate dimensional tables, phase-level appendices, and redaction boundary details are
+            documented in the complete report artifact.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="/artifacts/ikwe_full_research_report.pdf"
+              className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open Full Report PDF
+            </a>
+            <a
+              href="/deliverables"
+              className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
+            >
+              View Deliverables
+            </a>
+          </div>
+        </article>
       </section>
     </PageShell>
   );
