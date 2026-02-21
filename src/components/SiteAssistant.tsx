@@ -26,15 +26,6 @@ type GuideContext = {
   sections: AssistantGuideSection[];
 };
 
-const QUICK_QUESTIONS = [
-  "Guide me through this page",
-  "Give me Ikwe quick facts",
-  "What do the benchmark numbers mean?",
-  "How does the audit process work?",
-  "What do teams receive in deliverables?",
-  "What is public vs proprietary?",
-  "Where are deliverables and reports?",
-];
 const GUIDE_TRIGGER_PATTERN = /\b(guide|walk\s?through|walkthrough|navigate this page|what'?s on this page|on this page)\b/i;
 const ASK_PREFIX = "ask://";
 
@@ -222,10 +213,16 @@ export default function SiteAssistant() {
         "",
         'Use the section buttons below to jump directly. Ask "Explain [section name]" for a focused summary.',
       ].join("\n"),
-      links: context.sections
-        .filter((section) => section.href)
-        .map((section) => ({ label: section.label, href: section.href }))
-        .slice(0, 8),
+      links: mergeLinks(
+        context.sections
+          .filter((section) => section.href)
+          .map((section) => ({ label: section.label, href: section.href })),
+        [
+          toAskLink("Ikwe quick facts", "Give me Ikwe quick facts"),
+          toAskLink("Benchmark numbers", "What do the benchmark numbers mean?"),
+          toAskLink("Audit process", "How does the audit process work?"),
+        ]
+      ),
     };
   }, []);
 
@@ -320,7 +317,11 @@ export default function SiteAssistant() {
     if (href.startsWith(ASK_PREFIX)) {
       const encodedPrompt = href.slice(ASK_PREFIX.length);
       if (!encodedPrompt) return;
-      pushAssistantAnswer(decodeURIComponent(encodedPrompt));
+      try {
+        pushAssistantAnswer(decodeURIComponent(encodedPrompt));
+      } catch {
+        // Ignore malformed action payloads.
+      }
       return;
     }
 
@@ -476,16 +477,6 @@ export default function SiteAssistant() {
                   onClick={() => pushAssistantAnswer(item.prompt)}
                 >
                   {item.label}
-                </button>
-              ))}
-              {QUICK_QUESTIONS.map((question) => (
-                <button
-                  key={question}
-                  type="button"
-                  className="btn-outline rounded-full px-3 py-1.5 text-xs text-foreground hover:text-foreground"
-                  onClick={() => pushAssistantAnswer(question)}
-                >
-                  {question}
                 </button>
               ))}
             </div>
