@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import { FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Compass, MessageSquare, RotateCcw, Send, ShieldAlert, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { resolveApprovedAnswer, type AssistantLink } from "@/lib/approved-answers";
@@ -122,7 +122,7 @@ export default function SiteAssistant() {
     target.scrollTop = target.scrollHeight;
   }, [messages]);
 
-  const buildGuideMessage = (context: GuideContext): ChatMessage => {
+  const buildGuideMessage = useCallback((context: GuideContext): ChatMessage => {
     const sectionLines = context.sections.length
       ? context.sections.map((section, index) => `${index + 1}. ${section.label} — ${sectionHint(section.label)}`).join("\n")
       : "1. Start with the summary at the top.\n2. Continue section by section using page anchors.";
@@ -143,9 +143,9 @@ export default function SiteAssistant() {
         .map((section) => ({ label: section.label, href: section.href }))
         .slice(0, 8),
     };
-  };
+  }, []);
 
-  const openGuidedWalkthrough = (detail?: AssistantGuideDetail) => {
+  const openGuidedWalkthrough = useCallback((detail?: AssistantGuideDetail) => {
     const context = normalizeGuideDetail(detail ?? guideContext);
     setGuideContext(context);
     setOpen(true);
@@ -153,7 +153,7 @@ export default function SiteAssistant() {
     setPendingFallbackQuestion("");
     setFollowupEmail("");
     setFollowupState("idle");
-  };
+  }, [buildGuideMessage, guideContext]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -171,7 +171,7 @@ export default function SiteAssistant() {
       window.removeEventListener("ikwe:assistant-guide-context", onGuideContext as EventListener);
       window.removeEventListener("ikwe:assistant-open-guide", onOpenGuide as EventListener);
     };
-  }, [guideContext]);
+  }, [openGuidedWalkthrough]);
 
   const pushAssistantAnswer = (question: string) => {
     const trimmed = question.trim();
