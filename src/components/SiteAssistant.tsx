@@ -277,6 +277,7 @@ export default function SiteAssistant() {
   const pushAssistantAnswer = (question: string) => {
     const trimmed = question.trim();
     if (!trimmed) return;
+    setHasGuideUpdate(false);
 
     const userMessage: ChatMessage = {
       id: nextIdRef.current++,
@@ -402,61 +403,77 @@ export default function SiteAssistant() {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-[220] max-sm:left-3 max-sm:right-3 sm:bottom-5 sm:right-5">
+    <div
+      className="fixed bottom-4 right-4 z-[320] max-sm:left-3 max-sm:right-3 sm:bottom-5 sm:right-5"
+      style={{
+        bottom: "calc(1rem + env(safe-area-inset-bottom))",
+        right: "calc(1rem + env(safe-area-inset-right))",
+      }}
+    >
       {!open ? (
         <div className="flex flex-col items-end gap-2">
-          <button
-            type="button"
-            onClick={openIkwePresentation}
-            className="inline-flex items-center gap-2 rounded-full border border-lilac bg-background-card px-3.5 py-2 text-xs text-foreground shadow-[0_12px_26px_hsl(271_58%_10%_/_0.5)] transition hover:border-lilac-bright"
-            aria-label="Start Ikwe guided presentation"
+          <div
+            className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] font-medium ${
+              hasGuideUpdate
+                ? "border-signal text-signal bg-background-card shadow-[0_0_0_1px_hsl(var(--signal)/0.25)]"
+                : "border-border-2 text-foreground-subtle bg-background-card"
+            }`}
           >
-            <MessageSquare size={14} className="text-lilac-bright" />
-            Start Ikwe Walkthrough
-          </button>
+            <span className={`h-1.5 w-1.5 rounded-full ${hasGuideUpdate ? "bg-signal animate-pulse" : "bg-foreground-subtle"}`} />
+            {hasGuideUpdate ? "New page guidance available" : "Assistant inactive"}
+          </div>
           <button
             type="button"
             onClick={() => openGuidedWalkthrough()}
-            className="inline-flex items-center gap-2 rounded-full border border-signal-soft bg-background-card px-3.5 py-2 text-xs text-foreground shadow-[0_12px_26px_hsl(188_50%_8%_/_0.46)] transition hover:border-signal"
+            className="relative inline-flex items-center gap-2 rounded-full border border-signal-soft bg-background-card px-3.5 py-2 text-xs text-foreground shadow-[0_12px_26px_hsl(188_50%_8%_/_0.46)] transition hover:border-signal"
             aria-label="Get a guided walkthrough of this page"
           >
+            {hasGuideUpdate ? <span className="absolute -top-1 -right-1 h-2.5 w-2.5 rounded-full bg-signal animate-ping" /> : null}
             <Compass size={14} className="text-signal" />
             Guide This Page
           </button>
           <button
             type="button"
-            onClick={() => setOpen(true)}
-            className="inline-flex items-center gap-2 rounded-full border border-border-2 bg-background-card px-4 py-2.5 text-sm text-foreground shadow-[0_16px_34px_hsl(268_35%_6%_/_0.56)] transition hover:border-lilac"
+            onClick={openAssistantPanel}
+            className="relative inline-flex items-center gap-2 rounded-full border border-border-2 bg-background-card px-4 py-2.5 text-sm text-foreground shadow-[0_16px_34px_hsl(268_35%_6%_/_0.56)] transition hover:border-lilac"
             aria-label="Open site assistant"
           >
+            {hasGuideUpdate ? <span className="absolute -top-1 -right-1 h-2.5 w-2.5 rounded-full bg-lilac-bright animate-pulse" /> : null}
             <MessageSquare size={15} className="text-lilac-bright" />
             <span className="max-sm:hidden">Ask Ikwe Assistant</span>
             <span className="sm:hidden">Ask</span>
           </button>
         </div>
       ) : (
-        <section className="w-[min(95vw,420px)] max-sm:w-full rounded-xl border border-border-2 bg-background-card shadow-[0_28px_70px_hsl(266_38%_4%_/_0.66)] overflow-hidden">
+        <section className="w-[min(96vw,440px)] max-sm:w-full max-h-[min(86dvh,760px)] rounded-xl border border-border-2 bg-background-card shadow-[0_28px_70px_hsl(266_38%_4%_/_0.66)] overflow-hidden flex flex-col">
           <header className="flex items-start justify-between border-b border-border px-4 py-3 bg-background-card">
             <div>
               <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-lilac-bright">Approved Answers</p>
-              <p className="text-sm text-foreground">Ikwe Site Assistant</p>
+              <div className="flex items-center gap-2">
+                <p className="text-sm text-foreground">Ikwe Site Assistant</p>
+                <span className="inline-flex items-center rounded-full border border-safe bg-background-surface px-2 py-0.5 text-[10px] text-safe">
+                  Active
+                </span>
+              </div>
             </div>
             <div className="flex items-center gap-2">
               <button
                 type="button"
-                className="rounded border border-border px-2 py-1 text-foreground-muted hover:text-foreground"
+                className="inline-flex items-center gap-1.5 rounded border border-border px-2.5 py-1.5 text-xs text-foreground-muted hover:text-foreground"
                 onClick={resetAssistant}
                 aria-label="Reset assistant messages"
               >
                 <RotateCcw size={13} />
+                <span className="max-sm:hidden">Reset</span>
               </button>
               <button
                 type="button"
-                className="rounded border border-border px-2 py-1 text-foreground-muted hover:text-foreground"
-                onClick={() => setOpen(false)}
-                aria-label="Close site assistant"
+                className="inline-flex items-center gap-1.5 rounded border border-border px-2.5 py-1.5 text-xs text-foreground-muted hover:text-foreground"
+                onClick={closeAssistantPanel}
+                aria-label="Minimize site assistant"
               >
                 <X size={14} />
+                <span className="max-sm:hidden">Minimize</span>
               </button>
             </div>
           </header>
@@ -500,7 +517,7 @@ export default function SiteAssistant() {
             </div>
           </div>
 
-          <div ref={scrollAreaRef} className="max-h-[52vh] sm:max-h-[460px] overflow-auto px-4 py-3 space-y-3 bg-background-card">
+          <div ref={scrollAreaRef} className="min-h-0 flex-1 overflow-auto px-4 py-3 space-y-3 bg-background-card">
             {messages.map((message) => (
               <article
                 key={message.id}
@@ -514,6 +531,9 @@ export default function SiteAssistant() {
                         : "mr-4 border-border-2 bg-background-surface"
                 }`}
               >
+                <p className="font-mono text-[10px] uppercase tracking-[0.11em] text-foreground-subtle mb-1">
+                  {message.role === "user" ? "You" : "Ikwe Assistant"}
+                </p>
                 <p className="text-sm text-foreground leading-relaxed whitespace-pre-line break-words">{message.text}</p>
                 {message.kind === "restricted" ? (
                   <p className="mt-2 inline-flex items-center gap-1 text-[11px] text-danger">
