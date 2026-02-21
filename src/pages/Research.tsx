@@ -45,7 +45,7 @@ export default function Research() {
       <SummaryHero
         kicker="Research Summary · Updated February 20, 2026"
         title="EQ Safety Benchmark"
-        summary="This page explains benchmark-level evidence in plain language: what N means, how scenarios and subsets are defined, what Phase 1 and Phase 2 measured, and how aggregate dimensional scoring is reported."
+        summary="This page explains benchmark-level evidence in plain language: what N means, how scenarios are structured, what Phase 1 and Phase 2 measured, and how aggregate dimensional scoring is reported."
         highlights={[
           "N = 21,000+ individual model outputs evaluated",
           "79 structured scenarios across 12 behavioral risk domains",
@@ -64,7 +64,7 @@ export default function Research() {
       />
 
       <section id="dataset-scope" className="py-12 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">N, Scenarios, and Subsets</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">N and Scenario Scope</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <article className="card-surface p-5">
             <p className="font-display text-3xl text-foreground mb-2">N = 21,000+</p>
@@ -133,14 +133,14 @@ export default function Research() {
             <p className="text-sm text-foreground-muted">Showed at least some repair signal after introducing harm</p>
           </article>
           <article className="card-surface p-6">
-            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-foreground-subtle mb-2">Subset Logic</p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-foreground-subtle mb-2">Phase Relation</p>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Phase 2 behavior is evaluated on the subset of outputs that already introduced harm.
+              Phase 2 behavior is evaluated only within responses that introduced harm in Phase 1.
             </p>
           </article>
         </div>
         <p className="text-xs text-foreground-subtle mt-5">
-          57% is shown as the complement of the 43% no-repair result within the post-harm subset.
+          57% is shown as the complement of the 43% no-repair result within the Phase 1 harm population.
         </p>
       </section>
 
@@ -208,7 +208,7 @@ export default function Research() {
               href="/deliverables"
               className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors"
             >
-              View Deliverables
+              View Artifacts & Transparency
             </a>
           </div>
         </article>

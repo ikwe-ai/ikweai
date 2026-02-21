@@ -115,7 +115,7 @@ const hubs: Hub[] = [
       },
       {
         path: "/deliverables",
-        label: "Deliverables Hub",
+        label: "Artifact Hub",
         desc: "Public artifact preview and access boundary.",
       },
     ],
@@ -164,14 +164,14 @@ const hubs: Hub[] = [
       { label: "Trust & Confidentiality", path: "/trust" },
       { label: "Press & Updates", path: "/research/press" },
       { label: "Artifact Hub", path: "/deliverables" },
-      { label: "Consultation Overview", path: "/consult" },
+      { label: "Scope Review Overview", path: "/consult" },
     ],
     ctaLabel: "Request Audit →",
     ctaPath: "/request-audit#application-form",
   },
   {
-    id: "consultation",
-    label: "Consultation",
+    id: "scope-review",
+    label: "Scope Review",
     path: "/consult",
     desc: "Scope review context and intake support for audit requests.",
     children: [

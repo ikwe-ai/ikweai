@@ -14,7 +14,7 @@ export default function EqSafetyBenchmark() {
       <SummaryHero
         kicker="EQSB"
         title="EQ Safety Benchmark (EQSB)"
-        summary="Benchmark overview for institutional review. This page shows framework structure, baseline outcomes, and report request pathways."
+        summary="Benchmark overview for institutional review. This page shows framework structure, current benchmark outcomes, and report request pathways."
         highlights={[
           "54.7% failed the Safety Gate at first contact",
           "43% showed no repair behavior after introducing harm",
@@ -23,7 +23,7 @@ export default function EqSafetyBenchmark() {
         primaryAction={{ href: "/request-audit#application-form", label: "Request Audit →" }}
         secondaryAction={{ href: "/deliverables", label: "View Artifacts & Transparency" }}
         jumpLinks={[
-          { href: "#eqsb-metrics", label: "Baseline Metrics" },
+          { href: "#eqsb-metrics", label: "Current Metrics" },
           { href: "#eqsb-structure", label: "Framework Structure" },
           { href: "#eqsb-boundary", label: "Public Boundary" },
           { href: "#eqsb-next-steps", label: "Next Steps" },
@@ -34,7 +34,7 @@ export default function EqSafetyBenchmark() {
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Current Benchmark Snapshot</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <StatCard value="54.7%" label="Failed the Safety Gate" sub="Introduced harm at first contact" />
-          <StatCard value="43%" label="No repair behavior after harm" sub="Post-harm subset result" delay={80} />
+          <StatCard value="43%" label="No repair behavior after harm" sub="Within first-contact failures" delay={80} />
           <StatCard value="N = 21,000+" label="Responses evaluated" sub="79 scenarios · 12 risk domains" delay={160} />
         </div>
       </section>
@@ -72,7 +72,7 @@ export default function EqSafetyBenchmark() {
           <article className="card-surface p-6">
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Publicly Visible</p>
             <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-              <li>• Baseline metrics and benchmark framing</li>
+              <li>• Current metrics and benchmark framing</li>
               <li>• Control-language definitions and version posture</li>
               <li>• Redacted output standards for institutional review</li>
             </ul>

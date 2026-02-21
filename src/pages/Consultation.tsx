@@ -30,7 +30,7 @@ export default function Consultation() {
       />
 
       <section id="how-it-fits" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">How Consultation Fits</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">How Scope Review Fits</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <article className="card-surface p-5">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-2">01</p>
