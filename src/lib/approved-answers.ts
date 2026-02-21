@@ -115,6 +115,17 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     ],
   },
   {
+    id: "ikwe-quick-facts",
+    keywords: ["ikwe quick facts", "give me ikwe quick facts", "quick highlights", "ikwe highlights", "ikwe overview"],
+    text:
+      `Ikwe quick facts (updated ${BENCHMARK_CURRENT.lastUpdated}): Ikwe is an independent third-party behavioral AI auditor. Current benchmark evidence shows ${BENCHMARK_CURRENT.failedGatePct} failed the Safety Gate at first contact, ${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm, with ${BENCHMARK_CURRENT.nValue} outputs evaluated across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} behavioral risk domains.`,
+    links: [
+      { label: "Homepage Overview", href: "/" },
+      { label: "EQ Safety Benchmark", href: "/eq-safety-benchmark" },
+      { label: "Request Audit", href: "/request-audit#application-form" },
+    ],
+  },
+  {
     id: "benchmark-stats",
     keywords: [
       "benchmark numbers",
@@ -145,7 +156,15 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
   },
   {
     id: "deliverables",
-    keywords: ["deliverables", "reports", "what do we receive", "report package", "documentation"],
+    keywords: [
+      "deliverables",
+      "reports",
+      "what do we receive",
+      "what do teams receive",
+      "what do teams receive in deliverables",
+      "report package",
+      "documentation",
+    ],
     text:
       "Public pages show deliverable formats and transparency boundaries. Full report packages are available through active audit engagement and are distributed through controlled documentation access.",
     links: [
@@ -155,7 +174,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
   },
   {
     id: "request-audit",
-    keywords: ["request audit", "contact", "intake", "start audit", "get started"],
+    keywords: ["request audit", "contact", "intake", "start audit", "how do we start an audit", "get started"],
     text:
       "Start through the Request Audit intake form. This process is used for scope, timeline, and reporting requirements before formal engagement.",
     links: [
