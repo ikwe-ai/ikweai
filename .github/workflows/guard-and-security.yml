@@ -40,3 +40,35 @@ jobs:
 
       - name: Release Guard
         run: npm run release:guard
+
+      - name: Email Run Update
+        if: always() && secrets.SMTP_SERVER != '' && secrets.SMTP_USERNAME != '' && secrets.SMTP_PASSWORD != '' && secrets.SMTP_FROM != ''
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT || '587' }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "[Ikwe CI] Guard And Security Checks - ${{ job.status }} (${{
+            github.ref_name }})"
+          to: stephanie@ikwe.ai
+          from: ${{ secrets.SMTP_FROM }}
+          secure: false
+          body: |
+            Ikwe CI workflow update
+
+            Repository: ${{ github.repository }}
+            Branch/Ref: ${{ github.ref_name }}
+            Event: ${{ github.event_name }}
+            Status: ${{ job.status }}
+            Commit: ${{ github.sha }}
+            Actor: ${{ github.actor }}
+
+            Run URL:
+            ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            Checks executed:
+            - npm run lint
+            - npm run build
+            - npm run test -- src/test/approved-answers.test.ts
+            - npm run release:guard
