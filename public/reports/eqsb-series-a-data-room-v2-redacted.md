@@ -5,7 +5,7 @@ Source: Ikwe.ai benchmark publication
 
 ## Executive summary
 EQ Safety Benchmark (EQSB) is an independent behavioral safety benchmark for AI systems used in high-stakes human contexts.
-This public summary is for institutional review and does not include restricted implementation materials.
+This public summary is for institutional review and does not include restricted benchmark materials.
 
 ## Current benchmark citation
 - 54.7% failed the Safety Gate at first contact.

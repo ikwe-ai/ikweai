@@ -42,7 +42,7 @@ export default function Architecture() {
       <SummaryHero
         kicker="System Overview"
         title="Architecture"
-        summary="Public overview of the evaluation approach. Internal implementation details are not published on the public site."
+        summary="Public overview of the evaluation approach. Detailed implementation details are not published on the public site."
         highlights={[
           "Independent third-party evaluation flow",
           "Safety Gate before broader scoring",
@@ -79,7 +79,7 @@ export default function Architecture() {
         <div className="space-y-2 text-sm text-foreground-muted max-w-2xl">
           <p>Safety behavior is assessed first, before broader quality scoring is considered.</p>
           <p>Published outputs are independent, documented, and designed for institutional review.</p>
-          <p>Detailed operational logic and implementation tables remain restricted to authorized engagements.</p>
+          <p>Detailed operational methods and implementation tables remain restricted to authorized engagements.</p>
         </div>
       </section>
 
@@ -87,12 +87,12 @@ export default function Architecture() {
       <section id="public-scope" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Public Scope</p>
         <p className="text-sm text-foreground-muted max-w-xl leading-relaxed mb-6">
-          This page provides a public overview only. Internal process details and implementation-specific technical
+          This page provides a public overview only. Detailed process documentation and implementation-specific technical
           artifacts are not publicly displayed.
         </p>
         <ul className="space-y-2 text-sm text-foreground-muted max-w-lg">
           {[
-            "Internal testing workflows",
+            "Detailed testing workflows",
             "Detailed scoring logic and weighting",
             "Implementation-specific reference materials",
             "Client-specific evaluation records",

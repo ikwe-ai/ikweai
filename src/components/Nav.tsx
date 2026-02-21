@@ -101,7 +101,7 @@ const hubs: Hub[] = [
     id: "architecture",
     label: "Architecture",
     path: "/technology/architecture",
-    desc: "Pipeline and control-language overview.",
+    desc: "Evaluation approach and governance overview.",
     children: [
       {
         path: "/technology/architecture",
