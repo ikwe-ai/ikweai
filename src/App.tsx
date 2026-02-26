@@ -27,6 +27,7 @@ import BeforeTheViolation from "./pages/writings/BeforeTheViolation";
 import RecognitionIsNotSafety from "./pages/writings/RecognitionIsNotSafety";
 import AIGovernanceCompliance from "./pages/writings/AIGovernanceCompliance";
 import ChooseYourPath from "./pages/writings/ChooseYourPath";
+import EmotionalAiHighTrustEnvironments from "./pages/writings/EmotionalAiHighTrustEnvironments";
 import CaseStudyDetail from "./pages/cases/CaseStudyDetail";
 
 const queryClient = new QueryClient();
@@ -68,6 +69,7 @@ const App = () => (
           />
           <Route path="/research/writings/choose-your-path" element={<ChooseYourPath />} />
           <Route path="/research/writings/recognition-is-not-safety" element={<RecognitionIsNotSafety />} />
+          <Route path="/research/writings/emotional-ai-high-trust-environments" element={<EmotionalAiHighTrustEnvironments />} />
 
           {/* Legacy redirects */}
           <Route path="/proof" element={<Navigate to="/research/case-studies" replace />} />
