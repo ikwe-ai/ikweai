@@ -44,6 +44,20 @@ export const WRITINGS_INDEX = [
     ],
   },
   {
+    slug: "emotional-ai-high-trust-environments",
+    label: "Research & Positioning · February 2026",
+    title: "Emotional AI Is Already Active in High-Trust Environments",
+    href: "/research/writings/emotional-ai-high-trust-environments",
+    cta: "Read full article →",
+    sourceHref: "https://ikwe.ai/research/writings/emotional-ai-high-trust-environments",
+    sourceLabel: "Primary article URL ↗",
+    summary: "And it is not independently behaviorally validated. An examination of the structural gap between emotional AI deployment and behavioral safety infrastructure.",
+    excerpt: [
+      "About 12% of U.S. teens say they've used AI chatbots to get emotional support or advice — without any standardized behavioral safety validation. That statistic represents millions of emotionally interactive conversations happening today.",
+      "There is currently no standardized requirement for third-party behavioral safety validation prior to emotionally interactive AI deployment. Litigation is emerging, regulatory pressure is rising, and the independent layer does not yet exist at scale.",
+    ],
+  },
+  {
     slug: "recognition-is-not-safety",
     label: "Research Note · Forthcoming (Public Abstract)",
     title: "Recognition Is Not Safety",
