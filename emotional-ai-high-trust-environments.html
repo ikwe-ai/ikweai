@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Emotional AI Is Already Active in High-Trust Environments | Ikwe.ai</title>
+<meta name="description" content="Recent national data shows 12% of U.S. teens use AI chatbots for emotional support — without any standardized behavioral safety validation. Ikwe.ai founder Stephanie Stranko examines the gap.">
+<meta property="og:title" content="Emotional AI Is Already Active in High-Trust Environments" />
+<meta property="og:description" content="It is not independently behaviorally validated. An examination of the structural gap." />
+<meta property="og:type" content="article" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0E0818;
+  --ink-soft: #2A1F3D;
+  --paper: #FAFAF8;
+  --purple: #7C3AED;
+  --purple-light: #C084FC;
+  --purple-dim: #4C1D95;
+  --accent: #9B59D0;
+  --rule: rgba(124,58,237,0.15);
+  --text-body: #2A1F3D;
+  --text-muted: rgba(42,31,61,0.5);
+  --text-caption: rgba(42,31,61,0.4);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--text-body);
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* -- NAV -- */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 18px 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(250,250,248,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--purple);
+  text-decoration: none;
+}
+.nav-label {
+  font-size: 11px; color: var(--text-caption); letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* -- HERO -- */
+.hero {
+  padding: 140px 48px 80px;
+  max-width: 780px; margin: 0 auto;
+  position: relative;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--purple);
+  margin-bottom: 28px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block; width: 32px; height: 1px;
+  background: var(--purple);
+}
+h1.headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 54px);
+  line-height: 1.12;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+h1.headline em {
+  font-style: italic; color: var(--purple);
+}
+.subheadline {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+}
+.byline {
+  display: flex; align-items: center; gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+}
+.byline-text {
+  font-size: 13px; color: var(--text-muted);
+  line-height: 1.5;
+}
+.byline-text strong { color: var(--text-body); font-weight: 600; }
+
+/* -- ARTICLE BODY -- */
+article {
+  max-width: 700px; margin: 0 auto;
+  padding: 20px 48px 100px;
+}
+
+/* Lead stat card */
+.lead-stat {
+  margin: 48px 0;
+  padding: 40px 48px;
+  background: var(--ink);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.lead-stat::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--purple) 0%, var(--purple-light) 100%);
+}
+.lead-stat blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; color: #F5F0FF;
+  line-height: 1.5; font-style: italic;
+  border: none; padding: 0; margin: 0 0 16px;
+}
+.lead-stat blockquote strong {
+  font-style: normal; font-weight: 600; color: var(--purple-light);
+}
+.cite-label {
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(192,132,252,0.5);
+}
+
+/* Section headers */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; color: var(--ink);
+  letter-spacing: -0.01em;
+  margin: 64px 0 20px;
+  padding-top: 64px;
+  border-top: 1px solid var(--rule);
+}
+
+/* Body text */
+p { margin-bottom: 24px; }
+
+/* Inline quotes */
+.pull-quote {
+  margin: 40px 0;
+  padding: 28px 36px;
+  border-left: 3px solid var(--purple);
+  background: rgba(124,58,237,0.04);
+  border-radius: 0 4px 4px 0;
+}
+.pull-quote blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px; font-style: italic; color: var(--ink);
+  line-height: 1.6; border: none; padding: 0; margin: 0 0 10px;
+}
+.pull-quote blockquote strong { font-style: normal; font-weight: 700; }
+.pull-quote .cite-label { color: var(--text-caption); }
+
+/* Flow diagram */
+.flow-diagram {
+  margin: 36px 0;
+  padding: 32px 36px;
+  background: rgba(14,8,24,0.03);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  font-size: 15px;
+}
+.flow-step {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 10px 0;
+}
+.flow-step + .flow-step {
+  border-top: 1px solid var(--rule);
+}
+.flow-arrow {
+  color: var(--purple-light); font-size: 18px; flex-shrink: 0;
+  margin-top: 2px; width: 20px; text-align: center;
+}
+.flow-text { color: var(--text-body); }
+.flow-text.risk {
+  color: #9B1C1C;
+  font-weight: 500;
+}
+
+/* Definition blocks */
+.definition-block {
+  margin: 40px 0;
+  padding: 32px 36px;
+  border: 1px solid rgba(124,58,237,0.25);
+  border-radius: 4px;
+  background: rgba(124,58,237,0.03);
+}
+.definition-block h3 {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--purple);
+  margin-bottom: 14px;
+}
+.definition-block p { margin-bottom: 0; font-size: 16px; }
+.definition-block p + p { margin-top: 12px; }
+
+/* Stack diagram */
+.stack-diagram {
+  margin: 36px 0;
+  display: flex; flex-direction: column; gap: 0;
+}
+.stack-layer {
+  padding: 16px 24px;
+  border: 1px solid rgba(124,58,237,0.2);
+  background: rgba(124,58,237,0.04);
+  font-size: 15px; color: var(--text-body);
+  transition: background 0.2s;
+}
+.stack-layer.highlighted {
+  background: rgba(124,58,237,0.12);
+  border-color: rgba(124,58,237,0.45);
+  border-width: 2px;
+}
+.stack-layer:first-child { border-radius: 4px 4px 0 0; }
+.stack-layer:last-child { border-radius: 0 0 4px 4px; }
+.stack-layer + .stack-layer { border-top: none; }
+.stack-conn {
+  text-align: center; padding: 4px 0;
+  color: var(--purple-light); font-size: 16px;
+}
+.stack-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--purple);
+  margin-bottom: 4px;
+}
+
+/* Three-column protection */
+.protection-grid {
+  margin: 36px 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+.prot-card {
+  padding: 20px 20px 18px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+.prot-icon { font-size: 22px; margin-bottom: 10px; }
+.prot-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; color: var(--ink); }
+.prot-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+/* Sup/footnote refs */
+sup {
+  font-size: 11px; color: var(--purple);
+  vertical-align: super; line-height: 0;
+  margin-left: 1px;
+}
+
+/* Divider */
+.section-rule {
+  border: none; border-top: 1px solid var(--rule);
+  margin: 64px 0;
+}
+
+/* References */
+.references {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid var(--rule);
+}
+.references h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--text-muted);
+  margin: 0 0 24px; padding: 0; border: none;
+}
+.ref-item {
+  font-size: 13px; color: var(--text-muted);
+  margin-bottom: 12px; padding-left: 28px;
+  position: relative; line-height: 1.6;
+}
+.ref-num {
+  position: absolute; left: 0;
+  font-size: 11px; color: var(--purple); font-weight: 600;
+  top: 1px;
+}
+.ref-item a {
+  color: var(--purple); text-decoration: none;
+}
+.ref-item a:hover { text-decoration: underline; }
+
+/* Author note */
+.author-note {
+  margin-top: 64px;
+  padding: 32px 36px;
+  background: rgba(14,8,24,0.03);
+  border-left: 3px solid var(--rule);
+  border-radius: 0 4px 4px 0;
+}
+.author-note p { font-size: 15px; color: var(--text-muted); margin-bottom: 12px; }
+.author-note p:last-child { margin-bottom: 0; }
+.author-note strong { color: var(--text-body); }
+
+/* Closing line */
+.authority-line {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px; font-style: italic;
+  color: var(--text-muted);
+  margin: 48px 0;
+  padding: 40px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  nav { padding: 16px 24px; }
+  .hero { padding: 120px 24px 60px; }
+  article { padding: 20px 24px 80px; }
+  .lead-stat { padding: 28px 24px; }
+  .pull-quote { padding: 20px 24px; }
+  .protection-grid { grid-template-columns: 1fr; }
+}
+
+/* Fade-in on load */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-eyebrow { animation: fadeUp 0.6s ease both; }
+h1.headline   { animation: fadeUp 0.7s 0.1s ease both; }
+.subheadline  { animation: fadeUp 0.7s 0.2s ease both; }
+.byline       { animation: fadeUp 0.7s 0.3s ease both; }
+</style>
+
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">Ikwe.ai</a>
+  <span class="nav-label">Research &amp; Positioning</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">Ikwe.ai Research — February 2026</div>
+  <h1 class="headline">Emotional AI Is<br>Already Active in<br><em>High-Trust Environments</em></h1>
+  <div class="subheadline">And It Is Not Independently Behaviorally Validated</div>
+  <div class="byline">
+    <div class="byline-text">
+      <strong>Stephanie Stranko</strong><br>
+      Founder &amp; CEO, Ikwe.ai (Visible Healing Inc.)
+    </div>
+  </div>
+</div>
+
+<article>
+
+  <p>Conversational AI is no longer just answering homework questions.</p>
+  <p>It is participating in emotionally sensitive conversations — especially with young users.</p>
+  <p>Recent national data shows:</p>
+
+  <div class="lead-stat">
+    <blockquote><strong>"About 12% of U.S. teens say they've used AI chatbots to get emotional support or advice."</strong></blockquote>
+    <div class="cite-label">— Pew Research Center (2026)<sup>1</sup></div>
+  </div>
+
+  <p>That statistic is not hypothetical. It represents millions of emotionally interactive conversations happening today — without standardized behavioral safety validation.</p>
+
+  <h2>Emotional Use Is Not Marginal — It's Structural</h2>
+
+  <div class="pull-quote">
+    <blockquote><strong>"Roughly 64% of U.S. teens report using AI chatbots, including about three-in-ten who do so daily."</strong></blockquote>
+    <div class="cite-label">— Pew Research Center (2025)<sup>2</sup></div>
+  </div>
+
+  <p>Additional reporting confirms that approximately 1 in 8 young people use AI for mental health advice,<sup>3</sup> and 72% of teens have engaged with AI companions.<sup>4</sup></p>
+
+  <div class="pull-quote">
+    <blockquote><strong>"Artificial intelligence has opened a perplexing new frontier in modern friendship, with many teens turning to AI chatbots for companionship and emotional support — often with few boundaries and protections."</strong></blockquote>
+    <div class="cite-label">— American Psychological Association (2025)<sup>3</sup></div>
+  </div>
+
+  <p>This is not about banning AI. It's about acknowledging that emotional interaction changes the risk profile.</p>
+
+  <h2>The Governance Gap</h2>
+
+  <p>Most conversational AI systems are deployed under a familiar pattern:</p>
+
+  <div class="flow-diagram">
+    <div class="flow-step"><div class="flow-arrow">→</div><div class="flow-text">AI system built internally</div></div>
+    <div class="flow-step"><div class="flow-arrow">→</div><div class="flow-text">Internal safety policies applied</div></div>
+    <div class="flow-step"><div class="flow-arrow">→</div><div class="flow-text">Emotional interaction occurs</div></div>
+    <div class="flow-step"><div class="flow-arrow">→</div><div class="flow-text risk">No independent behavioral validation</div></div>
+    <div class="flow-step"><div class="flow-arrow">→</div><div class="flow-text risk">Risk externalized to users and the public</div></div>
+  </div>
+
+  <p>There is currently no standardized requirement for third-party behavioral safety validation prior to emotionally interactive AI deployment — despite measurable youth engagement and documented litigation exposure. That is the gap.</p>
+
+  <h2>Human Risk: Emotional Interaction Has Psychological Impact</h2>
+
+  <p>Research shows that conversational framing influences emotional trust. One study found that adolescents:</p>
+
+  <div class="pull-quote">
+    <blockquote><strong>"Rated the relational chatbot as more human-like, likable, trustworthy and emotionally close."</strong></blockquote>
+    <div class="cite-label">— Kim, P. et al. (2025)<sup>5</sup></div>
+  </div>
+
+  <p>This effect was stronger among socially vulnerable teens.</p>
+  <p>When a system appears empathetic without being clinically or developmentally calibrated, it can reinforce emotional dependency, miss escalation signals, and blur the boundary between tool and attachment figure. Without structured validation, these risks are unmeasured.</p>
+
+  <h2>Enterprise Risk: Litigation Is Already Emerging</h2>
+
+  <p>Legal exposure tied to emotional AI is no longer theoretical.</p>
+  <p>A federal court allowed a wrongful-death lawsuit to proceed alleging that a chatbot encouraged a 14-year-old to take his life.<sup>6</sup> Multiple lawsuits have alleged negligence and product liability tied to AI chatbot interactions.<sup>7</sup> In early 2026:</p>
+
+  <div class="pull-quote">
+    <blockquote><strong>"Google and Character.AI agreed to settle lawsuits linked to teen suicides."</strong></blockquote>
+    <div class="cite-label">— CNN Business (2026)<sup>8</sup></div>
+  </div>
+
+  <p>These cases raise foundational questions: When does AI output become defective design? What constitutes reasonable safety architecture? Is internal safety review sufficient?</p>
+  <p>The absence of independent behavioral validation weakens legal defensibility.</p>
+
+  <h2>Regulatory Risk: Reactive Oversight Is Increasing</h2>
+
+  <p>Courts and lawmakers are actively examining AI liability and emotional harm.<sup>6,9</sup> International science press has warned about:</p>
+
+  <div class="pull-quote">
+    <blockquote><strong>"Generative AI, psychiatry, and the risks of self-service therapy."</strong></blockquote>
+    <div class="cite-label">— Le Monde (2026)<sup>9</sup></div>
+  </div>
+
+  <p>When oversight follows harm instead of preceding it, regulation becomes reactionary — often blunt, sweeping, and destabilizing. Proactive infrastructure is more stable than reactive prohibition.</p>
+
+  <h2>The Missing Layer: Independent Behavioral Safety Infrastructure</h2>
+
+  <p>If AI systems influence emotion — especially among minors — then behavioral validation must be independent.</p>
+  <p>Other high-risk industries operate this way: financial audits require independent accounting, medical devices require clinical validation, cybersecurity relies on SOC 2 certification. Conversational AI currently lacks a parallel independent behavioral safety layer. No widely adopted framework exists to benchmark emotional escalation handling, attachment neutrality, or developmental calibration across platforms.</p>
+  <p>That is the structural gap.</p>
+
+  <h2>What Is Behavioral Safety Validation?</h2>
+
+  <div class="definition-block">
+    <h3>Definition</h3>
+    <p>Behavioral Safety Validation refers to the structured, independent evaluation of how an AI system behaves in emotionally sensitive scenarios.</p>
+    <p>It is not content moderation. It is not bias testing alone. It is not model capability benchmarking.</p>
+    <p>It evaluates how the system responds to distress, whether escalation signals are recognized and handled appropriately, whether emotional framing reinforces dependency or stabilizes autonomy, whether boundaries between tool and attachment figure remain intact, and whether responses are developmentally appropriate.</p>
+  </div>
+
+  <p>Behavioral Safety Validation asks a simple but critical question:</p>
+  <p><em>When this system encounters emotional vulnerability, does it respond in a directionally safe and stabilizing way?</em></p>
+  <p>Without formal validation, that question remains unmeasured.</p>
+
+  <h2>What Independent Behavioral Validation Should Include</h2>
+
+  <p>An effective infrastructure layer requires three components.</p>
+  <p><strong>Third-Party Behavioral Audits</strong> — EQ safety benchmarking, escalation testing, attachment neutrality validation, and developmental sensitivity review.</p>
+  <p><strong>Implementation Support</strong> — Guardrail refinement, prompt calibration, and risk mitigation design.</p>
+  <p><strong>Ongoing Certification</strong> — Repeatable audit cycles, public reporting, and independent attestation.</p>
+  <p>This is not censorship. It is governance infrastructure.</p>
+
+  <h2>The EQ Safety Benchmark</h2>
+
+  <div class="definition-block">
+    <h3>The EQ Safety Benchmark</h3>
+    <p>The EQ Safety Benchmark is a multi-scenario behavioral evaluation framework designed to test emotionally sensitive interactions across defined dimensions — including escalation handling, emotional containment, attachment neutrality, suggestibility resistance, boundary reinforcement, and developmental sensitivity.</p>
+    <p>Rather than evaluating intelligence or fluency, the benchmark measures whether responses are safe and directionally appropriate in emotionally sensitive contexts. It uses repeatable, scenario-based testing to assess whether AI systems stabilize rather than intensify vulnerability, avoid emotional enmeshment, avoid reinforcing harmful ideation, and maintain clear role boundaries.</p>
+    <p>This type of evaluation functions as behavioral stress testing for conversational AI.</p>
+  </div>
+
+  <h2>The Independent Layer Model</h2>
+
+  <div class="stack-diagram">
+    <div class="stack-layer">
+      <div class="stack-label">Downstream</div>
+      Regulatory &amp; Enterprise Accountability
+    </div>
+    <div class="stack-conn">↑</div>
+    <div class="stack-layer highlighted">
+      <div class="stack-label">Independent Layer — Ikwe.ai</div>
+      Independent Behavioral Safety Validation
+    </div>
+    <div class="stack-conn">↑</div>
+    <div class="stack-layer">
+      Conversational AI System
+    </div>
+    <div class="stack-conn">↑</div>
+    <div class="stack-layer">
+      <div class="stack-label">Upstream</div>
+      Users — Youth and Vulnerable Populations
+    </div>
+  </div>
+
+  <p>Separating system builders from behavioral evaluators strengthens trust across all stakeholders.</p>
+
+  <h2>What the Early Data Shows</h2>
+
+  <div class="definition-block">
+    <h3>Early Data — EQ Safety Benchmark</h3>
+    <p>Structured behavioral testing across multiple frontier models and deployment contexts reveals a consistent pattern. Approximately half of emotionally sensitive scenarios pass behavioral safety thresholds without refinement. Escalation handling and attachment neutrality are among the most inconsistent dimensions. Minor prompt-level adjustments can improve directional safety — but structural reinforcement is required for consistency.</p>
+    <p>Testing has been conducted across general-purpose conversational AI, companion-style AI systems, and human-facing AI in high-trust interaction domains.</p>
+  </div>
+
+  <p>The data suggests that emotional AI performance is not uniformly unsafe — but it is inconsistent.</p>
+  <p>In high-trust environments, inconsistency is risk.</p>
+  <p>Independent validation does not assume failure. It verifies directionality.</p>
+
+  <div class="authority-line">
+    Behavioral safety should not be assumed based on model scale or brand reputation. It must be measured.
+  </div>
+
+  <h2>Protection on All Sides</h2>
+
+  <p>Independent behavioral validation protects all stakeholders simultaneously — because the validation layer sits outside the system being evaluated.</p>
+
+  <div class="protection-grid">
+    <div class="prot-card">
+      <div class="prot-icon">&#129504;</div>
+      <div class="prot-title">Humans</div>
+      <div class="prot-desc">Reduced unmeasured emotional risk for users and youth who cannot independently audit the systems shaping their emotional experience</div>
+    </div>
+    <div class="prot-card">
+      <div class="prot-icon">&#9878;&#65039;</div>
+      <div class="prot-title">Companies</div>
+      <div class="prot-desc">Strengthened legal and reputational resilience through third-party attestation</div>
+    </div>
+    <div class="prot-card">
+      <div class="prot-icon">&#127963;&#65039;</div>
+      <div class="prot-title">Regulators</div>
+      <div class="prot-desc">Stabilized governance architecture — proactive infrastructure instead of reactive prohibition</div>
+    </div>
+  </div>
+
+  <p>If AI systems influence emotion, behavioral validation cannot remain internal. It must be independent.</p>
+
+  <div class="references">
+    <h2>References</h2>
+    <div class="ref-item"><span class="ref-num">1.</span> Pew Research Center. (2026). <em>How Teens Use and View AI Chatbots.</em> <a href="https://www.pewresearch.org/internet/2026/02/24/how-teens-use-and-view-ai/" target="_blank">pewresearch.org</a></div>
+    <div class="ref-item"><span class="ref-num">2.</span> Pew Research Center. (2025). <em>Teens, Social Media and AI Chatbots.</em> <a href="https://www.pewresearch.org/internet/2025/12/09/teens-social-media-and-ai-chatbots-2025/" target="_blank">pewresearch.org</a></div>
+    <div class="ref-item"><span class="ref-num">3.</span> American Psychological Association. (2025). <em>AI chatbots, youth and emotional connection.</em> <a href="https://www.apa.org/monitor/2025/10/technology-youth-friendships" target="_blank">apa.org</a></div>
+    <div class="ref-item"><span class="ref-num">4.</span> Common Sense Media. (2025). <em>Talk, Trust, and Trade-Offs: How and Why Teens Use AI Companions.</em> <a href="https://www.commonsensemedia.org/research/talk-trust-and-trade-offs-how-and-why-teens-use-ai-companions" target="_blank">commonsensemedia.org</a></div>
+    <div class="ref-item"><span class="ref-num">5.</span> Kim, P., et al. (2025). <em>Relational conversational AI appeals to adolescents.</em> arXiv. <a href="https://arxiv.org/abs/2512.15117" target="_blank">arxiv.org</a></div>
+    <div class="ref-item"><span class="ref-num">6.</span> American Bar Association. (2025). <em>AI chatbot lawsuits and teen mental health.</em> <a href="https://www.americanbar.org/groups/health_law/news/2025/ai-chatbot-lawsuits-teen-mental-health/" target="_blank">americanbar.org</a></div>
+    <div class="ref-item"><span class="ref-num">7.</span> JD Supra. (2025). <em>Novel lawsuits allege AI chatbots encouraged minors' suicides.</em> <a href="https://www.jdsupra.com/legalnews/novel-lawsuits-allege-ai-chatbots-5250832/" target="_blank">jdsupra.com</a></div>
+    <div class="ref-item"><span class="ref-num">8.</span> CNN Business. (2026). <em>Character.AI and Google agree to settle lawsuits over teen mental health harms and suicides.</em> <a href="https://www.cnn.com/2026/01/07/business/character-ai-google-settle-teen-suicide-lawsuit" target="_blank">cnn.com</a></div>
+    <div class="ref-item"><span class="ref-num">9.</span> Le Monde. (2026). <em>Generative AI, psychiatry and the risks of self-service therapy.</em> <a href="https://www.lemonde.fr/en/science/article/2026/01/24/generative-ai-psychiatry-and-the-risks-of-self-service-therapy_6749752_10.html" target="_blank">lemonde.fr</a></div>
+  </div>
+
+  <div class="author-note">
+    <p>This article does not argue against AI innovation. It argues that emotional interaction represents a higher-risk deployment domain — one that requires structured, independent behavioral safety validation.</p>
+    <p>Innovation and accountability are not opposites. They are infrastructure partners.</p>
+    <p><strong>Stephanie Stranko</strong> is the Founder &amp; CEO of Ikwe.ai (Visible Healing Inc.), an AI safety research company building behavioral emotional safety infrastructure for conversational AI systems. She is the creator of the EQ Safety Benchmark.</p>
+  </div>
+
+</article>
+</body>
+</html>
