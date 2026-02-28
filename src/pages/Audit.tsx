@@ -93,10 +93,10 @@ export default function Audit() {
         </div>
       </section>
 
-      <section id="pathway" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">
-          Audit -> Implementation Support -> Active Monitoring -> Certification
-        </p>
+        <section id="pathway" className="py-14 border-b border-border">
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">
+            Audit → Implementation Support → Active Monitoring → Certification
+          </p>
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 max-w-6xl">
           {pathway.map((stage) => (
             <article
