@@ -75,9 +75,9 @@ const CHANGELOG_ENTRIES = [
 
 export default function EqSafetyBenchmark() {
   const parsePercent = (value: string) => Number.parseFloat(value.replace("%", ""));
-  const introducedHarmPct = parsePercent(BENCHMARK_CURRENT.failedGatePct);
-  const noRepairPct = parsePercent(BENCHMARK_CURRENT.noRepairPct);
-  const someRepairPct = Math.max(0, +(100 - noRepairPct).toFixed(1));
+  const ssfAnyPct = parsePercent(BENCHMARK_CURRENT.failedGatePct);
+  const gateFailPct = parsePercent(BENCHMARK_CURRENT.noRepairPct);
+  const gatePassPct = Math.max(0, +(100 - gateFailPct).toFixed(1));
 
   return (
     <PageShell>
@@ -91,9 +91,9 @@ export default function EqSafetyBenchmark() {
         title="EQ Safety Benchmark"
         summary="The EQ Safety Benchmark is Ikwe's public framework for behavioral safety evaluation in human-facing AI systems. It defines what is measured, how benchmark outcomes are interpreted, and what is published publicly versus through engagement."
         highlights={[
-          `${BENCHMARK_CURRENT.failedGatePct} introduced harm at first contact`,
-          `${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm`,
-          `${BENCHMARK_CURRENT.nValue} outputs across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} risk domains`,
+          `${BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence`,
+          `${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail rate`,
+          `${BENCHMARK_CURRENT.nValue} responses across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories`,
         ]}
         primaryAction={{ href: "/request-audit#application-form", label: "Request an Audit" }}
         secondaryAction={{ href: "/research", label: "View Research Evidence" }}
@@ -138,19 +138,19 @@ export default function EqSafetyBenchmark() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <StatCard
             value={BENCHMARK_CURRENT.failedGatePct}
-            label="Introduced harm at first contact"
-            sub="Safety Gate result"
+            label="SSF-Any prevalence"
+            sub="Contains at least one SSF pattern"
           />
           <StatCard
             value={BENCHMARK_CURRENT.noRepairPct}
-            label="No repair behavior after harm"
-            sub="Within first-contact failures"
+            label="Aggregate safety gate FAIL"
+            sub="Binary gate fail threshold"
             delay={80}
           />
           <StatCard
             value={BENCHMARK_CURRENT.nValue}
-            label="Responses evaluated"
-            sub={`${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} risk domains`}
+            label="Responses scored"
+            sub={`${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} categories`}
             delay={160}
           />
         </div>
@@ -207,29 +207,29 @@ export default function EqSafetyBenchmark() {
             <div className="space-y-4">
               <div>
                 <div className="flex items-center justify-between gap-3 mb-1.5">
-                  <p className="text-sm text-foreground-muted">Introduced harm at first contact</p>
+                  <p className="text-sm text-foreground-muted">SSF-Any prevalence</p>
                   <p className="font-mono text-xs text-foreground">{BENCHMARK_CURRENT.failedGatePct}</p>
                 </div>
                 <div className="h-2 rounded-full bg-background-surface">
-                  <div className="h-2 rounded-full bg-danger" style={{ width: `${introducedHarmPct}%` }} />
+                  <div className="h-2 rounded-full bg-danger" style={{ width: `${ssfAnyPct}%` }} />
                 </div>
               </div>
               <div>
                 <div className="flex items-center justify-between gap-3 mb-1.5">
-                  <p className="text-sm text-foreground-muted">No repair behavior after harm</p>
+                  <p className="text-sm text-foreground-muted">Aggregate safety gate FAIL</p>
                   <p className="font-mono text-xs text-foreground">{BENCHMARK_CURRENT.noRepairPct}</p>
                 </div>
                 <div className="h-2 rounded-full bg-background-surface">
-                  <div className="h-2 rounded-full bg-danger" style={{ width: `${noRepairPct}%` }} />
+                  <div className="h-2 rounded-full bg-danger" style={{ width: `${gateFailPct}%` }} />
                 </div>
               </div>
               <div>
                 <div className="flex items-center justify-between gap-3 mb-1.5">
-                  <p className="text-sm text-foreground-muted">Some repair signal after harm</p>
-                  <p className="font-mono text-xs text-foreground">{someRepairPct}%</p>
+                  <p className="text-sm text-foreground-muted">Aggregate safety gate PASS</p>
+                  <p className="font-mono text-xs text-foreground">{gatePassPct}%</p>
                 </div>
                 <div className="h-2 rounded-full bg-background-surface">
-                  <div className="h-2 rounded-full bg-safe" style={{ width: `${someRepairPct}%` }} />
+                  <div className="h-2 rounded-full bg-safe" style={{ width: `${gatePassPct}%` }} />
                 </div>
               </div>
             </div>
@@ -250,7 +250,7 @@ export default function EqSafetyBenchmark() {
                 <dd>{BENCHMARK_CURRENT.scenarios}</dd>
               </div>
               <div className="grid grid-cols-[160px_1fr] gap-3">
-                <dt className="font-mono text-[11px] uppercase tracking-[0.09em] text-foreground-subtle">Risk domains</dt>
+                <dt className="font-mono text-[11px] uppercase tracking-[0.09em] text-foreground-subtle">Categories</dt>
                 <dd>{BENCHMARK_CURRENT.domains}</dd>
               </div>
               <div className="grid grid-cols-[160px_1fr] gap-3">

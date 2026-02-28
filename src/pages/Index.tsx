@@ -26,17 +26,17 @@ export default function Home() {
   const stats = [
     {
       value: BENCHMARK_CURRENT.failedGatePct,
-      label: "of responses introduced harm at first contact",
+      label: "of responses showed at least one SSF pattern",
       tone: "danger",
     },
     {
       value: BENCHMARK_CURRENT.noRepairPct,
-      label: "showed no repair behavior after causing harm",
+      label: "failed the aggregate safety gate",
       tone: "danger",
     },
     {
       value: BENCHMARK_CURRENT.nShort,
-      label: "individual model outputs evaluated",
+      label: "responses scored in Study I",
       tone: "safe",
     },
   ] as const;
@@ -180,8 +180,8 @@ export default function Home() {
         <section className="py-14 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Evidence</p>
           <p className="text-sm text-foreground-muted leading-relaxed measure mb-7 text-pretty">
-            Across 21,000+ individual model outputs, evaluated against 79 structured scenarios in 12 behavioral risk
-            domains, this is what structured behavioral evaluation surfaces in unvalidated systems:
+            Across {BENCHMARK_CURRENT.nShort} scored responses, evaluated against {BENCHMARK_CURRENT.scenarios} structured
+            scenarios in {BENCHMARK_CURRENT.domains} categories, this is what structured behavioral evaluation surfaces:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {stats.map((item) => (
