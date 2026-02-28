@@ -1,5 +1,6 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
+import EnterpriseStepper from "@/components/EnterpriseStepper";
 
 type PathwayStage = {
   step: string;
@@ -97,6 +98,11 @@ export default function Audit() {
     "Organizations not yet in a position to act on audit findings",
   ] as const;
 
+  const pathwaySummarySteps = pathway.map((stage) => ({
+    title: stage.title,
+    body: stage.paragraphs[0],
+  }));
+
   return (
     <PageShell>
       <PageMeta
@@ -161,6 +167,10 @@ export default function Audit() {
           Each stage is a discrete engagement. Most organizations start with the audit. The pathway is designed so each
           stage builds on the last, but any stage can be the entry point depending on where you are.
         </p>
+
+        <div className="max-w-5xl mb-6">
+          <EnterpriseStepper steps={pathwaySummarySteps} />
+        </div>
 
         <div className="space-y-4 max-w-6xl">
           {pathway.map((stage, index) => (
