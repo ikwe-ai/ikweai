@@ -3,21 +3,6 @@ import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 
 export default function Trust() {
-  const trustSnapshot = [
-    {
-      label: "Data Minimization",
-      text: "Only the information needed for scope and risk review is requested at intake.",
-    },
-    {
-      label: "Access Control",
-      text: "Detailed materials are shared through controlled pathways tied to institutional need.",
-    },
-    {
-      label: "Version Discipline",
-      text: "Published outputs are versioned so claims can be traced to a specific benchmark state.",
-    },
-  ] as const;
-
   const requiredInputs = [
     "System purpose and deployment surface",
     "Risk-sensitive use context and stakeholder profile",
@@ -58,14 +43,9 @@ export default function Trust() {
 
       <section id="information-needs" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Information Needs</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mb-6">
-          {trustSnapshot.map((item) => (
-            <article key={item.label} className="card-surface p-5">
-              <p className="font-mono text-[11px] uppercase tracking-[0.11em] text-lilac mb-2">{item.label}</p>
-              <p className="text-sm text-foreground-muted leading-relaxed text-pretty">{item.text}</p>
-            </article>
-          ))}
-        </div>
+        <p className="text-xs text-foreground-subtle mb-6 max-w-4xl">
+          Intake is minimal, access is controlled, and outputs are versioned for traceable governance review.
+        </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-5xl">
           <article className="card-surface p-6">
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">What We Request</p>

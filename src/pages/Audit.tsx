@@ -104,35 +104,6 @@ export default function Audit() {
     body: stage.paragraphs[0],
   }));
 
-  const executiveSnapshot = [
-    {
-      label: "Primary Outcome",
-      text: "A documented behavioral risk baseline tied to governance and remediation decisions.",
-    },
-    {
-      label: "Commercial Structure",
-      text: "Stage-based engagement: audit first, then optional remediation and monitoring support.",
-    },
-    {
-      label: "Operating Model",
-      text: "Independent validation with board-ready outputs and technical evidence for engineering action.",
-    },
-  ] as const;
-
-  const cfoLens = [
-    "Independent evidence for governance, legal, and insurance discussions",
-    "Clear engagement boundaries and scoped commercial terms",
-    "Versioned reporting for audit trails and policy review",
-    "Continuity option through recurring monitoring",
-  ] as const;
-
-  const ctoLens = [
-    "Failure-mode visibility beyond internal testing coverage",
-    "Remediation partnership focused on root-pattern fixes",
-    "Re-test checkpoints tied to model and prompt changes",
-    "Drift detection against production deployment updates",
-  ] as const;
-
   const stageMatrix = [
     {
       stage: "01 · Diagnostic Audit",
@@ -199,41 +170,12 @@ export default function Audit() {
           </a>
         </div>
         <div className="flex flex-wrap gap-2 mt-4">
-          <a href="#executive-view" className="summary-jump">Executive view</a>
           <a href="#decision-matrix" className="summary-jump">CTO/CFO matrix</a>
           <a href="#validation-pathway" className="summary-jump">Full pathway detail</a>
         </div>
-      </section>
-
-      <section id="executive-view" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Executive View</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mb-6">
-          {executiveSnapshot.map((item) => (
-            <article key={item.label} className="card-surface p-5">
-              <p className="font-mono text-[11px] uppercase tracking-[0.11em] text-lilac mb-2">{item.label}</p>
-              <p className="text-sm text-foreground-muted leading-relaxed text-pretty">{item.text}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-6xl">
-          <article className="card-surface p-6">
-            <p className="font-mono text-[11px] uppercase tracking-[0.11em] text-lilac mb-3">CFO Lens</p>
-            <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-              {cfoLens.map((item) => (
-                <li key={item}>• {item}</li>
-              ))}
-            </ul>
-          </article>
-          <article className="card-surface p-6">
-            <p className="font-mono text-[11px] uppercase tracking-[0.11em] text-lilac mb-3">CTO Lens</p>
-            <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-              {ctoLens.map((item) => (
-                <li key={item}>• {item}</li>
-              ))}
-            </ul>
-          </article>
-        </div>
+        <p className="text-xs text-foreground-subtle mt-3">
+          Executive quick view: start with the CTO/CFO stage matrix below, then move into full pathway detail.
+        </p>
       </section>
 
       <section id="decision-matrix" className="py-14 border-b border-border">
