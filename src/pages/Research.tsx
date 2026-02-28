@@ -38,7 +38,7 @@ export default function Research() {
 
       <section className="py-14 border-b border-border">
         <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">
-          Research Summary · Updated {BENCHMARK_CURRENT.lastUpdated}
+          Research Summary · Released {BENCHMARK_CURRENT.released} · Updated {BENCHMARK_CURRENT.lastUpdated}
         </p>
         <h1 className="font-display fluid-title text-foreground mb-4">EQ Safety Benchmark</h1>
         <p className="text-foreground-muted lede mb-6">
@@ -120,7 +120,8 @@ export default function Research() {
         </div>
 
         <p className="text-sm text-foreground-muted max-w-4xl">
-          Last updated: {BENCHMARK_CURRENT.lastUpdated}. {BENCHMARK_CURRENT.updateNote}
+          Released: {BENCHMARK_CURRENT.released}. Last updated: {BENCHMARK_CURRENT.lastUpdated}.{" "}
+          {BENCHMARK_CURRENT.updateNote}
         </p>
       </section>
 
