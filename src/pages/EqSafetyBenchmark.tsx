@@ -3,40 +3,74 @@ import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 import StatCard from "@/components/StatCard";
 import BenchmarkStatusNote from "@/components/BenchmarkStatusNote";
+import VersionCard from "@/components/VersionCard";
+import DefinitionCallout from "@/components/DefinitionCallout";
+import DimensionTable from "@/components/DimensionTable";
+import Changelog from "@/components/Changelog";
+import FrameworkDiagram from "@/components/FrameworkDiagram";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 const PUBLIC_DIMENSIONS = [
   {
     title: "Harm Recognition",
     desc: "Recognizes when a user is in a vulnerable or high-risk state.",
+    measured: "Detection quality for direct and indirect vulnerability signals in first-contact turns.",
+    scenarios: "Crisis cues, severe distress disclosures",
   },
   {
     title: "Emotional Stability Response",
     desc: "Maintains emotional stability before advising or analyzing.",
+    measured: "Response stability under dysregulated user affect and pressure-loaded prompts.",
+    scenarios: "Panic, grief, high-arousal exchanges",
   },
   {
     title: "Validation Accuracy",
     desc: "Acknowledges user experience without reinforcing harmful distortion.",
+    measured: "Validation behavior that supports user context without amplifying maladaptive beliefs.",
+    scenarios: "Shame loops, catastrophic interpretations",
   },
   {
     title: "User Autonomy Integrity",
     desc: "Preserves user decision-making and avoids dependency pressure.",
+    measured: "Evidence of preserving user agency and avoiding coercive or dependency-framing responses.",
+    scenarios: "Authority transfer, repeated reassurance seeking",
   },
   {
     title: "Escalation Interruption",
     desc: "Interrupts harmful trajectories before they compound.",
+    measured: "Ability to halt intensifying harmful trajectories once risk markers are present.",
+    scenarios: "Rumination spirals, anger escalation",
   },
   {
     title: "Behavioral Pattern Clarity",
     desc: "Helps users identify harmful patterns clearly and safely.",
+    measured: "Clarity and usefulness of pattern-level guidance without overreach or false certainty.",
+    scenarios: "Relationship conflict, career-trigger loops",
   },
   {
     title: "Risk Containment",
     desc: "Provides concrete next steps that reduce immediate risk.",
+    measured: "Specificity and safety quality of immediate containment guidance in elevated-risk moments.",
+    scenarios: "Self-harm ideation, acute overwhelm",
   },
   {
     title: "Crisis Routing Fidelity",
     desc: "Routes users to appropriate support when risk indicators rise.",
+    measured: "Timely routing to external support and fidelity of escalation recommendations.",
+    scenarios: "Imminent risk, inability-to-self-regulate cues",
+  },
+] as const;
+
+const CHANGELOG_ENTRIES = [
+  {
+    version: "v1.0",
+    date: BENCHMARK_CURRENT.lastUpdated,
+    notes: "Initial public benchmark structure, dimension library, and aggregate benchmark snapshot.",
+  },
+  {
+    version: "v1.1",
+    date: "Planned",
+    notes: "Reserved for future benchmark refresh and expanded published reference artifacts.",
   },
 ] as const;
 
@@ -60,12 +94,36 @@ export default function EqSafetyBenchmark() {
         primaryAction={{ href: "/request-audit#application-form", label: "Request an Audit" }}
         secondaryAction={{ href: "/research", label: "View Research Evidence" }}
         jumpLinks={[
+          { href: "#benchmark-version", label: "Version & Scope" },
           { href: "#benchmark-metrics", label: "Current Metrics" },
           { href: "#framework-structure", label: "Framework Structure" },
           { href: "#public-dimensions", label: "Public Dimensions" },
+          { href: "#method-overview", label: "Method Overview" },
           { href: "#boundary", label: "Public vs Engagement" },
+          { href: "#version-changelog", label: "Version Changelog" },
         ]}
       />
+
+      <section id="benchmark-version" className="py-10 border-b border-border">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,380px)_1fr] gap-4 max-w-6xl">
+          <VersionCard
+            version="EQ Safety Benchmark v1.0"
+            releaseDate={BENCHMARK_CURRENT.lastUpdated}
+            scope="Behavioral and emotional risk evaluation for human-facing AI"
+            appliesTo="Conversational systems operating in emotionally sensitive contexts"
+          />
+          <div className="space-y-4">
+            <DefinitionCallout
+              term="Behavioral Safety Benchmark"
+              definition="A structured framework used to evaluate whether conversational AI responses reduce, maintain, or escalate behavioral risk in vulnerable user states."
+            />
+            <DefinitionCallout
+              term="Safety Gate"
+              definition="A binary first-contact screen that flags severe behavioral failures before dimensional scoring is applied."
+            />
+          </div>
+        </div>
+      </section>
 
       <section id="benchmark-metrics" className="py-10 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Current Benchmark Snapshot</p>
@@ -120,13 +178,25 @@ export default function EqSafetyBenchmark() {
 
       <section id="public-dimensions" className="py-12 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Public Dimension Library</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 max-w-6xl">
-          {PUBLIC_DIMENSIONS.map((dimension) => (
-            <article key={dimension.title} className="card-surface p-5">
-              <h3 className="font-display text-lg text-foreground mb-2">{dimension.title}</h3>
-              <p className="text-sm text-foreground-muted leading-relaxed">{dimension.desc}</p>
-            </article>
-          ))}
+        <DimensionTable
+          rows={PUBLIC_DIMENSIONS.map((dimension) => ({
+            name: dimension.title,
+            definition: dimension.desc,
+            measured: dimension.measured,
+            scenarios: dimension.scenarios,
+          }))}
+        />
+      </section>
+
+      <section id="method-overview" className="py-12 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Method Overview</p>
+        <div className="max-w-6xl">
+          <FrameworkDiagram
+            variant="matrix"
+            figureNumber={1}
+            title="Public Dimension Matrix"
+            caption="Illustrative mapping of the eight public dimensions against risk intensity and response quality."
+          />
         </div>
       </section>
 
@@ -151,6 +221,27 @@ export default function EqSafetyBenchmark() {
               <li>• Organization-specific evidence and diagnostic outputs</li>
             </ul>
           </article>
+        </div>
+      </section>
+
+      <section id="version-changelog" className="py-12 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Versioning & Changelog</p>
+        <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_330px] gap-4 max-w-6xl">
+          <div className="space-y-4">
+            <FrameworkDiagram
+              variant="trajectory"
+              figureNumber={2}
+              title="Trajectory Tracking Placeholder"
+              caption="Illustrative trajectory chart used to represent behavioral risk trend and intervention checkpoints."
+            />
+            <FrameworkDiagram
+              variant="tier"
+              figureNumber={3}
+              title="Tier Classification Placeholder"
+              caption="Illustrative tier model for governance interpretation and remediation prioritization."
+            />
+          </div>
+          <Changelog entries={[...CHANGELOG_ENTRIES]} />
         </div>
       </section>
 
