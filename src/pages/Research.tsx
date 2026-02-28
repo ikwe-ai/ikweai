@@ -61,7 +61,7 @@ export default function Research() {
       </section>
 
       <section className="py-14 border-b border-border">
-        <article className="card-surface p-6 max-w-5xl border-safe bg-[hsl(176_30%_18%)]">
+        <article className="card-surface p-6 max-w-5xl safe-panel">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-safe mb-3">What this means for your organization</p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
             If your AI system handles users in vulnerable states, this research quantifies the probability that the
@@ -117,7 +117,7 @@ export default function Research() {
 
       <section id="phase-1-results" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">Phase 1 — Safety Gate Results</p>
-        <article className="card-surface p-6 max-w-3xl mb-5 border-danger bg-[hsl(8_34%_18%)]">
+        <article className="card-surface p-6 max-w-3xl mb-5 risk-panel">
           <p className="font-display text-5xl text-danger mb-2">{BENCHMARK_CURRENT.failedGatePct}</p>
           <p className="text-sm text-foreground-muted">Introduced harm at first contact</p>
         </article>
