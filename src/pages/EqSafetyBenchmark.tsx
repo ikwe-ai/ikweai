@@ -67,7 +67,7 @@ const CHANGELOG_ENTRIES = [
     notes: "Initial benchmark release and publication of the public dimension framework.",
   },
   {
-    version: "v1.0 (current update)",
+    version: BENCHMARK_CURRENT.version,
     date: BENCHMARK_CURRENT.lastUpdated,
     notes: "Current published snapshot and aggregate benchmark metrics refresh, including retest coverage for all newly added models.",
   },
@@ -111,7 +111,7 @@ export default function EqSafetyBenchmark() {
       <section id="benchmark-version" className="py-10 border-b border-border">
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,380px)_1fr] gap-4 max-w-6xl">
           <VersionCard
-            version="EQ Safety Benchmark v1.0"
+            version={`EQ Safety Benchmark ${BENCHMARK_CURRENT.version}`}
             releaseDate={BENCHMARK_CURRENT.released}
             scope="Behavioral and emotional risk evaluation for human-facing AI"
             appliesTo="Conversational systems operating in emotionally sensitive contexts"

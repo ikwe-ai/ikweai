@@ -1,4 +1,5 @@
 export const BENCHMARK_CURRENT = {
+  version: "v2.0",
   released: "December 2025",
   lastUpdated: "February 20, 2026",
   updateNote: "Latest refresh includes retesting across all newly added models.",
