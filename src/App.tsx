@@ -124,6 +124,22 @@ const App = () => (
             path="/research/writings/emotional-ai-high-trust-environments"
             element={<Navigate to="/archive/research/writings/emotional-ai-high-trust-environments" replace />}
           />
+          <Route
+            path="/research/before-the-violation/*"
+            element={<Navigate to="/archive/research/writings/before-the-violation" replace />}
+          />
+          <Route
+            path="/research/canon/ai-governance-compliance/*"
+            element={<Navigate to="/archive/research/writings/ai-governance-is-becoming-a-compliance-issue" replace />}
+          />
+          <Route
+            path="/choose-your-path/*"
+            element={<Navigate to="/archive/research/writings/choose-your-path" replace />}
+          />
+          <Route
+            path="/research/recognition-is-not-safety/*"
+            element={<Navigate to="/archive/research/writings/recognition-is-not-safety" replace />}
+          />
           <Route path="/research/case-studies" element={<Navigate to="/archive/research/case-studies" replace />} />
           <Route path="/research/case-studies/:slug" element={<LegacyCaseStudyRedirect />} />
           <Route path="/research/press" element={<Navigate to="/archive/research/press" replace />} />
