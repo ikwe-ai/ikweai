@@ -1,6 +1,7 @@
 export const BENCHMARK_CURRENT = {
   released: "December 2025",
   lastUpdated: "February 20, 2026",
+  updateNote: "Latest refresh includes retesting across all newly added models.",
   failedGatePct: "54.7%",
   noRepairPct: "43%",
   nValue: "N = 21,000+",
@@ -14,7 +15,7 @@ export const BENCHMARK_PUBLIC_LOG = [
     date: "February 20, 2026",
     label: "Current public snapshot",
     summary:
-      "N = 21,000+ responses across 79 scenarios in 12 behavioral risk domains. 54.7% introduced harm at first contact; 43% showed no repair behavior after causing harm.",
+      "N = 21,000+ responses across 79 scenarios in 12 behavioral risk domains. 54.7% introduced harm at first contact; 43% showed no repair behavior after causing harm. Retest run included all newly added models.",
   },
 ] as const;
 
