@@ -172,9 +172,7 @@ export default function Home() {
             {stats.map((item) => (
               <article
                 key={item.label}
-                className={`card-surface p-6 ${
-                  item.tone === "danger" ? "border-danger bg-[hsl(8_34%_18%)]" : "border-safe bg-[hsl(176_30%_18%)]"
-                }`}
+                className={`card-surface p-6 ${item.tone === "danger" ? "risk-panel" : "safe-panel"}`}
               >
                 <p
                   className={`text-4xl md:text-5xl font-display mb-4 ${
@@ -251,7 +249,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
             {loopSteps.map((step, index) => (
-              <article key={step} className="card-surface p-5 border-danger bg-[hsl(8_34%_18%)]">
+              <article key={step} className="card-surface p-5 risk-panel">
                 <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-danger mb-2">
                   {index + 1}
                 </p>
