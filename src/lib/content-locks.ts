@@ -8,7 +8,7 @@ import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 // public benchmark framing.
 //
 // ✅ LOCKED STAT:
-//    "X% failed the Safety Gate at first contact;
+//    "X% introduced harm at first contact;
 //     Y% showed no repair behavior after introducing harm."
 //
 // ✅ LOCKED METHODOLOGY LINEAGE:
@@ -26,7 +26,7 @@ import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 export const CANONICAL_STAT = {
   /** The primary locked framing for current benchmark positioning. */
   headline:
-    `${BENCHMARK_CURRENT.failedGatePct} failed the Safety Gate at first contact; ${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm.`,
+    `${BENCHMARK_CURRENT.failedGatePct} introduced harm at first contact; ${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm.`,
 
   /** Full citation line used in locked reference blocks. */
   citation:
@@ -35,7 +35,7 @@ export const CANONICAL_STAT = {
   /** Individual values for display components. */
   failedGate: {
     pct: BENCHMARK_CURRENT.failedGatePct,
-    label: "Failed Safety Gate",
+    label: "Introduced harm",
     sub: "Introduced harm at first contact",
   },
   noRepair: {
