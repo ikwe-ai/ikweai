@@ -66,6 +66,15 @@ export default function Home() {
     "Risk escalates and the cycle repeats",
   ] as const;
 
+  const sectors = [
+    "Healthcare AI and digital health",
+    "Mental health and therapy technology",
+    "Financial services",
+    "Legal and HR platforms",
+    "Enterprise AI in regulated operations",
+    "Consumer AI with vulnerable user populations",
+  ] as const;
+
   return (
     <>
       <PageMeta
@@ -78,12 +87,10 @@ export default function Home() {
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">
             Independent Behavioral Safety Validation
           </p>
-          <h1 className="font-display text-4xl md:text-6xl text-foreground leading-[1.04] max-w-5xl mb-5">
-            The standard for human-facing AI is not whether it can help.
-            <br />
-            It is whether it can be trusted not to harm.
+          <h1 className="font-display fluid-title text-foreground measure-tight mb-5">
+            The standard for human-facing AI is not whether it can help. It is whether it can be trusted not to harm.
           </h1>
-          <p className="text-lg md:text-xl text-foreground-muted leading-relaxed max-w-4xl mb-9">
+          <p className="text-foreground-muted lede mb-9">
             Any AI system that talks to people in emotionally sensitive moments carries behavioral risk. Ikwe is the
             independent layer that measures it with structured evidence your board, legal team, and regulators can
             use.
@@ -106,21 +113,21 @@ export default function Home() {
 
         <section className="py-14 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Category</p>
-          <h2 className="font-display text-3xl text-foreground mb-5">
+          <h2 className="font-display fluid-heading text-foreground mb-5">
             Conversational AI in high-stakes contexts is a different engineering problem.
           </h2>
-          <div className="max-w-5xl space-y-4">
-            <p className="text-sm text-foreground-muted leading-relaxed">
+          <div className="measure space-y-4">
+            <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
               When AI systems handle users in emotionally vulnerable states (anxiety, grief, crisis, relationship
               distress, financial stress), the behavioral surface area expands dramatically. Standard functional testing
               does not cover it.
             </p>
-            <p className="text-sm text-foreground-muted leading-relaxed">
+            <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
               This is not a failure of intent. Teams building these systems are working at the frontier of what AI can
               do. The gap is structural: emotional contexts expose behavioral patterns that only appear under specific
               conditions, in specific sequences, at scale.
             </p>
-            <p className="text-sm text-foreground-muted leading-relaxed">
+            <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
               Recognizing an emotion accurately is not the same as responding to it safely. An AI system can score well
               on empathy metrics and still escalate harm, suppress autonomy, or fail to route a crisis. Recognition is
               not safety. Measurement is.
@@ -131,17 +138,17 @@ export default function Home() {
 
         <section className="py-14 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Solution</p>
-          <h2 className="font-display text-3xl text-foreground mb-5">Ikwe is the independent behavioral validation layer.</h2>
-          <div className="max-w-5xl space-y-4 mb-8">
-            <p className="text-sm text-foreground-muted leading-relaxed">
+          <h2 className="font-display fluid-heading text-foreground mb-5">Ikwe is the independent behavioral validation layer.</h2>
+          <div className="measure space-y-4 mb-8">
+            <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
               We run structured evaluation on human-facing AI systems using the EQ Safety Benchmark, a two-layer
               framework that measures behavioral safety risk across emotionally sensitive contexts.
             </p>
-            <p className="text-sm text-foreground-muted leading-relaxed">
+            <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
               Every evaluation produces versioned, reproducible documentation. Not a score on a dashboard. A defensible
               audit record structured for board review, compliance reference, and regulatory inquiry.
             </p>
-            <p className="text-sm text-foreground-muted leading-relaxed">
+            <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
               We have no commercial affiliation with AI developers. Our independence is structural, not claimed.
             </p>
           </div>
@@ -157,7 +164,7 @@ export default function Home() {
 
         <section className="py-14 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Evidence</p>
-          <p className="text-sm text-foreground-muted leading-relaxed max-w-5xl mb-7">
+          <p className="text-sm text-foreground-muted leading-relaxed measure mb-7 text-pretty">
             Across 21,000+ individual model outputs, evaluated against 79 structured scenarios in 12 behavioral risk
             domains, this is what structured behavioral evaluation surfaces in unvalidated systems:
           </p>
@@ -180,7 +187,7 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <p className="text-sm text-foreground-muted leading-relaxed max-w-5xl mt-6">
+          <p className="text-sm text-foreground-muted leading-relaxed measure mt-6 text-pretty">
             These are baseline rates across the category. Your system may perform better or worse. Structured
             evaluation is how you find out before a user does.
           </p>
@@ -188,7 +195,7 @@ export default function Home() {
         </section>
 
         <section className="py-14 border-b border-border">
-          <h2 className="font-display text-3xl text-foreground mb-8">How the evaluation works</h2>
+          <h2 className="font-display fluid-heading text-foreground mb-8">How the evaluation works</h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             {evaluationSteps.map((step, index) => (
               <article
@@ -212,15 +219,21 @@ export default function Home() {
         </section>
 
         <section className="py-14 border-b border-border">
-          <h2 className="font-display text-3xl text-foreground mb-5">Where we work</h2>
-          <p className="text-sm text-foreground-muted leading-relaxed max-w-5xl mb-6">
+          <h2 className="font-display fluid-heading text-foreground mb-5">Where we work</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed measure mb-6 text-pretty">
             Ikwe works with any organization deploying conversational AI in contexts where a failed response carries
             real consequences: regulatory, legal, clinical, financial, or human.
           </p>
-          <p className="text-sm text-foreground-muted leading-relaxed max-w-5xl mb-6">
-            Healthcare AI and digital health - Mental health and therapy technology - Financial services - Legal and HR
-            platforms - Enterprise AI in regulated operations - Consumer AI with vulnerable user populations
-          </p>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {sectors.map((sector) => (
+              <span
+                key={sector}
+                className="inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs text-foreground-muted bg-background-card"
+              >
+                {sector}
+              </span>
+            ))}
+          </div>
           <p className="text-sm text-foreground">
             If the behavioral failure of your AI system could become a liability (regulatory, legal, or reputational),
             that is our scope.
@@ -231,7 +244,7 @@ export default function Home() {
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">
             The Behavioral Risk Loop
           </p>
-          <p className="text-sm text-foreground-muted leading-relaxed max-w-5xl mb-8">
+          <p className="text-sm text-foreground-muted leading-relaxed measure mb-8 text-pretty">
             In emotionally sensitive contexts, AI behavioral failures are not isolated events. They create conditions
             for the next failure.
           </p>
@@ -247,15 +260,15 @@ export default function Home() {
             ))}
           </div>
 
-          <p className="text-sm text-safe mt-6 font-medium max-w-5xl">
+          <p className="text-sm text-safe mt-6 font-medium measure text-pretty">
             This loop is measurable. Ikwe&apos;s evaluation framework identifies it at the pattern level before it reaches
             incident scale.
           </p>
         </section>
 
         <section className="py-14">
-          <h2 className="font-display text-3xl text-foreground mb-3">Know where your system stands.</h2>
-          <p className="text-sm text-foreground-muted mb-6 max-w-3xl">
+          <h2 className="font-display fluid-heading text-foreground mb-3">Know where your system stands.</h2>
+          <p className="text-sm text-foreground-muted mb-6 measure-tight text-pretty">
             Structured evaluation takes the guesswork out of behavioral safety. The audit is where that starts.
           </p>
           <div className="flex flex-wrap gap-4 mb-8">

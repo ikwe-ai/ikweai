@@ -46,7 +46,7 @@ export default function PageShell({ children }: PageShellProps) {
       <div aria-hidden="true" className="page-parallax page-parallax-a" />
       <div aria-hidden="true" className="page-parallax page-parallax-b" />
       <div aria-hidden="true" className="page-canvas-glow" />
-      <div className="container mx-auto max-w-6xl px-6 relative z-10">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 relative z-10">
         <div className="page-frame">{children}</div>
       </div>
     </main>

@@ -34,8 +34,8 @@ export default function Reports() {
       />
 
       <section className="py-14 border-b border-border">
-        <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4">What you receive from an Ikwe engagement</h1>
-        <p className="text-lg text-foreground-muted leading-relaxed max-w-3xl mb-8">
+        <h1 className="font-display fluid-title text-foreground mb-4">What you receive from an Ikwe engagement</h1>
+        <p className="text-foreground-muted lede mb-8">
           Every audit produces board-ready documentation. Here is what that looks like.
         </p>
         <div className="flex flex-wrap gap-3">

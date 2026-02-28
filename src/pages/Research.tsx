@@ -33,8 +33,8 @@ export default function Research() {
         <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">
           Research Summary · Updated {BENCHMARK_CURRENT.lastUpdated}
         </p>
-        <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4">EQ Safety Benchmark</h1>
-        <p className="text-lg text-foreground-muted leading-relaxed max-w-4xl mb-6">
+        <h1 className="font-display fluid-title text-foreground mb-4">EQ Safety Benchmark</h1>
+        <p className="text-foreground-muted lede mb-6">
           The EQ Safety Benchmark is Ikwe&apos;s structured evaluation framework for measuring behavioral safety risk in
           AI systems during emotionally vulnerable interactions. This page covers what we measured, how we measured it,
           and what the findings mean.

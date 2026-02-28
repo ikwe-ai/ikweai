@@ -12,7 +12,7 @@ export default function Audit() {
         "Risk classification and failure mode map",
         "Versioned evidence package for compliance review",
       ],
-      pricing: "Typical scope: $35K-$50K",
+      pricing: "Pricing is shared in a scoped proposal after intake review.",
       tone: "default",
     },
     {
@@ -24,7 +24,7 @@ export default function Audit() {
         "Prompt/guardrail update support",
         "Retest readiness and governance documentation updates",
       ],
-      pricing: "Billable stage, scoped to remediation depth",
+      pricing: "Billable stage. Scope and commercial terms are set during remediation planning.",
       tone: "default",
     },
     {
@@ -36,7 +36,7 @@ export default function Audit() {
         "Drift alerts and updated risk signals",
         "Continuous governance continuity artifacts",
       ],
-      pricing: "Typical scope: $175K-$250K per endpoint / year",
+      pricing: "Monitoring scope and commercial terms are set by endpoint profile and deployment context.",
       tone: "default",
     },
     {
@@ -44,7 +44,7 @@ export default function Audit() {
       title: "Certification (Coming)",
       body: "Ikwe certification is in formal program development for 2026. Eligibility is pathway-based, not application-based, and follows completed audit, implementation support, and monitoring cycle standards.",
       includes: [],
-      pricing: "Program in development",
+      pricing: "Program in development (2026)",
       tone: "coming",
     },
   ] as const;
@@ -67,8 +67,8 @@ export default function Audit() {
 
       <section className="py-14 border-b border-border">
         <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Engagement Pathway</p>
-        <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4">Audit &amp; Validation</h1>
-        <p className="text-lg text-foreground-muted leading-relaxed max-w-4xl mb-6">
+        <h1 className="font-display fluid-title text-foreground mb-4">Audit &amp; Validation</h1>
+        <p className="text-foreground-muted lede mb-6">
           Ikwe is the independent behavioral validation layer for human-facing AI. This pathway is designed to move
           from measured baseline to operational risk control, without guesswork and without governance blind spots.
         </p>
@@ -124,9 +124,12 @@ export default function Audit() {
           ))}
         </div>
 
-        <p className="text-sm text-foreground-muted mt-6 max-w-5xl">
+        <p className="text-sm text-foreground-muted mt-6 measure text-pretty">
           Organizations that complete the full validation cycle are eligible for Ikwe certification as the program
           formalizes.
+        </p>
+        <p className="text-xs text-foreground-subtle mt-2 measure text-pretty">
+          Commercial terms are provided through scoped review and audit intake, not published on the public page.
         </p>
       </section>
 
@@ -145,8 +148,8 @@ export default function Audit() {
       </section>
 
       <section id="request-start" className="py-14 max-w-4xl">
-        <h2 className="font-display text-2xl text-foreground mb-3">Request an Audit</h2>
-        <p className="text-sm text-foreground-muted leading-relaxed mb-5">
+        <h2 className="font-display fluid-heading text-foreground mb-3">Request an Audit</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-5 measure text-pretty">
           Tell us what your system does, where it is deployed, and what timeline you are targeting. We will respond
           within two business days with a scoped recommendation.
         </p>
