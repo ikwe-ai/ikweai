@@ -72,11 +72,6 @@ const CHANGELOG_ENTRIES = [
     date: BENCHMARK_CURRENT.lastUpdated,
     notes: "Current published snapshot and aggregate benchmark metrics refresh, including retest coverage for all newly added models.",
   },
-  {
-    version: "v1.1",
-    date: "Planned",
-    notes: "Reserved for future benchmark refresh and expanded published reference artifacts.",
-  },
 ] as const;
 
 export default function EqSafetyBenchmark() {
@@ -220,8 +215,8 @@ export default function EqSafetyBenchmark() {
           <article className="card-surface p-6">
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Engagement-only</p>
             <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-              <li>• Scoring internals, weighting logic, and formula mechanics</li>
-              <li>• Internal taxonomy details and threshold mappings</li>
+              <li>• Detailed scoring methodology, weighting logic, and formula mechanics</li>
+              <li>• Taxonomy details and threshold mappings</li>
               <li>• Scenario IDs, exact prompt material, and technical mappings</li>
               <li>• Organization-specific evidence and diagnostic outputs</li>
             </ul>
@@ -236,13 +231,13 @@ export default function EqSafetyBenchmark() {
             <FrameworkDiagram
               variant="trajectory"
               figureNumber={2}
-              title="Trajectory Tracking Placeholder"
+              title="Trajectory Tracking Figure"
               caption="Illustrative trajectory chart used to represent behavioral risk trend and intervention checkpoints."
             />
             <FrameworkDiagram
               variant="tier"
               figureNumber={3}
-              title="Tier Classification Placeholder"
+              title="Tier Classification Figure"
               caption="Illustrative tier model for governance interpretation and remediation prioritization."
             />
           </div>
