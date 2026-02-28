@@ -3,12 +3,6 @@ import PageMeta from "@/components/PageMeta";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 export default function Reports() {
-  const atAGlanceTags = [
-    "Board + legal + compliance + technical",
-    "Executive summaries + evidence artifacts",
-    "Public samples, detailed engagement outputs",
-  ] as const;
-
   const outputPreviews = [
     {
       label: "Preview",
@@ -62,16 +56,9 @@ export default function Reports() {
             View Output Previews ↓
           </a>
         </div>
-        <div className="flex flex-wrap gap-2 mt-4">
-          {atAGlanceTags.map((tag) => (
-            <span
-              key={tag}
-              className="inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs text-foreground-muted bg-background-card"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+        <p className="text-xs text-foreground-subtle mt-4">
+          Built for board, legal, compliance, and technical stakeholders.
+        </p>
       </section>
 
       <section id="output-previews" className="py-14 border-b border-border">
