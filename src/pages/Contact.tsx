@@ -23,6 +23,21 @@ const timelines = [
   "Exploratory — no fixed timeline",
 ];
 
+const intakeSnapshot = [
+  {
+    label: "For CTO",
+    text: "Share deployment context, model surface, and current risk concerns so scope can match technical reality.",
+  },
+  {
+    label: "For CFO",
+    text: "Define the decision you need to support: governance review, liability readiness, or procurement assurance.",
+  },
+  {
+    label: "For Legal/Compliance",
+    text: "Clarify regulatory context and artifact needs to align reporting outputs from day one.",
+  },
+] as const;
+
 export default function Contact() {
   const [form, setForm] = useState({
     name: "",
@@ -116,6 +131,15 @@ export default function Contact() {
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-8 lg:gap-10 items-start">
             <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 gap-4">
+                {intakeSnapshot.map((item) => (
+                  <article key={item.label} className="card-surface p-5">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.11em] text-lilac mb-2">{item.label}</p>
+                    <p className="text-sm text-foreground-muted leading-relaxed text-pretty">{item.text}</p>
+                  </article>
+                ))}
+              </div>
+
               <article className="card-surface p-6">
                 <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">What To Include</p>
                 <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
