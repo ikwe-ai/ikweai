@@ -688,6 +688,38 @@
     transform: translateY(-2px);
   }
 
+  .pathway-card,
+  .pathway-coming {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pathway-card::before,
+  .pathway-coming::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: hsl(var(--lilac) / 0.82);
+  }
+
+  .pathway-card {
+    background:
+      linear-gradient(135deg, hsl(var(--background-card)) 0%, hsl(var(--background-surface)) 100%);
+  }
+
+  .pathway-coming {
+    background:
+      linear-gradient(135deg, hsl(var(--background-surface)) 0%, hsl(var(--background-card)) 100%);
+    border-color: hsl(var(--border-2));
+  }
+
+  .pathway-coming::before {
+    background: hsl(var(--foreground-subtle) / 0.55);
+  }
+
   a.bg-lilac,
   button.bg-lilac {
     border: 1px solid hsl(var(--lilac-bright) / 0.6);
