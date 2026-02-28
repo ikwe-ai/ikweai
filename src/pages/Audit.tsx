@@ -60,7 +60,7 @@ export default function Audit() {
             Start Certification Intake
           </a>
           <a
-            href="/technology/architecture"
+            href="/archive/architecture"
             className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
           >
             View Governance Framework
