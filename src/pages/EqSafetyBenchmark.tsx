@@ -70,7 +70,7 @@ const CHANGELOG_ENTRIES = [
   {
     version: "v1.0 (current update)",
     date: BENCHMARK_CURRENT.lastUpdated,
-    notes: "Current published snapshot and aggregate benchmark metrics refresh.",
+    notes: "Current published snapshot and aggregate benchmark metrics refresh, including retest coverage for all newly added models.",
   },
   {
     version: "v1.1",
