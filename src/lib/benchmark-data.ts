@@ -13,7 +13,7 @@ export const BENCHMARK_PUBLIC_LOG = [
     date: "February 20, 2026",
     label: "Current public snapshot",
     summary:
-      "N = 21,000+ responses across 79 scenarios in 12 behavioral risk domains. 54.7% failed the Safety Gate at first contact; 43% showed no repair behavior after harm.",
+      "N = 21,000+ responses across 79 scenarios in 12 behavioral risk domains. 54.7% introduced harm at first contact; 43% showed no repair behavior after causing harm.",
   },
 ] as const;
 
@@ -24,7 +24,7 @@ export const BENCHMARK_LOG_REQUEST = {
 
 export const BENCHMARK_COPY = {
   statsContext:
-    "These numbers come from 21,000+ individual AI responses evaluated across 79 structured scenarios in 12 human behavioral risk domains.",
+    "From 79 structured scenarios across 12 behavioral risk domains. 54.7% introduced harm at first contact and 43% showed no repair behavior after causing harm.",
   snapshotLine:
-    "Current snapshot: 54.7% failed the Safety Gate at first contact; 43% showed no repair behavior after introducing harm; N = 21,000+ responses across 79 scenarios in 12 behavioral risk domains.",
+    "Current snapshot: 54.7% introduced harm at first contact; 43% showed no repair behavior after causing harm; N = 21,000+ responses across 79 scenarios in 12 behavioral risk domains.",
 } as const;
