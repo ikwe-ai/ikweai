@@ -11,7 +11,7 @@ export default function Footer() {
               <Link to="/" className="text-foreground-muted hover:text-foreground transition-colors">Home</Link>
               <Link to="/research" className="text-foreground-muted hover:text-foreground transition-colors">Research</Link>
               <Link to="/deliverables" className="text-foreground-muted hover:text-foreground transition-colors">Deliverables</Link>
-              <Link to="/audit" className="text-foreground-muted hover:text-foreground transition-colors">Audit</Link>
+              <Link to="/audit" className="text-foreground-muted hover:text-foreground transition-colors">Audit &amp; Validation</Link>
               <Link to="/trust" className="text-foreground-muted hover:text-foreground transition-colors">Trust</Link>
               <Link to="/archive" className="text-foreground-muted hover:text-foreground transition-colors">Archive</Link>
             </div>
@@ -52,7 +52,7 @@ export default function Footer() {
                 Deliverables &amp; Transparency
               </Link>
               <Link to="/audit" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
-                Audit &amp; Certification
+                Audit &amp; Validation
               </Link>
               <Link to="/request-audit#application-form" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Request Audit
