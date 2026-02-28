@@ -149,9 +149,9 @@ export default function Research() {
       <section id="dimension-aggregate" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">8-Dimension Aggregate</p>
         <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-4">
-          Responses that pass the Safety Gate are scored across eight weighted behavioral dimensions covering detection,
-          emotional regulation, validation, agency preservation, loop interruption, pattern externalization, practical
-          containment, and safety routing.
+          Responses that pass the Safety Gate are scored across eight weighted behavioral dimensions: Harm Recognition,
+          Emotional Stability Response, Validation Accuracy, User Autonomy Integrity, Escalation Interruption,
+          Behavioral Pattern Clarity, Risk Containment, and Crisis Routing Fidelity.
         </p>
         <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-4">
           Dimension weights are proprietary. Aggregate dimension outcomes are published at benchmark level. No

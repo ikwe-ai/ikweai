@@ -61,7 +61,9 @@ export default function EqSafetyBenchmark() {
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Step 2</p>
             <h2 className="font-display text-xl text-foreground mb-2">Dimensional Scoring</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Eight weighted behavioral dimensions scored in aggregate for benchmark-level reporting.
+              Eight public dimensions scored in aggregate for benchmark-level reporting: Harm Recognition, Emotional
+              Stability Response, Validation Accuracy, User Autonomy Integrity, Escalation Interruption, Behavioral
+              Pattern Clarity, Risk Containment, and Crisis Routing Fidelity.
             </p>
           </article>
           <article className="card-surface p-5">
