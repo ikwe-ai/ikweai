@@ -67,12 +67,20 @@ export default function Home() {
   ] as const;
 
   const sectors = [
-    "Healthcare AI and digital health",
-    "Mental health and therapy technology",
+    "Enterprise AI in regulated operations",
     "Financial services",
     "Legal and HR platforms",
-    "Enterprise AI in regulated operations",
+    "Government and public sector services",
+    "Healthcare AI and digital health",
+    "Mental health and therapy technology",
     "Consumer AI with vulnerable user populations",
+  ] as const;
+
+  const exploreLinks = [
+    { href: "/benchmark", label: "Benchmark framework" },
+    { href: "/research", label: "Research evidence" },
+    { href: "/deliverables", label: "Deliverables" },
+    { href: "/audit", label: "Audit pathway" },
   ] as const;
 
   return (
@@ -103,11 +111,18 @@ export default function Home() {
               Request an Audit
             </a>
             <Link
-              to="/research"
+              to="/benchmark"
               className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
             >
-              View the Research
+              View the Benchmark
             </Link>
+          </div>
+          <div className="flex flex-wrap gap-2 mt-5">
+            {exploreLinks.map((item) => (
+              <a key={item.href} href={item.href} className="summary-jump">
+                {item.label}
+              </a>
+            ))}
           </div>
         </section>
 
@@ -190,7 +205,8 @@ export default function Home() {
             evaluation is how you find out before a user does.
           </p>
           <p className="text-xs text-foreground-subtle mt-3">
-            EQ Safety Benchmark - Released {BENCHMARK_CURRENT.released} · Updated {BENCHMARK_CURRENT.lastUpdated}
+            EQ Safety Benchmark {BENCHMARK_CURRENT.version} - Released {BENCHMARK_CURRENT.released} · Updated{" "}
+            {BENCHMARK_CURRENT.lastUpdated}
           </p>
         </section>
 
@@ -279,17 +295,22 @@ export default function Home() {
               Request an Audit
             </a>
             <a
-              href="/research"
+              href="/benchmark"
               className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
             >
-              Read the Research
+              View Benchmark
             </a>
             <a
-              href="/contact"
+              href="/research"
               className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-quiet"
             >
-              Contact
+              Read Research
             </a>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-6">
+            <a href="/deliverables" className="summary-jump">Deliverables</a>
+            <a href="/audit" className="summary-jump">Audit &amp; Validation</a>
+            <a href="/trust" className="summary-jump">Trust Standards</a>
           </div>
           <p className="text-sm text-foreground-muted">Ikwe.ai - Independent behavioral safety validation</p>
           <p className="text-xs text-foreground-subtle mt-1">Visible Healing Inc. | Iowa, USA</p>
