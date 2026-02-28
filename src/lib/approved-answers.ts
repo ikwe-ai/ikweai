@@ -118,10 +118,10 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     id: "ikwe-quick-facts",
     keywords: ["ikwe quick facts", "give me ikwe quick facts", "quick highlights", "ikwe highlights", "ikwe overview"],
     text:
-      `Ikwe quick facts (updated ${BENCHMARK_CURRENT.lastUpdated}): Ikwe is an independent third-party behavioral AI auditor. Current benchmark evidence shows ${BENCHMARK_CURRENT.failedGatePct} failed the Safety Gate at first contact, ${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm, with ${BENCHMARK_CURRENT.nValue} outputs evaluated across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} behavioral risk domains.`,
+      `Ikwe quick facts (updated ${BENCHMARK_CURRENT.lastUpdated}): Ikwe is an independent third-party behavioral AI auditor. Current benchmark evidence shows ${BENCHMARK_CURRENT.failedGatePct} introduced harm at first contact, ${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm, with ${BENCHMARK_CURRENT.nValue} outputs evaluated across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} behavioral risk domains.`,
     links: [
       { label: "Homepage Overview", href: "/" },
-      { label: "EQ Safety Benchmark", href: "/eq-safety-benchmark" },
+      { label: "EQ Safety Benchmark", href: "/research" },
       { label: "Request Audit", href: "/request-audit#application-form" },
     ],
   },
@@ -137,9 +137,9 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
       "n value",
     ],
     text:
-      `Current benchmark framing (updated ${BENCHMARK_CURRENT.lastUpdated}): ${BENCHMARK_CURRENT.failedGatePct} failed the Safety Gate at first contact, ${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm, and ${BENCHMARK_CURRENT.nValue} model outputs evaluated across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} behavioral risk domains.`,
+      `Current benchmark framing (updated ${BENCHMARK_CURRENT.lastUpdated}): ${BENCHMARK_CURRENT.failedGatePct} introduced harm at first contact, ${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm, and ${BENCHMARK_CURRENT.nValue} model outputs evaluated across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} behavioral risk domains.`,
     links: [
-      { label: "EQ Safety Benchmark", href: "/eq-safety-benchmark" },
+      { label: "EQ Safety Benchmark", href: "/research" },
       { label: "Research Details", href: "/research" },
       { label: BENCHMARK_LOG_REQUEST.label, href: BENCHMARK_LOG_REQUEST.href },
     ],
@@ -151,7 +151,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
       "The benchmark uses a three-phase structure: Phase 1 Safety Gate, Phase 2 multidimensional scoring across 8 behavioral dimensions, and optional Phase 3 real-time monitoring support post-deployment.",
     links: [
       { label: "View Audit Overview", href: "/audit" },
-      { label: "Benchmark Methods", href: "/eq-safety-benchmark" },
+      { label: "Benchmark Methods", href: "/research" },
     ],
   },
   {
@@ -214,7 +214,7 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
   {
     id: "eqsb",
     title: "EQ Safety Benchmark",
-    href: "/eq-safety-benchmark",
+    href: "/research",
     summary:
       "EQ Safety Benchmark details the safety gate, multidimensional evaluation approach, and benchmark framing used for institutional behavioral risk review.",
     tags: ["eq safety benchmark", "safety gate", "audit method", "scoring"],
@@ -246,7 +246,7 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
   {
     id: "architecture",
     title: "Architecture",
-    href: "/technology/architecture",
+    href: "/archive/architecture",
     summary:
       "Architecture page outlines evaluation structure, governance framing, and how controls are organized in public-facing terms.",
     tags: ["architecture", "controls", "governance", "system"],
@@ -254,7 +254,7 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
   {
     id: "about",
     title: "About & Independence",
-    href: "/about",
+    href: "/archive/about",
     summary:
       "About page covers independence standards, governance commitments, and public institutional positioning of Ikwe.ai.",
     tags: ["about", "independence", "company", "governance"],

@@ -18,7 +18,7 @@ export default function EqSafetyBenchmark() {
         title="EQ Safety Benchmark (EQSB)"
         summary="Benchmark overview for institutional review. This page shows framework structure, current benchmark outcomes, and report request options."
         highlights={[
-          `${BENCHMARK_CURRENT.failedGatePct} failed the Safety Gate at first contact`,
+          `${BENCHMARK_CURRENT.failedGatePct} introduced harm at first contact`,
           `${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm`,
           `${BENCHMARK_CURRENT.nValue} outputs across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} risk domains`,
         ]}
@@ -35,7 +35,7 @@ export default function EqSafetyBenchmark() {
       <section id="eqsb-metrics" className="py-10 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Current Benchmark Snapshot</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <StatCard value={BENCHMARK_CURRENT.failedGatePct} label="Failed the Safety Gate" sub="Introduced harm at first contact" />
+          <StatCard value={BENCHMARK_CURRENT.failedGatePct} label="Introduced harm at first contact" sub="Introduced harm at first contact" />
           <StatCard value={BENCHMARK_CURRENT.noRepairPct} label="No repair behavior after harm" sub="Within first-contact failures" delay={80} />
           <StatCard
             value={BENCHMARK_CURRENT.nValue}
