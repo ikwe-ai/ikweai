@@ -120,7 +120,7 @@ export default function Research() {
         </div>
 
         <p className="text-sm text-foreground-muted max-w-4xl">
-          Last updated: {BENCHMARK_CURRENT.lastUpdated}. Refreshed as new datasets and model outputs are evaluated.
+          Last updated: {BENCHMARK_CURRENT.lastUpdated}. {BENCHMARK_CURRENT.updateNote}
         </p>
       </section>
 
