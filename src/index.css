@@ -568,6 +568,39 @@
     background: hsl(var(--amber) / 0.88);
   }
 
+  .fluid-title {
+    font-size: clamp(2rem, 5.2vw, 3.9rem);
+    line-height: 1.06;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  .fluid-heading {
+    font-size: clamp(1.5rem, 3.1vw, 2.2rem);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    line-height: 1.62;
+    max-width: 68ch;
+    text-wrap: pretty;
+  }
+
+  .measure {
+    max-width: 68ch;
+  }
+
+  .measure-tight {
+    max-width: 58ch;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
   .summary-headline-strip {
     display: flex;
     flex-wrap: wrap;
@@ -732,6 +765,10 @@
         radial-gradient(86% 46% at 8% -10%, hsl(var(--lilac) / 0.14), transparent 72%),
         radial-gradient(84% 44% at 96% -8%, hsl(var(--aurora-teal) / 0.09), transparent 74%),
         linear-gradient(180deg, hsl(264 22% 6%) 0%, hsl(var(--background) / 0.98) 45%, hsl(var(--background)) 100%);
+    }
+
+    .summary-headline-item {
+      flex-basis: 100%;
     }
   }
 

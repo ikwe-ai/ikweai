@@ -82,8 +82,8 @@ export default function SummaryHero({
       >
         <div className="max-w-3xl">
           <p className="font-mono text-[11px] text-lilac uppercase tracking-widest mb-3">{kicker}</p>
-          <h1 className="font-display text-3xl md:text-[2.7rem] text-foreground mb-3 leading-tight">{title}</h1>
-          <p className="text-[0.95rem] md:text-base text-foreground-muted max-w-2xl leading-relaxed">{summary}</p>
+          <h1 className="font-display fluid-title text-foreground mb-3">{title}</h1>
+          <p className="text-foreground-muted lede">{summary}</p>
 
           {(primaryAction || secondaryAction) && (
             <div className="flex flex-wrap gap-2.5 mt-5">

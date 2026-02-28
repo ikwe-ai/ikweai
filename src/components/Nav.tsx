@@ -33,7 +33,7 @@ export default function Nav() {
         scrolled ? "nav-blur" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto max-w-6xl px-6">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex h-16 items-center justify-between gap-4">
           <Link
             to="/"
@@ -97,7 +97,7 @@ export default function Nav() {
 
       {mobileOpen ? (
         <div className="lg:hidden nav-blur border-t border-border">
-          <nav className="container mx-auto max-w-6xl px-6 py-5 flex flex-col gap-3">
+          <nav className="container mx-auto max-w-6xl px-4 sm:px-6 py-5 flex flex-col gap-3">
             <Link
               to="/"
               className={`rounded border px-3 py-2 text-sm ${
