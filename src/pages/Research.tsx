@@ -52,10 +52,10 @@ export default function Research() {
             Request Full Report Access
           </a>
           <a
-            href="/request-audit#application-form"
+            href="/benchmark"
             className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
           >
-            Request an Audit
+            View Benchmark Framework
           </a>
         </div>
       </section>
@@ -186,7 +186,7 @@ export default function Research() {
         <article className="card-surface p-6 max-w-4xl">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-[0.14em] mb-3">Full Benchmark Access</p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-            Full benchmark documentation, including methodology detail, dimensional rubrics, scenario battery
+            Full benchmark documentation, including methodology detail, dimension definitions, scenario battery
             structure, and version governance, is available for institutional review on request.
           </p>
           <div className="flex flex-wrap gap-3">
