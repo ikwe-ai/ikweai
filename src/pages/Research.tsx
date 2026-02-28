@@ -19,13 +19,13 @@ export default function Research() {
   const parsePercent = (value: string) => Number.parseFloat(value.replace("%", ""));
   const formatPercent = (value: number) => (Number.isInteger(value) ? `${value}%` : `${value.toFixed(1)}%`);
 
-  const introducedHarmPct = parsePercent(BENCHMARK_CURRENT.failedGatePct);
-  const noRepairPct = parsePercent(BENCHMARK_CURRENT.noRepairPct);
-  const someRepairPct = Math.max(0, +(100 - noRepairPct).toFixed(1));
+  const ssfAnyPct = parsePercent(BENCHMARK_CURRENT.failedGatePct);
+  const gateFailPct = parsePercent(BENCHMARK_CURRENT.noRepairPct);
+  const gatePassPct = Math.max(0, +(100 - gateFailPct).toFixed(1));
 
   const benchmarkSummaryRows = [
-    { label: "Introduced harm at first contact", value: introducedHarmPct },
-    { label: "No repair behavior after harm", value: noRepairPct },
+    { label: "SSF-Any prevalence", value: ssfAnyPct },
+    { label: "Aggregate safety gate FAIL", value: gateFailPct },
   ] as const;
 
   return (
@@ -49,9 +49,9 @@ export default function Research() {
         <div className="summary-headline-strip mb-7 max-w-4xl">
           <div className="summary-headline-item">{BENCHMARK_CURRENT.nShort} individual model outputs evaluated</div>
           <div className="summary-headline-item">
-            {BENCHMARK_CURRENT.scenarios} structured scenarios across {BENCHMARK_CURRENT.domains} behavioral risk domains
+            {BENCHMARK_CURRENT.scenarios} structured scenarios across {BENCHMARK_CURRENT.domains} categories
           </div>
-          <div className="summary-headline-item">Two-phase benchmark: Safety Gate + post-harm behavior analysis</div>
+          <div className="summary-headline-item">Study I framework: SSF prevalence + Safety Gate + quality scoring</div>
         </div>
         <div className="flex flex-wrap gap-3">
           <a
@@ -77,12 +77,12 @@ export default function Research() {
             system is responding unsafely right now. Not hypothetically. At measurable rates.
           </p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-            More than half of AI responses introduced harm at first contact. The benchmark does not ask whether AI can
-            be harmful, it measures how often it is.
+            {BENCHMARK_CURRENT.failedGatePct} of responses showed at least one Safety-Sabotaging Feature (SSF) pattern.
+            This metric captures prevalence, not binary gate failure.
           </p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-            {BENCHMARK_CURRENT.noRepairPct} of responses showed no repair behavior after causing harm. The system not
-            only failed, it kept going in the same direction.
+            {BENCHMARK_CURRENT.noRepairPct} of responses failed the aggregate safety gate under the stricter binary
+            threshold used for Study I.
           </p>
           <p className="text-sm text-foreground-muted leading-relaxed">
             These are baseline rates. Your specific system may perform better or worse. The only way to know is
@@ -126,40 +126,43 @@ export default function Research() {
       </section>
 
       <section id="phase-1-results" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">Phase 1 — Safety Gate Results</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">
+          Metric 1 — SSF-Any Prevalence
+        </p>
         <article className="card-surface p-6 max-w-3xl mb-5 risk-panel">
           <p className="font-display text-5xl text-danger mb-2">{BENCHMARK_CURRENT.failedGatePct}</p>
-          <p className="text-sm text-foreground-muted">Introduced harm at first contact</p>
+          <p className="text-sm text-foreground-muted">Responses with at least one SSF pattern</p>
         </article>
         <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl">
-          The Safety Gate is a binary screen applied before any dimensional scoring. It asks one question: did this
-          response introduce harm at first contact? More than half did. This is not a scoring nuance, it is a
-          categorical failure at the first threshold.
+          SSF-Any prevalence captures how often a response contains at least one harmful pattern. This is distinct from
+          aggregate gate failure, which applies a stricter binary threshold.
         </p>
       </section>
 
       <section id="phase-2-results" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">Phase 2 — Post-Harm Behavior</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">
+          Metric 2 — Safety Gate Outcomes
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mb-5">
           <article className="card-surface p-6">
             <p className="font-display text-5xl text-danger mb-2">{BENCHMARK_CURRENT.noRepairPct}</p>
-            <p className="text-sm text-foreground-muted">No repair behavior after introducing harm</p>
+            <p className="text-sm text-foreground-muted">Aggregate safety gate FAIL</p>
           </article>
           <article className="card-surface p-6">
-            <p className="font-display text-5xl text-foreground mb-2">{formatPercent(someRepairPct)}</p>
-            <p className="text-sm text-foreground-muted">Showed at least some repair signal after introducing harm</p>
+            <p className="font-display text-5xl text-foreground mb-2">{formatPercent(gatePassPct)}</p>
+            <p className="text-sm text-foreground-muted">Aggregate safety gate PASS</p>
           </article>
         </div>
         <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl">
-          Phase 2 evaluates only the responses that introduced harm in Phase 1. Of those, {BENCHMARK_CURRENT.noRepairPct}{" "}
-          showed no correction, no acknowledgment, and no change in direction. The system caused harm and continued.
+          The aggregate gate fail rate across Study I is {BENCHMARK_CURRENT.noRepairPct}. The remaining{" "}
+          {formatPercent(gatePassPct)} passed the binary safety gate threshold.
         </p>
       </section>
 
       <section id="dimension-aggregate" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">8-Dimension Aggregate</p>
         <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-4">
-          Responses that pass the Safety Gate are scored across eight weighted behavioral dimensions: Harm Recognition,
+          In Study I, PASS runs are quality-scored across eight weighted behavioral dimensions: Harm Recognition,
           Response Sequencing, Validation Accuracy, User Autonomy Integrity, Escalation Interruption,
           Behavioral Pattern Clarity, Risk Containment, and Crisis Routing Fidelity.
         </p>
