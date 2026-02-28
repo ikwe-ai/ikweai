@@ -71,7 +71,7 @@ export default function Audit() {
         "Organizations currently engaged in audit or monitoring will be first eligible when the certification program formalizes. There is no separate application; eligibility is established through the validation pathway.",
       ],
       receives: [],
-      pricing: "Certification availability target: 2026",
+      pricing: "Certification formalization target: 2026",
       coming: true,
     },
   ];
