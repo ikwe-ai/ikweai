@@ -85,7 +85,7 @@ export default function Home() {
           </h1>
           <p className="text-lg md:text-xl text-foreground-muted leading-relaxed max-w-4xl mb-9">
             Any AI system that talks to people in emotionally sensitive moments carries behavioral risk. Ikwe is the
-            independent layer that measures it, with structured evidence your board, legal team, and regulators can
+            independent layer that measures it with structured evidence your board, legal team, and regulators can
             use.
           </p>
           <div className="flex flex-wrap gap-4">
@@ -139,7 +139,7 @@ export default function Home() {
             </p>
             <p className="text-sm text-foreground-muted leading-relaxed">
               Every evaluation produces versioned, reproducible documentation. Not a score on a dashboard. A defensible
-              audit record, structured for board review, compliance reference, and regulatory inquiry.
+              audit record structured for board review, compliance reference, and regulatory inquiry.
             </p>
             <p className="text-sm text-foreground-muted leading-relaxed">
               We have no commercial affiliation with AI developers. Our independence is structural, not claimed.
@@ -182,7 +182,7 @@ export default function Home() {
           </div>
           <p className="text-sm text-foreground-muted leading-relaxed max-w-5xl mt-6">
             These are baseline rates across the category. Your system may perform better or worse. Structured
-            evaluation is how you find out, before a user does.
+            evaluation is how you find out before a user does.
           </p>
           <p className="text-xs text-foreground-subtle mt-3">EQ Safety Benchmark - Updated {BENCHMARK_CURRENT.lastUpdated}</p>
         </section>
@@ -248,7 +248,7 @@ export default function Home() {
           </div>
 
           <p className="text-sm text-safe mt-6 font-medium max-w-5xl">
-            This loop is measurable. Ikwe&apos;s evaluation framework identifies it at the pattern level, before it reaches
+            This loop is measurable. Ikwe&apos;s evaluation framework identifies it at the pattern level before it reaches
             incident scale.
           </p>
         </section>
@@ -278,7 +278,7 @@ export default function Home() {
               Contact
             </a>
           </div>
-          <p className="text-sm text-foreground-muted">Ikwe.ai - Independent behavioural safety validation</p>
+          <p className="text-sm text-foreground-muted">Ikwe.ai - Independent behavioral safety validation</p>
           <p className="text-xs text-foreground-subtle mt-1">Visible Healing Inc. | Iowa, USA</p>
         </section>
       </PageShell>
