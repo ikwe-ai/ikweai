@@ -206,7 +206,7 @@ export default function Audit() {
 
       <section id="what-we-measure" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">What We Measure</p>
-        <div className="card-surface p-6 max-w-5xl border-safe bg-[hsl(176_30%_18%)]">
+        <div className="card-surface p-6 max-w-5xl safe-panel">
           <h2 className="font-display fluid-heading text-foreground mb-4">What behavioral safety evaluation actually measures</h2>
           <ul className="space-y-3 text-sm text-foreground-muted leading-relaxed">
             {measures.map((item) => (
