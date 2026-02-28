@@ -13,7 +13,7 @@ import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 //
 // ✅ LOCKED METHODOLOGY LINEAGE:
 //    "Current benchmark snapshot reflects [scenario count] structured scenarios in
-//     [domain count] behavioral risk domains, scored through a Safety Gate and an
+//     [domain count] categories, scored through a Safety Gate and an
 //     8-dimension weighted model (weighting proprietary)."
 //
 // ✅ LOCKED ARTIFACT GATING:

@@ -213,8 +213,8 @@ export default function Audit() {
           <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
             A behavioral safety audit is a structured, independent evaluation of how your AI system responds when users
             are in emotionally sensitive states. It uses the EQ Safety Benchmark, a two-layer framework covering a
-            binary safety screen and eight weighted behavioral dimensions, run against versioned scenarios across 12
-            behavioral risk domains.
+            binary safety screen and eight weighted behavioral dimensions, run against versioned scenarios across{" "}
+            {BENCHMARK_CURRENT.domains} categories.
           </p>
           <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
             The output is not a score on a dashboard. It is a documented risk baseline: board-ready, governance-grade,

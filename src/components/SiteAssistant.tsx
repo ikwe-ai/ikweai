@@ -229,9 +229,9 @@ export default function SiteAssistant() {
       kind: "default",
       text: [
         "Ikwe walkthrough (public facts):",
-        `• ${BENCHMARK_CURRENT.failedGatePct} introduced harm at first contact`,
-        `• ${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm`,
-        `• ${BENCHMARK_CURRENT.nValue} model outputs evaluated across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} risk domains`,
+        `• ${BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence`,
+        `• ${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail rate`,
+        `• ${BENCHMARK_CURRENT.nValue} responses evaluated across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories`,
         "",
         "Choose any step below to continue the presentation.",
       ].join("\n"),
@@ -521,8 +521,8 @@ export default function SiteAssistant() {
               Ikwe Quick Facts · Updated {BENCHMARK_CURRENT.lastUpdated}
             </p>
             <p className="text-xs text-foreground-muted leading-relaxed mb-2">
-              {BENCHMARK_CURRENT.failedGatePct} introduced harm at first contact · {BENCHMARK_CURRENT.noRepairPct} showed no
-              repair behavior · {BENCHMARK_CURRENT.nValue} outputs evaluated.
+              {BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence · {BENCHMARK_CURRENT.noRepairPct} aggregate gate fail
+              · {BENCHMARK_CURRENT.nValue} responses evaluated.
             </p>
             <div className="flex flex-wrap gap-2 mb-2">
               <button
