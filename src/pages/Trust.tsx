@@ -135,6 +135,11 @@ export default function Trust() {
         >
           Start audit intake →
         </a>
+        <div className="flex flex-wrap gap-2 mt-4">
+          <a href="/benchmark" className="summary-jump">Benchmark framework</a>
+          <a href="/research" className="summary-jump">Research evidence</a>
+          <a href="/deliverables" className="summary-jump">Deliverables</a>
+        </div>
       </section>
     </PageShell>
   );

@@ -33,7 +33,7 @@ export default function Footer() {
               </p>
             </div>
             <p className="text-xs text-foreground-subtle leading-relaxed max-w-xs">
-              Independent behavioural safety validation for human-facing AI systems.
+              Independent behavioral safety validation for human-facing AI systems.
             </p>
             <p className="text-xs text-foreground-subtle mt-4">© {new Date().getFullYear()} Visible Healing Inc. (dba Ikwe.ai)</p>
             <p className="text-xs text-foreground-subtle mt-2 leading-relaxed">

@@ -117,6 +117,10 @@ export default function EqSafetyBenchmark() {
             appliesTo="Conversational systems operating in emotionally sensitive contexts"
           />
           <div className="space-y-4">
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              Current public version is <span className="text-foreground">{BENCHMARK_CURRENT.version}</span>, updated{" "}
+              {BENCHMARK_CURRENT.lastUpdated}.
+            </p>
             <DefinitionCallout
               term="Behavioral Safety Benchmark"
               definition="A structured framework used to evaluate whether conversational AI responses reduce, maintain, or escalate behavioral risk in vulnerable user states."
@@ -312,6 +316,17 @@ export default function EqSafetyBenchmark() {
           >
             Open research evidence
           </a>
+          <a
+            href="/deliverables"
+            className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-quiet"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            View deliverables
+          </a>
+        </div>
+        <div className="flex flex-wrap gap-2 mt-4">
+          <a href="/trust" className="summary-jump">Trust standards</a>
+          <a href="/request-audit#application-form" className="summary-jump">Request intake</a>
         </div>
       </section>
     </PageShell>

@@ -15,6 +15,9 @@ export default function BenchmarkStatusNote({ className = "" }: BenchmarkStatusN
         Benchmark Update Status
       </p>
       <p className="text-xs text-foreground-muted leading-relaxed mb-1">
+        Current version: <span className="text-foreground">{BENCHMARK_CURRENT.version}</span>
+      </p>
+      <p className="text-xs text-foreground-muted leading-relaxed mb-1">
         Released: <span className="text-foreground">{BENCHMARK_CURRENT.released}</span>
       </p>
       <p className="text-xs text-foreground-muted leading-relaxed mb-1">
