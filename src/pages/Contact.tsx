@@ -7,12 +7,12 @@ import SummaryHero from "@/components/SummaryHero";
 type FormState = "idle" | "submitting" | "done" | "error";
 
 const domains = [
-  "Healthcare",
-  "Human Resources",
   "Finance",
   "Legal",
-  "Education",
+  "Human Resources",
   "Government / Public Sector",
+  "Healthcare",
+  "Education",
   "Other",
 ];
 
@@ -64,7 +64,7 @@ export default function Contact() {
   const startGuidedIntake = () => {
     setForm((prev) => ({
       ...prev,
-      domain: prev.domain || "Healthcare",
+      domain: prev.domain || "Other",
       timeline: prev.timeline || "1–3 months",
       what_they_need:
         prev.what_they_need ||

@@ -40,7 +40,7 @@ export default function Research() {
         <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">
           Research Summary · Released {BENCHMARK_CURRENT.released} · Updated {BENCHMARK_CURRENT.lastUpdated}
         </p>
-        <h1 className="font-display fluid-title text-foreground mb-4">EQ Safety Benchmark</h1>
+        <h1 className="font-display fluid-title text-foreground mb-4">EQ Safety Benchmark {BENCHMARK_CURRENT.version}</h1>
         <p className="text-foreground-muted lede mb-6">
           The EQ Safety Benchmark is Ikwe&apos;s structured evaluation framework for measuring behavioral safety risk in
           AI systems during emotionally vulnerable interactions. This page covers what we measured, how we measured it,
@@ -212,8 +212,19 @@ export default function Research() {
             >
               View Deliverables & Transparency
             </a>
+            <a
+              href="/audit"
+              className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-quiet"
+            >
+              Open Audit &amp; Validation
+            </a>
           </div>
         </article>
+        <div className="flex flex-wrap gap-2 mt-5">
+          <a href="/benchmark" className="summary-jump">Benchmark framework</a>
+          <a href="/deliverables" className="summary-jump">Deliverables</a>
+          <a href="/trust" className="summary-jump">Trust standards</a>
+        </div>
       </section>
     </PageShell>
   );

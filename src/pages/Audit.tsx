@@ -1,6 +1,7 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import EnterpriseStepper from "@/components/EnterpriseStepper";
+import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 type PathwayStage = {
   step: string;
@@ -113,6 +114,9 @@ export default function Audit() {
 
       <section className="py-14 border-b border-border">
         <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Audit &amp; Validation</p>
+        <p className="text-xs text-foreground-subtle mb-4">
+          Framework basis: EQ Safety Benchmark {BENCHMARK_CURRENT.version} · Updated {BENCHMARK_CURRENT.lastUpdated}
+        </p>
         <h1 className="font-display fluid-title text-foreground mb-4">Start with a clear picture of where your system stands.</h1>
         <p className="text-foreground-muted lede mb-6">
           Ikwe&apos;s audit is the first step in a structured validation pathway: behavioral risk baseline through
@@ -279,6 +283,11 @@ export default function Audit() {
           All intake information is treated as confidential. We do not share organization details with third parties.
           See our Trust &amp; Confidentiality page for full standards.
         </p>
+        <div className="flex flex-wrap gap-2 mt-4">
+          <a href="/benchmark" className="summary-jump">Benchmark framework</a>
+          <a href="/research" className="summary-jump">Research evidence</a>
+          <a href="/deliverables" className="summary-jump">Deliverables</a>
+        </div>
       </section>
     </PageShell>
   );

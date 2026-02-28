@@ -1,5 +1,6 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
+import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 export default function Reports() {
   const outputPreviews = [
@@ -34,6 +35,9 @@ export default function Reports() {
       />
 
       <section className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">
+          EQ Safety Benchmark {BENCHMARK_CURRENT.version} · Updated {BENCHMARK_CURRENT.lastUpdated}
+        </p>
         <h1 className="font-display fluid-title text-foreground mb-4">What you receive from an Ikwe engagement</h1>
         <p className="text-foreground-muted lede mb-8">
           Every audit produces board-ready documentation. Here is what that looks like.
@@ -109,6 +113,17 @@ export default function Reports() {
           >
             View Trust Standards
           </a>
+          <a
+            href="/benchmark"
+            className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-quiet"
+          >
+            Open Benchmark Framework
+          </a>
+        </div>
+        <div className="flex flex-wrap gap-2 mt-4">
+          <a href="/research" className="summary-jump">Research evidence</a>
+          <a href="/audit" className="summary-jump">Audit &amp; Validation</a>
+          <a href="/request-audit#application-form" className="summary-jump">Request intake</a>
         </div>
       </section>
     </PageShell>
