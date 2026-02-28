@@ -189,7 +189,9 @@ export default function Home() {
             These are baseline rates across the category. Your system may perform better or worse. Structured
             evaluation is how you find out before a user does.
           </p>
-          <p className="text-xs text-foreground-subtle mt-3">EQ Safety Benchmark - Updated {BENCHMARK_CURRENT.lastUpdated}</p>
+          <p className="text-xs text-foreground-subtle mt-3">
+            EQ Safety Benchmark - Released {BENCHMARK_CURRENT.released} · Updated {BENCHMARK_CURRENT.lastUpdated}
+          </p>
         </section>
 
         <section className="py-14 border-b border-border">
