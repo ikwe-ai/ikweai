@@ -104,6 +104,62 @@ export default function Audit() {
     body: stage.paragraphs[0],
   }));
 
+  const executiveSnapshot = [
+    {
+      label: "Primary Outcome",
+      text: "A documented behavioral risk baseline tied to governance and remediation decisions.",
+    },
+    {
+      label: "Commercial Structure",
+      text: "Stage-based engagement: audit first, then optional remediation and monitoring support.",
+    },
+    {
+      label: "Operating Model",
+      text: "Independent validation with board-ready outputs and technical evidence for engineering action.",
+    },
+  ] as const;
+
+  const cfoLens = [
+    "Independent evidence for governance, legal, and insurance discussions",
+    "Clear engagement boundaries and scoped commercial terms",
+    "Versioned reporting for audit trails and policy review",
+    "Continuity option through recurring monitoring",
+  ] as const;
+
+  const ctoLens = [
+    "Failure-mode visibility beyond internal testing coverage",
+    "Remediation partnership focused on root-pattern fixes",
+    "Re-test checkpoints tied to model and prompt changes",
+    "Drift detection against production deployment updates",
+  ] as const;
+
+  const stageMatrix = [
+    {
+      stage: "01 · Diagnostic Audit",
+      cfo: "Risk baseline and governance-ready decision context",
+      cto: "Failure patterns, severity mapping, and technical findings brief",
+      output: "Board Brief · Risk Scorecard · Evidence Pack",
+    },
+    {
+      stage: "02 · Implementation Support",
+      cfo: "Structured remediation plan with scoped workstream",
+      cto: "Working sessions, change review, and targeted re-tests",
+      output: "Remediation roadmap · Technical consultation summary",
+    },
+    {
+      stage: "03 · Active Monitoring",
+      cfo: "Ongoing oversight and continuity of governance documentation",
+      cto: "Recurring drift signals and escalation alerts",
+      output: "Quarterly re-evaluation · Drift Alert reports",
+    },
+    {
+      stage: "04 · Certification",
+      cfo: "Future formal validation destination through pathway completion",
+      cto: "Eligibility based on verified audit-remediation-retest cycle",
+      output: "Program formalization target: 2026",
+    },
+  ] as const;
+
   return (
     <PageShell>
       <PageMeta
@@ -141,6 +197,71 @@ export default function Audit() {
           >
             View the Validation Pathway ↓
           </a>
+        </div>
+        <div className="flex flex-wrap gap-2 mt-4">
+          <a href="#executive-view" className="summary-jump">Executive view</a>
+          <a href="#decision-matrix" className="summary-jump">CTO/CFO matrix</a>
+          <a href="#validation-pathway" className="summary-jump">Full pathway detail</a>
+        </div>
+      </section>
+
+      <section id="executive-view" className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Executive View</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mb-6">
+          {executiveSnapshot.map((item) => (
+            <article key={item.label} className="card-surface p-5">
+              <p className="font-mono text-[11px] uppercase tracking-[0.11em] text-lilac mb-2">{item.label}</p>
+              <p className="text-sm text-foreground-muted leading-relaxed text-pretty">{item.text}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-6xl">
+          <article className="card-surface p-6">
+            <p className="font-mono text-[11px] uppercase tracking-[0.11em] text-lilac mb-3">CFO Lens</p>
+            <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
+              {cfoLens.map((item) => (
+                <li key={item}>• {item}</li>
+              ))}
+            </ul>
+          </article>
+          <article className="card-surface p-6">
+            <p className="font-mono text-[11px] uppercase tracking-[0.11em] text-lilac mb-3">CTO Lens</p>
+            <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
+              {ctoLens.map((item) => (
+                <li key={item}>• {item}</li>
+              ))}
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="decision-matrix" className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Stage Decision Matrix</p>
+        <p className="text-sm text-foreground-muted leading-relaxed measure mb-6">
+          Quick scan for finance and technical leadership. Detailed stage descriptions follow below.
+        </p>
+        <div className="overflow-x-auto">
+          <table className="enterprise-table min-w-[940px]">
+            <thead>
+              <tr>
+                <th>Stage</th>
+                <th>CFO Decision Value</th>
+                <th>CTO Technical Value</th>
+                <th>Primary Output</th>
+              </tr>
+            </thead>
+            <tbody>
+              {stageMatrix.map((row) => (
+                <tr key={row.stage}>
+                  <td className="font-medium text-foreground">{row.stage}</td>
+                  <td>{row.cfo}</td>
+                  <td>{row.cto}</td>
+                  <td>{row.output}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
 
