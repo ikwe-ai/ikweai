@@ -9,11 +9,11 @@ export default function Footer() {
             <p className="font-mono text-[10px] uppercase tracking-widest text-foreground-subtle">Public Site Map</p>
             <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm">
               <Link to="/" className="text-foreground-muted hover:text-foreground transition-colors">Home</Link>
+              <Link to="/benchmark" className="text-foreground-muted hover:text-foreground transition-colors">Benchmark</Link>
               <Link to="/research" className="text-foreground-muted hover:text-foreground transition-colors">Research</Link>
               <Link to="/deliverables" className="text-foreground-muted hover:text-foreground transition-colors">Deliverables</Link>
               <Link to="/audit" className="text-foreground-muted hover:text-foreground transition-colors">Audit &amp; Validation</Link>
               <Link to="/trust" className="text-foreground-muted hover:text-foreground transition-colors">Trust</Link>
-              <Link to="/archive" className="text-foreground-muted hover:text-foreground transition-colors">Archive</Link>
             </div>
           </div>
         </div>
@@ -45,6 +45,9 @@ export default function Footer() {
           <div>
             <p className="text-xs font-mono text-foreground-subtle uppercase tracking-widest mb-3">Core Pages</p>
             <nav className="flex flex-col gap-2.5">
+              <Link to="/benchmark" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                Benchmark Framework
+              </Link>
               <Link to="/research" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Research Overview
               </Link>

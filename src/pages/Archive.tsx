@@ -4,7 +4,6 @@ import PageShell from "@/components/PageShell";
 const archivedPages = [
   { label: "About", href: "/archive/about" },
   { label: "Architecture", href: "/archive/architecture" },
-  { label: "EQ Safety Benchmark (legacy page)", href: "/archive/eq-safety-benchmark" },
   { label: "Consultation", href: "/archive/consult" },
   { label: "Writing Library", href: "/archive/research/writings" },
   { label: "Case Studies", href: "/archive/research/case-studies" },
@@ -25,8 +24,8 @@ export default function Archive() {
         <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Archive</p>
         <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4">Archived reference pages</h1>
         <p className="text-lg text-foreground-muted leading-relaxed max-w-4xl">
-          These pages are retained for reference while the live site is focused on Homepage, Research, Deliverables, and
-          Audit pathways.
+          These pages are retained for reference while the live site is focused on Homepage, Benchmark, Research,
+          Deliverables, and Audit pathways.
         </p>
       </section>
 

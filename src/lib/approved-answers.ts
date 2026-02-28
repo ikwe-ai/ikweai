@@ -121,7 +121,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
       `Ikwe quick facts (updated ${BENCHMARK_CURRENT.lastUpdated}): Ikwe is an independent third-party behavioral AI auditor. Current benchmark evidence shows ${BENCHMARK_CURRENT.failedGatePct} introduced harm at first contact, ${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm, with ${BENCHMARK_CURRENT.nValue} outputs evaluated across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} behavioral risk domains.`,
     links: [
       { label: "Homepage Overview", href: "/" },
-      { label: "EQ Safety Benchmark", href: "/research" },
+      { label: "EQ Safety Benchmark", href: "/benchmark" },
       { label: "Request Audit", href: "/request-audit#application-form" },
     ],
   },
@@ -139,7 +139,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     text:
       `Current benchmark framing (updated ${BENCHMARK_CURRENT.lastUpdated}): ${BENCHMARK_CURRENT.failedGatePct} introduced harm at first contact, ${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm, and ${BENCHMARK_CURRENT.nValue} model outputs evaluated across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} behavioral risk domains.`,
     links: [
-      { label: "EQ Safety Benchmark", href: "/research" },
+      { label: "EQ Safety Benchmark", href: "/benchmark" },
       { label: "Research Details", href: "/research" },
       { label: BENCHMARK_LOG_REQUEST.label, href: BENCHMARK_LOG_REQUEST.href },
     ],
@@ -148,10 +148,10 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     id: "how-audit-works",
     keywords: ["how does the audit process work", "how audit works", "audit process", "three phase", "safety gate"],
     text:
-      "The benchmark uses a three-phase structure: Phase 1 Safety Gate, Phase 2 multidimensional scoring across 8 behavioral dimensions, and optional Phase 3 real-time monitoring support post-deployment.",
+      "The public benchmark framework uses two layers: a Safety Gate and aggregate dimensional scoring across eight public dimensions. Engagement pathways add implementation support and active monitoring.",
     links: [
       { label: "View Audit Overview", href: "/audit" },
-      { label: "Benchmark Methods", href: "/research" },
+      { label: "Benchmark Methods", href: "/benchmark" },
     ],
   },
   {
@@ -214,7 +214,7 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
   {
     id: "eqsb",
     title: "EQ Safety Benchmark",
-    href: "/research",
+    href: "/benchmark",
     summary:
       "EQ Safety Benchmark details the safety gate, multidimensional evaluation approach, and benchmark framing used for institutional behavioral risk review.",
     tags: ["eq safety benchmark", "safety gate", "audit method", "scoring"],
