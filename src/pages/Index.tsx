@@ -1,105 +1,76 @@
 import { Link } from "react-router-dom";
 import PageMeta from "@/components/PageMeta";
 import PageShell from "@/components/PageShell";
-import HeroVisualCard from "@/components/HeroVisualCard";
-import BenchmarkStatusNote from "@/components/BenchmarkStatusNote";
-import { BENCHMARK_COPY, BENCHMARK_CURRENT } from "@/lib/benchmark-data";
+import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 export default function Home() {
   const stats = [
-    { value: BENCHMARK_CURRENT.failedGatePct, label: "Failed the Safety Gate at first contact", compact: false, tone: "danger" },
-    { value: BENCHMARK_CURRENT.noRepairPct, label: "Showed no repair behavior after introducing harm", compact: false, tone: "danger" },
-    { value: BENCHMARK_CURRENT.nValue, label: "Individual model outputs evaluated", compact: true, tone: "safe" },
-  ] as const;
-
-  const doomLoopStages = [
     {
-      title: "User State",
-      body: "Vulnerable conditions including anxiety, depression, loneliness, anger, overwhelm, and grief.",
-    },
-    {
-      title: "AI Interaction",
-      body: "The system engages during a high-friction moment with elevated behavioral sensitivity.",
-    },
-    {
-      title: "AI Reinforcement",
-      body: "The model amplifies and deepens the state instead of interrupting it.",
-    },
-    {
-      title: "Increased Risk",
-      body: "Dependency forms, autonomy erodes, and dysregulation deepens.",
-    },
-    {
-      title: "Escalation",
-      body: "The risk pathway intensifies and returns to User State, strengthening the loop.",
-    },
-  ] as const;
-
-  const vulnerableStates = [
-    "Anxiety",
-    "Depression",
-    "Loneliness",
-    "Anger",
-    "Overwhelm",
-    "Grief",
-    "Suicidal Ideation",
-    "Relationship Distress",
-    "Career Trauma",
-    "+ more",
-  ] as const;
-
-  const phases = [
-    {
-      title: "Phase 1 — Safety Gate",
+      value: BENCHMARK_CURRENT.failedGatePct,
+      label: "of AI responses introduced harm at first contact",
       tone: "danger",
-      lines: [
-        "Binary pass/fail evaluation.",
-        "Did the AI introduce harm at first contact?",
-        "Every response is categorized before anything else.",
-      ],
     },
     {
-      title: "Phase 2 — Multidimensional Scoring",
-      tone: "lilac",
-      lines: [
-        "8 behavioral dimensions evaluated.",
-        "How well did the system behave, not just whether it avoided harm.",
-        "Responses are scored across weighted criteria.",
-        "Scoring rubric and weighting are proprietary.",
-      ],
+      value: BENCHMARK_CURRENT.noRepairPct,
+      label: "showed no repair behavior after causing harm",
+      tone: "danger",
     },
     {
-      title: "Phase 3 — Real-Time Monitoring",
+      value: BENCHMARK_CURRENT.nShort,
+      label: "individual model outputs evaluated",
       tone: "safe",
-      lines: [
-        "Continuous behavioral tracking once deployed.",
-        "Escalates to human oversight when risk indicators rise.",
-        "Enables engineering teams to build better guardrails before harm scales.",
-        "Available as an additional service for clients.",
-      ],
     },
   ] as const;
 
-  const sectors = [
-    "Healthcare AI",
-    "Mental health technology",
-    "Therapy platforms",
-    "Pediatric AI",
-    "Consumer emotional AI",
+  const loopSteps = [
+    "Vulnerable user engages the system",
+    "AI responds in a way that amplifies the state",
+    "Dependency forms, dysregulation deepens",
+    "Risk escalates — and the loop repeats",
   ] as const;
 
-  const trustSignals = [
-    { title: "Regulatory trust", body: "Documented compliance evidence" },
-    { title: "Board trust", body: "Defensible audit record" },
-    { title: "Public trust", body: "Independent third-party validation" },
-    { title: "Patient trust", body: "Human-facing systems held to a behavioral standard" },
+  const evaluationSteps = [
+    {
+      title: "Safety Gate",
+      body: "Binary pass/fail. Did this response introduce harm at first contact? Every response is screened before anything else is scored.",
+      tone: "danger",
+    },
+    {
+      title: "Dimensional Scoring",
+      body: "8 weighted behavioral dimensions. How well did the system behave across detection, regulation, validation, and repair?",
+      tone: "lilac",
+    },
+    {
+      title: "Continuous Monitoring",
+      body: "Quarterly re-evaluation catches behavioral drift after deployment, model updates, or prompt changes.",
+      tone: "safe",
+    },
+  ] as const;
+
+  const pillars = [
+    {
+      title: "Board",
+      body: "Defensible audit record for governance review",
+    },
+    {
+      title: "Legal",
+      body: "Documented evidence of due diligence",
+    },
+    {
+      title: "Regulators",
+      body: "Reproducible, versioned compliance artifacts",
+    },
+    {
+      title: "Users",
+      body: "Human-facing systems held to a behavioral standard",
+    },
   ] as const;
 
   return (
     <>
       <PageMeta
-        title="Ikwe.ai — Independent AI Behavioral Validation"
-        description="Independent third-party validation layer for AI behavioral safety in high-stakes, human-facing systems."
+        title="Ikwe.ai — Independent Behavioural Safety Validation"
+        description="Independent third-party behavioural testing for human-facing AI systems in high-stakes contexts."
         path="/"
       />
       <PageShell>
@@ -107,14 +78,14 @@ export default function Home() {
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">
             Independent Third-Party Behavioral Validation
           </p>
-          <h1 className="font-display text-4xl md:text-6xl text-foreground leading-[1.04] max-w-4xl mb-4">
-            Independent AI Behavioral Auditors
+          <h1 className="font-display text-4xl md:text-6xl text-foreground leading-[1.04] max-w-4xl mb-5">
+            Your AI system behaves differently under pressure.
+            <br />
+            Most teams do not find out until it is a liability.
           </h1>
-          <p className="text-xl md:text-2xl text-foreground-muted leading-relaxed max-w-3xl mb-3">
-            We deliver the independent third-party validation layer for AI systems.
-          </p>
-          <p className="text-base text-foreground-subtle mb-9">
-            Risk containment before it becomes a liability.
+          <p className="text-lg md:text-xl text-foreground-muted leading-relaxed max-w-3xl mb-9">
+            Ikwe.ai runs structured behavioral testing on human-facing AI and produces documented evidence your board,
+            legal team, and regulators can use.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -130,18 +101,6 @@ export default function Home() {
               View the Research
             </Link>
           </div>
-          <div className="mt-7 max-w-3xl">
-            <HeroVisualCard
-              title="Institutional Read Path"
-              tone="teal"
-              points={[
-                "Benchmark evidence and failure rates",
-                "Behavioral risk loop and intervention point",
-                "Audit methodology and deliverables",
-                "Request intake and governance pathway",
-              ]}
-            />
-          </div>
         </section>
 
         <section className="py-14 border-b border-border">
@@ -151,13 +110,11 @@ export default function Home() {
               <article
                 key={item.label}
                 className={`card-surface p-6 ${
-                  item.tone === "danger"
-                    ? "border-danger bg-[hsl(8_34%_18%)]"
-                    : "border-safe bg-[hsl(176_30%_18%)]"
+                  item.tone === "danger" ? "border-danger bg-[hsl(8_34%_18%)]" : "border-safe bg-[hsl(176_30%_18%)]"
                 }`}
               >
                 <p
-                  className={`${item.compact ? "text-2xl md:text-3xl" : "text-4xl md:text-5xl"} font-display mb-4 ${
+                  className={`text-4xl md:text-5xl font-display mb-4 ${
                     item.tone === "danger" ? "text-danger" : "text-safe"
                   }`}
                 >
@@ -168,203 +125,96 @@ export default function Home() {
             ))}
           </div>
           <p className="text-sm text-foreground-muted mt-6 max-w-4xl">
-            {BENCHMARK_COPY.statsContext}
-          </p>
-          <BenchmarkStatusNote className="mt-5 max-w-4xl" />
-        </section>
-
-        <section className="py-14 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Doom Loop</p>
-          <div className="doom-loop-shell">
-            <div className="doom-loop-map hidden lg:grid" role="img" aria-label="Five-stage behavioral risk cycle with Stage 1 intervention point.">
-              {doomLoopStages.map((stage, index) => (
-                <article
-                  key={stage.title}
-                  className={`doom-stage-card doom-stage-card-${index + 1}${index === 0 ? " is-gate" : ""}`}
-                >
-                  <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-2">
-                    {index + 1}. {stage.title}
-                  </p>
-                  <p className="text-sm text-foreground-muted leading-relaxed">{stage.body}</p>
-                  {index === 0 ? (
-                    <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-safe mt-3">Interruption Gate</p>
-                  ) : null}
-                </article>
-              ))}
-
-              <span className="doom-flow doom-flow-1">→</span>
-              <span className="doom-flow doom-flow-2">↓</span>
-              <span className="doom-flow doom-flow-3">↙</span>
-              <span className="doom-flow doom-flow-4">↖</span>
-              <span className="doom-flow doom-flow-5">↗</span>
-
-              <div className="doom-loop-hub">
-                <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-foreground-subtle">Unchecked Loop</p>
-                <p className="text-xs text-foreground-muted mt-1">Behavioral risk compounds with each cycle.</p>
-              </div>
-            </div>
-
-            <div className="lg:hidden space-y-3">
-              {doomLoopStages.map((stage, index) => (
-                <div key={stage.title}>
-                  <article className={`card-surface p-4 ${index === 0 ? "border-safe bg-[hsl(176_30%_18%)]" : "border-danger bg-[hsl(8_34%_18%)]"}`}>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-1">
-                      {index + 1}. {stage.title}
-                    </p>
-                    <p className="text-xs text-foreground-muted leading-relaxed">{stage.body}</p>
-                  </article>
-                  {index < doomLoopStages.length - 1 ? (
-                    <p className="text-center text-danger font-mono text-xs mt-2">↓</p>
-                  ) : (
-                    <p className="text-center text-danger font-mono text-xs mt-2">↺</p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
-            <article className="card-surface p-5 border-danger bg-[hsl(8_34%_18%)]">
-              <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-danger mb-3">
-                When the loop goes unchecked
-              </p>
-              <p className="text-sm text-foreground-muted">Self-harm / suicide</p>
-              <p className="text-sm text-foreground-muted">Domestic conflict</p>
-              <p className="text-sm text-foreground-muted">Financial harm</p>
-              <p className="text-sm text-foreground-muted">Crisis escalation</p>
-            </article>
-            <article className="card-surface p-5 border-danger bg-[hsl(8_34%_18%)]">
-              <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-danger mb-3">Which leads to</p>
-              <p className="text-sm text-foreground-muted">Lawsuits and regulatory action</p>
-              <p className="text-sm text-foreground-muted">Liability exposure</p>
-              <p className="text-sm text-foreground-muted">Destroyed public trust</p>
-              <p className="text-sm text-foreground-muted">Investor confidence collapse</p>
-              <p className="text-sm text-foreground-muted">User attrition</p>
-            </article>
-          </div>
-
-          <p className="text-sm text-safe mt-6 font-medium">
-            Ikwe interrupts this loop at Stage 1, before the cycle forms.
+            From 79 structured scenarios across 12 behavioral risk domains. Updated {BENCHMARK_CURRENT.lastUpdated}.
           </p>
         </section>
 
         <section className="py-14 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Vulnerable States</p>
-          <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-6">
-            Our benchmark tests AI systems against structured scenarios drawn from {BENCHMARK_CURRENT.domains} behavioral risk domains, the
-            moments people are actually using AI for.
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">
+            The Behavioral Risk Loop
           </p>
-          <div className="flex flex-wrap gap-2 mb-6">
-            {vulnerableStates.map((state) => (
-              <span
-                key={state}
-                className="inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs text-foreground-muted bg-background-card"
-              >
-                {state}
-              </span>
+          <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-8">
+            When an AI system engages a user in a vulnerable state and responds unsafely, it does not just fail that
+            moment. It deepens the harm and creates the conditions for the next failure.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+            {loopSteps.map((step, index) => (
+              <article key={step} className="card-surface p-5 border-danger bg-[hsl(8_34%_18%)]">
+                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-danger mb-2">
+                  {index + 1}
+                </p>
+                <p className="text-sm text-foreground-muted leading-relaxed">{step}</p>
+              </article>
             ))}
           </div>
-          <p className="text-sm text-foreground-muted">
-            These are not random prompts. They are structured representations of real human stress states.
+
+          <p className="text-sm text-safe mt-6 font-medium max-w-4xl">
+            Left undetected, this pathway leads to self-harm, crisis escalation, legal exposure, and destroyed user
+            trust. Ikwe identifies it before it scales.
           </p>
         </section>
 
         <section className="py-14 border-b border-border">
-          <h2 className="font-display text-3xl text-foreground mb-8">How the EQ Safety Benchmark Works</h2>
+          <h2 className="font-display text-3xl text-foreground mb-8">How Ikwe evaluates your system</h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            {phases.map((phase, index) => (
+            {evaluationSteps.map((step, index) => (
               <article
-                key={phase.title}
+                key={step.title}
                 className={`card-surface p-6 ${
-                  phase.tone === "danger"
-                    ? "border-danger"
-                    : phase.tone === "safe"
-                      ? "border-safe"
-                      : "border-lilac"
+                  step.tone === "danger" ? "border-danger" : step.tone === "safe" ? "border-safe" : "border-lilac"
                 }`}
               >
                 <p
                   className={`font-mono text-[11px] uppercase tracking-[0.14em] mb-3 ${
-                    phase.tone === "danger" ? "text-danger" : phase.tone === "safe" ? "text-safe" : "text-lilac"
+                    step.tone === "danger" ? "text-danger" : step.tone === "safe" ? "text-safe" : "text-lilac"
                   }`}
                 >
                   Step {index + 1}
                 </p>
-                <h3 className="font-display text-xl text-foreground mb-4">{phase.title}</h3>
-                <div className="space-y-2">
-                  {phase.lines.map((line) => (
-                    <p key={line} className="text-sm text-foreground-muted leading-relaxed">
-                      {line}
-                    </p>
-                  ))}
-                </div>
+                <h3 className="font-display text-xl text-foreground mb-3">{step.title}</h3>
+                <p className="text-sm text-foreground-muted leading-relaxed">{step.body}</p>
               </article>
             ))}
           </div>
         </section>
 
         <section className="py-14 border-b border-border">
-          <h2 className="font-display text-3xl text-foreground mb-8">Where we audit</h2>
-          <article className="card-surface p-6 mb-5 border-l-4 border-l-safe">
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-[0.14em] mb-2">Primary Focus</p>
-            <p className="font-display text-2xl text-foreground">Patient-AI Interaction</p>
-          </article>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-6">
-            {sectors.map((sector) => (
-              <article key={sector} className="card-surface p-4">
-                <p className="text-sm text-foreground-muted">{sector}</p>
-              </article>
-            ))}
-          </div>
-          <p className="text-sm text-foreground-muted max-w-4xl">
-            Human-facing AI systems in high-stakes environments, where a failed response is not just a bad
-            experience. It is a liability.
+          <h2 className="font-display text-3xl text-foreground mb-5">Who we work with</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-6">
+            Ikwe works with organizations deploying AI in contexts where a failed response carries real consequences:
+            regulatory, legal, human, or reputational.
           </p>
+          <p className="text-sm text-foreground-muted leading-relaxed max-w-5xl mb-6">
+            Healthcare AI and digital health · Mental health and therapy platforms · Enterprise copilots in regulated
+            operations · Financial services · Legal and HR technology · Any human-facing AI system where the stakes are
+            real
+          </p>
+          <p className="text-sm text-foreground">If a bad AI response could become a lawsuit, a regulatory finding, or a patient harm, that is our scope.</p>
         </section>
 
         <section className="py-14 border-b border-border">
-          <h2 className="font-display text-3xl text-foreground mb-7">Why third-party validation matters</h2>
-          <div className="max-w-4xl space-y-4 mb-8">
-            <p className="text-sm text-foreground-muted leading-relaxed">
-              Every team building an AI system knows there are layers of trust constantly breaking inside it. They
-              feel it. They build around it. They cannot fully trust their own output.
-            </p>
-            <p className="text-sm text-foreground-muted leading-relaxed">
-              Ikwe is the external validation layer that changes that.
-            </p>
-            <p className="text-sm text-foreground-muted leading-relaxed">
-              We test your system independently, with structured evidence, and produce a documented audit your board
-              and regulators can reference.
-            </p>
-            <p className="text-sm text-foreground-muted leading-relaxed">
-              This is not a product review. It is behavioral safety infrastructure.
-            </p>
-          </div>
+          <h2 className="font-display text-3xl text-foreground mb-7">Why independent validation matters</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-8">
+            Internal teams cannot fully validate their own systems. The same team that built the AI is not positioned
+            to evaluate whether it is safe for vulnerable users. Ikwe brings structured external evaluation with no
+            commercial affiliation with AI developers and no conflicts of interest.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-            {trustSignals.map((signal) => (
-              <article key={signal.title} className="card-surface p-5">
-                <h3 className="font-display text-xl text-foreground mb-2">{signal.title}</h3>
-                <p className="text-sm text-foreground-muted">{signal.body}</p>
+            {pillars.map((pillar) => (
+              <article key={pillar.title} className="card-surface p-5">
+                <h3 className="font-display text-xl text-foreground mb-2">{pillar.title}</h3>
+                <p className="text-sm text-foreground-muted">{pillar.body}</p>
               </article>
             ))}
           </div>
-        </section>
-
-        <section className="py-14 border-b border-border">
-          <article className="card-surface p-6">
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-[0.14em] mb-4">The Proof Metric</p>
-            <p className="text-lg text-foreground mb-2">Scenarios run → Harm pathways identified → Systems improved</p>
-            <p className="text-sm text-foreground-muted">
-              As our benchmark scales, so does the proof.
-            </p>
-            <p className="text-xs text-foreground-subtle mt-3">
-              Number counter can be connected to live benchmark run totals when API wiring is enabled.
-            </p>
-          </article>
         </section>
 
         <section className="py-14">
-          <h2 className="font-display text-3xl text-foreground mb-4">Ready to know where your system stands?</h2>
+          <h2 className="font-display text-3xl text-foreground mb-3">Ready to know where your system stands?</h2>
+          <p className="text-sm text-foreground-muted mb-6 max-w-3xl">
+            Most teams are surprised by what structured testing surfaces. The audit is where that changes.
+          </p>
           <div className="flex flex-wrap gap-4 mb-8">
             <a
               href="/request-audit#application-form"
@@ -385,7 +235,7 @@ export default function Home() {
               Contact
             </a>
           </div>
-          <p className="text-sm text-foreground-muted">Ikwe.ai — Independent AI Behavioral Validation</p>
+          <p className="text-sm text-foreground-muted">Ikwe.ai — Independent behavioural safety validation</p>
           <p className="text-xs text-foreground-subtle mt-1">Visible Healing Inc. | Iowa, USA</p>
         </section>
       </PageShell>
