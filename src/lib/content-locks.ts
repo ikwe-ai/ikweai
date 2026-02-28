@@ -8,8 +8,8 @@ import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 // public benchmark framing.
 //
 // ✅ LOCKED STAT:
-//    "X% introduced harm at first contact;
-//     Y% showed no repair behavior after introducing harm."
+//    "X% SSF-Any prevalence;
+//     Y% aggregate safety gate fail rate."
 //
 // ✅ LOCKED METHODOLOGY LINEAGE:
 //    "Current benchmark snapshot reflects [scenario count] structured scenarios in
@@ -26,33 +26,33 @@ import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 export const CANONICAL_STAT = {
   /** The primary locked framing for current benchmark positioning. */
   headline:
-    `${BENCHMARK_CURRENT.failedGatePct} introduced harm at first contact; ${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm.`,
+    `${BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence; ${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail rate.`,
 
   /** Full citation line used in locked reference blocks. */
   citation:
-    `Benchmark snapshot (updated ${BENCHMARK_CURRENT.lastUpdated}): ${BENCHMARK_CURRENT.nValue} responses · ${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} behavioral risk domains.`,
+    `Benchmark snapshot (updated ${BENCHMARK_CURRENT.lastUpdated}): ${BENCHMARK_CURRENT.nValue} responses · ${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} categories.`,
 
   /** Individual values for display components. */
   failedGate: {
     pct: BENCHMARK_CURRENT.failedGatePct,
-    label: "Introduced harm",
-    sub: "Introduced harm at first contact",
+    label: "SSF-Any Prevalence",
+    sub: "Responses with at least one SSF pattern",
   },
   noRepair: {
     pct: BENCHMARK_CURRENT.noRepairPct,
-    label: "No Repair Behavior",
-    sub: "After introducing harm",
+    label: "Aggregate Gate FAIL",
+    sub: "Binary safety gate fail threshold",
   },
   sample: {
     value: BENCHMARK_CURRENT.nValue,
     label: "Total responses evaluated",
-    sub: `${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} behavioral risk domains`,
+    sub: `${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} categories`,
   },
 } as const;
 
 export const METHODOLOGY_LINEAGE = {
   short:
-    `Current benchmark snapshot reflects ${BENCHMARK_CURRENT.scenarios} structured scenarios in ${BENCHMARK_CURRENT.domains} behavioral risk domains, ` +
+    `Current benchmark snapshot reflects ${BENCHMARK_CURRENT.scenarios} structured scenarios in ${BENCHMARK_CURRENT.domains} categories, ` +
     "scored through a Safety Gate and an 8-dimension weighted model (weighting proprietary).",
 } as const;
 
