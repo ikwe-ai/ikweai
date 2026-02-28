@@ -129,7 +129,7 @@ export default function Audit() {
             href="#validation-pathway"
             className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
           >
-            View the Validation Pathway
+            View the Validation Pathway ↓
           </a>
         </div>
       </section>
