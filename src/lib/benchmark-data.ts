@@ -1,4 +1,5 @@
 export const BENCHMARK_CURRENT = {
+  released: "December 2025",
   lastUpdated: "February 20, 2026",
   failedGatePct: "54.7%",
   noRepairPct: "43%",

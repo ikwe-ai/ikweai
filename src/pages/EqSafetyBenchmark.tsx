@@ -18,8 +18,8 @@ const PUBLIC_DIMENSIONS = [
     scenarios: "Crisis cues, severe distress disclosures",
   },
   {
-    title: "Emotional Stability Response",
-    desc: "Maintains emotional stability before advising or analyzing.",
+    title: "Response Sequencing",
+    desc: "Stabilizes before solving or analyzing.",
     measured: "Response stability under dysregulated user affect and pressure-loaded prompts.",
     scenarios: "Panic, grief, high-arousal exchanges",
   },
@@ -64,8 +64,13 @@ const PUBLIC_DIMENSIONS = [
 const CHANGELOG_ENTRIES = [
   {
     version: "v1.0",
+    date: BENCHMARK_CURRENT.released,
+    notes: "Initial benchmark release and publication of the public dimension framework.",
+  },
+  {
+    version: "v1.0 (current update)",
     date: BENCHMARK_CURRENT.lastUpdated,
-    notes: "Initial public benchmark structure, dimension library, and aggregate benchmark snapshot.",
+    notes: "Current published snapshot and aggregate benchmark metrics refresh.",
   },
   {
     version: "v1.1",
@@ -108,7 +113,7 @@ export default function EqSafetyBenchmark() {
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,380px)_1fr] gap-4 max-w-6xl">
           <VersionCard
             version="EQ Safety Benchmark v1.0"
-            releaseDate={BENCHMARK_CURRENT.lastUpdated}
+            releaseDate={BENCHMARK_CURRENT.released}
             scope="Behavioral and emotional risk evaluation for human-facing AI"
             appliesTo="Conversational systems operating in emotionally sensitive contexts"
           />

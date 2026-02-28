@@ -16,9 +16,16 @@ export default function Research() {
     "and more",
   ] as const;
 
+  const parsePercent = (value: string) => Number.parseFloat(value.replace("%", ""));
+  const formatPercent = (value: number) => (Number.isInteger(value) ? `${value}%` : `${value.toFixed(1)}%`);
+
+  const introducedHarmPct = parsePercent(BENCHMARK_CURRENT.failedGatePct);
+  const noRepairPct = parsePercent(BENCHMARK_CURRENT.noRepairPct);
+  const someRepairPct = Math.max(0, +(100 - noRepairPct).toFixed(1));
+
   const benchmarkSummaryRows = [
-    { label: "Introduced harm at first contact", value: 54.7 },
-    { label: "No repair behavior after harm", value: 43.0 },
+    { label: "Introduced harm at first contact", value: introducedHarmPct },
+    { label: "No repair behavior after harm", value: noRepairPct },
   ] as const;
 
   return (
@@ -41,7 +48,9 @@ export default function Research() {
         </p>
         <div className="summary-headline-strip mb-7 max-w-4xl">
           <div className="summary-headline-item">{BENCHMARK_CURRENT.nShort} individual model outputs evaluated</div>
-          <div className="summary-headline-item">79 structured scenarios across 12 behavioral risk domains</div>
+          <div className="summary-headline-item">
+            {BENCHMARK_CURRENT.scenarios} structured scenarios across {BENCHMARK_CURRENT.domains} behavioral risk domains
+          </div>
           <div className="summary-headline-item">Two-phase benchmark: Safety Gate + post-harm behavior analysis</div>
         </div>
         <div className="flex flex-wrap gap-3">
@@ -72,8 +81,8 @@ export default function Research() {
             be harmful, it measures how often it is.
           </p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-            43% of responses showed no repair behavior after causing harm. The system not only failed, it kept going in
-            the same direction.
+            {BENCHMARK_CURRENT.noRepairPct} of responses showed no repair behavior after causing harm. The system not
+            only failed, it kept going in the same direction.
           </p>
           <p className="text-sm text-foreground-muted leading-relaxed">
             These are baseline rates. Your specific system may perform better or worse. The only way to know is
@@ -90,11 +99,11 @@ export default function Research() {
             <p className="text-sm text-foreground-muted">Individual model outputs evaluated</p>
           </article>
           <article className="card-surface p-5">
-            <p className="font-display text-3xl text-foreground mb-2">79</p>
+            <p className="font-display text-3xl text-foreground mb-2">{BENCHMARK_CURRENT.scenarios}</p>
             <p className="text-sm text-foreground-muted">Structured scenarios</p>
           </article>
           <article className="card-surface p-5">
-            <p className="font-display text-3xl text-foreground mb-2">12</p>
+            <p className="font-display text-3xl text-foreground mb-2">{BENCHMARK_CURRENT.domains}</p>
             <p className="text-sm text-foreground-muted">Behavioral risk domains</p>
           </article>
         </div>
@@ -132,17 +141,17 @@ export default function Research() {
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">Phase 2 — Post-Harm Behavior</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mb-5">
           <article className="card-surface p-6">
-            <p className="font-display text-5xl text-danger mb-2">43%</p>
+            <p className="font-display text-5xl text-danger mb-2">{BENCHMARK_CURRENT.noRepairPct}</p>
             <p className="text-sm text-foreground-muted">No repair behavior after introducing harm</p>
           </article>
           <article className="card-surface p-6">
-            <p className="font-display text-5xl text-foreground mb-2">57%</p>
+            <p className="font-display text-5xl text-foreground mb-2">{formatPercent(someRepairPct)}</p>
             <p className="text-sm text-foreground-muted">Showed at least some repair signal after introducing harm</p>
           </article>
         </div>
         <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl">
-          Phase 2 evaluates only the responses that introduced harm in Phase 1. Of those, 43% showed no correction,
-          no acknowledgment, and no change in direction. The system caused harm and continued.
+          Phase 2 evaluates only the responses that introduced harm in Phase 1. Of those, {BENCHMARK_CURRENT.noRepairPct}{" "}
+          showed no correction, no acknowledgment, and no change in direction. The system caused harm and continued.
         </p>
       </section>
 
@@ -150,7 +159,7 @@ export default function Research() {
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">8-Dimension Aggregate</p>
         <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-4">
           Responses that pass the Safety Gate are scored across eight weighted behavioral dimensions: Harm Recognition,
-          Emotional Stability Response, Validation Accuracy, User Autonomy Integrity, Escalation Interruption,
+          Response Sequencing, Validation Accuracy, User Autonomy Integrity, Escalation Interruption,
           Behavioral Pattern Clarity, Risk Containment, and Crisis Routing Fidelity.
         </p>
         <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-4">
@@ -171,7 +180,7 @@ export default function Research() {
               <div key={row.label}>
                 <div className="flex items-center justify-between gap-3 mb-1.5">
                   <p className="text-sm text-foreground-muted">{row.label}</p>
-                  <p className="font-mono text-xs text-foreground">{row.value.toFixed(1)}%</p>
+                  <p className="font-mono text-xs text-foreground">{formatPercent(row.value)}</p>
                 </div>
                 <div className="h-2 rounded-full bg-background-surface">
                   <div className="h-2 rounded-full bg-danger" style={{ width: `${row.value}%` }} />
