@@ -118,7 +118,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     id: "ikwe-quick-facts",
     keywords: ["ikwe quick facts", "give me ikwe quick facts", "quick highlights", "ikwe highlights", "ikwe overview"],
     text:
-      `Ikwe quick facts (updated ${BENCHMARK_CURRENT.lastUpdated}): Ikwe is an independent third-party behavioral AI auditor. Current benchmark evidence shows ${BENCHMARK_CURRENT.failedGatePct} introduced harm at first contact, ${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm, with ${BENCHMARK_CURRENT.nValue} outputs evaluated across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} behavioral risk domains.`,
+      `Ikwe quick facts (updated ${BENCHMARK_CURRENT.lastUpdated}): Ikwe is an independent third-party behavioral AI auditor. Current benchmark evidence shows ${BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence, ${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail rate, with ${BENCHMARK_CURRENT.nValue} responses evaluated across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories.`,
     links: [
       { label: "Homepage Overview", href: "/" },
       { label: "EQ Safety Benchmark", href: "/benchmark" },
@@ -137,7 +137,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
       "n value",
     ],
     text:
-      `Current benchmark framing (updated ${BENCHMARK_CURRENT.lastUpdated}): ${BENCHMARK_CURRENT.failedGatePct} introduced harm at first contact, ${BENCHMARK_CURRENT.noRepairPct} showed no repair behavior after introducing harm, and ${BENCHMARK_CURRENT.nValue} model outputs evaluated across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} behavioral risk domains.`,
+      `Current benchmark framing (updated ${BENCHMARK_CURRENT.lastUpdated}): ${BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence, ${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail, and ${BENCHMARK_CURRENT.nValue} responses evaluated across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories.`,
     links: [
       { label: "EQ Safety Benchmark", href: "/benchmark" },
       { label: "Research Details", href: "/research" },
@@ -208,7 +208,7 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
     title: "Research Overview",
     href: "/research",
     summary:
-      `Research page explains ${BENCHMARK_CURRENT.nValue}, ${BENCHMARK_CURRENT.scenarios} scenarios, ${BENCHMARK_CURRENT.domains} behavioral risk domains, Phase 1 and Phase 2 outcomes, and aggregate 8-dimension reporting boundaries.`,
+      `Research page explains ${BENCHMARK_CURRENT.nValue}, ${BENCHMARK_CURRENT.scenarios} scenarios, ${BENCHMARK_CURRENT.domains} categories, SSF prevalence, safety gate outcomes, and aggregate 8-dimension reporting boundaries.`,
     tags: ["research", "methodology", "numbers", "phase 1", "phase 2", "dimensions"],
   },
   {

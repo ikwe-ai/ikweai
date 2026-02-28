@@ -104,7 +104,7 @@ export default function Research() {
           </article>
           <article className="card-surface p-5">
             <p className="font-display text-3xl text-foreground mb-2">{BENCHMARK_CURRENT.domains}</p>
-            <p className="text-sm text-foreground-muted">Behavioral risk domains</p>
+            <p className="text-sm text-foreground-muted">Categories</p>
           </article>
         </div>
 
