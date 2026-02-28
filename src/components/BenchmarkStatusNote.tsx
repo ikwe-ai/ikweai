@@ -18,7 +18,7 @@ export default function BenchmarkStatusNote({ className = "" }: BenchmarkStatusN
         Last updated: <span className="text-foreground">{BENCHMARK_CURRENT.lastUpdated}</span>
       </p>
       <p className="text-xs text-foreground-muted leading-relaxed mb-2">
-        Update cadence: refreshed as new datasets and model outputs are evaluated.
+        {BENCHMARK_CURRENT.updateNote}
       </p>
       <p className="text-xs text-foreground-subtle leading-relaxed mb-2">{BENCHMARK_PUBLIC_LOG[0].summary}</p>
       <p className="text-xs text-foreground-subtle leading-relaxed">
