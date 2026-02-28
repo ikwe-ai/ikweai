@@ -7,7 +7,6 @@ import VersionCard from "@/components/VersionCard";
 import DefinitionCallout from "@/components/DefinitionCallout";
 import DimensionTable from "@/components/DimensionTable";
 import Changelog from "@/components/Changelog";
-import FrameworkDiagram from "@/components/FrameworkDiagram";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 const PUBLIC_DIMENSIONS = [
@@ -75,6 +74,11 @@ const CHANGELOG_ENTRIES = [
 ] as const;
 
 export default function EqSafetyBenchmark() {
+  const parsePercent = (value: string) => Number.parseFloat(value.replace("%", ""));
+  const introducedHarmPct = parsePercent(BENCHMARK_CURRENT.failedGatePct);
+  const noRepairPct = parsePercent(BENCHMARK_CURRENT.noRepairPct);
+  const someRepairPct = Math.max(0, +(100 - noRepairPct).toFixed(1));
+
   return (
     <PageShell>
       <PageMeta
@@ -190,13 +194,71 @@ export default function EqSafetyBenchmark() {
 
       <section id="method-overview" className="py-12 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Method Overview</p>
-        <div className="max-w-6xl">
-          <FrameworkDiagram
-            variant="matrix"
-            figureNumber={1}
-            title="Public Dimension Matrix"
-            caption="Illustrative mapping of the eight public dimensions against risk intensity and response quality."
-          />
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 max-w-6xl">
+          <figure className="card-surface p-5">
+            <figcaption className="text-sm text-foreground-muted mb-4">
+              <span className="font-mono text-[11px] uppercase tracking-[0.09em] text-foreground-subtle mr-2">Figure 1</span>
+              <span className="text-foreground">Benchmark Outcomes ({BENCHMARK_CURRENT.lastUpdated})</span>
+            </figcaption>
+            <div className="space-y-4">
+              <div>
+                <div className="flex items-center justify-between gap-3 mb-1.5">
+                  <p className="text-sm text-foreground-muted">Introduced harm at first contact</p>
+                  <p className="font-mono text-xs text-foreground">{BENCHMARK_CURRENT.failedGatePct}</p>
+                </div>
+                <div className="h-2 rounded-full bg-background-surface">
+                  <div className="h-2 rounded-full bg-danger" style={{ width: `${introducedHarmPct}%` }} />
+                </div>
+              </div>
+              <div>
+                <div className="flex items-center justify-between gap-3 mb-1.5">
+                  <p className="text-sm text-foreground-muted">No repair behavior after harm</p>
+                  <p className="font-mono text-xs text-foreground">{BENCHMARK_CURRENT.noRepairPct}</p>
+                </div>
+                <div className="h-2 rounded-full bg-background-surface">
+                  <div className="h-2 rounded-full bg-danger" style={{ width: `${noRepairPct}%` }} />
+                </div>
+              </div>
+              <div>
+                <div className="flex items-center justify-between gap-3 mb-1.5">
+                  <p className="text-sm text-foreground-muted">Some repair signal after harm</p>
+                  <p className="font-mono text-xs text-foreground">{someRepairPct}%</p>
+                </div>
+                <div className="h-2 rounded-full bg-background-surface">
+                  <div className="h-2 rounded-full bg-safe" style={{ width: `${someRepairPct}%` }} />
+                </div>
+              </div>
+            </div>
+          </figure>
+
+          <figure className="card-surface p-5">
+            <figcaption className="text-sm text-foreground-muted mb-4">
+              <span className="font-mono text-[11px] uppercase tracking-[0.09em] text-foreground-subtle mr-2">Figure 2</span>
+              <span className="text-foreground">Evaluation Scope and Version Dates</span>
+            </figcaption>
+            <dl className="grid gap-3 text-sm text-foreground-muted">
+              <div className="grid grid-cols-[160px_1fr] gap-3">
+                <dt className="font-mono text-[11px] uppercase tracking-[0.09em] text-foreground-subtle">Responses</dt>
+                <dd>{BENCHMARK_CURRENT.nValue}</dd>
+              </div>
+              <div className="grid grid-cols-[160px_1fr] gap-3">
+                <dt className="font-mono text-[11px] uppercase tracking-[0.09em] text-foreground-subtle">Scenarios</dt>
+                <dd>{BENCHMARK_CURRENT.scenarios}</dd>
+              </div>
+              <div className="grid grid-cols-[160px_1fr] gap-3">
+                <dt className="font-mono text-[11px] uppercase tracking-[0.09em] text-foreground-subtle">Risk domains</dt>
+                <dd>{BENCHMARK_CURRENT.domains}</dd>
+              </div>
+              <div className="grid grid-cols-[160px_1fr] gap-3">
+                <dt className="font-mono text-[11px] uppercase tracking-[0.09em] text-foreground-subtle">Released</dt>
+                <dd>{BENCHMARK_CURRENT.released}</dd>
+              </div>
+              <div className="grid grid-cols-[160px_1fr] gap-3">
+                <dt className="font-mono text-[11px] uppercase tracking-[0.09em] text-foreground-subtle">Last updated</dt>
+                <dd>{BENCHMARK_CURRENT.lastUpdated}</dd>
+              </div>
+            </dl>
+          </figure>
         </div>
       </section>
 
@@ -226,21 +288,7 @@ export default function EqSafetyBenchmark() {
 
       <section id="version-changelog" className="py-12 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Versioning & Changelog</p>
-        <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_330px] gap-4 max-w-6xl">
-          <div className="space-y-4">
-            <FrameworkDiagram
-              variant="trajectory"
-              figureNumber={2}
-              title="Trajectory Tracking Figure"
-              caption="Illustrative trajectory chart used to represent behavioral risk trend and intervention checkpoints."
-            />
-            <FrameworkDiagram
-              variant="tier"
-              figureNumber={3}
-              title="Tier Classification Figure"
-              caption="Illustrative tier model for governance interpretation and remediation prioritization."
-            />
-          </div>
+        <div className="max-w-3xl">
           <Changelog entries={[...CHANGELOG_ENTRIES]} />
         </div>
       </section>
