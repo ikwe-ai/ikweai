@@ -3,19 +3,10 @@ import PageMeta from "@/components/PageMeta";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 export default function Reports() {
-  const atAGlance = [
-    {
-      label: "Audience",
-      text: "Built for board, legal, compliance, and technical stakeholders with different decision needs.",
-    },
-    {
-      label: "Format",
-      text: "Executive summaries for leadership, evidence artifacts for technical and governance review.",
-    },
-    {
-      label: "Access",
-      text: "Public samples stay high-level. Detailed reporting is shared through scoped engagement.",
-    },
+  const atAGlanceTags = [
+    "Board + legal + compliance + technical",
+    "Executive summaries + evidence artifacts",
+    "Public samples, detailed engagement outputs",
   ] as const;
 
   const outputPreviews = [
@@ -72,20 +63,13 @@ export default function Reports() {
           </a>
         </div>
         <div className="flex flex-wrap gap-2 mt-4">
-          <a href="#deliverables-glance" className="summary-jump">At a glance</a>
-          <a href="#output-previews" className="summary-jump">Output previews</a>
-          <a href="#transparency-boundary" className="summary-jump">Public vs engagement</a>
-        </div>
-      </section>
-
-      <section id="deliverables-glance" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">At a Glance</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
-          {atAGlance.map((item) => (
-            <article key={item.label} className="card-surface p-5">
-              <p className="font-mono text-[11px] uppercase tracking-[0.11em] text-lilac mb-2">{item.label}</p>
-              <p className="text-sm text-foreground-muted leading-relaxed text-pretty">{item.text}</p>
-            </article>
+          {atAGlanceTags.map((tag) => (
+            <span
+              key={tag}
+              className="inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs text-foreground-muted bg-background-card"
+            >
+              {tag}
+            </span>
           ))}
         </div>
       </section>
