@@ -49,7 +49,7 @@ export default function Home() {
     },
     {
       title: "Dimensional Scoring",
-      body: "8 weighted behavioral dimensions evaluated across responses that pass the Safety Gate: detection and triage, emotional regulation, validation accuracy, agency preservation, loop interruption, pattern externalization, practical containment, and safety routing. Output is a weighted composite score with a five-band classification.",
+      body: "8 weighted behavioral dimensions evaluated across responses that pass the Safety Gate: Harm Recognition, Emotional Stability Response, Validation Accuracy, User Autonomy Integrity, Escalation Interruption, Behavioral Pattern Clarity, Risk Containment, and Crisis Routing Fidelity. Output is a weighted composite score with a five-band classification.",
       tone: "lilac",
     },
     {
