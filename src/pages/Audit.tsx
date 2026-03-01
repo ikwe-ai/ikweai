@@ -145,7 +145,7 @@ export default function Audit() {
         path="/audit"
       />
 
-      <section className="py-14 border-b border-border">
+      <section className="py-14 border-b border-border audit-hero">
         <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Audit &amp; Validation</p>
         <p className="text-xs text-foreground-subtle mb-4">
           Framework basis: EQ Safety Benchmark {BENCHMARK_CURRENT.version} · Updated {BENCHMARK_CURRENT.lastUpdated}
@@ -217,232 +217,270 @@ export default function Audit() {
         ]}
       />
 
-      <section id="decision-matrix" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Stage Decision Matrix</p>
-        <p className="text-sm text-foreground-muted leading-relaxed measure mb-6">
-          Compare commercial value and technical value by stage in one view.
-        </p>
-        <div className="lg:hidden grid grid-cols-1 gap-3 mb-4">
-          {stageMatrix.map((row) => (
-            <article key={row.stage} className="card-surface p-5">
-              <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">{row.stage}</p>
-              <dl className="grid gap-2 text-sm text-foreground-muted">
-                <div>
-                  <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle">CFO</dt>
-                  <dd>{row.cfo}</dd>
-                </div>
-                <div>
-                  <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle">CTO</dt>
-                  <dd>{row.cto}</dd>
-                </div>
-                <div>
-                  <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle">Output</dt>
-                  <dd>{row.output}</dd>
-                </div>
-              </dl>
-            </article>
-          ))}
-        </div>
-        <div className="overflow-x-auto hidden lg:block">
-          <table className="enterprise-table min-w-[940px]">
-            <thead>
-              <tr>
-                <th>Stage</th>
-                <th>CFO Decision Value</th>
-                <th>CTO Technical Value</th>
-                <th>Primary Output</th>
-              </tr>
-            </thead>
-            <tbody>
+      <section id="decision-matrix" className="py-14 border-b border-border audit-section-block">
+        <div className="audit-section-layout">
+          <div className="audit-section-head">
+            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">Stage Decision Matrix</p>
+            <p className="text-sm text-foreground-muted leading-relaxed measure">
+              Compare commercial value and technical value by stage in one view.
+            </p>
+          </div>
+          <div className="audit-section-body">
+            <div className="lg:hidden grid grid-cols-1 gap-3 mb-4">
               {stageMatrix.map((row) => (
-                <tr key={row.stage}>
-                  <td className="font-medium text-foreground">{row.stage}</td>
-                  <td>{row.cfo}</td>
-                  <td>{row.cto}</td>
-                  <td>{row.output}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section id="what-the-audit-is" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">What the Audit Is</p>
-        <article className="card-surface p-6 max-w-5xl">
-          <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
-            The audit gives leadership a defensible answer to one core question: what is our behavioral safety exposure
-            today, and what do we do next?
-          </p>
-          <details className="progressive-details">
-            <summary aria-label="Toggle section details" />
-            <div className="progressive-details-body">
-              <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
-                The evaluation applies a binary safety gate and dimension scoring against versioned scenarios across{" "}
-                {BENCHMARK_CURRENT.domains} categories.
-              </p>
-              <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
-                Output is governance-ready evidence showing severity, concentration of risk, and concrete remediation
-                priorities.
-              </p>
-            </div>
-          </details>
-        </article>
-      </section>
-
-      <section id="validation-pathway" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Validation Pathway</p>
-        <p className="text-sm text-foreground-muted leading-relaxed measure text-pretty mb-8">
-          Most teams start with Diagnostic Audit, then add Implementation Support or Active Monitoring based on risk
-          profile and timeline.
-        </p>
-
-        <div className="max-w-5xl mb-6">
-          <EnterpriseStepper steps={pathwaySummarySteps} />
-        </div>
-
-        <div className="audit-pathway-layout max-w-6xl">
-          <aside className="audit-pathway-nav card-surface p-4">
-            <p className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle mb-3">Jump to stage</p>
-            <div className="flex flex-wrap gap-2 lg:grid lg:grid-cols-1">
-              {pathwayJump.map((item) => (
-                <a key={item.id} href={`#${item.id}`} className="summary-jump">
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </aside>
-
-          <div className="space-y-4">
-          {pathway.map((stage, index) => (
-            <div key={stage.step} id={`stage-${stage.step}`}>
-              <article
-                className={`card-surface p-6 md:p-7 ${
-                  stage.coming ? "border-border-2 bg-background-surface pathway-coming" : "pathway-card"
-                }`}
-              >
-                <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start">
-                  <div>
-                    <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-2">{stage.step}</p>
-                    <h2 className="font-display fluid-heading text-foreground mb-2">{stage.title}</h2>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-4">{stage.tag}</p>
-                    <div className="space-y-3 mb-2">
-                      <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">{stage.paragraphs[0]}</p>
+                <article key={row.stage} className="card-surface p-5">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">{row.stage}</p>
+                  <dl className="grid gap-2 text-sm text-foreground-muted">
+                    <div>
+                      <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle">CFO</dt>
+                      <dd>{row.cfo}</dd>
                     </div>
-                  </div>
-                  <div className="audit-stage-meta">
-                    <p className={`text-xs ${stage.coming ? "text-foreground-subtle" : "text-lilac"}`}>{stage.pricing}</p>
-                  </div>
-                </div>
-
-                <div className="space-y-3 mt-2">
-                  {(stage.paragraphs.length > 1 || stage.receives.length > 0) ? (
-                    <details className="progressive-details">
-                      <summary
-                        aria-label="Toggle stage details"
-                        data-label="Stage details and deliverables"
-                        data-open-label="Hide stage details"
-                      />
-                      <div className="progressive-details-body">
-                        {stage.paragraphs.slice(1).map((paragraph) => (
-                          <p key={paragraph} className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
-                            {paragraph}
-                          </p>
-                        ))}
-
-                        {stage.receives.length > 0 ? (
-                          <>
-                            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-1">What You Receive</p>
-                            <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-                              {stage.receives.map((item) => (
-                                <li key={item}>• {item}</li>
-                              ))}
-                            </ul>
-                          </>
-                        ) : null}
-                      </div>
-                    </details>
-                  ) : null}
-                </div>
-              </article>
-
-              {index < pathway.length - 1 ? (
-                <p className="text-center text-foreground-subtle font-mono text-xs mt-3">Next stage</p>
-              ) : null}
+                    <div>
+                      <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle">CTO</dt>
+                      <dd>{row.cto}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle">Output</dt>
+                      <dd>{row.output}</dd>
+                    </div>
+                  </dl>
+                </article>
+              ))}
             </div>
-          ))}
+            <div className="overflow-x-auto hidden lg:block">
+              <table className="enterprise-table min-w-[940px]">
+                <thead>
+                  <tr>
+                    <th>Stage</th>
+                    <th>CFO Decision Value</th>
+                    <th>CTO Technical Value</th>
+                    <th>Primary Output</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {stageMatrix.map((row) => (
+                    <tr key={row.stage}>
+                      <td className="font-medium text-foreground">{row.stage}</td>
+                      <td>{row.cfo}</td>
+                      <td>{row.cto}</td>
+                      <td>{row.output}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="what-we-measure" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">What We Measure</p>
-        <div className="card-surface p-6 max-w-5xl safe-panel">
-          <h2 className="font-display fluid-heading text-foreground mb-4">What behavioral safety evaluation actually measures</h2>
-          <ul className="space-y-3 text-sm text-foreground-muted leading-relaxed">
-            {measures.map((item) => (
-              <li key={item} className="flex gap-3">
-                <span className="text-safe shrink-0">•</span>
-                <span className="text-pretty">{item}</span>
-              </li>
-            ))}
-          </ul>
+      <section id="what-the-audit-is" className="py-14 border-b border-border audit-section-block">
+        <div className="audit-section-layout">
+          <div className="audit-section-head">
+            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">What the Audit Is</p>
+          </div>
+          <div className="audit-section-body">
+            <article className="card-surface p-6 max-w-5xl">
+              <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
+                The audit gives leadership a defensible answer to one core question: what is our behavioral safety exposure
+                today, and what do we do next?
+              </p>
+              <details className="progressive-details">
+                <summary aria-label="Toggle section details" />
+                <div className="progressive-details-body">
+                  <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
+                    The evaluation applies a binary safety gate and dimension scoring against versioned scenarios across{" "}
+                    {BENCHMARK_CURRENT.domains} categories.
+                  </p>
+                  <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
+                    Output is governance-ready evidence showing severity, concentration of risk, and concrete remediation
+                    priorities.
+                  </p>
+                </div>
+              </details>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section id="fit" className="py-14 border-b border-border">
-        <h2 className="font-display fluid-heading text-foreground mb-6">Is this the right engagement for your organization?</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-6xl">
-          <article className="card-surface p-6">
-            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">Good fit</p>
-            <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-              {goodFit.map((item) => (
-                <li key={item}>• {item}</li>
+      <section id="validation-pathway" className="py-14 border-b border-border audit-section-block">
+        <div className="audit-section-layout">
+          <div className="audit-section-head">
+            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Validation Pathway</p>
+            <p className="text-sm text-foreground-muted leading-relaxed measure text-pretty mb-8">
+              Most teams start with Diagnostic Audit, then add Implementation Support or Active Monitoring based on risk
+              profile and timeline.
+            </p>
+          </div>
+
+          <div className="audit-section-body">
+            <div className="max-w-5xl mb-6">
+              <EnterpriseStepper steps={pathwaySummarySteps} />
+            </div>
+
+            <div className="audit-pathway-layout max-w-6xl">
+              <aside className="audit-pathway-nav card-surface p-4">
+                <p className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle mb-3">Jump to stage</p>
+                <div className="flex flex-wrap gap-2 lg:grid lg:grid-cols-1">
+                  {pathwayJump.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="summary-jump">
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              </aside>
+
+              <div className="space-y-4">
+              {pathway.map((stage, index) => (
+                <div key={stage.step} id={`stage-${stage.step}`}>
+                  <article
+                    className={`card-surface p-6 md:p-7 ${
+                      stage.coming ? "border-border-2 bg-background-surface pathway-coming" : "pathway-card"
+                    }`}
+                  >
+                    <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start">
+                      <div>
+                        <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-2">{stage.step}</p>
+                        <h2 className="font-display fluid-heading text-foreground mb-2">{stage.title}</h2>
+                        <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-4">{stage.tag}</p>
+                        <div className="space-y-3 mb-2">
+                          <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">{stage.paragraphs[0]}</p>
+                        </div>
+                      </div>
+                      <div className="audit-stage-meta">
+                        <p className={`text-xs ${stage.coming ? "text-foreground-subtle" : "text-lilac"}`}>{stage.pricing}</p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-3 mt-2">
+                      {(stage.paragraphs.length > 1 || stage.receives.length > 0) ? (
+                        <details className="progressive-details">
+                          <summary
+                            aria-label="Toggle stage details"
+                            data-label="Stage details and deliverables"
+                            data-open-label="Hide stage details"
+                          />
+                          <div className="progressive-details-body">
+                            {stage.paragraphs.slice(1).map((paragraph) => (
+                              <p key={paragraph} className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
+                                {paragraph}
+                              </p>
+                            ))}
+
+                            {stage.receives.length > 0 ? (
+                              <>
+                                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-1">What You Receive</p>
+                                <ul className="audit-deliverables-list space-y-2 text-sm text-foreground-muted leading-relaxed">
+                                  {stage.receives.map((item) => (
+                                    <li key={item}>• {item}</li>
+                                  ))}
+                                </ul>
+                              </>
+                            ) : null}
+                          </div>
+                        </details>
+                      ) : null}
+                    </div>
+                  </article>
+
+                  {index < pathway.length - 1 ? (
+                    <p className="text-center text-foreground-subtle font-mono text-xs mt-3">Next stage</p>
+                  ) : null}
+                </div>
               ))}
-            </ul>
-          </article>
-          <article className="card-surface p-6">
-            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">Not a fit</p>
-            <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-              {notFit.map((item) => (
-                <li key={item}>• {item}</li>
-              ))}
-            </ul>
-          </article>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="request-start" className="py-14 max-w-4xl">
-        <h2 className="font-display fluid-heading text-foreground mb-3">Request Evaluation</h2>
-        <p className="text-sm text-foreground-muted leading-relaxed mb-3 measure text-pretty">
-          Share your deployment context and decision timeline. We respond with a scoped recommendation and next steps.
-        </p>
-        <p className="text-xs text-foreground-subtle mb-5">
-          Fields: Organization · AI system or product name · Deployment context · Regulatory environment · Approximate user
-          scale · Timeline · Your name and email
-        </p>
-        <div className="flex flex-wrap gap-3 mb-4">
-          <a
-            href="/intake#application-form"
-            className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
-          >
-            Request Evaluation
-          </a>
-          <a
-            href="/trust"
-            className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
-          >
-            Trust &amp; Confidentiality
-          </a>
+      <section id="what-we-measure" className="py-14 border-b border-border audit-section-block">
+        <div className="audit-section-layout">
+          <div className="audit-section-head">
+            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">What We Measure</p>
+          </div>
+          <div className="audit-section-body">
+            <div className="card-surface p-6 max-w-5xl safe-panel">
+              <h2 className="font-display fluid-heading text-foreground mb-4">What behavioral safety evaluation actually measures</h2>
+              <ul className="space-y-3 text-sm text-foreground-muted leading-relaxed">
+                {measures.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="text-safe shrink-0">•</span>
+                    <span className="text-pretty">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
-        <p className="text-xs text-foreground-subtle measure text-pretty">
-          All intake information is treated as confidential. We do not share organization details with third parties.
-          See our Trust &amp; Confidentiality page for full standards.
-        </p>
-        <div className="flex flex-wrap gap-2 mt-4">
-          <a href="/benchmark" className="summary-jump">Benchmark framework</a>
-          <a href="/research" className="summary-jump">Research evidence</a>
-          <a href="/deliverables" className="summary-jump">Deliverables</a>
+      </section>
+
+      <section id="fit" className="py-14 border-b border-border audit-section-block">
+        <div className="audit-section-layout">
+          <div className="audit-section-head">
+            <h2 className="font-display fluid-heading text-foreground mb-6">Is this the right engagement for your organization?</h2>
+          </div>
+          <div className="audit-section-body">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-6xl">
+              <article className="card-surface p-6">
+                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">Good fit</p>
+                <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
+                  {goodFit.map((item) => (
+                    <li key={item}>• {item}</li>
+                  ))}
+                </ul>
+              </article>
+              <article className="card-surface p-6">
+                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">Not a fit</p>
+                <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
+                  {notFit.map((item) => (
+                    <li key={item}>• {item}</li>
+                  ))}
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="request-start" className="py-14 audit-section-block">
+        <div className="audit-section-layout">
+          <div className="audit-section-head">
+            <h2 className="font-display fluid-heading text-foreground mb-3">Request Evaluation</h2>
+            <p className="text-sm text-foreground-muted leading-relaxed mb-3 measure text-pretty">
+              Share your deployment context and decision timeline. We respond with a scoped recommendation and next steps.
+            </p>
+          </div>
+          <div className="audit-section-body">
+            <article className="card-surface p-6 max-w-4xl">
+              <p className="text-xs text-foreground-subtle mb-5">
+                Fields: Organization · AI system or product name · Deployment context · Regulatory environment · Approximate user
+                scale · Timeline · Your name and email
+              </p>
+              <div className="flex flex-wrap gap-3 mb-4">
+                <a
+                  href="/intake#application-form"
+                  className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+                >
+                  Request Evaluation
+                </a>
+                <a
+                  href="/trust"
+                  className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
+                >
+                  Trust &amp; Confidentiality
+                </a>
+              </div>
+              <p className="text-xs text-foreground-subtle measure text-pretty">
+                All intake information is treated as confidential. We do not share organization details with third parties.
+                See our Trust &amp; Confidentiality page for full standards.
+              </p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                <a href="/benchmark" className="summary-jump">Benchmark framework</a>
+                <a href="/research" className="summary-jump">Research evidence</a>
+                <a href="/deliverables" className="summary-jump">Deliverables</a>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
     </PageShell>
