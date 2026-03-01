@@ -41,7 +41,7 @@ const IKWE_TOPIC_PROMPTS = [
   { label: "Audit Process", prompt: "How does the audit process work?" },
   { label: "Deliverables", prompt: "What do teams receive in deliverables?" },
   { label: "Public vs Proprietary", prompt: "What is public vs proprietary?" },
-  { label: "Request Evaluation", prompt: "How do we start an audit?" },
+  { label: "Request Evaluation", prompt: "How do we start independent evaluation?" },
 ] as const;
 
 const START_MESSAGE: ChatMessage = {
@@ -116,7 +116,7 @@ const buildFollowupAskLinks = (question: string): AssistantLink[] => {
     return [
       toAskLink("Benchmark numbers", "What do the benchmark numbers mean?"),
       toAskLink("Show deliverables", "What do teams receive in deliverables?"),
-      toAskLink("Start intake", "How do we start an audit?"),
+      toAskLink("Start intake", "How do we start independent evaluation?"),
       ...LEAD_CAPTURE_LINKS,
     ];
   }
@@ -124,7 +124,7 @@ const buildFollowupAskLinks = (question: string): AssistantLink[] => {
     return [
       toAskLink("Audit process", "How does the audit process work?"),
       toAskLink("Public vs proprietary", "What is public vs proprietary?"),
-      toAskLink("Start intake", "How do we start an audit?"),
+      toAskLink("Start intake", "How do we start independent evaluation?"),
       ...LEAD_CAPTURE_LINKS,
     ];
   }
@@ -241,7 +241,7 @@ export default function SiteAssistant() {
         toAskLink("3. Audit process", "How does the audit process work?"),
         toAskLink("4. Deliverables", "What do teams receive in deliverables?"),
         toAskLink("5. Public vs proprietary", "What is public vs proprietary?"),
-        toAskLink("6. Start audit intake", "How do we start an audit?"),
+        toAskLink("6. Start evaluation intake", "How do we start independent evaluation?"),
         ...LEAD_CAPTURE_LINKS,
       ],
     };
