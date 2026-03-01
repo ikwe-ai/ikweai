@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { FileText, BarChart3, FolderKanban, Activity } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import ActionDock from "@/components/ActionDock";
@@ -33,6 +34,7 @@ export default function Reports() {
       detail:
         "Designed for governance review with classification band, key findings, and immediate decision notes in plain language.",
       sampleHref: "/reports/sample-board-brief.html",
+      icon: FileText,
     },
     {
       id: "preview-risk-scorecard",
@@ -41,6 +43,7 @@ export default function Reports() {
       detail:
         "Shows where the system performed, where it failed, and the severity mapping for each major failure pattern.",
       sampleHref: "/reports/sample-risk-scorecard.html",
+      icon: BarChart3,
     },
     {
       id: "preview-evidence-pack",
@@ -49,6 +52,7 @@ export default function Reports() {
       detail:
         "Includes evaluation runs, scenario battery documentation, and scoring outputs for authorized governance and regulatory review.",
       sampleHref: "/reports/sample-evidence-pack.html",
+      icon: FolderKanban,
     },
     {
       id: "preview-drift-alert",
@@ -57,6 +61,7 @@ export default function Reports() {
       detail:
         "Used in active monitoring engagements to highlight drift between evaluation cycles and recommended response actions.",
       sampleHref: "/reports/sample-drift-alert.html",
+      icon: Activity,
     },
   ] as const;
 
@@ -78,7 +83,7 @@ export default function Reports() {
             <p className="text-foreground-muted lede mb-8">
               Every engagement produces decision-ready evidence your executives can act on.
             </p>
-            <div className="reports-cta-row">
+            <div className="flex flex-wrap items-center gap-3">
               <a
                 href="/intake#application-form"
                 className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
@@ -102,23 +107,34 @@ export default function Reports() {
               Built for board, legal, compliance, and technical stakeholders.
             </p>
           </div>
-          <aside className="site-hero-rail card-surface p-5 reports-rail">
+          <aside className="site-hero-rail card-surface p-5">
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle mb-3">Output Set</p>
-            <div className="output-set-stack">
+            <div className="grid gap-3">
               {outputPreviews.map((item) => (
-                <article key={item.id} className="output-set-card">
-                  <p className="output-set-card-title">{item.title}</p>
-                  <p className="output-set-card-summary">{item.summary}</p>
-                  <div className="output-set-actions">
+                <article
+                  key={item.id}
+                  className="rounded-xl border border-border-2/70 bg-background-surface p-4 shadow-[inset_0_1px_0_hsl(var(--foreground)/0.05)]"
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-border-2 bg-background-card text-lilac-soft">
+                      <item.icon size={14} aria-hidden="true" />
+                    </span>
+                    <p className="text-foreground text-[1.05rem] leading-tight">{item.title}</p>
+                  </div>
+                  <p className="text-sm text-foreground-muted leading-relaxed mb-3">{item.summary}</p>
+                  <div className="flex flex-wrap gap-2">
                     <a
                       href={item.sampleHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="output-set-action"
+                      className="inline-flex items-center rounded-full border border-lilac/50 bg-lilac-dim px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.08em] text-lilac-soft hover:border-lilac/70 hover:bg-lilac/20 hover:text-foreground transition-colors"
                     >
                       Open sample →
                     </a>
-                    <a href={`#${item.id}`} className="output-set-action output-set-action-muted">
+                    <a
+                      href={`#${item.id}`}
+                      className="inline-flex items-center rounded-full border border-border-2/80 bg-background-card px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.08em] text-foreground-subtle hover:border-lilac/50 hover:bg-lilac-dim hover:text-foreground transition-colors"
+                    >
                       On-page summary
                     </a>
                   </div>
