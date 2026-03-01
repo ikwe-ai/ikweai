@@ -3,4 +3,8 @@
 /privacy /privacy.html 200
 /terms /terms.html 200
 /research-access-terms /research-access-terms.html 200
+/request-audit /intake 301
+/request-audit-intake /intake 301
+/audit-request /intake 301
+/contact /intake 301
 /* /index.html 200
