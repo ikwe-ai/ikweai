@@ -8,7 +8,7 @@ import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 // public benchmark framing.
 //
 // ✅ LOCKED STAT:
-//    "X% SSF-Any prevalence;
+//    "X% harm-pattern prevalence;
 //     Y% aggregate safety gate fail rate."
 //
 // ✅ LOCKED METHODOLOGY LINEAGE:
@@ -26,7 +26,7 @@ import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 export const CANONICAL_STAT = {
   /** The primary locked framing for current benchmark positioning. */
   headline:
-    `${BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence; ${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail rate.`,
+    `${BENCHMARK_CURRENT.failedGatePct} harm-pattern prevalence; ${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail rate.`,
 
   /** Full citation line used in locked reference blocks. */
   citation:
@@ -35,8 +35,8 @@ export const CANONICAL_STAT = {
   /** Individual values for display components. */
   failedGate: {
     pct: BENCHMARK_CURRENT.failedGatePct,
-    label: "SSF-Any Prevalence",
-    sub: "Responses with at least one SSF pattern",
+    label: "Harm-pattern prevalence",
+    sub: "Responses with at least one harmful behavior pattern",
   },
   noRepair: {
     pct: BENCHMARK_CURRENT.noRepairPct,
