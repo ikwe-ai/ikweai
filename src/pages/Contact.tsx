@@ -200,15 +200,16 @@ export default function Contact() {
   return (
     <PageShell>
       <PageMeta
-        title="Request an Audit | Ikwe.ai"
-        description="Tell us what you are deploying and what governance pressure you are facing. We will return a scoped validation plan."
+        title="Request Independent Evaluation | Ikwe.ai"
+        description="Request third-party independent behavioral safety evaluation. Share deployment and governance context to receive a scoped plan."
         path="/intake"
       />
       <SummaryHero
-        kicker="Audit Intake"
-        title="Request an Audit"
-        summary="Tell us what you are deploying and what governance pressure you are facing. We will respond with a scoped plan and access checklist."
+        kicker="Independent Evaluation Intake"
+        title="Request Third-Party Independent Behavioral Safety Evaluation"
+        summary="Tell us what you are deploying and what governance pressure you are facing. We will respond with a scoped independent evaluation plan and access checklist."
         highlights={[
+          "Third-party independent review",
           "CTO and CFO scoping inputs",
           "Procurement-ready intake fields",
           "Response target: 1 business day",
@@ -300,7 +301,9 @@ export default function Contact() {
               <input type="hidden" name="submitted_at" value={new Date().toISOString()} />
 
               <div>
-                <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest">Audit Intake</p>
+                <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest">
+                  Independent Evaluation Intake
+                </p>
                 <p className="text-xs text-foreground-subtle mt-1">Fields marked * are required.</p>
               </div>
 

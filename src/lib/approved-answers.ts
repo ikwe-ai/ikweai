@@ -122,7 +122,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     links: [
       { label: "Homepage Overview", href: "/" },
       { label: "EQ Safety Benchmark", href: "/benchmark" },
-      { label: "Request Audit", href: "/intake#application-form" },
+      { label: "Request Evaluation", href: "/intake#application-form" },
     ],
   },
   {
@@ -176,8 +176,8 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
   {
     id: "request-audit",
     keywords: [
-      "request audit",
-      "request audit",
+      "request evaluation",
+      "request evaluation",
       "contact",
       "intake",
       "start audit",
@@ -188,7 +188,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     text:
       "Start through the Validation Sprint intake form. This process is used for scope, timeline, procurement readiness, and reporting requirements before formal engagement.",
     links: [
-      { label: "Request Audit", href: "/intake#application-form" },
+      { label: "Request Evaluation", href: "/intake#application-form" },
       { label: "Audit Overview", href: "/audit" },
     ],
   },
@@ -275,7 +275,7 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
     href: "/intake#application-form",
     summary:
       "Validation Sprint intake captures organization context, scope targets, procurement constraints, and required details to start scope planning.",
-    tags: ["validation sprint", "request audit", "intake", "contact", "start"],
+    tags: ["validation sprint", "request evaluation", "intake", "contact", "start"],
   },
   {
     id: "samples",

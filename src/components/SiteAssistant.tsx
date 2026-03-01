@@ -31,7 +31,7 @@ const ASK_PREFIX = "ask://";
 const LAUNCHER_DELAY_MS = 9000;
 const LAUNCHER_SCROLL_THRESHOLD = 220;
 const LEAD_CAPTURE_LINKS: AssistantLink[] = [
-  { label: "Request Audit", href: "/intake#application-form" },
+  { label: "Request Evaluation", href: "/intake#application-form" },
   { label: "Book Consultation", href: "/archive/consult" },
 ];
 
@@ -41,14 +41,14 @@ const IKWE_TOPIC_PROMPTS = [
   { label: "Audit Process", prompt: "How does the audit process work?" },
   { label: "Deliverables", prompt: "What do teams receive in deliverables?" },
   { label: "Public vs Proprietary", prompt: "What is public vs proprietary?" },
-  { label: "Request Audit", prompt: "How do we start an audit?" },
+  { label: "Request Evaluation", prompt: "How do we start an audit?" },
 ] as const;
 
 const START_MESSAGE: ChatMessage = {
   id: 1,
   role: "assistant",
   text:
-    "Ikwe public questions only. Use quick prompts for benchmark facts, audit process, and deliverables. For direct engagement, use Request Audit.",
+    "Ikwe public questions only. Use quick prompts for benchmark facts, audit process, and deliverables. For direct engagement, use Request Evaluation.",
 };
 
 const toAskLink = (label: string, prompt: string): AssistantLink => ({
@@ -548,7 +548,7 @@ export default function SiteAssistant() {
                   className="rounded bg-lilac px-2.5 py-1.5 text-[11px] text-primary-foreground"
                   onClick={() => onOpenLink("/intake#application-form")}
                 >
-                  Request Audit
+                  Request Evaluation
                 </button>
                 <button
                   type="button"

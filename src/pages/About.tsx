@@ -20,7 +20,7 @@ export default function About() {
           "Versioned evidence policy",
           "Structured disclosure and COI recusal practices",
         ]}
-        primaryAction={{ href: "/intake#application-form", label: "Request Audit →" }}
+        primaryAction={{ href: "/intake#application-form", label: "Request Evaluation →" }}
         secondaryAction={{ href: "/deliverables", label: "View Deliverables & Transparency" }}
         jumpLinks={[
           { href: "#independence", label: "Independence" },

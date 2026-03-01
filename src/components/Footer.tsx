@@ -62,7 +62,7 @@ export default function Footer() {
                 Audit &amp; Validation
               </Link>
               <Link to="/intake#application-form" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
-                Request Audit
+                Request Evaluation
               </Link>
               <Link to="/trust" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Trust &amp; Confidentiality
