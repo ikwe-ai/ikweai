@@ -1,6 +1,7 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import EnterpriseStepper from "@/components/EnterpriseStepper";
+import ActionDock from "@/components/ActionDock";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 type PathwayStage = {
@@ -178,6 +179,21 @@ export default function Audit() {
         </p>
       </section>
 
+      <ActionDock
+        title="Next Step"
+        subtitle="Move directly to scope and decision support. Expand details only where needed."
+        items={[
+          { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
+          { href: "#decision-matrix", label: "CTO/CFO Matrix", tone: "outline" },
+          {
+            href: "/forms/ikwe-intake-form-fillable.pdf",
+            label: "Download Intake PDF",
+            tone: "quiet",
+            external: true,
+          },
+        ]}
+      />
+
       <section id="decision-matrix" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Stage Decision Matrix</p>
         <p className="text-sm text-foreground-muted leading-relaxed measure mb-6">
@@ -209,23 +225,25 @@ export default function Audit() {
 
       <section id="what-the-audit-is" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">What the Audit Is</p>
-        <div className="measure space-y-4">
-          <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
-            A behavioral safety audit is a structured, independent evaluation of how your AI system responds when users
-            are in emotionally sensitive states. It uses the EQ Safety Benchmark, a two-layer framework covering a
-            binary safety screen and eight weighted behavioral dimensions, run against versioned scenarios across{" "}
-            {BENCHMARK_CURRENT.domains} categories.
+        <article className="card-surface p-6 max-w-5xl">
+          <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
+            A behavioral safety audit provides a documented risk baseline for board, legal, and technical decision-making.
+            It is structured for governance use, not just technical diagnostics.
           </p>
-          <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
-            The output is not a score on a dashboard. It is a documented risk baseline: board-ready, governance-grade,
-            and structured for regulatory reference. It tells you where your system is safe, where it is not, and what
-            the failure modes look like at the pattern level.
-          </p>
-          <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
-            The audit is the starting point. What you do with it determines whether the risk stays documented or gets
-            resolved.
-          </p>
-        </div>
+          <details className="progressive-details">
+            <summary aria-label="Toggle section details" />
+            <div className="progressive-details-body">
+              <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
+                The evaluation uses the EQ Safety Benchmark, a two-layer framework covering a binary safety screen and eight
+                weighted behavioral dimensions, run against versioned scenarios across {BENCHMARK_CURRENT.domains} categories.
+              </p>
+              <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
+                Output is a governance-ready record showing where the system is safe, where it is not, and what the failure
+                patterns look like at the behavioral level.
+              </p>
+            </div>
+          </details>
+        </article>
       </section>
 
       <section id="validation-pathway" className="py-14 border-b border-border">
@@ -252,23 +270,31 @@ export default function Audit() {
                 <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-4">{stage.tag}</p>
 
                 <div className="space-y-3 mb-5">
-                  {stage.paragraphs.map((paragraph) => (
-                    <p key={paragraph} className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
+                  <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">{stage.paragraphs[0]}</p>
+                  {(stage.paragraphs.length > 1 || stage.receives.length > 0) ? (
+                    <details className="progressive-details">
+                      <summary aria-label="Toggle stage details" />
+                      <div className="progressive-details-body">
+                        {stage.paragraphs.slice(1).map((paragraph) => (
+                          <p key={paragraph} className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
+                            {paragraph}
+                          </p>
+                        ))}
 
-                {stage.receives.length > 0 ? (
-                  <>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-3">What You Receive</p>
-                    <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed mb-5">
-                      {stage.receives.map((item) => (
-                        <li key={item}>• {item}</li>
-                      ))}
-                    </ul>
-                  </>
-                ) : null}
+                        {stage.receives.length > 0 ? (
+                          <>
+                            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-1">What You Receive</p>
+                            <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
+                              {stage.receives.map((item) => (
+                                <li key={item}>• {item}</li>
+                              ))}
+                            </ul>
+                          </>
+                        ) : null}
+                      </div>
+                    </details>
+                  ) : null}
+                </div>
 
                 <p className={`text-xs ${stage.coming ? "text-foreground-subtle" : "text-lilac"}`}>{stage.pricing}</p>
               </article>
