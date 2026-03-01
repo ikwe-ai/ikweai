@@ -105,7 +105,7 @@ export default function Home() {
             Independent Behavioral Safety Validation
           </p>
           <h1 className="font-display fluid-title text-foreground measure-tight mb-5">
-            Independent behavioral safety evidence for high-stakes AI decisions.
+            The standard for human-facing AI is not whether it can help. It is whether it can be trusted not to harm.
           </h1>
           <p className="text-foreground-muted lede mb-9">
             If your system interacts with users in vulnerable moments, you need proof of how it behaves under pressure.

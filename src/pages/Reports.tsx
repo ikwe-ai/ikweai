@@ -47,7 +47,7 @@ export default function Reports() {
         </p>
         <h1 className="font-display fluid-title text-foreground mb-4">What you receive from an Ikwe engagement</h1>
         <p className="text-foreground-muted lede mb-8">
-          Every audit produces board-ready documentation. Here is what that looks like.
+          Every engagement produces decision-ready evidence your executives can act on.
         </p>
         <div className="flex flex-wrap gap-3">
           <a
@@ -76,7 +76,7 @@ export default function Reports() {
 
       <ActionDock
         title="Next Step"
-        subtitle="Open a sample now, then request scope when your team is ready."
+        subtitle="Review sample outputs now, then request a scoped evaluation plan."
         items={[
           { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
           { href: SAMPLE_REPORT_PATH, label: "Open Sample Report", tone: "outline" },
@@ -110,16 +110,16 @@ export default function Reports() {
           <div className="space-y-2">
             {outputPreviews.map((item) => (
               <details key={item.title} className="progressive-details">
-                <summary
-                  aria-label={`Toggle ${item.title} details`}
-                  data-label={`${item.title} · ${item.summary}`}
-                  data-open-label={`Hide ${item.title} details`}
-                />
-                <div className="progressive-details-body">
+              <summary
+                aria-label={`Toggle ${item.title} details`}
+                data-label={`${item.title} · ${item.summary}`}
+                data-open-label={`Hide ${item.title} details`}
+              />
+              <div className="progressive-details-body">
                   <p className="text-sm text-foreground-muted leading-relaxed">{item.detail}</p>
-                </div>
-              </details>
-            ))}
+              </div>
+            </details>
+          ))}
           </div>
         </article>
       </section>
@@ -147,8 +147,8 @@ export default function Reports() {
         </div>
 
         <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mt-6">
-          Full report materials are provided to organizations in active audit or scoped review. To request a specific
-          document, email <a href="mailto:research@ikwe.ai" className="link-lilac">research@ikwe.ai</a>.
+          Full report materials are provided through active audit or scoped institutional review. To request a specific
+          document path, email <a href="mailto:research@ikwe.ai" className="link-lilac">research@ikwe.ai</a>.
         </p>
 
         <div className="mt-7 flex flex-wrap gap-3">

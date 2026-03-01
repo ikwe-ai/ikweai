@@ -150,10 +150,10 @@ export default function Audit() {
         <p className="text-xs text-foreground-subtle mb-4">
           Framework basis: EQ Safety Benchmark {BENCHMARK_CURRENT.version} · Updated {BENCHMARK_CURRENT.lastUpdated}
         </p>
-        <h1 className="font-display fluid-title text-foreground mb-4">Start with a clear picture of where your system stands.</h1>
+        <h1 className="font-display fluid-title text-foreground mb-4">Independent behavioral safety evaluation for executive decisions.</h1>
         <p className="text-foreground-muted lede mb-6">
-          Ikwe&apos;s audit is the first step in a structured validation pathway: behavioral risk baseline through
-          remediation support, continuous monitoring, and formal certification as the program matures.
+          Start with a documented risk baseline, then move through remediation support and active monitoring as needed.
+          This pathway is built for CTO and CFO decisions, not just technical review.
         </p>
         <div className="summary-headline-strip mb-7 max-w-4xl">
           <div className="summary-headline-item">Independent</div>
@@ -180,7 +180,7 @@ export default function Audit() {
           <a href="#validation-pathway" className="summary-jump">Full pathway detail</a>
         </div>
         <p className="text-xs text-foreground-subtle mt-3">
-          Executive quick view: start with the CTO/CFO stage matrix below, then move into full pathway detail.
+          Use the CTO/CFO matrix for fast stage selection, then open detailed scope only where needed.
         </p>
 
         <div className="audit-decision-grid mt-6">
@@ -204,7 +204,7 @@ export default function Audit() {
 
       <ActionDock
         title="Next Step"
-        subtitle="Move directly to scope and decision support. Expand details only where needed."
+        subtitle="Pick your stage, confirm scope, and start independent evaluation."
         items={[
           { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
           { href: "#decision-matrix", label: "CTO/CFO Matrix", tone: "outline" },
@@ -220,7 +220,7 @@ export default function Audit() {
       <section id="decision-matrix" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Stage Decision Matrix</p>
         <p className="text-sm text-foreground-muted leading-relaxed measure mb-6">
-          Quick scan for finance and technical leadership. Detailed stage descriptions follow below.
+          Compare commercial value and technical value by stage in one view.
         </p>
         <div className="lg:hidden grid grid-cols-1 gap-3 mb-4">
           {stageMatrix.map((row) => (
@@ -271,19 +271,19 @@ export default function Audit() {
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">What the Audit Is</p>
         <article className="card-surface p-6 max-w-5xl">
           <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
-            A behavioral safety audit provides a documented risk baseline for board, legal, and technical decision-making.
-            It is structured for governance use, not just technical diagnostics.
+            The audit gives leadership a defensible answer to one core question: what is our behavioral safety exposure
+            today, and what do we do next?
           </p>
           <details className="progressive-details">
             <summary aria-label="Toggle section details" />
             <div className="progressive-details-body">
               <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
-                The evaluation uses the EQ Safety Benchmark, a two-layer framework covering a binary safety screen and eight
-                weighted behavioral dimensions, run against versioned scenarios across {BENCHMARK_CURRENT.domains} categories.
+                The evaluation applies a binary safety gate and dimension scoring against versioned scenarios across{" "}
+                {BENCHMARK_CURRENT.domains} categories.
               </p>
               <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
-                Output is a governance-ready record showing where the system is safe, where it is not, and what the failure
-                patterns look like at the behavioral level.
+                Output is governance-ready evidence showing severity, concentration of risk, and concrete remediation
+                priorities.
               </p>
             </div>
           </details>
@@ -293,8 +293,8 @@ export default function Audit() {
       <section id="validation-pathway" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Validation Pathway</p>
         <p className="text-sm text-foreground-muted leading-relaxed measure text-pretty mb-8">
-          Each stage is a discrete engagement. Most organizations start with the audit. The pathway is designed so each
-          stage builds on the last, but any stage can be the entry point depending on where you are.
+          Most teams start with Diagnostic Audit, then add Implementation Support or Active Monitoring based on risk
+          profile and timeline.
         </p>
 
         <div className="max-w-5xl mb-6">
@@ -415,8 +415,7 @@ export default function Audit() {
       <section id="request-start" className="py-14 max-w-4xl">
         <h2 className="font-display fluid-heading text-foreground mb-3">Request Evaluation</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-3 measure text-pretty">
-          Tell us about your system and deployment context. We will review and respond within two business days with a
-          scope recommendation and next steps.
+          Share your deployment context and decision timeline. We respond with a scoped recommendation and next steps.
         </p>
         <p className="text-xs text-foreground-subtle mb-5">
           Fields: Organization · AI system or product name · Deployment context · Regulatory environment · Approximate user

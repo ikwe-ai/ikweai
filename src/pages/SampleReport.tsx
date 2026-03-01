@@ -32,7 +32,7 @@ export default function SampleReport() {
         </p>
         <h1 className="font-display fluid-heading text-foreground mb-3">Public Redacted Sample Report</h1>
         <p className="text-sm text-foreground-muted leading-relaxed mb-4 max-w-3xl">
-          This view stays in the Ikwe site shell. Close the modal to return to your previous page.
+          Review the output format and evidence structure used in client-facing reporting.
         </p>
         <div className="flex flex-wrap gap-2">
           <a href={SAMPLE_REPORT_PATH} target="_blank" rel="noopener noreferrer" className="summary-jump">

@@ -25,9 +25,9 @@ export default function Trust() {
       <SummaryHero
         kicker="Trust Standards"
         title="Trust & Confidentiality"
-        summary="Clear summary of how Ikwe.ai handles intake information, report sharing, and independent evaluation standards."
+        summary="What you can share, how outputs are controlled, and how independent evaluation materials are handled for institutional review."
         highlights={[
-          "Clear transparency model",
+          "Clear access model",
           "Detailed materials shared with authorized stakeholders",
           "Independent third-party evaluation standards",
         ]}
@@ -44,7 +44,7 @@ export default function Trust() {
       <section id="information-needs" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Information Needs</p>
         <p className="text-xs text-foreground-subtle mb-6 max-w-4xl">
-          Intake is minimal, access is controlled, and outputs are versioned for traceable governance review.
+          Share only what is needed to scope evaluation. Access and reporting stay controlled and traceable.
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-5xl">
           <article className="card-surface p-6">
@@ -134,7 +134,7 @@ export default function Trust() {
 
       <section id="contact-path" className="py-14 max-w-3xl">
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-          Use evaluation intake to request scope review, redacted output walkthrough, and full report package options.
+          Use evaluation intake to request scope review, sample walkthrough, and report package options.
         </p>
         <p className="text-xs text-foreground-subtle leading-relaxed mb-5">
           PDF copies are provided on request. If a styled PDF is unavailable, we can send an equivalent web-copy
