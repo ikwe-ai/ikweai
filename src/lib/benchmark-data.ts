@@ -21,7 +21,7 @@ export const BENCHMARK_PUBLIC_LOG = [
 ] as const;
 
 export const BENCHMARK_LOG_REQUEST = {
-  href: "/request-audit#application-form",
+  href: "/intake#application-form",
   label: "Request benchmark update log",
 } as const;
 

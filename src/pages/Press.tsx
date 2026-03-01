@@ -61,7 +61,7 @@ export default function Press() {
           "Routing for media and stakeholders",
           "Forthcoming items marked by status only",
         ]}
-        primaryAction={{ href: "/request-audit#application-form", label: "Request Audit →" }}
+        primaryAction={{ href: "/intake#application-form", label: "Request Audit →" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
         jumpLinks={[
           { href: "#published-communications", label: "Published" },
@@ -103,7 +103,7 @@ export default function Press() {
           For media requests, include your outlet, deadline, and topic scope. Use the audit request form as the
           primary intake path; scope review follows for briefing alignment.
         </p>
-        <a href="/request-audit#application-form" className="text-sm link-lilac">
+        <a href="/intake#application-form" className="text-sm link-lilac">
           Open request intake →
         </a>
       </section>

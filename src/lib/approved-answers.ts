@@ -122,7 +122,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     links: [
       { label: "Homepage Overview", href: "/" },
       { label: "EQ Safety Benchmark", href: "/benchmark" },
-      { label: "Request Audit", href: "/request-audit#application-form" },
+      { label: "Request Audit", href: "/intake#application-form" },
     ],
   },
   {
@@ -179,7 +179,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     text:
       "Start through the Request Audit intake form. This process is used for scope, timeline, and reporting requirements before formal engagement.",
     links: [
-      { label: "Request Audit", href: "/request-audit#application-form" },
+      { label: "Request Audit", href: "/intake#application-form" },
       { label: "Audit Overview", href: "/audit" },
     ],
   },
@@ -263,7 +263,7 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
   {
     id: "contact",
     title: "Request Audit Intake",
-    href: "/request-audit#application-form",
+    href: "/intake#application-form",
     summary:
       "Request Audit intake captures organization context, scope targets, and required details to start audit planning.",
     tags: ["request audit", "intake", "contact", "start"],

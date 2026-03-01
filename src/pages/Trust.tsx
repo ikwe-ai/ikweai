@@ -32,7 +32,7 @@ export default function Trust() {
           "Independent third-party evaluation standards",
         ]}
         primaryAction={{ href: "#handling-boundary", label: "View Handling Boundary ↓" }}
-        secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
+        secondaryAction={{ href: "/intake#application-form", label: "Request Audit" }}
         jumpLinks={[
           { href: "#information-needs", label: "Information Needs" },
           { href: "#handling-boundary", label: "Public and Client Materials" },
@@ -143,7 +143,7 @@ export default function Trust() {
           version for review.
         </p>
         <a
-          href="/request-audit#application-form"
+          href="/intake#application-form"
           className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
           style={{ fontFamily: "var(--font-body)" }}
         >

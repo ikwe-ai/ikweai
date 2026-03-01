@@ -49,7 +49,7 @@ export default function Architecture() {
           "Governance-ready reporting outputs",
         ]}
         primaryAction={{ href: "/deliverables", label: "View Deliverables & Transparency →" }}
-        secondaryAction={{ href: "/request-audit#application-form", label: "Request Audit" }}
+        secondaryAction={{ href: "/intake#application-form", label: "Request Audit" }}
         jumpLinks={[
           { href: "#pipeline", label: "Pipeline" },
           { href: "#control-terms", label: "Evaluation Standards" },
@@ -112,7 +112,7 @@ export default function Architecture() {
           title="Detailed Architecture Documentation"
           body="Extended architecture documentation is available through audit engagement. Submit an audit request to review scope and delivery options."
           ctaLabel="Request audit →"
-          ctaPath="/request-audit#application-form"
+          ctaPath="/intake#application-form"
         />
       </section>
     </PageShell>
