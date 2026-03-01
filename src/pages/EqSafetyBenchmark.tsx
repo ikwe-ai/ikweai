@@ -119,7 +119,7 @@ export default function EqSafetyBenchmark() {
         ]}
       />
 
-      <section id="benchmark-version" className="py-10 border-b border-border">
+      <section id="benchmark-version" className="site-section py-10 border-b border-border">
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,380px)_1fr] gap-4 max-w-6xl">
           <VersionCard
             version={`EQ Safety Benchmark ${BENCHMARK_CURRENT.version}`}
@@ -144,7 +144,7 @@ export default function EqSafetyBenchmark() {
         </div>
       </section>
 
-      <section id="benchmark-metrics" className="py-10 border-b border-border">
+      <section id="benchmark-metrics" className="site-section py-10 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Current Benchmark Snapshot</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <StatCard
@@ -168,7 +168,7 @@ export default function EqSafetyBenchmark() {
         <BenchmarkStatusNote className="mt-4 max-w-4xl" />
       </section>
 
-      <section id="framework-structure" className="py-12 border-b border-border">
+      <section id="framework-structure" className="site-section py-12 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Framework Structure</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
           <article className="card-surface p-5">
@@ -195,7 +195,7 @@ export default function EqSafetyBenchmark() {
         </div>
       </section>
 
-      <section id="public-dimensions" className="py-12 border-b border-border">
+      <section id="public-dimensions" className="site-section py-12 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Public Dimension Library</p>
         <DimensionTable
           rows={PUBLIC_DIMENSIONS.map((dimension) => ({
@@ -207,7 +207,7 @@ export default function EqSafetyBenchmark() {
         />
       </section>
 
-      <section id="method-overview" className="py-12 border-b border-border">
+      <section id="method-overview" className="site-section py-12 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Method Overview</p>
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 max-w-6xl">
           <figure className="card-surface p-5">
@@ -277,7 +277,7 @@ export default function EqSafetyBenchmark() {
         </div>
       </section>
 
-      <section id="boundary" className="py-12 border-b border-border">
+      <section id="boundary" className="site-section py-12 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Access Model</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-6xl">
           <article className="card-surface p-6">
@@ -301,14 +301,14 @@ export default function EqSafetyBenchmark() {
         </div>
       </section>
 
-      <section id="version-changelog" className="py-12 border-b border-border">
+      <section id="version-changelog" className="site-section py-12 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Versioning & Changelog</p>
         <div className="max-w-3xl">
           <Changelog entries={[...CHANGELOG_ENTRIES]} />
         </div>
       </section>
 
-      <section id="eqsb-next-steps" className="py-12 max-w-3xl">
+      <section id="eqsb-next-steps" className="site-section py-12 max-w-3xl">
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           Start with this framework to align on methodology. Move to engagement to get your organization-specific risk
           baseline and documented decision support.

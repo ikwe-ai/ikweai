@@ -114,7 +114,7 @@ export default function Home() {
         path="/"
       />
       <PageShell>
-        <section className="pt-12 pb-14 border-b border-border home-hero">
+        <section className="site-section pt-12 pb-14 border-b border-border home-hero">
           <div className="home-hero-layout">
             <div>
               <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">
@@ -188,7 +188,7 @@ export default function Home() {
           ]}
         />
 
-        <section className="py-14 border-b border-border">
+        <section className="site-section py-14 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Buyer Context</p>
           <h2 className="font-display fluid-heading text-foreground mb-5">
             Recognition is not safety. Buyer risk appears in behavior over time.
@@ -209,7 +209,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-14 border-b border-border">
+        <section className="site-section py-14 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">What Ikwe Delivers</p>
           <h2 className="font-display fluid-heading text-foreground mb-5">Independent behavioral validation built for decision-making.</h2>
           <div className="measure space-y-4 mb-8">
@@ -238,7 +238,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-14 border-b border-border">
+        <section className="site-section py-14 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Proof of Output</p>
           <article className="card-surface p-6 max-w-5xl">
           <h2 className="font-display fluid-heading text-foreground mb-3">Board-Ready Deliverables</h2>
@@ -256,7 +256,7 @@ export default function Home() {
           </article>
         </section>
 
-        <section className="py-14 border-b border-border">
+        <section className="site-section py-14 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Evidence</p>
           <p className="text-sm text-foreground-muted leading-relaxed measure mb-7 text-pretty">
             Across {BENCHMARK_CURRENT.nShort} scored responses, evaluated against {BENCHMARK_CURRENT.scenarios} structured
@@ -289,7 +289,7 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="py-14 border-b border-border">
+        <section className="site-section py-14 border-b border-border">
           <h2 className="font-display fluid-heading text-foreground mb-8">How we evaluate your system</h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             {evaluationSteps.map((step, index) => (
@@ -316,7 +316,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-14 border-b border-border">
+        <section className="site-section py-14 border-b border-border">
           <h2 className="font-display fluid-heading text-foreground mb-5">Who engages Ikwe</h2>
           <p className="text-sm text-foreground-muted leading-relaxed measure mb-6 text-pretty">
             We work with teams deploying conversational AI where a failed response has legal, regulatory, financial, or
@@ -338,7 +338,7 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="py-14 border-b border-border">
+        <section className="site-section py-14 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Why risk compounds</p>
           <p className="text-sm text-foreground-muted leading-relaxed measure mb-8 text-pretty">
             In vulnerable contexts, one unsafe interaction often increases the probability of the next.
@@ -361,7 +361,7 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="py-14">
+        <section className="site-section py-14">
           <h2 className="font-display fluid-heading text-foreground mb-3">Know where your system stands.</h2>
           <p className="text-sm text-foreground-muted mb-6 measure-tight text-pretty">
             Get a third-party baseline before launch risk becomes board risk.

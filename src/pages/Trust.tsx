@@ -41,7 +41,7 @@ export default function Trust() {
         ]}
       />
 
-      <section id="information-needs" className="py-14 border-b border-border">
+      <section id="information-needs" className="site-section py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Information Needs</p>
         <p className="text-xs text-foreground-subtle mb-6 max-w-4xl">
           Share only what is needed to scope evaluation. Access and reporting stay controlled and traceable.
@@ -72,7 +72,7 @@ export default function Trust() {
         </div>
       </section>
 
-      <section id="handling-boundary" className="py-14 border-b border-border">
+      <section id="handling-boundary" className="site-section py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Public Information and Client Materials</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-5xl">
           <article className="card-surface p-6">
@@ -103,7 +103,7 @@ export default function Trust() {
         </div>
       </section>
 
-      <section id="confidentiality" className="py-14 border-b border-border max-w-3xl">
+      <section id="confidentiality" className="site-section py-14 border-b border-border max-w-3xl">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Confidentiality Principles</p>
         <div className="space-y-0 divide-y divide-border">
           {[
@@ -132,7 +132,7 @@ export default function Trust() {
         </div>
       </section>
 
-      <section id="contact-path" className="py-14 max-w-3xl">
+      <section id="contact-path" className="site-section py-14 max-w-3xl">
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           Use evaluation intake to request scope review, sample walkthrough, and report package options.
         </p>

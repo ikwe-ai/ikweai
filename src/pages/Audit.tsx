@@ -145,7 +145,7 @@ export default function Audit() {
         path="/audit"
       />
 
-      <section className="py-14 border-b border-border audit-hero">
+      <section className="site-section py-14 border-b border-border audit-hero">
         <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Audit &amp; Validation</p>
         <p className="text-xs text-foreground-subtle mb-4">
           Framework basis: EQ Safety Benchmark {BENCHMARK_CURRENT.version} · Updated {BENCHMARK_CURRENT.lastUpdated}
@@ -217,7 +217,7 @@ export default function Audit() {
         ]}
       />
 
-      <section id="decision-matrix" className="py-14 border-b border-border audit-section-block">
+      <section id="decision-matrix" className="site-section py-14 border-b border-border audit-section-block">
         <div className="audit-section-layout">
           <div className="audit-section-head">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">Stage Decision Matrix</p>
@@ -273,7 +273,7 @@ export default function Audit() {
         </div>
       </section>
 
-      <section id="what-the-audit-is" className="py-14 border-b border-border audit-section-block">
+      <section id="what-the-audit-is" className="site-section py-14 border-b border-border audit-section-block">
         <div className="audit-section-layout">
           <div className="audit-section-head">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">What the Audit Is</p>
@@ -302,7 +302,7 @@ export default function Audit() {
         </div>
       </section>
 
-      <section id="validation-pathway" className="py-14 border-b border-border audit-section-block">
+      <section id="validation-pathway" className="site-section py-14 border-b border-border audit-section-block">
         <div className="audit-section-layout">
           <div className="audit-section-head">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Validation Pathway</p>
@@ -393,7 +393,7 @@ export default function Audit() {
         </div>
       </section>
 
-      <section id="what-we-measure" className="py-14 border-b border-border audit-section-block">
+      <section id="what-we-measure" className="site-section py-14 border-b border-border audit-section-block">
         <div className="audit-section-layout">
           <div className="audit-section-head">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">What We Measure</p>
@@ -414,7 +414,7 @@ export default function Audit() {
         </div>
       </section>
 
-      <section id="fit" className="py-14 border-b border-border audit-section-block">
+      <section id="fit" className="site-section py-14 border-b border-border audit-section-block">
         <div className="audit-section-layout">
           <div className="audit-section-head">
             <h2 className="font-display fluid-heading text-foreground mb-6">Is this the right engagement for your organization?</h2>
@@ -442,7 +442,7 @@ export default function Audit() {
         </div>
       </section>
 
-      <section id="request-start" className="py-14 audit-section-block">
+      <section id="request-start" className="site-section py-14 audit-section-block">
         <div className="audit-section-layout">
           <div className="audit-section-head">
             <h2 className="font-display fluid-heading text-foreground mb-3">Request Evaluation</h2>
