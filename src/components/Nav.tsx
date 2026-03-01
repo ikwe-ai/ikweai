@@ -55,7 +55,7 @@ export default function Nav() {
           <nav className="hidden lg:flex items-center gap-1 rounded-full border border-border bg-background-card p-1 nav-pill">
             <Link
               to="/"
-              className={`rounded-full px-3 py-1.5 text-sm transition-colors whitespace-nowrap ${
+              className={`nav-link-pill rounded-full px-3 py-1.5 text-sm transition-colors whitespace-nowrap ${
                 isActive("/") ? "bg-lilac-dim text-lilac-bright" : "text-foreground-muted hover:text-foreground"
               }`}
             >
@@ -65,7 +65,7 @@ export default function Nav() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`rounded-full px-3 py-1.5 text-sm transition-colors whitespace-nowrap ${
+                className={`nav-link-pill rounded-full px-3 py-1.5 text-sm transition-colors whitespace-nowrap ${
                   isActive(link.path)
                     ? "bg-lilac-dim text-lilac-bright"
                     : "text-foreground-muted hover:text-foreground"
