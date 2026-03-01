@@ -900,15 +900,19 @@
 
   a.bg-lilac,
   button.bg-lilac {
-    border: 1px solid hsl(var(--lilac-bright) / 0.45);
-    background: hsl(var(--lilac));
-    box-shadow: 0 8px 18px hsl(260 58% 36% / 0.22), inset 0 1px 0 hsl(var(--background-card) / 0.2);
+    border: 1px solid hsl(var(--amber) / 0.62);
+    background:
+      linear-gradient(135deg, hsl(42 92% 62%) 0%, hsl(34 88% 56%) 100%);
+    color: hsl(22 44% 12%) !important;
+    box-shadow: 0 10px 20px hsl(36 90% 28% / 0.24), inset 0 1px 0 hsl(45 95% 88% / 0.42);
   }
 
   a.bg-lilac:hover,
   button.bg-lilac:hover {
-    background: hsl(var(--lilac-bright));
-    box-shadow: 0 10px 20px hsl(260 58% 36% / 0.28), inset 0 1px 0 hsl(var(--background-card) / 0.3);
+    background:
+      linear-gradient(135deg, hsl(45 96% 66%) 0%, hsl(36 92% 59%) 100%);
+    color: hsl(22 44% 10%) !important;
+    box-shadow: 0 12px 24px hsl(36 90% 28% / 0.30), inset 0 1px 0 hsl(45 95% 92% / 0.5);
     transform: translateY(-1px);
   }
 

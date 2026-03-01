@@ -39,17 +39,17 @@ export default function Nav() {
           <Link
             to="/"
             className="flex items-center gap-2.5 hover:opacity-90 transition-opacity shrink-0"
-            aria-label="Ikwe.ai home"
+            aria-label="ikwe.ai home"
           >
             <img
               src="/ikwe_logo_dark.png"
-              alt="Ikwe.ai"
+              alt="ikwe.ai"
               width={28}
               height={28}
               style={{ borderRadius: "50%", display: "block" }}
             />
             <span className="font-display text-lg font-medium tracking-tight text-foreground">
-              Ikwe<span className="text-lilac">.ai</span>
+              ikwe<span className="text-lilac">.ai</span>
             </span>
           </Link>
 
