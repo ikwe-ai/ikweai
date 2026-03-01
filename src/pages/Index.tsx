@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Landmark, Scale, ShieldCheck, Cpu, ShieldAlert, SlidersHorizontal, Radar } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import PageShell from "@/components/PageShell";
 import ActionDock from "@/components/ActionDock";
@@ -9,18 +10,22 @@ export default function Home() {
     {
       title: "Board",
       body: "Defensible audit record for governance review",
+      icon: Landmark,
     },
     {
       title: "Legal",
       body: "Documented evidence of behavioral due diligence",
+      icon: Scale,
     },
     {
       title: "Regulators",
       body: "Reproducible, versioned compliance artifacts",
+      icon: ShieldCheck,
     },
     {
       title: "Engineering",
       body: "Structured failure mode data your team can act on",
+      icon: Cpu,
     },
   ] as const;
 
@@ -47,16 +52,19 @@ export default function Home() {
       title: "Safety Gate",
       body: "We run a binary fail screen first. If a response crosses defined severe-risk conditions, it fails immediately and is documented for governance action.",
       tone: "danger",
+      icon: ShieldAlert,
     },
     {
       title: "Dimensional Scoring",
       body: "Responses that pass the gate are scored across eight behavioral dimensions. This shows where risk concentrates and which failure patterns require remediation first.",
       tone: "lilac",
+      icon: SlidersHorizontal,
     },
     {
       title: "Monitoring",
       body: "We re-evaluate after model and prompt changes so you can detect drift before it becomes an incident, complaint, or procurement blocker.",
       tone: "safe",
+      icon: Radar,
     },
   ] as const;
 
@@ -92,6 +100,12 @@ export default function Home() {
     { href: "/audit", label: "Audit pathway" },
   ] as const;
 
+  const parsePercent = (value: string) => Number.parseFloat(value.replace("%", ""));
+  const railBars = [
+    { label: "SSF-Any prevalence", value: parsePercent(BENCHMARK_CURRENT.failedGatePct), tone: "danger" },
+    { label: "Aggregate safety gate fail", value: parsePercent(BENCHMARK_CURRENT.noRepairPct), tone: "danger" },
+  ] as const;
+
   return (
     <>
       <PageMeta
@@ -100,37 +114,67 @@ export default function Home() {
         path="/"
       />
       <PageShell>
-        <section className="pt-12 pb-14 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">
-            Independent Behavioral Safety Validation
-          </p>
-          <h1 className="font-display fluid-title text-foreground measure-tight mb-5">
-            The standard for human-facing AI is not whether it can help. It is whether it can be trusted not to harm.
-          </h1>
-          <p className="text-foreground-muted lede mb-9">
-            If your system interacts with users in vulnerable moments, you need proof of how it behaves under pressure.
-            Ikwe provides third-party evaluation evidence your board, legal, and compliance teams can use now.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="/intake#application-form"
-              className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
-            >
-              Request Evaluation
-            </a>
-            <Link
-              to="/benchmark"
-              className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
-            >
-              View the Benchmark
-            </Link>
-          </div>
-          <div className="flex flex-wrap gap-2 mt-5">
-            {exploreLinks.map((item) => (
-              <a key={item.href} href={item.href} className="summary-jump">
-                {item.label}
-              </a>
-            ))}
+        <section className="pt-12 pb-14 border-b border-border home-hero">
+          <div className="home-hero-layout">
+            <div>
+              <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">
+                Independent Behavioral Safety Validation
+              </p>
+              <h1 className="font-display fluid-title text-foreground measure-tight mb-5">
+                The standard for human-facing AI is not whether it can help. It is whether it can be trusted not to harm.
+              </h1>
+              <p className="text-foreground-muted lede mb-9">
+                If your system interacts with users in vulnerable moments, you need proof of how it behaves under pressure.
+                Ikwe provides third-party evaluation evidence your board, legal, and compliance teams can use now.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="/intake#application-form"
+                  className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+                >
+                  Request Evaluation
+                </a>
+                <Link
+                  to="/benchmark"
+                  className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
+                >
+                  View the Benchmark
+                </Link>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-5">
+                {exploreLinks.map((item) => (
+                  <a key={item.href} href={item.href} className="summary-jump">
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <aside className="home-hero-rail card-surface p-5">
+              <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle mb-3">Current Snapshot</p>
+              <p className="text-xs text-foreground-muted mb-3">
+                EQ Safety Benchmark {BENCHMARK_CURRENT.version} · Updated {BENCHMARK_CURRENT.lastUpdated}
+              </p>
+              <div className="space-y-3">
+                {railBars.map((bar) => (
+                  <div key={bar.label}>
+                    <div className="flex items-center justify-between gap-3 mb-1.5">
+                      <p className="text-xs text-foreground-muted">{bar.label}</p>
+                      <p className="font-mono text-[11px] text-foreground">{bar.value.toFixed(1)}%</p>
+                    </div>
+                    <div className="h-2 rounded-full bg-background-surface">
+                      <div
+                        className={`h-2 rounded-full ${bar.tone === "danger" ? "bg-danger" : "bg-safe"}`}
+                        style={{ width: `${bar.value}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-foreground-subtle mt-4">
+                {BENCHMARK_CURRENT.nValue} · {BENCHMARK_CURRENT.scenarios} scenarios · {BENCHMARK_CURRENT.domains} categories
+              </p>
+            </aside>
           </div>
         </section>
 
@@ -184,6 +228,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
             {solutionPillars.map((pillar) => (
               <article key={pillar.title} className="card-surface p-5">
+                <span className="home-icon-chip">
+                  <pillar.icon size={15} aria-hidden="true" />
+                </span>
                 <h3 className="font-display text-xl text-foreground mb-2">{pillar.title}</h3>
                 <p className="text-sm text-foreground-muted">{pillar.body}</p>
               </article>
@@ -252,6 +299,9 @@ export default function Home() {
                   step.tone === "danger" ? "border-danger" : step.tone === "safe" ? "border-safe" : "border-lilac"
                 }`}
               >
+                <span className="home-step-icon">
+                  <step.icon size={16} aria-hidden="true" />
+                </span>
                 <p
                   className={`font-mono text-[11px] uppercase tracking-[0.14em] mb-3 ${
                     step.tone === "danger" ? "text-danger" : step.tone === "safe" ? "text-safe" : "text-lilac"
@@ -276,7 +326,7 @@ export default function Home() {
             {sectors.map((sector) => (
               <span
                 key={sector}
-                className="inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs text-foreground-muted bg-background-card"
+                className="home-sector-chip inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs text-foreground-muted bg-background-card"
               >
                 {sector}
               </span>
