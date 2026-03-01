@@ -3,29 +3,33 @@ import PageMeta from "@/components/PageMeta";
 import ActionDock from "@/components/ActionDock";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
-const SAMPLE_REPORT_PATH = "/reports/ikwe-sample-report-public.html";
+const SAMPLE_REPORT_PATH = "/sample-report";
 
 export default function Reports() {
   const outputPreviews = [
     {
-      label: "Preview",
       title: "Board Brief",
-      desc: "A two-page executive summary designed for board and governance review. Covers risk classification, key findings, and recommended next steps in plain institutional language. No technical jargon.",
+      summary: "Two-page board-ready risk summary.",
+      detail:
+        "Designed for governance review with classification band, key findings, and immediate decision notes in plain language.",
     },
     {
-      label: "Preview",
       title: "Risk Scorecard",
-      desc: "Dimension-level outcomes presented as a structured scorecard. Shows where the system performed, where it failed, and the severity classification for each failure mode.",
+      summary: "Dimension-level outcomes and severity bands.",
+      detail:
+        "Shows where the system performed, where it failed, and the severity mapping for each major failure pattern.",
     },
     {
-      label: "Preview",
       title: "Evidence Pack",
-      desc: "Versioned documentation of evaluation runs, scenario battery, and scoring outputs. Structured for authorized governance review and regulatory reference.",
+      summary: "Versioned documentation for traceable review.",
+      detail:
+        "Includes evaluation runs, scenario battery documentation, and scoring outputs for authorized governance and regulatory review.",
     },
     {
-      label: "Preview",
       title: "Drift Alert",
-      desc: "Operational alert format for monitoring engagements. Surfaces changed risk patterns between evaluation cycles and includes recommended response steps.",
+      summary: "Monitoring alert for changed risk patterns.",
+      detail:
+        "Used in active monitoring engagements to highlight drift between evaluation cycles and recommended response actions.",
     },
   ] as const;
 
@@ -77,7 +81,7 @@ export default function Reports() {
         subtitle="Open a sample now, then request scope when your team is ready."
         items={[
           { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
-          { href: SAMPLE_REPORT_PATH, label: "Open Sample Report", tone: "outline", external: true },
+          { href: SAMPLE_REPORT_PATH, label: "Open Sample Report", tone: "outline" },
           { href: "/trust", label: "Trust Standards", tone: "quiet" },
         ]}
       />
@@ -85,15 +89,17 @@ export default function Reports() {
       <section id="output-previews" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Deliverables Previews</p>
         <details className="progressive-details mb-5 max-w-4xl">
-          <summary aria-label="Toggle sample report note" />
+          <summary
+            aria-label="Toggle sample report note"
+            data-label="Sample access notes"
+            data-open-label="Hide sample access notes"
+          />
           <div className="progressive-details-body">
             <p className="text-xs text-foreground-subtle">
-              Need a format example before engagement? Open the proprietary-format sample report (public, redacted, no
+              Need a format example before engagement? Open the proprietary-format sample report in-site modal (public, redacted, no
               client data):{" "}
               <a
                 href={SAMPLE_REPORT_PATH}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="link-lilac"
               >
                 View sample report
@@ -102,17 +108,22 @@ export default function Reports() {
             </p>
           </div>
         </details>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
-          {outputPreviews.map((item) => (
-            <article key={item.title} className="card-surface p-5 flex flex-col gap-3">
-              <span className="inline-flex w-fit rounded border border-border px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-lilac">
-                {item.label}
-              </span>
-              <h2 className="font-display text-xl text-foreground">{item.title}</h2>
-              <p className="text-sm text-foreground-muted leading-relaxed flex-1">{item.desc}</p>
-            </article>
-          ))}
-        </div>
+        <article className="card-surface p-5 max-w-5xl">
+          <div className="space-y-2">
+            {outputPreviews.map((item) => (
+              <details key={item.title} className="progressive-details">
+                <summary
+                  aria-label={`Toggle ${item.title} details`}
+                  data-label={`${item.title} · ${item.summary}`}
+                  data-open-label={`Hide ${item.title} details`}
+                />
+                <div className="progressive-details-body">
+                  <p className="text-sm text-foreground-muted leading-relaxed">{item.detail}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </article>
       </section>
 
       <section id="transparency-boundary" className="py-14">
