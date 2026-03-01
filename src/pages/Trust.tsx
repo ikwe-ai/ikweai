@@ -1,8 +1,14 @@
+import { useState } from "react";
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
+import AssetPreviewModal from "@/components/AssetPreviewModal";
+
+const SAMPLE_REPORT_PATH = "/reports/ikwe-sample-report-public.html";
 
 export default function Trust() {
+  const [openSampleReport, setOpenSampleReport] = useState(false);
+
   const requiredInputs = [
     "System purpose and deployment surface",
     "Risk-sensitive use context and stakeholder profile",
@@ -82,12 +88,9 @@ export default function Trust() {
               <li>• High-level benchmark findings and version context</li>
               <li>
                 • Redacted examples showing deliverables structure (including a{" "}
-                <a
-                  href="/sample-report"
-                  className="link-lilac"
-                >
+                <button type="button" onClick={() => setOpenSampleReport(true)} className="link-lilac">
                   public sample report
-                </a>
+                </button>
                 )
               </li>
             </ul>
@@ -151,10 +154,17 @@ export default function Trust() {
           <a href="/benchmark" className="summary-jump">Benchmark framework</a>
           <a href="/research" className="summary-jump">Research evidence</a>
           <a href="/deliverables" className="summary-jump">Deliverables</a>
-          <a href="/sample-report" className="summary-jump">Sample report</a>
+          <button type="button" onClick={() => setOpenSampleReport(true)} className="summary-jump">Sample report</button>
           <a href="/audit" className="summary-jump">Audit pathway</a>
         </div>
       </section>
+
+      <AssetPreviewModal
+        open={openSampleReport}
+        onOpenChange={setOpenSampleReport}
+        title="Ikwe Sample Report (Public, Redacted)"
+        src={SAMPLE_REPORT_PATH}
+      />
     </PageShell>
   );
 }

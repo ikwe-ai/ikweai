@@ -1,9 +1,11 @@
+import { useState } from "react";
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
+import AssetPreviewModal from "@/components/AssetPreviewModal";
 
 const SAMPLE_EXCERPT_PATH = "/reports/ikwe-sample-excerpt-one-page.pdf";
-const SAMPLE_REPORT_PATH = "/sample-report";
+const SAMPLE_REPORT_PATH = "/reports/ikwe-sample-report-public.html";
 
 const deliverableItems = [
   {
@@ -36,6 +38,8 @@ const faqs = [
 ] as const;
 
 export default function Samples() {
+  const [openSampleReport, setOpenSampleReport] = useState(false);
+
   return (
     <PageShell>
       <PageMeta
@@ -54,7 +58,11 @@ export default function Samples() {
           "Direct path to scoped validation intake",
         ]}
         primaryAction={{ href: SAMPLE_EXCERPT_PATH, label: "View 1-Page Executive Excerpt (PDF)" }}
-        secondaryAction={{ href: SAMPLE_REPORT_PATH, label: "View Full Sample Report" }}
+        secondaryAction={{
+          href: SAMPLE_REPORT_PATH,
+          label: "View Full Sample Report",
+          onClick: () => setOpenSampleReport(true),
+        }}
         jumpLinks={[
           { href: "#deliverables", label: "What You Receive" },
           { href: "#sample-access", label: "Sample Access" },
@@ -92,7 +100,9 @@ export default function Samples() {
             <p className="text-sm text-foreground-muted leading-relaxed mb-5">
               Complete sample format to show report structure and decision-ready outputs.
             </p>
-            <a href={SAMPLE_REPORT_PATH} className="link-lilac">Open sample report →</a>
+            <button type="button" onClick={() => setOpenSampleReport(true)} className="link-lilac">
+              Open sample report →
+            </button>
           </article>
 
           <article className="card-surface p-6 risk-panel">
@@ -151,6 +161,13 @@ export default function Samples() {
           </a>
         </article>
       </section>
+
+      <AssetPreviewModal
+        open={openSampleReport}
+        onOpenChange={setOpenSampleReport}
+        title="Ikwe Sample Report (Public, Redacted)"
+        src={SAMPLE_REPORT_PATH}
+      />
     </PageShell>
   );
 }

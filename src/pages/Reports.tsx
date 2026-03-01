@@ -3,7 +3,7 @@ import { FileText, BarChart3, FolderKanban, Activity } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import ActionDock from "@/components/ActionDock";
-import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
+import AssetPreviewModal from "@/components/AssetPreviewModal";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 const SAMPLE_REPORT_PATH = "/sample-report";
@@ -277,37 +277,14 @@ export default function Reports() {
         </div>
       </section>
 
-      <Dialog open={Boolean(activeSample)} onOpenChange={(nextOpen) => !nextOpen && closeSample()}>
-        <DialogContent className="w-[96vw] max-w-6xl h-[88vh] p-0 bg-background-card border border-border overflow-hidden">
-          <div className="px-4 py-3 border-b border-border bg-background-surface flex items-center justify-between gap-3">
-            <div className="min-w-0">
-              <DialogTitle className="font-display text-xl text-foreground truncate">
-                {activeSample?.title ?? "Ikwe Sample"}
-              </DialogTitle>
-              <DialogDescription className="text-xs text-foreground-subtle">
-                Illustrative format only. No client-identifiable content.
-              </DialogDescription>
-            </div>
-            {activeSample?.src ? (
-              <a
-                href={activeSample.src}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-lilac hover:text-lilac-bright transition-colors whitespace-nowrap"
-              >
-                Open raw page
-              </a>
-            ) : null}
-          </div>
-          {activeSample?.src ? (
-            <iframe
-              title={activeSample.title}
-              src={activeSample.src}
-              className="w-full h-[calc(88vh-58px)] border-0 bg-white"
-            />
-          ) : null}
-        </DialogContent>
-      </Dialog>
+      {activeSample ? (
+        <AssetPreviewModal
+          open={Boolean(activeSample)}
+          onOpenChange={(nextOpen) => !nextOpen && closeSample()}
+          title={activeSample.title}
+          src={activeSample.src}
+        />
+      ) : null}
     </PageShell>
   );
 }
