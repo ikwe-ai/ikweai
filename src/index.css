@@ -808,6 +808,43 @@
     background: hsl(var(--lilac-dim));
   }
 
+  .output-set-link {
+    display: grid;
+    gap: 3px;
+    border: 1px solid hsl(var(--border-2) / 0.72);
+    border-radius: 10px;
+    padding: 9px 10px;
+    background: hsl(var(--background-surface));
+    transition: border-color 0.15s, background-color 0.15s, transform 0.15s;
+  }
+
+  .output-set-link:hover {
+    border-color: hsl(var(--lilac) / 0.5);
+    background: hsl(var(--lilac-dim));
+    transform: translateY(-1px);
+  }
+
+  .output-set-link-title {
+    font-size: 0.79rem;
+    line-height: 1.3;
+    color: hsl(var(--foreground));
+  }
+
+  .output-set-link-summary {
+    font-size: 0.72rem;
+    line-height: 1.35;
+    color: hsl(var(--foreground-muted));
+  }
+
+  .output-set-link-cta {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: hsl(var(--lilac-soft));
+    margin-top: 2px;
+  }
+
   .action-dock {
     position: sticky;
     top: 82px;

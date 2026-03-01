@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import ActionDock from "@/components/ActionDock";
@@ -6,26 +7,48 @@ import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 const SAMPLE_REPORT_PATH = "/sample-report";
 
 export default function Reports() {
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const openTargetPreview = () => {
+      const targetId = window.location.hash.replace("#", "");
+      if (!targetId) return;
+      const targetNode = document.getElementById(targetId);
+      if (!targetNode) return;
+      if (targetNode.tagName.toLowerCase() === "details") {
+        (targetNode as HTMLDetailsElement).open = true;
+      }
+    };
+
+    openTargetPreview();
+    window.addEventListener("hashchange", openTargetPreview);
+    return () => window.removeEventListener("hashchange", openTargetPreview);
+  }, []);
+
   const outputPreviews = [
     {
+      id: "preview-board-brief",
       title: "Board Brief",
       summary: "Two-page board-ready risk summary.",
       detail:
         "Designed for governance review with classification band, key findings, and immediate decision notes in plain language.",
     },
     {
+      id: "preview-risk-scorecard",
       title: "Risk Scorecard",
       summary: "Dimension-level outcomes and severity bands.",
       detail:
         "Shows where the system performed, where it failed, and the severity mapping for each major failure pattern.",
     },
     {
+      id: "preview-evidence-pack",
       title: "Evidence Pack",
       summary: "Versioned documentation for traceable review.",
       detail:
         "Includes evaluation runs, scenario battery documentation, and scoring outputs for authorized governance and regulatory review.",
     },
     {
+      id: "preview-drift-alert",
       title: "Drift Alert",
       summary: "Monitoring alert for changed risk patterns.",
       detail:
@@ -79,9 +102,15 @@ export default function Reports() {
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle mb-3">Output Set</p>
             <div className="space-y-2">
               {outputPreviews.map((item) => (
-                <p key={item.title} className="text-xs text-foreground-muted border border-border rounded-md px-3 py-2 bg-background-surface">
-                  <span className="text-foreground">{item.title}</span> · {item.summary}
-                </p>
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className="output-set-link"
+                >
+                  <span className="output-set-link-title">{item.title}</span>
+                  <span className="output-set-link-summary">{item.summary}</span>
+                  <span className="output-set-link-cta">Open preview →</span>
+                </a>
               ))}
             </div>
           </aside>
@@ -123,7 +152,7 @@ export default function Reports() {
         <article className="card-surface p-5 max-w-5xl">
           <div className="space-y-2">
             {outputPreviews.map((item) => (
-              <details key={item.title} className="progressive-details">
+              <details key={item.id} id={item.id} className="progressive-details">
               <summary
                 aria-label={`Toggle ${item.title} details`}
                 data-label={`${item.title} · ${item.summary}`}
@@ -131,6 +160,14 @@ export default function Reports() {
               />
               <div className="progressive-details-body">
                   <p className="text-sm text-foreground-muted leading-relaxed">{item.detail}</p>
+                  <div className="flex flex-wrap gap-2">
+                    <a href="/intake#application-form" className="summary-jump">
+                      Request this output
+                    </a>
+                    <a href={SAMPLE_REPORT_PATH} className="summary-jump">
+                      View sample format
+                    </a>
+                  </div>
               </div>
             </details>
           ))}
