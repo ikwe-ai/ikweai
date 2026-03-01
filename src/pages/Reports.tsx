@@ -116,33 +116,30 @@ export default function Reports() {
               ]}
             />
           </div>
-          <aside className="site-hero-rail card-surface p-5">
+          <aside className="site-hero-rail card-surface p-5 reports-rail">
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle mb-3">Output Set</p>
             <div className="grid gap-3">
               {outputPreviews.map((item) => (
-                <article
-                  key={item.id}
-                  className="rounded-xl border border-border-2/70 bg-background-surface p-4 shadow-[inset_0_1px_0_hsl(var(--foreground)/0.05)]"
-                >
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-border-2 bg-background-card text-lilac-soft">
-                      <item.icon size={14} aria-hidden="true" />
+                <article key={item.id} className="output-set-card">
+                  <div className="output-set-head">
+                    <span className="output-set-icon">
+                      <item.icon size={13} aria-hidden="true" />
                     </span>
-                    <p className="text-foreground text-[1.05rem] leading-tight">{item.title}</p>
+                    <p className="output-set-card-title">{item.title}</p>
                   </div>
-                  <p className="text-sm text-foreground-muted leading-relaxed mb-3">{item.summary}</p>
-                  <div className="flex flex-wrap gap-2">
+                  <p className="output-set-card-summary">{item.summary}</p>
+                  <div className="output-set-actions">
                     <a
                       href={item.sampleHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center rounded-full border border-lilac/50 bg-lilac-dim px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.08em] text-lilac-soft hover:border-lilac/70 hover:bg-lilac/20 hover:text-foreground transition-colors"
+                      className="output-set-action"
                     >
                       Open sample →
                     </a>
                     <a
                       href={`#${item.id}`}
-                      className="inline-flex items-center rounded-full border border-border-2/80 bg-background-card px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.08em] text-foreground-subtle hover:border-lilac/50 hover:bg-lilac-dim hover:text-foreground transition-colors"
+                      className="output-set-action output-set-action-muted"
                     >
                       On-page summary
                     </a>
