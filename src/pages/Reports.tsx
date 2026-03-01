@@ -64,8 +64,6 @@ export default function Reports() {
           </a>
           <a
             href={SAMPLE_REPORT_PATH}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-quiet"
           >
             Open Public Sample Report
