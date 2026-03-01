@@ -155,7 +155,7 @@ export default function Contact() {
 
     try {
       const body = new URLSearchParams({
-        "form-name": "validation-sprint-intake",
+        "form-name": "evaluation-application",
         ...form,
         user_population: multiToString(userPopulation),
         model_providers: multiToString(modelProvider),
@@ -284,14 +284,14 @@ export default function Contact() {
             <form
               id="application-form"
               onSubmit={handleSubmit}
-              name="validation-sprint-intake"
+              name="evaluation-application"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               method="POST"
               action="/"
               className="card-surface p-6 space-y-6 lg:sticky lg:top-24"
             >
-              <input type="hidden" name="form-name" value="validation-sprint-intake" />
+              <input type="hidden" name="form-name" value="evaluation-application" />
               <input type="hidden" name="bot-field" />
               <input type="hidden" name="user_population" value={multiToString(userPopulation)} />
               <input type="hidden" name="model_providers" value={multiToString(modelProvider)} />
@@ -454,8 +454,8 @@ export default function Contact() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs text-foreground-muted mb-1.5">Any deadline? *</label>
-                    <input required type="date" name="deadline" value={form.deadline} onChange={handleChange} className="field" />
+                    <label className="block text-xs text-foreground-muted mb-1.5">Any deadline?</label>
+                    <input type="date" name="deadline" value={form.deadline} onChange={handleChange} className="field" />
                   </div>
                   <div>
                     <label className="block text-xs text-foreground-muted mb-1.5">Who must sign off? *</label>
