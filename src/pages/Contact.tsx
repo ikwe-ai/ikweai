@@ -585,8 +585,7 @@ export default function Contact() {
               ) : null}
 
               <p className="text-xs text-foreground-subtle leading-relaxed">
-                Submission confirmation appears immediately. Netlify form notifications handle internal routing; configure
-                auto-response and inbox recipients in Netlify Forms settings.
+                Submission confirmation appears immediately. Intake details are handled as confidential scoping information.
               </p>
             </form>
           </div>

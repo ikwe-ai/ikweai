@@ -95,7 +95,7 @@ export default function EqSafetyBenchmark() {
           `${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail rate`,
           `${BENCHMARK_CURRENT.nValue} responses across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories`,
         ]}
-        primaryAction={{ href: "/intake#application-form", label: "Request an Audit" }}
+        primaryAction={{ href: "/intake#application-form", label: "Request Validation Sprint" }}
         secondaryAction={{ href: "/research", label: "View Research Evidence" }}
         jumpLinks={[
           { href: "#benchmark-version", label: "Version & Scope" },
@@ -307,7 +307,7 @@ export default function EqSafetyBenchmark() {
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Request Audit
+            Request Validation Sprint
           </a>
           <a
             href="/research"
