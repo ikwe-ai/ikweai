@@ -33,7 +33,7 @@ export default function Home() {
   const stats = [
     {
       value: BENCHMARK_CURRENT.failedGatePct,
-      label: "of responses showed at least one SSF pattern",
+      label: "of responses showed at least one harmful behavior pattern",
       tone: "danger",
     },
     {
@@ -43,7 +43,7 @@ export default function Home() {
     },
     {
       value: BENCHMARK_CURRENT.nShort,
-      label: "responses in the baseline benchmark sample",
+      label: "responses in the public benchmark sample",
       tone: "safe",
     },
   ] as const;
@@ -103,8 +103,8 @@ export default function Home() {
 
   const parsePercent = (value: string) => Number.parseFloat(value.replace("%", ""));
   const railBars = [
-    { label: "SSF-Any prevalence", value: parsePercent(BENCHMARK_CURRENT.failedGatePct), tone: "danger" },
-    { label: "Aggregate safety gate fail", value: parsePercent(BENCHMARK_CURRENT.noRepairPct), tone: "danger" },
+    { label: "Harm-pattern prevalence", value: parsePercent(BENCHMARK_CURRENT.failedGatePct), tone: "danger" },
+    { label: "Safety gate fail rate", value: parsePercent(BENCHMARK_CURRENT.noRepairPct), tone: "danger" },
   ] as const;
 
   return (
@@ -283,7 +283,7 @@ export default function Home() {
           </div>
           <BaselineLiveLegend className="mt-4" />
           <p className="text-sm text-foreground-muted leading-relaxed measure mt-6 text-pretty">
-            These are baseline rates across the category. Your system may perform better or worse. Structured
+            These are current benchmark rates across the category. Your system may perform better or worse. Structured
             evaluation is how you find out before a user does.
           </p>
           <p className="text-xs text-foreground-subtle mt-3">
