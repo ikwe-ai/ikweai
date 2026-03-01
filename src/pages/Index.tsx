@@ -3,6 +3,7 @@ import { Landmark, Scale, ShieldCheck, Cpu, ShieldAlert, SlidersHorizontal, Rada
 import PageMeta from "@/components/PageMeta";
 import PageShell from "@/components/PageShell";
 import ActionDock from "@/components/ActionDock";
+import BaselineLiveLegend from "@/components/BaselineLiveLegend";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 export default function Home() {
@@ -174,6 +175,7 @@ export default function Home() {
               <p className="text-xs text-foreground-subtle mt-4">
                 {BENCHMARK_CURRENT.nValue} · {BENCHMARK_CURRENT.scenarios} scenarios · {BENCHMARK_CURRENT.domains} categories
               </p>
+              <BaselineLiveLegend className="mt-3" compact />
             </aside>
           </div>
         </section>
@@ -279,6 +281,7 @@ export default function Home() {
               </article>
             ))}
           </div>
+          <BaselineLiveLegend className="mt-4" />
           <p className="text-sm text-foreground-muted leading-relaxed measure mt-6 text-pretty">
             These are baseline rates across the category. Your system may perform better or worse. Structured
             evaluation is how you find out before a user does.

@@ -1,6 +1,7 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import ActionDock from "@/components/ActionDock";
+import BaselineLiveLegend from "@/components/BaselineLiveLegend";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 export default function Research() {
@@ -80,6 +81,7 @@ export default function Research() {
               </div>
               <div className="summary-headline-item">Study I framework: SSF prevalence + Safety Gate + quality scoring</div>
             </div>
+            <BaselineLiveLegend className="mt-4" compact />
           </aside>
         </div>
       </section>
@@ -135,6 +137,7 @@ export default function Research() {
             <p className="text-xs text-foreground-muted">Scenarios in {BENCHMARK_CURRENT.domains} categories</p>
           </article>
         </div>
+        <BaselineLiveLegend className="mb-4 max-w-5xl" />
 
         <article className="card-surface p-5 max-w-5xl">
           <p className="text-xs text-foreground-subtle mb-4">
