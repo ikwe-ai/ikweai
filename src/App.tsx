@@ -12,6 +12,7 @@ import Index from "./pages/Index";
 import EqSafetyBenchmark from "./pages/EqSafetyBenchmark";
 import Research from "./pages/Research";
 import Reports from "./pages/Reports";
+import Samples from "./pages/Samples";
 import Audit from "./pages/Audit";
 import Trust from "./pages/Trust";
 import Contact from "./pages/Contact";
@@ -51,18 +52,20 @@ const App = () => (
           <Route path="/benchmark" element={<EqSafetyBenchmark />} />
           <Route path="/research" element={<Research />} />
           <Route path="/deliverables" element={<Reports />} />
+          <Route path="/samples" element={<Samples />} />
           <Route path="/audit" element={<Audit />} />
           <Route path="/trust" element={<Trust />} />
-          <Route path="/request-audit" element={<Contact />} />
+          <Route path="/intake" element={<Contact />} />
+          <Route path="/request-audit" element={<Navigate to="/intake" replace />} />
           <Route path="/archive" element={<Archive />} />
 
           <Route path="/outputs" element={<Navigate to="/deliverables" replace />} />
           <Route path="/reports" element={<Navigate to="/deliverables" replace />} />
           <Route path="/sample-report" element={<Navigate to="/reports/ikwe-sample-report-public.html" replace />} />
-          <Route path="/contact" element={<Navigate to="/request-audit" replace />} />
-          <Route path="/inquiry" element={<Navigate to="/request-audit" replace />} />
-          <Route path="/audit-request" element={<Navigate to="/request-audit" replace />} />
-          <Route path="/request-audit-intake" element={<Navigate to="/request-audit" replace />} />
+          <Route path="/contact" element={<Navigate to="/intake" replace />} />
+          <Route path="/inquiry" element={<Navigate to="/intake" replace />} />
+          <Route path="/audit-request" element={<Navigate to="/intake" replace />} />
+          <Route path="/request-audit-intake" element={<Navigate to="/intake" replace />} />
 
           <Route path="/privacy" element={<Navigate to="/privacy.html" replace />} />
           <Route path="/terms" element={<Navigate to="/terms.html" replace />} />
@@ -154,7 +157,7 @@ const App = () => (
           <Route path="/enterprise" element={<Navigate to="/" replace />} />
           <Route path="/explorer" element={<Navigate to="/research" replace />} />
           <Route path="/research-summary" element={<Navigate to="/research" replace />} />
-          <Route path="/support" element={<Navigate to="/request-audit" replace />} />
+          <Route path="/support" element={<Navigate to="/intake" replace />} />
           <Route path="/faq" element={<Navigate to="/trust" replace />} />
           <Route path="/downloads/*" element={<Navigate to="/deliverables" replace />} />
 
