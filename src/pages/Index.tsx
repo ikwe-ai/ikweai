@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import PageMeta from "@/components/PageMeta";
 import PageShell from "@/components/PageShell";
+import ActionDock from "@/components/ActionDock";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 export default function Home() {
@@ -133,6 +134,16 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        <ActionDock
+          title="Next Step"
+          subtitle="Start with framework or evidence, then request a scoped independent evaluation."
+          items={[
+            { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
+            { href: "/benchmark", label: "View Benchmark", tone: "outline" },
+            { href: "/samples", label: "Sample Deliverables", tone: "quiet" },
+          ]}
+        />
 
         <section className="py-14 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Category</p>
