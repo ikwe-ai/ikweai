@@ -26,7 +26,7 @@ export default function SampleReport() {
         path="/sample-report"
       />
 
-      <section className="py-14 border-b border-border">
+      <section className="site-section py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">
           Sample Report Preview
         </p>

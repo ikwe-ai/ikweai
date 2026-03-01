@@ -223,7 +223,7 @@ export default function Contact() {
         ]}
       />
 
-      <section id="intake-overview" className="py-14">
+      <section id="intake-overview" className="site-section py-14">
         {state === "done" ? (
           <div className="card-surface p-8 max-w-3xl">
             <div className="flex items-start gap-4">

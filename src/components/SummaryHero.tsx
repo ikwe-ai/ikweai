@@ -74,7 +74,7 @@ export default function SummaryHero({
   }, [jumpLinks, title]);
 
   return (
-    <section className="summary-hero border-b border-border">
+    <section className="site-section summary-hero border-b border-border">
       <div
         className={`relative z-10 py-6 md:py-8 ${
           hasRail ? "grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8" : ""

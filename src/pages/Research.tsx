@@ -37,35 +37,41 @@ export default function Research() {
         path="/research"
       />
 
-      <section className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">
-          Research Summary · Released {BENCHMARK_CURRENT.released} · Updated {BENCHMARK_CURRENT.lastUpdated}
-        </p>
-        <h1 className="font-display fluid-title text-foreground mb-4">EQ Safety Benchmark {BENCHMARK_CURRENT.version}</h1>
-        <p className="text-foreground-muted lede mb-6">
-          This research quantifies current behavioral safety exposure across human-facing AI interactions and shows the
-          failure rates buyers should plan for before deployment decisions.
-        </p>
-        <div className="summary-headline-strip mb-7 max-w-4xl">
-          <div className="summary-headline-item">{BENCHMARK_CURRENT.nShort} individual model outputs evaluated</div>
-          <div className="summary-headline-item">
-            {BENCHMARK_CURRENT.scenarios} structured scenarios across {BENCHMARK_CURRENT.domains} categories
+      <section className="site-section py-14 border-b border-border">
+        <div className="site-hero-layout">
+          <div>
+            <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">
+              Research Summary · Released {BENCHMARK_CURRENT.released} · Updated {BENCHMARK_CURRENT.lastUpdated}
+            </p>
+            <h1 className="font-display fluid-title text-foreground mb-4">EQ Safety Benchmark {BENCHMARK_CURRENT.version}</h1>
+            <p className="text-foreground-muted lede mb-6">
+              This research quantifies current behavioral safety exposure across human-facing AI interactions and shows the
+              failure rates buyers should plan for before deployment decisions.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="/intake#application-form"
+                className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+              >
+                Request Full Report Access
+              </a>
+              <a
+                href="/benchmark"
+                className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
+              >
+                View Benchmark Framework
+              </a>
+            </div>
           </div>
-          <div className="summary-headline-item">Study I framework: SSF prevalence + Safety Gate + quality scoring</div>
-        </div>
-        <div className="flex flex-wrap gap-3">
-          <a
-            href="/intake#application-form"
-            className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
-          >
-            Request Full Report Access
-          </a>
-          <a
-            href="/benchmark"
-            className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
-          >
-            View Benchmark Framework
-          </a>
+          <aside className="site-hero-rail card-surface p-5">
+            <div className="summary-headline-strip">
+              <div className="summary-headline-item">{BENCHMARK_CURRENT.nShort} individual model outputs evaluated</div>
+              <div className="summary-headline-item">
+                {BENCHMARK_CURRENT.scenarios} structured scenarios across {BENCHMARK_CURRENT.domains} categories
+              </div>
+              <div className="summary-headline-item">Study I framework: SSF prevalence + Safety Gate + quality scoring</div>
+            </div>
+          </aside>
         </div>
       </section>
 
@@ -79,7 +85,7 @@ export default function Research() {
         ]}
       />
 
-      <section className="py-14 border-b border-border">
+      <section className="site-section py-14 border-b border-border">
         <article className="card-surface p-6 max-w-5xl safe-panel">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-safe mb-3">What this means for your organization</p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
@@ -110,7 +116,7 @@ export default function Research() {
         </article>
       </section>
 
-      <section id="findings-snapshot" className="py-14 border-b border-border">
+      <section id="findings-snapshot" className="site-section py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">Findings Snapshot</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4 max-w-5xl">
           <article className="card-surface p-4">
@@ -178,7 +184,7 @@ export default function Research() {
         </article>
       </section>
 
-      <section id="full-report" className="py-14">
+      <section id="full-report" className="site-section py-14">
         <article className="card-surface p-6 max-w-4xl">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-[0.14em] mb-3">Full Benchmark Access</p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-5">

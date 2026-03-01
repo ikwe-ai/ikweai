@@ -41,37 +41,51 @@ export default function Reports() {
         path="/deliverables"
       />
 
-      <section className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">
-          EQ Safety Benchmark {BENCHMARK_CURRENT.version} · Updated {BENCHMARK_CURRENT.lastUpdated}
-        </p>
-        <h1 className="font-display fluid-title text-foreground mb-4">What you receive from an Ikwe engagement</h1>
-        <p className="text-foreground-muted lede mb-8">
-          Every engagement produces decision-ready evidence your executives can act on.
-        </p>
-        <div className="flex flex-wrap gap-3">
-          <a
-            href="/intake#application-form"
-            className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
-          >
-            Request Evaluation
-          </a>
-          <a
-            href="#output-previews"
-            className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
-          >
-            View Output Previews ↓
-          </a>
-          <a
-            href={SAMPLE_REPORT_PATH}
-            className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-quiet"
-          >
-            Open Public Sample Report
-          </a>
+      <section className="site-section py-14 border-b border-border">
+        <div className="site-hero-layout">
+          <div>
+            <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">
+              EQ Safety Benchmark {BENCHMARK_CURRENT.version} · Updated {BENCHMARK_CURRENT.lastUpdated}
+            </p>
+            <h1 className="font-display fluid-title text-foreground mb-4">What you receive from an Ikwe engagement</h1>
+            <p className="text-foreground-muted lede mb-8">
+              Every engagement produces decision-ready evidence your executives can act on.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="/intake#application-form"
+                className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+              >
+                Request Evaluation
+              </a>
+              <a
+                href="#output-previews"
+                className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
+              >
+                View Output Previews ↓
+              </a>
+              <a
+                href={SAMPLE_REPORT_PATH}
+                className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-quiet"
+              >
+                Open Public Sample Report
+              </a>
+            </div>
+            <p className="text-xs text-foreground-subtle mt-4">
+              Built for board, legal, compliance, and technical stakeholders.
+            </p>
+          </div>
+          <aside className="site-hero-rail card-surface p-5">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle mb-3">Output Set</p>
+            <div className="space-y-2">
+              {outputPreviews.map((item) => (
+                <p key={item.title} className="text-xs text-foreground-muted border border-border rounded-md px-3 py-2 bg-background-surface">
+                  <span className="text-foreground">{item.title}</span> · {item.summary}
+                </p>
+              ))}
+            </div>
+          </aside>
         </div>
-        <p className="text-xs text-foreground-subtle mt-4">
-          Built for board, legal, compliance, and technical stakeholders.
-        </p>
       </section>
 
       <ActionDock
@@ -84,7 +98,7 @@ export default function Reports() {
         ]}
       />
 
-      <section id="output-previews" className="py-14 border-b border-border">
+      <section id="output-previews" className="site-section py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Deliverables Previews</p>
         <details className="progressive-details mb-5 max-w-4xl">
           <summary
@@ -124,7 +138,7 @@ export default function Reports() {
         </article>
       </section>
 
-      <section id="transparency-boundary" className="py-14">
+      <section id="transparency-boundary" className="site-section py-14">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">What&apos;s public, what&apos;s not</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-5xl">
           <article className="card-surface p-6">
