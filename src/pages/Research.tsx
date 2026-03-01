@@ -37,7 +37,7 @@ export default function Research() {
         path="/research"
       />
 
-      <section className="site-section py-14 border-b border-border">
+      <section className="site-section py-14 border-b border-border research-hero">
         <div className="site-hero-layout">
           <div>
             <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">
@@ -62,6 +62,15 @@ export default function Research() {
                 View Benchmark Framework
               </a>
             </div>
+            <ActionDock
+              title="Next Step"
+              subtitle="Use the findings for executive alignment, then request scope for your system."
+              items={[
+                { href: "/intake#application-form", label: "Request Full Report Access", tone: "primary" },
+                { href: "/benchmark", label: "Open Benchmark", tone: "outline" },
+                { href: "/deliverables", label: "View Deliverables", tone: "quiet" },
+              ]}
+            />
           </div>
           <aside className="site-hero-rail card-surface p-5">
             <div className="summary-headline-strip">
@@ -74,16 +83,6 @@ export default function Research() {
           </aside>
         </div>
       </section>
-
-      <ActionDock
-        title="Next Step"
-        subtitle="Use the findings for executive alignment, then request scope for your system."
-        items={[
-          { href: "/intake#application-form", label: "Request Full Report Access", tone: "primary" },
-          { href: "/benchmark", label: "Open Benchmark", tone: "outline" },
-          { href: "/deliverables", label: "View Deliverables", tone: "quiet" },
-        ]}
-      />
 
       <section className="site-section py-14 border-b border-border">
         <article className="card-surface p-6 max-w-5xl safe-panel">

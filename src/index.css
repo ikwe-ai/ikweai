@@ -818,6 +818,12 @@
     margin: 14px 0 0;
   }
 
+  .research-hero .action-dock {
+    position: static;
+    top: auto;
+    margin: 14px 0 0;
+  }
+
   .reports-rail {
     padding: 14px;
   }
