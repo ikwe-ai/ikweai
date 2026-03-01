@@ -232,7 +232,7 @@ export default function SiteAssistant() {
         `• ${BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence`,
         `• ${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail rate`,
         `• Published rates are tied to ${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories`,
-        `• Current live study volume: ${BENCHMARK_CURRENT.liveScoredRuns} scored / ${BENCHMARK_CURRENT.liveTotalRuns} total runs`,
+        "• Detailed run-volume logs are available on request",
         "",
         "Choose any step below to continue the presentation.",
       ].join("\n"),
@@ -525,9 +525,7 @@ export default function SiteAssistant() {
               {BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence · {BENCHMARK_CURRENT.noRepairPct} aggregate gate fail ·{" "}
               {BENCHMARK_CURRENT.nValue}.
             </p>
-            <p className="text-[11px] text-foreground-subtle leading-relaxed mb-2">
-              Live study volume: {BENCHMARK_CURRENT.liveScoredRuns} scored / {BENCHMARK_CURRENT.liveTotalRuns} total runs.
-            </p>
+            <p className="text-[11px] text-foreground-subtle leading-relaxed mb-2">Detailed run-volume logs available on request.</p>
             <div className="flex flex-wrap gap-2 mb-2">
               <button
                 type="button"
