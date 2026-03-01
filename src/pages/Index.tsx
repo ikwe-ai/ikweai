@@ -191,9 +191,9 @@ export default function Home() {
         />
 
         <section className="site-section py-14 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Buyer Context</p>
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Risk Context</p>
           <h2 className="font-display fluid-heading text-foreground mb-5">
-            Recognition is not safety. Buyer risk appears in behavior over time.
+            Recognition is not safety. Risk appears in behavior over time.
           </h2>
           <div className="measure space-y-4">
             <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
@@ -201,8 +201,8 @@ export default function Home() {
               Functional QA usually does not catch this reliably.
             </p>
             <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
-              For buyers, the business impact is direct: governance exposure, legal risk, delayed procurement, and
-              remediation costs after deployment.
+              For organizations, the business impact is direct: governance exposure, legal risk, delayed procurement,
+              and remediation costs after deployment.
             </p>
             <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
               Third-party evaluation closes that gap before incidents force the decision under pressure.
