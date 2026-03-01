@@ -774,6 +774,39 @@
     background: hsl(194 22% 21%);
   }
 
+  .audit-decision-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 10px;
+    max-width: 72rem;
+  }
+
+  .audit-decision-card {
+    border: 1px solid hsl(var(--border-2));
+    border-radius: 10px;
+    background: hsl(var(--background-card));
+    padding: 12px;
+    display: grid;
+    align-content: start;
+  }
+
+  .audit-pathway-layout {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: 1fr;
+  }
+
+  .audit-pathway-nav {
+    align-self: start;
+  }
+
+  .audit-stage-meta {
+    border: 1px solid hsl(var(--border));
+    border-radius: 10px;
+    background: hsl(var(--background-surface));
+    padding: 10px;
+  }
+
   .progressive-details {
     margin-top: 10px;
     border-top: 1px solid hsl(var(--border));
@@ -995,6 +1028,22 @@
   @media (min-width: 768px) {
     .summary-hero + section {
       padding-top: 2rem !important;
+    }
+
+    .audit-decision-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .audit-pathway-layout {
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    .audit-pathway-nav {
+      position: sticky;
+      top: 150px;
     }
   }
 
