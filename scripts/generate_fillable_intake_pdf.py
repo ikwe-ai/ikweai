@@ -13,6 +13,7 @@ RIGHT = 562
 TOP_DEFAULT = 730
 BOTTOM = 58
 FIELD_WIDTH = RIGHT - LEFT
+TEXT_RGB = (0.09, 0.07, 0.17)
 
 
 @dataclass
@@ -89,8 +90,23 @@ SECTIONS = [
 ]
 
 
+def clean_ascii(text: str) -> str:
+    # Keep strings PDFDocEncoding-safe for broad viewer compatibility.
+    return (
+        text.replace("•", "|")
+        .replace("—", "-")
+        .replace("–", "-")
+        .replace("’", "'")
+        .replace("“", '"')
+        .replace("”", '"')
+        .encode("ascii", errors="ignore")
+        .decode("ascii")
+    )
+
+
 def esc(text: str) -> str:
-    return text.replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)")
+    safe = clean_ascii(text)
+    return safe.replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)")
 
 
 class PDFBuilder:
@@ -129,19 +145,37 @@ class PDFBuilder:
 
 
 def make_stream(commands: list[str]) -> bytes:
-    data = "\n".join(commands).encode("utf-8")
+    data = "\n".join(commands).encode("ascii")
     return f"<< /Length {len(data)} >>\nstream\n".encode("ascii") + data + b"\nendstream"
 
 
 def text_cmd(x: int, y: int, size: int, text: str) -> str:
-    return f"BT /F1 {size} Tf 1 0 0 1 {x} {y} Tm ({esc(text)}) Tj ET"
+    return f"{TEXT_RGB[0]} {TEXT_RGB[1]} {TEXT_RGB[2]} rg BT /F1 {size} Tf 1 0 0 1 {x} {y} Tm ({esc(text)}) Tj ET"
+
+
+def wrap_text(text: str, size: int, max_width: int) -> list[str]:
+    words = clean_ascii(text).split()
+    if not words:
+        return [""]
+
+    max_chars = max(10, int(max_width / (size * 0.53)))
+    lines: list[str] = []
+    current = words[0]
+    for word in words[1:]:
+        trial = f"{current} {word}"
+        if len(trial) <= max_chars:
+            current = trial
+            continue
+        lines.append(current)
+        current = word
+    lines.append(current)
+    return lines
 
 
 def header_commands(page_num: int) -> list[str]:
     return [
-        "0.09 0.07 0.17 rg",
         "0.88 0.83 0.98 RG",
-        text_cmd(LEFT, 766, 16, "Ikwe.ai Intake Form"),
+        text_cmd(LEFT, 766, 16, "ikwe.ai Intake Form"),
         text_cmd(LEFT, 748, 10, "Third-Party Independent Behavioral Safety Evaluation"),
         text_cmd(LEFT, 734, 8, "Public fillable form. Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake."),
         text_cmd(RIGHT - 68, 766, 9, f"Page {page_num}"),
@@ -151,13 +185,18 @@ def header_commands(page_num: int) -> list[str]:
 
 
 def field_height(field: Field) -> int:
-    return field.height if field.multiline else 20
+    return field.height if field.multiline else 24
 
 
 def field_space_needed(field: Field) -> int:
-    # label + optional help + field box + spacing
-    help_gap = 10 if field.help_text else 0
-    return 14 + help_gap + field_height(field) + 12
+    # wrapped label lines + optional wrapped help + field box + spacing
+    label_lines = wrap_text(field.label, 9, FIELD_WIDTH)
+    label_space = len(label_lines) * 11 + 1
+    help_space = 0
+    if field.help_text:
+        help_lines = wrap_text(field.help_text, 7, FIELD_WIDTH)
+        help_space = len(help_lines) * 8 + 2
+    return label_space + help_space + field_height(field) + 12
 
 
 def section_space_needed(section_title: str, fields: list[Field]) -> int:
@@ -195,18 +234,22 @@ def render() -> tuple[list[list[str]], list[list[tuple[str, str, int, int, int, 
                 pages_cmds[-1].append(text_cmd(LEFT, y, 11, section_title + " (continued)"))
                 y -= 16
 
-            pages_cmds[-1].append(text_cmd(LEFT, y, 9, f.label))
-            y -= 12
+            for label_line in wrap_text(f.label, 9, FIELD_WIDTH):
+                pages_cmds[-1].append(text_cmd(LEFT, y, 9, label_line))
+                y -= 11
 
             if f.help_text:
-                pages_cmds[-1].append(text_cmd(LEFT, y, 7, f.help_text))
-                y -= 10
+                for help_line in wrap_text(f.help_text, 7, FIELD_WIDTH):
+                    pages_cmds[-1].append(text_cmd(LEFT, y, 7, help_line))
+                    y -= 8
+                y -= 2
 
             h = field_height(f)
             x = LEFT
             y_box = y - h
-            pages_cmds[-1].append("0.93 0.91 0.99 RG")
-            pages_cmds[-1].append(f"{x} {y_box} {FIELD_WIDTH} {h} re S")
+            pages_cmds[-1].append("0.75 0.70 0.95 RG")
+            pages_cmds[-1].append("1 1 1 rg")
+            pages_cmds[-1].append(f"{x} {y_box} {FIELD_WIDTH} {h} re B")
 
             pages_widgets[-1].append((f.name, f.label, x, y_box, x + FIELD_WIDTH, y_box + h, f.multiline))
             y = y_box - 12
@@ -216,7 +259,7 @@ def render() -> tuple[list[list[str]], list[list[tuple[str, str, int, int, int, 
         page_cmds.extend(
             [
                 "0.67 0.61 0.84 rg",
-                text_cmd(LEFT, 38, 8, "Ikwe.ai • Independent behavioral safety evaluation • ikwe.ai/intake"),
+                text_cmd(LEFT, 38, 8, "ikwe.ai | Independent behavioral safety evaluation | ikwe.ai/intake"),
                 text_cmd(RIGHT - 130, 38, 8, "Visible Healing Inc."),
             ]
         )
@@ -252,7 +295,8 @@ def generate_pdf(path: Path) -> None:
             widget_body = (
                 f"<< /Type /Annot /Subtype /Widget /FT /Tx /T ({esc(name)}) /TU ({esc(label)}) "
                 f"/Rect [{x1} {y1} {x2} {y2}] /F 4 /P {page_id} 0 R{ff} "
-                f"/DA (/Helv 10 Tf 0 g) /MK << /BC [0.75 0.7 0.95] /BG [1 1 1] >> /V () >>"
+                f"/Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> "
+                f"/MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /V () >>"
             ).encode("utf-8")
             wid = b.add(widget_body)
             widget_ids.append(wid)
