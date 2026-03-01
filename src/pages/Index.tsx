@@ -20,7 +20,7 @@ export default function Home() {
     },
     {
       title: "Regulators",
-      body: "Reproducible, versioned compliance artifacts",
+      body: "Reproducible, versioned compliance evidence packages",
       icon: ShieldCheck,
     },
     {
