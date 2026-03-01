@@ -160,7 +160,7 @@ export default function Audit() {
             href="/intake#application-form"
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
           >
-            Request Audit
+            Request Evaluation
           </a>
           <a
             href="#validation-pathway"
@@ -319,7 +319,7 @@ export default function Audit() {
       </section>
 
       <section id="request-start" className="py-14 max-w-4xl">
-        <h2 className="font-display fluid-heading text-foreground mb-3">Request Audit</h2>
+        <h2 className="font-display fluid-heading text-foreground mb-3">Request Evaluation</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-3 measure text-pretty">
           Tell us about your system and deployment context. We will review and respond within two business days with a
           scope recommendation and next steps.
@@ -333,7 +333,7 @@ export default function Audit() {
             href="/intake#application-form"
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
           >
-            Request Audit
+            Request Evaluation
           </a>
           <a
             href="/trust"

@@ -89,7 +89,7 @@ export default function Samples() {
             <p className="text-sm text-foreground-muted leading-relaxed mb-5">
               Share deployment context, governance pressure, and scope targets. We return a scoped plan.
             </p>
-            <a href="/intake#application-form" className="link-lilac">Request audit →</a>
+            <a href="/intake#application-form" className="link-lilac">Request evaluation →</a>
           </article>
         </div>
       </section>
@@ -133,7 +133,7 @@ export default function Samples() {
             href="/intake#application-form"
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
           >
-            Request Audit →
+            Request Evaluation →
           </a>
         </article>
       </section>

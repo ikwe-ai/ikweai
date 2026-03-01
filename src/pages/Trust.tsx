@@ -32,7 +32,7 @@ export default function Trust() {
           "Independent third-party evaluation standards",
         ]}
         primaryAction={{ href: "#handling-boundary", label: "View Handling Boundary ↓" }}
-        secondaryAction={{ href: "/intake#application-form", label: "Request Audit" }}
+        secondaryAction={{ href: "/intake#application-form", label: "Request Evaluation" }}
         jumpLinks={[
           { href: "#information-needs", label: "Information Needs" },
           { href: "#handling-boundary", label: "Public and Client Materials" },
@@ -136,7 +136,7 @@ export default function Trust() {
 
       <section id="contact-path" className="py-14 max-w-3xl">
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-          Use audit intake to request scope review, redacted output walkthrough, and full report package options.
+          Use evaluation intake to request scope review, redacted output walkthrough, and full report package options.
         </p>
         <p className="text-xs text-foreground-subtle leading-relaxed mb-5">
           PDF copies are provided on request. If a styled PDF is unavailable, we can send an equivalent web-copy
@@ -147,7 +147,7 @@ export default function Trust() {
           className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
           style={{ fontFamily: "var(--font-body)" }}
         >
-          Start audit intake intake →
+          Start evaluation intake →
         </a>
         <div className="flex flex-wrap gap-2 mt-4">
           <a href="/benchmark" className="summary-jump">Benchmark framework</a>
