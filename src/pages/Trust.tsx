@@ -80,7 +80,18 @@ export default function Trust() {
             <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
               <li>• Framework structure and terminology definitions</li>
               <li>• High-level benchmark findings and version context</li>
-              <li>• Redacted examples showing deliverables structure</li>
+              <li>
+                • Redacted examples showing deliverables structure (including a{" "}
+                <a
+                  href="/reports/ikwe-sample-report-public.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-lilac"
+                >
+                  public sample report
+                </a>
+                )
+              </li>
             </ul>
           </article>
           <article className="card-surface p-6">
@@ -142,6 +153,7 @@ export default function Trust() {
           <a href="/benchmark" className="summary-jump">Benchmark framework</a>
           <a href="/research" className="summary-jump">Research evidence</a>
           <a href="/deliverables" className="summary-jump">Deliverables</a>
+          <a href="/reports/ikwe-sample-report-public.html" className="summary-jump">Sample report</a>
           <a href="/audit" className="summary-jump">Audit pathway</a>
         </div>
       </section>

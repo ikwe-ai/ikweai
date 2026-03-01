@@ -166,9 +166,10 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
       "documentation",
     ],
     text:
-      "Public pages show deliverable formats and transparency boundaries. Full report packages are available through active audit engagement and are distributed through controlled documentation access.",
+      "Public pages show deliverable formats and transparency boundaries. A redacted proprietary-format sample report is available publicly. Full report packages are available through active audit engagement and are distributed through controlled documentation access.",
     links: [
       { label: "Deliverables", href: "/deliverables" },
+      { label: "Public Sample Report", href: "/reports/ikwe-sample-report-public.html" },
       { label: "Trust & Confidentiality", href: "/trust" },
     ],
   },

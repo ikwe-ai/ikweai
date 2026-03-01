@@ -2,6 +2,8 @@ import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
+const SAMPLE_REPORT_PATH = "/reports/ikwe-sample-report-public.html";
+
 export default function Reports() {
   const outputPreviews = [
     {
@@ -55,6 +57,14 @@ export default function Reports() {
           >
             View Output Previews ↓
           </a>
+          <a
+            href={SAMPLE_REPORT_PATH}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-quiet"
+          >
+            Open Public Sample Report
+          </a>
         </div>
         <p className="text-xs text-foreground-subtle mt-4">
           Built for board, legal, compliance, and technical stakeholders.
@@ -63,6 +73,19 @@ export default function Reports() {
 
       <section id="output-previews" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Deliverables Previews</p>
+        <p className="text-xs text-foreground-subtle mb-5 max-w-4xl">
+          Need a format example before engagement? Open the proprietary-format sample report (public, redacted, no
+          client data):{" "}
+          <a
+            href={SAMPLE_REPORT_PATH}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-lilac"
+          >
+            View sample report
+          </a>
+          .
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
           {outputPreviews.map((item) => (
             <article key={item.title} className="card-surface p-5 flex flex-col gap-3">
