@@ -68,7 +68,7 @@ export default function Reports() {
         path="/deliverables"
       />
 
-      <section className="site-section py-14 border-b border-border">
+      <section className="site-section py-14 border-b border-border reports-hero">
         <div className="site-hero-layout">
           <div>
             <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">
@@ -78,7 +78,7 @@ export default function Reports() {
             <p className="text-foreground-muted lede mb-8">
               Every engagement produces decision-ready evidence your executives can act on.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="reports-cta-row">
               <a
                 href="/intake#application-form"
                 className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
@@ -102,22 +102,26 @@ export default function Reports() {
               Built for board, legal, compliance, and technical stakeholders.
             </p>
           </div>
-          <aside className="site-hero-rail card-surface p-5">
+          <aside className="site-hero-rail card-surface p-5 reports-rail">
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle mb-3">Output Set</p>
-            <div className="space-y-2">
+            <div className="output-set-stack">
               {outputPreviews.map((item) => (
                 <article key={item.id} className="output-set-card">
-                  <a
-                    href={item.sampleHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="output-set-link"
-                  >
-                    <span className="output-set-link-title">{item.title}</span>
-                    <span className="output-set-link-summary">{item.summary}</span>
-                    <span className="output-set-link-cta">Open sample →</span>
-                  </a>
-                  <a href={`#${item.id}`} className="output-set-inline-jump">On-page summary</a>
+                  <p className="output-set-card-title">{item.title}</p>
+                  <p className="output-set-card-summary">{item.summary}</p>
+                  <div className="output-set-actions">
+                    <a
+                      href={item.sampleHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="output-set-action"
+                    >
+                      Open sample →
+                    </a>
+                    <a href={`#${item.id}`} className="output-set-action output-set-action-muted">
+                      On-page summary
+                    </a>
+                  </div>
                 </article>
               ))}
             </div>
