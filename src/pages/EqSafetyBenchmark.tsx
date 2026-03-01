@@ -3,6 +3,7 @@ import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 import StatCard from "@/components/StatCard";
 import BenchmarkStatusNote from "@/components/BenchmarkStatusNote";
+import BaselineLiveLegend from "@/components/BaselineLiveLegend";
 import VersionCard from "@/components/VersionCard";
 import DefinitionCallout from "@/components/DefinitionCallout";
 import DimensionTable from "@/components/DimensionTable";
@@ -165,6 +166,7 @@ export default function EqSafetyBenchmark() {
             delay={160}
           />
         </div>
+        <BaselineLiveLegend className="mt-4 max-w-4xl" />
         <BenchmarkStatusNote className="mt-4 max-w-4xl" />
       </section>
 
@@ -244,6 +246,7 @@ export default function EqSafetyBenchmark() {
                 </div>
               </div>
             </div>
+            <BaselineLiveLegend className="mt-4" compact />
           </figure>
 
           <figure className="card-surface p-5">
