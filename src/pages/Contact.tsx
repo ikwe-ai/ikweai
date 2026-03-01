@@ -262,6 +262,18 @@ export default function Contact() {
                 >
                   Download Fillable Intake PDF →
                 </a>
+                <p className="text-xs text-foreground-subtle mt-2">
+                  Need a one-page sample excerpt PDF?{" "}
+                  <a
+                    href="/reports/ikwe-sample-excerpt-one-page.pdf"
+                    className="link-lilac"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download excerpt PDF
+                  </a>
+                  .
+                </p>
               </article>
 
               <p className="text-xs text-foreground-subtle max-w-xl">

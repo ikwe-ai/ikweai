@@ -2,7 +2,7 @@ import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 
-const SAMPLE_EXCERPT_PATH = "/reports/ikwe-sample-excerpt.html";
+const SAMPLE_EXCERPT_PATH = "/reports/ikwe-sample-excerpt-one-page.pdf";
 const SAMPLE_REPORT_PATH = "/reports/ikwe-sample-report-public.html";
 
 const deliverableItems = [
@@ -53,7 +53,7 @@ export default function Samples() {
           "No client-identifiable data",
           "Direct path to scoped validation intake",
         ]}
-        primaryAction={{ href: SAMPLE_EXCERPT_PATH, label: "View 1-Page Executive Excerpt" }}
+        primaryAction={{ href: SAMPLE_EXCERPT_PATH, label: "View 1-Page Executive Excerpt (PDF)" }}
         secondaryAction={{ href: SAMPLE_REPORT_PATH, label: "View Full Sample Report" }}
         jumpLinks={[
           { href: "#deliverables", label: "What You Receive" },
