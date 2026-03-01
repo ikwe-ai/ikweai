@@ -252,7 +252,7 @@ export default function Contact() {
               <article className="card-surface p-5">
                 <p className={SECTION_KICKER_CLASS}>Quick intake tools</p>
                 <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-                  Use these shortcuts to move faster with internal stakeholders.
+                  Use these shortcuts to move faster with legal, procurement, and executive stakeholders.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-3">
                   <a

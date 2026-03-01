@@ -43,9 +43,8 @@ export default function Research() {
         </p>
         <h1 className="font-display fluid-title text-foreground mb-4">EQ Safety Benchmark {BENCHMARK_CURRENT.version}</h1>
         <p className="text-foreground-muted lede mb-6">
-          The EQ Safety Benchmark is Ikwe&apos;s structured evaluation framework for measuring behavioral safety risk in
-          AI systems during emotionally vulnerable interactions. This page covers what we measured, how we measured it,
-          and what the findings mean.
+          This research quantifies current behavioral safety exposure across human-facing AI interactions and shows the
+          failure rates buyers should plan for before deployment decisions.
         </p>
         <div className="summary-headline-strip mb-7 max-w-4xl">
           <div className="summary-headline-item">{BENCHMARK_CURRENT.nShort} individual model outputs evaluated</div>
@@ -72,7 +71,7 @@ export default function Research() {
 
       <ActionDock
         title="Next Step"
-        subtitle="Choose the next move: request scoped access, verify framework details, or review deliverables."
+        subtitle="Use the findings for executive alignment, then request scope for your system."
         items={[
           { href: "/intake#application-form", label: "Request Full Report Access", tone: "primary" },
           { href: "/benchmark", label: "Open Benchmark", tone: "outline" },
@@ -84,8 +83,8 @@ export default function Research() {
         <article className="card-surface p-6 max-w-5xl safe-panel">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-safe mb-3">What this means for your organization</p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-            If your AI system handles users in vulnerable states, this research quantifies the probability that the
-            system is responding unsafely right now. Not hypothetically. At measurable rates.
+            If your AI system handles users in vulnerable states, these rates represent real exposure levels to
+            behavioral failure, not hypothetical edge cases.
           </p>
           <details className="progressive-details">
             <summary
@@ -103,8 +102,8 @@ export default function Research() {
                 threshold used for Study I.
               </p>
               <p className="text-sm text-foreground-muted leading-relaxed">
-                These are baseline rates. Your specific system may perform better or worse. The only way to know is
-                structured evaluation.
+                Your system may perform better or worse. Independent evaluation is how you replace assumption with
+                evidence.
               </p>
             </div>
           </details>
@@ -183,8 +182,8 @@ export default function Research() {
         <article className="card-surface p-6 max-w-4xl">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-[0.14em] mb-3">Full Benchmark Access</p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-            Full benchmark documentation, including methodology detail, dimension definitions, scenario battery
-            structure, and version governance, is available for institutional review on request.
+            Full benchmark documentation is available for institutional review when your team needs deeper diligence
+            for procurement, legal, or board review.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
