@@ -105,6 +105,11 @@ export default function Audit() {
     body: stage.paragraphs[0],
   }));
 
+  const pathwayJump = pathway.map((stage) => ({
+    id: `stage-${stage.step}`,
+    label: `${stage.step} ${stage.title}`,
+  }));
+
   const stageMatrix = [
     {
       stage: "01 · Diagnostic Audit",
@@ -177,6 +182,24 @@ export default function Audit() {
         <p className="text-xs text-foreground-subtle mt-3">
           Executive quick view: start with the CTO/CFO stage matrix below, then move into full pathway detail.
         </p>
+
+        <div className="audit-decision-grid mt-6">
+          <article className="audit-decision-card">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-1">Start</p>
+            <p className="text-sm text-foreground">Need a risk baseline and board-ready evidence.</p>
+            <a href="#stage-01" className="summary-jump mt-3">Diagnostic audit</a>
+          </article>
+          <article className="audit-decision-card">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-1">Remediate</p>
+            <p className="text-sm text-foreground">Need support implementing and validating fixes.</p>
+            <a href="#stage-02" className="summary-jump mt-3">Implementation support</a>
+          </article>
+          <article className="audit-decision-card">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-1">Operate</p>
+            <p className="text-sm text-foreground">Need continuity and drift detection after launch.</p>
+            <a href="#stage-03" className="summary-jump mt-3">Active monitoring</a>
+          </article>
+        </div>
       </section>
 
       <ActionDock
@@ -199,7 +222,28 @@ export default function Audit() {
         <p className="text-sm text-foreground-muted leading-relaxed measure mb-6">
           Quick scan for finance and technical leadership. Detailed stage descriptions follow below.
         </p>
-        <div className="overflow-x-auto">
+        <div className="lg:hidden grid grid-cols-1 gap-3 mb-4">
+          {stageMatrix.map((row) => (
+            <article key={row.stage} className="card-surface p-5">
+              <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">{row.stage}</p>
+              <dl className="grid gap-2 text-sm text-foreground-muted">
+                <div>
+                  <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle">CFO</dt>
+                  <dd>{row.cfo}</dd>
+                </div>
+                <div>
+                  <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle">CTO</dt>
+                  <dd>{row.cto}</dd>
+                </div>
+                <div>
+                  <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle">Output</dt>
+                  <dd>{row.output}</dd>
+                </div>
+              </dl>
+            </article>
+          ))}
+        </div>
+        <div className="overflow-x-auto hidden lg:block">
           <table className="enterprise-table min-w-[940px]">
             <thead>
               <tr>
@@ -257,23 +301,48 @@ export default function Audit() {
           <EnterpriseStepper steps={pathwaySummarySteps} />
         </div>
 
-        <div className="space-y-4 max-w-6xl">
+        <div className="audit-pathway-layout max-w-6xl">
+          <aside className="audit-pathway-nav card-surface p-4">
+            <p className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle mb-3">Jump to stage</p>
+            <div className="flex flex-wrap gap-2 lg:grid lg:grid-cols-1">
+              {pathwayJump.map((item) => (
+                <a key={item.id} href={`#${item.id}`} className="summary-jump">
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </aside>
+
+          <div className="space-y-4">
           {pathway.map((stage, index) => (
-            <div key={stage.step}>
+            <div key={stage.step} id={`stage-${stage.step}`}>
               <article
                 className={`card-surface p-6 md:p-7 ${
                   stage.coming ? "border-border-2 bg-background-surface pathway-coming" : "pathway-card"
                 }`}
               >
-                <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-2">{stage.step}</p>
-                <h2 className="font-display fluid-heading text-foreground mb-2">{stage.title}</h2>
-                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-4">{stage.tag}</p>
+                <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start">
+                  <div>
+                    <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-2">{stage.step}</p>
+                    <h2 className="font-display fluid-heading text-foreground mb-2">{stage.title}</h2>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-4">{stage.tag}</p>
+                    <div className="space-y-3 mb-2">
+                      <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">{stage.paragraphs[0]}</p>
+                    </div>
+                  </div>
+                  <div className="audit-stage-meta">
+                    <p className={`text-xs ${stage.coming ? "text-foreground-subtle" : "text-lilac"}`}>{stage.pricing}</p>
+                  </div>
+                </div>
 
-                <div className="space-y-3 mb-5">
-                  <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">{stage.paragraphs[0]}</p>
+                <div className="space-y-3 mt-2">
                   {(stage.paragraphs.length > 1 || stage.receives.length > 0) ? (
                     <details className="progressive-details">
-                      <summary aria-label="Toggle stage details" />
+                      <summary
+                        aria-label="Toggle stage details"
+                        data-label="Stage details and deliverables"
+                        data-open-label="Hide stage details"
+                      />
                       <div className="progressive-details-body">
                         {stage.paragraphs.slice(1).map((paragraph) => (
                           <p key={paragraph} className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
@@ -295,8 +364,6 @@ export default function Audit() {
                     </details>
                   ) : null}
                 </div>
-
-                <p className={`text-xs ${stage.coming ? "text-foreground-subtle" : "text-lilac"}`}>{stage.pricing}</p>
               </article>
 
               {index < pathway.length - 1 ? (
@@ -304,6 +371,7 @@ export default function Audit() {
               ) : null}
             </div>
           ))}
+          </div>
         </div>
       </section>
 
