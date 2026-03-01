@@ -76,10 +76,18 @@ export default function Home() {
     "Consumer AI with vulnerable user populations",
   ] as const;
 
+  const deliverablesPreview = [
+    "Executive Risk Summary",
+    "Severity Classification",
+    "Scenario-Level Findings Appendix",
+    "Remediation Roadmap",
+  ] as const;
+
   const exploreLinks = [
     { href: "/benchmark", label: "Benchmark framework" },
     { href: "/research", label: "Research evidence" },
     { href: "/deliverables", label: "Deliverables" },
+    { href: "/samples", label: "Sample deliverables" },
     { href: "/audit", label: "Audit pathway" },
   ] as const;
 
@@ -105,10 +113,10 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap gap-4">
             <a
-              href="/request-audit#application-form"
+              href="/intake#application-form"
               className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
             >
-              Request an Audit
+              Request Validation Sprint
             </a>
             <Link
               to="/benchmark"
@@ -175,6 +183,24 @@ export default function Home() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section className="py-14 border-b border-border">
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Proof of Output</p>
+          <article className="card-surface p-6 max-w-5xl">
+            <h2 className="font-display fluid-heading text-foreground mb-3">Board-Ready Deliverables</h2>
+            <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-3xl">
+              Independent behavioral validation documentation built for procurement and governance review.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
+              {deliverablesPreview.map((item) => (
+                <p key={item} className="text-sm text-foreground-muted border border-border rounded-md px-3 py-2 bg-background-card">
+                  {item}
+                </p>
+              ))}
+            </div>
+            <a href="/samples" className="link-lilac">View Sample Deliverables →</a>
+          </article>
         </section>
 
         <section className="py-14 border-b border-border">
@@ -289,10 +315,10 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap gap-4 mb-8">
             <a
-              href="/request-audit#application-form"
+              href="/intake#application-form"
               className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
             >
-              Request an Audit
+              Request Validation Sprint
             </a>
             <a
               href="/benchmark"
@@ -309,6 +335,7 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap gap-2 mb-6">
             <a href="/deliverables" className="summary-jump">Deliverables</a>
+            <a href="/samples" className="summary-jump">Sample deliverables</a>
             <a href="/audit" className="summary-jump">Audit &amp; Validation</a>
             <a href="/trust" className="summary-jump">Trust Standards</a>
           </div>
