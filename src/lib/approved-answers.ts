@@ -119,7 +119,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     id: "ikwe-quick-facts",
     keywords: ["ikwe quick facts", "give me ikwe quick facts", "quick highlights", "ikwe highlights", "ikwe overview"],
     text:
-      `Ikwe quick facts (updated ${BENCHMARK_CURRENT.lastUpdated}): Ikwe is an independent third-party behavioral AI auditor. Published rates remain ${BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence and ${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail, tied to baseline ${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories. Detailed run-volume logs are available on request.`,
+      `Ikwe quick facts (updated ${BENCHMARK_CURRENT.lastUpdated}): Ikwe is an independent third-party behavioral AI auditor. Published rates remain ${BENCHMARK_CURRENT.failedGatePct} harm-pattern prevalence and ${BENCHMARK_CURRENT.noRepairPct} safety gate fail rate, based on ${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories. Additional documentation is available on request.`,
     links: [
       { label: "Homepage Overview", href: "/" },
       { label: "EQ Safety Benchmark", href: "/benchmark" },
@@ -138,7 +138,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
       "n value",
     ],
     text:
-      `Current benchmark framing (updated ${BENCHMARK_CURRENT.lastUpdated}): ${BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence and ${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail are tied to baseline ${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories. Detailed run-volume logs are available on request.`,
+      `Current benchmark framing (updated ${BENCHMARK_CURRENT.lastUpdated}): ${BENCHMARK_CURRENT.failedGatePct} harm-pattern prevalence and ${BENCHMARK_CURRENT.noRepairPct} safety gate fail rate are based on ${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories. Additional documentation is available on request.`,
     links: [
       { label: "EQ Safety Benchmark", href: "/benchmark" },
       { label: "Research Details", href: "/research" },
@@ -198,7 +198,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     id: "proprietary-boundary",
     keywords: ["what is public vs proprietary", "what is not public", "what cannot be shared", "confidentiality boundary"],
     text:
-      "Publicly available: benchmark framing, aggregate results, and methodology overview. Not publicly exposed: exact 8-dimension weighting, exact scenario text/sourcing methodology, scenario IDs, and client-specific outcomes.",
+      "Publicly available: benchmark framing, aggregate results, and methodology overview. Not publicly exposed: detailed scoring mechanics, detailed scenario material, and client-specific outcomes.",
     links: [
       { label: "Trust & Confidentiality", href: "/trust" },
       { label: "Research Access Terms", href: "/research-access-terms.html" },
@@ -220,7 +220,7 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
     title: "Research Overview",
     href: "/research",
     summary:
-      `Research page explains ${BENCHMARK_CURRENT.nValue}, ${BENCHMARK_CURRENT.scenarios} scenarios, ${BENCHMARK_CURRENT.domains} categories, SSF prevalence, safety gate outcomes, and aggregate 8-dimension reporting boundaries.`,
+      `Research page explains ${BENCHMARK_CURRENT.nValue}, ${BENCHMARK_CURRENT.scenarios} scenarios, ${BENCHMARK_CURRENT.domains} categories, harm-pattern prevalence, safety gate outcomes, and aggregate 8-dimension reporting boundaries.`,
     tags: ["research", "methodology", "numbers", "phase 1", "phase 2", "dimensions"],
   },
   {

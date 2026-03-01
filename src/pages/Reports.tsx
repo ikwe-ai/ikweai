@@ -177,7 +177,7 @@ export default function Reports() {
           />
           <div className="progressive-details-body">
             <p className="text-xs text-foreground-subtle">
-              Need a format example before engagement? Open the proprietary-format sample report in-site modal (public, redacted, no
+              Need a format example before engagement? Open the public sample report in-site modal (public, redacted, no
               client data):{" "}
               <a
                 href={SAMPLE_REPORT_PATH}
