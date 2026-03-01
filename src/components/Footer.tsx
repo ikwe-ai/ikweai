@@ -11,9 +11,7 @@ export default function Footer() {
               <Link to="/" className="text-foreground-muted hover:text-foreground transition-colors">Home</Link>
               <Link to="/benchmark" className="text-foreground-muted hover:text-foreground transition-colors">Benchmark</Link>
               <Link to="/research" className="text-foreground-muted hover:text-foreground transition-colors">Research</Link>
-              <Link to="/deliverables" className="text-foreground-muted hover:text-foreground transition-colors">Deliverables</Link>
-              <Link to="/samples" className="text-foreground-muted hover:text-foreground transition-colors">Samples</Link>
-              <Link to="/audit" className="text-foreground-muted hover:text-foreground transition-colors">Audit &amp; Validation</Link>
+              <Link to="/deliverables" className="text-foreground-muted hover:text-foreground transition-colors">Deliverables</Link>              <Link to="/audit" className="text-foreground-muted hover:text-foreground transition-colors">Audit &amp; Validation</Link>
               <Link to="/trust" className="text-foreground-muted hover:text-foreground transition-colors">Trust</Link>
             </div>
           </div>
@@ -54,11 +52,7 @@ export default function Footer() {
               </Link>
               <Link to="/deliverables" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Deliverables &amp; Transparency
-              </Link>
-              <Link to="/samples" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
-                Sample Deliverables
-              </Link>
-              <Link to="/audit" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+              </Link>              <Link to="/audit" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Audit &amp; Validation
               </Link>
               <Link to="/intake#application-form" className="text-sm text-foreground-muted hover:text-foreground transition-colors">

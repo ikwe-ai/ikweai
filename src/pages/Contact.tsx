@@ -215,7 +215,7 @@ export default function Contact() {
           "Response target: 1 business day",
         ]}
         primaryAction={{ href: "#application-form", label: "Open Intake Form ↓" }}
-        secondaryAction={{ href: "/samples", label: "View Sample Deliverables" }}
+        secondaryAction={{ href: "/deliverables", label: "View Sample Deliverables" }}
         jumpLinks={[
           { href: "#intake-overview", label: "Intake Overview" },
           { href: "#application-form", label: "Form" },
@@ -235,7 +235,7 @@ export default function Contact() {
                 </p>
                 <p className="text-sm text-foreground-muted leading-relaxed mb-4">
                   In the meantime, you can review the sample deliverables format:
-                  <a href="/samples" className="link-lilac"> open samples</a>.
+                  <a href="/deliverables" className="link-lilac"> open samples</a>.
                 </p>
                 <a
                   href="/audit"
