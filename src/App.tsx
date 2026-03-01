@@ -13,6 +13,7 @@ import EqSafetyBenchmark from "./pages/EqSafetyBenchmark";
 import Research from "./pages/Research";
 import Reports from "./pages/Reports";
 import Samples from "./pages/Samples";
+import SampleReport from "./pages/SampleReport";
 import Audit from "./pages/Audit";
 import Trust from "./pages/Trust";
 import Contact from "./pages/Contact";
@@ -61,7 +62,7 @@ const App = () => (
 
           <Route path="/outputs" element={<Navigate to="/deliverables" replace />} />
           <Route path="/reports" element={<Navigate to="/deliverables" replace />} />
-          <Route path="/sample-report" element={<Navigate to="/reports/ikwe-sample-report-public.html" replace />} />
+          <Route path="/sample-report" element={<SampleReport />} />
           <Route path="/contact" element={<Navigate to="/intake" replace />} />
           <Route path="/inquiry" element={<Navigate to="/intake" replace />} />
           <Route path="/audit-request" element={<Navigate to="/intake" replace />} />
