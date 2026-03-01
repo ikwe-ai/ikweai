@@ -3,6 +3,7 @@ type ActionDockItem = {
   label: string;
   tone?: "primary" | "outline" | "quiet";
   external?: boolean;
+  onClick?: () => void;
 };
 
 interface ActionDockProps {
@@ -27,17 +28,32 @@ export default function ActionDock({ title, subtitle, items }: ActionDockProps) 
                 ? "btn-quiet"
                 : "bg-lilac";
 
+          const sharedClassName = `inline-flex items-center rounded px-4 py-2 text-sm transition-colors ${className} ${
+            item.tone === "primary"
+              ? "font-medium text-primary-foreground"
+              : "text-foreground"
+          }`;
+
+          if (item.onClick) {
+            return (
+              <button
+                key={`${item.href}-${item.label}`}
+                type="button"
+                onClick={item.onClick}
+                className={sharedClassName}
+              >
+                {item.label}
+              </button>
+            );
+          }
+
           return (
             <a
               key={`${item.href}-${item.label}`}
               href={item.href}
               target={item.external ? "_blank" : undefined}
               rel={item.external ? "noopener noreferrer" : undefined}
-              className={`inline-flex items-center rounded px-4 py-2 text-sm transition-colors ${className} ${
-                item.tone === "primary"
-                  ? "font-medium text-primary-foreground"
-                  : "text-foreground"
-              }`}
+              className={sharedClassName}
             >
               {item.label}
             </a>
