@@ -302,6 +302,16 @@
     transition: color 0.15s;
   }
 
+  button.link-lilac {
+    appearance: none;
+    font: inherit;
+    line-height: inherit;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
   .link-lilac:hover {
     color: hsl(var(--lilac-bright));
   }
