@@ -802,6 +802,13 @@
     transition: border-color 0.15s, color 0.15s, background-color 0.15s;
   }
 
+  button.summary-jump {
+    appearance: none;
+    font: inherit;
+    line-height: inherit;
+    cursor: pointer;
+  }
+
   .summary-jump:hover {
     border-color: hsl(var(--lilac) / 0.48);
     color: hsl(var(--foreground));
@@ -900,6 +907,13 @@
     color: hsl(var(--lilac-soft));
     background: hsl(var(--lilac-dim));
     transition: border-color 0.15s, background-color 0.15s, color 0.15s;
+  }
+
+  button.output-set-action {
+    appearance: none;
+    font: inherit;
+    line-height: inherit;
+    cursor: pointer;
   }
 
   .output-set-action:hover {
@@ -1263,7 +1277,8 @@
       border-radius: 12px;
     }
 
-    .action-dock-actions > a {
+    .action-dock-actions > a,
+    .action-dock-actions > button {
       flex: 1 1 100%;
       justify-content: center;
     }
