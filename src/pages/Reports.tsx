@@ -49,7 +49,7 @@ export default function Reports() {
             href="/intake#application-form"
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
           >
-            Request Validation Sprint
+            Request Audit
           </a>
           <a
             href="#output-previews"
@@ -131,7 +131,7 @@ export default function Reports() {
             href="/intake#application-form"
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
           >
-            Request Validation Sprint
+            Request Audit
           </a>
           <a
             href="/trust"

@@ -32,7 +32,7 @@ export default function Trust() {
           "Independent third-party evaluation standards",
         ]}
         primaryAction={{ href: "#handling-boundary", label: "View Handling Boundary ↓" }}
-        secondaryAction={{ href: "/intake#application-form", label: "Request Validation Sprint" }}
+        secondaryAction={{ href: "/intake#application-form", label: "Request Audit" }}
         jumpLinks={[
           { href: "#information-needs", label: "Information Needs" },
           { href: "#handling-boundary", label: "Public and Client Materials" },
@@ -147,7 +147,7 @@ export default function Trust() {
           className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
           style={{ fontFamily: "var(--font-body)" }}
         >
-          Start validation sprint intake →
+          Start audit intake intake →
         </a>
         <div className="flex flex-wrap gap-2 mt-4">
           <a href="/benchmark" className="summary-jump">Benchmark framework</a>

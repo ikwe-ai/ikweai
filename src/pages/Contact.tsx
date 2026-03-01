@@ -200,13 +200,13 @@ export default function Contact() {
   return (
     <PageShell>
       <PageMeta
-        title="Request a Validation Sprint | Ikwe.ai"
+        title="Request an Audit | Ikwe.ai"
         description="Tell us what you are deploying and what governance pressure you are facing. We will return a scoped validation plan."
         path="/intake"
       />
       <SummaryHero
-        kicker="Validation Sprint Intake"
-        title="Request a Validation Sprint"
+        kicker="Audit Intake"
+        title="Request an Audit"
         summary="Tell us what you are deploying and what governance pressure you are facing. We will respond with a scoped plan and access checklist."
         highlights={[
           "CTO and CFO scoping inputs",
@@ -300,7 +300,7 @@ export default function Contact() {
               <input type="hidden" name="submitted_at" value={new Date().toISOString()} />
 
               <div>
-                <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest">Validation Sprint Intake</p>
+                <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest">Audit Intake</p>
                 <p className="text-xs text-foreground-subtle mt-1">Fields marked * are required.</p>
               </div>
 
@@ -566,7 +566,7 @@ export default function Contact() {
                 className="w-full rounded bg-lilac px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors disabled:opacity-50"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                {state === "submitting" ? "Submitting..." : "Submit Validation Sprint Request"}
+                {state === "submitting" ? "Submitting..." : "Submit Audit Request"}
               </button>
 
               {!userPopulation.length || !modelProvider.length || !driver.length || !signoff.length ? (
