@@ -184,24 +184,20 @@
     position: relative;
     z-index: 1;
     display: grid;
-    gap: 12px;
+    gap: 0;
   }
 
   .page-frame > section,
   .page-frame > .action-dock {
     position: relative;
-    border: 1px solid hsl(var(--border) / 0.58);
-    border-radius: 14px;
-    background:
-      linear-gradient(180deg, hsl(var(--background-card) / 0.92) 0%, hsl(var(--background-surface) / 0.78) 100%);
-    box-shadow: 0 10px 22px hsl(258 58% 4% / 0.2);
     padding-inline: clamp(14px, 2.2vw, 22px);
   }
 
-  .page-frame > section:nth-of-type(even) {
-    border-color: hsl(var(--border-2) / 0.68);
-    background:
-      linear-gradient(180deg, hsl(var(--background-card) / 0.9) 0%, hsl(var(--background) / 0.86) 100%);
+  .page-frame > section {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
   }
 
   .nav-blur {
@@ -1069,7 +1065,7 @@
     }
 
     .page-frame {
-      gap: 10px;
+      gap: 0;
     }
 
     .page-parallax {
@@ -1100,7 +1096,7 @@
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .audit-section-layout {
       grid-template-columns: 240px minmax(0, 1fr);
       gap: 18px;
