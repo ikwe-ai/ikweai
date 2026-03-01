@@ -72,6 +72,18 @@ export default function Samples() {
               Short-format summary for leadership and procurement review.
             </p>
             <a href={SAMPLE_EXCERPT_PATH} className="link-lilac">Open excerpt →</a>
+            <p className="text-xs text-foreground-subtle mt-3">
+              Need a form package?{" "}
+              <a
+                href="/forms/ikwe-intake-form-fillable.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-lilac"
+              >
+                Download fillable intake PDF
+              </a>
+              .
+            </p>
           </article>
 
           <article className="card-surface p-6">
