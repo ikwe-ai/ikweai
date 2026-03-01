@@ -812,6 +812,12 @@
     gap: 22px;
   }
 
+  .reports-hero .action-dock {
+    position: static;
+    top: auto;
+    margin: 14px 0 0;
+  }
+
   .reports-rail {
     padding: 14px;
   }

@@ -106,6 +106,15 @@ export default function Reports() {
             <p className="text-xs text-foreground-subtle mt-4">
               Built for board, legal, compliance, and technical stakeholders.
             </p>
+            <ActionDock
+              title="Next Step"
+              subtitle="Review sample outputs now, then request a scoped evaluation plan."
+              items={[
+                { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
+                { href: SAMPLE_REPORT_PATH, label: "Open Sample Report", tone: "outline" },
+                { href: "/trust", label: "Trust Standards", tone: "quiet" },
+              ]}
+            />
           </div>
           <aside className="site-hero-rail card-surface p-5">
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle mb-3">Output Set</p>
@@ -144,16 +153,6 @@ export default function Reports() {
           </aside>
         </div>
       </section>
-
-      <ActionDock
-        title="Next Step"
-        subtitle="Review sample outputs now, then request a scoped evaluation plan."
-        items={[
-          { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
-          { href: SAMPLE_REPORT_PATH, label: "Open Sample Report", tone: "outline" },
-          { href: "/trust", label: "Trust Standards", tone: "quiet" },
-        ]}
-      />
 
       <section id="output-previews" className="site-section py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Deliverables Previews</p>
