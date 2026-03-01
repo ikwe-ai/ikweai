@@ -74,7 +74,7 @@ export default function Research() {
           </div>
           <aside className="site-hero-rail card-surface p-5">
             <div className="summary-headline-strip">
-              <div className="summary-headline-item">{BENCHMARK_CURRENT.nShort} individual model outputs evaluated</div>
+              <div className="summary-headline-item">{BENCHMARK_CURRENT.nValue} for published rates</div>
               <div className="summary-headline-item">
                 {BENCHMARK_CURRENT.scenarios} structured scenarios across {BENCHMARK_CURRENT.domains} categories
               </div>
@@ -128,7 +128,7 @@ export default function Research() {
           </article>
           <article className="card-surface p-4">
             <p className="font-display text-3xl text-foreground mb-1">{BENCHMARK_CURRENT.nShort}</p>
-            <p className="text-xs text-foreground-muted">Responses scored</p>
+            <p className="text-xs text-foreground-muted">Locked baseline denominator</p>
           </article>
           <article className="card-surface p-4">
             <p className="font-display text-3xl text-foreground mb-1">{BENCHMARK_CURRENT.scenarios}</p>
