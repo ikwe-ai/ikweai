@@ -85,9 +85,10 @@ export default function Samples() {
 
           <article className="card-surface p-6 risk-panel">
             <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-danger mb-2">Engagement Path</p>
-            <h2 className="font-display text-xl text-foreground mb-2">Request an Audit</h2>
+            <h2 className="font-display text-xl text-foreground mb-2">Request Independent Evaluation</h2>
             <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-              Share deployment context, governance pressure, and scope targets. We return a scoped plan.
+              Share deployment context, governance pressure, and scope targets. We return a scoped third-party
+              independent behavioral safety evaluation plan.
             </p>
             <a href="/intake#application-form" className="link-lilac">Request evaluation →</a>
           </article>
@@ -125,9 +126,10 @@ export default function Samples() {
       <section className="py-14">
         <article className="card-surface p-6 max-w-4xl">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Ready to validate your system?</p>
-          <h2 className="font-display text-3xl text-foreground mb-2">Request a Behavioral Safety Audit.</h2>
+          <h2 className="font-display text-3xl text-foreground mb-2">Request Third-Party Independent Evaluation.</h2>
           <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-            Start with intake. We scope around your deployment architecture, risk exposure, and decision timeline.
+            Start with intake. We scope around your deployment architecture, risk exposure, and decision timeline for
+            independent behavioral safety evaluation.
           </p>
           <a
             href="/intake#application-form"
