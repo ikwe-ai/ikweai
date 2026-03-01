@@ -88,7 +88,11 @@ export default function Research() {
             system is responding unsafely right now. Not hypothetically. At measurable rates.
           </p>
           <details className="progressive-details">
-            <summary aria-label="Toggle summary details" />
+            <summary
+              aria-label="Toggle summary details"
+              data-label="How to interpret these rates"
+              data-open-label="Hide interpretation"
+            />
             <div className="progressive-details-body">
               <p className="text-sm text-foreground-muted leading-relaxed">
                 {BENCHMARK_CURRENT.failedGatePct} of responses showed at least one Safety-Sabotaging Feature (SSF) pattern.
@@ -107,95 +111,32 @@ export default function Research() {
         </article>
       </section>
 
-      <section id="dataset-scope" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">N and Scenario Scope</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-7">
-          <article className="card-surface p-5">
-            <p className="font-display text-3xl text-foreground mb-2">{BENCHMARK_CURRENT.nShort}</p>
-            <p className="text-sm text-foreground-muted">Individual model outputs evaluated</p>
+      <section id="findings-snapshot" className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">Findings Snapshot</p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4 max-w-5xl">
+          <article className="card-surface p-4">
+            <p className="font-display text-3xl text-danger mb-1">{BENCHMARK_CURRENT.failedGatePct}</p>
+            <p className="text-xs text-foreground-muted">SSF-Any prevalence</p>
           </article>
-          <article className="card-surface p-5">
-            <p className="font-display text-3xl text-foreground mb-2">{BENCHMARK_CURRENT.scenarios}</p>
-            <p className="text-sm text-foreground-muted">Structured scenarios</p>
+          <article className="card-surface p-4">
+            <p className="font-display text-3xl text-danger mb-1">{BENCHMARK_CURRENT.noRepairPct}</p>
+            <p className="text-xs text-foreground-muted">Aggregate gate FAIL</p>
           </article>
-          <article className="card-surface p-5">
-            <p className="font-display text-3xl text-foreground mb-2">{BENCHMARK_CURRENT.domains}</p>
-            <p className="text-sm text-foreground-muted">Categories</p>
+          <article className="card-surface p-4">
+            <p className="font-display text-3xl text-foreground mb-1">{BENCHMARK_CURRENT.nShort}</p>
+            <p className="text-xs text-foreground-muted">Responses scored</p>
           </article>
-        </div>
-
-        <div className="flex flex-wrap gap-2 mb-5 max-w-4xl">
-          {vulnerableStates.map((state) => (
-            <span
-              key={state}
-              className="inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs text-foreground-muted bg-background-card"
-            >
-              {state}
-            </span>
-          ))}
-        </div>
-
-        <p className="text-sm text-foreground-muted max-w-4xl">
-          Released: {BENCHMARK_CURRENT.released}. Last updated: {BENCHMARK_CURRENT.lastUpdated}.{" "}
-          {BENCHMARK_CURRENT.updateNote}
-        </p>
-      </section>
-
-      <section id="phase-1-results" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">
-          Metric 1 — SSF-Any Prevalence
-        </p>
-        <article className="card-surface p-6 max-w-3xl mb-5 risk-panel">
-          <p className="font-display text-5xl text-danger mb-2">{BENCHMARK_CURRENT.failedGatePct}</p>
-          <p className="text-sm text-foreground-muted">Responses with at least one SSF pattern</p>
-        </article>
-        <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl">
-          SSF-Any prevalence captures how often a response contains at least one harmful pattern. This is distinct from
-          aggregate gate failure, which applies a stricter binary threshold.
-        </p>
-      </section>
-
-      <section id="phase-2-results" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">
-          Metric 2 — Safety Gate Outcomes
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mb-5">
-          <article className="card-surface p-6">
-            <p className="font-display text-5xl text-danger mb-2">{BENCHMARK_CURRENT.noRepairPct}</p>
-            <p className="text-sm text-foreground-muted">Aggregate safety gate FAIL</p>
-          </article>
-          <article className="card-surface p-6">
-            <p className="font-display text-5xl text-foreground mb-2">{formatPercent(gatePassPct)}</p>
-            <p className="text-sm text-foreground-muted">Aggregate safety gate PASS</p>
+          <article className="card-surface p-4">
+            <p className="font-display text-3xl text-foreground mb-1">{BENCHMARK_CURRENT.scenarios}</p>
+            <p className="text-xs text-foreground-muted">Scenarios in {BENCHMARK_CURRENT.domains} categories</p>
           </article>
         </div>
-        <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl">
-          The aggregate gate fail rate across Study I is {BENCHMARK_CURRENT.noRepairPct}. The remaining{" "}
-          {formatPercent(gatePassPct)} passed the binary safety gate threshold.
-        </p>
-      </section>
 
-      <section id="dimension-aggregate" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">8-Dimension Aggregate</p>
-        <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-4">
-          In Study I, PASS runs are quality-scored across eight weighted behavioral dimensions: Harm Recognition,
-          Response Sequencing, Validation Accuracy, User Autonomy Integrity, Escalation Interruption,
-          Behavioral Pattern Clarity, Risk Containment, and Crisis Routing Fidelity.
-        </p>
-        <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-4">
-          Dimension weights are proprietary. Aggregate dimension outcomes are published at benchmark level. No
-          dimension-level scores are attributed to individual organizations.
-        </p>
-        <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl">
-          Full dimensional scoring documentation is available to organizations in active audit or institutional review.
-          Contact <a href="mailto:research@ikwe.ai" className="link-lilac">research@ikwe.ai</a>.
-        </p>
-      </section>
-
-      <section id="failure-breakdown" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">Benchmark Summary</p>
-        <div className="card-surface p-6 max-w-4xl">
-          <div className="space-y-5">
+        <article className="card-surface p-5 max-w-5xl">
+          <p className="text-xs text-foreground-subtle mb-4">
+            Released {BENCHMARK_CURRENT.released} · Updated {BENCHMARK_CURRENT.lastUpdated} · {BENCHMARK_CURRENT.updateNote}
+          </p>
+          <div className="space-y-4 mb-1">
             {benchmarkSummaryRows.map((row) => (
               <div key={row.label}>
                 <div className="flex items-center justify-between gap-3 mb-1.5">
@@ -207,8 +148,35 @@ export default function Research() {
                 </div>
               </div>
             ))}
+            <div>
+              <div className="flex items-center justify-between gap-3 mb-1.5">
+                <p className="text-sm text-foreground-muted">Aggregate safety gate PASS</p>
+                <p className="font-mono text-xs text-foreground">{formatPercent(gatePassPct)}</p>
+              </div>
+              <div className="h-2 rounded-full bg-background-surface">
+                <div className="h-2 rounded-full bg-safe" style={{ width: `${gatePassPct}%` }} />
+              </div>
+            </div>
           </div>
-        </div>
+
+          <details className="progressive-details mt-4">
+            <summary
+              aria-label="Toggle scope details"
+              data-label="Method scope and user-state coverage"
+              data-open-label="Hide scope details"
+            />
+            <div className="progressive-details-body">
+              <p className="text-sm text-foreground-muted leading-relaxed">
+                Study I evaluates behavior across vulnerable-state categories including {vulnerableStates.join(", ")}.
+                PASS runs are quality-scored across eight public dimensions.
+              </p>
+              <p className="text-sm text-foreground-muted leading-relaxed">
+                Dimension weights are engagement-only. Aggregate outcomes are published at benchmark level and are not
+                attributed publicly to individual organizations.
+              </p>
+            </div>
+          </details>
+        </article>
       </section>
 
       <section id="full-report" className="py-14">
