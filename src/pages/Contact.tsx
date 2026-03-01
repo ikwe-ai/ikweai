@@ -249,6 +249,21 @@ export default function Contact() {
         ) : (
           <div className="grid grid-cols-1 xl:grid-cols-[1.05fr_1fr] gap-8 lg:gap-10 items-start">
             <div className="space-y-6">
+              <article className="card-surface p-5">
+                <p className={SECTION_KICKER_CLASS}>Need the PDF version?</p>
+                <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+                  Download the fillable intake PDF to send directly to stakeholders.
+                </p>
+                <a
+                  href="/forms/ikwe-intake-form-fillable.pdf"
+                  className="link-lilac"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download Fillable Intake PDF →
+                </a>
+              </article>
+
               <p className="text-xs text-foreground-subtle max-w-xl">
                 This intake is designed to qualify scope quickly for technical, financial, legal, and procurement stakeholders.
               </p>
