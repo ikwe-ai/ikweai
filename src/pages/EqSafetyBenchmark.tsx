@@ -161,7 +161,7 @@ export default function EqSafetyBenchmark() {
           />
           <StatCard
             value={BENCHMARK_CURRENT.nValue}
-            label="Locked baseline denominator"
+            label="Baseline sample size"
             sub={`${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} categories`}
             delay={160}
           />

@@ -43,7 +43,7 @@ export default function Home() {
     },
     {
       value: BENCHMARK_CURRENT.nShort,
-      label: "responses scored in Study I",
+      label: "responses in the baseline benchmark sample",
       tone: "safe",
     },
   ] as const;
