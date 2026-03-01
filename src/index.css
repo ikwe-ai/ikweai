@@ -410,6 +410,62 @@
     box-shadow: 0 14px 28px hsl(258 58% 4% / 0.26);
   }
 
+  .home-hero {
+    background:
+      radial-gradient(56% 66% at 92% 0%, hsl(var(--lilac) / 0.2), transparent 72%),
+      linear-gradient(180deg, hsl(var(--background-card) / 0.92) 0%, hsl(var(--background-surface) / 0.74) 100%);
+  }
+
+  .home-hero-layout {
+    display: grid;
+    gap: 14px;
+    align-items: start;
+  }
+
+  .home-hero-rail {
+    background:
+      linear-gradient(180deg, hsl(var(--background-card) / 0.94) 0%, hsl(var(--background-surface) / 0.84) 100%);
+    border-color: hsl(var(--border-2) / 0.76);
+  }
+
+  .home-icon-chip,
+  .home-step-icon {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1px solid hsl(var(--border-2));
+    color: hsl(var(--lilac-soft));
+    background: hsl(var(--background-surface));
+    box-shadow: inset 0 1px 0 hsl(var(--foreground) / 0.05);
+    margin-bottom: 10px;
+  }
+
+  .home-step-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .home-sector-chip {
+    position: relative;
+    padding-left: 1.8rem;
+  }
+
+  .home-sector-chip::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: hsl(var(--lilac-soft));
+    box-shadow: 0 0 0 2px hsl(var(--lilac) / 0.24);
+  }
+
   .summary-hero::before,
   .summary-hero::after {
     content: none;
@@ -1068,6 +1124,11 @@
       gap: 0;
     }
 
+    .action-dock-actions > a {
+      flex: 1 1 100%;
+      justify-content: center;
+    }
+
     .page-parallax {
       inset: -6% -14%;
     }
@@ -1093,6 +1154,17 @@
 
     .audit-decision-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .home-hero-layout {
+      grid-template-columns: minmax(0, 1fr) 310px;
+      gap: 18px;
+    }
+
+    .home-hero-rail {
+      position: sticky;
+      top: 150px;
+      align-self: start;
     }
   }
 
