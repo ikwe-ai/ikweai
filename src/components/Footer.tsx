@@ -24,13 +24,13 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-3">
               <img
                 src="/ikwe_logo_dark.png"
-                alt="Ikwe.ai"
+                alt="ikwe.ai"
                 width={22}
                 height={22}
                 style={{ borderRadius: "50%", display: "block" }}
               />
               <p className="font-display text-base text-foreground">
-                Ikwe<span className="text-lilac">.ai</span>
+                ikwe<span className="text-lilac">.ai</span>
               </p>
             </div>
             <p className="text-xs text-foreground-subtle leading-relaxed max-w-xs">

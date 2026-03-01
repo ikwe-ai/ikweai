@@ -207,7 +207,7 @@ export default function Contact() {
       <SummaryHero
         kicker="Independent Evaluation Intake"
         title="Request Third-Party Independent Behavioral Safety Evaluation"
-        summary="Tell us what you are deploying and what governance pressure you are facing. We will respond with a scoped independent evaluation plan and access checklist."
+        summary="Tell us what you are deploying and what governance pressure you are facing. We will respond with a scoped independent evaluation plan and access checklist. For general inquiries, use contact@ikwe.ai."
         highlights={[
           "Third-party independent review",
           "CTO and CFO scoping inputs",
@@ -270,6 +270,9 @@ export default function Contact() {
                     rel="noopener noreferrer"
                   >
                     Download sample excerpt
+                  </a>
+                  <a href="mailto:contact@ikwe.ai" className="summary-jump">
+                    General inquiry email
                   </a>
                 </div>
                 <button type="button" onClick={startGuidedIntake} className="text-sm link-lilac">
