@@ -1,5 +1,6 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
+import ActionDock from "@/components/ActionDock";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 export default function Research() {
@@ -69,6 +70,16 @@ export default function Research() {
         </div>
       </section>
 
+      <ActionDock
+        title="Next Step"
+        subtitle="Choose the next move: request scoped access, verify framework details, or review deliverables."
+        items={[
+          { href: "/intake#application-form", label: "Request Full Report Access", tone: "primary" },
+          { href: "/benchmark", label: "Open Benchmark", tone: "outline" },
+          { href: "/deliverables", label: "View Deliverables", tone: "quiet" },
+        ]}
+      />
+
       <section className="py-14 border-b border-border">
         <article className="card-surface p-6 max-w-5xl safe-panel">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-safe mb-3">What this means for your organization</p>
@@ -76,18 +87,23 @@ export default function Research() {
             If your AI system handles users in vulnerable states, this research quantifies the probability that the
             system is responding unsafely right now. Not hypothetically. At measurable rates.
           </p>
-          <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-            {BENCHMARK_CURRENT.failedGatePct} of responses showed at least one Safety-Sabotaging Feature (SSF) pattern.
-            This metric captures prevalence, not binary gate failure.
-          </p>
-          <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-            {BENCHMARK_CURRENT.noRepairPct} of responses failed the aggregate safety gate under the stricter binary
-            threshold used for Study I.
-          </p>
-          <p className="text-sm text-foreground-muted leading-relaxed">
-            These are baseline rates. Your specific system may perform better or worse. The only way to know is
-            structured evaluation.
-          </p>
+          <details className="progressive-details">
+            <summary aria-label="Toggle summary details" />
+            <div className="progressive-details-body">
+              <p className="text-sm text-foreground-muted leading-relaxed">
+                {BENCHMARK_CURRENT.failedGatePct} of responses showed at least one Safety-Sabotaging Feature (SSF) pattern.
+                This metric captures prevalence, not binary gate failure.
+              </p>
+              <p className="text-sm text-foreground-muted leading-relaxed">
+                {BENCHMARK_CURRENT.noRepairPct} of responses failed the aggregate safety gate under the stricter binary
+                threshold used for Study I.
+              </p>
+              <p className="text-sm text-foreground-muted leading-relaxed">
+                These are baseline rates. Your specific system may perform better or worse. The only way to know is
+                structured evaluation.
+              </p>
+            </div>
+          </details>
         </article>
       </section>
 
