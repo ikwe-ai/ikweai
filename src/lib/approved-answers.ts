@@ -34,11 +34,11 @@ const RESTRICTED_EXACT_PATTERNS = [
   "client list",
   "client data",
   "client result",
-  "internal process",
-  "internal note",
-  "internal-only",
-  "confidential client",
-  "private client",
+  "non-public process",
+  "restricted note",
+  "restricted-only",
+  "confidential organization",
+  "private organization",
   "raw scenario",
   "scenario text",
   "scenario id",
@@ -65,7 +65,7 @@ const RESTRICTED_EXACT_PATTERNS = [
   "override policy",
 ];
 
-const RESTRICTED_INTENT_TOKENS = ["client", "internal", "confidential", "private", "proprietary"];
+const RESTRICTED_INTENT_TOKENS = ["client", "non-public", "restricted", "confidential", "private", "proprietary"];
 const RESTRICTED_TARGET_TOKENS = ["name", "list", "data", "result", "document", "notes", "method", "prompt", "id", "exact"];
 const EXFIL_ACTION_TOKENS = [
   "show",
@@ -85,7 +85,8 @@ const EXFIL_ACTION_TOKENS = [
 ];
 const EXFIL_TARGET_TOKENS = [
   "client",
-  "internal",
+  "non-public",
+  "restricted",
   "confidential",
   "private",
   "scenario",
@@ -497,7 +498,7 @@ export function resolveApprovedAnswer(rawQuery: string): AssistantResolution {
     return {
       kind: "restricted",
       text:
-        "I can only return approved public content. Client-specific details, internal notes, exact scenario text/IDs, and proprietary scoring internals are not shared here.",
+        "I can only return approved public content. Organization-specific details, restricted notes, exact scenario text/IDs, and proprietary scoring details are not shared here.",
       links: [
         { label: "Trust & Confidentiality", href: "/trust" },
         { label: "Research Access Terms", href: "/research-access-terms.html" },
