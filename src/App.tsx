@@ -58,6 +58,7 @@ const App = () => (
 
           <Route path="/outputs" element={<Navigate to="/deliverables" replace />} />
           <Route path="/reports" element={<Navigate to="/deliverables" replace />} />
+          <Route path="/sample-report" element={<Navigate to="/reports/ikwe-sample-report-public.html" replace />} />
           <Route path="/contact" element={<Navigate to="/request-audit" replace />} />
           <Route path="/inquiry" element={<Navigate to="/request-audit" replace />} />
           <Route path="/audit-request" element={<Navigate to="/request-audit" replace />} />
