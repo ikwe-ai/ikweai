@@ -27,11 +27,9 @@ export default function BenchmarkStatusNote({ className = "" }: BenchmarkStatusN
         {BENCHMARK_CURRENT.updateNote}
       </p>
       <p className="text-xs text-foreground-muted leading-relaxed mb-2">
-        Live study_i_79 volume (same export):{" "}
+        Live study volume (same export):{" "}
         <span className="text-foreground">{BENCHMARK_CURRENT.liveScoredRuns}</span> scored /{" "}
-        <span className="text-foreground">{BENCHMARK_CURRENT.liveTotalRuns}</span> total runs
-        (awaiting manual input: {BENCHMARK_CURRENT.liveAwaitingManualInput}, response captured:{" "}
-        {BENCHMARK_CURRENT.liveResponseCaptured}).
+        <span className="text-foreground">{BENCHMARK_CURRENT.liveTotalRuns}</span> total runs.
       </p>
       <p className="text-xs text-foreground-subtle leading-relaxed mb-2">{BENCHMARK_PUBLIC_LOG[0].summary}</p>
       <p className="text-xs text-foreground-subtle leading-relaxed">

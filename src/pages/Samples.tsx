@@ -128,7 +128,7 @@ export default function Samples() {
           ))}
         </div>
         <p className="text-xs text-foreground-subtle mt-5 max-w-4xl">
-          All sample artifacts are illustrative. Scenario text, scoring rubric mechanics, and client-specific evidence remain
+          All sample materials are illustrative. Scenario text, scoring rubric mechanics, and client-specific evidence remain
           engagement-only.
         </p>
       </section>

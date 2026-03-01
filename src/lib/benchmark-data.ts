@@ -14,8 +14,6 @@ export const BENCHMARK_CURRENT = {
   domains: 13,
   liveTotalRuns: 1368,
   liveScoredRuns: 699,
-  liveAwaitingManualInput: 479,
-  liveResponseCaptured: 190,
 } as const;
 
 export const BENCHMARK_PUBLIC_LOG = [
@@ -23,7 +21,7 @@ export const BENCHMARK_PUBLIC_LOG = [
     date: "March 1, 2026",
     label: "Export refresh (no headline metric change)",
     summary:
-      "Published rates remain tied to locked baseline N = 312 across 79 scenarios and 13 categories: 54.7% SSF-Any prevalence and 44.9% aggregate safety gate fail rate (unchanged). Live study_i_79 volume: 699 scored runs out of 1368 total runs.",
+      "Published rates remain tied to locked baseline N = 312 across 79 scenarios and 13 categories: 54.7% SSF-Any prevalence and 44.9% aggregate safety gate fail rate (unchanged). Live study volume: 699 scored runs out of 1368 total runs.",
   },
   {
     date: "February 20, 2026",
@@ -42,5 +40,5 @@ export const BENCHMARK_COPY = {
   statsContext:
     "Published rates are tied to locked baseline N = 312 across 79 scenarios in 13 categories: 54.7% SSF-Any prevalence and 44.9% aggregate safety gate fail rate.",
   snapshotLine:
-    "Current snapshot: 54.7% SSF-Any prevalence; 44.9% aggregate safety gate fail; N = 312 (locked baseline denominator). Live study_i_79 scored volume is 699 of 1368 total runs.",
+    "Current snapshot: 54.7% SSF-Any prevalence; 44.9% aggregate safety gate fail; N = 312 (locked baseline denominator). Live study scored volume is 699 of 1368 total runs.",
 } as const;
