@@ -3,7 +3,7 @@ import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 
 const SAMPLE_EXCERPT_PATH = "/reports/ikwe-sample-excerpt-one-page.pdf";
-const SAMPLE_REPORT_PATH = "/reports/ikwe-sample-report-public.html";
+const SAMPLE_REPORT_PATH = "/sample-report";
 
 const deliverableItems = [
   {
