@@ -177,16 +177,17 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     id: "request-audit",
     keywords: [
       "request evaluation",
-      "request evaluation",
+      "request independent evaluation",
+      "third-party independent behavioral safety evaluation",
       "contact",
       "intake",
       "start audit",
       "how do we start an audit",
-      "how do we start an audit",
+      "how do we start independent evaluation",
       "get started",
     ],
     text:
-      "Start through the Validation Sprint intake form. This process is used for scope, timeline, procurement readiness, and reporting requirements before formal engagement.",
+      "Start through the independent evaluation intake form. This process is used for scope, timeline, procurement readiness, and reporting requirements before formal engagement.",
     links: [
       { label: "Request Evaluation", href: "/intake#application-form" },
       { label: "Audit Overview", href: "/audit" },
@@ -271,11 +272,11 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
   },
   {
     id: "contact",
-    title: "Audit Intake",
+    title: "Independent Evaluation Intake",
     href: "/intake#application-form",
     summary:
-      "Validation Sprint intake captures organization context, scope targets, procurement constraints, and required details to start scope planning.",
-    tags: ["validation sprint", "request evaluation", "intake", "contact", "start"],
+      "Intake captures organization context, scope targets, procurement constraints, and required details to start independent behavioral safety evaluation planning.",
+    tags: ["request evaluation", "independent evaluation", "intake", "contact", "start"],
   },
   {
     id: "samples",

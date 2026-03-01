@@ -569,7 +569,7 @@ export default function Contact() {
                 className="w-full rounded bg-lilac px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors disabled:opacity-50"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                {state === "submitting" ? "Submitting..." : "Submit Audit Request"}
+                {state === "submitting" ? "Submitting..." : "Submit Evaluation Request"}
               </button>
 
               {!userPopulation.length || !modelProvider.length || !driver.length || !signoff.length ? (
