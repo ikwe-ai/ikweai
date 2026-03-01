@@ -39,7 +39,7 @@ export default function SampleReport() {
             Open raw report in new tab
           </a>
           <a href="/deliverables" className="summary-jump">
-            Back to samples
+            Back to deliverables
           </a>
         </div>
       </section>
