@@ -1,8 +1,8 @@
 export const BENCHMARK_CURRENT = {
   version: "v2.0",
   released: "December 2025",
-  lastUpdated: "February 20, 2026",
-  updateNote: "Study I public snapshot reflects 79 scenarios and 312 scored responses.",
+  lastUpdated: "March 1, 2026",
+  updateNote: "March 1 export refresh confirmed no change to headline benchmark metrics.",
   failedGatePct: "54.7%",
   noRepairPct: "44.9%",
   nValue: "N = 312",
@@ -13,8 +13,14 @@ export const BENCHMARK_CURRENT = {
 
 export const BENCHMARK_PUBLIC_LOG = [
   {
+    date: "March 1, 2026",
+    label: "Export refresh (no headline metric change)",
+    summary:
+      "N = 312 responses across 79 scenarios in 13 categories. 54.7% SSF-Any prevalence and 44.9% aggregate safety gate fail rate (unchanged).",
+  },
+  {
     date: "February 20, 2026",
-    label: "Current public snapshot",
+    label: "Public snapshot",
     summary:
       "N = 312 responses across 79 scenarios in 13 categories. 54.7% SSF-Any prevalence and 44.9% aggregate safety gate fail rate.",
   },
