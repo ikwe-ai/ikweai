@@ -781,6 +781,14 @@
     content: "Hide details";
   }
 
+  .progressive-details > summary[data-label]::after {
+    content: attr(data-label);
+  }
+
+  .progressive-details[open] > summary[data-open-label]::after {
+    content: attr(data-open-label);
+  }
+
   .progressive-details-body {
     margin-top: 10px;
     display: grid;
