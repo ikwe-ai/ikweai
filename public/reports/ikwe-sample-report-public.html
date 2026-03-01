@@ -360,7 +360,7 @@ body {
     <div class="kpi-card">
       <div class="kpi-value" style="color:var(--green)">73%</div>
       <div class="kpi-label">Overall Score</div>
-      <div class="kpi-sub" style="color:var(--accent)">+14pp vs Study I avg</div>
+      <div class="kpi-sub" style="color:var(--accent)">+14pp vs baseline study average</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-value" style="color:var(--yellow)"><span class="redact" style="width:32px">&nbsp;</span></div>
@@ -382,7 +382,7 @@ body {
   <!-- Executive summary -->
   <div class="exec-summary">
     <div class="section-title">Executive Summary</div>
-    <p>Meridian Health Systems' GPT-4o deployment achieved an overall EQ Safety Score of <strong>73%</strong>, placing it in the <strong>Proficient</strong> tier and 14 percentage points above the Study I cross-model average. The system demonstrates strong performance in recognizing emotional distress signals and maintaining appropriate professional tone across most interaction types.</p>
+    <p>Meridian Health Systems' GPT-4o deployment achieved an overall EQ Safety Score of <strong>73%</strong>, placing it in the <strong>Proficient</strong> tier and 14 percentage points above the baseline study cross-model average. The system demonstrates strong performance in recognizing emotional distress signals and maintaining appropriate professional tone across most interaction types.</p>
     <p>Two domains present elevated risk: <strong>Crisis Escalation Protocols</strong> and <strong>Scope Boundary Management</strong>. In crisis-adjacent scenarios, the model occasionally de-escalated prematurely without confirming resource acknowledgment, and in a subset of out-of-scope requests, it provided substantive guidance beyond its designated support role. Both patterns carry compliance and liability implications in a healthcare support context.</p>
     <p>Five prioritized recommendations are included in Section 5. The highest-impact intervention is a targeted system-prompt revision addressing crisis response sequencing, estimated to recover 8–12 points on the Crisis Escalation domain.</p>
   </div>
@@ -528,8 +528,8 @@ body {
 
   <!-- Comparison -->
   <div class="comparison-section">
-    <div class="section-title">EQSB Study I Baseline Comparison</div>
-    <p style="font-size:12px;color:var(--dim);margin-bottom:16px">Comparison against published Study I baselines across four frontier models. Your engagement result is illustrative.</p>
+    <div class="section-title">EQSB Baseline Study Comparison</div>
+    <p style="font-size:12px;color:var(--dim);margin-bottom:16px">Comparison against published baseline study results across four frontier models. Your engagement result is illustrative.</p>
     <table class="comp-table">
       <thead>
         <tr>
@@ -553,19 +553,19 @@ body {
           <td><span class="tier-badge tier-proficient">Proficient</span></td>
         </tr>
         <tr>
-          <td>GPT-4o (Study I)</td>
+          <td>GPT-4o (Baseline study)</td>
           <td style="color:var(--yellow);font-weight:700">59.0%</td>
           <td>51.2</td>
           <td><span class="tier-badge tier-developing">Developing</span></td>
         </tr>
         <tr>
-          <td>Claude (Study I)</td>
+          <td>Claude (Baseline study)</td>
           <td style="color:var(--yellow);font-weight:700">56.4%</td>
           <td>52.4</td>
           <td><span class="tier-badge tier-developing">Developing</span></td>
         </tr>
         <tr>
-          <td>Grok (Study I)</td>
+          <td>Grok (Baseline study)</td>
           <td style="color:var(--red);font-weight:700">20.5%</td>
           <td>40.6</td>
           <td><span class="tier-badge tier-at-risk">At Risk</span></td>
@@ -573,7 +573,7 @@ body {
       </tbody>
     </table>
     <p style="font-size:11px;color:var(--dim);margin-top:12px">
-      Study I baselines use a standardized zero-shot system prompt. Client engagements include your custom system prompt and deployment configuration — scores are not directly comparable but provide useful orientation.
+      Baseline study comparisons use a standardized zero-shot system prompt. Client engagements include your custom system prompt and deployment configuration — scores are not directly comparable but provide useful orientation.
     </p>
   </div>
 

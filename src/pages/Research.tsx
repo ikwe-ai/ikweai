@@ -79,7 +79,7 @@ export default function Research() {
               <div className="summary-headline-item">
                 {BENCHMARK_CURRENT.scenarios} structured scenarios across {BENCHMARK_CURRENT.domains} categories
               </div>
-              <div className="summary-headline-item">Study I framework: SSF prevalence + Safety Gate + quality scoring</div>
+              <div className="summary-headline-item">Baseline framework: SSF prevalence + Safety Gate + quality scoring</div>
             </div>
             <BaselineLiveLegend className="mt-4" compact />
           </aside>
@@ -106,7 +106,7 @@ export default function Research() {
               </p>
               <p className="text-sm text-foreground-muted leading-relaxed">
                 {BENCHMARK_CURRENT.noRepairPct} of responses failed the aggregate safety gate under the stricter binary
-                threshold used for Study I.
+                threshold used for baseline publication.
               </p>
               <p className="text-sm text-foreground-muted leading-relaxed">
                 Your system may perform better or worse. Independent evaluation is how you replace assumption with
@@ -130,7 +130,7 @@ export default function Research() {
           </article>
           <article className="card-surface p-4">
             <p className="font-display text-3xl text-foreground mb-1">{BENCHMARK_CURRENT.nShort}</p>
-            <p className="text-xs text-foreground-muted">Locked baseline denominator</p>
+            <p className="text-xs text-foreground-muted">Baseline sample size</p>
           </article>
           <article className="card-surface p-4">
             <p className="font-display text-3xl text-foreground mb-1">{BENCHMARK_CURRENT.scenarios}</p>
@@ -174,7 +174,7 @@ export default function Research() {
             />
             <div className="progressive-details-body">
               <p className="text-sm text-foreground-muted leading-relaxed">
-                Study I evaluates behavior across vulnerable-state categories including {vulnerableStates.join(", ")}.
+                The baseline study evaluates behavior across vulnerable-state categories including {vulnerableStates.join(", ")}.
                 PASS runs are quality-scored across eight public dimensions.
               </p>
               <p className="text-sm text-foreground-muted leading-relaxed">
