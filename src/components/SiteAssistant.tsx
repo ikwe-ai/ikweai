@@ -229,10 +229,10 @@ export default function SiteAssistant() {
       kind: "default",
       text: [
         "Ikwe walkthrough (public facts):",
-        `• ${BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence`,
-        `• ${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail rate`,
+        `• ${BENCHMARK_CURRENT.failedGatePct} harm-pattern prevalence`,
+        `• ${BENCHMARK_CURRENT.noRepairPct} safety gate fail rate`,
         `• Published rates are tied to ${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories`,
-        "• Detailed run-volume logs are available on request",
+        "• Additional documentation is available on request",
         "",
         "Choose any step below to continue the presentation.",
       ].join("\n"),
@@ -522,10 +522,10 @@ export default function SiteAssistant() {
               Ikwe Quick Facts · Updated {BENCHMARK_CURRENT.lastUpdated}
             </p>
             <p className="text-xs text-foreground-muted leading-relaxed mb-2">
-              {BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence · {BENCHMARK_CURRENT.noRepairPct} aggregate gate fail ·{" "}
+              {BENCHMARK_CURRENT.failedGatePct} harm-pattern prevalence · {BENCHMARK_CURRENT.noRepairPct} safety gate fail rate ·{" "}
               {BENCHMARK_CURRENT.nValue}.
             </p>
-            <p className="text-[11px] text-foreground-subtle leading-relaxed mb-2">Detailed run-volume logs available on request.</p>
+            <p className="text-[11px] text-foreground-subtle leading-relaxed mb-2">Additional documentation available on request.</p>
             <div className="flex flex-wrap gap-2 mb-2">
               <button
                 type="button"

@@ -93,8 +93,8 @@ export default function EqSafetyBenchmark() {
         title="EQ Safety Benchmark"
         summary="Use this framework to understand how behavioral safety risk is evaluated and how your organization will be assessed during independent review."
         highlights={[
-          `${BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence`,
-          `${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail rate`,
+          `${BENCHMARK_CURRENT.failedGatePct} harm-pattern prevalence`,
+          `${BENCHMARK_CURRENT.noRepairPct} safety gate fail rate`,
           `${BENCHMARK_CURRENT.nValue} responses across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories`,
         ]}
         primaryAction={{ href: "/intake#application-form", label: "Request Evaluation" }}
@@ -150,18 +150,18 @@ export default function EqSafetyBenchmark() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <StatCard
             value={BENCHMARK_CURRENT.failedGatePct}
-            label="SSF-Any prevalence"
-            sub="Contains at least one SSF pattern"
+            label="Harm-pattern prevalence"
+            sub="Contains at least one harmful behavior pattern"
           />
           <StatCard
             value={BENCHMARK_CURRENT.noRepairPct}
-            label="Aggregate safety gate FAIL"
+            label="Safety gate FAIL rate"
             sub="Binary gate fail threshold"
             delay={80}
           />
           <StatCard
             value={BENCHMARK_CURRENT.nValue}
-            label="Baseline sample size"
+            label="Public sample size"
             sub={`${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} categories`}
             delay={160}
           />
@@ -220,7 +220,7 @@ export default function EqSafetyBenchmark() {
             <div className="space-y-4">
               <div>
                 <div className="flex items-center justify-between gap-3 mb-1.5">
-                  <p className="text-sm text-foreground-muted">SSF-Any prevalence</p>
+                  <p className="text-sm text-foreground-muted">Harm-pattern prevalence</p>
                   <p className="font-mono text-xs text-foreground">{BENCHMARK_CURRENT.failedGatePct}</p>
                 </div>
                 <div className="h-2 rounded-full bg-background-surface">
@@ -229,7 +229,7 @@ export default function EqSafetyBenchmark() {
               </div>
               <div>
                 <div className="flex items-center justify-between gap-3 mb-1.5">
-                  <p className="text-sm text-foreground-muted">Aggregate safety gate FAIL</p>
+                  <p className="text-sm text-foreground-muted">Safety gate FAIL rate</p>
                   <p className="font-mono text-xs text-foreground">{BENCHMARK_CURRENT.noRepairPct}</p>
                 </div>
                 <div className="h-2 rounded-full bg-background-surface">
@@ -295,9 +295,8 @@ export default function EqSafetyBenchmark() {
           <article className="card-surface p-6">
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Engagement-only</p>
             <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-              <li>• Detailed scoring methodology, weighting logic, and formula mechanics</li>
-              <li>• Taxonomy details and threshold mappings</li>
-              <li>• Scenario IDs, exact prompt material, and technical mappings</li>
+              <li>• Detailed scoring mechanics and threshold mappings</li>
+              <li>• Detailed scenario definitions and technical mappings</li>
               <li>• Organization-specific evidence and diagnostic outputs</li>
             </ul>
           </article>
