@@ -90,7 +90,7 @@ export default function EqSafetyBenchmark() {
       <SummaryHero
         kicker="Public Framework"
         title="EQ Safety Benchmark"
-        summary="The EQ Safety Benchmark is Ikwe's public framework for behavioral safety evaluation in human-facing AI systems. It defines what is measured, how benchmark outcomes are interpreted, and what is published publicly versus through engagement."
+        summary="Use this framework to understand how behavioral safety risk is evaluated and how your organization will be assessed during independent review."
         highlights={[
           `${BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence`,
           `${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail rate`,
@@ -111,7 +111,7 @@ export default function EqSafetyBenchmark() {
 
       <ActionDock
         title="Next Step"
-        subtitle="Use the public framework now, then move into scoped evaluation."
+        subtitle="Use this framework to align stakeholders, then request scoped independent evaluation."
         items={[
           { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
           { href: "#public-dimensions", label: "View 8 Dimensions", tone: "outline" },
@@ -129,8 +129,8 @@ export default function EqSafetyBenchmark() {
           />
           <div className="space-y-4">
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Current public version is <span className="text-foreground">{BENCHMARK_CURRENT.version}</span>, updated{" "}
-              {BENCHMARK_CURRENT.lastUpdated}.
+              Current public version is <span className="text-foreground">{BENCHMARK_CURRENT.version}</span> (updated{" "}
+              {BENCHMARK_CURRENT.lastUpdated}). This is the basis for current audit and monitoring engagements.
             </p>
             <DefinitionCallout
               term="Behavioral Safety Benchmark"
@@ -175,21 +175,21 @@ export default function EqSafetyBenchmark() {
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Layer 1</p>
             <h2 className="font-display text-xl text-foreground mb-2">Safety Gate</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              First-contact screen that flags severe behavioral safety failures before dimensional scoring.
+              Immediate binary decision for severe behavioral failures that require remediation attention.
             </p>
           </article>
           <article className="card-surface p-5">
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Layer 2</p>
             <h2 className="font-display text-xl text-foreground mb-2">Dimensional Scoring</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Aggregate scoring across eight public dimensions to characterize trajectory risk and response quality.
+              Weighted risk profiling across eight dimensions to prioritize what to fix first.
             </p>
           </article>
           <article className="card-surface p-5">
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Output</p>
             <h2 className="font-display text-xl text-foreground mb-2">Independent Reporting</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Versioned benchmark outcomes for governance and public reference at aggregate level.
+              Versioned evidence output designed for board, legal, compliance, and procurement review.
             </p>
           </article>
         </div>
@@ -278,7 +278,7 @@ export default function EqSafetyBenchmark() {
       </section>
 
       <section id="boundary" className="py-12 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Public vs Engagement Boundary</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Access Model</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-6xl">
           <article className="card-surface p-6">
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Publicly visible</p>
@@ -310,7 +310,8 @@ export default function EqSafetyBenchmark() {
 
       <section id="eqsb-next-steps" className="py-12 max-w-3xl">
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-          Use the public benchmark framework to understand the model. Use audit engagement to apply it to your system.
+          Start with this framework to align on methodology. Move to engagement to get your organization-specific risk
+          baseline and documented decision support.
         </p>
         <div className="flex flex-wrap gap-3">
           <a
