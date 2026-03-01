@@ -46,7 +46,7 @@ export default function Reports() {
         </p>
         <div className="flex flex-wrap gap-3">
           <a
-            href="/request-audit#application-form"
+            href="/intake#application-form"
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
           >
             Request an Audit
@@ -128,7 +128,7 @@ export default function Reports() {
 
         <div className="mt-7 flex flex-wrap gap-3">
           <a
-            href="/request-audit#application-form"
+            href="/intake#application-form"
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
           >
             Request an Audit
@@ -149,7 +149,7 @@ export default function Reports() {
         <div className="flex flex-wrap gap-2 mt-4">
           <a href="/research" className="summary-jump">Research evidence</a>
           <a href="/audit" className="summary-jump">Audit &amp; Validation</a>
-          <a href="/request-audit#application-form" className="summary-jump">Request intake</a>
+          <a href="/intake#application-form" className="summary-jump">Request intake</a>
         </div>
       </section>
     </PageShell>

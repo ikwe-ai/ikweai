@@ -31,7 +31,7 @@ const ASK_PREFIX = "ask://";
 const LAUNCHER_DELAY_MS = 9000;
 const LAUNCHER_SCROLL_THRESHOLD = 220;
 const LEAD_CAPTURE_LINKS: AssistantLink[] = [
-  { label: "Request Audit Intake", href: "/request-audit#application-form" },
+  { label: "Request Audit Intake", href: "/intake#application-form" },
   { label: "Book Consultation", href: "/archive/consult" },
 ];
 
@@ -546,7 +546,7 @@ export default function SiteAssistant() {
                 <button
                   type="button"
                   className="rounded bg-lilac px-2.5 py-1.5 text-[11px] text-primary-foreground"
-                  onClick={() => onOpenLink("/request-audit#application-form")}
+                  onClick={() => onOpenLink("/intake#application-form")}
                 >
                   Request Audit Intake
                 </button>
