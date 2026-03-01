@@ -1,8 +1,8 @@
 export const BENCHMARK_CURRENT = {
   version: "v2.0",
   released: "December 2025",
-  lastUpdated: "March 1, 2026",
-  generatedAt: "2026-03-01T05:10:35Z",
+  lastUpdated: "February 20, 2026",
+  generatedAt: "2026-02-20T00:00:00Z",
   updateNote:
     "Published rates are tied to the locked Study I baseline sample. Detailed run-volume logs are available on request.",
   failedGatePct: "54.7%",
@@ -16,16 +16,16 @@ export const BENCHMARK_CURRENT = {
 
 export const BENCHMARK_PUBLIC_LOG = [
   {
-    date: "March 1, 2026",
-    label: "Export refresh (no headline metric change)",
+    date: "February 20, 2026",
+    label: "Public snapshot update",
     summary:
       "Published baseline rates are unchanged: 54.7% SSF-Any prevalence and 44.9% aggregate safety gate fail, tied to N = 312 across 79 scenarios in 13 categories.",
   },
   {
-    date: "February 20, 2026",
-    label: "Public snapshot",
+    date: "December 2025",
+    label: "Initial release",
     summary:
-      "N = 312 responses across 79 scenarios in 13 categories. 54.7% SSF-Any prevalence and 44.9% aggregate safety gate fail rate.",
+      "Initial benchmark release with baseline publication format and governance reporting structure.",
   },
 ] as const;
 
