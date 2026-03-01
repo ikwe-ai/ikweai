@@ -1434,6 +1434,47 @@
   }
 
   @media (max-width: 767px) {
+    .page-frame > section,
+    .page-frame > .action-dock {
+      padding-inline: clamp(12px, 4vw, 16px);
+    }
+
+    .page-frame > section.py-14 {
+      padding-top: 2.35rem !important;
+      padding-bottom: 2.35rem !important;
+    }
+
+    .page-frame > section.py-12 {
+      padding-top: 2rem !important;
+      padding-bottom: 2rem !important;
+    }
+
+    .page-frame > section.py-10 {
+      padding-top: 1.7rem !important;
+      padding-bottom: 1.7rem !important;
+    }
+
+    .fluid-title {
+      font-size: clamp(1.95rem, 9.2vw, 2.8rem);
+      line-height: 1.04;
+    }
+
+    .fluid-heading {
+      font-size: clamp(1.45rem, 6.5vw, 2rem);
+      line-height: 1.1;
+    }
+
+    .lede {
+      font-size: 1rem;
+      line-height: 1.58;
+      max-width: 58ch;
+    }
+
+    .summary-headline-strip {
+      gap: 6px;
+      max-width: 100%;
+    }
+
     .page-canvas {
       background:
         radial-gradient(86% 46% at 8% -10%, hsl(var(--lilac) / 0.18), transparent 72%),
@@ -1442,6 +1483,44 @@
     }
 
     .summary-headline-item {
+      flex-basis: calc(50% - 3px);
+      padding: 7px 9px;
+      font-size: 0.74rem;
+      line-height: 1.38;
+    }
+
+    .summary-headline-item:last-child:nth-child(odd) {
+      flex-basis: 100%;
+    }
+
+    .summary-jump {
+      padding: 5px 9px;
+      font-size: 0.68rem;
+    }
+
+    .action-dock {
+      margin: 10px 0 8px;
+      padding: 10px;
+    }
+
+    .action-dock-subtitle {
+      font-size: 0.76rem;
+      line-height: 1.38;
+    }
+
+    .action-dock-actions {
+      gap: 6px;
+    }
+
+    .action-dock-actions > a,
+    .action-dock-actions > button {
+      flex: 1 1 calc(50% - 3px);
+      min-width: 0;
+      justify-content: center;
+    }
+
+    .action-dock-actions > a:first-child,
+    .action-dock-actions > button:first-child {
       flex-basis: 100%;
     }
   }
