@@ -241,7 +241,7 @@ export default function SiteAssistant() {
         toAskLink("3. Audit process", "How does the audit process work?"),
         toAskLink("4. Deliverables", "What do teams receive in deliverables?"),
         toAskLink("5. Public vs proprietary", "What is public vs proprietary?"),
-        toAskLink("6. Start audit intake", "How do we start an audit?"),
+        toAskLink("6. Start validation sprint", "How do we start a validation sprint?"),
         ...LEAD_CAPTURE_LINKS,
       ],
     };
@@ -548,7 +548,7 @@ export default function SiteAssistant() {
                   className="rounded bg-lilac px-2.5 py-1.5 text-[11px] text-primary-foreground"
                   onClick={() => onOpenLink("/intake#application-form")}
                 >
-                  Request Audit Intake
+                  Request Validation Sprint
                 </button>
                 <button
                   type="button"
