@@ -5,6 +5,7 @@ const links = [
   { label: "Benchmark", path: "/benchmark" },
   { label: "Research", path: "/research" },
   { label: "Deliverables", path: "/deliverables" },
+  { label: "Samples", path: "/samples" },
   { label: "Audit & Validation", path: "/audit" },
   { label: "Trust", path: "/trust" },
 ] as const;
@@ -77,11 +78,11 @@ export default function Nav() {
           </nav>
 
           <Link
-            to="/request-audit#application-form"
+            to="/intake#application-form"
             className="hidden md:inline-flex items-center gap-1.5 shrink-0 rounded bg-lilac px-4 py-2 text-xs font-medium text-primary-foreground uppercase tracking-widest hover:bg-lilac-glow transition-colors"
             style={{ fontFamily: "var(--font-mono)" }}
           >
-            Request Audit
+            Request Sprint
           </Link>
 
           <button
@@ -120,11 +121,11 @@ export default function Nav() {
               </Link>
             ))}
             <Link
-              to="/request-audit#application-form"
+              to="/intake#application-form"
               className="mt-2 inline-flex w-full items-center justify-center rounded bg-lilac px-4 py-2.5 text-xs font-medium text-primary-foreground uppercase tracking-widest hover:bg-lilac-glow transition-colors"
               style={{ fontFamily: "var(--font-mono)" }}
             >
-              Request Audit →
+              Request Sprint →
             </Link>
           </nav>
         </div>
