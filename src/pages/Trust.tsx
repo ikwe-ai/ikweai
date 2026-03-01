@@ -83,9 +83,7 @@ export default function Trust() {
               <li>
                 • Redacted examples showing deliverables structure (including a{" "}
                 <a
-                  href="/reports/ikwe-sample-report-public.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/sample-report"
                   className="link-lilac"
                 >
                   public sample report
@@ -153,7 +151,7 @@ export default function Trust() {
           <a href="/benchmark" className="summary-jump">Benchmark framework</a>
           <a href="/research" className="summary-jump">Research evidence</a>
           <a href="/deliverables" className="summary-jump">Deliverables</a>
-          <a href="/reports/ikwe-sample-report-public.html" className="summary-jump">Sample report</a>
+          <a href="/sample-report" className="summary-jump">Sample report</a>
           <a href="/audit" className="summary-jump">Audit pathway</a>
         </div>
       </section>
