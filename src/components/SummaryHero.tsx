@@ -4,6 +4,7 @@ import HeroVisualCard from "@/components/HeroVisualCard";
 type HeroAction = {
   href: string;
   label: string;
+  onClick?: () => void;
 };
 
 type JumpLink = {
@@ -88,22 +89,44 @@ export default function SummaryHero({
           {(primaryAction || secondaryAction) && (
             <div className="flex flex-wrap gap-2.5 mt-5">
               {primaryAction ? (
-                <a
-                  href={primaryAction.href}
-                  className="inline-flex items-center rounded bg-lilac px-4 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  {primaryAction.label}
-                </a>
+                primaryAction.onClick ? (
+                  <button
+                    type="button"
+                    onClick={primaryAction.onClick}
+                    className="inline-flex items-center rounded bg-lilac px-4 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    {primaryAction.label}
+                  </button>
+                ) : (
+                  <a
+                    href={primaryAction.href}
+                    className="inline-flex items-center rounded bg-lilac px-4 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    {primaryAction.label}
+                  </a>
+                )
               ) : null}
               {secondaryAction ? (
-                <a
-                  href={secondaryAction.href}
-                  className="inline-flex items-center rounded border border-border px-4 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  {secondaryAction.label}
-                </a>
+                secondaryAction.onClick ? (
+                  <button
+                    type="button"
+                    onClick={secondaryAction.onClick}
+                    className="inline-flex items-center rounded border border-border px-4 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    {secondaryAction.label}
+                  </button>
+                ) : (
+                  <a
+                    href={secondaryAction.href}
+                    className="inline-flex items-center rounded border border-border px-4 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    {secondaryAction.label}
+                  </a>
+                )
               ) : null}
             </div>
           )}
