@@ -7,6 +7,7 @@ import VersionCard from "@/components/VersionCard";
 import DefinitionCallout from "@/components/DefinitionCallout";
 import DimensionTable from "@/components/DimensionTable";
 import Changelog from "@/components/Changelog";
+import ActionDock from "@/components/ActionDock";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 const PUBLIC_DIMENSIONS = [
@@ -105,6 +106,16 @@ export default function EqSafetyBenchmark() {
           { href: "#method-overview", label: "Method Overview" },
           { href: "#boundary", label: "Public vs Engagement" },
           { href: "#version-changelog", label: "Version Changelog" },
+        ]}
+      />
+
+      <ActionDock
+        title="Next Step"
+        subtitle="Use the public framework now, then move into scoped evaluation."
+        items={[
+          { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
+          { href: "#public-dimensions", label: "View 8 Dimensions", tone: "outline" },
+          { href: "/research", label: "Open Research", tone: "quiet" },
         ]}
       />
 

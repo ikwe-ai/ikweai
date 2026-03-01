@@ -1,5 +1,6 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
+import ActionDock from "@/components/ActionDock";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 const SAMPLE_REPORT_PATH = "/reports/ikwe-sample-report-public.html";
@@ -71,21 +72,36 @@ export default function Reports() {
         </p>
       </section>
 
+      <ActionDock
+        title="Next Step"
+        subtitle="Open a sample now, then request scope when your team is ready."
+        items={[
+          { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
+          { href: SAMPLE_REPORT_PATH, label: "Open Sample Report", tone: "outline", external: true },
+          { href: "/trust", label: "Trust Standards", tone: "quiet" },
+        ]}
+      />
+
       <section id="output-previews" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Deliverables Previews</p>
-        <p className="text-xs text-foreground-subtle mb-5 max-w-4xl">
-          Need a format example before engagement? Open the proprietary-format sample report (public, redacted, no
-          client data):{" "}
-          <a
-            href={SAMPLE_REPORT_PATH}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-lilac"
-          >
-            View sample report
-          </a>
-          .
-        </p>
+        <details className="progressive-details mb-5 max-w-4xl">
+          <summary aria-label="Toggle sample report note" />
+          <div className="progressive-details-body">
+            <p className="text-xs text-foreground-subtle">
+              Need a format example before engagement? Open the proprietary-format sample report (public, redacted, no
+              client data):{" "}
+              <a
+                href={SAMPLE_REPORT_PATH}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-lilac"
+              >
+                View sample report
+              </a>
+              .
+            </p>
+          </div>
+        </details>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
           {outputPreviews.map((item) => (
             <article key={item.title} className="card-surface p-5 flex flex-col gap-3">
