@@ -61,7 +61,7 @@ export default function Press() {
           "Routing for media and stakeholders",
           "Forthcoming items marked by status only",
         ]}
-        primaryAction={{ href: "/intake#application-form", label: "Request Validation Sprint →" }}
+        primaryAction={{ href: "/intake#application-form", label: "Request Audit →" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
         jumpLinks={[
           { href: "#published-communications", label: "Published" },

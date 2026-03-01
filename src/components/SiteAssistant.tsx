@@ -31,7 +31,7 @@ const ASK_PREFIX = "ask://";
 const LAUNCHER_DELAY_MS = 9000;
 const LAUNCHER_SCROLL_THRESHOLD = 220;
 const LEAD_CAPTURE_LINKS: AssistantLink[] = [
-  { label: "Request Validation Sprint", href: "/intake#application-form" },
+  { label: "Request Audit", href: "/intake#application-form" },
   { label: "Book Consultation", href: "/archive/consult" },
 ];
 
@@ -41,14 +41,14 @@ const IKWE_TOPIC_PROMPTS = [
   { label: "Audit Process", prompt: "How does the audit process work?" },
   { label: "Deliverables", prompt: "What do teams receive in deliverables?" },
   { label: "Public vs Proprietary", prompt: "What is public vs proprietary?" },
-  { label: "Request Sprint", prompt: "How do we start a validation sprint?" },
+  { label: "Request Audit", prompt: "How do we start an audit?" },
 ] as const;
 
 const START_MESSAGE: ChatMessage = {
   id: 1,
   role: "assistant",
   text:
-    "Ikwe public questions only. Use quick prompts for benchmark facts, audit process, and deliverables. For direct engagement, use Request Validation Sprint.",
+    "Ikwe public questions only. Use quick prompts for benchmark facts, audit process, and deliverables. For direct engagement, use Request Audit.",
 };
 
 const toAskLink = (label: string, prompt: string): AssistantLink => ({
@@ -116,7 +116,7 @@ const buildFollowupAskLinks = (question: string): AssistantLink[] => {
     return [
       toAskLink("Benchmark numbers", "What do the benchmark numbers mean?"),
       toAskLink("Show deliverables", "What do teams receive in deliverables?"),
-      toAskLink("Start intake", "How do we start a validation sprint?"),
+      toAskLink("Start intake", "How do we start an audit?"),
       ...LEAD_CAPTURE_LINKS,
     ];
   }
@@ -124,7 +124,7 @@ const buildFollowupAskLinks = (question: string): AssistantLink[] => {
     return [
       toAskLink("Audit process", "How does the audit process work?"),
       toAskLink("Public vs proprietary", "What is public vs proprietary?"),
-      toAskLink("Start intake", "How do we start a validation sprint?"),
+      toAskLink("Start intake", "How do we start an audit?"),
       ...LEAD_CAPTURE_LINKS,
     ];
   }
@@ -241,7 +241,7 @@ export default function SiteAssistant() {
         toAskLink("3. Audit process", "How does the audit process work?"),
         toAskLink("4. Deliverables", "What do teams receive in deliverables?"),
         toAskLink("5. Public vs proprietary", "What is public vs proprietary?"),
-        toAskLink("6. Start validation sprint", "How do we start a validation sprint?"),
+        toAskLink("6. Start audit intake", "How do we start an audit?"),
         ...LEAD_CAPTURE_LINKS,
       ],
     };
@@ -548,7 +548,7 @@ export default function SiteAssistant() {
                   className="rounded bg-lilac px-2.5 py-1.5 text-[11px] text-primary-foreground"
                   onClick={() => onOpenLink("/intake#application-form")}
                 >
-                  Request Validation Sprint
+                  Request Audit
                 </button>
                 <button
                   type="button"

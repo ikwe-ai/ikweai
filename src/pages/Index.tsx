@@ -116,7 +116,7 @@ export default function Home() {
               href="/intake#application-form"
               className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
             >
-              Request Validation Sprint
+              Request Audit
             </a>
             <Link
               to="/benchmark"
@@ -318,7 +318,7 @@ export default function Home() {
               href="/intake#application-form"
               className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
             >
-              Request Validation Sprint
+              Request Audit
             </a>
             <a
               href="/benchmark"
