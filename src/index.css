@@ -716,6 +716,77 @@
     background: hsl(var(--lilac-dim));
   }
 
+  .action-dock {
+    position: sticky;
+    top: 82px;
+    z-index: 20;
+    margin: 14px 0 2px;
+    padding: 12px;
+    border: 1px solid hsl(var(--border-2));
+    border-radius: 12px;
+    background: hsl(var(--background-card) / 0.94);
+    backdrop-filter: blur(6px);
+    display: grid;
+    gap: 10px;
+    box-shadow: 0 12px 24px hsl(258 58% 4% / 0.24);
+  }
+
+  .action-dock-title {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: hsl(var(--foreground-subtle));
+    margin-bottom: 3px;
+  }
+
+  .action-dock-subtitle {
+    font-size: 0.81rem;
+    line-height: 1.45;
+    color: hsl(var(--foreground-muted));
+    max-width: 68ch;
+  }
+
+  .action-dock-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .progressive-details {
+    margin-top: 10px;
+    border-top: 1px solid hsl(var(--border));
+    padding-top: 10px;
+  }
+
+  .progressive-details > summary {
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: hsl(var(--foreground-subtle));
+  }
+
+  .progressive-details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .progressive-details > summary::after {
+    content: "Show details";
+  }
+
+  .progressive-details[open] > summary::after {
+    content: "Hide details";
+  }
+
+  .progressive-details-body {
+    margin-top: 10px;
+    display: grid;
+    gap: 10px;
+  }
+
   .article-reading p {
     font-size: 1rem;
     line-height: 1.82;
@@ -862,6 +933,12 @@
   @media (max-width: 1023px) {
     .summary-context {
       margin-top: 0;
+    }
+
+    .action-dock {
+      position: static;
+      top: auto;
+      backdrop-filter: none;
     }
 
     .page-parallax {
