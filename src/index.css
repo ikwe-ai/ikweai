@@ -88,14 +88,14 @@
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
     font-size: 16px;
-    line-height: 1.68;
+    line-height: 1.72;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     font-weight: 400;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
+    line-height: 1.12;
+    letter-spacing: -0.012em;
   }
 
   h1 {
@@ -190,11 +190,11 @@
   .page-frame > section,
   .page-frame > .action-dock {
     position: relative;
-    padding-inline: clamp(14px, 2.2vw, 22px);
+    padding-inline: clamp(16px, 2.6vw, 26px);
   }
 
   .page-frame > .action-dock {
-    margin-top: 10px;
+    margin-top: 12px;
   }
 
   .page-frame > section {
@@ -205,12 +205,34 @@
   }
 
   .site-section {
-    margin-top: 10px;
-    border: 1px solid hsl(var(--border-2) / 0.62);
-    border-radius: 14px;
+    margin-top: 12px;
+    border: 1px solid hsl(var(--border-2) / 0.66);
+    border-radius: 16px;
+    overflow: hidden;
     background:
-      linear-gradient(180deg, hsl(var(--background-card) / 0.92) 0%, hsl(var(--background-surface) / 0.82) 100%);
-    box-shadow: 0 10px 22px hsl(258 58% 4% / 0.18);
+      linear-gradient(180deg, hsl(var(--background-card) / 0.95) 0%, hsl(var(--background-surface) / 0.85) 100%);
+    box-shadow: 0 12px 24px hsl(258 58% 4% / 0.2);
+  }
+
+  .site-section::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent 0%, hsl(var(--foreground) / 0.28) 35%, hsl(var(--foreground) / 0.2) 65%, transparent 100%);
+  }
+
+  .page-frame > .site-section:nth-of-type(odd) {
+    background:
+      radial-gradient(90% 70% at 92% 0%, hsl(var(--lilac) / 0.08), transparent 72%),
+      linear-gradient(180deg, hsl(var(--background-card) / 0.95) 0%, hsl(var(--background-surface) / 0.86) 100%);
+  }
+
+  .page-frame > .site-section:nth-of-type(even) {
+    background:
+      radial-gradient(88% 68% at 8% 0%, hsl(var(--aurora-blue) / 0.08), transparent 72%),
+      linear-gradient(180deg, hsl(var(--background-card) / 0.94) 0%, hsl(var(--background-surface) / 0.84) 100%);
   }
 
   .page-frame > .site-section:first-of-type {
@@ -229,6 +251,28 @@
       inset 0 0 0 1px hsl(var(--border) / 0.8),
       inset 0 1px 0 hsl(var(--background-card)),
       0 8px 18px hsl(258 58% 4% / 0.28);
+  }
+
+  .nav-link-pill {
+    position: relative;
+  }
+
+  .nav-link-pill::after {
+    content: "";
+    position: absolute;
+    left: 16%;
+    right: 16%;
+    bottom: 3px;
+    height: 1px;
+    border-radius: 999px;
+    background: hsl(var(--lilac) / 0.88);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s ease;
+  }
+
+  .nav-link-pill:hover::after {
+    transform: scaleX(1);
   }
 
   .mega-panel {
@@ -666,23 +710,23 @@
   }
 
   .fluid-title {
-    font-size: clamp(2rem, 5.2vw, 3.9rem);
-    line-height: 1.06;
+    font-size: clamp(2.15rem, 5.4vw, 4.15rem);
+    line-height: 1.04;
     letter-spacing: -0.015em;
     text-wrap: balance;
   }
 
   .fluid-heading {
-    font-size: clamp(1.5rem, 3.1vw, 2.2rem);
-    line-height: 1.12;
+    font-size: clamp(1.6rem, 3.3vw, 2.35rem);
+    line-height: 1.1;
     letter-spacing: -0.01em;
     text-wrap: balance;
   }
 
   .lede {
     font-size: clamp(1rem, 1.4vw, 1.2rem);
-    line-height: 1.62;
-    max-width: 68ch;
+    line-height: 1.68;
+    max-width: 66ch;
     text-wrap: pretty;
   }
 
@@ -959,7 +1003,7 @@
     position: relative;
     top: auto;
     z-index: 2;
-    margin: 12px 0 8px;
+    margin: 14px 0 10px;
     padding: 12px;
     border: 1px solid hsl(var(--signal) / 0.42);
     border-radius: 12px;
@@ -1011,6 +1055,11 @@
   .action-dock .btn-quiet:hover {
     border-color: hsl(var(--signal) / 0.5);
     background: hsl(194 22% 21%);
+  }
+
+  .site-section p,
+  .site-section li {
+    text-wrap: pretty;
   }
 
   .audit-decision-grid {
@@ -1325,6 +1374,11 @@
   @media (min-width: 768px) {
     .summary-hero + section {
       padding-top: 2rem !important;
+    }
+
+    .page-frame > section,
+    .page-frame > .action-dock {
+      padding-inline: clamp(20px, 2.9vw, 30px);
     }
 
     .audit-decision-grid {
