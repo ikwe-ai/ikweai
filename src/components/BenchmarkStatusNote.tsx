@@ -26,9 +26,6 @@ export default function BenchmarkStatusNote({ className = "" }: BenchmarkStatusN
       <p className="text-xs text-foreground-muted leading-relaxed mb-2">
         {BENCHMARK_CURRENT.updateNote}
       </p>
-      <p className="text-xs text-foreground-muted leading-relaxed mb-2">
-        Detailed run-volume logs are available on request.
-      </p>
       <p className="text-xs text-foreground-subtle leading-relaxed mb-2">{BENCHMARK_PUBLIC_LOG[0].summary}</p>
       <p className="text-xs text-foreground-subtle leading-relaxed">
         Need the full version/change log?{" "}
