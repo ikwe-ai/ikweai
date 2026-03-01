@@ -845,6 +845,25 @@
     margin-top: 2px;
   }
 
+  .output-set-card {
+    display: grid;
+    gap: 6px;
+  }
+
+  .output-set-inline-jump {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: hsl(var(--foreground-subtle));
+    padding-left: 2px;
+    transition: color 0.15s;
+  }
+
+  .output-set-inline-jump:hover {
+    color: hsl(var(--lilac-soft));
+  }
+
   .action-dock {
     position: sticky;
     top: 82px;
