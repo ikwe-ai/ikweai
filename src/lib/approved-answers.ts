@@ -119,7 +119,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     id: "ikwe-quick-facts",
     keywords: ["ikwe quick facts", "give me ikwe quick facts", "quick highlights", "ikwe highlights", "ikwe overview"],
     text:
-      `Ikwe quick facts (updated ${BENCHMARK_CURRENT.lastUpdated}): Ikwe is an independent third-party behavioral AI auditor. Published rates remain ${BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence and ${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail, tied to locked baseline ${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories. Current live study scored volume is ${BENCHMARK_CURRENT.liveScoredRuns} out of ${BENCHMARK_CURRENT.liveTotalRuns} total runs.`,
+      `Ikwe quick facts (updated ${BENCHMARK_CURRENT.lastUpdated}): Ikwe is an independent third-party behavioral AI auditor. Published rates remain ${BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence and ${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail, tied to baseline ${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories. Detailed run-volume logs are available on request.`,
     links: [
       { label: "Homepage Overview", href: "/" },
       { label: "EQ Safety Benchmark", href: "/benchmark" },
@@ -138,7 +138,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
       "n value",
     ],
     text:
-      `Current benchmark framing (updated ${BENCHMARK_CURRENT.lastUpdated}): ${BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence and ${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail are tied to locked baseline ${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories. Live study volume is ${BENCHMARK_CURRENT.liveScoredRuns} scored runs out of ${BENCHMARK_CURRENT.liveTotalRuns} total runs.`,
+      `Current benchmark framing (updated ${BENCHMARK_CURRENT.lastUpdated}): ${BENCHMARK_CURRENT.failedGatePct} SSF-Any prevalence and ${BENCHMARK_CURRENT.noRepairPct} aggregate safety gate fail are tied to baseline ${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories. Detailed run-volume logs are available on request.`,
     links: [
       { label: "EQ Safety Benchmark", href: "/benchmark" },
       { label: "Research Details", href: "/research" },
