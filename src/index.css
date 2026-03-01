@@ -1575,15 +1575,15 @@
 
   @media (min-width: 1200px) {
     .audit-section-layout {
-      grid-template-columns: 240px minmax(0, 1fr);
-      gap: 18px;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 12px;
     }
 
     .audit-section-head {
-      position: sticky;
-      top: 150px;
-      align-self: start;
-      padding-top: 2px;
+      position: static;
+      top: auto;
+      align-self: auto;
+      padding-top: 0;
     }
 
     .audit-deliverables-list {

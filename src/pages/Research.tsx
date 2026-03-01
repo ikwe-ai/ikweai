@@ -47,7 +47,7 @@ export default function Research() {
             <h1 className="font-display fluid-title text-foreground mb-4">EQ Safety Benchmark {BENCHMARK_CURRENT.version}</h1>
             <p className="text-foreground-muted lede mb-6">
               This research quantifies current behavioral safety exposure across human-facing AI interactions and shows the
-              failure rates buyers should plan for before deployment decisions.
+              failure rates organizations should plan for before deployment decisions.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
