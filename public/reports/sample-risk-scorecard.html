@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sample Risk Scorecard | ikwe.ai</title>
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <style>
+    :root { --bg:#0f1120; --surface:#181b2f; --surface2:#202544; --text:#eceffd; --muted:#a3abc9; --line:#32395d; --accent:#9f7aea; --risk:#f87171; --warn:#f59e0b; --ok:#34d399; }
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#0c0e19,#11142a);color:var(--text)}
+    .wrap{max-width:960px;margin:0 auto;padding:28px 18px 60px} .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+    .kicker{font:700 10px/1.2 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:#c4b5fd}
+    h1{font-size:30px;line-height:1.15;margin:8px 0 10px} p{margin:0;color:var(--muted);line-height:1.55}
+    table{width:100%;border-collapse:collapse;margin-top:14px} th,td{border-bottom:1px solid var(--line);padding:11px 8px;text-align:left;font-size:13px}
+    th{color:#c7cdee;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+    .bar{height:8px;background:#2a3154;border-radius:999px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#8b5cf6,#22d3ee)}
+    .chip{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700}
+    .risk{background:#3a1e29;color:#fda4af}.warn{background:#3b2d1b;color:#fcd34d}.ok{background:#173628;color:#86efac}
+    .footer{margin-top:14px;font-size:12px;color:#8e97bb}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="kicker">Sample Deliverable · Redacted Format</div>
+      <h1>Risk Scorecard</h1>
+      <p>Illustrative dimension-level scorecard structure used to communicate severity and remediation priority.</p>
+
+      <table>
+        <thead>
+          <tr><th>Dimension</th><th>Performance</th><th>Band</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Harm Recognition</td><td><div class="bar"><div class="fill" style="width:62%"></div></div></td><td><span class="chip warn">Developing</span></td><td>Medium</td></tr>
+          <tr><td>Response Sequencing</td><td><div class="bar"><div class="fill" style="width:48%"></div></div></td><td><span class="chip risk">At Risk</span></td><td>High</td></tr>
+          <tr><td>Validation Accuracy</td><td><div class="bar"><div class="fill" style="width:58%"></div></div></td><td><span class="chip warn">Developing</span></td><td>Medium</td></tr>
+          <tr><td>User Autonomy Integrity</td><td><div class="bar"><div class="fill" style="width:66%"></div></div></td><td><span class="chip ok">Proficient</span></td><td>Low</td></tr>
+          <tr><td>Escalation Interruption</td><td><div class="bar"><div class="fill" style="width:44%"></div></div></td><td><span class="chip risk">At Risk</span></td><td>High</td></tr>
+          <tr><td>Behavioral Pattern Clarity</td><td><div class="bar"><div class="fill" style="width:60%"></div></div></td><td><span class="chip warn">Developing</span></td><td>Medium</td></tr>
+          <tr><td>Risk Containment</td><td><div class="bar"><div class="fill" style="width:51%"></div></div></td><td><span class="chip risk">At Risk</span></td><td>High</td></tr>
+          <tr><td>Crisis Routing Fidelity</td><td><div class="bar"><div class="fill" style="width:46%"></div></div></td><td><span class="chip risk">At Risk</span></td><td>High</td></tr>
+        </tbody>
+      </table>
+      <p class="footer">Redacted sample for formatting only. Actual client scorecards include scenario-linked evidence and review notes.</p>
+    </section>
+  </main>
+</body>
+</html>

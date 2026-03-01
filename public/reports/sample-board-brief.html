@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sample Board Brief | ikwe.ai</title>
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <style>
+    :root { --bg:#0f1120; --surface:#181b2f; --surface2:#202544; --text:#eceffd; --muted:#a3abc9; --line:#32395d; --accent:#9f7aea; --warn:#f59e0b; --risk:#f87171; --ok:#34d399; }
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#0c0e19,#11142a);color:var(--text)}
+    .wrap{max-width:920px;margin:0 auto;padding:28px 18px 60px} .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+    .kicker{font:700 10px/1.2 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:#c4b5fd}
+    h1{font-size:30px;line-height:1.15;margin:8px 0 10px} p{margin:0;color:var(--muted);line-height:1.55}
+    .grid{display:grid;gap:12px} .grid-3{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:14px}
+    .metric{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:12px}
+    .metric .v{font-size:30px;font-weight:700;color:#fff}.metric .l{font-size:12px;color:var(--muted)}
+    ul{margin:10px 0 0;padding-left:18px;color:var(--muted)} li{margin:6px 0}
+    table{width:100%;border-collapse:collapse;margin-top:12px} th,td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;font-size:13px}
+    th{color:#c7cdee;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+    .chip{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700}
+    .risk{background:#3a1e29;color:#fda4af}.warn{background:#3b2d1b;color:#fcd34d}.ok{background:#173628;color:#86efac}
+    .footer{margin-top:14px;font-size:12px;color:#8e97bb}
+    @media (max-width:780px){.grid-3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="kicker">Sample Deliverable · Redacted Format</div>
+      <h1>Board Brief</h1>
+      <p>Illustrative executive summary format used for board and risk committee review. No client-identifiable data is shown.</p>
+      <div class="grid grid-3">
+        <div class="metric"><div class="v">44.9%</div><div class="l">Aggregate gate FAIL</div></div>
+        <div class="metric"><div class="v">54.7%</div><div class="l">SSF-Any prevalence</div></div>
+        <div class="metric"><div class="v">N=312</div><div class="l">Responses scored</div></div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:12px">
+      <div class="kicker">Executive View</div>
+      <h2>Decision Context</h2>
+      <ul>
+        <li>Behavioral risk appears in first-contact responses across priority user states.</li>
+        <li>Risk concentration is highest in escalation interruption and crisis routing fidelity.</li>
+        <li>Current profile requires remediation prior to broad release in high-sensitivity contexts.</li>
+      </ul>
+    </section>
+
+    <section class="card" style="margin-top:12px">
+      <div class="kicker">Decision Options</div>
+      <table>
+        <thead><tr><th>Option</th><th>Operational Effect</th><th>Risk Position</th></tr></thead>
+        <tbody>
+          <tr><td>Launch as-is</td><td>Fastest timeline</td><td><span class="chip risk">Elevated</span></td></tr>
+          <tr><td>Limited launch + guardrails</td><td>Controlled rollout</td><td><span class="chip warn">Managed</span></td></tr>
+          <tr><td>Remediate + re-test</td><td>Delayed launch, lower exposure</td><td><span class="chip ok">Preferred</span></td></tr>
+        </tbody>
+      </table>
+      <p class="footer">Proprietary format example from ikwe.ai independent behavioral safety evaluation reporting.</p>
+    </section>
+  </main>
+</body>
+</html>

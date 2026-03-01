@@ -32,6 +32,7 @@ export default function Reports() {
       summary: "Two-page board-ready risk summary.",
       detail:
         "Designed for governance review with classification band, key findings, and immediate decision notes in plain language.",
+      sampleHref: "/reports/sample-board-brief.html",
     },
     {
       id: "preview-risk-scorecard",
@@ -39,6 +40,7 @@ export default function Reports() {
       summary: "Dimension-level outcomes and severity bands.",
       detail:
         "Shows where the system performed, where it failed, and the severity mapping for each major failure pattern.",
+      sampleHref: "/reports/sample-risk-scorecard.html",
     },
     {
       id: "preview-evidence-pack",
@@ -46,6 +48,7 @@ export default function Reports() {
       summary: "Versioned documentation for traceable review.",
       detail:
         "Includes evaluation runs, scenario battery documentation, and scoring outputs for authorized governance and regulatory review.",
+      sampleHref: "/reports/sample-evidence-pack.html",
     },
     {
       id: "preview-drift-alert",
@@ -53,6 +56,7 @@ export default function Reports() {
       summary: "Monitoring alert for changed risk patterns.",
       detail:
         "Used in active monitoring engagements to highlight drift between evaluation cycles and recommended response actions.",
+      sampleHref: "/reports/sample-drift-alert.html",
     },
   ] as const;
 
@@ -102,15 +106,19 @@ export default function Reports() {
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle mb-3">Output Set</p>
             <div className="space-y-2">
               {outputPreviews.map((item) => (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  className="output-set-link"
-                >
-                  <span className="output-set-link-title">{item.title}</span>
-                  <span className="output-set-link-summary">{item.summary}</span>
-                  <span className="output-set-link-cta">Open preview →</span>
-                </a>
+                <article key={item.id} className="output-set-card">
+                  <a
+                    href={item.sampleHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="output-set-link"
+                  >
+                    <span className="output-set-link-title">{item.title}</span>
+                    <span className="output-set-link-summary">{item.summary}</span>
+                    <span className="output-set-link-cta">Open sample →</span>
+                  </a>
+                  <a href={`#${item.id}`} className="output-set-inline-jump">On-page summary</a>
+                </article>
               ))}
             </div>
           </aside>
@@ -164,7 +172,7 @@ export default function Reports() {
                     <a href="/intake#application-form" className="summary-jump">
                       Request this output
                     </a>
-                    <a href={SAMPLE_REPORT_PATH} className="summary-jump">
+                    <a href={item.sampleHref} target="_blank" rel="noopener noreferrer" className="summary-jump">
                       View sample format
                     </a>
                   </div>
