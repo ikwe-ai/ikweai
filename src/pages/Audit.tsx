@@ -21,7 +21,7 @@ export default function Audit() {
       tag: "ENTRY POINT | BILLABLE STANDALONE",
       paragraphs: [
         "Establish a documented behavioral risk baseline for your system. We run the EQ Safety Benchmark against your deployment context using structured scenarios, versioned methodology, and reproducible outputs.",
-        "This is where most organizations start. The audit surfaces failure modes internal testing misses, quantifies severity, and produces documentation your board and legal team can use immediately.",
+        "This is where most organizations start. The audit surfaces failure modes in-house testing misses, quantifies severity, and produces documentation your board and legal team can use immediately.",
       ],
       receives: [
         "Board Brief - executive risk summary with classification band",
@@ -87,7 +87,7 @@ export default function Audit() {
 
   const goodFit = [
     "You are deploying conversational AI where failure carries legal, regulatory, or human consequences",
-    "You need external validation your internal team cannot provide",
+    "You need external validation your in-house team cannot provide",
     "Your board, legal team, or compliance function has raised behavioral risk questions",
     "You are preparing for AI governance requirements and need documented due diligence",
     "You have already shipped and need a measured view of your actual risk profile",
