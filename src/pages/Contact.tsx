@@ -248,64 +248,60 @@ export default function Contact() {
           </div>
         ) : (
           <div className="grid grid-cols-1 xl:grid-cols-[1.05fr_1fr] gap-8 lg:gap-10 items-start">
-            <div className="space-y-6">
+            <div className="space-y-4 order-2 xl:order-1">
               <article className="card-surface p-5">
-                <p className={SECTION_KICKER_CLASS}>Need the PDF version?</p>
+                <p className={SECTION_KICKER_CLASS}>Quick intake tools</p>
                 <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-                  Download the fillable intake PDF to send directly to stakeholders.
+                  Use these shortcuts to move faster with internal stakeholders.
                 </p>
-                <a
-                  href="/forms/ikwe-intake-form-fillable.pdf"
-                  className="link-lilac"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Download Fillable Intake PDF →
-                </a>
-                <p className="text-xs text-foreground-subtle mt-2">
-                  Need a one-page sample excerpt PDF?{" "}
+                <div className="flex flex-wrap gap-2 mb-3">
                   <a
-                    href="/reports/ikwe-sample-excerpt-one-page.pdf"
-                    className="link-lilac"
+                    href="/forms/ikwe-intake-form-fillable.pdf"
+                    className="summary-jump"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Download excerpt PDF
+                    Download intake PDF
                   </a>
-                  .
-                </p>
-              </article>
-
-              <p className="text-xs text-foreground-subtle max-w-xl">
-                This intake is designed to qualify scope quickly for technical, financial, legal, and procurement stakeholders.
-              </p>
-
-              <article className="card-surface p-6">
-                <p className={SECTION_KICKER_CLASS}>Why we ask this</p>
-                <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-                  <li>1. Confirm deployment type and user risk surface.</li>
-                  <li>2. Size pilot scope and re-test needs accurately.</li>
-                  <li>3. Pre-answer procurement and governance questions.</li>
-                </ul>
-              </article>
-
-              <article id="next-steps" className="card-surface p-6">
-                <p className={SECTION_KICKER_CLASS}>What happens next</p>
-                <ol className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-                  <li>1. Intake review and fit check</li>
-                  <li>2. Scoped validation recommendation</li>
-                  <li>3. Access checklist and kickoff path</li>
-                </ol>
-              </article>
-
-              <article className="card-surface p-6">
-                <p className={SECTION_KICKER_CLASS}>Guided start</p>
-                <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-                  Use a baseline profile to prefill common pilot scoping fields, then adjust as needed.
-                </p>
+                  <a
+                    href="/reports/ikwe-sample-excerpt-one-page.pdf"
+                    className="summary-jump"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download sample excerpt
+                  </a>
+                </div>
                 <button type="button" onClick={startGuidedIntake} className="text-sm link-lilac">
                   Apply guided defaults →
                 </button>
+                <p className="text-xs text-foreground-subtle mt-3">
+                  This intake is designed to qualify scope quickly for technical, financial, legal, and procurement stakeholders.
+                </p>
+
+                <details className="progressive-details mt-4">
+                  <summary aria-label="Toggle why we ask this" />
+                  <div className="progressive-details-body">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle">Why we ask this</p>
+                    <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
+                      <li>1. Confirm deployment type and user risk surface.</li>
+                      <li>2. Size pilot scope and re-test needs accurately.</li>
+                      <li>3. Pre-answer procurement and governance questions.</li>
+                    </ul>
+                  </div>
+                </details>
+
+                <details id="next-steps" className="progressive-details mt-3">
+                  <summary aria-label="Toggle what happens next" />
+                  <div className="progressive-details-body">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle">What happens next</p>
+                    <ol className="space-y-2 text-sm text-foreground-muted leading-relaxed">
+                      <li>1. Intake review and fit check</li>
+                      <li>2. Scoped validation recommendation</li>
+                      <li>3. Access checklist and kickoff path</li>
+                    </ol>
+                  </div>
+                </details>
               </article>
             </div>
 
@@ -317,7 +313,7 @@ export default function Contact() {
               data-netlify-honeypot="bot-field"
               method="POST"
               action="/"
-              className="card-surface p-6 space-y-6 lg:sticky lg:top-24"
+              className="card-surface p-6 space-y-6 order-1 xl:order-2 lg:sticky lg:top-24"
             >
               <input type="hidden" name="form-name" value="evaluation-application" />
               <input type="hidden" name="bot-field" />
