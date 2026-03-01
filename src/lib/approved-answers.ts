@@ -282,7 +282,7 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
   {
     id: "samples",
     title: "Sample Deliverables",
-    href: "/samples",
+    href: "/deliverables",
     summary:
       "Sample Deliverables page provides a one-page excerpt, full redacted sample report format, and direct intake CTA.",
     tags: ["samples", "deliverables", "report format", "example output"],

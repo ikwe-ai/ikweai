@@ -15,7 +15,7 @@ export default function SampleReport() {
       navigate(-1);
       return;
     }
-    navigate("/samples", { replace: true });
+    navigate("/deliverables", { replace: true });
   };
 
   return (
@@ -38,7 +38,7 @@ export default function SampleReport() {
           <a href={SAMPLE_REPORT_PATH} target="_blank" rel="noopener noreferrer" className="summary-jump">
             Open raw report in new tab
           </a>
-          <a href="/samples" className="summary-jump">
+          <a href="/deliverables" className="summary-jump">
             Back to samples
           </a>
         </div>

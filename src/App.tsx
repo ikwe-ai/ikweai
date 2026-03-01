@@ -12,7 +12,6 @@ import Index from "./pages/Index";
 import EqSafetyBenchmark from "./pages/EqSafetyBenchmark";
 import Research from "./pages/Research";
 import Reports from "./pages/Reports";
-import Samples from "./pages/Samples";
 import SampleReport from "./pages/SampleReport";
 import Audit from "./pages/Audit";
 import Trust from "./pages/Trust";
@@ -53,7 +52,7 @@ const App = () => (
           <Route path="/benchmark" element={<EqSafetyBenchmark />} />
           <Route path="/research" element={<Research />} />
           <Route path="/deliverables" element={<Reports />} />
-          <Route path="/samples" element={<Samples />} />
+          <Route path="/samples" element={<Navigate to="/deliverables" replace />} />
           <Route path="/audit" element={<Audit />} />
           <Route path="/trust" element={<Trust />} />
           <Route path="/intake" element={<Contact />} />

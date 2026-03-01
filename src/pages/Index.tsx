@@ -88,7 +88,7 @@ export default function Home() {
     { href: "/benchmark", label: "Benchmark framework" },
     { href: "/research", label: "Research evidence" },
     { href: "/deliverables", label: "Deliverables" },
-    { href: "/samples", label: "Sample deliverables" },
+    { href: "/deliverables", label: "Sample deliverables" },
     { href: "/audit", label: "Audit pathway" },
   ] as const;
 
@@ -141,7 +141,7 @@ export default function Home() {
           items={[
             { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
             { href: "/benchmark", label: "View Benchmark", tone: "outline" },
-            { href: "/samples", label: "Sample Deliverables", tone: "quiet" },
+            { href: "/deliverables", label: "Sample Deliverables", tone: "quiet" },
           ]}
         />
 
@@ -210,7 +210,7 @@ export default function Home() {
                 </p>
               ))}
             </div>
-            <a href="/samples" className="link-lilac">View Sample Deliverables →</a>
+            <a href="/deliverables" className="link-lilac">View Sample Deliverables →</a>
           </article>
         </section>
 
@@ -346,7 +346,7 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap gap-2 mb-6">
             <a href="/deliverables" className="summary-jump">Deliverables</a>
-            <a href="/samples" className="summary-jump">Sample deliverables</a>
+            <a href="/deliverables" className="summary-jump">Sample deliverables</a>
             <a href="/audit" className="summary-jump">Audit &amp; Validation</a>
             <a href="/trust" className="summary-jump">Trust Standards</a>
           </div>
