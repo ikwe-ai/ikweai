@@ -122,7 +122,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     links: [
       { label: "Homepage Overview", href: "/" },
       { label: "EQ Safety Benchmark", href: "/benchmark" },
-      { label: "Request Audit", href: "/intake#application-form" },
+      { label: "Request Validation Sprint", href: "/intake#application-form" },
     ],
   },
   {
@@ -175,11 +175,20 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
   },
   {
     id: "request-audit",
-    keywords: ["request audit", "contact", "intake", "start audit", "how do we start an audit", "get started"],
+    keywords: [
+      "request audit",
+      "request validation sprint",
+      "contact",
+      "intake",
+      "start audit",
+      "how do we start an audit",
+      "how do we start a validation sprint",
+      "get started",
+    ],
     text:
-      "Start through the Request Audit intake form. This process is used for scope, timeline, and reporting requirements before formal engagement.",
+      "Start through the Validation Sprint intake form. This process is used for scope, timeline, procurement readiness, and reporting requirements before formal engagement.",
     links: [
-      { label: "Request Audit", href: "/intake#application-form" },
+      { label: "Request Validation Sprint", href: "/intake#application-form" },
       { label: "Audit Overview", href: "/audit" },
     ],
   },
@@ -262,11 +271,19 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
   },
   {
     id: "contact",
-    title: "Request Audit Intake",
+    title: "Validation Sprint Intake",
     href: "/intake#application-form",
     summary:
-      "Request Audit intake captures organization context, scope targets, and required details to start audit planning.",
-    tags: ["request audit", "intake", "contact", "start"],
+      "Validation Sprint intake captures organization context, scope targets, procurement constraints, and required details to start scope planning.",
+    tags: ["validation sprint", "request audit", "intake", "contact", "start"],
+  },
+  {
+    id: "samples",
+    title: "Sample Deliverables",
+    href: "/samples",
+    summary:
+      "Sample Deliverables page provides a one-page excerpt, full redacted sample report format, and direct intake CTA.",
+    tags: ["samples", "deliverables", "report format", "example output"],
   },
   {
     id: "case-studies",
