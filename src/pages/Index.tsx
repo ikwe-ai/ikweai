@@ -291,32 +291,6 @@ export default function Home() {
           <DriftCurve className="max-w-6xl" />
         </section>
 
-        <section className="site-section py-12 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Gap</p>
-          <h2 className="font-display fluid-heading text-foreground mb-5">What existing governance misses</h2>
-          <div className="overflow-x-auto max-w-6xl">
-            <table className="enterprise-table min-w-[860px]">
-              <thead>
-                <tr>
-                  <th>Current Governance</th>
-                  <th>Behavioral Safety (Ikwe)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {governanceGapRows.map((row) => (
-                  <tr key={row.current}>
-                    <td>{row.current}</td>
-                    <td>{row.ikwe}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="text-sm text-foreground mt-5">
-            Behavioral safety is the missing layer in current governance frameworks.
-          </p>
-        </section>
-
         <ActionDock
           title="Next Step"
           subtitle="Review evidence quickly, then request a scoped independent evaluation."
@@ -401,6 +375,22 @@ export default function Home() {
               </span>
             ))}
           </div>
+        </section>
+
+        <section className="site-section py-10 border-b border-border">
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-5">What Governance Misses</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl">
+            {governanceGapRows.slice(0, 2).map((row) => (
+              <article key={row.current} className="card-surface p-4">
+                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-1">{row.current}</p>
+                <p className="text-sm text-foreground">→ {row.ikwe}</p>
+              </article>
+            ))}
+          </div>
+          <p className="text-sm text-foreground-muted mt-4">
+            Behavioral safety is the missing layer in current governance frameworks.
+          </p>
+          <a href="/benchmark#boundary" className="summary-jump mt-3 inline-flex">View full governance mapping</a>
         </section>
 
         <section className="site-section py-14">
