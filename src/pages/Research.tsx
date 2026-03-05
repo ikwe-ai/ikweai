@@ -7,6 +7,9 @@ import StatsRow from "@/components/visuals/StatsRow";
 import FindingsCards from "@/components/visuals/FindingsCards";
 import ChartsBlock from "@/components/visuals/ChartsBlock";
 import MethodAccordion from "@/components/visuals/MethodAccordion";
+import StageDiagram from "@/components/visuals/StageDiagram";
+import DimensionsGrid from "@/components/visuals/DimensionsGrid";
+import DomainsTagWall from "@/components/visuals/DomainsTagWall";
 
 export default function Research() {
   const vulnerableStates = [
@@ -61,7 +64,7 @@ export default function Research() {
                 Request Full Report Access
               </a>
               <a
-                href="/benchmark"
+                href="#benchmark-framework"
                 className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
               >
                 View Benchmark Framework
@@ -72,8 +75,8 @@ export default function Research() {
               subtitle="Use the findings for executive alignment, then request scope for your system."
               items={[
                 { href: "/intake#application-form", label: "Request Full Report Access", tone: "primary" },
-                { href: "/benchmark", label: "Open Benchmark", tone: "outline" },
-                { href: "/deliverables", label: "View Deliverables", tone: "quiet" },
+                { href: "#benchmark-framework", label: "Open Benchmark", tone: "outline" },
+                { href: "/audit#deliverables-previews", label: "View Sample Outputs", tone: "quiet" },
               ]}
             />
           </div>
@@ -142,6 +145,17 @@ export default function Research() {
             </div>
           </details>
         </article>
+      </section>
+
+      <section id="benchmark-framework" className="site-section py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Benchmark Framework</p>
+        <p className="text-sm text-foreground-muted leading-relaxed measure mb-6 text-pretty">
+          Benchmark at a glance: Stage 1 is pass/fail Safety Gate; Stage 2 is conditional scoring across eight
+          behavioral dimensions. Coverage includes structured scenarios across vulnerability domains.
+        </p>
+        <StageDiagram className="max-w-6xl mb-4" />
+        <DimensionsGrid className="max-w-6xl mb-4" />
+        <DomainsTagWall className="max-w-6xl" />
       </section>
 
       <section id="findings-snapshot" className="site-section py-14 border-b border-border">
@@ -239,10 +253,10 @@ export default function Research() {
               Request Full Report Access
             </a>
             <a
-              href="/deliverables"
+              href="/audit#deliverables-previews"
               className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
             >
-              View Deliverables & Transparency
+              View Sample Outputs & Transparency
             </a>
             <a
               href="/audit"
@@ -253,8 +267,8 @@ export default function Research() {
           </div>
         </article>
         <div className="flex flex-wrap gap-2 mt-5">
-          <a href="/benchmark" className="summary-jump">Benchmark framework</a>
-          <a href="/deliverables" className="summary-jump">Deliverables</a>
+          <a href="#benchmark-framework" className="summary-jump">Benchmark framework</a>
+          <a href="/audit#deliverables-previews" className="summary-jump">Sample outputs</a>
           <a href="/trust" className="summary-jump">Trust standards</a>
         </div>
       </section>
