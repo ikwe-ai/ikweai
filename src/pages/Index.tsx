@@ -57,7 +57,7 @@ export default function Home() {
 
   const stats = [
     {
-      value: BENCHMARK_CURRENT.nValue,
+      value: BENCHMARK_CURRENT.nShort,
       label: "outputs evaluated",
       tone: "safe",
     },
@@ -262,27 +262,29 @@ export default function Home() {
 
         <section className="site-section py-12 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Coverage Snapshot</p>
-          <h2 className="font-display fluid-heading text-foreground mb-4">Behavioral risk becomes visible after deployment.</h2>
-          <p className="text-sm text-foreground-muted leading-relaxed measure mb-7 text-pretty">
-            Ikwe makes it visible before launch decisions become incidents, liability, or procurement blockers.
+          <h2 className="font-display text-3xl md:text-4xl text-foreground mb-3">Coverage and current findings</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed measure mb-5 text-pretty">
+            Quick read: scope first, then current observed risk rates.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-2">Coverage</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
             {stats.map((item) => (
-              <article key={item.label} className="card-surface p-6 safe-panel">
-                <p className="text-4xl md:text-5xl font-display mb-4 text-safe">{item.value}</p>
+              <article key={item.label} className="card-surface p-4 safe-panel">
+                <p className="text-3xl md:text-4xl font-display mb-2 text-safe">{item.value}</p>
                 <p className="text-sm text-foreground-muted leading-relaxed">{item.label}</p>
               </article>
             ))}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-2">Current findings</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
             {findings.map((item) => (
-              <article key={item.label} className="card-surface p-5 risk-panel">
-                <p className="text-3xl font-display text-danger mb-2">{item.value}</p>
+              <article key={item.label} className="card-surface p-4 risk-panel">
+                <p className="text-2xl font-display text-danger mb-1">{item.value}</p>
                 <p className="text-sm text-foreground-muted leading-relaxed">{item.label}</p>
               </article>
             ))}
           </div>
-          <BaselineLiveLegend className="max-w-5xl" />
+          <BaselineLiveLegend className="max-w-5xl" compact />
         </section>
 
         <section className="site-section py-12 border-b border-border">
