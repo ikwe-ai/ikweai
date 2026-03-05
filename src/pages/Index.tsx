@@ -229,6 +229,48 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="site-section py-12 border-b border-border">
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Solution</p>
+          <h2 className="font-display fluid-heading text-foreground mb-5">Eight dimensions. One clear answer.</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed measure mb-8 text-pretty">
+            Purpose-built to measure behavioral safety failure in emotionally loaded interactions.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mb-5">
+            {benchmarkCoverage.map((item) => (
+              <article key={item.title} className="card-surface p-5">
+                <h3 className="font-display text-xl text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-foreground-muted leading-relaxed">{item.body}</p>
+              </article>
+            ))}
+          </div>
+          <article className="card-surface p-5 max-w-6xl">
+            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">Eight dimensions</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2">
+              {dimensions.map((dimension) => (
+                <p key={dimension} className="text-sm text-foreground-muted border border-border rounded-md px-3 py-2 bg-background-card">
+                  {dimension}
+                </p>
+              ))}
+            </div>
+          </article>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mt-5">
+            <article className="card-surface p-5">
+              <h3 className="font-display text-xl text-foreground mb-2">Safety Gate outcomes and tier framework</h3>
+              <p className="text-sm text-foreground-muted mb-3">
+                Full pass/fail outcome definitions and Tier I-IV decision mapping are on the Benchmark page.
+              </p>
+              <a href="/benchmark#framework-structure" className="summary-jump">Open benchmark detail</a>
+            </article>
+            <article className="card-surface p-5">
+              <h3 className="font-display text-xl text-foreground mb-2">Engagement levels and package path</h3>
+              <p className="text-sm text-foreground-muted mb-3">
+                Baseline Gate, Full Benchmark, and Ongoing Governance levels are organized on the Audit pathway page.
+              </p>
+              <a href="/audit#engagement-levels" className="summary-jump">Open engagement levels</a>
+            </article>
+          </div>
+        </section>
+
         <section className="site-section py-10 border-b border-border">
           <article className="card-surface p-5 max-w-5xl">
             <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-2">Benchmark Coverage and Findings</p>
@@ -284,48 +326,6 @@ export default function Home() {
             { href: "/audit#deliverables-previews", label: "Sample Outputs", tone: "quiet" },
           ]}
         />
-
-        <section className="site-section py-12 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Solution</p>
-          <h2 className="font-display fluid-heading text-foreground mb-5">Eight dimensions. One clear answer.</h2>
-          <p className="text-sm text-foreground-muted leading-relaxed measure mb-8 text-pretty">
-            Purpose-built to measure behavioral safety failure in emotionally loaded interactions.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mb-5">
-            {benchmarkCoverage.map((item) => (
-              <article key={item.title} className="card-surface p-5">
-                <h3 className="font-display text-xl text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-foreground-muted leading-relaxed">{item.body}</p>
-              </article>
-            ))}
-          </div>
-          <article className="card-surface p-5 max-w-6xl">
-            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">Eight dimensions</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2">
-              {dimensions.map((dimension) => (
-                <p key={dimension} className="text-sm text-foreground-muted border border-border rounded-md px-3 py-2 bg-background-card">
-                  {dimension}
-                </p>
-              ))}
-            </div>
-          </article>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mt-5">
-            <article className="card-surface p-5">
-              <h3 className="font-display text-xl text-foreground mb-2">Safety Gate outcomes and tier framework</h3>
-              <p className="text-sm text-foreground-muted mb-3">
-                Full pass/fail outcome definitions and Tier I-IV decision mapping are on the Benchmark page.
-              </p>
-              <a href="/benchmark#framework-structure" className="summary-jump">Open benchmark detail</a>
-            </article>
-            <article className="card-surface p-5">
-              <h3 className="font-display text-xl text-foreground mb-2">Engagement levels and package path</h3>
-              <p className="text-sm text-foreground-muted mb-3">
-                Baseline Gate, Full Benchmark, and Ongoing Governance levels are organized on the Audit pathway page.
-              </p>
-              <a href="/audit#engagement-levels" className="summary-jump">Open engagement levels</a>
-            </article>
-          </div>
-        </section>
 
         <section className="site-section py-12 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Offering</p>
