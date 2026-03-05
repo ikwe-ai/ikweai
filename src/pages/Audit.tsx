@@ -206,7 +206,7 @@ export default function Audit() {
         </div>
       </section>
 
-      <section className="site-section py-10 border-b border-border">
+      <section id="deliverables-previews" className="site-section py-10 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Audit At A Glance</p>
         <StatsRow className="max-w-6xl mb-4" />
         <DeliverablesGrid className="max-w-6xl mb-4" />
@@ -486,8 +486,8 @@ export default function Audit() {
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
                 <a href="/benchmark" className="summary-jump">Benchmark framework</a>
-                <a href="/research" className="summary-jump">Research evidence</a>
-                <a href="/deliverables" className="summary-jump">Deliverables</a>
+                <a href="/benchmark#method-overview" className="summary-jump">Benchmark evidence</a>
+                <a href="/audit#deliverables-previews" className="summary-jump">Sample outputs</a>
               </div>
             </article>
           </div>

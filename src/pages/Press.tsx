@@ -23,7 +23,7 @@ export default function Press() {
       label: "Published",
       title: "Deliverables & Transparency",
       body: "Public deliverables overview linking to benchmark, architecture, and trust pages.",
-      href: "/deliverables",
+      href: "/audit#deliverables-previews",
       cta: "Open deliverables overview →",
     },
     {

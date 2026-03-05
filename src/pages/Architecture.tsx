@@ -48,7 +48,7 @@ export default function Architecture() {
           "Safety Gate before broader scoring",
           "Governance-ready reporting outputs",
         ]}
-        primaryAction={{ href: "/deliverables", label: "View Deliverables & Transparency →" }}
+        primaryAction={{ href: "/audit#deliverables-previews", label: "View Deliverables & Transparency →" }}
         secondaryAction={{ href: "/intake#application-form", label: "Request Evaluation" }}
         jumpLinks={[
           { href: "#pipeline", label: "Pipeline" },

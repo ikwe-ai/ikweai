@@ -72,8 +72,8 @@ export default function Consultation() {
             <a href="/intake#application-form" className="link-lilac">
               Open request form →
             </a>
-            <a href="/deliverables" className="link-lilac">
-              Review deliverables →
+            <a href="/audit#deliverables-previews" className="link-lilac">
+              Review sample outputs →
             </a>
             <a href="/trust" className="link-lilac">
               Trust and confidentiality →

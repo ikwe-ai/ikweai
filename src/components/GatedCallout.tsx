@@ -11,8 +11,8 @@ interface GatedCalloutProps {
 export default function GatedCallout({
   title = "Report Distribution",
   body = "Site pages show report structure. Full report documentation is available through audit engagement.",
-  ctaLabel = "Open Deliverables & Transparency →",
-  ctaPath = "/deliverables",
+  ctaLabel = "Open Sample Outputs & Transparency →",
+  ctaPath = "/audit#deliverables-previews",
 }: GatedCalloutProps) {
   return (
     <div className="access-callout rounded p-5 flex gap-4">

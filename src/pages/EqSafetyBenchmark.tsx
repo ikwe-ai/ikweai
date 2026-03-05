@@ -51,15 +51,17 @@ export default function EqSafetyBenchmark() {
       <SummaryHero
         kicker="Public Framework"
         title="EQ Safety Benchmark"
-        summary="Use this framework to understand how behavioral safety risk is evaluated and how your organization will be assessed during independent review."
+        summary="The EQ Safety Benchmark is the framework. The Safety Study is the benchmark applied to a model cohort."
         highlights={[
           `${BENCHMARK_CURRENT.failedGatePct} emotional risk pattern prevalence`,
           `${BENCHMARK_CURRENT.noRepairPct} safety gate fail rate`,
           `${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)`,
+          "Safety Study baseline: 79 scenarios across Equine model, OpenAI, Anthropic, and Grok",
         ]}
         primaryAction={{ href: "/intake#application-form", label: "Request Evaluation" }}
         secondaryAction={{ href: "#method-overview", label: "View Method Overview" }}
         jumpLinks={[
+          { href: "#benchmark-vs-study", label: "Benchmark vs Study" },
           { href: "#benchmark-version", label: "Version & Scope" },
           { href: "#benchmark-metrics", label: "Current Metrics" },
           { href: "#framework-structure", label: "Framework Structure" },
@@ -76,9 +78,35 @@ export default function EqSafetyBenchmark() {
         items={[
           { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
           { href: "#public-dimensions", label: "View 8 Dimensions", tone: "outline" },
-          { href: "/research", label: "Open Research", tone: "quiet" },
+          { href: "#method-overview", label: "Open Evidence", tone: "quiet" },
         ]}
       />
+
+      <section id="benchmark-vs-study" className="site-section py-10 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Benchmark vs Study</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl">
+          <article className="card-surface p-5">
+            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">EQ Safety Benchmark (Framework)</p>
+            <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+              The benchmark defines how evaluation is performed: Stage 1 Safety Gate, Stage 2 conditional scoring across
+              eight behavioral dimensions, and structured vulnerability-domain scenario testing.
+            </p>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              This framework is reused across models and over time for consistent comparison.
+            </p>
+          </article>
+          <article className="card-surface p-5">
+            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">Safety Study (Applied Run)</p>
+            <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+              The public study baseline applied the benchmark across 79 scenarios and four model families: Equine model,
+              OpenAI, Anthropic, and Grok.
+            </p>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              Additional study runs continue beyond the 79-scenario baseline as scope expands.
+            </p>
+          </article>
+        </div>
+      </section>
 
       <section className="site-section py-10 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Benchmark At A Glance</p>
@@ -280,18 +308,18 @@ export default function EqSafetyBenchmark() {
             Request Evaluation
           </a>
           <a
-            href="/research"
+            href="#method-overview"
             className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Open research evidence
+            Open benchmark evidence
           </a>
           <a
-            href="/deliverables"
+            href="/audit#deliverables-previews"
             className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-quiet"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            View deliverables
+            View sample outputs
           </a>
         </div>
         <div className="flex flex-wrap gap-2 mt-4">
