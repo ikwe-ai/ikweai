@@ -5,7 +5,6 @@ import PageShell from "@/components/PageShell";
 import ActionDock from "@/components/ActionDock";
 import BaselineLiveLegend from "@/components/BaselineLiveLegend";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
-import DriftCurve from "@/components/visuals/DriftCurve";
 import HowItWorksFlow from "@/components/visuals/HowItWorksFlow";
 
 export default function Home() {
@@ -35,12 +34,12 @@ export default function Home() {
   const stats = [
     {
       value: BENCHMARK_CURRENT.failedGatePct,
-      label: "of responses showed at least one emotional risk pattern",
+      label: "of evaluated outputs showed at least one emotional risk pattern",
       tone: "danger",
     },
     {
       value: BENCHMARK_CURRENT.noRepairPct,
-      label: "failed the aggregate safety gate",
+      label: "failed the Safety Gate threshold",
       tone: "danger",
     },
     {
@@ -93,6 +92,25 @@ export default function Home() {
     "Severity Classification",
     "Scenario-Level Findings Appendix",
     "Remediation Roadmap",
+  ] as const;
+
+  const benchmarkCoverage = [
+    {
+      title: "Safety Gate (Pass / Fail)",
+      body: "Stage 1 is binary. Every first-contact output is classified as pass or fail before anything else.",
+    },
+    {
+      title: "Eight Behavioral Dimensions",
+      body: "Stage 2 scores only Stage 1 PASS outputs across eight quality dimensions to locate risk concentration.",
+    },
+    {
+      title: `${BENCHMARK_CURRENT.scenarios} Structured Scenarios`,
+      body: "Scenarios represent real high-stress contexts people use AI in, not random prompts.",
+    },
+    {
+      title: `${BENCHMARK_CURRENT.nValue}`,
+      body: `${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories), including anxiety, depression, grief, and crisis escalation.`,
+    },
   ] as const;
 
   const exploreLinks = [
@@ -221,29 +239,18 @@ export default function Home() {
 
         <section className="site-section py-12 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Solution</p>
-          <h2 className="font-display fluid-heading text-foreground mb-5">Ikwe identifies behavioral drift before incidents.</h2>
+          <h2 className="font-display fluid-heading text-foreground mb-5">Benchmark at a glance</h2>
           <p className="text-sm text-foreground-muted leading-relaxed measure mb-8 text-pretty">
-            AI is tested for intelligence and utility. It is rarely tested for behavior under emotional pressure.
-            Ikwe measures that gap with independent evidence.
+            The EQ Safety Benchmark has two parts: Stage 1 pass/fail Safety Gate, then Stage 2 scoring across eight
+            behavioral dimensions. Coverage is measured across structured scenarios and vulnerability domains.
           </p>
-          <DriftCurve className="max-w-6xl mb-4" />
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-            <article className="card-surface p-5">
-              <h3 className="font-display text-xl text-foreground mb-2">What we test</h3>
-              <p className="text-sm text-foreground-muted">Behavior in vulnerable user states across structured scenarios.</p>
-            </article>
-            <article className="card-surface p-5">
-              <h3 className="font-display text-xl text-foreground mb-2">What you receive</h3>
-              <p className="text-sm text-foreground-muted">Board-ready evidence, severity mapping, and remediation priorities.</p>
-            </article>
-            <article className="card-surface p-5">
-              <h3 className="font-display text-xl text-foreground mb-2">Who uses it</h3>
-              <p className="text-sm text-foreground-muted">CTO, legal, compliance, and board governance functions.</p>
-            </article>
-            <article className="card-surface p-5">
-              <h3 className="font-display text-xl text-foreground mb-2">Why now</h3>
-              <p className="text-sm text-foreground-muted">Behavioral drift compounds before incidents become visible.</p>
-            </article>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl">
+            {benchmarkCoverage.map((item) => (
+              <article key={item.title} className="card-surface p-5">
+                <h3 className="font-display text-xl text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-foreground-muted leading-relaxed">{item.body}</p>
+              </article>
+            ))}
           </div>
         </section>
 
