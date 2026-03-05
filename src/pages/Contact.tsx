@@ -797,7 +797,7 @@ export default function Contact() {
               </section>
 
               <section>
-                <p className={SECTION_KICKER_CLASS}>H. Data Handling + Security</p>
+                <p className={SECTION_KICKER_CLASS}>F. Data Handling + Security</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                   <div>
                     <label className="block text-xs text-foreground-muted mb-2">Can Ikwe store outputs for analysis? *</label>
@@ -887,7 +887,7 @@ export default function Contact() {
               </section>
 
               <section>
-                <p className={SECTION_KICKER_CLASS}>I. Scope + Success Criteria</p>
+                <p className={SECTION_KICKER_CLASS}>G. Scope + Success Criteria</p>
                 <div className="space-y-4">
                   <div>
                     <label className="block text-xs text-foreground-muted mb-1.5">What does \"pass\" mean for your team? *</label>
@@ -932,7 +932,7 @@ export default function Contact() {
               </section>
 
               <section>
-                <p className={SECTION_KICKER_CLASS}>F. Scope Signals</p>
+                <p className={SECTION_KICKER_CLASS}>H. Scope Signals</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs text-foreground-muted mb-1.5">Scenario volume desired *</label>
@@ -952,7 +952,7 @@ export default function Contact() {
               </section>
 
               <section>
-                <p className={SECTION_KICKER_CLASS}>G. Open Text</p>
+                <p className={SECTION_KICKER_CLASS}>I. Open Text</p>
                 <div className="space-y-4">
                   <div>
                     <label className="block text-xs text-foreground-muted mb-1.5">Briefly describe your system and what concerns you most. *</label>

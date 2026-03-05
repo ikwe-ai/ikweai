@@ -215,7 +215,7 @@ def header_commands(page_num: int) -> list[str]:
 
 
 def field_height(field: Field) -> int:
-    return field.height if field.multiline else 24
+    return field.height
 
 
 def field_space_needed(field: Field) -> int:
@@ -233,9 +233,9 @@ def section_space_needed(section_title: str, fields: list[Field]) -> int:
     return 20 + sum(field_space_needed(f) for f in fields)
 
 
-def render() -> tuple[list[list[str]], list[list[tuple[str, str, int, int, int, int, bool]]]]:
+def render() -> tuple[list[list[str]], list[list[tuple[str, str, str, tuple[str, ...], int, int, int, int]]]]:
     pages_cmds: list[list[str]] = [[]]
-    pages_widgets: list[list[tuple[str, str, int, int, int, int, bool]]] = [[]]
+    pages_widgets: list[list[tuple[str, str, str, tuple[str, ...], int, int, int, int]]] = [[]]
 
     page_num = 1
     y = TOP_DEFAULT
@@ -281,7 +281,7 @@ def render() -> tuple[list[list[str]], list[list[tuple[str, str, int, int, int, 
             pages_cmds[-1].append("1 1 1 rg")
             pages_cmds[-1].append(f"{x} {y_box} {FIELD_WIDTH} {h} re B")
 
-            pages_widgets[-1].append((f.name, f.label, x, y_box, x + FIELD_WIDTH, y_box + h, f.multiline))
+            pages_widgets[-1].append((f.name, f.label, f.kind, f.options, x, y_box, x + FIELD_WIDTH, y_box + h))
             y = y_box - 12
 
     # Footer on each page
@@ -320,14 +320,24 @@ def generate_pdf(path: Path) -> None:
         content_ids.append(content_id)
         page_annots.append([])
 
-        for name, label, x1, y1, x2, y2, multiline in widgets:
-            ff = " /Ff 4096" if multiline else ""
-            widget_body = (
-                f"<< /Type /Annot /Subtype /Widget /FT /Tx /T ({esc(name)}) /TU ({esc(label)}) "
-                f"/Rect [{x1} {y1} {x2} {y2}] /F 4 /P {page_id} 0 R{ff} "
+        for name, label, kind, options, x1, y1, x2, y2 in widgets:
+            common = (
+                f"/Type /Annot /Subtype /Widget /T ({esc(name)}) /TU ({esc(label)}) "
+                f"/Rect [{x1} {y1} {x2} {y2}] /F 4 /P {page_id} 0 R "
                 f"/Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> "
-                f"/MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /V () >>"
-            ).encode("utf-8")
+                f"/MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >>"
+            )
+
+            if kind == "textarea":
+                widget_body = f"<< {common} /FT /Tx /Ff 4096 /V () >>".encode("utf-8")
+            elif kind == "combo":
+                opt = " ".join(f"({esc(item)})" for item in options)
+                widget_body = f"<< {common} /FT /Ch /Ff 131072 /Opt [{opt}] /V () /DV () >>".encode("utf-8")
+            elif kind == "list":
+                opt = " ".join(f"({esc(item)})" for item in options)
+                widget_body = f"<< {common} /FT /Ch /Ff 2097152 /Opt [{opt}] /V [] >>".encode("utf-8")
+            else:
+                widget_body = f"<< {common} /FT /Tx /V () >>".encode("utf-8")
             wid = b.add(widget_body)
             widget_ids.append(wid)
             page_annots[-1].append(wid)
