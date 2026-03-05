@@ -5,9 +5,7 @@ import PageShell from "@/components/PageShell";
 import ActionDock from "@/components/ActionDock";
 import BaselineLiveLegend from "@/components/BaselineLiveLegend";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
-import StatsRow from "@/components/visuals/StatsRow";
 import DriftCurve from "@/components/visuals/DriftCurve";
-import AiStack from "@/components/visuals/AiStack";
 import HowItWorksFlow from "@/components/visuals/HowItWorksFlow";
 
 export default function Home() {
@@ -184,14 +182,31 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="site-section py-10 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Benchmark At A Glance</p>
-          <StatsRow className="max-w-6xl mb-4" />
-          <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_320px] gap-4 max-w-6xl mb-4">
-            <DriftCurve />
-            <AiStack />
+        <section className="site-section py-12 border-b border-border">
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Problem</p>
+          <h2 className="font-display fluid-heading text-foreground mb-4">Risk is visible too late in most AI rollouts.</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed measure mb-7 text-pretty">
+            Teams usually measure utility, latency, and correctness. They do not measure emotional risk trajectories
+            early enough to prevent exposure.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            {stats.map((item) => (
+              <article
+                key={item.label}
+                className={`card-surface p-6 ${item.tone === "danger" ? "risk-panel" : "safe-panel"}`}
+              >
+                <p
+                  className={`text-4xl md:text-5xl font-display mb-4 ${
+                    item.tone === "danger" ? "text-danger" : "text-safe"
+                  }`}
+                >
+                  {item.value}
+                </p>
+                <p className="text-sm text-foreground-muted leading-relaxed">{item.label}</p>
+              </article>
+            ))}
           </div>
-          <HowItWorksFlow className="max-w-6xl" />
+          <BaselineLiveLegend className="max-w-5xl" />
         </section>
 
         <ActionDock
@@ -204,13 +219,14 @@ export default function Home() {
           ]}
         />
 
-        <section className="site-section py-14 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">At A Glance</p>
-          <h2 className="font-display fluid-heading text-foreground mb-5">What decision-makers need in one view.</h2>
+        <section className="site-section py-12 border-b border-border">
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Solution</p>
+          <h2 className="font-display fluid-heading text-foreground mb-5">Ikwe identifies behavioral drift before incidents.</h2>
           <p className="text-sm text-foreground-muted leading-relaxed measure mb-8 text-pretty">
             AI is tested for intelligence and utility. It is rarely tested for behavior under emotional pressure.
             Ikwe measures that gap with independent evidence.
           </p>
+          <DriftCurve className="max-w-6xl mb-4" />
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
             <article className="card-surface p-5">
               <h3 className="font-display text-xl text-foreground mb-2">What we test</h3>
@@ -231,9 +247,23 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="site-section py-14 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Who trusts Ikwe outputs</p>
-          <h2 className="font-display fluid-heading text-foreground mb-5">Independent validation built for operating decisions.</h2>
+        <section className="site-section py-12 border-b border-border">
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Offering</p>
+          <h2 className="font-display fluid-heading text-foreground mb-5">Audit-ready outputs built for real operating decisions.</h2>
+          <article className="card-surface p-6 max-w-5xl mb-6">
+            <h3 className="font-display text-2xl text-foreground mb-3">Board-Ready Deliverables</h3>
+            <p className="text-sm text-foreground-muted leading-relaxed mb-5 max-w-3xl">
+              Documentation executives can use to decide: launch, remediate, monitor, or pause.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
+              {deliverablesPreview.map((item) => (
+                <p key={item} className="text-sm text-foreground-muted border border-border rounded-md px-3 py-2 bg-background-card">
+                  {item}
+                </p>
+              ))}
+            </div>
+            <a href="/deliverables" className="link-lilac">View Sample Deliverables →</a>
+          </article>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
             {solutionPillars.map((pillar) => (
               <article key={pillar.title} className="card-surface p-5">
@@ -247,60 +277,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="site-section py-14 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Proof of Output</p>
-          <article className="card-surface p-6 max-w-5xl">
-          <h2 className="font-display fluid-heading text-foreground mb-3">Board-Ready Deliverables</h2>
-          <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-3xl">
-              Documentation your executives can use to decide: launch, remediate, monitor, or pause.
-          </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
-              {deliverablesPreview.map((item) => (
-                <p key={item} className="text-sm text-foreground-muted border border-border rounded-md px-3 py-2 bg-background-card">
-                  {item}
-                </p>
-              ))}
-            </div>
-            <a href="/deliverables" className="link-lilac">View Sample Deliverables →</a>
-          </article>
-        </section>
-
-        <section className="site-section py-14 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Evidence</p>
-          <p className="text-sm text-foreground-muted leading-relaxed measure mb-7 text-pretty">
-            Across {BENCHMARK_CURRENT.nShort} outputs evaluated, covering {BENCHMARK_CURRENT.scenarios} structured
-            scenarios in {BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories), this is what structured behavioral evaluation surfaces:
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {stats.map((item) => (
-              <article
-                key={item.label}
-                className={`card-surface p-6 ${item.tone === "danger" ? "risk-panel" : "safe-panel"}`}
-              >
-                <p
-                  className={`text-4xl md:text-5xl font-display mb-4 ${
-                    item.tone === "danger" ? "text-danger" : "text-safe"
-                  }`}
-                >
-                  {item.value}
-                </p>
-                <p className="text-sm text-foreground-muted leading-relaxed">{item.label}</p>
-              </article>
-            ))}
-          </div>
-          <BaselineLiveLegend className="mt-4" />
-          <p className="text-sm text-foreground-muted leading-relaxed measure mt-6 text-pretty">
-            These are current benchmark rates across the category. Your system may perform better or worse. Structured
-            evaluation is how you find out before a user does.
-          </p>
-          <p className="text-xs text-foreground-subtle mt-3">
-            EQ Safety Benchmark {BENCHMARK_CURRENT.version} - Released {BENCHMARK_CURRENT.released} · Updated{" "}
-            {BENCHMARK_CURRENT.lastUpdated}
-          </p>
-        </section>
-
-        <section className="site-section py-14 border-b border-border">
-          <h2 className="font-display fluid-heading text-foreground mb-8">How we evaluate your system</h2>
+        <section className="site-section py-12 border-b border-border">
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Steps</p>
+          <h2 className="font-display fluid-heading text-foreground mb-5">How it works</h2>
+          <HowItWorksFlow className="max-w-6xl mb-4" />
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             {evaluationSteps.map((step, index) => (
               <article
