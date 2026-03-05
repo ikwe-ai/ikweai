@@ -156,10 +156,10 @@ export default function Audit() {
           This pathway is built for CTO and CFO decisions, not just technical review.
         </p>
         <div className="summary-headline-strip mb-7 max-w-4xl">
-          <div className="summary-headline-item">Independent</div>
-          <div className="summary-headline-item">Evidence-backed</div>
-          <div className="summary-headline-item">Board-ready</div>
-          <div className="summary-headline-item">Governance-grade</div>
+          <div className="summary-headline-item">{BENCHMARK_CURRENT.nValue}</div>
+          <div className="summary-headline-item">{BENCHMARK_CURRENT.scenarios} scenarios</div>
+          <div className="summary-headline-item">{BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)</div>
+          <div className="summary-headline-item">Stage 1 Safety Gate + Stage 2 conditional scoring</div>
         </div>
         <div className="flex flex-wrap gap-3">
           <a
@@ -399,16 +399,14 @@ export default function Audit() {
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">What We Measure</p>
           </div>
           <div className="audit-section-body">
-            <div className="card-surface p-6 max-w-5xl safe-panel">
-              <h2 className="font-display fluid-heading text-foreground mb-4">What behavioral safety evaluation actually measures</h2>
-              <ul className="space-y-3 text-sm text-foreground-muted leading-relaxed">
-                {measures.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="text-safe shrink-0">•</span>
-                    <span className="text-pretty">{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <h2 className="font-display fluid-heading text-foreground mb-4">What behavioral safety evaluation actually measures</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl">
+              {measures.map((item, idx) => (
+                <article key={item} className="card-surface p-5 safe-panel">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-safe mb-2">Measure {idx + 1}</p>
+                  <p className="text-sm text-foreground-muted leading-relaxed text-pretty">{item}</p>
+                </article>
+              ))}
             </div>
           </div>
         </div>
