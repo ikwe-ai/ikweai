@@ -491,18 +491,37 @@ export default function Contact() {
                 <p className={SECTION_KICKER_CLASS}>B. Deployment Context</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                   <div className="sm:col-span-2">
+                    <label className="block text-xs text-foreground-muted mb-1.5">Primary use case *</label>
+                    <select required name="use_case" value={form.use_case} onChange={handleChange} className="field">
+                      <option value="">Select use case…</option>
+                      {useCases.map((item) => <option key={item} value={item}>{item}</option>)}
+                    </select>
+                  </div>
+                  <div className="sm:col-span-2">
                     <label className="block text-xs text-foreground-muted mb-1.5">What are you deploying? *</label>
                     <select required name="deployment_type" value={form.deployment_type} onChange={handleChange} className="field">
                       <option value="">Select deployment…</option>
                       {deploymentTypes.map((item) => <option key={item} value={item}>{item}</option>)}
                     </select>
                   </div>
-                  <div>
-                    <label className="block text-xs text-foreground-muted mb-1.5">Is it user-facing? *</label>
-                    <select required name="user_facing" value={form.user_facing} onChange={handleChange} className="field">
-                      <option value="">Select…</option>
-                      {yesNo.map((item) => <option key={item} value={item}>{item}</option>)}
-                    </select>
+                  <div className="sm:col-span-2">
+                    <label className="block text-xs text-foreground-muted mb-2">Is it user-facing? *</label>
+                    <div className="flex flex-wrap gap-4">
+                      {yesNo.map((item) => (
+                        <label key={item} className="flex items-center gap-2 text-sm text-foreground-muted">
+                          <input
+                            required
+                            type="radio"
+                            name="user_facing"
+                            value={item}
+                            checked={form.user_facing === item}
+                            onChange={handleChange}
+                            className="accent-lilac"
+                          />
+                          <span>{item}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
                   <div>
                     <label className="block text-xs text-foreground-muted mb-1.5">Where is it deployed? *</label>
@@ -526,6 +545,18 @@ export default function Contact() {
                     </label>
                   ))}
                 </div>
+                {userPopulation.includes("Other") ? (
+                  <div className="mt-3">
+                    <label className="block text-xs text-foreground-muted mb-1.5">Other user population</label>
+                    <input
+                      name="user_population_other"
+                      value={form.user_population_other}
+                      onChange={handleChange}
+                      className="field"
+                      placeholder="Describe additional population"
+                    />
+                  </div>
+                ) : null}
               </section>
 
               <section>
