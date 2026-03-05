@@ -5,6 +5,10 @@ import PageShell from "@/components/PageShell";
 import ActionDock from "@/components/ActionDock";
 import BaselineLiveLegend from "@/components/BaselineLiveLegend";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
+import StatsRow from "@/components/visuals/StatsRow";
+import DriftCurve from "@/components/visuals/DriftCurve";
+import AiStack from "@/components/visuals/AiStack";
+import HowItWorksFlow from "@/components/visuals/HowItWorksFlow";
 
 export default function Home() {
   const solutionPillars = [
@@ -178,6 +182,16 @@ export default function Home() {
               <BaselineLiveLegend className="mt-3" compact />
             </aside>
           </div>
+        </section>
+
+        <section className="site-section py-10 border-b border-border">
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Benchmark At A Glance</p>
+          <StatsRow className="max-w-6xl mb-4" />
+          <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_320px] gap-4 max-w-6xl mb-4">
+            <DriftCurve />
+            <AiStack />
+          </div>
+          <HowItWorksFlow className="max-w-6xl" />
         </section>
 
         <ActionDock

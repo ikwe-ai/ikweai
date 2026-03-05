@@ -3,6 +3,10 @@ import PageMeta from "@/components/PageMeta";
 import ActionDock from "@/components/ActionDock";
 import BaselineLiveLegend from "@/components/BaselineLiveLegend";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
+import StatsRow from "@/components/visuals/StatsRow";
+import FindingsCards from "@/components/visuals/FindingsCards";
+import ChartsBlock from "@/components/visuals/ChartsBlock";
+import MethodAccordion from "@/components/visuals/MethodAccordion";
 
 export default function Research() {
   const vulnerableStates = [
@@ -84,6 +88,12 @@ export default function Research() {
             <BaselineLiveLegend className="mt-4" compact />
           </aside>
         </div>
+      </section>
+
+      <section className="site-section py-10 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Research Snapshot</p>
+        <StatsRow className="max-w-6xl mb-4" />
+        <FindingsCards className="max-w-6xl" />
       </section>
 
       <section className="site-section py-14 border-b border-border">
@@ -202,6 +212,16 @@ export default function Research() {
             </div>
           </details>
         </article>
+      </section>
+
+      <section id="research-charts" className="site-section py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Charts</p>
+        <ChartsBlock className="max-w-6xl" />
+      </section>
+
+      <section id="research-method" className="site-section py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Method</p>
+        <MethodAccordion className="max-w-5xl" />
       </section>
 
       <section id="full-report" className="site-section py-14">
