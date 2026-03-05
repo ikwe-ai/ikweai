@@ -44,7 +44,7 @@ export default function Home() {
       icon: Scale,
     },
     {
-      title: "Regulators",
+      title: "Compliance",
       body: "Reproducible, versioned compliance evidence packages",
       icon: ShieldCheck,
     },
