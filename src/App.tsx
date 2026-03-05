@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 import SiteAssistant from "@/components/SiteAssistant";
 
 import Index from "./pages/Index";
-import Research from "./pages/Research";
+import EqSafetyBenchmark from "./pages/EqSafetyBenchmark";
 import SampleReport from "./pages/SampleReport";
 import Audit from "./pages/Audit";
 import Trust from "./pages/Trust";
@@ -47,8 +47,8 @@ const App = () => (
         <Nav />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/benchmark" element={<Navigate to="/research#benchmark-framework" replace />} />
-          <Route path="/research" element={<Research />} />
+          <Route path="/benchmark" element={<EqSafetyBenchmark />} />
+          <Route path="/research" element={<Navigate to="/benchmark" replace />} />
           <Route path="/deliverables" element={<Navigate to="/audit#deliverables-previews" replace />} />
           <Route path="/samples" element={<Navigate to="/deliverables" replace />} />
           <Route path="/audit" element={<Audit />} />
@@ -73,7 +73,7 @@ const App = () => (
           <Route path="/archive/architecture" element={<Architecture />} />
           <Route path="/archive/consult" element={<Consultation />} />
           <Route path="/archive/ip-notice" element={<IpNotice />} />
-          <Route path="/archive/eq-safety-benchmark" element={<Navigate to="/research#benchmark-framework" replace />} />
+          <Route path="/archive/eq-safety-benchmark" element={<Navigate to="/benchmark" replace />} />
           <Route path="/archive/research/writings" element={<WritingLibrary />} />
           <Route path="/archive/research/writings/before-the-violation" element={<BeforeTheViolation />} />
           <Route
@@ -104,8 +104,8 @@ const App = () => (
           <Route path="/ip-notice" element={<Navigate to="/archive/ip-notice" replace />} />
           <Route path="/ip" element={<Navigate to="/archive/ip-notice" replace />} />
           <Route path="/intellectual-property" element={<Navigate to="/archive/ip-notice" replace />} />
-          <Route path="/eq-safety-benchmark" element={<Navigate to="/research#benchmark-framework" replace />} />
-          <Route path="/eqsb" element={<Navigate to="/research#benchmark-framework" replace />} />
+          <Route path="/eq-safety-benchmark" element={<Navigate to="/benchmark" replace />} />
+          <Route path="/eqsb" element={<Navigate to="/benchmark" replace />} />
           <Route path="/research/writings" element={<Navigate to="/archive/research/writings" replace />} />
           <Route
             path="/research/writings/before-the-violation"
