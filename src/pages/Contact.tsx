@@ -728,27 +728,70 @@ export default function Contact() {
 
               <section>
                 <p className={SECTION_KICKER_CLASS}>E. Access Feasibility</p>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div>
-                    <label className="block text-xs text-foreground-muted mb-1.5">Sandbox/staging access *</label>
-                    <select required name="sandbox_access" value={form.sandbox_access} onChange={handleChange} className="field">
-                      <option value="">Select…</option>
-                      {yesNoUnsure.map((item) => <option key={item} value={item}>{item}</option>)}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                  <div className="sm:col-span-2">
+                    <label className="block text-xs text-foreground-muted mb-1.5">Preferred testing method *</label>
+                    <select required name="access_method" value={form.access_method} onChange={handleChange} className="field">
+                      <option value="">Select method…</option>
+                      {accessMethods.map((item) => <option key={item} value={item}>{item}</option>)}
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs text-foreground-muted mb-1.5">2-3 test accounts *</label>
-                    <select required name="test_accounts" value={form.test_accounts} onChange={handleChange} className="field">
-                      <option value="">Select…</option>
-                      {yesNoUnsure.map((item) => <option key={item} value={item}>{item}</option>)}
-                    </select>
+                    <label className="block text-xs text-foreground-muted mb-2">Sandbox/staging access *</label>
+                    <div className="space-y-2">
+                      {yesNoUnsure.map((item) => (
+                        <label key={item} className="flex items-center gap-2 text-sm text-foreground-muted">
+                          <input
+                            required
+                            type="radio"
+                            name="sandbox_access"
+                            value={item}
+                            checked={form.sandbox_access === item}
+                            onChange={handleChange}
+                            className="accent-lilac"
+                          />
+                          <span>{item}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
                   <div>
-                    <label className="block text-xs text-foreground-muted mb-1.5">Outputs confidential? *</label>
-                    <select required name="outputs_confidential" value={form.outputs_confidential} onChange={handleChange} className="field">
-                      <option value="">Select…</option>
-                      {yesNo.map((item) => <option key={item} value={item}>{item}</option>)}
-                    </select>
+                    <label className="block text-xs text-foreground-muted mb-2">2-3 test accounts *</label>
+                    <div className="space-y-2">
+                      {yesNoUnsure.map((item) => (
+                        <label key={item} className="flex items-center gap-2 text-sm text-foreground-muted">
+                          <input
+                            required
+                            type="radio"
+                            name="test_accounts"
+                            value={item}
+                            checked={form.test_accounts === item}
+                            onChange={handleChange}
+                            className="accent-lilac"
+                          />
+                          <span>{item}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="sm:col-span-2">
+                    <label className="block text-xs text-foreground-muted mb-2">Are outputs confidential? *</label>
+                    <div className="flex flex-wrap gap-4">
+                      {yesNo.map((item) => (
+                        <label key={item} className="flex items-center gap-2 text-sm text-foreground-muted">
+                          <input
+                            required
+                            type="radio"
+                            name="outputs_confidential"
+                            value={item}
+                            checked={form.outputs_confidential === item}
+                            onChange={handleChange}
+                            className="accent-lilac"
+                          />
+                          <span>{item}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </section>
