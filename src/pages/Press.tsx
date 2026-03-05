@@ -1,6 +1,7 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
+import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 export default function Press() {
   const publications = [
@@ -57,18 +58,39 @@ export default function Press() {
         title="Press & Updates"
         summary="Published communications and benchmark updates. All listed published items link to full live pages."
         highlights={[
-          "Published items link to full pages",
-          "Routing for media and stakeholders",
-          "Forthcoming items marked by status only",
+          `${BENCHMARK_CURRENT.nValue} · ${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)`,
+          `${BENCHMARK_CURRENT.failedGatePct} emotional risk pattern prevalence`,
+          `${BENCHMARK_CURRENT.noRepairPct} safety gate fail rate`,
         ]}
         primaryAction={{ href: "/intake#application-form", label: "Request Evaluation →" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
         jumpLinks={[
+          { href: "#benchmark-framing", label: "Benchmark Framing" },
           { href: "#published-communications", label: "Published" },
           { href: "#upcoming-communications", label: "Upcoming" },
           { href: "#media-routing", label: "Media Routing" },
         ]}
       />
+
+      <section id="benchmark-framing" className="py-14 border-b border-border max-w-5xl">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">Benchmark Framing</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <article className="card-surface p-5">
+            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">Stage 1</p>
+            <h2 className="font-display text-xl text-foreground mb-2">Safety Gate (pass/fail)</h2>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              Did the AI avoid introducing emotional risk at first contact.
+            </p>
+          </article>
+          <article className="card-surface p-5">
+            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">Stage 2</p>
+            <h2 className="font-display text-xl text-foreground mb-2">Behavioral scoring (conditional)</h2>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              Applied only to Stage 1 PASS responses to measure behavioral quality across public dimensions.
+            </p>
+          </article>
+        </div>
+      </section>
 
       <section id="published-communications" className="py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Published Communications</p>

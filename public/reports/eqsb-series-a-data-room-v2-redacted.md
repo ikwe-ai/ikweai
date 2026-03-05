@@ -8,7 +8,7 @@ EQ Safety Benchmark (EQSB) is an independent behavioral safety benchmark for AI 
 This public summary is for institutional review and does not include restricted benchmark materials.
 
 ## Current benchmark citation
-- 54.7% harm-pattern prevalence (responses with at least one harmful behavior pattern).
+- 54.7% emotional risk pattern prevalence (responses with at least one emotional risk pattern).
 - 44.9% aggregate Safety Gate FAIL rate.
 - 21K+ outputs evaluated across 79 scenarios in 13 behavioral domains (vulnerability categories).
 

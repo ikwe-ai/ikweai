@@ -229,7 +229,7 @@ export default function SiteAssistant() {
       kind: "default",
       text: [
         "Ikwe walkthrough (public facts):",
-        `• ${BENCHMARK_CURRENT.failedGatePct} harm-pattern prevalence`,
+        `• ${BENCHMARK_CURRENT.failedGatePct} emotional risk pattern prevalence`,
         `• ${BENCHMARK_CURRENT.noRepairPct} safety gate fail rate`,
         `• Published rates are tied to ${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)`,
         "• Additional documentation is available on request",
@@ -522,7 +522,7 @@ export default function SiteAssistant() {
               Ikwe Quick Facts · Updated {BENCHMARK_CURRENT.lastUpdated}
             </p>
             <p className="text-xs text-foreground-muted leading-relaxed mb-2">
-              {BENCHMARK_CURRENT.failedGatePct} harm-pattern prevalence · {BENCHMARK_CURRENT.noRepairPct} safety gate fail rate ·{" "}
+              {BENCHMARK_CURRENT.failedGatePct} emotional risk pattern prevalence · {BENCHMARK_CURRENT.noRepairPct} safety gate fail rate ·{" "}
               {BENCHMARK_CURRENT.nValue}.
             </p>
             <p className="text-[11px] text-foreground-subtle leading-relaxed mb-2">Additional documentation available on request.</p>

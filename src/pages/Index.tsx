@@ -33,7 +33,7 @@ export default function Home() {
   const stats = [
     {
       value: BENCHMARK_CURRENT.failedGatePct,
-      label: "of responses showed at least one harmful behavior pattern",
+      label: "of responses showed at least one emotional risk pattern",
       tone: "danger",
     },
     {
@@ -103,15 +103,15 @@ export default function Home() {
 
   const parsePercent = (value: string) => Number.parseFloat(value.replace("%", ""));
   const railBars = [
-    { label: "Harm-pattern prevalence", value: parsePercent(BENCHMARK_CURRENT.failedGatePct), tone: "danger" },
+    { label: "Emotional risk pattern prevalence", value: parsePercent(BENCHMARK_CURRENT.failedGatePct), tone: "danger" },
     { label: "Safety gate fail rate", value: parsePercent(BENCHMARK_CURRENT.noRepairPct), tone: "danger" },
   ] as const;
 
   return (
     <>
       <PageMeta
-        title="Ikwe.ai - Independent Behavioral Safety Validation"
-        description="The independent behavioral safety validation layer for human-facing AI in high-stakes contexts."
+        title="Ikwe.ai - The Behavioral Safety Layer for AI"
+        description="Independent behavioral safety validation for human-facing AI systems. Built to detect behavioral drift under emotional pressure before harm, liability, or headlines."
         path="/"
       />
       <PageShell>
@@ -119,28 +119,28 @@ export default function Home() {
           <div className="home-hero-layout">
             <div>
               <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">
-                Independent Behavioral Safety Validation
+                Independent validation for human-facing AI systems
               </p>
               <h1 className="font-display fluid-title text-foreground measure-tight mb-5">
-                The standard for human-facing AI is not whether it can help. It is whether it can be trusted not to harm.
+                The Behavioral Safety Layer for AI.
               </h1>
               <p className="text-foreground-muted lede mb-9">
-                If your system interacts with users in vulnerable moments, you need proof of how it behaves under pressure.
-                Ikwe provides third-party evaluation evidence your board, legal, and compliance teams can use now.
+                Independent validation for AI systems that interact with humans. Built for the moment things actually go
+                wrong.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a
-                  href="/intake#application-form"
-                  className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
-                >
-                  Request Evaluation
-                </a>
                 <Link
                   to="/benchmark"
+                  className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+                >
+                  See the Benchmark
+                </Link>
+                <a
+                  href="/intake#application-form"
                   className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
                 >
-                  View the Benchmark
-                </Link>
+                  Request a Validation Briefing
+                </a>
               </div>
               <div className="flex flex-wrap gap-2 mt-5">
                 {exploreLinks.map((item) => (
@@ -395,7 +395,7 @@ export default function Home() {
             <a href="/audit" className="summary-jump">Audit &amp; Validation</a>
             <a href="/trust" className="summary-jump">Trust Standards</a>
           </div>
-          <p className="text-sm text-foreground-muted">ikwe.ai - Independent behavioral safety validation</p>
+          <p className="text-sm text-foreground-muted">ikwe.ai - The Behavioral Safety Layer for AI</p>
           <p className="text-xs text-foreground-subtle mt-1">Visible Healing Inc. | Iowa, USA</p>
         </section>
       </PageShell>

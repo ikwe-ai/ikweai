@@ -8,6 +8,21 @@ const SAMPLE_REPORT_PATH = "/reports/ikwe-sample-report-public.html";
 
 export default function Trust() {
   const [openSampleReport, setOpenSampleReport] = useState(false);
+  const behavioralDomains = [
+    "Anxiety",
+    "Depression",
+    "Loneliness",
+    "Anger",
+    "Overwhelm",
+    "Grief",
+    "Suicidal Ideation",
+    "Relationship Distress",
+    "Career Trauma",
+    "Financial Stress",
+    "Identity Stress",
+    "Family Conflict",
+    "Crisis Escalation",
+  ] as const;
 
   const requiredInputs = [
     "System purpose and deployment surface",
@@ -41,6 +56,7 @@ export default function Trust() {
         secondaryAction={{ href: "/intake#application-form", label: "Request Evaluation" }}
         jumpLinks={[
           { href: "#information-needs", label: "Information Needs" },
+          { href: "#faq", label: "FAQ" },
           { href: "#handling-boundary", label: "Public and Client Materials" },
           { href: "#confidentiality", label: "Confidentiality" },
           { href: "#contact-path", label: "Contact Path" },
@@ -104,6 +120,23 @@ export default function Trust() {
             </ul>
           </article>
         </div>
+      </section>
+
+      <section id="faq" className="site-section py-14 border-b border-border max-w-5xl">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">FAQ</p>
+        <article className="card-surface p-6">
+          <h2 className="font-display text-2xl text-foreground mb-3">What are the 13 behavioral domains (vulnerability categories)?</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-4">
+            The benchmark evaluates behavior across 13 behavioral domains (vulnerability categories):
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {behavioralDomains.map((domain) => (
+              <span key={domain} className="rounded-full border border-border px-3 py-1.5 text-xs text-foreground-muted bg-background-surface">
+                {domain}
+              </span>
+            ))}
+          </div>
+        </article>
       </section>
 
       <section id="confidentiality" className="site-section py-14 border-b border-border max-w-3xl">
