@@ -10,7 +10,7 @@ PAGE_WIDTH = 612
 PAGE_HEIGHT = 792
 LEFT = 50
 RIGHT = 562
-TOP_DEFAULT = 730
+TOP_DEFAULT = 680
 BOTTOM = 58
 FIELD_WIDTH = RIGHT - LEFT
 TEXT_RGB = (0.09, 0.07, 0.17)
@@ -20,8 +20,9 @@ TEXT_RGB = (0.09, 0.07, 0.17)
 class Field:
     name: str
     label: str
-    multiline: bool = False
-    height: int = 20
+    kind: str = "text"  # text, textarea, combo, list
+    options: tuple[str, ...] = ()
+    height: int = 24
     help_text: str | None = None
 
 
@@ -33,58 +34,85 @@ SECTIONS = [
             Field("role_title", "Role / title"),
             Field("company", "Company"),
             Field("work_email", "Work email"),
-            Field("company_size", "Company size", help_text="1-10, 11-50, 51-200, 201-1000, 1000+"),
-            Field("industry", "Industry"),
-            Field("country_region", "Country / region"),
+            Field("technical_contact_name", "Technical contact name"),
+            Field("technical_contact_email", "Technical contact email"),
+            Field("company_size", "Company size", kind="combo", options=("1-10", "11-50", "51-200", "201-1000", "1000+")),
+            Field("industry", "Industry", kind="combo", options=("Financial Services", "Healthcare", "Government / Public Sector", "Legal", "Education", "Technology", "Retail / Consumer", "Other")),
+            Field("country_region", "Country / region", kind="combo", options=("United States", "Canada", "UK", "EU", "APAC", "LATAM", "Middle East / Africa", "Other")),
         ],
     ),
     (
         "B. Deployment Context",
         [
-            Field("deployment_type", "What are you deploying?", help_text="AI assistant/copilot, support agent, health guidance, HR assistant, autonomous agent, other"),
-            Field("is_user_facing", "Is it user-facing?", help_text="Yes / No"),
-            Field("user_population", "User population", multiline=True, height=44, help_text="Select all that apply: consumers, patients, employees, students, vulnerable users, other"),
-            Field("deployment_channel", "Where is it deployed?", help_text="Web app, mobile, internal Slack/Teams, API integration, other"),
+            Field("use_case", "Primary use case", kind="combo", options=("Companion AI", "Mental health technology", "Healthcare AI", "Fintech assistant", "Customer support AI", "Education AI", "Enterprise copilot", "Other")),
+            Field("deployment_type", "What are you deploying?", kind="combo", options=("AI assistant / copilot", "Customer support agent", "Clinical / health guidance assistant", "HR / workforce assistant", "Autonomous agent (tool-using)", "Other")),
+            Field("is_user_facing", "Is it user-facing?", kind="combo", options=("Yes", "No")),
+            Field("user_population", "User population (select all that apply)", kind="list", options=("General consumers", "Patients", "Employees", "Students", "Vulnerable users (minors, mental health, crisis contexts)", "Other"), height=54),
+            Field("user_population_other", "Other user population"),
+            Field("deployment_channel", "Where is it deployed?", kind="combo", options=("Web app", "Mobile", "Internal Slack/Teams", "API integration", "Other")),
         ],
     ),
     (
         "C. Model + Stack",
         [
-            Field("model_providers", "Model provider(s)", multiline=True, height=44, help_text="OpenAI, Anthropic, Google, Meta/open-source, other"),
-            Field("system_prompts", "Use system prompts?", help_text="Yes / No"),
-            Field("rag_kb", "Use RAG / knowledge base?", help_text="Yes / No"),
-            Field("tools_actions", "Use tools/actions?", help_text="Yes / No"),
-            Field("fine_tuning", "Use fine-tuning?", help_text="Yes / No"),
+            Field("model_providers", "Model provider(s) (select all that apply)", kind="list", options=("OpenAI", "Anthropic", "Google", "Meta / open-source", "Other"), height=54),
+            Field("model_provider_other", "Other model provider"),
+            Field("system_prompts", "Use system prompts?", kind="combo", options=("Yes", "No", "Not sure")),
+            Field("rag_kb", "Use RAG / knowledge base?", kind="combo", options=("Yes", "No", "Not sure")),
+            Field("tools_actions", "Use tools/actions?", kind="combo", options=("Yes", "No", "Not sure")),
+            Field("fine_tuning", "Use fine-tuning?", kind="combo", options=("Yes", "No", "Not sure")),
         ],
     ),
     (
         "D. Risk / Governance Pressure",
         [
-            Field("evaluation_driver", "What is driving this evaluation?", multiline=True, height=54, help_text="Board request, procurement review, partner requirement, compliance readiness, incident/near-miss, pre-launch baseline"),
+            Field("evaluation_driver", "What is driving this evaluation? (select all that apply)", kind="list", options=("Board request", "Customer procurement/security review", "Partner requirement", "Compliance readiness", "Incident/near-miss", "Pre-launch risk baseline", "Other"), height=62),
+            Field("evaluation_driver_other", "Other evaluation driver"),
             Field("deadline", "Any deadlines?", help_text="Date or timeline"),
-            Field("signoff_stakeholders", "Who needs to sign off?", multiline=True, height=44, help_text="CEO/founder, CTO, compliance/risk, legal, procurement/security, board"),
+            Field("signoff_stakeholders", "Who needs to sign off? (select all that apply)", kind="list", options=("CEO/founder", "CTO", "Head of Compliance / Risk", "Legal", "Customer security/procurement", "Board", "Other"), height=62),
+            Field("signoff_other", "Other sign-off stakeholder"),
         ],
     ),
     (
         "E. Access Feasibility",
         [
-            Field("sandbox_access", "Can you provide sandbox/staging access?", help_text="Yes / No / Not sure"),
-            Field("test_accounts", "Can you provide 2-3 controlled test accounts?", help_text="Yes / No / Not sure"),
-            Field("outputs_confidential", "Are outputs confidential?", help_text="Yes / No"),
+            Field("access_method", "Preferred testing method", kind="combo", options=("API key / endpoint", "Staging UI", "Production with controlled accounts", "Transcript export")),
+            Field("sandbox_access", "Can you provide sandbox/staging access?", kind="combo", options=("Yes", "No", "Not sure")),
+            Field("test_accounts", "Can you provide 2-3 controlled test accounts?", kind="combo", options=("Yes", "No", "Not sure")),
+            Field("outputs_confidential", "Are outputs confidential?", kind="combo", options=("Yes", "No")),
         ],
     ),
     (
         "F. Scope Signals",
         [
-            Field("scenario_volume", "Approximate scenario volume", help_text="25 (pilot), 50, 100+"),
-            Field("engagement_mode", "Preferred engagement mode", help_text="Pilot only, Pilot + re-test, Ongoing monitoring"),
+            Field("scenario_volume", "Approximate scenario volume", kind="combo", options=("25 (pilot)", "50", "100+")),
+            Field("engagement_mode", "Preferred engagement mode", kind="combo", options=("Pilot only", "Pilot + re-test after remediation", "Ongoing monitoring")),
         ],
     ),
     (
         "G. Open Text",
         [
-            Field("system_description_concerns", "Briefly describe your system and what you are most concerned about.", multiline=True, height=72),
-            Field("required_red_lines", "List any specific red-lines your organization must enforce.", multiline=True, height=72),
+            Field("system_description_concerns", "Briefly describe your system and what you are most concerned about.", kind="textarea", height=72),
+            Field("required_red_lines", "List any specific red-lines your organization must enforce.", kind="textarea", height=72),
+        ],
+    ),
+    (
+        "H. Data Handling + Security",
+        [
+            Field("outputs_storage_allowed", "Can Ikwe store outputs for analysis?", kind="combo", options=("Yes", "No")),
+            Field("outputs_include_pii", "Can outputs include PII?", kind="combo", options=("Yes", "No", "Not sure")),
+            Field("retention_period", "Required retention period", kind="combo", options=("30 days", "60 days", "90 days", "Custom")),
+            Field("retention_custom", "Custom retention detail"),
+            Field("compliance_constraints", "Compliance constraints (select all that apply)", kind="list", options=("HIPAA / PHI", "PCI", "FERPA", "GDPR", "Minors", "No additional constraints", "Other"), height=70),
+            Field("compliance_other", "Other compliance constraints"),
+        ],
+    ),
+    (
+        "I. Scope + Success Criteria",
+        [
+            Field("pass_criteria", "What does \"pass\" mean for your team?", kind="textarea", height=62),
+            Field("priority_domains", "Priority behavioral domains (select all that apply)", kind="list", options=("Anxiety", "Depression", "Loneliness", "Anger", "Overwhelm", "Grief", "Suicidal Ideation", "Relationship Distress", "Career Trauma", "Financial Stress", "Identity Stress", "Family Conflict", "Crisis Escalation"), height=86),
+            Field("languages_supported", "Languages supported"),
         ],
     ),
 ]
@@ -176,11 +204,13 @@ def header_commands(page_num: int) -> list[str]:
     return [
         "0.88 0.83 0.98 RG",
         text_cmd(LEFT, 766, 16, "ikwe.ai Intake Form"),
-        text_cmd(LEFT, 748, 10, "Third-Party Independent Behavioral Safety Evaluation"),
-        text_cmd(LEFT, 734, 8, "Public fillable form. Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake."),
+        text_cmd(LEFT, 748, 10, "The Behavioral Safety Layer for AI"),
+        text_cmd(LEFT, 734, 8, "Third-party independent behavioral safety validation for human-facing AI systems."),
+        text_cmd(LEFT, 722, 8, "Benchmark scope: 79 scenarios | 13 behavioral domains (vulnerability categories)."),
+        text_cmd(LEFT, 710, 8, "Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake."),
         text_cmd(RIGHT - 68, 766, 9, f"Page {page_num}"),
         "0.75 0.68 0.95 RG",
-        f"{LEFT} 726 m {RIGHT} 726 l S",
+        f"{LEFT} 700 m {RIGHT} 700 l S",
     ]
 
 
@@ -259,7 +289,7 @@ def render() -> tuple[list[list[str]], list[list[tuple[str, str, int, int, int, 
         page_cmds.extend(
             [
                 "0.67 0.61 0.84 rg",
-                text_cmd(LEFT, 38, 8, "ikwe.ai | Independent behavioral safety evaluation | ikwe.ai/intake"),
+                text_cmd(LEFT, 38, 8, "ikwe.ai | The Behavioral Safety Layer for AI | ikwe.ai/intake"),
                 text_cmd(RIGHT - 130, 38, 8, "Visible Healing Inc."),
             ]
         )

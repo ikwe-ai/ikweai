@@ -797,6 +797,141 @@ export default function Contact() {
               </section>
 
               <section>
+                <p className={SECTION_KICKER_CLASS}>H. Data Handling + Security</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className="block text-xs text-foreground-muted mb-2">Can Ikwe store outputs for analysis? *</label>
+                    <div className="flex flex-wrap gap-4">
+                      {yesNo.map((item) => (
+                        <label key={item} className="flex items-center gap-2 text-sm text-foreground-muted">
+                          <input
+                            required
+                            type="radio"
+                            name="outputs_storage_allowed"
+                            value={item}
+                            checked={form.outputs_storage_allowed === item}
+                            onChange={handleChange}
+                            className="accent-lilac"
+                          />
+                          <span>{item}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-xs text-foreground-muted mb-2">Can outputs include PII? *</label>
+                    <div className="flex flex-wrap gap-4">
+                      {yesNoUnsure.map((item) => (
+                        <label key={item} className="flex items-center gap-2 text-sm text-foreground-muted">
+                          <input
+                            required
+                            type="radio"
+                            name="outputs_include_pii"
+                            value={item}
+                            checked={form.outputs_include_pii === item}
+                            onChange={handleChange}
+                            className="accent-lilac"
+                          />
+                          <span>{item}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-xs text-foreground-muted mb-1.5">Retention requirement *</label>
+                    <select required name="retention_period" value={form.retention_period} onChange={handleChange} className="field">
+                      <option value="">Select retention…</option>
+                      {retentionPeriods.map((item) => <option key={item} value={item}>{item}</option>)}
+                    </select>
+                  </div>
+                  {form.retention_period === "Custom" ? (
+                    <div>
+                      <label className="block text-xs text-foreground-muted mb-1.5">Custom retention detail *</label>
+                      <input
+                        required
+                        name="retention_custom"
+                        value={form.retention_custom}
+                        onChange={handleChange}
+                        className="field"
+                        placeholder="Example: 45 days"
+                      />
+                    </div>
+                  ) : null}
+                </div>
+                <p className="text-xs text-foreground-muted mb-2">Compliance constraints (select all that apply) *</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {complianceConstraints.map((item) => (
+                    <label key={item} className="flex items-center gap-2 text-sm text-foreground-muted">
+                      <input
+                        type="checkbox"
+                        checked={compliance.includes(item)}
+                        onChange={(e) => toggleMulti("compliance_constraints", item, e.target.checked)}
+                        className="accent-lilac"
+                      />
+                      <span>{item}</span>
+                    </label>
+                  ))}
+                </div>
+                {compliance.includes("Other") ? (
+                  <div className="mt-3">
+                    <label className="block text-xs text-foreground-muted mb-1.5">Other compliance constraints</label>
+                    <input
+                      name="compliance_other"
+                      value={form.compliance_other}
+                      onChange={handleChange}
+                      className="field"
+                      placeholder="Describe additional restrictions"
+                    />
+                  </div>
+                ) : null}
+              </section>
+
+              <section>
+                <p className={SECTION_KICKER_CLASS}>I. Scope + Success Criteria</p>
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-xs text-foreground-muted mb-1.5">What does \"pass\" mean for your team? *</label>
+                    <textarea
+                      required
+                      name="pass_criteria"
+                      value={form.pass_criteria}
+                      onChange={handleChange}
+                      rows={3}
+                      className="field resize-none"
+                      placeholder="Define pass criteria in operational terms."
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs text-foreground-muted mb-1.5">Languages supported *</label>
+                    <input
+                      required
+                      name="languages_supported"
+                      value={form.languages_supported}
+                      onChange={handleChange}
+                      className="field"
+                      placeholder="Example: English only; English and Spanish"
+                    />
+                  </div>
+                </div>
+                <p className="text-xs text-foreground-muted mt-4 mb-2">
+                  Priority behavioral domains (select all that apply) *
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {BEHAVIORAL_DOMAINS.map((domain) => (
+                    <label key={domain} className="flex items-center gap-2 text-sm text-foreground-muted">
+                      <input
+                        type="checkbox"
+                        checked={priorityDomains.includes(domain)}
+                        onChange={(e) => toggleMulti("priority_domains", domain, e.target.checked)}
+                        className="accent-lilac"
+                      />
+                      <span>{domain}</span>
+                    </label>
+                  ))}
+                </div>
+              </section>
+
+              <section>
                 <p className={SECTION_KICKER_CLASS}>F. Scope Signals</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
@@ -848,16 +983,29 @@ export default function Contact() {
 
               <button
                 type="submit"
-                disabled={state === "submitting" || !userPopulation.length || !modelProvider.length || !driver.length || !signoff.length}
+                disabled={
+                  state === "submitting" ||
+                  !userPopulation.length ||
+                  !modelProvider.length ||
+                  !driver.length ||
+                  !signoff.length ||
+                  !compliance.length ||
+                  !priorityDomains.length
+                }
                 className="w-full rounded bg-lilac px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors disabled:opacity-50"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 {state === "submitting" ? "Submitting..." : "Submit Evaluation Request"}
               </button>
 
-              {!userPopulation.length || !modelProvider.length || !driver.length || !signoff.length ? (
+              {!userPopulation.length ||
+              !modelProvider.length ||
+              !driver.length ||
+              !signoff.length ||
+              !compliance.length ||
+              !priorityDomains.length ? (
                 <p className="text-xs text-foreground-subtle">
-                  Complete all multi-select checkboxes in Sections B, C, D, and sign-off stakeholders before submitting.
+                  Complete all required multi-select checkboxes (population, providers, drivers, sign-off, compliance, and priority domains) before submitting.
                 </p>
               ) : null}
 
