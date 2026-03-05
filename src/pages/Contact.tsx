@@ -190,6 +190,8 @@ export default function Contact() {
   const [modelProvider, setModelProvider] = useState<string[]>([]);
   const [driver, setDriver] = useState<string[]>([]);
   const [signoff, setSignoff] = useState<string[]>([]);
+  const [compliance, setCompliance] = useState<string[]>([]);
+  const [priorityDomains, setPriorityDomains] = useState<string[]>([]);
   const [state, setState] = useState<FormState>("idle");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -206,6 +208,8 @@ export default function Contact() {
     if (key === "model_providers") setModelProvider((prev) => updater(prev));
     if (key === "drivers") setDriver((prev) => updater(prev));
     if (key === "signoffs") setSignoff((prev) => updater(prev));
+    if (key === "compliance_constraints") setCompliance((prev) => updater(prev));
+    if (key === "priority_domains") setPriorityDomains((prev) => updater(prev));
   };
 
   const multiToString = (values: string[]) => values.join("; ");
@@ -222,6 +226,8 @@ export default function Contact() {
         model_providers: multiToString(modelProvider),
         drivers: multiToString(driver),
         signoffs: multiToString(signoff),
+        compliance_constraints: multiToString(compliance),
+        priority_domains: multiToString(priorityDomains),
         submitted_at: new Date().toISOString(),
       });
 
@@ -243,8 +249,12 @@ export default function Contact() {
       ...prev,
       user_facing: prev.user_facing || "Yes",
       deployment_type: prev.deployment_type || "AI assistant / copilot",
+      use_case: prev.use_case || "Enterprise copilot",
       scenario_volume: prev.scenario_volume || "25 (pilot)",
       engagement_model: prev.engagement_model || "Pilot + re-test after remediation",
+      sandbox_access: prev.sandbox_access || "Yes",
+      test_accounts: prev.test_accounts || "Yes",
+      outputs_storage_allowed: prev.outputs_storage_allowed || "Yes",
       system_and_concerns:
         prev.system_and_concerns ||
         "User-facing conversational AI where we need an independent behavioral safety baseline before broader rollout.",
@@ -252,6 +262,12 @@ export default function Contact() {
 
     if (!driver.length) {
       setDriver(["Pre-launch risk baseline", "Customer procurement/security review"]);
+    }
+    if (!priorityDomains.length) {
+      setPriorityDomains(["Anxiety", "Depression", "Crisis Escalation"]);
+    }
+    if (!compliance.length) {
+      setCompliance(["No additional constraints"]);
     }
 
     const node = document.getElementById("application-form");
@@ -267,10 +283,11 @@ export default function Contact() {
       />
       <SummaryHero
         kicker="Independent Evaluation Intake"
-        title="Request Third-Party Independent Behavioral Safety Evaluation"
-        summary="Tell us what you are deploying and what governance pressure you are facing. We will respond with a scoped independent evaluation plan and access checklist. For general inquiries, use contact@ikwe.ai."
+        title="The Behavioral Safety Layer for AI"
+        summary="Third-party independent behavioral safety validation for human-facing AI systems. We evaluate behavior under emotional pressure across 79 scenarios and 13 behavioral domains (vulnerability categories)."
         highlights={[
           "Third-party independent review",
+          "Safety Gate + 8-dimension scoring",
           "CTO and CFO scoping inputs",
           "Procurement-ready intake fields",
           "Response target: 1 business day",
@@ -393,6 +410,8 @@ export default function Contact() {
               <input type="hidden" name="model_providers" value={multiToString(modelProvider)} />
               <input type="hidden" name="drivers" value={multiToString(driver)} />
               <input type="hidden" name="signoffs" value={multiToString(signoff)} />
+              <input type="hidden" name="compliance_constraints" value={multiToString(compliance)} />
+              <input type="hidden" name="priority_domains" value={multiToString(priorityDomains)} />
               <input type="hidden" name="submitted_at" value={new Date().toISOString()} />
 
               <div>
@@ -420,6 +439,29 @@ export default function Contact() {
                   <div>
                     <label className="block text-xs text-foreground-muted mb-1.5">Work email *</label>
                     <input required type="email" name="work_email" value={form.work_email} onChange={handleChange} className="field" placeholder="name@company.com" />
+                  </div>
+                  <div>
+                    <label className="block text-xs text-foreground-muted mb-1.5">Technical contact name *</label>
+                    <input
+                      required
+                      name="technical_contact_name"
+                      value={form.technical_contact_name}
+                      onChange={handleChange}
+                      className="field"
+                      placeholder="Technical owner"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs text-foreground-muted mb-1.5">Technical contact email *</label>
+                    <input
+                      required
+                      type="email"
+                      name="technical_contact_email"
+                      value={form.technical_contact_email}
+                      onChange={handleChange}
+                      className="field"
+                      placeholder="tech@company.com"
+                    />
                   </div>
                   <div>
                     <label className="block text-xs text-foreground-muted mb-1.5">Company size *</label>
