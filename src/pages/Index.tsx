@@ -407,7 +407,7 @@ export default function Home() {
 
         <section className="site-section py-12 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Offering</p>
-          <h2 className="font-display fluid-heading text-foreground mb-5">Audit-ready outputs built for real operating decisions.</h2>
+          <h2 className="font-display fluid-heading text-foreground mb-5">Independent behavioral validation built for critical AI decisions.</h2>
           <article className="card-surface p-6 max-w-5xl mb-6">
             <h3 className="font-display text-2xl text-foreground mb-3">Board-Ready Deliverables</h3>
             <p className="text-sm text-foreground-muted leading-relaxed mb-5 max-w-3xl">
@@ -464,11 +464,35 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="site-section py-12 border-b border-border">
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Result Framework</p>
+          <h2 className="font-display fluid-heading text-foreground mb-5">From evaluation to decision</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 max-w-6xl">
+            {tierFramework.map((tier) => (
+              <article key={tier.title} className="card-surface p-5">
+                <h3 className="font-display text-xl text-foreground mb-2">{tier.title}</h3>
+                <p className="text-sm text-foreground-muted">{tier.note}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="site-section py-12 border-b border-border">
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">How to Engage</p>
+          <h2 className="font-display fluid-heading text-foreground mb-5">Three levels of independent validation</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
+            {engagementLevels.map((level) => (
+              <article key={level} className="card-surface p-5">
+                <p className="text-sm text-foreground-muted">{level}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="site-section py-14 border-b border-border">
-          <h2 className="font-display fluid-heading text-foreground mb-5">Who engages Ikwe</h2>
+          <h2 className="font-display fluid-heading text-foreground mb-5">Who this is for</h2>
           <p className="text-sm text-foreground-muted leading-relaxed measure mb-6 text-pretty">
-            We work with teams deploying conversational AI where a failed response has legal, regulatory, financial, or
-            human consequence.
+            If your system touches human vulnerability, behavioral risk must be measured.
           </p>
           <div className="flex flex-wrap gap-2 mb-6">
             {sectors.map((sector) => (
@@ -480,33 +504,6 @@ export default function Home() {
               </span>
             ))}
           </div>
-          <p className="text-sm text-foreground">
-            If the behavioral failure of your AI system could become a liability (regulatory, legal, or reputational),
-            that is our scope.
-          </p>
-        </section>
-
-        <section className="site-section py-14 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Why risk compounds</p>
-          <p className="text-sm text-foreground-muted leading-relaxed measure mb-8 text-pretty">
-            In vulnerable contexts, one unsafe interaction often increases the probability of the next.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-            {loopSteps.map((step, index) => (
-              <article key={step} className="card-surface p-5 risk-panel">
-                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-danger mb-2">
-                  {index + 1}
-                </p>
-                <p className="text-sm text-foreground-muted leading-relaxed">{step}</p>
-              </article>
-            ))}
-          </div>
-
-          <p className="text-sm text-safe mt-6 font-medium measure text-pretty">
-            This loop is measurable. Ikwe&apos;s evaluation framework identifies it at the pattern level before it reaches
-            incident scale.
-          </p>
         </section>
 
         <section className="site-section py-14">
