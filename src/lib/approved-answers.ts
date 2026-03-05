@@ -169,7 +169,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     text:
       "Public pages show deliverable formats and transparency boundaries. A redacted sample report is available publicly. Full report packages are available through active audit engagement and are distributed through controlled documentation access.",
     links: [
-      { label: "Deliverables", href: "/deliverables" },
+      { label: "Deliverables", href: "/audit#deliverables-previews" },
       { label: "Public Sample Report", href: "/sample-report" },
       { label: "Trust & Confidentiality", href: "/trust" },
     ],
@@ -234,7 +234,7 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
   {
     id: "deliverables",
     title: "Deliverables",
-    href: "/deliverables",
+    href: "/audit#deliverables-previews",
     summary:
       "Deliverables page shows public format previews, documentation boundaries, and how full report packages are requested through engagement.",
     tags: ["deliverables", "reports", "documentation", "outputs"],
@@ -282,7 +282,7 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
   {
     id: "samples",
     title: "Sample Deliverables (Deliverables Page)",
-    href: "/deliverables",
+    href: "/audit#deliverables-previews",
     summary:
       "Deliverables page includes one-page excerpt access, full redacted sample report format, and direct intake CTA.",
     tags: ["samples", "deliverables", "report format", "example output"],
@@ -489,7 +489,7 @@ export function resolveApprovedAnswer(rawQuery: string): AssistantResolution {
       links: [
         { label: "Audit", href: "/audit" },
         { label: "Research", href: "/research" },
-        { label: "Deliverables", href: "/deliverables" },
+        { label: "Deliverables", href: "/audit#deliverables-previews" },
       ],
     };
   }
@@ -540,7 +540,7 @@ export function resolveApprovedAnswer(rawQuery: string): AssistantResolution {
       links: [
         { label: "Research", href: "/research" },
         { label: "Audit Overview", href: "/audit" },
-        { label: "Deliverables", href: "/deliverables" },
+        { label: "Deliverables", href: "/audit#deliverables-previews" },
       ],
     };
   }

@@ -215,7 +215,7 @@ export default function Contact() {
           "Response target: 1 business day",
         ]}
         primaryAction={{ href: "#application-form", label: "Open Intake Form ↓" }}
-        secondaryAction={{ href: "/deliverables", label: "View Sample Deliverables" }}
+        secondaryAction={{ href: "/audit#deliverables-previews", label: "View Sample Outputs" }}
         jumpLinks={[
           { href: "#intake-overview", label: "Intake Overview" },
           { href: "#application-form", label: "Form" },
@@ -234,8 +234,8 @@ export default function Contact() {
                   Thanks. We will respond within 1 business day with next steps and a short scoping call link.
                 </p>
                 <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-                  In the meantime, you can review the sample deliverables format:
-                  <a href="/deliverables" className="link-lilac"> open samples</a>.
+                  In the meantime, you can review the sample output format:
+                  <a href="/audit#deliverables-previews" className="link-lilac"> open samples</a>.
                 </p>
                 <a
                   href="/audit"

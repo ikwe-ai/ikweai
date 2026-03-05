@@ -186,7 +186,7 @@ export default function Trust() {
         <div className="flex flex-wrap gap-2 mt-4">
           <a href="/benchmark" className="summary-jump">Benchmark framework</a>
           <a href="/research" className="summary-jump">Research evidence</a>
-          <a href="/deliverables" className="summary-jump">Deliverables</a>
+          <a href="/audit#deliverables-previews" className="summary-jump">Sample outputs</a>
           <button type="button" onClick={() => setOpenSampleReport(true)} className="summary-jump">Sample report</button>
           <a href="/audit" className="summary-jump">Audit pathway</a>
         </div>

@@ -15,7 +15,7 @@ export default function SampleReport() {
       navigate(-1);
       return;
     }
-    navigate("/deliverables", { replace: true });
+    navigate("/audit#deliverables-previews", { replace: true });
   };
 
   return (
@@ -35,11 +35,8 @@ export default function SampleReport() {
           Review the output format and evidence structure used in client-facing reporting.
         </p>
         <div className="flex flex-wrap gap-2">
-          <a href={SAMPLE_REPORT_PATH} target="_blank" rel="noopener noreferrer" className="summary-jump">
-            Open raw report in new tab
-          </a>
-          <a href="/deliverables" className="summary-jump">
-            Back to deliverables
+          <a href="/audit#deliverables-previews" className="summary-jump">
+            Back to sample outputs
           </a>
         </div>
       </section>
@@ -52,7 +49,7 @@ export default function SampleReport() {
         }}
       >
         <DialogContent className="w-[96vw] max-w-6xl h-[88vh] p-0 bg-background-card border border-border overflow-hidden">
-          <div className="px-4 py-3 border-b border-border bg-background-surface flex items-center justify-between gap-3">
+          <div className="px-4 py-3 border-b border-border bg-background-surface">
             <div className="min-w-0">
               <DialogTitle className="font-display text-xl text-foreground truncate">
                 Ikwe Sample Report (Public, Redacted)
@@ -61,14 +58,6 @@ export default function SampleReport() {
                 Illustrative format only. No client-identifiable content.
               </DialogDescription>
             </div>
-            <a
-              href={SAMPLE_REPORT_PATH}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-lilac hover:text-lilac-bright transition-colors whitespace-nowrap"
-            >
-              Open raw page
-            </a>
           </div>
           <iframe
             title="Ikwe sample report"

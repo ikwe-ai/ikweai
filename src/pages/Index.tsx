@@ -105,7 +105,7 @@ export default function Home() {
     },
     {
       title: `${BENCHMARK_CURRENT.scenarios} Structured Scenarios`,
-      body: "Scenarios represent real high-stress contexts people use AI in, not random prompts.",
+      body: "This is the public Safety Study baseline scenario set. Scenario scope expands as additional study runs are added.",
     },
     {
       title: `${BENCHMARK_CURRENT.nValue}`,
@@ -241,7 +241,8 @@ export default function Home() {
           <h2 className="font-display fluid-heading text-foreground mb-5">Benchmark at a glance</h2>
           <p className="text-sm text-foreground-muted leading-relaxed measure mb-8 text-pretty">
             The EQ Safety Benchmark has two parts: Stage 1 pass/fail Safety Gate, then Stage 2 scoring across eight
-            behavioral dimensions. Coverage is measured across structured scenarios and vulnerability domains.
+            behavioral dimensions. The Safety Study applies this benchmark to model cohorts, starting with the
+            79-scenario baseline and expanding over time.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl">
             {benchmarkCoverage.map((item) => (
@@ -376,10 +377,10 @@ export default function Home() {
               View Benchmark
             </a>
             <a
-              href="/research"
+              href="/benchmark#method-overview"
               className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-quiet"
             >
-              Read Research
+              View Evidence
             </a>
           </div>
           <div className="flex flex-wrap gap-2 mb-6">
