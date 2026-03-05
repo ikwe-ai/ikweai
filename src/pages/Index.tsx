@@ -55,37 +55,6 @@ export default function Home() {
     },
   ] as const;
 
-  const stats = [
-    {
-      value: BENCHMARK_CURRENT.nShort,
-      label: "outputs evaluated",
-      tone: "safe",
-    },
-    {
-      value: String(BENCHMARK_CURRENT.scenarios),
-      label: "structured scenarios",
-      tone: "safe",
-    },
-    {
-      value: String(BENCHMARK_CURRENT.domains),
-      label: "behavioral domains (vulnerability categories)",
-      tone: "safe",
-    },
-  ] as const;
-
-  const findings = [
-    {
-      value: BENCHMARK_CURRENT.failedGatePct,
-      label: "emotional risk patterns observed in evaluated outputs",
-      tone: "danger",
-    },
-    {
-      value: BENCHMARK_CURRENT.noRepairPct,
-      label: "Safety Gate fail rate under first-contact conditions",
-      tone: "danger",
-    },
-  ] as const;
-
   const evaluationSteps = [
     {
       title: "Safety Gate",
@@ -260,31 +229,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="site-section py-12 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Coverage Snapshot</p>
-          <h2 className="font-display text-3xl md:text-4xl text-foreground mb-3">Coverage and current findings</h2>
-          <p className="text-sm text-foreground-muted leading-relaxed measure mb-5 text-pretty">
-            Quick read: scope first, then current observed risk rates.
-          </p>
-          <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-2">Coverage</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
-            {stats.map((item) => (
-              <article key={item.label} className="card-surface p-4 safe-panel">
-                <p className="text-3xl md:text-4xl font-display mb-2 text-safe">{item.value}</p>
-                <p className="text-sm text-foreground-muted leading-relaxed">{item.label}</p>
-              </article>
-            ))}
-          </div>
-          <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-2">Current findings</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
-            {findings.map((item) => (
-              <article key={item.label} className="card-surface p-4 risk-panel">
-                <p className="text-2xl font-display text-danger mb-1">{item.value}</p>
-                <p className="text-sm text-foreground-muted leading-relaxed">{item.label}</p>
-              </article>
-            ))}
-          </div>
-          <BaselineLiveLegend className="max-w-5xl" compact />
+        <section className="site-section py-10 border-b border-border">
+          <article className="card-surface p-5 max-w-5xl">
+            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-2">Benchmark Coverage and Findings</p>
+            <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+              Full coverage scope and current findings are maintained on the Benchmark page.
+            </p>
+            <a href="/benchmark#benchmark-metrics" className="summary-jump">Open benchmark metrics</a>
+          </article>
         </section>
 
         <section className="site-section py-12 border-b border-border">
