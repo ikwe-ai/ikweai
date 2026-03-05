@@ -200,11 +200,12 @@ export default function Audit() {
           </a>
         </div>
         <div className="flex flex-wrap gap-2 mt-4">
-          <a href="#decision-matrix" className="summary-jump">CTO/CFO matrix</a>
+          <a href="#engagement-levels" className="summary-jump">Engagement levels</a>
           <a href="#validation-pathway" className="summary-jump">Full pathway detail</a>
+          <a href="#request-start" className="summary-jump">Request evaluation</a>
         </div>
         <p className="text-xs text-foreground-subtle mt-3">
-          Use the CTO/CFO matrix for fast stage selection, then open detailed scope only where needed.
+          Use engagement levels for fast stage selection, then open detailed scope only where needed.
         </p>
 
         <div className="audit-decision-grid mt-6">
@@ -253,7 +254,7 @@ export default function Audit() {
         subtitle="Pick your stage, confirm scope, and start independent evaluation."
         items={[
           { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
-          { href: "#decision-matrix", label: "CTO/CFO Matrix", tone: "outline" },
+          { href: "#validation-pathway", label: "Validation Pathway", tone: "outline" },
           {
             href: "/forms/ikwe-intake-form-fillable.pdf",
             label: "Download Intake PDF",
@@ -262,91 +263,6 @@ export default function Audit() {
           },
         ]}
       />
-
-      <section id="decision-matrix" className="site-section py-14 border-b border-border audit-section-block">
-        <div className="audit-section-layout">
-          <div className="audit-section-head">
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">Stage Decision Matrix</p>
-            <p className="text-sm text-foreground-muted leading-relaxed measure">
-              Compare commercial value and technical value by stage in one view.
-            </p>
-          </div>
-          <div className="audit-section-body">
-            <div className="lg:hidden grid grid-cols-1 gap-3 mb-4">
-              {stageMatrix.map((row) => (
-                <article key={row.stage} className="card-surface p-5">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">{row.stage}</p>
-                  <dl className="grid gap-2 text-sm text-foreground-muted">
-                    <div>
-                      <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle">CFO</dt>
-                      <dd>{row.cfo}</dd>
-                    </div>
-                    <div>
-                      <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle">CTO</dt>
-                      <dd>{row.cto}</dd>
-                    </div>
-                    <div>
-                      <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle">Output</dt>
-                      <dd>{row.output}</dd>
-                    </div>
-                  </dl>
-                </article>
-              ))}
-            </div>
-            <div className="overflow-x-auto hidden lg:block">
-              <table className="enterprise-table min-w-[940px]">
-                <thead>
-                  <tr>
-                    <th>Stage</th>
-                    <th>CFO Decision Value</th>
-                    <th>CTO Technical Value</th>
-                    <th>Primary Output</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {stageMatrix.map((row) => (
-                    <tr key={row.stage}>
-                      <td className="font-medium text-foreground">{row.stage}</td>
-                      <td>{row.cfo}</td>
-                      <td>{row.cto}</td>
-                      <td>{row.output}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="what-the-audit-is" className="site-section py-14 border-b border-border audit-section-block">
-        <div className="audit-section-layout">
-          <div className="audit-section-head">
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">What the Audit Is</p>
-          </div>
-          <div className="audit-section-body">
-            <article className="card-surface p-6 max-w-5xl">
-              <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
-                The audit gives leadership a defensible answer to one core question: what is our behavioral safety exposure
-                today, and what do we do next?
-              </p>
-              <details className="progressive-details">
-                <summary aria-label="Toggle section details" />
-                <div className="progressive-details-body">
-                  <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
-                    The evaluation applies a binary safety gate and dimension scoring against versioned scenarios across{" "}
-                    {BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories).
-                  </p>
-                  <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
-                    Output is governance-ready evidence showing severity, concentration of risk, and concrete remediation
-                    priorities.
-                  </p>
-                </div>
-              </details>
-            </article>
-          </div>
-        </div>
-      </section>
 
       <section id="validation-pathway" className="site-section py-14 border-b border-border audit-section-block">
         <div className="audit-section-layout">
@@ -439,47 +355,132 @@ export default function Audit() {
         </div>
       </section>
 
-      <section id="what-we-measure" className="site-section py-14 border-b border-border audit-section-block">
+      <section id="deep-dive" className="site-section py-14 border-b border-border audit-section-block">
         <div className="audit-section-layout">
           <div className="audit-section-head">
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">What We Measure</p>
+            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Optional Detail</p>
+            <p className="text-sm text-foreground-muted leading-relaxed measure text-pretty">
+              Decision-critical flow appears above. Use these sections only when your team needs deeper review.
+            </p>
           </div>
           <div className="audit-section-body">
-            <h2 className="font-display fluid-heading text-foreground mb-4">What behavioral safety evaluation actually measures</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl">
-              {measures.map((item, idx) => (
-                <article key={item} className="card-surface p-5 safe-panel">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-safe mb-2">Measure {idx + 1}</p>
-                  <p className="text-sm text-foreground-muted leading-relaxed text-pretty">{item}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="fit" className="site-section py-14 border-b border-border audit-section-block">
-        <div className="audit-section-layout">
-          <div className="audit-section-head">
-            <h2 className="font-display fluid-heading text-foreground mb-6">Is this the right engagement for your organization?</h2>
-          </div>
-          <div className="audit-section-body">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-6xl">
+            <div className="space-y-4 max-w-6xl">
               <article className="card-surface p-6">
-                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">Good fit</p>
-                <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-                  {goodFit.map((item) => (
-                    <li key={item}>• {item}</li>
-                  ))}
-                </ul>
+                <h2 className="font-display text-2xl text-foreground mb-3">What the audit measures</h2>
+                <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+                  The audit gives leadership a defensible answer to one question: what is our current behavioral safety
+                  exposure, and what should we do next?
+                </p>
+                <details className="progressive-details">
+                  <summary
+                    aria-label="Toggle measures"
+                    data-label="Open measurement detail"
+                    data-open-label="Hide measurement detail"
+                  />
+                  <div className="progressive-details-body">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {measures.map((item, idx) => (
+                        <article key={item} className="card-surface p-5 safe-panel">
+                          <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-safe mb-2">Measure {idx + 1}</p>
+                          <p className="text-sm text-foreground-muted leading-relaxed text-pretty">{item}</p>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                </details>
               </article>
+
               <article className="card-surface p-6">
-                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">Not a fit</p>
-                <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-                  {notFit.map((item) => (
-                    <li key={item}>• {item}</li>
-                  ))}
-                </ul>
+                <h2 className="font-display text-2xl text-foreground mb-3">CTO/CFO stage matrix</h2>
+                <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+                  Compare commercial and technical decision value by stage in one view.
+                </p>
+                <details className="progressive-details">
+                  <summary
+                    aria-label="Toggle matrix"
+                    data-label="Open stage matrix"
+                    data-open-label="Hide stage matrix"
+                  />
+                  <div className="progressive-details-body">
+                    <div className="lg:hidden grid grid-cols-1 gap-3">
+                      {stageMatrix.map((row) => (
+                        <article key={row.stage} className="card-surface p-5">
+                          <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">{row.stage}</p>
+                          <dl className="grid gap-2 text-sm text-foreground-muted">
+                            <div>
+                              <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle">CFO</dt>
+                              <dd>{row.cfo}</dd>
+                            </div>
+                            <div>
+                              <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle">CTO</dt>
+                              <dd>{row.cto}</dd>
+                            </div>
+                            <div>
+                              <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-foreground-subtle">Output</dt>
+                              <dd>{row.output}</dd>
+                            </div>
+                          </dl>
+                        </article>
+                      ))}
+                    </div>
+                    <div className="overflow-x-auto hidden lg:block">
+                      <table className="enterprise-table min-w-[940px]">
+                        <thead>
+                          <tr>
+                            <th>Stage</th>
+                            <th>CFO Decision Value</th>
+                            <th>CTO Technical Value</th>
+                            <th>Primary Output</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {stageMatrix.map((row) => (
+                            <tr key={row.stage}>
+                              <td className="font-medium text-foreground">{row.stage}</td>
+                              <td>{row.cfo}</td>
+                              <td>{row.cto}</td>
+                              <td>{row.output}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+              <article className="card-surface p-6">
+                <h2 className="font-display text-2xl text-foreground mb-3">Engagement fit</h2>
+                <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+                  Use this check only if your team is deciding whether to start now or defer.
+                </p>
+                <details className="progressive-details">
+                  <summary
+                    aria-label="Toggle fit guidance"
+                    data-label="Open fit guidance"
+                    data-open-label="Hide fit guidance"
+                  />
+                  <div className="progressive-details-body">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                      <article className="card-surface p-6">
+                        <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">Good fit</p>
+                        <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
+                          {goodFit.map((item) => (
+                            <li key={item}>• {item}</li>
+                          ))}
+                        </ul>
+                      </article>
+                      <article className="card-surface p-6">
+                        <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">Not a fit</p>
+                        <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
+                          {notFit.map((item) => (
+                            <li key={item}>• {item}</li>
+                          ))}
+                        </ul>
+                      </article>
+                    </div>
+                  </div>
+                </details>
               </article>
             </div>
           </div>
