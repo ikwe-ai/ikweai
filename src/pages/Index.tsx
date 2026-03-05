@@ -114,8 +114,8 @@ export default function Home() {
   ] as const;
 
   const exploreLinks = [
-    { href: "/research#benchmark-framework", label: "Benchmark framework" },
-    { href: "/research", label: "Research evidence" },
+    { href: "/benchmark", label: "Benchmark framework" },
+    { href: "/benchmark#method-overview", label: "Benchmark evidence" },
     { href: "/audit#deliverables-previews", label: "Sample outputs" },
     { href: "/audit", label: "Audit pathway" },
   ] as const;
@@ -149,7 +149,7 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
-                  to="/research#benchmark-framework"
+                  to="/benchmark"
                   className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
                 >
                   See the Benchmark
@@ -231,7 +231,7 @@ export default function Home() {
           subtitle="Review evidence quickly, then request a scoped independent evaluation."
           items={[
             { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
-            { href: "/research#benchmark-framework", label: "View Benchmark", tone: "outline" },
+            { href: "/benchmark", label: "View Benchmark", tone: "outline" },
             { href: "/audit#deliverables-previews", label: "Sample Outputs", tone: "quiet" },
           ]}
         />
@@ -370,7 +370,7 @@ export default function Home() {
               Request Evaluation
             </a>
             <a
-              href="/research#benchmark-framework"
+              href="/benchmark"
               className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
             >
               View Benchmark
