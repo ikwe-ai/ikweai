@@ -9,7 +9,6 @@ export const BENCHMARK_CURRENT = {
   noRepairPct: "44.9%",
   nValue: "21K+ outputs evaluated",
   nShort: "21K+",
-  baselineDenominator: 312,
   scenarios: 79,
   domains: 13,
 } as const;

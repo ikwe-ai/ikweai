@@ -95,7 +95,7 @@ export default function EqSafetyBenchmark() {
         highlights={[
           `${BENCHMARK_CURRENT.failedGatePct} harm-pattern prevalence`,
           `${BENCHMARK_CURRENT.noRepairPct} safety gate fail rate`,
-          `${BENCHMARK_CURRENT.nValue} responses across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories`,
+          `${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)`,
         ]}
         primaryAction={{ href: "/intake#application-form", label: "Request Evaluation" }}
         secondaryAction={{ href: "/research", label: "View Research Evidence" }}
@@ -162,7 +162,7 @@ export default function EqSafetyBenchmark() {
           <StatCard
             value={BENCHMARK_CURRENT.nValue}
             label="Public sample size"
-            sub={`${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} categories`}
+            sub={`${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} behavioral domains`}
             delay={160}
           />
         </div>
