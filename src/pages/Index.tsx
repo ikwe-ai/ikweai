@@ -148,25 +148,6 @@ export default function Home() {
     "Stress Condition Performance",
   ] as const;
 
-  const safetyGateOutcomes = [
-    { status: "Fail", note: "Unacceptable risk present", tone: "danger" },
-    { status: "Conditional Pass", note: "Issues require mitigation", tone: "lilac" },
-    { status: "Pass", note: "No immediate failures detected", tone: "safe" },
-  ] as const;
-
-  const tierFramework = [
-    { title: "Tier I: Stable Behavioral Integrity", note: "Launch with confidence" },
-    { title: "Tier II: Moderate Behavioral Risk", note: "Launch with mitigations" },
-    { title: "Tier III: Escalation Instability", note: "Remediate before launch" },
-    { title: "Tier IV: High Vulnerability Exposure", note: "Do not launch" },
-  ] as const;
-
-  const engagementLevels = [
-    "Level I: Baseline Gate (pre-deployment)",
-    "Level II: Full Benchmark (board-level governance)",
-    "Level III: Ongoing Governance (live systems at scale)",
-  ] as const;
-
   const exploreLinks = [
     { href: "/benchmark", label: "Benchmark framework" },
     { href: "/benchmark#method-overview", label: "Benchmark evidence" },
@@ -374,35 +355,22 @@ export default function Home() {
               ))}
             </div>
           </article>
-        </section>
-
-        <section className="site-section py-12 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Safety Gate</p>
-          <h2 className="font-display fluid-heading text-foreground mb-5">
-            The first question we answer: does your system pass the safety gate under stress?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mb-5">
-            {safetyGateOutcomes.map((outcome) => (
-              <article
-                key={outcome.status}
-                className={`card-surface p-5 ${
-                  outcome.tone === "danger" ? "risk-panel" : outcome.tone === "safe" ? "safe-panel" : "border-lilac"
-                }`}
-              >
-                <h3
-                  className={`font-display text-2xl mb-2 ${
-                    outcome.tone === "danger" ? "text-danger" : outcome.tone === "safe" ? "text-safe" : "text-lilac"
-                  }`}
-                >
-                  {outcome.status}
-                </h3>
-                <p className="text-sm text-foreground-muted">{outcome.note}</p>
-              </article>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mt-5">
+            <article className="card-surface p-5">
+              <h3 className="font-display text-xl text-foreground mb-2">Safety Gate outcomes and tier framework</h3>
+              <p className="text-sm text-foreground-muted mb-3">
+                Full pass/fail outcome definitions and Tier I-IV decision mapping are on the Benchmark page.
+              </p>
+              <a href="/benchmark#framework-structure" className="summary-jump">Open benchmark detail</a>
+            </article>
+            <article className="card-surface p-5">
+              <h3 className="font-display text-xl text-foreground mb-2">Engagement levels and package path</h3>
+              <p className="text-sm text-foreground-muted mb-3">
+                Baseline Gate, Full Benchmark, and Ongoing Governance levels are organized on the Audit pathway page.
+              </p>
+              <a href="/audit#validation-pathway" className="summary-jump">Open audit pathway</a>
+            </article>
           </div>
-          <p className="text-sm text-foreground-muted leading-relaxed measure">
-            Before dimensional scoring, we determine whether harmful behavioral patterns appear at all.
-          </p>
         </section>
 
         <section className="site-section py-12 border-b border-border">
@@ -459,31 +427,6 @@ export default function Home() {
                 </p>
                 <h3 className="font-display text-xl text-foreground mb-3">{step.title}</h3>
                 <p className="text-sm text-foreground-muted leading-relaxed">{step.body}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="site-section py-12 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Result Framework</p>
-          <h2 className="font-display fluid-heading text-foreground mb-5">From evaluation to decision</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 max-w-6xl">
-            {tierFramework.map((tier) => (
-              <article key={tier.title} className="card-surface p-5">
-                <h3 className="font-display text-xl text-foreground mb-2">{tier.title}</h3>
-                <p className="text-sm text-foreground-muted">{tier.note}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="site-section py-12 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">How to Engage</p>
-          <h2 className="font-display fluid-heading text-foreground mb-5">Three levels of independent validation</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
-            {engagementLevels.map((level) => (
-              <article key={level} className="card-surface p-5">
-                <p className="text-sm text-foreground-muted">{level}</p>
               </article>
             ))}
           </div>
