@@ -292,16 +292,6 @@ export default function Home() {
           </div>
         </section>
 
-        <ActionDock
-          title="Next Step"
-          subtitle="Request evaluation, review benchmark depth, or open sample outputs."
-          items={[
-            { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
-            { href: "/benchmark", label: "View Benchmark", tone: "outline" },
-            { href: "/audit#deliverables-previews", label: "Sample Outputs", tone: "quiet" },
-          ]}
-        />
-
         <section className="site-section py-12 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Steps</p>
           <h2 className="font-display fluid-heading text-foreground mb-5">How it works</h2>
@@ -330,6 +320,16 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        <ActionDock
+          title="Next Step"
+          subtitle="Request evaluation, review benchmark depth, or open sample outputs."
+          items={[
+            { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
+            { href: "/benchmark", label: "View Benchmark", tone: "outline" },
+            { href: "/audit#deliverables-previews", label: "Sample Outputs", tone: "quiet" },
+          ]}
+        />
 
         <section className="site-section py-14 border-b border-border">
           <h2 className="font-display fluid-heading text-foreground mb-5">Who this is for</h2>
