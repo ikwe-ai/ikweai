@@ -2,7 +2,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, Navigate, useLocation, useParams } from "react-router-dom";
 
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -38,12 +39,32 @@ const LegacyCaseStudyRedirect = () => {
   return <Navigate to={slug ? `/archive/research/case-studies/${slug}` : "/archive/research/case-studies"} replace />;
 };
 
+const ScrollManager = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = decodeURIComponent(location.hash.slice(1));
+      const target = document.getElementById(id);
+      if (target) {
+        requestAnimationFrame(() => target.scrollIntoView({ block: "start" }));
+      }
+      return;
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [location.pathname, location.hash]);
+
+  return null;
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollManager />
         <Nav />
         <Routes>
           <Route path="/" element={<Index />} />
