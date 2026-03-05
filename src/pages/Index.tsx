@@ -271,36 +271,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="site-section py-10 border-b border-border">
-          <article className="card-surface p-5 max-w-5xl">
-            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-2">Benchmark Coverage and Findings</p>
-            <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-              Full coverage scope and current findings are maintained on the Benchmark page.
-            </p>
-            <a href="/benchmark#benchmark-metrics" className="summary-jump">Open benchmark metrics</a>
-          </article>
-        </section>
-
-        <section className="site-section py-12 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Trajectory of Harm and Risk</p>
-          <h2 className="font-display fluid-heading text-foreground mb-4">Most failures are drift across multiple turns.</h2>
-          <p className="text-sm text-foreground-muted leading-relaxed measure mb-6 text-pretty">
-            This is the progression we measure: initial instability, amplification, and compounding risk before visible
-            incident.
-          </p>
-          <DriftCurve className="max-w-6xl" />
-        </section>
-
-        <ActionDock
-          title="Next Step"
-          subtitle="Review evidence quickly, then request a scoped independent evaluation."
-          items={[
-            { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
-            { href: "/benchmark", label: "View Benchmark", tone: "outline" },
-            { href: "/audit#deliverables-previews", label: "Sample Outputs", tone: "quiet" },
-          ]}
-        />
-
         <section className="site-section py-12 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Offering</p>
           <h2 className="font-display fluid-heading text-foreground mb-5">Independent behavioral validation built for critical AI decisions.</h2>
@@ -330,6 +300,36 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        <section className="site-section py-10 border-b border-border">
+          <article className="card-surface p-5 max-w-5xl">
+            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-2">Benchmark Coverage and Findings</p>
+            <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+              Full coverage scope and current findings are maintained on the Benchmark page.
+            </p>
+            <a href="/benchmark#benchmark-metrics" className="summary-jump">Open benchmark metrics</a>
+          </article>
+        </section>
+
+        <section className="site-section py-12 border-b border-border">
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Trajectory of Harm and Risk</p>
+          <h2 className="font-display fluid-heading text-foreground mb-4">Most failures are drift across multiple turns.</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed measure mb-6 text-pretty">
+            This is the progression we measure: initial instability, amplification, and compounding risk before visible
+            incident.
+          </p>
+          <DriftCurve className="max-w-6xl" />
+        </section>
+
+        <ActionDock
+          title="Next Step"
+          subtitle="Review evidence quickly, then request a scoped independent evaluation."
+          items={[
+            { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
+            { href: "/benchmark", label: "View Benchmark", tone: "outline" },
+            { href: "/audit#deliverables-previews", label: "Sample Outputs", tone: "quiet" },
+          ]}
+        />
 
         <section className="site-section py-12 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Steps</p>
