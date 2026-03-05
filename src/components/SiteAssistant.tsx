@@ -231,7 +231,7 @@ export default function SiteAssistant() {
         "Ikwe walkthrough (public facts):",
         `• ${BENCHMARK_CURRENT.failedGatePct} harm-pattern prevalence`,
         `• ${BENCHMARK_CURRENT.noRepairPct} safety gate fail rate`,
-        `• Published rates are tied to ${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} categories`,
+        `• Published rates are tied to ${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)`,
         "• Additional documentation is available on request",
         "",
         "Choose any step below to continue the presentation.",
