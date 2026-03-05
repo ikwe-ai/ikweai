@@ -92,7 +92,7 @@ const normalizeGuideDetail = (detail?: AssistantGuideDetail): GuideContext => {
 
 const sectionHint = (label: string) => {
   const normalized = label.toLowerCase();
-  if (normalized.includes("scope") || normalized.includes("n and")) return "Defines the benchmark sample size and coverage.";
+  if (normalized.includes("scope") || normalized.includes("n and")) return "Defines benchmark scope and coverage.";
   if (normalized.includes("phase 1")) return "Shows first-contact harm outcomes from the Safety Gate.";
   if (normalized.includes("phase 2")) return "Shows post-harm repair behavior outcomes.";
   if (normalized.includes("dimension")) return "Summarizes aggregate scoring across eight behavioral dimensions.";
