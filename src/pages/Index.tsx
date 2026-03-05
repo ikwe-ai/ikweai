@@ -191,42 +191,35 @@ export default function Home() {
         />
 
         <section className="site-section py-14 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Risk Context</p>
-          <h2 className="font-display fluid-heading text-foreground mb-5">
-            Recognition is not safety. Risk appears in behavior over time.
-          </h2>
-          <div className="measure space-y-4">
-            <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
-              A model can sound empathetic and still escalate harm, suppress autonomy, or fail to route crisis users.
-              Functional QA usually does not catch this reliably.
-            </p>
-            <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
-              For organizations, the business impact is direct: governance exposure, legal risk, delayed procurement,
-              and remediation costs after deployment.
-            </p>
-            <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
-              Third-party evaluation closes that gap before incidents force the decision under pressure.
-            </p>
-            <p className="text-base text-foreground">Recognition is not safety. Measurement is.</p>
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">At A Glance</p>
+          <h2 className="font-display fluid-heading text-foreground mb-5">What decision-makers need in one view.</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed measure mb-8 text-pretty">
+            AI is tested for intelligence and utility. It is rarely tested for behavior under emotional pressure.
+            Ikwe measures that gap with independent evidence.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+            <article className="card-surface p-5">
+              <h3 className="font-display text-xl text-foreground mb-2">What we test</h3>
+              <p className="text-sm text-foreground-muted">Behavior in vulnerable user states across structured scenarios.</p>
+            </article>
+            <article className="card-surface p-5">
+              <h3 className="font-display text-xl text-foreground mb-2">What you receive</h3>
+              <p className="text-sm text-foreground-muted">Board-ready evidence, severity mapping, and remediation priorities.</p>
+            </article>
+            <article className="card-surface p-5">
+              <h3 className="font-display text-xl text-foreground mb-2">Who uses it</h3>
+              <p className="text-sm text-foreground-muted">CTO, legal, compliance, and board governance functions.</p>
+            </article>
+            <article className="card-surface p-5">
+              <h3 className="font-display text-xl text-foreground mb-2">Why now</h3>
+              <p className="text-sm text-foreground-muted">Behavioral drift compounds before incidents become visible.</p>
+            </article>
           </div>
         </section>
 
         <section className="site-section py-14 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">What Ikwe Delivers</p>
-          <h2 className="font-display fluid-heading text-foreground mb-5">Independent behavioral validation built for decision-making.</h2>
-          <div className="measure space-y-4 mb-8">
-            <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
-              Ikwe evaluates your deployed system against high-risk interaction patterns and documents measurable
-              failure modes.
-            </p>
-            <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
-              You receive a versioned evidence package that supports board decisions, procurement review, legal
-              diligence, and remediation planning.
-            </p>
-            <p className="text-sm text-foreground-muted leading-relaxed text-pretty">
-              We have no commercial affiliation with AI developers evaluated.
-            </p>
-          </div>
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Who trusts Ikwe outputs</p>
+          <h2 className="font-display fluid-heading text-foreground mb-5">Independent validation built for operating decisions.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
             {solutionPillars.map((pillar) => (
               <article key={pillar.title} className="card-surface p-5">
