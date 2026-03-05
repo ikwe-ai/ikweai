@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm">
               <Link to="/" className="text-foreground-muted hover:text-foreground transition-colors">Home</Link>
               <Link to="/benchmark" className="text-foreground-muted hover:text-foreground transition-colors">Benchmark</Link>
-              <Link to="/research" className="text-foreground-muted hover:text-foreground transition-colors">Research</Link>
+              <Link to="/archive/research/writings" className="text-foreground-muted hover:text-foreground transition-colors">Writings</Link>
               <Link to="/audit#deliverables-previews" className="text-foreground-muted hover:text-foreground transition-colors">Sample Outputs</Link>
               <Link to="/audit" className="text-foreground-muted hover:text-foreground transition-colors">Audit &amp; Validation</Link>
               <Link to="/trust" className="text-foreground-muted hover:text-foreground transition-colors">Trust</Link>
@@ -48,8 +48,8 @@ export default function Footer() {
               <Link to="/benchmark" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Benchmark Framework
               </Link>
-              <Link to="/research" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
-                Research Overview
+              <Link to="/archive/research/writings" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                Writings
               </Link>
               <Link to="/audit#deliverables-previews" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Sample Outputs &amp; Transparency
