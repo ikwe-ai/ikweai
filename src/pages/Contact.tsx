@@ -3,6 +3,7 @@ import PageShell from "@/components/PageShell";
 import { CheckCircle2 } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
+import { BEHAVIORAL_DOMAINS } from "@/content/benchmark-structure";
 
 type FormState = "idle" | "submitting" | "done" | "error";
 
@@ -11,23 +12,37 @@ type IntakeForm = {
   role_title: string;
   company: string;
   work_email: string;
+  technical_contact_name: string;
+  technical_contact_email: string;
   company_size: string;
   industry: string;
   region: string;
+  use_case: string;
   deployment_type: string;
   user_facing: string;
   deployment_channel: string;
+  user_population_other: string;
+  model_provider_other: string;
   system_prompts: string;
   rag: string;
   tools_actions: string;
   fine_tuning: string;
+  evaluation_driver_other: string;
   deadline: string;
   signoff_other: string;
+  access_method: string;
   sandbox_access: string;
   test_accounts: string;
   outputs_confidential: string;
+  outputs_storage_allowed: string;
+  outputs_include_pii: string;
+  retention_period: string;
+  retention_custom: string;
+  compliance_other: string;
   scenario_volume: string;
   engagement_model: string;
+  pass_criteria: string;
+  languages_supported: string;
   system_and_concerns: string;
   red_lines: string;
 };
@@ -61,6 +76,16 @@ const deploymentTypes = [
   "Autonomous agent (tool-using)",
   "Other",
 ] as const;
+const useCases = [
+  "Companion AI",
+  "Mental health technology",
+  "Healthcare AI",
+  "Fintech assistant",
+  "Customer support AI",
+  "Education AI",
+  "Enterprise copilot",
+  "Other",
+] as const;
 const yesNoUnsure = ["Yes", "No", "Not sure"] as const;
 const yesNo = ["Yes", "No"] as const;
 const userPopulations = [
@@ -90,6 +115,22 @@ const signoffs = [
   "Board",
   "Other",
 ] as const;
+const accessMethods = [
+  "API key / endpoint",
+  "Staging UI",
+  "Production with controlled accounts",
+  "Transcript export",
+] as const;
+const retentionPeriods = ["30 days", "60 days", "90 days", "Custom"] as const;
+const complianceConstraints = [
+  "HIPAA / PHI",
+  "PCI",
+  "FERPA",
+  "GDPR",
+  "Minors",
+  "No additional constraints",
+  "Other",
+] as const;
 const scenarioVolumes = ["25 (pilot)", "50", "100+"] as const;
 const engagementModels = ["Pilot only", "Pilot + re-test after remediation", "Ongoing monitoring"] as const;
 
@@ -98,30 +139,50 @@ const initialForm: IntakeForm = {
   role_title: "",
   company: "",
   work_email: "",
+  technical_contact_name: "",
+  technical_contact_email: "",
   company_size: "",
   industry: "",
   region: "",
+  use_case: "",
   deployment_type: "",
   user_facing: "",
   deployment_channel: "",
+  user_population_other: "",
+  model_provider_other: "",
   system_prompts: "",
   rag: "",
   tools_actions: "",
   fine_tuning: "",
+  evaluation_driver_other: "",
   deadline: "",
   signoff_other: "",
+  access_method: "",
   sandbox_access: "",
   test_accounts: "",
   outputs_confidential: "",
+  outputs_storage_allowed: "",
+  outputs_include_pii: "",
+  retention_period: "",
+  retention_custom: "",
+  compliance_other: "",
   scenario_volume: "",
   engagement_model: "",
+  pass_criteria: "",
+  languages_supported: "",
   system_and_concerns: "",
   red_lines: "",
 };
 
 const SECTION_KICKER_CLASS = "font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-3";
 
-type MultiKey = "user_population" | "model_providers" | "drivers" | "signoffs";
+type MultiKey =
+  | "user_population"
+  | "model_providers"
+  | "drivers"
+  | "signoffs"
+  | "compliance_constraints"
+  | "priority_domains";
 
 export default function Contact() {
   const [form, setForm] = useState<IntakeForm>(initialForm);
