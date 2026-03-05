@@ -26,7 +26,7 @@ export default function Research() {
   const gatePassPct = Math.max(0, +(100 - gateFailPct).toFixed(1));
 
   const benchmarkSummaryRows = [
-    { label: "Harm-pattern prevalence", value: ssfAnyPct },
+    { label: "Emotional risk pattern prevalence", value: ssfAnyPct },
     { label: "Safety gate fail rate", value: gateFailPct },
   ] as const;
 
@@ -75,11 +75,11 @@ export default function Research() {
           </div>
           <aside className="site-hero-rail card-surface p-5">
             <div className="summary-headline-strip">
-              <div className="summary-headline-item">{BENCHMARK_CURRENT.nValue} for published rates</div>
+              <div className="summary-headline-item">{BENCHMARK_CURRENT.nValue}</div>
               <div className="summary-headline-item">
-                {BENCHMARK_CURRENT.scenarios} structured scenarios across {BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)
+                {BENCHMARK_CURRENT.scenarios} scenarios across {BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)
               </div>
-              <div className="summary-headline-item">Published framework: prevalence + safety gate + quality scoring</div>
+              <div className="summary-headline-item">Stage 1 Safety Gate + Stage 2 conditional behavioral scoring</div>
             </div>
             <BaselineLiveLegend className="mt-4" compact />
           </aside>
@@ -101,7 +101,7 @@ export default function Research() {
             />
             <div className="progressive-details-body">
               <p className="text-sm text-foreground-muted leading-relaxed">
-                {BENCHMARK_CURRENT.failedGatePct} of responses showed at least one harmful behavior pattern.
+                {BENCHMARK_CURRENT.failedGatePct} of responses showed at least one emotional risk pattern.
                 This metric captures prevalence, not binary gate failure.
               </p>
               <p className="text-sm text-foreground-muted leading-relaxed">
@@ -122,7 +122,7 @@ export default function Research() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4 max-w-5xl">
           <article className="card-surface p-4">
             <p className="font-display text-3xl text-danger mb-1">{BENCHMARK_CURRENT.failedGatePct}</p>
-            <p className="text-xs text-foreground-muted">Harm-pattern prevalence</p>
+            <p className="text-xs text-foreground-muted">Emotional risk pattern prevalence</p>
           </article>
           <article className="card-surface p-4">
             <p className="font-display text-3xl text-danger mb-1">{BENCHMARK_CURRENT.noRepairPct}</p>
@@ -130,11 +130,11 @@ export default function Research() {
           </article>
           <article className="card-surface p-4">
             <p className="font-display text-3xl text-foreground mb-1">{BENCHMARK_CURRENT.nShort}</p>
-            <p className="text-xs text-foreground-muted">Public sample size</p>
+            <p className="text-xs text-foreground-muted">Outputs evaluated</p>
           </article>
           <article className="card-surface p-4">
             <p className="font-display text-3xl text-foreground mb-1">{BENCHMARK_CURRENT.scenarios}</p>
-            <p className="text-xs text-foreground-muted">Scenarios in {BENCHMARK_CURRENT.domains} behavioral domains</p>
+            <p className="text-xs text-foreground-muted">Scenarios across {BENCHMARK_CURRENT.domains} behavioral domains</p>
           </article>
         </div>
         <BaselineLiveLegend className="mb-4 max-w-5xl" />
@@ -174,7 +174,8 @@ export default function Research() {
             />
             <div className="progressive-details-body">
               <p className="text-sm text-foreground-muted leading-relaxed">
-                The public benchmark evaluates behavior across vulnerable-state categories including {vulnerableStates.join(", ")}.
+                The public benchmark evaluates behavior across {BENCHMARK_CURRENT.domains} behavioral domains
+                (vulnerability categories), including {vulnerableStates.join(", ")}.
                 PASS runs are quality-scored across eight public dimensions.
               </p>
               <p className="text-sm text-foreground-muted leading-relaxed">

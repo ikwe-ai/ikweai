@@ -93,7 +93,7 @@ export default function EqSafetyBenchmark() {
         title="EQ Safety Benchmark"
         summary="Use this framework to understand how behavioral safety risk is evaluated and how your organization will be assessed during independent review."
         highlights={[
-          `${BENCHMARK_CURRENT.failedGatePct} harm-pattern prevalence`,
+          `${BENCHMARK_CURRENT.failedGatePct} emotional risk pattern prevalence`,
           `${BENCHMARK_CURRENT.noRepairPct} safety gate fail rate`,
           `${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)`,
         ]}
@@ -150,8 +150,8 @@ export default function EqSafetyBenchmark() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <StatCard
             value={BENCHMARK_CURRENT.failedGatePct}
-            label="Harm-pattern prevalence"
-            sub="Contains at least one harmful behavior pattern"
+            label="Emotional risk pattern prevalence"
+            sub="Contains at least one emotional risk pattern"
           />
           <StatCard
             value={BENCHMARK_CURRENT.noRepairPct}
@@ -161,7 +161,7 @@ export default function EqSafetyBenchmark() {
           />
           <StatCard
             value={BENCHMARK_CURRENT.nValue}
-            label="Public sample size"
+            label="Outputs evaluated"
             sub={`${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} behavioral domains`}
             delay={160}
           />
@@ -174,17 +174,17 @@ export default function EqSafetyBenchmark() {
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Framework Structure</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
           <article className="card-surface p-5">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Layer 1</p>
-            <h2 className="font-display text-xl text-foreground mb-2">Safety Gate</h2>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Stage 1</p>
+            <h2 className="font-display text-xl text-foreground mb-2">Safety Gate (Pass/Fail)</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Immediate binary decision for severe behavioral failures that require remediation attention.
+              Did the response avoid introducing emotional risk at first contact.
             </p>
           </article>
           <article className="card-surface p-5">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Layer 2</p>
-            <h2 className="font-display text-xl text-foreground mb-2">Dimensional Scoring</h2>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Stage 2</p>
+            <h2 className="font-display text-xl text-foreground mb-2">Behavioral Scoring (Conditional)</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Weighted risk profiling across eight dimensions to prioritize what to fix first.
+              Applied only to Stage 1 PASS responses to identify where behavior drifts across eight dimensions.
             </p>
           </article>
           <article className="card-surface p-5">
@@ -220,7 +220,7 @@ export default function EqSafetyBenchmark() {
             <div className="space-y-4">
               <div>
                 <div className="flex items-center justify-between gap-3 mb-1.5">
-                  <p className="text-sm text-foreground-muted">Harm-pattern prevalence</p>
+                  <p className="text-sm text-foreground-muted">Emotional risk pattern prevalence</p>
                   <p className="font-mono text-xs text-foreground">{BENCHMARK_CURRENT.failedGatePct}</p>
                 </div>
                 <div className="h-2 rounded-full bg-background-surface">
@@ -256,7 +256,7 @@ export default function EqSafetyBenchmark() {
             </figcaption>
             <dl className="grid gap-3 text-sm text-foreground-muted">
               <div className="grid grid-cols-[160px_1fr] gap-3">
-                <dt className="font-mono text-[11px] uppercase tracking-[0.09em] text-foreground-subtle">Responses</dt>
+                <dt className="font-mono text-[11px] uppercase tracking-[0.09em] text-foreground-subtle">Outputs</dt>
                 <dd>{BENCHMARK_CURRENT.nValue}</dd>
               </div>
               <div className="grid grid-cols-[160px_1fr] gap-3">
@@ -264,7 +264,7 @@ export default function EqSafetyBenchmark() {
                 <dd>{BENCHMARK_CURRENT.scenarios}</dd>
               </div>
               <div className="grid grid-cols-[160px_1fr] gap-3">
-                <dt className="font-mono text-[11px] uppercase tracking-[0.09em] text-foreground-subtle">Categories</dt>
+                <dt className="font-mono text-[11px] uppercase tracking-[0.09em] text-foreground-subtle">Behavioral domains</dt>
                 <dd>{BENCHMARK_CURRENT.domains}</dd>
               </div>
               <div className="grid grid-cols-[160px_1fr] gap-3">

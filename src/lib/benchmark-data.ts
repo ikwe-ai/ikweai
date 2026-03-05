@@ -1,3 +1,5 @@
+import { PUBLIC_STATS } from "@/content/stats";
+
 export const BENCHMARK_CURRENT = {
   version: "v2.0",
   released: "December 2025",
@@ -7,10 +9,10 @@ export const BENCHMARK_CURRENT = {
     "Published rates reflect the current public benchmark release. Additional documentation is available on request.",
   failedGatePct: "54.7%",
   noRepairPct: "44.9%",
-  nValue: "21K+ outputs evaluated",
-  nShort: "21K+",
-  scenarios: 79,
-  domains: 13,
+  nValue: PUBLIC_STATS.outputsEvaluatedLabel,
+  nShort: PUBLIC_STATS.outputsEvaluatedDisplay,
+  scenarios: PUBLIC_STATS.scenarios,
+  domains: PUBLIC_STATS.behavioralDomains,
 } as const;
 
 export const BENCHMARK_PUBLIC_LOG = [
@@ -18,7 +20,7 @@ export const BENCHMARK_PUBLIC_LOG = [
     date: "February 20, 2026",
     label: "Public snapshot update",
     summary:
-      "Published benchmark rates remained unchanged: 54.7% harm-pattern prevalence and 44.9% safety gate fail rate. Public dataset total is 21K+ outputs evaluated across 79 scenarios in 13 behavioral domains (vulnerability categories).",
+      `Published benchmark rates remained unchanged: 54.7% emotional risk pattern prevalence and 44.9% safety gate fail rate. Public dataset total is ${PUBLIC_STATS.outputsEvaluatedLabel} across ${PUBLIC_STATS.scenarios} scenarios in ${PUBLIC_STATS.behavioralDomainsLabel}.`,
   },
   {
     date: "December 2025",
@@ -35,7 +37,7 @@ export const BENCHMARK_LOG_REQUEST = {
 
 export const BENCHMARK_COPY = {
   statsContext:
-    "Published rates are reported across 79 scenarios in 13 behavioral domains (vulnerability categories). Dataset total: 21K+ outputs evaluated.",
+    `Published rates are reported across ${PUBLIC_STATS.scenarios} scenarios in ${PUBLIC_STATS.behavioralDomainsLabel}. Dataset total: ${PUBLIC_STATS.outputsEvaluatedLabel}.`,
   snapshotLine:
-    "Current snapshot: 54.7% harm-pattern prevalence; 44.9% safety gate fail rate; 21K+ outputs evaluated. Additional documentation is available on request.",
+    `Current snapshot: 54.7% emotional risk pattern prevalence; 44.9% safety gate fail rate; ${PUBLIC_STATS.outputsEvaluatedLabel}. Additional documentation is available on request.`,
 } as const;

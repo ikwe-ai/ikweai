@@ -265,7 +265,7 @@ export default function EmotionalAiHighTrustEnvironments() {
           </div>
           <div className="px-6 py-4 bg-lilac/[0.12] border-t-2 border-b-2 border-lilac/45">
             <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-lilac mb-1">Independent Layer — Ikwe.ai</p>
-            <p className="text-sm text-foreground-muted">Independent Behavioral Safety Validation</p>
+            <p className="text-sm text-foreground-muted">The Behavioral Safety Layer for AI</p>
           </div>
           <div className="px-6 py-1 bg-background-surface border-b border-lilac/10 flex justify-center">
             <span className="text-lilac-bright">↑</span>
