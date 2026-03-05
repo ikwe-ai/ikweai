@@ -289,7 +289,7 @@ export default function Audit() {
                 <div className="progressive-details-body">
                   <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
                     The evaluation applies a binary safety gate and dimension scoring against versioned scenarios across{" "}
-                    {BENCHMARK_CURRENT.domains} categories.
+                    {BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories).
                   </p>
                   <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
                     Output is governance-ready evidence showing severity, concentration of risk, and concrete remediation
