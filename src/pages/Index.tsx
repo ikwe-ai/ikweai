@@ -6,6 +6,7 @@ import ActionDock from "@/components/ActionDock";
 import BaselineLiveLegend from "@/components/BaselineLiveLegend";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 import HowItWorksFlow from "@/components/visuals/HowItWorksFlow";
+import DriftCurve from "@/components/visuals/DriftCurve";
 
 export default function Home() {
   const solutionPillars = [
@@ -224,6 +225,15 @@ export default function Home() {
             ))}
           </div>
           <BaselineLiveLegend className="max-w-5xl" />
+        </section>
+
+        <section className="site-section py-12 border-b border-border">
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Trajectory of Harm and Risk</p>
+          <h2 className="font-display fluid-heading text-foreground mb-4">AI failure is often trajectory, not single-event error.</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed measure mb-6 text-pretty">
+            This is the progression we measure: initial instability, amplification, and compounding risk before visible incident.
+          </p>
+          <DriftCurve className="max-w-6xl" />
         </section>
 
         <ActionDock
