@@ -9,6 +9,29 @@ import HowItWorksFlow from "@/components/visuals/HowItWorksFlow";
 import DriftCurve from "@/components/visuals/DriftCurve";
 
 export default function Home() {
+  const recognitionFailures = [
+    "Mishandle crisis",
+    "Escalate distress",
+    "Reinforce dependency",
+    "Suppress autonomy",
+  ] as const;
+
+  const exposureChips = [
+    "Governance exposure",
+    "Legal vulnerability",
+    "Delayed procurement",
+    "Remediation costs",
+    "Reputational damage",
+  ] as const;
+
+  const governanceGapRows = [
+    { current: "Data security", ikwe: "Multi-turn emotional trajectory" },
+    { current: "Model documentation", ikwe: "Escalation stability under stress" },
+    { current: "Bias detection", ikwe: "Vulnerable-user handling patterns" },
+    { current: "Compliance workflows", ikwe: "Dependency reinforcement risk" },
+    { current: "Accuracy benchmarks", ikwe: "Repair capacity after failure" },
+  ] as const;
+
   const solutionPillars = [
     {
       title: "Board",
@@ -34,19 +57,32 @@ export default function Home() {
 
   const stats = [
     {
+      value: BENCHMARK_CURRENT.nValue,
+      label: "outputs evaluated",
+      tone: "safe",
+    },
+    {
+      value: String(BENCHMARK_CURRENT.scenarios),
+      label: "structured scenarios",
+      tone: "safe",
+    },
+    {
+      value: String(BENCHMARK_CURRENT.domains),
+      label: "behavioral domains (vulnerability categories)",
+      tone: "safe",
+    },
+  ] as const;
+
+  const findings = [
+    {
       value: BENCHMARK_CURRENT.failedGatePct,
-      label: "of evaluated outputs showed at least one emotional risk pattern",
+      label: "emotional risk patterns observed in evaluated outputs",
       tone: "danger",
     },
     {
       value: BENCHMARK_CURRENT.noRepairPct,
-      label: "failed the Safety Gate threshold",
+      label: "Safety Gate fail rate under first-contact conditions",
       tone: "danger",
-    },
-    {
-      value: BENCHMARK_CURRENT.nShort,
-      label: "outputs evaluated (public benchmark total)",
-      tone: "safe",
     },
   ] as const;
 
@@ -71,21 +107,27 @@ export default function Home() {
     },
   ] as const;
 
-  const loopSteps = [
-    "A user engages the system in a vulnerable state",
-    "The AI responds in a way that amplifies rather than interrupts the state",
-    "Dependency forms, autonomy erodes, dysregulation deepens",
-    "Risk escalates and the cycle repeats",
+  const sectors = [
+    "Companion AI platforms",
+    "AI mental health systems",
+    "Education AI products",
+    "Consumer-facing AI systems",
+    "Enterprise AI with human consequence",
   ] as const;
 
-  const sectors = [
-    "Enterprise AI in regulated operations",
-    "Financial services",
-    "Legal and HR platforms",
-    "Government and public sector services",
-    "Healthcare AI and digital health",
-    "Mental health and therapy technology",
-    "Consumer AI with vulnerable user populations",
+  const benchmarkCoverage = [
+    {
+      title: "Safety Gate (Pass / Fail)",
+      body: "Binary pass/fail testing under stress. Outcome: launch risk determination.",
+    },
+    {
+      title: "Eight Behavioral Dimensions",
+      body: "Dimensional scoring for behavioral stability, vulnerability handling, and recovery capacity after failure.",
+    },
+    {
+      title: "Coverage (Execution)",
+      body: `${BENCHMARK_CURRENT.nValue} · ${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories).`,
+    },
   ] as const;
 
   const deliverablesPreview = [
@@ -95,23 +137,34 @@ export default function Home() {
     "Remediation Roadmap",
   ] as const;
 
-  const benchmarkCoverage = [
-    {
-      title: "Safety Gate (Pass / Fail)",
-      body: "Stage 1 is binary. Every first-contact output is classified as pass or fail before anything else.",
-    },
-    {
-      title: "Eight Behavioral Dimensions",
-      body: "Stage 2 scores only Stage 1 PASS outputs across eight quality dimensions to locate risk concentration.",
-    },
-    {
-      title: `${BENCHMARK_CURRENT.scenarios} Structured Scenarios`,
-      body: "This is the public Safety Study baseline scenario set. Scenario scope expands as additional study runs are added.",
-    },
-    {
-      title: `${BENCHMARK_CURRENT.nValue}`,
-      body: `${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories), including anxiety, depression, grief, and crisis escalation.`,
-    },
+  const dimensions = [
+    "Escalation Stability",
+    "Vulnerable User Response",
+    "Manipulation Susceptibility",
+    "Power Asymmetry",
+    "Multi-turn Trajectory",
+    "Dependency Reinforcement",
+    "Correction & Recovery",
+    "Stress Condition Performance",
+  ] as const;
+
+  const safetyGateOutcomes = [
+    { status: "Fail", note: "Unacceptable risk present", tone: "danger" },
+    { status: "Conditional Pass", note: "Issues require mitigation", tone: "lilac" },
+    { status: "Pass", note: "No immediate failures detected", tone: "safe" },
+  ] as const;
+
+  const tierFramework = [
+    { title: "Tier I: Stable Behavioral Integrity", note: "Launch with confidence" },
+    { title: "Tier II: Moderate Behavioral Risk", note: "Launch with mitigations" },
+    { title: "Tier III: Escalation Instability", note: "Remediate before launch" },
+    { title: "Tier IV: High Vulnerability Exposure", note: "Do not launch" },
+  ] as const;
+
+  const engagementLevels = [
+    "Level I: Baseline Gate (pre-deployment)",
+    "Level II: Full Benchmark (board-level governance)",
+    "Level III: Ongoing Governance (live systems at scale)",
   ] as const;
 
   const exploreLinks = [
@@ -145,21 +198,25 @@ export default function Home() {
                 The Behavioral Safety Layer for AI.
               </h1>
               <p className="text-foreground-muted lede mb-9">
-                Independent validation for AI systems that interact with humans. Built for the moment things actually go
-                wrong.
+                Independent behavioral safety validation for human-facing AI systems. It is not whether it can help.
+                It is whether it can be trusted not to harm.
+              </p>
+              <p className="text-sm text-foreground-muted leading-relaxed measure mb-7 text-pretty">
+                If your system interacts with users in vulnerable moments, you need evidence of how it behaves under
+                pressure and its behavioral risk.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
-                  to="/benchmark"
+                  to="/intake#application-form"
                   className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
                 >
-                  See the Benchmark
+                  Request Evaluation
                 </Link>
                 <a
-                  href="/intake#application-form"
+                  href="/benchmark"
                   className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
                 >
-                  Request a Validation Briefing
+                  View the Benchmark
                 </a>
               </div>
               <div className="flex flex-wrap gap-2 mt-5">
@@ -201,25 +258,45 @@ export default function Home() {
         </section>
 
         <section className="site-section py-12 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Problem</p>
-          <h2 className="font-display fluid-heading text-foreground mb-4">Risk is visible too late in most AI rollouts.</h2>
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Problem</p>
+          <h2 className="font-display fluid-heading text-foreground mb-4">Recognition is not safety.</h2>
           <p className="text-sm text-foreground-muted leading-relaxed measure mb-7 text-pretty">
-            Teams usually measure utility, latency, and correctness. They do not measure emotional risk trajectories
-            early enough to prevent exposure.
+            An AI can sound empathetic, acknowledge distress, and still cause harm. The failures are often invisible
+            until they become a cost.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mb-5">
+            {recognitionFailures.map((item) => (
+              <article key={item} className="card-surface p-5 risk-panel">
+                <h3 className="font-display text-xl text-foreground mb-2">{item}</h3>
+                <p className="text-sm text-foreground-muted">Behavioral failure mode with governance impact.</p>
+              </article>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {exposureChips.map((chip) => (
+              <span key={chip} className="summary-jump">{chip}</span>
+            ))}
+          </div>
+        </section>
+
+        <section className="site-section py-12 border-b border-border">
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Coverage Snapshot</p>
+          <h2 className="font-display fluid-heading text-foreground mb-4">Behavioral risk becomes visible after deployment.</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed measure mb-7 text-pretty">
+            Ikwe makes it visible before launch decisions become incidents, liability, or procurement blockers.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             {stats.map((item) => (
-              <article
-                key={item.label}
-                className={`card-surface p-6 ${item.tone === "danger" ? "risk-panel" : "safe-panel"}`}
-              >
-                <p
-                  className={`text-4xl md:text-5xl font-display mb-4 ${
-                    item.tone === "danger" ? "text-danger" : "text-safe"
-                  }`}
-                >
-                  {item.value}
-                </p>
+              <article key={item.label} className="card-surface p-6 safe-panel">
+                <p className="text-4xl md:text-5xl font-display mb-4 text-safe">{item.value}</p>
+                <p className="text-sm text-foreground-muted leading-relaxed">{item.label}</p>
+              </article>
+            ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            {findings.map((item) => (
+              <article key={item.label} className="card-surface p-5 risk-panel">
+                <p className="text-3xl font-display text-danger mb-2">{item.value}</p>
                 <p className="text-sm text-foreground-muted leading-relaxed">{item.label}</p>
               </article>
             ))}
@@ -229,11 +306,38 @@ export default function Home() {
 
         <section className="site-section py-12 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Trajectory of Harm and Risk</p>
-          <h2 className="font-display fluid-heading text-foreground mb-4">AI failure is often trajectory, not single-event error.</h2>
+          <h2 className="font-display fluid-heading text-foreground mb-4">Most failures are drift across multiple turns.</h2>
           <p className="text-sm text-foreground-muted leading-relaxed measure mb-6 text-pretty">
-            This is the progression we measure: initial instability, amplification, and compounding risk before visible incident.
+            This is the progression we measure: initial instability, amplification, and compounding risk before visible
+            incident.
           </p>
           <DriftCurve className="max-w-6xl" />
+        </section>
+
+        <section className="site-section py-12 border-b border-border">
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Gap</p>
+          <h2 className="font-display fluid-heading text-foreground mb-5">What existing governance misses</h2>
+          <div className="overflow-x-auto max-w-6xl">
+            <table className="enterprise-table min-w-[860px]">
+              <thead>
+                <tr>
+                  <th>Current Governance</th>
+                  <th>Behavioral Safety (Ikwe)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {governanceGapRows.map((row) => (
+                  <tr key={row.current}>
+                    <td>{row.current}</td>
+                    <td>{row.ikwe}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm text-foreground mt-5">
+            Behavioral safety is the missing layer in current governance frameworks.
+          </p>
         </section>
 
         <ActionDock
@@ -248,13 +352,11 @@ export default function Home() {
 
         <section className="site-section py-12 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Solution</p>
-          <h2 className="font-display fluid-heading text-foreground mb-5">Benchmark at a glance</h2>
+          <h2 className="font-display fluid-heading text-foreground mb-5">Eight dimensions. One clear answer.</h2>
           <p className="text-sm text-foreground-muted leading-relaxed measure mb-8 text-pretty">
-            The EQ Safety Benchmark has two parts: Stage 1 pass/fail Safety Gate, then Stage 2 scoring across eight
-            behavioral dimensions. The Safety Study applies this benchmark to model cohorts, starting with the
-            79-scenario baseline and expanding over time.
+            Purpose-built to measure behavioral safety failure in emotionally loaded interactions.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mb-5">
             {benchmarkCoverage.map((item) => (
               <article key={item.title} className="card-surface p-5">
                 <h3 className="font-display text-xl text-foreground mb-2">{item.title}</h3>
@@ -262,6 +364,45 @@ export default function Home() {
               </article>
             ))}
           </div>
+          <article className="card-surface p-5 max-w-6xl">
+            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">Eight dimensions</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2">
+              {dimensions.map((dimension) => (
+                <p key={dimension} className="text-sm text-foreground-muted border border-border rounded-md px-3 py-2 bg-background-card">
+                  {dimension}
+                </p>
+              ))}
+            </div>
+          </article>
+        </section>
+
+        <section className="site-section py-12 border-b border-border">
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Safety Gate</p>
+          <h2 className="font-display fluid-heading text-foreground mb-5">
+            The first question we answer: does your system pass the safety gate under stress?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mb-5">
+            {safetyGateOutcomes.map((outcome) => (
+              <article
+                key={outcome.status}
+                className={`card-surface p-5 ${
+                  outcome.tone === "danger" ? "risk-panel" : outcome.tone === "safe" ? "safe-panel" : "border-lilac"
+                }`}
+              >
+                <h3
+                  className={`font-display text-2xl mb-2 ${
+                    outcome.tone === "danger" ? "text-danger" : outcome.tone === "safe" ? "text-safe" : "text-lilac"
+                  }`}
+                >
+                  {outcome.status}
+                </h3>
+                <p className="text-sm text-foreground-muted">{outcome.note}</p>
+              </article>
+            ))}
+          </div>
+          <p className="text-sm text-foreground-muted leading-relaxed measure">
+            Before dimensional scoring, we determine whether harmful behavioral patterns appear at all.
+          </p>
         </section>
 
         <section className="site-section py-12 border-b border-border">
