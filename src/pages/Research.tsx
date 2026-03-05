@@ -87,11 +87,28 @@ export default function Research() {
       </section>
 
       <section className="site-section py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Read This First</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mb-5">
+          <article className="card-surface p-5">
+            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">Stage 1</p>
+            <h2 className="font-display text-xl text-foreground mb-2">Safety Gate (Pass/Fail)</h2>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              First-contact screen: did the response introduce emotional risk.
+            </p>
+          </article>
+          <article className="card-surface p-5">
+            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">Stage 2</p>
+            <h2 className="font-display text-xl text-foreground mb-2">Behavioral Scoring (Conditional)</h2>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              Quality scoring runs only on Stage 1 PASS responses.
+            </p>
+          </article>
+        </div>
         <article className="card-surface p-6 max-w-5xl safe-panel">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-safe mb-3">What this means for your organization</p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-            If your AI system handles users in vulnerable states, these rates represent real exposure levels to
-            behavioral failure, not hypothetical edge cases.
+            These rates are measured exposure, not edge-case speculation. They show what leadership should plan for
+            before deployment decisions.
           </p>
           <details className="progressive-details">
             <summary
