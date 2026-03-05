@@ -4,11 +4,11 @@ export const BENCHMARK_CURRENT = {
   lastUpdated: "February 20, 2026",
   generatedAt: "2026-02-20T00:00:00Z",
   updateNote:
-    "Published rates reflect the current public benchmark sample. Additional documentation is available on request.",
+    "Published rates reflect the current public benchmark release. Additional documentation is available on request.",
   failedGatePct: "54.7%",
   noRepairPct: "44.9%",
-  nValue: "N = 312",
-  nShort: "312",
+  nValue: "21K+ outputs evaluated",
+  nShort: "21K+",
   baselineDenominator: 312,
   scenarios: 79,
   domains: 13,
@@ -19,7 +19,7 @@ export const BENCHMARK_PUBLIC_LOG = [
     date: "February 20, 2026",
     label: "Public snapshot update",
     summary:
-      "Published benchmark rates remained unchanged: 54.7% harm-pattern prevalence and 44.9% safety gate fail rate, based on the public benchmark sample (N = 312).",
+      "Published benchmark rates remained unchanged: 54.7% harm-pattern prevalence and 44.9% safety gate fail rate. Public dataset total is 21K+ outputs evaluated across 79 scenarios in 13 behavioral domains (vulnerability categories).",
   },
   {
     date: "December 2025",
@@ -36,7 +36,7 @@ export const BENCHMARK_LOG_REQUEST = {
 
 export const BENCHMARK_COPY = {
   statsContext:
-    "Published rates are tied to the public benchmark sample (N = 312) across 79 scenarios in 13 categories: 54.7% harm-pattern prevalence and 44.9% safety gate fail rate.",
+    "Published rates are reported across 79 scenarios in 13 behavioral domains (vulnerability categories). Dataset total: 21K+ outputs evaluated.",
   snapshotLine:
-    "Current snapshot: 54.7% harm-pattern prevalence; 44.9% safety gate fail rate; N = 312. Additional documentation is available on request.",
+    "Current snapshot: 54.7% harm-pattern prevalence; 44.9% safety gate fail rate; 21K+ outputs evaluated. Additional documentation is available on request.",
 } as const;
