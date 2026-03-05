@@ -10,7 +10,7 @@ This public summary is for institutional review and does not include restricted 
 ## Current benchmark citation
 - 54.7% harm-pattern prevalence (responses with at least one harmful behavior pattern).
 - 44.9% aggregate Safety Gate FAIL rate.
-- N = 312 responses across 79 scenarios in 13 categories.
+- 21K+ outputs evaluated across 79 scenarios in 13 behavioral domains (vulnerability categories).
 
 ## Access note
 Additional benchmark materials are available on request for authorized review.

@@ -43,7 +43,7 @@ export default function Home() {
     },
     {
       value: BENCHMARK_CURRENT.nShort,
-      label: "responses in the public benchmark sample",
+      label: "outputs evaluated (public benchmark total)",
       tone: "safe",
     },
   ] as const;
@@ -173,7 +173,7 @@ export default function Home() {
                 ))}
               </div>
               <p className="text-xs text-foreground-subtle mt-4">
-                {BENCHMARK_CURRENT.nValue} · {BENCHMARK_CURRENT.scenarios} scenarios · {BENCHMARK_CURRENT.domains} categories
+                {BENCHMARK_CURRENT.nValue} · {BENCHMARK_CURRENT.scenarios} scenarios · {BENCHMARK_CURRENT.domains} behavioral domains
               </p>
               <BaselineLiveLegend className="mt-3" compact />
             </aside>
@@ -261,8 +261,8 @@ export default function Home() {
         <section className="site-section py-14 border-b border-border">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Evidence</p>
           <p className="text-sm text-foreground-muted leading-relaxed measure mb-7 text-pretty">
-            Across {BENCHMARK_CURRENT.nShort} scored responses, evaluated against {BENCHMARK_CURRENT.scenarios} structured
-            scenarios in {BENCHMARK_CURRENT.domains} categories, this is what structured behavioral evaluation surfaces:
+            Across {BENCHMARK_CURRENT.nShort} outputs evaluated, covering {BENCHMARK_CURRENT.scenarios} structured
+            scenarios in {BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories), this is what structured behavioral evaluation surfaces:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {stats.map((item) => (
