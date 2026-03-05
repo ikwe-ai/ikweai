@@ -6,7 +6,6 @@ import ActionDock from "@/components/ActionDock";
 import BaselineLiveLegend from "@/components/BaselineLiveLegend";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 import HowItWorksFlow from "@/components/visuals/HowItWorksFlow";
-import DriftCurve from "@/components/visuals/DriftCurve";
 
 export default function Home() {
   const recognitionFailures = [
@@ -22,14 +21,6 @@ export default function Home() {
     "Delayed procurement",
     "Remediation costs",
     "Reputational damage",
-  ] as const;
-
-  const governanceGapRows = [
-    { current: "Data security", ikwe: "Multi-turn emotional trajectory" },
-    { current: "Model documentation", ikwe: "Escalation stability under stress" },
-    { current: "Bias detection", ikwe: "Vulnerable-user handling patterns" },
-    { current: "Compliance workflows", ikwe: "Dependency reinforcement risk" },
-    { current: "Accuracy benchmarks", ikwe: "Repair capacity after failure" },
   ] as const;
 
   const solutionPillars = [
@@ -301,29 +292,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="site-section py-10 border-b border-border">
-          <article className="card-surface p-5 max-w-5xl">
-            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-2">Benchmark Coverage and Findings</p>
-            <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-              Full coverage scope and current findings are maintained on the Benchmark page.
-            </p>
-            <a href="/benchmark#benchmark-metrics" className="summary-jump">Open benchmark metrics</a>
-          </article>
-        </section>
-
-        <section className="site-section py-12 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Trajectory of Harm and Risk</p>
-          <h2 className="font-display fluid-heading text-foreground mb-4">Most failures are drift across multiple turns.</h2>
-          <p className="text-sm text-foreground-muted leading-relaxed measure mb-6 text-pretty">
-            This is the progression we measure: initial instability, amplification, and compounding risk before visible
-            incident.
-          </p>
-          <DriftCurve className="max-w-6xl" />
-        </section>
-
         <ActionDock
           title="Next Step"
-          subtitle="Review evidence quickly, then request a scoped independent evaluation."
+          subtitle="Request evaluation, review benchmark depth, or open sample outputs."
           items={[
             { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
             { href: "/benchmark", label: "View Benchmark", tone: "outline" },
@@ -375,22 +346,6 @@ export default function Home() {
               </span>
             ))}
           </div>
-        </section>
-
-        <section className="site-section py-10 border-b border-border">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-5">What Governance Misses</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl">
-            {governanceGapRows.slice(0, 2).map((row) => (
-              <article key={row.current} className="card-surface p-4">
-                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-1">{row.current}</p>
-                <p className="text-sm text-foreground">→ {row.ikwe}</p>
-              </article>
-            ))}
-          </div>
-          <p className="text-sm text-foreground-muted mt-4">
-            Behavioral safety is the missing layer in current governance frameworks.
-          </p>
-          <a href="/benchmark#boundary" className="summary-jump mt-3 inline-flex">View full governance mapping</a>
         </section>
 
         <section className="site-section py-14">
