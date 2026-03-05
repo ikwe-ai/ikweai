@@ -368,7 +368,7 @@ export default function Home() {
               <p className="text-sm text-foreground-muted mb-3">
                 Baseline Gate, Full Benchmark, and Ongoing Governance levels are organized on the Audit pathway page.
               </p>
-              <a href="/audit#validation-pathway" className="summary-jump">Open audit pathway</a>
+              <a href="/audit#engagement-levels" className="summary-jump">Open engagement levels</a>
             </article>
           </div>
         </section>

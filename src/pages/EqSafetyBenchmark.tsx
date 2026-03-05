@@ -40,6 +40,17 @@ export default function EqSafetyBenchmark() {
     `${BENCHMARK_CURRENT.nValue}`,
     `${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)`,
   ] as const;
+  const safetyGateOutcomes = [
+    { label: "Fail", note: "Unacceptable risk present", tone: "danger" },
+    { label: "Conditional Pass", note: "Issues require mitigation", tone: "lilac" },
+    { label: "Pass", note: "No immediate failures detected", tone: "safe" },
+  ] as const;
+  const tierFramework = [
+    { tier: "Tier I", title: "Stable Behavioral Integrity", action: "Launch with confidence" },
+    { tier: "Tier II", title: "Moderate Behavioral Risk", action: "Launch with mitigations" },
+    { tier: "Tier III", title: "Escalation Instability", action: "Remediate before launch" },
+    { tier: "Tier IV", title: "High Vulnerability Exposure", action: "Do not launch" },
+  ] as const;
 
   return (
     <PageShell>
@@ -65,6 +76,8 @@ export default function EqSafetyBenchmark() {
           { href: "#benchmark-version", label: "Version & Scope" },
           { href: "#benchmark-metrics", label: "Current Metrics" },
           { href: "#framework-structure", label: "Framework Structure" },
+          { href: "#safety-gate-outcomes", label: "Safety Gate Outcomes" },
+          { href: "#tier-framework", label: "Tier Framework" },
           { href: "#public-dimensions", label: "Public Dimensions" },
           { href: "#method-overview", label: "Method Overview" },
           { href: "#boundary", label: "Public vs Engagement" },
@@ -182,6 +195,45 @@ export default function EqSafetyBenchmark() {
       <section id="framework-structure" className="site-section py-12 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Framework Structure</p>
         <StageDiagram className="max-w-6xl" />
+      </section>
+
+      <section id="safety-gate-outcomes" className="site-section py-12 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Safety Gate Outcomes</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mb-4">
+          {safetyGateOutcomes.map((item) => (
+            <article
+              key={item.label}
+              className={`card-surface p-5 ${
+                item.tone === "danger" ? "risk-panel" : item.tone === "safe" ? "safe-panel" : "border-lilac"
+              }`}
+            >
+              <h3
+                className={`font-display text-2xl mb-2 ${
+                  item.tone === "danger" ? "text-danger" : item.tone === "safe" ? "text-safe" : "text-lilac"
+                }`}
+              >
+                {item.label}
+              </h3>
+              <p className="text-sm text-foreground-muted">{item.note}</p>
+            </article>
+          ))}
+        </div>
+        <p className="text-sm text-foreground-muted leading-relaxed measure">
+          Safety Gate determines whether harmful behavioral patterns appear at all before dimensional scoring.
+        </p>
+      </section>
+
+      <section id="tier-framework" className="site-section py-12 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Tier Framework</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 max-w-6xl">
+          {tierFramework.map((item) => (
+            <article key={item.tier} className="card-surface p-5">
+              <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">{item.tier}</p>
+              <h3 className="font-display text-xl text-foreground mb-2">{item.title}</h3>
+              <p className="text-sm text-foreground-muted">{item.action}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section id="public-dimensions" className="site-section py-12 border-b border-border">
