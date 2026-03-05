@@ -141,7 +141,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
       `Current benchmark framing (updated ${BENCHMARK_CURRENT.lastUpdated}): ${BENCHMARK_CURRENT.failedGatePct} emotional risk pattern prevalence and ${BENCHMARK_CURRENT.noRepairPct} safety gate fail rate are based on ${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories). Additional documentation is available on request.`,
     links: [
       { label: "EQ Safety Benchmark", href: "/benchmark" },
-      { label: "Research Details", href: "/research" },
+      { label: "Benchmark Evidence", href: "/benchmark#method-overview" },
       { label: BENCHMARK_LOG_REQUEST.label, href: BENCHMARK_LOG_REQUEST.href },
     ],
   },
@@ -169,7 +169,7 @@ const APPROVED_ANSWERS: ApprovedAnswer[] = [
     text:
       "Public pages show deliverable formats and transparency boundaries. A redacted sample report is available publicly. Full report packages are available through active audit engagement and are distributed through controlled documentation access.",
     links: [
-      { label: "Deliverables", href: "/audit#deliverables-previews" },
+      { label: "Sample Outputs", href: "/audit#deliverables-previews" },
       { label: "Public Sample Report", href: "/sample-report" },
       { label: "Trust & Confidentiality", href: "/trust" },
     ],
@@ -217,11 +217,11 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
   },
   {
     id: "research",
-    title: "Research Overview",
-    href: "/research",
+    title: "Benchmark Evidence",
+    href: "/benchmark#method-overview",
     summary:
-      `Research page explains ${BENCHMARK_CURRENT.nValue}, ${BENCHMARK_CURRENT.scenarios} scenarios, ${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories), emotional risk pattern prevalence, safety gate outcomes, and aggregate 8-dimension reporting boundaries.`,
-    tags: ["research", "methodology", "numbers", "phase 1", "phase 2", "dimensions"],
+      `Benchmark evidence section explains ${BENCHMARK_CURRENT.nValue}, ${BENCHMARK_CURRENT.scenarios} scenarios, ${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories), emotional risk pattern prevalence, safety gate outcomes, and aggregate 8-dimension reporting boundaries.`,
+    tags: ["benchmark evidence", "methodology", "numbers", "phase 1", "phase 2", "dimensions"],
   },
   {
     id: "eqsb",
@@ -233,11 +233,11 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
   },
   {
     id: "deliverables",
-    title: "Deliverables",
+    title: "Sample Outputs",
     href: "/audit#deliverables-previews",
     summary:
-      "Deliverables page shows public format previews, documentation boundaries, and how full report packages are requested through engagement.",
-    tags: ["deliverables", "reports", "documentation", "outputs"],
+      "Sample outputs section shows public format previews, documentation boundaries, and how full report packages are requested through engagement.",
+    tags: ["sample outputs", "reports", "documentation", "outputs"],
   },
   {
     id: "audit",
@@ -281,11 +281,11 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
   },
   {
     id: "samples",
-    title: "Sample Deliverables (Deliverables Page)",
+    title: "Sample Outputs",
     href: "/audit#deliverables-previews",
     summary:
-      "Deliverables page includes one-page excerpt access, full redacted sample report format, and direct intake CTA.",
-    tags: ["samples", "deliverables", "report format", "example output"],
+      "Sample outputs section includes one-page excerpt access, full redacted sample report format, and direct intake CTA.",
+    tags: ["samples", "sample outputs", "report format", "example output"],
   },
   {
     id: "case-studies",
@@ -485,11 +485,11 @@ export function resolveApprovedAnswer(rawQuery: string): AssistantResolution {
   if (!query) {
     return {
       kind: "fallback",
-      text: "Ask about audits, benchmark results, deliverables, trust, legal terms, or where to find pages.",
+      text: "Ask about audits, benchmark results, sample outputs, trust, legal terms, or where to find pages.",
       links: [
         { label: "Audit", href: "/audit" },
-        { label: "Research", href: "/research" },
-        { label: "Deliverables", href: "/audit#deliverables-previews" },
+        { label: "Benchmark", href: "/benchmark" },
+        { label: "Sample Outputs", href: "/audit#deliverables-previews" },
       ],
     };
   }
@@ -536,11 +536,11 @@ export function resolveApprovedAnswer(rawQuery: string): AssistantResolution {
     return {
       kind: "fallback",
       text:
-        "I do not have a high-confidence approved answer for that exact phrasing yet. Try asking with page terms like audit, research, benchmark, deliverables, trust, architecture, or legal.",
+        "I do not have a high-confidence approved answer for that exact phrasing yet. Try asking with page terms like audit, benchmark, sample outputs, trust, architecture, or legal.",
       links: [
-        { label: "Research", href: "/research" },
+        { label: "Benchmark", href: "/benchmark" },
         { label: "Audit Overview", href: "/audit" },
-        { label: "Deliverables", href: "/audit#deliverables-previews" },
+        { label: "Sample Outputs", href: "/audit#deliverables-previews" },
       ],
     };
   }

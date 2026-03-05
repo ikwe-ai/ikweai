@@ -50,7 +50,7 @@ const App = () => (
           <Route path="/benchmark" element={<EqSafetyBenchmark />} />
           <Route path="/research" element={<Navigate to="/benchmark" replace />} />
           <Route path="/deliverables" element={<Navigate to="/audit#deliverables-previews" replace />} />
-          <Route path="/samples" element={<Navigate to="/deliverables" replace />} />
+          <Route path="/samples" element={<Navigate to="/audit#deliverables-previews" replace />} />
           <Route path="/audit" element={<Audit />} />
           <Route path="/trust" element={<Trust />} />
           <Route path="/intake" element={<Contact />} />
