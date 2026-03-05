@@ -225,9 +225,12 @@ export default function Contact() {
         user_population: multiToString(userPopulation),
         model_providers: multiToString(modelProvider),
         drivers: multiToString(driver),
+        evaluation_driver: multiToString(driver),
         signoffs: multiToString(signoff),
+        signoff_stakeholders: multiToString(signoff),
         compliance_constraints: multiToString(compliance),
         priority_domains: multiToString(priorityDomains),
+        engagement_mode: form.engagement_model,
         submitted_at: new Date().toISOString(),
       });
 
@@ -409,9 +412,12 @@ export default function Contact() {
               <input type="hidden" name="user_population" value={multiToString(userPopulation)} />
               <input type="hidden" name="model_providers" value={multiToString(modelProvider)} />
               <input type="hidden" name="drivers" value={multiToString(driver)} />
+              <input type="hidden" name="evaluation_driver" value={multiToString(driver)} />
               <input type="hidden" name="signoffs" value={multiToString(signoff)} />
+              <input type="hidden" name="signoff_stakeholders" value={multiToString(signoff)} />
               <input type="hidden" name="compliance_constraints" value={multiToString(compliance)} />
               <input type="hidden" name="priority_domains" value={multiToString(priorityDomains)} />
+              <input type="hidden" name="engagement_mode" value={form.engagement_model} />
               <input type="hidden" name="submitted_at" value={new Date().toISOString()} />
 
               <div>
