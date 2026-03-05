@@ -77,7 +77,7 @@ export default function Research() {
             <div className="summary-headline-strip">
               <div className="summary-headline-item">{BENCHMARK_CURRENT.nValue} for published rates</div>
               <div className="summary-headline-item">
-                {BENCHMARK_CURRENT.scenarios} structured scenarios across {BENCHMARK_CURRENT.domains} categories
+                {BENCHMARK_CURRENT.scenarios} structured scenarios across {BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)
               </div>
               <div className="summary-headline-item">Published framework: prevalence + safety gate + quality scoring</div>
             </div>
@@ -134,7 +134,7 @@ export default function Research() {
           </article>
           <article className="card-surface p-4">
             <p className="font-display text-3xl text-foreground mb-1">{BENCHMARK_CURRENT.scenarios}</p>
-            <p className="text-xs text-foreground-muted">Scenarios in {BENCHMARK_CURRENT.domains} categories</p>
+            <p className="text-xs text-foreground-muted">Scenarios in {BENCHMARK_CURRENT.domains} behavioral domains</p>
           </article>
         </div>
         <BaselineLiveLegend className="mb-4 max-w-5xl" />

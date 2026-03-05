@@ -13,7 +13,7 @@ import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 //
 // ✅ LOCKED METHODOLOGY LINEAGE:
 //    "Current benchmark snapshot reflects [scenario count] structured scenarios in
-//     [domain count] categories, scored through a Safety Gate and an
+//     [domain count] behavioral domains (vulnerability categories), scored through a Safety Gate and an
 //     8-dimension weighted model."
 //
 // ✅ LOCKED ARTIFACT GATING:
@@ -30,7 +30,7 @@ export const CANONICAL_STAT = {
 
   /** Full citation line used in locked reference blocks. */
   citation:
-    `Benchmark snapshot (updated ${BENCHMARK_CURRENT.lastUpdated}): ${BENCHMARK_CURRENT.nValue} responses · ${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} categories.`,
+    `Benchmark snapshot (updated ${BENCHMARK_CURRENT.lastUpdated}): ${BENCHMARK_CURRENT.nValue} · ${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories).`,
 
   /** Individual values for display components. */
   failedGate: {
@@ -45,14 +45,14 @@ export const CANONICAL_STAT = {
   },
   sample: {
     value: BENCHMARK_CURRENT.nValue,
-    label: "Total responses evaluated",
-    sub: `${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} categories`,
+    label: "Total outputs evaluated",
+    sub: `${BENCHMARK_CURRENT.scenarios} scenarios · ${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)`,
   },
 } as const;
 
 export const METHODOLOGY_LINEAGE = {
   short:
-    `Current benchmark snapshot reflects ${BENCHMARK_CURRENT.scenarios} structured scenarios in ${BENCHMARK_CURRENT.domains} categories, ` +
+    `Current benchmark snapshot reflects ${BENCHMARK_CURRENT.scenarios} structured scenarios in ${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories), ` +
     "scored through a Safety Gate and an 8-dimension weighted model.",
 } as const;
 
