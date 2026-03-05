@@ -575,34 +575,94 @@ export default function Contact() {
                     </label>
                   ))}
                 </div>
+                {modelProvider.includes("Other") ? (
+                  <div className="mb-4">
+                    <label className="block text-xs text-foreground-muted mb-1.5">Other model provider</label>
+                    <input
+                      name="model_provider_other"
+                      value={form.model_provider_other}
+                      onChange={handleChange}
+                      className="field"
+                      placeholder="Provider/model details"
+                    />
+                  </div>
+                ) : null}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs text-foreground-muted mb-1.5">System prompts *</label>
-                    <select required name="system_prompts" value={form.system_prompts} onChange={handleChange} className="field">
-                      <option value="">Select…</option>
-                      {yesNo.map((item) => <option key={item} value={item}>{item}</option>)}
-                    </select>
+                    <label className="block text-xs text-foreground-muted mb-2">System prompts *</label>
+                    <div className="space-y-2">
+                      {yesNoUnsure.map((item) => (
+                        <label key={item} className="flex items-center gap-2 text-sm text-foreground-muted">
+                          <input
+                            required
+                            type="radio"
+                            name="system_prompts"
+                            value={item}
+                            checked={form.system_prompts === item}
+                            onChange={handleChange}
+                            className="accent-lilac"
+                          />
+                          <span>{item}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
                   <div>
-                    <label className="block text-xs text-foreground-muted mb-1.5">RAG / knowledge base *</label>
-                    <select required name="rag" value={form.rag} onChange={handleChange} className="field">
-                      <option value="">Select…</option>
-                      {yesNo.map((item) => <option key={item} value={item}>{item}</option>)}
-                    </select>
+                    <label className="block text-xs text-foreground-muted mb-2">RAG / knowledge base *</label>
+                    <div className="space-y-2">
+                      {yesNoUnsure.map((item) => (
+                        <label key={item} className="flex items-center gap-2 text-sm text-foreground-muted">
+                          <input
+                            required
+                            type="radio"
+                            name="rag"
+                            value={item}
+                            checked={form.rag === item}
+                            onChange={handleChange}
+                            className="accent-lilac"
+                          />
+                          <span>{item}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
                   <div>
-                    <label className="block text-xs text-foreground-muted mb-1.5">Tools/actions *</label>
-                    <select required name="tools_actions" value={form.tools_actions} onChange={handleChange} className="field">
-                      <option value="">Select…</option>
-                      {yesNo.map((item) => <option key={item} value={item}>{item}</option>)}
-                    </select>
+                    <label className="block text-xs text-foreground-muted mb-2">Tools/actions *</label>
+                    <div className="space-y-2">
+                      {yesNoUnsure.map((item) => (
+                        <label key={item} className="flex items-center gap-2 text-sm text-foreground-muted">
+                          <input
+                            required
+                            type="radio"
+                            name="tools_actions"
+                            value={item}
+                            checked={form.tools_actions === item}
+                            onChange={handleChange}
+                            className="accent-lilac"
+                          />
+                          <span>{item}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
                   <div>
-                    <label className="block text-xs text-foreground-muted mb-1.5">Fine-tuning *</label>
-                    <select required name="fine_tuning" value={form.fine_tuning} onChange={handleChange} className="field">
-                      <option value="">Select…</option>
-                      {yesNo.map((item) => <option key={item} value={item}>{item}</option>)}
-                    </select>
+                    <label className="block text-xs text-foreground-muted mb-2">Fine-tuning *</label>
+                    <div className="space-y-2">
+                      {yesNoUnsure.map((item) => (
+                        <label key={item} className="flex items-center gap-2 text-sm text-foreground-muted">
+                          <input
+                            required
+                            type="radio"
+                            name="fine_tuning"
+                            value={item}
+                            checked={form.fine_tuning === item}
+                            onChange={handleChange}
+                            className="accent-lilac"
+                          />
+                          <span>{item}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </section>
@@ -623,6 +683,18 @@ export default function Contact() {
                     </label>
                   ))}
                 </div>
+                {driver.includes("Other") ? (
+                  <div className="mb-4">
+                    <label className="block text-xs text-foreground-muted mb-1.5">Other evaluation driver</label>
+                    <input
+                      name="evaluation_driver_other"
+                      value={form.evaluation_driver_other}
+                      onChange={handleChange}
+                      className="field"
+                      placeholder="Describe trigger for evaluation"
+                    />
+                  </div>
+                ) : null}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs text-foreground-muted mb-1.5">Any deadline?</label>
