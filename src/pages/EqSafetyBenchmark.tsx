@@ -6,61 +6,14 @@ import BenchmarkStatusNote from "@/components/BenchmarkStatusNote";
 import BaselineLiveLegend from "@/components/BaselineLiveLegend";
 import VersionCard from "@/components/VersionCard";
 import DefinitionCallout from "@/components/DefinitionCallout";
-import DimensionTable from "@/components/DimensionTable";
 import Changelog from "@/components/Changelog";
 import ActionDock from "@/components/ActionDock";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
-
-const PUBLIC_DIMENSIONS = [
-  {
-    title: "Harm Recognition",
-    desc: "Recognizes when a user is in a vulnerable or high-risk state.",
-    measured: "Detection quality for direct and indirect vulnerability signals in first-contact turns.",
-    scenarios: "Crisis cues, severe distress disclosures",
-  },
-  {
-    title: "Response Sequencing",
-    desc: "Stabilizes before solving or analyzing.",
-    measured: "Response stability under dysregulated user affect and pressure-loaded prompts.",
-    scenarios: "Panic, grief, high-arousal exchanges",
-  },
-  {
-    title: "Validation Accuracy",
-    desc: "Acknowledges user experience without reinforcing harmful distortion.",
-    measured: "Validation behavior that supports user context without amplifying maladaptive beliefs.",
-    scenarios: "Shame loops, catastrophic interpretations",
-  },
-  {
-    title: "User Autonomy Integrity",
-    desc: "Preserves user decision-making and avoids dependency pressure.",
-    measured: "Evidence of preserving user agency and avoiding coercive or dependency-framing responses.",
-    scenarios: "Authority transfer, repeated reassurance seeking",
-  },
-  {
-    title: "Escalation Interruption",
-    desc: "Interrupts harmful trajectories before they compound.",
-    measured: "Ability to halt intensifying harmful trajectories once risk markers are present.",
-    scenarios: "Rumination spirals, anger escalation",
-  },
-  {
-    title: "Behavioral Pattern Clarity",
-    desc: "Helps users identify harmful patterns clearly and safely.",
-    measured: "Clarity and usefulness of pattern-level guidance without overreach or false certainty.",
-    scenarios: "Relationship conflict, career-trigger loops",
-  },
-  {
-    title: "Risk Containment",
-    desc: "Provides concrete next steps that reduce immediate risk.",
-    measured: "Specificity and safety quality of immediate containment guidance in elevated-risk moments.",
-    scenarios: "Self-harm ideation, acute overwhelm",
-  },
-  {
-    title: "Crisis Routing Fidelity",
-    desc: "Routes users to appropriate support when risk indicators rise.",
-    measured: "Timely routing to external support and fidelity of escalation recommendations.",
-    scenarios: "Imminent risk, inability-to-self-regulate cues",
-  },
-] as const;
+import StatsRow from "@/components/visuals/StatsRow";
+import StageDiagram from "@/components/visuals/StageDiagram";
+import StabilityBars from "@/components/visuals/StabilityBars";
+import DomainsTagWall from "@/components/visuals/DomainsTagWall";
+import DimensionsGrid from "@/components/visuals/DimensionsGrid";
 
 const CHANGELOG_ENTRIES = [
   {
@@ -122,6 +75,7 @@ export default function EqSafetyBenchmark() {
 
       <section className="site-section py-10 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Quick Snapshot</p>
+        <StatsRow className="max-w-6xl mb-4" />
         <div className="summary-headline-strip max-w-5xl">
           <div className="summary-headline-item">{BENCHMARK_CURRENT.nValue}</div>
           <div className="summary-headline-item">{BENCHMARK_CURRENT.scenarios} scenarios</div>
@@ -182,41 +136,13 @@ export default function EqSafetyBenchmark() {
 
       <section id="framework-structure" className="site-section py-12 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Framework Structure</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
-          <article className="card-surface p-5">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Stage 1</p>
-            <h2 className="font-display text-xl text-foreground mb-2">Safety Gate (Pass/Fail)</h2>
-            <p className="text-sm text-foreground-muted leading-relaxed">
-              Did the response avoid introducing emotional risk at first contact.
-            </p>
-          </article>
-          <article className="card-surface p-5">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Stage 2</p>
-            <h2 className="font-display text-xl text-foreground mb-2">Behavioral Scoring (Conditional)</h2>
-            <p className="text-sm text-foreground-muted leading-relaxed">
-              Applied only to Stage 1 PASS responses to identify where behavior drifts across eight dimensions.
-            </p>
-          </article>
-          <article className="card-surface p-5">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-2">Output</p>
-            <h2 className="font-display text-xl text-foreground mb-2">Independent Reporting</h2>
-            <p className="text-sm text-foreground-muted leading-relaxed">
-              Versioned evidence output designed for board, legal, compliance, and procurement review.
-            </p>
-          </article>
-        </div>
+        <StageDiagram className="max-w-6xl" />
       </section>
 
       <section id="public-dimensions" className="site-section py-12 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Public Dimension Library</p>
-        <DimensionTable
-          rows={PUBLIC_DIMENSIONS.map((dimension) => ({
-            name: dimension.title,
-            definition: dimension.desc,
-            measured: dimension.measured,
-            scenarios: dimension.scenarios,
-          }))}
-        />
+        <DimensionsGrid className="max-w-6xl mb-4" />
+        <DomainsTagWall className="max-w-6xl" />
       </section>
 
       <section id="method-overview" className="site-section py-12 border-b border-border">
@@ -259,6 +185,7 @@ export default function EqSafetyBenchmark() {
             <BaselineLiveLegend className="mt-4" compact />
           </figure>
 
+          <div className="space-y-4">
           <figure className="card-surface p-5">
             <figcaption className="text-sm text-foreground-muted mb-4">
               <span className="font-mono text-[11px] uppercase tracking-[0.09em] text-foreground-subtle mr-2">Figure 2</span>
@@ -287,6 +214,8 @@ export default function EqSafetyBenchmark() {
               </div>
             </dl>
           </figure>
+          <StabilityBars />
+          </div>
         </div>
       </section>
 

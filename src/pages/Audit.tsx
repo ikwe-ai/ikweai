@@ -3,6 +3,10 @@ import PageMeta from "@/components/PageMeta";
 import EnterpriseStepper from "@/components/EnterpriseStepper";
 import ActionDock from "@/components/ActionDock";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
+import StatsRow from "@/components/visuals/StatsRow";
+import DeliverablesGrid from "@/components/visuals/DeliverablesGrid";
+import ArtifactsPreviewRow from "@/components/visuals/ArtifactsPreviewRow";
+import ScenarioDomainMatrix from "@/components/visuals/ScenarioDomainMatrix";
 
 type PathwayStage = {
   step: string;
@@ -200,6 +204,14 @@ export default function Audit() {
             <a href="#stage-03" className="summary-jump mt-3">Active monitoring</a>
           </article>
         </div>
+      </section>
+
+      <section className="site-section py-10 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Audit At A Glance</p>
+        <StatsRow className="max-w-6xl mb-4" />
+        <DeliverablesGrid className="max-w-6xl mb-4" />
+        <ArtifactsPreviewRow className="max-w-6xl mb-4" />
+        <ScenarioDomainMatrix className="max-w-6xl" />
       </section>
 
       <ActionDock
