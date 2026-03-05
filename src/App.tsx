@@ -9,9 +9,7 @@ import Footer from "@/components/Footer";
 import SiteAssistant from "@/components/SiteAssistant";
 
 import Index from "./pages/Index";
-import EqSafetyBenchmark from "./pages/EqSafetyBenchmark";
 import Research from "./pages/Research";
-import Reports from "./pages/Reports";
 import SampleReport from "./pages/SampleReport";
 import Audit from "./pages/Audit";
 import Trust from "./pages/Trust";
@@ -49,9 +47,9 @@ const App = () => (
         <Nav />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/benchmark" element={<EqSafetyBenchmark />} />
+          <Route path="/benchmark" element={<Navigate to="/research#benchmark-framework" replace />} />
           <Route path="/research" element={<Research />} />
-          <Route path="/deliverables" element={<Reports />} />
+          <Route path="/deliverables" element={<Navigate to="/audit#deliverables-previews" replace />} />
           <Route path="/samples" element={<Navigate to="/deliverables" replace />} />
           <Route path="/audit" element={<Audit />} />
           <Route path="/trust" element={<Trust />} />
@@ -59,8 +57,8 @@ const App = () => (
           <Route path="/request-audit" element={<Navigate to="/intake" replace />} />
           <Route path="/archive" element={<Archive />} />
 
-          <Route path="/outputs" element={<Navigate to="/deliverables" replace />} />
-          <Route path="/reports" element={<Navigate to="/deliverables" replace />} />
+          <Route path="/outputs" element={<Navigate to="/audit#deliverables-previews" replace />} />
+          <Route path="/reports" element={<Navigate to="/audit#deliverables-previews" replace />} />
           <Route path="/sample-report" element={<SampleReport />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/inquiry" element={<Navigate to="/contact" replace />} />
@@ -75,7 +73,7 @@ const App = () => (
           <Route path="/archive/architecture" element={<Architecture />} />
           <Route path="/archive/consult" element={<Consultation />} />
           <Route path="/archive/ip-notice" element={<IpNotice />} />
-          <Route path="/archive/eq-safety-benchmark" element={<Navigate to="/benchmark" replace />} />
+          <Route path="/archive/eq-safety-benchmark" element={<Navigate to="/research#benchmark-framework" replace />} />
           <Route path="/archive/research/writings" element={<WritingLibrary />} />
           <Route path="/archive/research/writings/before-the-violation" element={<BeforeTheViolation />} />
           <Route
@@ -106,8 +104,8 @@ const App = () => (
           <Route path="/ip-notice" element={<Navigate to="/archive/ip-notice" replace />} />
           <Route path="/ip" element={<Navigate to="/archive/ip-notice" replace />} />
           <Route path="/intellectual-property" element={<Navigate to="/archive/ip-notice" replace />} />
-          <Route path="/eq-safety-benchmark" element={<Navigate to="/benchmark" replace />} />
-          <Route path="/eqsb" element={<Navigate to="/benchmark" replace />} />
+          <Route path="/eq-safety-benchmark" element={<Navigate to="/research#benchmark-framework" replace />} />
+          <Route path="/eqsb" element={<Navigate to="/research#benchmark-framework" replace />} />
           <Route path="/research/writings" element={<Navigate to="/archive/research/writings" replace />} />
           <Route
             path="/research/writings/before-the-violation"
@@ -159,7 +157,7 @@ const App = () => (
           <Route path="/research-summary" element={<Navigate to="/research" replace />} />
           <Route path="/support" element={<Navigate to="/intake" replace />} />
           <Route path="/faq" element={<Navigate to="/trust" replace />} />
-          <Route path="/downloads/*" element={<Navigate to="/deliverables" replace />} />
+          <Route path="/downloads/*" element={<Navigate to="/audit#deliverables-previews" replace />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
