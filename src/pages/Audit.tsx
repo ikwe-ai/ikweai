@@ -140,6 +140,26 @@ export default function Audit() {
       output: "Program formalization target: 2026",
     },
   ] as const;
+  const engagementLevels = [
+    {
+      level: "Level I",
+      title: "Baseline Gate",
+      note: "Pre-deployment Safety Gate baseline and first decision record.",
+      link: "#stage-01",
+    },
+    {
+      level: "Level II",
+      title: "Full Benchmark",
+      note: "Full dimensional scoring and board-level governance package.",
+      link: "#stage-02",
+    },
+    {
+      level: "Level III",
+      title: "Ongoing Governance",
+      note: "Recurring monitoring and drift alerts for live systems at scale.",
+      link: "#stage-03",
+    },
+  ] as const;
 
   return (
     <PageShell>
@@ -212,6 +232,20 @@ export default function Audit() {
         <DeliverablesGrid className="max-w-6xl mb-4" />
         <ArtifactsPreviewRow className="max-w-6xl mb-4" />
         <ScenarioDomainMatrix className="max-w-6xl" />
+      </section>
+
+      <section id="engagement-levels" className="site-section py-10 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Engagement Levels</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
+          {engagementLevels.map((item) => (
+            <article key={item.level} className="card-surface p-5">
+              <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">{item.level}</p>
+              <h3 className="font-display text-xl text-foreground mb-2">{item.title}</h3>
+              <p className="text-sm text-foreground-muted mb-3">{item.note}</p>
+              <a href={item.link} className="summary-jump">Open stage</a>
+            </article>
+          ))}
+        </div>
       </section>
 
       <ActionDock
