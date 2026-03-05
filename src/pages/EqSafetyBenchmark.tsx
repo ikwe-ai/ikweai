@@ -33,6 +33,13 @@ export default function EqSafetyBenchmark() {
   const ssfAnyPct = parsePercent(BENCHMARK_CURRENT.failedGatePct);
   const gateFailPct = parsePercent(BENCHMARK_CURRENT.noRepairPct);
   const gatePassPct = Math.max(0, +(100 - gateFailPct).toFixed(1));
+  const benchmarkParts = [
+    "Stage 1: Safety Gate (pass/fail at first contact)",
+    "Stage 2: Behavioral Scoring across 8 dimensions (only for Stage 1 PASS outputs)",
+    `${BENCHMARK_CURRENT.scenarios} structured scenarios`,
+    `${BENCHMARK_CURRENT.nValue}`,
+    `${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)`,
+  ] as const;
 
   return (
     <PageShell>
@@ -51,7 +58,7 @@ export default function EqSafetyBenchmark() {
           `${BENCHMARK_CURRENT.nValue} across ${BENCHMARK_CURRENT.scenarios} scenarios in ${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)`,
         ]}
         primaryAction={{ href: "/intake#application-form", label: "Request Evaluation" }}
-        secondaryAction={{ href: "/research", label: "View Research Evidence" }}
+        secondaryAction={{ href: "#method-overview", label: "View Method Overview" }}
         jumpLinks={[
           { href: "#benchmark-version", label: "Version & Scope" },
           { href: "#benchmark-metrics", label: "Current Metrics" },
@@ -74,14 +81,24 @@ export default function EqSafetyBenchmark() {
       />
 
       <section className="site-section py-10 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Quick Snapshot</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Benchmark At A Glance</p>
         <StatsRow className="max-w-6xl mb-4" />
-        <div className="summary-headline-strip max-w-5xl">
+        <div className="summary-headline-strip max-w-6xl mb-4">
           <div className="summary-headline-item">{BENCHMARK_CURRENT.nValue}</div>
           <div className="summary-headline-item">{BENCHMARK_CURRENT.scenarios} scenarios</div>
           <div className="summary-headline-item">{BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)</div>
           <div className="summary-headline-item">Stage 1 Safety Gate + Stage 2 conditional scoring</div>
         </div>
+        <article className="card-surface p-5 max-w-6xl">
+          <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">What the benchmark includes</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {benchmarkParts.map((part) => (
+              <p key={part} className="text-sm text-foreground-muted border border-border rounded-md px-3 py-2 bg-background-card">
+                {part}
+              </p>
+            ))}
+          </div>
+        </article>
       </section>
 
       <section id="benchmark-version" className="site-section py-10 border-b border-border">
