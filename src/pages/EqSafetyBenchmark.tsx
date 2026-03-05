@@ -120,6 +120,16 @@ export default function EqSafetyBenchmark() {
         ]}
       />
 
+      <section className="site-section py-10 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Quick Snapshot</p>
+        <div className="summary-headline-strip max-w-5xl">
+          <div className="summary-headline-item">{BENCHMARK_CURRENT.nValue}</div>
+          <div className="summary-headline-item">{BENCHMARK_CURRENT.scenarios} scenarios</div>
+          <div className="summary-headline-item">{BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)</div>
+          <div className="summary-headline-item">Stage 1 Safety Gate + Stage 2 conditional scoring</div>
+        </div>
+      </section>
+
       <section id="benchmark-version" className="site-section py-10 border-b border-border">
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,380px)_1fr] gap-4 max-w-6xl">
           <VersionCard
