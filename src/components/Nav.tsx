@@ -31,7 +31,7 @@ export default function Nav() {
     { label: "The Problem", href: "#thesis" },
     { label: "The Benchmark", href: "#benchmark" },
     { label: "How It Works", href: "#system" },
-    { label: "Results", href: "#output" },
+    { label: "What You Get", href: "#output" },
     { label: "Work With Us", href: "#engage" },
   ] as const;
 

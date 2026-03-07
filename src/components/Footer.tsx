@@ -29,10 +29,11 @@ export default function Footer() {
               <Link to="/" className="text-foreground-muted hover:text-foreground transition-colors">Home</Link>
               <Link to="/research" className="text-foreground-muted hover:text-foreground transition-colors">Research</Link>
               <Link to="/benchmark" className="text-foreground-muted hover:text-foreground transition-colors">Benchmark</Link>
-              <Link to="/archive/research/writings" className="text-foreground-muted hover:text-foreground transition-colors">Writings</Link>
+              <Link to="/archive/research/writings" className="text-foreground-muted hover:text-foreground transition-colors">Writing Library</Link>
               <Link to="/audit#deliverables-previews" className="text-foreground-muted hover:text-foreground transition-colors">Sample Outputs</Link>
               <Link to="/audit" className="text-foreground-muted hover:text-foreground transition-colors">Audit &amp; Validation</Link>
               <Link to="/trust" className="text-foreground-muted hover:text-foreground transition-colors">Trust</Link>
+              <Link to="/intake#application-form" className="text-foreground-muted hover:text-foreground transition-colors">Request Evaluation</Link>
             </div>
           </div>
         </div>
@@ -71,7 +72,7 @@ export default function Footer() {
                 Benchmark Framework
               </Link>
               <Link to="/archive/research/writings" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
-                Writings
+                Writing Library
               </Link>
               <Link to="/audit#deliverables-previews" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Sample Outputs &amp; Transparency
