@@ -289,7 +289,7 @@ export default function Contact() {
       <SummaryHero
         kicker="Independent Evaluation Intake"
         title="Request Independent Evaluation"
-        summary="Third-party independent behavioral safety validation for human-facing AI systems. We evaluate behavior under emotional pressure across 79 scenarios and 13 behavioral domains (vulnerability categories)."
+        summary="Third-party independent behavioral safety validation for human-facing AI systems. We use the EQ Safety Benchmark, a behavioral evaluation framework built on a binary Safety Gate and eight weighted dimensions, then apply it through baseline audit and ongoing monitoring as needed."
         highlights={[
           "Third-party independent review",
           "Safety Gate + 8-dimension scoring",
