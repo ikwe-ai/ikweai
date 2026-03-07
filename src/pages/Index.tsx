@@ -54,19 +54,18 @@ const flowSteps = [
   { number: "04", title: "Risk summary + next steps", subtitle: "Clear decision support" },
 ] as const;
 
-const architectureFlow = [
+const architectureStackTop = [
   {
     title: "AI System",
     body: "The application, assistant, or agent your team is shipping.",
   },
   {
     title: "Human Interaction",
-    body: "The point where a user brings emotional pressure, vulnerability, or real-world consequence.",
+    body: "Where the system meets vulnerable users and emotionally sensitive contexts.",
   },
-  {
-    title: "Ikwe Behavioral Safety Layer",
-    body: "Independent behavioral evaluation that identifies drift, unsafe patterns, and escalation risk.",
-  },
+] as const;
+
+const architectureStackBottom = [
   {
     title: "Governance Evidence",
     body: "Clear documentation for product, legal, compliance, and leadership teams.",
@@ -142,11 +141,11 @@ const audienceItems = [
 ] as const;
 
 const urgencyItems = [
-  "Regulatory expectations for AI are accelerating globally",
-  "Emotionally interactive AI is under increasing scrutiny",
-  "Litigation exposure from AI behavioral harm is emerging",
+  "One behavioral incident can halt enterprise procurement for 18+ months",
+  "AI litigation exposure is moving from edge case to precedent",
+  "Board-level AI governance now requires documented behavioral evidence",
   "Governance standards are expanding past bias and accuracy",
-  "Behavioral safety is becoming a procurement requirement",
+  "Behavioral safety validation is becoming a procurement requirement",
 ] as const;
 
 const engagementLevels = [
@@ -350,7 +349,7 @@ export default function Home() {
 
         <section id="oneidea" className="home-section home-band">
           <div className="home-wrap">
-            <span className="home-eyebrow">How Behavioral Safety Is Evaluated</span>
+            <span className="home-eyebrow">How Behavioral Safety Validation Works</span>
             <h2 className="home-section-title">
               A structured evaluation system
               <br />
@@ -392,30 +391,68 @@ export default function Home() {
 
         <div className="home-divider" />
 
-        <section id="where-ikwe-fits" className="home-section">
+        <section id="architecture" className="home-section">
           <div className="home-wrap">
             <div className="home-center-block">
               <span className="home-eyebrow">Where Ikwe Fits</span>
-              <h2 className="home-section-title home-section-title-center">
-                Ikwe is the behavioral safety layer
-                <br />
-                between product behavior and deployment decisions.
-              </h2>
+              <h2 className="home-section-title home-section-title-center">Where Ikwe Fits</h2>
               <p className="home-section-subtext">
-                Most AI governance frameworks measure capability, bias, and compliance. Ikwe measures how systems
-                behave against real-world behavioral risk scenarios and monitors live outputs for drift over time.
+                Most AI governance frameworks measure capability, bias, and compliance. Ikwe adds the missing
+                behavioral safety layer.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-4 max-w-6xl">
-              {architectureFlow.map((item, index) => (
-                <article key={item.title} className="card-surface p-5 relative">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">
-                    0{index + 1}
-                  </p>
-                  <h3 className="font-display text-xl text-foreground mb-2">{item.title}</h3>
-                  <p className="text-sm text-foreground-muted leading-relaxed">{item.body}</p>
-                </article>
-              ))}
+
+            <div className="max-w-6xl space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {architectureStackTop.map((item, index) => (
+                  <article key={item.title} className="card-surface p-5">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">0{index + 1}</p>
+                    <h3 className="font-display text-xl text-foreground mb-2">{item.title}</h3>
+                    <p className="text-sm text-foreground-muted leading-relaxed">{item.body}</p>
+                  </article>
+                ))}
+              </div>
+
+              <p className="font-mono text-sm text-center text-foreground-subtle">↓</p>
+
+              <article className="card-surface p-6">
+                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">
+                  03 IKWE BEHAVIORAL SAFETY LAYER
+                </p>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                  <div className="rounded border border-border bg-background-surface px-4 py-4">
+                    <h3 className="font-display text-xl text-foreground mb-3">Benchmark Evaluation</h3>
+                    <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
+                      <li>• real-world behavioral risk scenarios sourced from established datasets</li>
+                      <li>• safety gate testing</li>
+                      <li>• behavioral benchmark scoring</li>
+                      <li>• tier classification</li>
+                      <li>• remediation guidance</li>
+                    </ul>
+                  </div>
+                  <div className="rounded border border-border bg-background-surface px-4 py-4">
+                    <h3 className="font-display text-xl text-foreground mb-3">Behavioral Monitoring</h3>
+                    <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
+                      <li>• ongoing evaluation of live system outputs</li>
+                      <li>• API-connected monitoring</li>
+                      <li>• drift detection over time</li>
+                      <li>• continuous governance evidence</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <p className="font-mono text-sm text-center text-foreground-subtle">↓</p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {architectureStackBottom.map((item, index) => (
+                  <article key={item.title} className="card-surface p-5">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">0{index + 4}</p>
+                    <h3 className="font-display text-xl text-foreground mb-2">{item.title}</h3>
+                    <p className="text-sm text-foreground-muted leading-relaxed">{item.body}</p>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </section>
