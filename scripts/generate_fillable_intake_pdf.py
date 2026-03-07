@@ -204,7 +204,7 @@ def header_commands(page_num: int) -> list[str]:
     return [
         "0.88 0.83 0.98 RG",
         text_cmd(LEFT, 766, 16, "ikwe.ai Intake Form"),
-        text_cmd(LEFT, 748, 10, "The Behavioral Safety Layer for AI"),
+        text_cmd(LEFT, 748, 10, "The Behavioral Safety Layer for Human-Facing AI"),
         text_cmd(LEFT, 734, 8, "Third-party independent behavioral safety validation for human-facing AI systems."),
         text_cmd(LEFT, 722, 8, "Benchmark scope: 79 scenarios | 13 behavioral domains (vulnerability categories)."),
         text_cmd(LEFT, 710, 8, "Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake."),
@@ -289,7 +289,7 @@ def render() -> tuple[list[list[str]], list[list[tuple[str, str, str, tuple[str,
         page_cmds.extend(
             [
                 "0.67 0.61 0.84 rg",
-                text_cmd(LEFT, 38, 8, "ikwe.ai | The Behavioral Safety Layer for AI | ikwe.ai/intake"),
+                text_cmd(LEFT, 38, 8, "ikwe.ai | The Behavioral Safety Layer for Human-Facing AI | ikwe.ai/intake"),
                 text_cmd(RIGHT - 130, 38, 8, "Visible Healing Inc."),
             ]
         )

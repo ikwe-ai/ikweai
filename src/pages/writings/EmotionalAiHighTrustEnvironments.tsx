@@ -19,7 +19,7 @@ export default function EmotionalAiHighTrustEnvironments() {
           "No standardized behavioral safety validation exists",
           "Litigation, regulatory risk, and the structural governance gap",
         ]}
-        primaryAction={{ href: "/research/writings", label: "Back to Writings" }}
+        primaryAction={{ href: "/research/writings", label: "Back to Writing Library" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
         jumpLinks={[
           { href: "#structural-use", label: "Emotional Use" },
@@ -265,7 +265,7 @@ export default function EmotionalAiHighTrustEnvironments() {
           </div>
           <div className="px-6 py-4 bg-lilac/[0.12] border-t-2 border-b-2 border-lilac/45">
             <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-lilac mb-1">Independent Layer — Ikwe.ai</p>
-            <p className="text-sm text-foreground-muted">The Behavioral Safety Layer for AI</p>
+            <p className="text-sm text-foreground-muted">The Behavioral Safety Layer for Human-Facing AI</p>
           </div>
           <div className="px-6 py-1 bg-background-surface border-b border-lilac/10 flex justify-center">
             <span className="text-lilac-bright">↑</span>

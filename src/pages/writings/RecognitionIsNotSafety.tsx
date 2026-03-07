@@ -19,7 +19,7 @@ export default function RecognitionIsNotSafety() {
           "Behavior quality is measured separately",
           "Research note with governance framing",
         ]}
-        primaryAction={{ href: "/research/writings", label: "Back to Writings" }}
+        primaryAction={{ href: "/research/writings", label: "Back to Writing Library" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
         jumpLinks={[
           { href: "#research-note", label: "Research Note" },

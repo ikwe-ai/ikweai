@@ -19,7 +19,7 @@ export default function AIGovernanceCompliance() {
           "Confidence without governance creates authority risk",
           "Trust layer converts policy intent into evidence",
         ]}
-        primaryAction={{ href: "/research/writings", label: "Back to Writings" }}
+        primaryAction={{ href: "/research/writings", label: "Back to Writing Library" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
         jumpLinks={[
           { href: "#trust-layer-thesis", label: "Thesis" },

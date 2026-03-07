@@ -19,7 +19,7 @@ export default function ChooseYourPath() {
           "Interruption is an operational choice, not a slogan",
           "Trust is built through repeated governance decisions",
         ]}
-        primaryAction={{ href: "/research/writings", label: "Back to Writings" }}
+        primaryAction={{ href: "/research/writings", label: "Back to Writing Library" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
         jumpLinks={[
           { href: "#long-arc", label: "Long Arc" },

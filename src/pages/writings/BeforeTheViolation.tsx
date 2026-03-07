@@ -19,7 +19,7 @@ export default function BeforeTheViolation() {
           "Intervention windows before visible policy failure",
           "Harm floors as enforceable minimums",
         ]}
-        primaryAction={{ href: "/research/writings", label: "Back to Writings" }}
+        primaryAction={{ href: "/research/writings", label: "Back to Writing Library" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
         jumpLinks={[
           { href: "#harm-begins", label: "Harm Begins" },
