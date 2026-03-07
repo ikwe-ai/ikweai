@@ -746,9 +746,8 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="home-pullquote">
-                  Every regulated industry eventually needs an auditor. Finance got credit rating agencies. Healthcare
-                  got clinical trials oversight. <strong>AI is here now.</strong> The time to establish your
-                  behavioral safety record is before you need it.
+                  One behavioral incident can halt procurement for 18+ months. The time to establish your behavioral
+                  safety record is before you need it.
                 </div>
               </div>
             </div>
@@ -795,7 +794,9 @@ export default function Home() {
               <Link to="/intake#application-form" className="home-btn home-btn-gold home-btn-large">
                 Request Evaluation
               </Link>
-              <p className="home-engage-note">Bring in an outside review before product risk turns into leadership risk.</p>
+              <p className="home-engage-note">
+                Choose the level of external trust signal your system requires. Each level is cumulative.
+              </p>
             </div>
           </div>
         </section>
