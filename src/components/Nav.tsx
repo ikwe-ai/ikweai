@@ -35,6 +35,8 @@ export default function Nav() {
     { label: "Work With Us", href: "#engage" },
   ] as const;
 
+  const closeMobileMenu = () => setMobileOpen(false);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
@@ -135,11 +137,11 @@ export default function Nav() {
           <div className="home-nav-mobile lg:hidden">
             <nav className="container mx-auto max-w-6xl px-4 sm:px-6 py-5 flex flex-col gap-3" aria-label="Home sections">
               {homeSectionLinks.map((link) => (
-                <a key={link.href} href={link.href} className="home-nav-mobile-link">
+                <a key={link.href} href={link.href} className="home-nav-mobile-link" onClick={closeMobileMenu}>
                   {link.label}
                 </a>
               ))}
-              <Link to="/intake#application-form" className="home-nav-mobile-cta">
+              <Link to="/intake#application-form" className="home-nav-mobile-cta" onClick={closeMobileMenu}>
                 Request Evaluation
               </Link>
             </nav>
