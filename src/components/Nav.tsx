@@ -27,6 +27,7 @@ const researchLinks = [
 const homeSectionLinks = [
   { label: "The Problem", href: "#thesis" },
   { label: "The Benchmark", href: "#benchmark" },
+  { label: "Leaderboard", to: "/benchmark" },
   { label: "Safety Gate", href: "#safety-gate" },
   { label: "How We Evaluate", href: "#system" },
   { label: "Work With Us", href: "#engage" },
@@ -70,7 +71,6 @@ export default function Nav() {
 
   const isResearchActive =
     isActive("/research") ||
-    isActive("/benchmark") ||
     isActive("/archive/research");
 
   const closeMobileMenu = () => {
@@ -120,9 +120,15 @@ export default function Nav() {
           {isHome ? (
             <nav className="home-nav-links hidden lg:flex" aria-label="Homepage sections">
               {homeSectionLinks.map((link) => (
-                <a key={link.href} href={link.href} className="home-nav-link">
-                  {link.label}
-                </a>
+                "to" in link ? (
+                  <Link key={link.to} to={link.to} className="home-nav-link">
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a key={link.href} href={link.href} className="home-nav-link">
+                    {link.label}
+                  </a>
+                )
               ))}
             </nav>
           ) : (
@@ -185,6 +191,15 @@ export default function Nav() {
               </div>
 
               <Link
+                to="/benchmark"
+                className={`nav-link-pill rounded-full px-3 py-1.5 text-sm transition-colors whitespace-nowrap ${
+                  isActive("/benchmark") ? "bg-lilac-dim text-lilac-bright" : "text-foreground-muted hover:text-foreground"
+                }`}
+              >
+                Benchmark
+              </Link>
+
+              <Link
                 to="/audit"
                 className={`nav-link-pill rounded-full px-3 py-1.5 text-sm transition-colors whitespace-nowrap ${
                   isActive("/audit") ? "bg-lilac-dim text-lilac-bright" : "text-foreground-muted hover:text-foreground"
@@ -240,9 +255,15 @@ export default function Nav() {
               aria-label="Homepage sections"
             >
               {homeSectionLinks.map((link) => (
-                <a key={link.href} href={link.href} className="home-nav-mobile-link" onClick={closeMobileMenu}>
-                  {link.label}
-                </a>
+                "to" in link ? (
+                  <Link key={link.to} to={link.to} className="home-nav-mobile-link" onClick={closeMobileMenu}>
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a key={link.href} href={link.href} className="home-nav-mobile-link" onClick={closeMobileMenu}>
+                    {link.label}
+                  </a>
+                )
               ))}
               <Link to="/intake#application-form" className="home-nav-mobile-cta" onClick={closeMobileMenu}>
                 Request Evaluation
@@ -289,6 +310,18 @@ export default function Nav() {
                   ))}
                 </div>
               )}
+
+              <Link
+                to="/benchmark"
+                className={`rounded border px-3 py-2 text-sm ${
+                  isActive("/benchmark")
+                    ? "border-lilac text-lilac-bright bg-lilac-dim"
+                    : "border-border text-foreground-muted"
+                }`}
+                onClick={closeMobileMenu}
+              >
+                Benchmark
+              </Link>
 
               <Link
                 to="/audit"
