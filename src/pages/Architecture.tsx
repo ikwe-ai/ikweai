@@ -9,31 +9,31 @@ export default function Architecture() {
       step: "01",
       title: "Scenario Testing",
       body:
-        "Structured scenario testing runs the system through high-risk behavioral conditions drawn from emotionally sensitive user contexts. This creates a controlled evidence set that shows how the system behaves before institutional buyers rely on internal claims alone.",
+        "Structured behavioral risk scenarios are run against the system under review. Scenarios are sourced from established emotional support interaction datasets and organized across 13 vulnerability categories including crisis, grief, dependency risk, manipulation, and emotional instability.",
     },
     {
       step: "02",
       title: "Safety Gate Screening",
       body:
-        "First-contact responses are screened for harmful behavioral patterns before any broader scoring is applied. For buyers, this matters because an early fail condition creates a clear threshold for escalation, remediation, and launch restraint.",
+        "Before dimensional scoring begins, every response is screened for harmful behavioral patterns. The Safety Gate is binary: pass or fail. A fail result means harmful behavior appeared. This screen runs first, before any quality scoring is considered.",
     },
     {
       step: "03",
-      title: "Independent Evaluation",
+      title: "Dimensional Scoring",
       body:
-        "Outputs are reviewed under consistent conditions by an independent evaluation process rather than by the system builder. That separation gives legal, compliance, and procurement teams a record they can defend beyond internal QA documentation.",
+        "Pass responses are scored across eight weighted behavioral dimensions: Escalation Stability, Vulnerable User Response, Manipulation Susceptibility, Power Asymmetry, Multi-Turn Trajectory, Dependency Reinforcement, Correction & Recovery, and Stress Condition Performance.",
     },
     {
       step: "04",
-      title: "Dimensional Scoring",
+      title: "Tier Classification",
       body:
-        "Responses are scored across defined behavioral safety dimensions so risk is not reduced to a single anecdotal failure. Institutional buyers need this structure because it translates model behavior into comparable patterns, severity, and remediation priorities.",
+        "Systems are classified into four behavioral risk tiers based on Safety Gate result and dimensional scores: LOW (ready to ship), MODERATE (launch with safeguards), HIGH (fix before launch), CRITICAL (do not launch in current state).",
     },
     {
       step: "05",
       title: "Governance Reporting",
       body:
-        "Findings are converted into documented governance evidence for launch decisions, oversight review, and downstream monitoring. This stage matters because institutions need a durable record that can travel across product, legal, compliance, procurement, and board review.",
+        "Findings are compiled into governance-ready documentation for product, legal, compliance, and board review. Reports include the risk rating, behavioral evidence, failure mode mapping, and a remediation roadmap.",
     },
   ] as const;
 
@@ -41,15 +41,15 @@ export default function Architecture() {
     <PageShell>
       <PageMeta
         title="Architecture — Evaluation Pipeline | Ikwe.ai"
-        description="Public architecture overview for the EQ Safety Benchmark evaluation pipeline and governance controls."
+        description="Public architecture overview for Ikwe's independent behavioral safety evaluation pipeline and governance reporting model."
         path="/technology/architecture"
       />
       <SummaryHero
         kicker="System Overview"
-        title="Architecture"
-        summary="Behavioral safety cannot be self-certified. The evaluation pipeline is designed for institutional review — independent, documented, and structured for governance use."
+        title="How The Evaluation Works"
+        summary="Behavioral safety cannot be self-certified. The Ikwe evaluation pipeline is independent, documented, and structured for institutional review — from first scenario test to governance reporting."
         highlights={[
-          "Independent third-party evaluation flow",
+          "Five-stage independent evaluation flow",
           "Safety Gate before broader scoring",
           "Governance-ready reporting outputs",
         ]}
@@ -79,33 +79,30 @@ export default function Architecture() {
         </div>
       </section>
 
-      <section id="independence" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">
-          Why Independent Evaluation Matters
-        </p>
-        <div className="space-y-4 text-sm text-foreground-muted max-w-2xl">
-          <p>
-            Internal QA can improve product quality, but it cannot self-certify behavioral safety in the eyes of outside
-            reviewers. When the builder is also the evaluator, the record does not carry the same institutional weight.
-          </p>
-          <p>
-            Independent evaluation creates a defensible record. It gives procurement, compliance, and legal stakeholders
-            structured evidence they can use when the question is not whether a system works, but whether it can be trusted
-            in sensitive conditions.
-          </p>
-          <p>
-            Governance infrastructure requires separation between builder and auditor. That separation is what turns testing
-            from an internal process into a credible oversight mechanism.
-          </p>
-        </div>
-      </section>
-
       <section id="control-terms" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Evaluation Standards</p>
-        <div className="space-y-2 text-sm text-foreground-muted max-w-2xl">
-          <p>Safety behavior is assessed first, before broader quality scoring is considered.</p>
-          <p>Published outputs are independent, documented, and designed for institutional review.</p>
-          <p>Detailed operational methods and implementation tables remain restricted to authorized engagements.</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Why Independent Evaluation Matters</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
+          <article className="card-surface p-6">
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              Internal QA cannot self-certify behavioral safety. When the same team that builds the system also reviews
+              it, conflicts of interest are structural — not individual. Independent evaluation creates a defensible
+              separation between builder and auditor.
+            </p>
+          </article>
+          <article className="card-surface p-6">
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              Governance infrastructure requires documentation that holds up to external scrutiny. A board, insurer, or
+              regulator reviewing behavioral safety needs a record produced outside the development team — not internal
+              testing notes.
+            </p>
+          </article>
+          <article className="card-surface p-6">
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              The evaluation record is a risk management asset. Organizations that establish behavioral safety
+              documentation before it becomes required are in a materially different position than those who respond to
+              incidents.
+            </p>
+          </article>
         </div>
       </section>
 

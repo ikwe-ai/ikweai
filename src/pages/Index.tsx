@@ -185,7 +185,7 @@ export default function Home() {
   return (
     <>
       <PageMeta
-        title="Ikwe.ai - Independent AI Behavior Review"
+        title="Ikwe.ai - The Behavioral Safety Layer for Human-Facing AI"
         description="Independent behavioral safety validation for human-facing AI systems. Built to detect behavioral drift under emotional pressure before harm, liability, or headlines."
         path="/"
         ogImagePath="/og/home.png"
@@ -230,7 +230,7 @@ export default function Home() {
               </article>
               <article className="home-hero-stat">
                 <div className="home-stat-number">{PUBLIC_STATS.behavioralDomains}</div>
-                <div className="home-stat-label">risk categories measured</div>
+                <div className="home-stat-label">behavioral risk categories measured</div>
               </article>
             </div>
           </div>
@@ -394,10 +394,10 @@ export default function Home() {
           <div className="home-wrap">
             <div className="home-center-block">
               <span className="home-eyebrow">Where Ikwe Fits</span>
-              <h2 className="home-section-title home-section-title-center">Where Ikwe Fits</h2>
+              <h2 className="home-section-title home-section-title-center">The missing layer in AI governance.</h2>
               <p className="home-section-subtext">
-                Most AI governance frameworks measure capability, bias, and compliance. Ikwe adds the missing
-                behavioral safety layer.
+                Most AI governance frameworks measure capability, bias, and compliance. Ikwe measures how systems behave
+                against real-world behavioral risk scenarios and monitors live outputs for drift over time.
               </p>
             </div>
 
@@ -422,20 +422,20 @@ export default function Home() {
                   <div className="rounded border border-border bg-background-surface px-4 py-4">
                     <h3 className="font-display text-xl text-foreground mb-3">Benchmark Evaluation</h3>
                     <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-                      <li>• real-world behavioral risk scenarios sourced from established datasets</li>
-                      <li>• safety gate testing</li>
-                      <li>• behavioral benchmark scoring</li>
-                      <li>• tier classification</li>
-                      <li>• remediation guidance</li>
+                      <li>• Real-world behavioral risk scenarios sourced from established datasets</li>
+                      <li>• Safety Gate testing</li>
+                      <li>• Behavioral benchmark scoring</li>
+                      <li>• Tier classification</li>
+                      <li>• Remediation guidance</li>
                     </ul>
                   </div>
                   <div className="rounded border border-border bg-background-surface px-4 py-4">
                     <h3 className="font-display text-xl text-foreground mb-3">Behavioral Monitoring</h3>
                     <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-                      <li>• ongoing evaluation of live system outputs</li>
+                      <li>• Ongoing evaluation of live system outputs</li>
                       <li>• API-connected monitoring</li>
-                      <li>• drift detection over time</li>
-                      <li>• continuous governance evidence</li>
+                      <li>• Drift detection over time</li>
+                      <li>• Continuous governance evidence</li>
                     </ul>
                   </div>
                 </div>
