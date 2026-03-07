@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
 import PageMeta from "@/components/PageMeta";
+import { PUBLIC_STATS } from "@/content/stats";
+import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
 const governanceRows = [
   ["Data security", "Multi-turn emotional trajectory"],
@@ -95,89 +97,60 @@ const dimensions = [
   ["Stress Condition Performance", "Does behavioral stability hold under emotional intensity?"],
 ] as const;
 
-const phases = [
-  {
-    number: "01",
-    title: "EQ Safety Benchmark",
-    description:
-      "The EQ Safety Benchmark is a behavioral evaluation framework that scores AI responses using a binary Safety Gate and eight weighted dimensions. It can be applied to any scenario or interaction in emotionally sensitive contexts.",
-    tag: "Framework layer",
-    outcome: "Consistent behavioral scoring system",
-  },
-  {
-    number: "02",
-    title: "Public Benchmark Audit",
-    description:
-      "Ikwe continuously evaluates frontier AI models against a baseline set of 79 real-world emotional support scenarios sourced from established datasets. This is one public application of the benchmark framework and produces the frontier model record.",
-    tag: "Public authority layer",
-    outcome: "Public benchmark scores and reference baseline",
-  },
-  {
-    number: "03",
-    title: "Private Evaluation + Monitoring",
-    description:
-      "Client systems are evaluated privately using the same framework, with baseline audit coverage and optional client-specific scenarios. Ongoing monitoring evaluates live system outputs via API-connected monitoring to detect behavioral drift over time.",
-    tag: "Client governance layer",
-    outcome: "Private reports + continuous governance evidence",
-  },
-] as const;
-
 const tiers = [
-  ["LOW", "Low behavioral risk", "Ready to ship with standard monitoring", "Standard monitoring", "tier-1"],
-  ["MODERATE", "Moderate behavioral risk", "Launch with safeguards in place", "Safeguards required", "tier-2"],
-  ["HIGH", "High behavioral risk", "Fix before launch", "Engineering fixes + retest", "tier-3"],
-  ["CRITICAL", "Critical behavioral risk", "Do not launch in current state", "Substantial redesign needed", "tier-4"],
+  ["TIER I", "Stable Behavioral Integrity", "Launch with confidence", "Standard monitoring", "tier-1"],
+  ["TIER II", "Moderate Behavioral Risk", "Launch with mitigations", "Safeguards + quarterly review", "tier-2"],
+  ["TIER III", "Escalation Instability", "Remediate before launch", "Engineering fixes required, retest", "tier-3"],
+  ["TIER IV", "High Vulnerability Exposure", "Do not launch", "Fundamental redesign needed", "tier-4"],
 ] as const;
 
 const deliverables = [
-  ["Board", "Defensible audit record", "Governance documentation for board-level review and oversight."],
+  ["Board", "Defensible audit record", "Governance documentation your directors can stand behind."],
   ["Legal", "Due diligence evidence", "Documented behavioral evidence for legal exposure and liability review."],
-  ["Compliance", "Versioned evidence packages", "Reproducible compliance documentation updated over time."],
-  ["Engineering", "Structured failure mapping", "Specific failure mode data your team can act on before drift becomes crisis."],
+  ["Compliance", "Versioned evidence packages", "Reproducible compliance documentation updated after each deployment change."],
+  ["Engineering", "Structured failure mapping", "Specific failure mode data your team can act on in real time."],
 ] as const;
 
 const audienceItems = [
   "Companion AI platforms",
   "AI mental health systems",
-  "Coaching AI products",
-  "Customer support AI",
   "Education AI products",
   "Consumer-facing AI systems",
-  "Healthcare AI",
+  "Enterprise AI with human consequence",
+  "Fintech and healthcare AI",
 ] as const;
 
 const urgencyItems = [
-  "Regulated industries are beginning to require behavioral safety records — not just capability benchmarks",
-  "Enterprise liability exposure from emotionally unsafe AI is no longer theoretical",
-  "The window to establish a safety record before it becomes mandatory is closing",
-  "Independent evaluation now is cheaper than remediation after a public failure",
+  "Regulatory expectations for AI are accelerating globally",
+  "Emotionally interactive AI is under increasing scrutiny",
+  "AI litigation exposure is moving from edge case to precedent",
+  "Board-level AI governance now requires documented behavioral evidence",
+  "Behavioral safety is becoming a procurement requirement",
 ] as const;
 
 const engagementLevels = [
   {
     level: "LEVEL I",
-    title: "Behavioral Audit / Benchmark Evaluation",
-    description:
-      "Structured benchmark evaluation against real-world behavioral risk scenarios sourced from established datasets.",
-    forItems: ["Safety Gate", "Benchmark scoring", "Risk tiering"],
-    result: "You get a documented behavioral risk baseline.",
+    title: "Baseline Gate",
+    description: "Determine if your system passes or fails under controlled emotional stress scenarios.",
+    forItems: ["Early-stage systems", "Pre-deployment validation", "Internal confidence check"],
+    result: "Your system has been externally stress-tested. A safety gate result is on record.",
   },
   {
     level: "LEVEL II",
-    title: "Full Benchmark + Remediation",
+    title: "Full Benchmark",
     description:
-      "Full benchmark evaluation plus remediation guidance, retest planning, and decision-ready documentation.",
-    forItems: ["Everything in Level I", "Remediation guidance", "Retest path"],
-    result: "You get benchmark evidence and a clear path to reduce risk.",
+      "Evaluation across all 8 dimensions with Tier I–IV classification, failure mapping, and a remediation plan.",
+    forItems: ["Board-level governance", "Regulated deployment", "Enterprise procurement"],
+    result: "Your board, legal, and compliance teams have documented third-party behavioral evidence.",
     featured: true,
   },
   {
     level: "LEVEL III",
-    title: "Continuous Governance Monitoring",
-    description:
-      "API-connected monitoring of live outputs to detect behavioral drift over time and maintain an up-to-date governance record.",
-    forItems: ["Everything in Level II", "Live output monitoring", "Ongoing drift alerts"],
-    result: "You maintain continuous independent oversight after launch.",
+    title: "Ongoing Governance",
+    description: "Continuous behavioral drift monitoring after each deployment change. Quarterly re-evaluation.",
+    forItems: ["Live systems at scale", "High-consequence AI deployment", "Sustained regulatory posture"],
+    result: "Your system has an independent behavioral safety record — versioned and defensible over time.",
   },
 ] as const;
 
