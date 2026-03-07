@@ -4,6 +4,7 @@ import PageMeta from "@/components/PageMeta";
 import PageShell from "@/components/PageShell";
 import SummaryHero from "@/components/SummaryHero";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
+import { Link } from "react-router-dom";
 
 type ScoreTone = "stable" | "conditional" | "mitigation" | "risk";
 type DimensionKey = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H";
@@ -333,50 +334,53 @@ export default function EqSafetyBenchmark() {
         ogImagePath="/og/benchmark.png"
       />
 
-      <SummaryHero
-        kicker="EQ Safety Benchmark — Public Leaderboard"
-        title="Frontier AI Behavioral Safety Index."
-        summary="The EQ Safety Benchmark is a behavioral evaluation framework that scores AI responses using a binary Safety Gate and eight weighted dimensions. Validated against a baseline of 79 real-world emotional support interaction scenarios drawn from established datasets, it can be applied to any AI system operating in emotionally sensitive contexts. Frontier model scores are public. Client evaluations are private and compared against the same baseline."
-        highlights={[
-          `${BENCHMARK_CURRENT.scenarios} baseline scenarios`,
-          `${BENCHMARK_CURRENT.nValue}`,
-          "Safety Gate + 8 weighted dimensions",
-        ]}
-        primaryAction={{ href: "/intake#application-form", label: "Request Evaluation" }}
-        secondaryAction={{ href: "#methodology", label: "View Methodology" }}
-        jumpLinks={[
-          { href: "#leaderboard", label: "Leaderboard" },
-          { href: "#what-this-measures", label: "What This Measures" },
-          { href: "#methodology", label: "Research Foundation" },
-          { href: "#safety-gate", label: "Safety Gate" },
-          { href: "#dim-scores", label: "Dimensional Scores" },
-          { href: "#findings", label: "Key Findings" },
-          { href: "#meth-transparency", label: "Methodology" },
-        ]}
-        visual={{
-          kicker: "Updated February 26, 2026",
-          title: "Public record",
-          points: [
-            "Completed Study I baseline rows published",
-            "Public models ranked by overall score",
-            "Client evaluations stay private",
-            "Compared against the same framework",
-          ],
-          tone: "teal",
-        }}
-      />
+      <div className="home-page">
+        <div aria-hidden="true" className="home-starfield" />
+        <div className="relative z-10">
+          <SummaryHero
+            kicker="EQ Safety Benchmark — Public Leaderboard"
+            title="Frontier AI Behavioral Safety Index."
+            summary="The EQ Safety Benchmark is a behavioral evaluation framework that scores AI responses using a binary Safety Gate and eight weighted dimensions. Validated against a baseline of 79 real-world emotional support interaction scenarios drawn from established datasets, it can be applied to any AI system operating in emotionally sensitive contexts. Frontier model scores are public. Client evaluations are private and compared against the same baseline."
+            highlights={[
+              `${BENCHMARK_CURRENT.scenarios} baseline scenarios`,
+              `${BENCHMARK_CURRENT.nValue}`,
+              "Safety Gate + 8 weighted dimensions",
+            ]}
+            primaryAction={{ href: "/intake#application-form", label: "Request Evaluation" }}
+            secondaryAction={{ href: "#methodology", label: "View Methodology" }}
+            jumpLinks={[
+              { href: "#leaderboard", label: "Leaderboard" },
+              { href: "#what-this-measures", label: "What This Measures" },
+              { href: "#methodology", label: "Research Foundation" },
+              { href: "#safety-gate", label: "Safety Gate" },
+              { href: "#dim-scores", label: "Dimensional Scores" },
+              { href: "#findings", label: "Key Findings" },
+              { href: "#meth-transparency", label: "Methodology" },
+            ]}
+            visual={{
+              kicker: "Updated February 26, 2026",
+              title: "Public record",
+              points: [
+                "Completed Study I baseline rows published",
+                "Public models ranked by overall score",
+                "Client evaluations stay private",
+                "Compared against the same framework",
+              ],
+              tone: "teal",
+            }}
+          />
 
-      <ActionDock
-        title="Compare Against The Public Record"
-        subtitle="Client evaluations run against the same baseline set. Results stay confidential. You receive your tier classification and dimensional scores positioned against the frontier model record."
-        items={[
-          { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
-          { href: "#leaderboard", label: "View Leaderboard", tone: "outline" },
-          { href: "#meth-transparency", label: "Review Method", tone: "quiet" },
-        ]}
-      />
+          <ActionDock
+            title="Compare Against The Public Record"
+            subtitle="Client evaluations run against the same baseline set. Results stay confidential. You receive your tier classification and dimensional scores positioned against the frontier model record."
+            items={[
+              { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
+              { href: "#leaderboard", label: "View Leaderboard", tone: "outline" },
+              { href: "#meth-transparency", label: "Review Method", tone: "quiet" },
+            ]}
+          />
 
-      <ConnectedPages current="benchmark" />
+          <ConnectedPages current="benchmark" />
 
       <section id="leaderboard" className="site-section py-12 border-b border-border">
         <div className="grid gap-6 max-w-6xl lg:grid-cols-[minmax(0,1fr)_320px]">
@@ -431,6 +435,17 @@ export default function EqSafetyBenchmark() {
                   })}
                 </tbody>
               </table>
+            </div>
+            <div className="home-hero-actions mt-6">
+              <a href="#dim-scores" className="home-btn home-btn-gold">
+                View Full Score Breakdown
+              </a>
+              <Link to="/research" className="home-btn home-btn-outline">
+                Read Research Summary
+              </Link>
+              <Link to="/technology/architecture" className="home-btn home-btn-outline">
+                See Evaluation Architecture
+              </Link>
             </div>
           </div>
 
@@ -773,6 +788,8 @@ export default function EqSafetyBenchmark() {
           <p className="text-xs text-foreground-subtle mt-4">Client scores are never published. Your evaluation results belong to you.</p>
         </div>
       </section>
+        </div>
+      </div>
     </PageShell>
   );
 }
