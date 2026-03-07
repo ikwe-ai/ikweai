@@ -7,7 +7,7 @@ export default function Footer() {
     return (
       <footer className="home-footer">
         <div className="home-footer-left">
-          <strong>ikwe.ai</strong> · Independent AI behavior review · Third-party evaluation for human-facing systems
+          <strong>ikwe.ai</strong> · The behavioral safety standard for human-facing AI · Independent safety record
         </div>
         <div className="home-footer-right">
           Binary Safety Gate · 8 weighted dimensions · 79 baseline scenarios
@@ -50,7 +50,7 @@ export default function Footer() {
               </p>
             </div>
             <p className="text-xs text-foreground-subtle leading-relaxed max-w-xs">
-              The Behavioral Safety Layer for AI. Independent validation for AI systems that interact with humans.
+              The behavioral safety standard for human-facing AI. Independent validation for systems that interact with humans.
             </p>
             <p className="text-xs text-foreground-subtle mt-4">© {new Date().getFullYear()} Visible Healing Inc. (dba Ikwe.ai)</p>
             <p className="text-xs text-foreground-subtle mt-2 leading-relaxed">
