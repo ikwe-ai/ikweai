@@ -473,6 +473,15 @@ export default function Home() {
                   </article>
                 ))}
               </div>
+
+              <div className="home-hero-actions">
+                <Link to="/technology/architecture" className="home-btn home-btn-outline">
+                  View Architecture
+                </Link>
+                <Link to="/research" className="home-btn home-btn-outline">
+                  Read Research Summary
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -507,6 +516,15 @@ export default function Home() {
                 real-world emotional support scenarios, produces public frontier model benchmark scores, and powers
                 private client evaluations against the same baseline.
               </p>
+            </div>
+
+            <div className="home-hero-actions">
+              <Link to="/benchmark" className="home-btn home-btn-gold">
+                View Public Leaderboard
+              </Link>
+              <Link to="/research" className="home-btn home-btn-outline">
+                Read Research Summary
+              </Link>
             </div>
           </div>
         </section>
@@ -618,6 +636,15 @@ export default function Home() {
                   </div>
                 </article>
               ))}
+            </div>
+
+            <div className="home-hero-actions">
+              <Link to="/technology/architecture" className="home-btn home-btn-outline">
+                See Full Evaluation Pipeline
+              </Link>
+              <Link to="/audit" className="home-btn home-btn-outline">
+                Open Audit Pathway
+              </Link>
             </div>
           </div>
         </section>
@@ -736,6 +763,14 @@ export default function Home() {
                     </article>
                   ))}
                 </div>
+                <div className="home-hero-actions">
+                  <Link to="/audit#deliverables-previews" className="home-btn home-btn-gold">
+                    View Sample Outputs
+                  </Link>
+                  <Link to="/audit" className="home-btn home-btn-outline">
+                    Open Audit Pathway
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -821,6 +856,9 @@ export default function Home() {
             <div className="home-engage-cta">
               <Link to="/intake#application-form" className="home-btn home-btn-gold home-btn-large">
                 Request Evaluation
+              </Link>
+              <Link to="/audit" className="home-btn home-btn-outline home-btn-large">
+                View Audit Options
               </Link>
               <p className="home-engage-note">
                 Choose the level of external trust signal your system requires. Each level is cumulative.
