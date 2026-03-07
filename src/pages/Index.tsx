@@ -200,9 +200,9 @@ export default function Home() {
               <Link to="/intake#application-form" className="home-btn home-btn-gold">
                 Request Evaluation
               </Link>
-              <a href="/benchmark" className="home-btn home-btn-outline">
+              <Link to="/benchmark" className="home-btn home-btn-outline">
                 View the Benchmark
-              </a>
+              </Link>
             </div>
             <div className="home-hero-stats">
               <article className="home-hero-stat">
@@ -664,9 +664,9 @@ export default function Home() {
               <Link to="/intake#application-form" className="home-btn home-btn-gold">
                 Request Evaluation
               </Link>
-              <a href="/benchmark" className="home-btn home-btn-outline">
+              <Link to="/benchmark" className="home-btn home-btn-outline">
                 View the Benchmark
-              </a>
+              </Link>
             </div>
             <div className="home-close-props">
               {closingProps.map(([title, copy]) => (
