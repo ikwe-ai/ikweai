@@ -9,11 +9,11 @@ export default function Footer() {
     return (
       <footer className="home-footer">
         <div className="home-footer-left">
-          <strong>ikwe.ai</strong> · Independent Behavioral Safety Validation · EQ Safety Benchmark
+          <strong>ikwe.ai</strong> · Independent AI behavior review · Third-party evaluation for human-facing systems
         </div>
         <div className="home-footer-right">
           {PUBLIC_STATS.outputsEvaluatedLabel} · {PUBLIC_STATS.scenarios} scenarios · {PUBLIC_STATS.behavioralDomains}{" "}
-          behavioral domains
+          risk categories
         </div>
       </footer>
     );
