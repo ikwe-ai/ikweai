@@ -54,12 +54,35 @@ const flowSteps = [
   { number: "04", title: "Risk summary + next steps", subtitle: "Clear decision support" },
 ] as const;
 
+const architectureFlow = [
+  {
+    title: "AI System",
+    body: "The application, assistant, or agent your team is shipping.",
+  },
+  {
+    title: "Human Interaction",
+    body: "The point where a user brings emotional pressure, vulnerability, or real-world consequence.",
+  },
+  {
+    title: "Ikwe Layer",
+    body: "Independent behavioral evaluation that identifies drift, unsafe patterns, and escalation risk.",
+  },
+  {
+    title: "Governance Evidence",
+    body: "Clear documentation for product, legal, compliance, and leadership teams.",
+  },
+  {
+    title: "Deployment Decisions",
+    body: "A defensible basis for launch, remediation, or ongoing monitoring decisions.",
+  },
+] as const;
+
 const audiencePills = [
   "Mental health AI",
   "AI companions",
-  "Fintech assistants",
+  "Coaching AI",
+  "Customer support AI",
   "Healthcare AI",
-  "Enterprise copilots",
   "Education AI",
   "Consumer-facing AI",
 ] as const;
@@ -78,25 +101,25 @@ const dimensions = [
 const phases = [
   {
     number: "01",
-    title: "Initial risk screen",
+    title: "Safety Gate",
     description:
-      "A fast first pass across emotionally vulnerable scenarios to answer the immediate question: is there obvious launch risk here or not?",
+      "Rapid stress testing to identify critical behavioral failures before teams make deployment decisions.",
     tag: "Before launch",
     outcome: "Clear go / no-go signal",
   },
   {
     number: "02",
-    title: "Full behavior review",
+    title: "Benchmark Evaluation",
     description:
-      "A deeper review across eight risk areas, with examples of failures, where they show up, and what your team should fix first.",
-    tag: "Deep review",
+      "Full multi-scenario evaluation across eight behavioral dimensions, with findings, examples, and remediation priorities.",
+    tag: "Full review",
     outcome: "Priority issues + fix plan",
   },
   {
     number: "03",
-    title: "Ongoing monitoring",
+    title: "Governance Monitoring",
     description:
-      "Repeat reviews after model, prompt, or product changes so you can catch degradation early and keep a current record over time.",
+      "Ongoing evaluation after product, prompt, or model changes so drift is detected early and evidence stays current.",
     tag: "After launch",
     outcome: "Current risk record over time",
   },
@@ -119,10 +142,11 @@ const deliverables = [
 const audienceItems = [
   "Companion AI platforms",
   "AI mental health systems",
+  "Coaching AI products",
+  "Customer support AI",
   "Education AI products",
   "Consumer-facing AI systems",
-  "Enterprise AI with human consequence",
-  "Fintech and healthcare AI",
+  "Healthcare AI",
 ] as const;
 
 const urgencyItems = [
@@ -136,7 +160,7 @@ const urgencyItems = [
 const engagementLevels = [
   {
     level: "LEVEL I",
-    title: "Initial Review",
+    title: "Behavioral Safety Audit",
     description:
       "A quick outside review to identify whether clear risk shows up under controlled emotional stress scenarios.",
     forItems: ["Early-stage systems", "Pre-deployment validation", "Internal confidence check"],
@@ -144,7 +168,7 @@ const engagementLevels = [
   },
   {
     level: "LEVEL II",
-    title: "Full Review",
+    title: "Full Benchmark Evaluation",
     description:
       "A full outside review across eight risk areas, with prioritized findings, examples, and a documented fix plan.",
     forItems: ["Board-level governance", "Regulated deployment", "Enterprise procurement"],
@@ -153,7 +177,7 @@ const engagementLevels = [
   },
   {
     level: "LEVEL III",
-    title: "Ongoing Monitoring",
+    title: "Continuous Governance Monitoring",
     description:
       "Repeat reviews after launches and major changes so your risk picture stays current over time.",
     forItems: ["Live systems at scale", "High-consequence AI deployment", "Sustained regulatory posture"],
@@ -188,14 +212,14 @@ export default function Home() {
               <br />
               Safety Layer
               <br />
-              <em>for AI.</em>
+              <em>for Human-Facing AI.</em>
             </h1>
             <p className="home-hero-sub">
-              If your system interacts with humans during <strong>vulnerable moments</strong>, you need evidence of
-              how it behaves under emotional pressure.
+              Independent validation that detects behavioral drift under emotional pressure before it becomes harm,
+              liability, or headlines.
             </p>
             <p className="home-hero-subtle">
-              Not just what it says in a demo. How it behaves when a real person is under pressure.
+              AI doesn&apos;t fail. It drifts.
             </p>
             <div className="home-hero-actions">
               <Link to="/intake#application-form" className="home-btn home-btn-gold">
@@ -334,11 +358,11 @@ export default function Home() {
 
         <section id="oneidea" className="home-section home-band">
           <div className="home-wrap">
-            <span className="home-eyebrow">What We Do</span>
+            <span className="home-eyebrow">How Behavioral Safety Is Evaluated</span>
             <h2 className="home-section-title">
-              Simple enough to explain.
+              A structured evaluation system
               <br />
-              Specific enough to act on.
+              designed for emotional AI interactions.
             </h2>
 
             <div className="home-core-callout">
@@ -376,20 +400,46 @@ export default function Home() {
 
         <div className="home-divider" />
 
+        <section id="where-ikwe-fits" className="home-section">
+          <div className="home-wrap">
+            <div className="home-center-block">
+              <span className="home-eyebrow">Where Ikwe Fits</span>
+              <h2 className="home-section-title home-section-title-center">
+                Ikwe is the behavioral safety layer
+                <br />
+                between product behavior and deployment decisions.
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-4 max-w-6xl">
+              {architectureFlow.map((item, index) => (
+                <article key={item.title} className="card-surface p-5 relative">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">
+                    0{index + 1}
+                  </p>
+                  <h3 className="font-display text-xl text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-foreground-muted leading-relaxed">{item.body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <div className="home-divider" />
+
         <section id="benchmark" className="home-section">
           <div className="home-wrap">
             <div className="home-grid-two home-benchmark-header">
               <div>
-                <span className="home-eyebrow">What We Evaluate</span>
+                <span className="home-eyebrow">The Ikwe Behavioral Safety Benchmark</span>
                 <h2 className="home-section-title">
-                  Eight checks.
+                  Eight dimensions that evaluate
                   <br />
-                  One clear answer.
+                  how AI behaves under emotional pressure.
                 </h2>
               </div>
               <p className="home-copy home-copy-tight">
-                We review how AI behaves in emotionally loaded interactions. Each check answers a plain question about
-                how your system responds when a person needs it most.
+                Each dimension answers a specific question about how your system behaves when a user needs it most, not
+                just how it performs in neutral test prompts.
               </p>
             </div>
 
@@ -417,15 +467,15 @@ export default function Home() {
 
         <section id="system" className="home-section home-band">
           <div className="home-wrap">
-            <span className="home-eyebrow">How The Review Works</span>
+            <span className="home-eyebrow">The Ikwe Evaluation Framework</span>
             <h2 className="home-section-title">
-              Three steps.
+              Safety Gate - Benchmark Evaluation -
               <br />
-              One review process.
+              Governance Monitoring
             </h2>
             <p className="home-section-subtext home-section-subtext-left">
-              Each step builds on the last, from a quick outside read to deeper review and ongoing monitoring. You
-              choose how much support you need.
+              A structured three-step evaluation process that moves from immediate risk detection to full review and
+              ongoing governance monitoring.
             </p>
 
             <div className="home-phases">
@@ -456,6 +506,9 @@ export default function Home() {
               <h2 className="home-section-title home-output-title">
                 What you receive is a decision, not just a document.
               </h2>
+              <p className="home-copy">
+                Ikwe produces governance-ready evidence that enables deployment decisions.
+              </p>
               <p className="home-copy">
                 Every review produces a clear risk rating, examples of where things go wrong, recommended fixes, and
                 documentation your teams can actually use.
@@ -565,7 +618,9 @@ export default function Home() {
             <div className="home-center-block home-center-block-tight">
               <span className="home-eyebrow">Who This Is For</span>
               <h2 className="home-section-title home-section-title-center">
-                Any system that touches human vulnerability.
+                AI systems that interact with users
+                <br />
+                in emotionally sensitive contexts.
               </h2>
             </div>
 
@@ -605,9 +660,11 @@ export default function Home() {
         <section id="engage" className="home-section">
           <div className="home-wrap">
             <div className="home-center-block">
-              <span className="home-eyebrow">Ways To Work With Us</span>
+              <span className="home-eyebrow">Engagement Model</span>
               <h2 className="home-section-title home-section-title-center">
-                Choose the level of review you need.
+                Three levels of behavioral
+                <br />
+                safety validation.
               </h2>
               <p className="home-section-subtext">
                 Start with a quick outside read, go deeper with a full review, or keep the picture current over time.
