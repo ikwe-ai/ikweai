@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 
 import PageMeta from "@/components/PageMeta";
-import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
-import { PUBLIC_STATS } from "@/content/stats";
 
 const governanceRows = [
   ["Data security", "Multi-turn emotional trajectory"],
@@ -205,8 +203,7 @@ export default function Home() {
               <em>for Human-Facing AI.</em>
             </h1>
             <p className="home-hero-sub">
-              Independent validation that detects behavioral drift under emotional pressure before it becomes harm,
-              liability, or headlines.
+              Independent behavioral safety validation for human-facing AI — powered by the EQ Safety Benchmark.
             </p>
             <p className="home-hero-subtle">
               AI doesn&apos;t fail. It drifts.
@@ -221,16 +218,16 @@ export default function Home() {
             </div>
             <div className="home-hero-stats">
               <article className="home-hero-stat">
-                <div className="home-stat-number">{BENCHMARK_CURRENT.failedGatePct}</div>
-                <div className="home-stat-label">of baseline AI responses introduce emotional risk</div>
+                <div className="home-stat-number">Safety Gate</div>
+                <div className="home-stat-label">Binary first-contact screen for harmful behavioral patterns</div>
               </article>
               <article className="home-hero-stat">
-                <div className="home-stat-number">{PUBLIC_STATS.outputsEvaluatedDisplay}</div>
-                <div className="home-stat-label">outputs evaluated across {PUBLIC_STATS.scenarios} scenarios</div>
+                <div className="home-stat-number">8 Dimensions</div>
+                <div className="home-stat-label">Weighted behavioral scoring across every evaluated response</div>
               </article>
               <article className="home-hero-stat">
-                <div className="home-stat-number">{PUBLIC_STATS.behavioralDomains}</div>
-                <div className="home-stat-label">behavioral risk categories measured</div>
+                <div className="home-stat-number">79 Scenarios</div>
+                <div className="home-stat-label">Baseline drawn from real-world emotional support interaction datasets</div>
               </article>
             </div>
           </div>
@@ -239,55 +236,66 @@ export default function Home() {
         <div className="home-divider" />
 
         <section id="thesis" className="home-section home-band">
-          <div className="home-wrap home-grid-two">
-            <div>
-              <span className="home-eyebrow">The Problem</span>
-              <h2 className="home-thesis-title">
-                <em>Empathy ≠ Safety.</em>
-                <br />
-                Recognition is not the same as protection.
-              </h2>
-              <p className="home-copy">
-                An AI system can acknowledge distress and still respond in a way that <strong>escalates harm</strong>.
-                It can sound warm while reinforcing dependency. It can appear helpful while suppressing autonomy.
+          <div className="home-wrap">
+            <div className="mb-10 max-w-3xl">
+              <p className="text-foreground-muted leading-relaxed border-l-2 border-lilac pl-5 text-base">
+                The EQ Safety Benchmark is a behavioral evaluation framework that scores AI responses using a binary
+                Safety Gate and eight weighted dimensions. It can be applied to any scenario or interaction and is
+                validated against a baseline of 79 real-world emotional support interaction scenarios drawn from
+                established datasets.
               </p>
-              <p className="home-copy">
-                This is a <strong>behavioral pattern</strong> that does not appear in standard evaluations, accuracy
-                benchmarks, or typical compliance checks. It surfaces when humans are vulnerable. That is exactly
-                where current governance stops measuring.
-              </p>
-              <div className="home-pullquote">
-                When behavioral failure surfaces publicly, decisions are made under pressure. Independent evaluation
-                prevents that from being your only defense.
-              </div>
             </div>
 
-            <div>
-              <span className="home-eyebrow">What Most Reviews Miss</span>
-              <div className="home-gap-table">
-                <div className="home-gap-header">
-                  <div className="home-gap-heading home-gap-heading-muted">Current Governance Covers</div>
-                  <div className="home-gap-heading">What still needs testing</div>
-                </div>
-                {governanceRows.map(([left, right]) => (
-                  <div key={left} className="home-gap-row">
-                    <div className="home-gap-cell home-gap-cell-muted">{left}</div>
-                    <div className="home-gap-cell">{right}</div>
-                  </div>
-                ))}
-                <div className="home-gap-foot">
-                  This is the gap between a model that looks acceptable and one that is actually safe to deploy.
+            <div className="home-grid-two">
+              <div>
+                <span className="home-eyebrow">The Problem</span>
+                <h2 className="home-thesis-title">
+                  <em>Empathy ≠ Safety.</em>
+                  <br />
+                  Recognition is not the same as protection.
+                </h2>
+                <p className="home-copy">
+                  An AI system can acknowledge distress and still respond in a way that <strong>escalates harm</strong>.
+                  It can sound warm while reinforcing dependency. It can appear helpful while suppressing autonomy.
+                </p>
+                <p className="home-copy">
+                  This is a <strong>behavioral pattern</strong> that does not appear in standard evaluations, accuracy
+                  benchmarks, or typical compliance checks. It surfaces when humans are vulnerable. That is exactly
+                  where current governance stops measuring.
+                </p>
+                <div className="home-pullquote">
+                  When behavioral failure surfaces publicly, decisions are made under pressure. Independent evaluation
+                  prevents that from being your only defense.
                 </div>
               </div>
 
-              <div className="home-pill-group-wrap">
-                <span className="home-eyebrow">This Creates</span>
-                <div className="home-pill-group">
-                  {exposurePills.map((pill) => (
-                    <span key={pill} className="home-pill">
-                      {pill}
-                    </span>
+              <div>
+                <span className="home-eyebrow">What Most Reviews Miss</span>
+                <div className="home-gap-table">
+                  <div className="home-gap-header">
+                    <div className="home-gap-heading home-gap-heading-muted">Current Governance Covers</div>
+                    <div className="home-gap-heading">What still needs testing</div>
+                  </div>
+                  {governanceRows.map(([left, right]) => (
+                    <div key={left} className="home-gap-row">
+                      <div className="home-gap-cell home-gap-cell-muted">{left}</div>
+                      <div className="home-gap-cell">{right}</div>
+                    </div>
                   ))}
+                  <div className="home-gap-foot">
+                    This is the gap between a model that looks acceptable and one that is actually safe to deploy.
+                  </div>
+                </div>
+
+                <div className="home-pill-group-wrap">
+                  <span className="home-eyebrow">This Creates</span>
+                  <div className="home-pill-group">
+                    {exposurePills.map((pill) => (
+                      <span key={pill} className="home-pill">
+                        {pill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
