@@ -64,7 +64,7 @@ const architectureFlow = [
     body: "The point where a user brings emotional pressure, vulnerability, or real-world consequence.",
   },
   {
-    title: "Ikwe Layer",
+    title: "Ikwe Behavioral Safety Layer",
     body: "Independent behavioral evaluation that identifies drift, unsafe patterns, and escalation risk.",
   },
   {
@@ -101,27 +101,19 @@ const dimensions = [
 const phases = [
   {
     number: "01",
-    title: "Safety Gate",
+    title: "Benchmark Evaluation",
     description:
-      "Rapid stress testing to identify critical behavioral failures before teams make deployment decisions.",
-    tag: "Before launch",
-    outcome: "Clear go / no-go signal",
+      "Ikwe evaluates AI systems against real-world behavioral risk scenarios sourced from established datasets. This includes the safety gate, benchmark scoring, tiering, and remediation guidance.",
+    tag: "Audit layer",
+    outcome: "Risk rating + remediation guidance",
   },
   {
     number: "02",
-    title: "Benchmark Evaluation",
+    title: "Behavioral Monitoring",
     description:
-      "Full multi-scenario evaluation across eight behavioral dimensions, with findings, examples, and remediation priorities.",
-    tag: "Full review",
-    outcome: "Priority issues + fix plan",
-  },
-  {
-    number: "03",
-    title: "Governance Monitoring",
-    description:
-      "Ongoing evaluation after product, prompt, or model changes so drift is detected early and evidence stays current.",
-    tag: "After launch",
-    outcome: "Current risk record over time",
+      "Ikwe continuously evaluates live system outputs via API-connected monitoring to detect behavioral drift over time.",
+    tag: "Governance layer",
+    outcome: "Ongoing drift detection",
   },
 ] as const;
 
@@ -160,28 +152,28 @@ const urgencyItems = [
 const engagementLevels = [
   {
     level: "LEVEL I",
-    title: "Behavioral Safety Audit",
+    title: "Behavioral Audit / Benchmark Evaluation",
     description:
-      "A quick outside review to identify whether clear risk shows up under controlled emotional stress scenarios.",
-    forItems: ["Early-stage systems", "Pre-deployment validation", "Internal confidence check"],
-    result: "You get an initial outside read before launch.",
+      "Structured benchmark evaluation against real-world behavioral risk scenarios sourced from established datasets.",
+    forItems: ["Safety Gate", "Benchmark scoring", "Risk tiering"],
+    result: "You get a documented behavioral risk baseline.",
   },
   {
     level: "LEVEL II",
-    title: "Full Benchmark Evaluation",
+    title: "Full Benchmark + Remediation",
     description:
-      "A full outside review across eight risk areas, with prioritized findings, examples, and a documented fix plan.",
-    forItems: ["Board-level governance", "Regulated deployment", "Enterprise procurement"],
-    result: "Leadership, legal, and product teams get clear third-party evidence they can use.",
+      "Full benchmark evaluation plus remediation guidance, retest planning, and decision-ready documentation.",
+    forItems: ["Everything in Level I", "Remediation guidance", "Retest path"],
+    result: "You get benchmark evidence and a clear path to reduce risk.",
     featured: true,
   },
   {
     level: "LEVEL III",
     title: "Continuous Governance Monitoring",
     description:
-      "Repeat reviews after launches and major changes so your risk picture stays current over time.",
-    forItems: ["Live systems at scale", "High-consequence AI deployment", "Sustained regulatory posture"],
-    result: "You maintain an up-to-date outside record of how the system is behaving.",
+      "API-connected monitoring of live outputs to detect behavioral drift over time and maintain an up-to-date governance record.",
+    forItems: ["Everything in Level II", "Live output monitoring", "Ongoing drift alerts"],
+    result: "You maintain continuous independent oversight after launch.",
   },
 ] as const;
 
@@ -409,6 +401,10 @@ export default function Home() {
                 <br />
                 between product behavior and deployment decisions.
               </h2>
+              <p className="home-section-subtext">
+                Most AI governance frameworks measure capability, bias, and compliance. Ikwe measures how systems
+                behave against real-world behavioral risk scenarios and monitors live outputs for drift over time.
+              </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-4 max-w-6xl">
               {architectureFlow.map((item, index) => (
@@ -438,10 +434,12 @@ export default function Home() {
                 </h2>
               </div>
               <p className="home-copy home-copy-tight">
-                Each dimension answers a specific question about how your system behaves when a user needs it most, not
-                just how it performs in neutral test prompts.
+                Ikwe evaluates AI systems against real-world behavioral risk scenarios sourced from established
+                datasets.
               </p>
             </div>
+
+            <p className="home-beforeline">Real scenarios. Structured evaluation. Defensible outputs.</p>
 
             <div className="home-dimensions-grid">
               {dimensions.map(([title, question]) => (
@@ -453,11 +451,10 @@ export default function Home() {
             </div>
 
             <div className="home-benchmark-callout">
-              <div className="home-benchmark-highlight">Why this matters</div>
+              <div className="home-benchmark-highlight">Benchmark evaluation</div>
               <p className="home-benchmark-copy">
-                We test this gap across {PUBLIC_STATS.scenarios} emotionally vulnerable scenarios,{" "}
-                {PUBLIC_STATS.outputsEvaluatedDisplay} evaluated outputs, and {PUBLIC_STATS.behavioralDomains} risk
-                categories. The result is repeatable, clearly documented, and usable across teams.
+                This layer includes the Safety Gate, benchmark scoring, tiering, and remediation guidance. It gives
+                product, legal, and leadership teams a clear behavioral risk baseline before deployment decisions.
               </p>
             </div>
           </div>
@@ -467,15 +464,15 @@ export default function Home() {
 
         <section id="system" className="home-section home-band">
           <div className="home-wrap">
-            <span className="home-eyebrow">The Ikwe Evaluation Framework</span>
+            <span className="home-eyebrow">Product Architecture</span>
             <h2 className="home-section-title">
-              Safety Gate - Benchmark Evaluation -
+              Benchmark Evaluation and
               <br />
-              Governance Monitoring
+              Behavioral Monitoring
             </h2>
             <p className="home-section-subtext home-section-subtext-left">
-              A structured three-step evaluation process that moves from immediate risk detection to full review and
-              ongoing governance monitoring.
+              Ikwe has two distinct layers. Benchmark Evaluation measures risk against structured scenarios. Behavioral
+              Monitoring evaluates live outputs over time.
             </p>
 
             <div className="home-phases">
@@ -494,6 +491,14 @@ export default function Home() {
                 </article>
               ))}
             </div>
+
+            <article className="home-benchmark-callout mt-5">
+              <div className="home-benchmark-highlight">Behavioral monitoring</div>
+              <p className="home-benchmark-copy">
+                Ikwe continuously evaluates live system outputs via API-connected monitoring to detect behavioral drift
+                over time. This is the continuous governance layer, distinct from the benchmark audit.
+              </p>
+            </article>
           </div>
         </section>
 
@@ -667,7 +672,7 @@ export default function Home() {
                 safety validation.
               </h2>
               <p className="home-section-subtext">
-                Start with a quick outside read, go deeper with a full review, or keep the picture current over time.
+                Start with benchmark evaluation, add remediation, then extend into continuous governance monitoring.
               </p>
             </div>
 
