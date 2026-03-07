@@ -98,19 +98,27 @@ const dimensions = [
 const phases = [
   {
     number: "01",
-    title: "Benchmark Evaluation",
+    title: "EQ Safety Benchmark",
     description:
-      "Ikwe evaluates AI systems against real-world behavioral risk scenarios sourced from established datasets. This includes the safety gate, benchmark scoring, tiering, and remediation guidance.",
-    tag: "Audit layer",
-    outcome: "Risk rating + remediation guidance",
+      "The EQ Safety Benchmark is a behavioral evaluation framework that scores AI responses using a binary Safety Gate and eight weighted dimensions. It can be applied to any scenario or interaction in emotionally sensitive contexts.",
+    tag: "Framework layer",
+    outcome: "Consistent behavioral scoring system",
   },
   {
     number: "02",
-    title: "Behavioral Monitoring",
+    title: "Public Benchmark Audit",
     description:
-      "Ikwe continuously evaluates live system outputs via API-connected monitoring to detect behavioral drift over time.",
-    tag: "Governance layer",
-    outcome: "Ongoing drift detection",
+      "Ikwe continuously evaluates frontier AI models against a baseline set of 79 real-world emotional support scenarios sourced from established datasets. This is one public application of the benchmark framework and produces the frontier model record.",
+    tag: "Public authority layer",
+    outcome: "Public benchmark scores and reference baseline",
+  },
+  {
+    number: "03",
+    title: "Private Evaluation + Monitoring",
+    description:
+      "Client systems are evaluated privately using the same framework, with baseline audit coverage and optional client-specific scenarios. Ongoing monitoring evaluates live system outputs via API-connected monitoring to detect behavioral drift over time.",
+    tag: "Client governance layer",
+    outcome: "Private reports + continuous governance evidence",
   },
 ] as const;
 
@@ -426,24 +434,32 @@ export default function Home() {
                 <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">
                   03 IKWE BEHAVIORAL SAFETY LAYER
                 </p>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                   <div className="rounded border border-border bg-background-surface px-4 py-4">
-                    <h3 className="font-display text-xl text-foreground mb-3">Benchmark Evaluation</h3>
+                    <h3 className="font-display text-xl text-foreground mb-3">EQ Safety Benchmark</h3>
                     <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-                      <li>• Real-world behavioral risk scenarios sourced from established datasets</li>
-                      <li>• Safety Gate testing</li>
-                      <li>• Behavioral benchmark scoring</li>
-                      <li>• Tier classification</li>
-                      <li>• Remediation guidance</li>
+                      <li>• Binary Safety Gate</li>
+                      <li>• 8 weighted behavioral dimensions</li>
+                      <li>• Framework can score any response</li>
+                      <li>• Built for emotionally sensitive contexts</li>
                     </ul>
                   </div>
                   <div className="rounded border border-border bg-background-surface px-4 py-4">
-                    <h3 className="font-display text-xl text-foreground mb-3">Behavioral Monitoring</h3>
+                    <h3 className="font-display text-xl text-foreground mb-3">Public Benchmark Audit</h3>
                     <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-                      <li>• Ongoing evaluation of live system outputs</li>
-                      <li>• API-connected monitoring</li>
+                      <li>• 79 real-world baseline scenarios</li>
+                      <li>• Scenarios sourced from established datasets</li>
+                      <li>• Public frontier model scoring</li>
+                      <li>• Continuously updated public record</li>
+                    </ul>
+                  </div>
+                  <div className="rounded border border-border bg-background-surface px-4 py-4">
+                    <h3 className="font-display text-xl text-foreground mb-3">Private Evaluation + Monitoring</h3>
+                    <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
+                      <li>• Private client benchmark audits</li>
+                      <li>• Optional client-specific scenarios</li>
+                      <li>• Live output / API monitoring</li>
                       <li>• Drift detection over time</li>
-                      <li>• Continuous governance evidence</li>
                     </ul>
                   </div>
                 </div>
@@ -478,8 +494,8 @@ export default function Home() {
                 </h2>
               </div>
               <p className="home-copy home-copy-tight">
-                Ikwe evaluates AI systems against real-world behavioral risk scenarios sourced from established
-                datasets.
+                The EQ Safety Benchmark is a behavioral evaluation framework that scores AI responses using a binary
+                Safety Gate and eight weighted dimensions.
               </p>
             </div>
 
@@ -495,10 +511,11 @@ export default function Home() {
             </div>
 
             <div className="home-benchmark-callout">
-              <div className="home-benchmark-highlight">Benchmark evaluation</div>
+              <div className="home-benchmark-highlight">Framework → baseline → outputs</div>
               <p className="home-benchmark-copy">
-                This layer includes the Safety Gate, benchmark scoring, tiering, and remediation guidance. It gives
-                product, legal, and leadership teams a clear behavioral risk baseline before deployment decisions.
+                The framework can score any response or interaction. It is validated against a baseline of 79
+                real-world emotional support scenarios, produces public frontier model benchmark scores, and powers
+                private client evaluations against the same baseline.
               </p>
             </div>
           </div>
@@ -510,13 +527,13 @@ export default function Home() {
           <div className="home-wrap">
             <span className="home-eyebrow">Product Architecture</span>
             <h2 className="home-section-title">
-              Benchmark Evaluation and
+              Framework, public benchmark,
               <br />
-              Behavioral Monitoring
+              and ongoing governance
             </h2>
             <p className="home-section-subtext home-section-subtext-left">
-              Ikwe has two distinct layers. Benchmark Evaluation measures risk against structured scenarios. Behavioral
-              Monitoring evaluates live outputs over time.
+              Ikwe first establishes a behavioral safety benchmark, then continuously evaluates live system outputs to
+              detect drift over time. The framework, the public benchmark audit, and private monitoring are distinct.
             </p>
 
             <div className="home-phases">
@@ -537,10 +554,11 @@ export default function Home() {
             </div>
 
             <article className="home-benchmark-callout mt-5">
-              <div className="home-benchmark-highlight">Behavioral monitoring</div>
+              <div className="home-benchmark-highlight">Public benchmark vs private monitoring</div>
               <p className="home-benchmark-copy">
-                Ikwe continuously evaluates live system outputs via API-connected monitoring to detect behavioral drift
-                over time. This is the continuous governance layer, distinct from the benchmark audit.
+                Ikwe continuously evaluates frontier models publicly against the 79-scenario baseline audit, while
+                client systems are evaluated privately using the same framework. Ongoing monitoring evaluates live
+                system outputs via API-connected monitoring to detect behavioral drift over time.
               </p>
             </article>
           </div>
@@ -729,7 +747,7 @@ export default function Home() {
                   <div className="home-level-number">{level.level}</div>
                   <h3 className="home-level-title">{level.title}</h3>
                   <p className="home-level-copy">{level.description}</p>
-                  <div className="home-level-for-label">Designed For</div>
+                  <div className="home-level-for-label">Includes</div>
                   <ul className="home-level-list">
                     {level.forItems.map((item) => (
                       <li key={item}>{item}</li>
