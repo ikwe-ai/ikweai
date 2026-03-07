@@ -289,7 +289,7 @@ export default function Contact() {
       <SummaryHero
         kicker="Independent Evaluation Intake"
         title="Request Independent Evaluation"
-        summary="Third-party independent behavioral safety validation for human-facing AI systems. We use the EQ Safety Benchmark, a behavioral evaluation framework built on a binary Safety Gate and eight weighted dimensions, then apply it through baseline audit and ongoing monitoring as needed."
+        summary="Third-party Behavioral Safety Validation for human-facing AI systems. We use the EQ Safety Benchmark through an Ikwe EQ Safety Evaluation, then extend into Ikwe Behavioral Monitoring as needed."
         highlights={[
           "Third-party independent review",
           "Safety Gate + 8-dimension scoring",
@@ -326,7 +326,7 @@ export default function Contact() {
                   href="/audit"
                   className="inline-flex items-center rounded border border-border px-4 py-2 text-sm text-foreground hover:border-foreground-muted transition-colors btn-outline"
                 >
-                  Review Audit &amp; Validation Pathway
+                  Review Ikwe EQ Safety Evaluation
                 </a>
               </div>
             </div>

@@ -18,8 +18,8 @@ const pages = [
   {
     key: "audit" as const,
     eyebrow: "Audit",
-    title: "Audit & Validation",
-    body: "Review the evaluation pathway, sample outputs, and how findings turn into decisions.",
+    title: "Ikwe EQ Safety Evaluation",
+    body: "Review the evaluation pathway, sample outputs, and how Behavioral Safety Validation turns findings into decisions.",
     href: "/audit",
     cta: "Open audit",
   },

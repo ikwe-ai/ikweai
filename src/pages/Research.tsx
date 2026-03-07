@@ -41,8 +41,8 @@ export default function Research() {
   return (
     <PageShell>
       <PageMeta
-        title="Research — EQ Safety Benchmark | Ikwe.ai"
-        description="Public research summary for the EQ Safety Benchmark: methodology, scope, findings, and access pathways."
+        title="Behavioral Safety Testing for Human-Facing AI | Ikwe.ai"
+        description="Public research summary for Behavioral Safety Validation, the EQ Safety Benchmark, and the Frontier AI Behavioral Safety Index."
         path="/research"
         ogImagePath="/og/research.png"
       />
@@ -51,13 +51,13 @@ export default function Research() {
         <div className="site-hero-layout">
           <div>
             <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">
-              Research Summary · Released {BENCHMARK_CURRENT.released} · Updated {BENCHMARK_CURRENT.lastUpdated}
+              Behavioral Safety Validation Research · Released {BENCHMARK_CURRENT.released} · Updated {BENCHMARK_CURRENT.lastUpdated}
             </p>
-            <h1 className="font-display fluid-title text-foreground mb-4">EQ Safety Benchmark {BENCHMARK_CURRENT.version}</h1>
+            <h1 className="font-display fluid-title text-foreground mb-4">Behavioral Safety Testing for Human-Facing AI</h1>
             <p className="text-foreground-muted lede mb-6">
-              The EQ Safety Benchmark is a behavioral evaluation framework built on a binary Safety Gate and eight
-              weighted dimensions. This research summarizes the public benchmark audit: frontier models evaluated
-              against a baseline of 79 real-world emotional support scenarios sourced from established datasets.
+              Behavioral Safety Validation is the emerging governance layer for human-facing AI. The EQ Safety
+              Benchmark is the framework, and the Frontier AI Behavioral Safety Index is the public index produced from
+              it. This research summarizes the methodology, scope, and baseline results.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -77,8 +77,8 @@ export default function Research() {
               title="Next Step"
               subtitle="Use the findings for executive alignment, then request scope for your system."
               items={[
-                { href: "/intake#application-form", label: "Request Full Report Access", tone: "primary" },
-                { href: "#benchmark-framework", label: "Open Benchmark", tone: "outline" },
+                { href: "/intake#application-form", label: "Request Ikwe EQ Safety Evaluation", tone: "primary" },
+                { href: "/benchmark", label: "Open Public Index", tone: "outline" },
                 { href: "/audit#deliverables-previews", label: "View Sample Outputs", tone: "quiet" },
               ]}
             />
@@ -155,9 +155,9 @@ export default function Research() {
       <section id="benchmark-framework" className="site-section py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Benchmark Framework</p>
         <p className="text-sm text-foreground-muted leading-relaxed measure mb-6 text-pretty">
-          The EQ Safety Benchmark is the framework. The public benchmark audit is one application of that framework:
-          frontier models evaluated against a baseline of 79 real-world emotional support scenarios sourced from
-          established datasets.
+          Behavioral Safety Validation is the category. The EQ Safety Benchmark is the framework. The Frontier AI
+          Behavioral Safety Index is one public application of that framework: frontier models evaluated against a
+          baseline of 79 real-world emotional support scenarios sourced from established datasets.
         </p>
         <StageDiagram className="max-w-6xl mb-4" />
         <DimensionsGrid className="max-w-6xl mb-4" />
@@ -249,7 +249,7 @@ export default function Research() {
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-[0.14em] mb-3">Full Benchmark Access</p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-5">
             Full benchmark documentation is available for institutional review when your team needs deeper diligence
-            for procurement, legal, or board review.
+            for procurement, legal, or board review, or when you are preparing for an Ikwe EQ Safety Evaluation.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
