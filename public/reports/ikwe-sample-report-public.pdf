@@ -1,0 +1,382 @@
+%PDF-1.7
+%����
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 4680 >>
+stream
+0.120 0.080 0.180 rg
+0.0 724.0 612.0 68.0 re f
+0.910 0.780 0.290 rg
+BT /F2 11 Tf 1 0 0 1 46.0 764.0 Tm (IKWE AI · PUBLIC SAMPLE REPORT) Tj ET
+0.960 0.950 0.990 rg
+BT /F2 24 Tf 1 0 0 1 46.0 736.0 Tm (Ikwe EQ Safety Evaluation) Tj ET
+0.790 0.780 0.880 rg
+BT /F1 11 Tf 1 0 0 1 46.0 712.0 Tm (Illustrative report structure only. No client-identifiable content.) Tj ET
+0.970 0.970 0.990 rg
+46.0 640.0 520.0 58.0 re f
+1.00 w
+0.880 0.860 0.940 RG
+46.0 640.0 520.0 58.0 re S
+0.430 0.270 0.760 rg
+BT /F2 10 Tf 1 0 0 1 62.0 676.0 Tm (Behavioral Safety Validation) Tj ET
+0.260 0.290 0.380 rg
+BT /F1 10 Tf 1 0 0 1 62.0 656.0 Tm (This sample shows the structure of an Ikwe EQ Safety Evaluation deliverable: risk) Tj ET
+BT /F1 10 Tf 1 0 0 1 62.0 643.0 Tm (classification, dimension scoring, governance framing, and remediation direction.) Tj ET
+0.950 0.980 0.960 rg
+46.0 558.0 170.0 68.0 re f
+1.00 w
+0.760 0.890 0.790 RG
+46.0 558.0 170.0 68.0 re S
+0.370 0.390 0.490 rg
+BT /F2 9 Tf 1 0 0 1 60.0 608.0 Tm (Overall Score) Tj ET
+0.170 0.640 0.400 rg
+BT /F2 18 Tf 1 0 0 1 60.0 586.0 Tm (73%) Tj ET
+0.370 0.390 0.490 rg
+BT /F1 9 Tf 1 0 0 1 60.0 570.0 Tm (Illustrative EQ Safety score) Tj ET
+0.990 0.970 0.920 rg
+228.0 558.0 170.0 68.0 re f
+1.00 w
+0.920 0.850 0.640 RG
+228.0 558.0 170.0 68.0 re S
+0.370 0.390 0.490 rg
+BT /F2 9 Tf 1 0 0 1 242.0 608.0 Tm (Safety Gate) Tj ET
+0.730 0.560 0.110 rg
+BT /F2 18 Tf 1 0 0 1 242.0 586.0 Tm (Conditional Pass) Tj ET
+0.370 0.390 0.490 rg
+BT /F1 9 Tf 1 0 0 1 242.0 570.0 Tm (Issues present, mitigations) Tj ET
+BT /F1 9 Tf 1 0 0 1 242.0 559.0 Tm (required) Tj ET
+0.960 0.940 0.990 rg
+410.0 558.0 170.0 68.0 re f
+1.00 w
+0.840 0.770 0.950 RG
+410.0 558.0 170.0 68.0 re S
+0.370 0.390 0.490 rg
+BT /F2 9 Tf 1 0 0 1 424.0 608.0 Tm (Tier) Tj ET
+0.430 0.270 0.760 rg
+BT /F2 18 Tf 1 0 0 1 424.0 586.0 Tm (Tier II) Tj ET
+0.370 0.390 0.490 rg
+BT /F1 9 Tf 1 0 0 1 424.0 570.0 Tm (Launch with safeguards and) Tj ET
+BT /F1 9 Tf 1 0 0 1 424.0 559.0 Tm (re-test) Tj ET
+0.980 0.980 0.995 rg
+46.0 396.0 352.0 136.0 re f
+1.00 w
+0.880 0.860 0.940 RG
+46.0 396.0 352.0 136.0 re S
+0.120 0.140 0.220 rg
+BT /F2 12 Tf 1 0 0 1 62.0 510.0 Tm (Executive Summary) Tj ET
+0.280 0.300 0.390 rg
+BT /F1 10 Tf 1 0 0 1 62.0 486.0 Tm (Stable behavior appears in low-volatility interactions, but escalation pathways) Tj ET
+BT /F1 10 Tf 1 0 0 1 62.0 472.0 Tm (show interruption and routing risk. Current profile supports controlled rollout) Tj ET
+BT /F1 10 Tf 1 0 0 1 62.0 458.0 Tm (with safeguards, remediation work, and a targeted re-test before broader deployment.) Tj ET
+BT /F1 10 Tf 1 0 0 1 62.0 444.0 Tm () Tj ET
+BT /F1 10 Tf 1 0 0 1 62.0 430.0 Tm (This sample mirrors the report structure clients receive after a completed) Tj ET
+BT /F1 10 Tf 1 0 0 1 62.0 416.0 Tm (evaluation cycle: score, risk posture, supporting evidence, and next steps.) Tj ET
+0.120 0.080 0.180 rg
+416.0 396.0 150.0 136.0 re f
+1.00 w
+0.260 0.190 0.410 RG
+416.0 396.0 150.0 136.0 re S
+0.910 0.780 0.290 rg
+BT /F2 10 Tf 1 0 0 1 436.0 506.0 Tm (Report Profile) Tj ET
+0.760 0.750 0.840 rg
+BT /F1 10 Tf 1 0 0 1 436.0 482.0 Tm (Deployment surface) Tj ET
+0.960 0.950 0.990 rg
+BT /F2 10 Tf 1 0 0 1 436.0 466.0 Tm (Customer support assistant) Tj ET
+0.760 0.750 0.840 rg
+BT /F1 10 Tf 1 0 0 1 436.0 434.0 Tm (Scenario battery) Tj ET
+0.960 0.950 0.990 rg
+BT /F2 10 Tf 1 0 0 1 436.0 418.0 Tm (EQSB baseline + deployment slice) Tj ET
+0.760 0.750 0.840 rg
+BT /F1 10 Tf 1 0 0 1 436.0 386.0 Tm (Analyst note) Tj ET
+0.960 0.950 0.990 rg
+BT /F2 10 Tf 1 0 0 1 436.0 370.0 Tm (Public sample, redacted) Tj ET
+0.985 0.985 0.995 rg
+46.0 278.0 520.0 92.0 re f
+1.00 w
+0.880 0.860 0.940 RG
+46.0 278.0 520.0 92.0 re S
+0.120 0.140 0.220 rg
+BT /F2 12 Tf 1 0 0 1 62.0 346.0 Tm (What leadership gets) Tj ET
+0.280 0.300 0.390 rg
+BT /F1 10 Tf 1 0 0 1 62.0 324.0 Tm (• Board brief with classification band and threshold language) Tj ET
+BT /F1 10 Tf 1 0 0 1 62.0 310.0 Tm (• Risk scorecard with dimension outcomes and failure mapping) Tj ET
+BT /F1 10 Tf 1 0 0 1 62.0 296.0 Tm (• Evidence pack for procurement, legal, and compliance review) Tj ET
+BT /F1 10 Tf 1 0 0 1 62.0 282.0 Tm (• Remediation roadmap tied to retest readiness) Tj ET
+0.430 0.270 0.760 rg
+BT /F1 10 Tf 1 0 0 1 46.0 238.0 Tm (Styled PDF sample asset · https://ikwe.ai/reports/ikwe-sample-report-public.pdf) Tj ET
+0.430 0.270 0.760 rg
+BT /F1 10 Tf 1 0 0 1 46.0 222.0 Tm (Intake · https://ikwe.ai/intake   |   Full web preview · https://ikwe.ai/sample-report) Tj ET
+0.440 0.470 0.570 rg
+BT /F1 8 Tf 1 0 0 1 46.0 24.0 Tm (Ikwe.ai · Public redacted sample deliverable · EQ Safety Benchmark format illustration) Tj ET
+0.440 0.470 0.570 rg
+BT /F1 8 Tf 1 0 0 1 518.0 24.0 Tm (Page 1) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 4462 >>
+stream
+0.960 0.950 0.990 rg
+0.0 744.0 612.0 48.0 re f
+0.430 0.270 0.760 rg
+BT /F2 11 Tf 1 0 0 1 46.0 768.0 Tm (DIMENSION SNAPSHOT) Tj ET
+0.120 0.140 0.220 rg
+BT /F2 18 Tf 1 0 0 1 46.0 748.0 Tm (Illustrative score breakdown) Tj ET
+0.985 0.985 0.995 rg
+46.0 666.0 520.0 56.0 re f
+1.00 w
+0.900 0.880 0.950 RG
+46.0 666.0 520.0 56.0 re S
+0.120 0.140 0.220 rg
+BT /F2 11 Tf 1 0 0 1 60.0 698.0 Tm (Escalation Stability) Tj ET
+0.370 0.390 0.490 rg
+BT /F1 9 Tf 1 0 0 1 60.0 684.0 Tm (Drift under sustained pressure) Tj ET
+0.900 0.910 0.960 rg
+302.0 685.0 180.0 8.0 re f
+0.670 0.490 0.910 rg
+302.0 685.0 126.0 8.0 re f
+0.670 0.490 0.910 rg
+BT /F2 11 Tf 1 0 0 1 498.0 691.0 Tm (70%) Tj ET
+0.985 0.985 0.995 rg
+46.0 594.0 520.0 56.0 re f
+1.00 w
+0.900 0.880 0.950 RG
+46.0 594.0 520.0 56.0 re S
+0.120 0.140 0.220 rg
+BT /F2 11 Tf 1 0 0 1 60.0 626.0 Tm (Vulnerable User Response) Tj ET
+0.370 0.390 0.490 rg
+BT /F1 9 Tf 1 0 0 1 60.0 612.0 Tm (Needs stronger handling in higher-risk cases) Tj ET
+0.900 0.910 0.960 rg
+302.0 613.0 180.0 8.0 re f
+0.910 0.790 0.280 rg
+302.0 613.0 108.0 8.0 re f
+0.910 0.790 0.280 rg
+BT /F2 11 Tf 1 0 0 1 498.0 619.0 Tm (60%) Tj ET
+0.985 0.985 0.995 rg
+46.0 522.0 520.0 56.0 re f
+1.00 w
+0.900 0.880 0.950 RG
+46.0 522.0 520.0 56.0 re S
+0.120 0.140 0.220 rg
+BT /F2 11 Tf 1 0 0 1 60.0 554.0 Tm (Manipulation Susceptibility) Tj ET
+0.370 0.390 0.490 rg
+BT /F1 9 Tf 1 0 0 1 60.0 540.0 Tm (Additional safeguards needed) Tj ET
+0.900 0.910 0.960 rg
+302.0 541.0 180.0 8.0 re f
+0.910 0.790 0.280 rg
+302.0 541.0 99.0 8.0 re f
+0.910 0.790 0.280 rg
+BT /F2 11 Tf 1 0 0 1 498.0 547.0 Tm (55%) Tj ET
+0.985 0.985 0.995 rg
+46.0 450.0 520.0 56.0 re f
+1.00 w
+0.900 0.880 0.950 RG
+46.0 450.0 520.0 56.0 re S
+0.120 0.140 0.220 rg
+BT /F2 11 Tf 1 0 0 1 60.0 482.0 Tm (Dependency Reinforcement) Tj ET
+0.370 0.390 0.490 rg
+BT /F1 9 Tf 1 0 0 1 60.0 468.0 Tm (Limited risk detected) Tj ET
+0.900 0.910 0.960 rg
+302.0 469.0 180.0 8.0 re f
+0.670 0.490 0.910 rg
+302.0 469.0 140.4 8.0 re f
+0.670 0.490 0.910 rg
+BT /F2 11 Tf 1 0 0 1 498.0 475.0 Tm (78%) Tj ET
+0.985 0.985 0.995 rg
+46.0 378.0 520.0 56.0 re f
+1.00 w
+0.900 0.880 0.950 RG
+46.0 378.0 520.0 56.0 re S
+0.120 0.140 0.220 rg
+BT /F2 11 Tf 1 0 0 1 60.0 410.0 Tm (Correction & Recovery) Tj ET
+0.370 0.390 0.490 rg
+BT /F1 9 Tf 1 0 0 1 60.0 396.0 Tm (Strong repair and recovery behavior) Tj ET
+0.900 0.910 0.960 rg
+302.0 397.0 180.0 8.0 re f
+0.240 0.830 0.550 rg
+302.0 397.0 162.0 8.0 re f
+0.240 0.830 0.550 rg
+BT /F2 11 Tf 1 0 0 1 498.0 403.0 Tm (90%) Tj ET
+0.985 0.985 0.995 rg
+46.0 306.0 520.0 56.0 re f
+1.00 w
+0.900 0.880 0.950 RG
+46.0 306.0 520.0 56.0 re S
+0.120 0.140 0.220 rg
+BT /F2 11 Tf 1 0 0 1 60.0 338.0 Tm (Stress Condition Performance) Tj ET
+0.370 0.390 0.490 rg
+BT /F1 9 Tf 1 0 0 1 60.0 324.0 Tm (Borderline in acute user states) Tj ET
+0.900 0.910 0.960 rg
+302.0 325.0 180.0 8.0 re f
+0.910 0.790 0.280 rg
+302.0 325.0 113.4 8.0 re f
+0.910 0.790 0.280 rg
+BT /F2 11 Tf 1 0 0 1 498.0 331.0 Tm (63%) Tj ET
+0.960 0.970 0.995 rg
+46.0 146.0 268.0 150.0 re f
+1.00 w
+0.880 0.860 0.940 RG
+46.0 146.0 268.0 150.0 re S
+0.120 0.140 0.220 rg
+BT /F2 12 Tf 1 0 0 1 60.0 272.0 Tm (Priority findings) Tj ET
+0.280 0.300 0.390 rg
+BT /F1 10 Tf 1 0 0 1 60.0 248.0 Tm (1. Crisis routing is inconsistent under higher-intensity prompts.) Tj ET
+BT /F1 10 Tf 1 0 0 1 60.0 230.0 Tm (2. Dependency language appears after prolonged reassurance loops.) Tj ET
+BT /F1 10 Tf 1 0 0 1 60.0 212.0 Tm (3. Repair quality is strong once the system recognizes the miss.) Tj ET
+0.120 0.080 0.180 rg
+326.0 146.0 240.0 150.0 re f
+1.00 w
+0.260 0.190 0.410 RG
+326.0 146.0 240.0 150.0 re S
+0.910 0.780 0.290 rg
+BT /F2 12 Tf 1 0 0 1 344.0 272.0 Tm (Public index comparison) Tj ET
+0.960 0.950 0.990 rg
+BT /F2 10 Tf 1 0 0 1 344.0 246.0 Tm (Claude reference row        78.3) Tj ET
+BT /F2 10 Tf 1 0 0 1 344.0 228.0 Tm (Illustrative client system  73.0) Tj ET
+BT /F2 10 Tf 1 0 0 1 344.0 210.0 Tm (GPT-4o Study I baseline     51.2) Tj ET
+BT /F2 10 Tf 1 0 0 1 344.0 192.0 Tm (Grok Study I baseline       40.6) Tj ET
+0.790 0.780 0.880 rg
+BT /F1 9 Tf 1 0 0 1 344.0 170.0 Tm (Client evaluations stay private but) Tj ET
+BT /F1 9 Tf 1 0 0 1 344.0 157.0 Tm (can be positioned against the same) Tj ET
+BT /F1 9 Tf 1 0 0 1 344.0 144.0 Tm (public benchmark record.) Tj ET
+0.440 0.470 0.570 rg
+BT /F1 8 Tf 1 0 0 1 46.0 24.0 Tm (Ikwe.ai · Public redacted sample deliverable · EQ Safety Benchmark format illustration) Tj ET
+0.440 0.470 0.570 rg
+BT /F1 8 Tf 1 0 0 1 518.0 24.0 Tm (Page 2) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 3850 >>
+stream
+0.960 0.950 0.990 rg
+0.0 744.0 612.0 48.0 re f
+0.430 0.270 0.760 rg
+BT /F2 11 Tf 1 0 0 1 46.0 768.0 Tm (REMEDIATION AND GOVERNANCE) Tj ET
+0.120 0.140 0.220 rg
+BT /F2 18 Tf 1 0 0 1 46.0 748.0 Tm (What happens after scoring) Tj ET
+0.985 0.985 0.995 rg
+46.0 592.0 250.0 108.0 re f
+1.00 w
+0.900 0.880 0.950 RG
+46.0 592.0 250.0 108.0 re S
+0.430 0.270 0.760 rg
+BT /F2 9 Tf 1 0 0 1 60.0 676.0 Tm (Board) Tj ET
+0.120 0.140 0.220 rg
+BT /F2 12 Tf 1 0 0 1 60.0 654.0 Tm (Decision-ready summary) Tj ET
+0.370 0.390 0.490 rg
+BT /F1 9 Tf 1 0 0 1 60.0 632.0 Tm (Classification band, main failure) Tj ET
+BT /F1 9 Tf 1 0 0 1 60.0 620.0 Tm (modes, and immediate next-step) Tj ET
+BT /F1 9 Tf 1 0 0 1 60.0 608.0 Tm (recommendation.) Tj ET
+0.985 0.985 0.995 rg
+318.0 592.0 250.0 108.0 re f
+1.00 w
+0.900 0.880 0.950 RG
+318.0 592.0 250.0 108.0 re S
+0.430 0.270 0.760 rg
+BT /F2 9 Tf 1 0 0 1 332.0 676.0 Tm (Legal) Tj ET
+0.120 0.140 0.220 rg
+BT /F2 12 Tf 1 0 0 1 332.0 654.0 Tm (Due diligence record) Tj ET
+0.370 0.390 0.490 rg
+BT /F1 9 Tf 1 0 0 1 332.0 632.0 Tm (Structured evidence package for) Tj ET
+BT /F1 9 Tf 1 0 0 1 332.0 620.0 Tm (liability review and internal) Tj ET
+BT /F1 9 Tf 1 0 0 1 332.0 608.0 Tm (governance files.) Tj ET
+0.985 0.985 0.995 rg
+46.0 458.0 250.0 108.0 re f
+1.00 w
+0.900 0.880 0.950 RG
+46.0 458.0 250.0 108.0 re S
+0.430 0.270 0.760 rg
+BT /F2 9 Tf 1 0 0 1 60.0 542.0 Tm (Compliance) Tj ET
+0.120 0.140 0.220 rg
+BT /F2 12 Tf 1 0 0 1 60.0 520.0 Tm (Versioned documentation) Tj ET
+0.370 0.390 0.490 rg
+BT /F1 9 Tf 1 0 0 1 60.0 498.0 Tm (Artifacts tied to methodology) Tj ET
+BT /F1 9 Tf 1 0 0 1 60.0 486.0 Tm (version, scenario set, and review) Tj ET
+BT /F1 9 Tf 1 0 0 1 60.0 474.0 Tm (date.) Tj ET
+0.985 0.985 0.995 rg
+318.0 458.0 250.0 108.0 re f
+1.00 w
+0.900 0.880 0.950 RG
+318.0 458.0 250.0 108.0 re S
+0.430 0.270 0.760 rg
+BT /F2 9 Tf 1 0 0 1 332.0 542.0 Tm (Engineering) Tj ET
+0.120 0.140 0.220 rg
+BT /F2 12 Tf 1 0 0 1 332.0 520.0 Tm (Failure mapping) Tj ET
+0.370 0.390 0.490 rg
+BT /F1 9 Tf 1 0 0 1 332.0 498.0 Tm (Specific problem patterns) Tj ET
+BT /F1 9 Tf 1 0 0 1 332.0 486.0 Tm (translated into remediation) Tj ET
+BT /F1 9 Tf 1 0 0 1 332.0 474.0 Tm (priorities and retest needs.) Tj ET
+0.990 0.970 0.930 rg
+46.0 284.0 520.0 132.0 re f
+1.00 w
+0.930 0.850 0.640 RG
+46.0 284.0 520.0 132.0 re S
+0.480 0.360 0.110 rg
+BT /F2 12 Tf 1 0 0 1 62.0 392.0 Tm (Recommended next steps) Tj ET
+0.380 0.310 0.170 rg
+BT /F1 10 Tf 1 0 0 1 62.0 366.0 Tm (1. Add stronger crisis-routing controls before wider rollout.) Tj ET
+BT /F1 10 Tf 1 0 0 1 62.0 350.0 Tm (2. Reinforce user autonomy in emotionally escalated conversations.) Tj ET
+BT /F1 10 Tf 1 0 0 1 62.0 334.0 Tm (3. Harden prompt and policy layers against dependency reinforcement.) Tj ET
+BT /F1 10 Tf 1 0 0 1 62.0 318.0 Tm (4. Re-test after changes are in place before broader deployment.) Tj ET
+0.960 0.970 0.995 rg
+46.0 174.0 520.0 86.0 re f
+1.00 w
+0.880 0.860 0.940 RG
+46.0 174.0 520.0 86.0 re S
+0.120 0.140 0.220 rg
+BT /F2 11 Tf 1 0 0 1 62.0 238.0 Tm (Boundary note) Tj ET
+0.370 0.390 0.490 rg
+BT /F1 10 Tf 1 0 0 1 62.0 216.0 Tm (Not shown in the public sample: exact scenario text, scoring formulas, raw response evidence,) Tj ET
+BT /F1 10 Tf 1 0 0 1 62.0 202.0 Tm (client-identifying details, and full remediation workstream notes.) Tj ET
+0.120 0.080 0.180 rg
+46.0 76.0 520.0 72.0 re f
+1.00 w
+0.260 0.190 0.410 RG
+46.0 76.0 520.0 72.0 re S
+0.910 0.780 0.290 rg
+BT /F2 12 Tf 1 0 0 1 62.0 122.0 Tm (Request Ikwe EQ Safety Evaluation) Tj ET
+0.960 0.950 0.990 rg
+BT /F1 10 Tf 1 0 0 1 62.0 100.0 Tm (ikwe.ai/intake  ·  Compare your system against the same benchmark framework.) Tj ET
+0.440 0.470 0.570 rg
+BT /F1 8 Tf 1 0 0 1 46.0 24.0 Tm (Ikwe.ai · Public redacted sample deliverable · EQ Safety Benchmark format illustration) Tj ET
+0.440 0.470 0.570 rg
+BT /F1 8 Tf 1 0 0 1 518.0 24.0 Tm (Page 3) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+xref
+0 11
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000134 00000 n 
+0000000204 00000 n 
+0000000279 00000 n 
+0000005011 00000 n 
+0000005147 00000 n 
+0000009661 00000 n 
+0000009797 00000 n 
+0000013699 00000 n 
+trailer
+<< /Size 11 /Root 1 0 R >>
+startxref
+13836
+%%EOF

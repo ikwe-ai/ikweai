@@ -1,23 +1,10 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
-import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
+import PageShell from "@/components/PageShell";
 
-const SAMPLE_REPORT_PATH = "/reports/ikwe-sample-report-public.html";
+const SAMPLE_REPORT_HTML_PATH = "/reports/ikwe-sample-report-public.html";
+const SAMPLE_REPORT_PDF_PATH = "/reports/ikwe-sample-report-public.pdf";
 
 export default function SampleReport() {
-  const navigate = useNavigate();
-  const [open, setOpen] = useState(true);
-
-  const closeModal = () => {
-    if (window.history.length > 1) {
-      navigate(-1);
-      return;
-    }
-    navigate("/audit#deliverables-previews", { replace: true });
-  };
-
   return (
     <PageShell>
       <PageMeta
@@ -27,45 +14,44 @@ export default function SampleReport() {
       />
 
       <section className="site-section py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">
-          Sample Report Preview
-        </p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Sample Report Preview</p>
         <h1 className="font-display fluid-heading text-foreground mb-3">Public Redacted Sample Report</h1>
-        <p className="text-sm text-foreground-muted leading-relaxed mb-4 max-w-3xl">
-          Review the output format and evidence structure used in client-facing reporting.
+        <p className="text-sm text-foreground-muted leading-relaxed mb-5 max-w-3xl">
+          Review the report structure used in client-facing deliverables. The web preview shows the format. The styled
+          PDF is the sendable sample asset.
         </p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-3">
+          <a
+            href={SAMPLE_REPORT_PDF_PATH}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+          >
+            Download Styled PDF
+          </a>
+          <a
+            href={SAMPLE_REPORT_HTML_PATH}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
+          >
+            Open Standalone Preview
+          </a>
           <a href="/audit#deliverables-previews" className="summary-jump">
             Back to sample outputs
           </a>
         </div>
       </section>
 
-      <Dialog
-        open={open}
-        onOpenChange={(nextOpen) => {
-          setOpen(nextOpen);
-          if (!nextOpen) closeModal();
-        }}
-      >
-        <DialogContent className="w-[96vw] max-w-6xl h-[88vh] p-0 bg-background-card border border-border overflow-hidden">
-          <div className="px-4 py-3 border-b border-border bg-background-surface">
-            <div className="min-w-0">
-              <DialogTitle className="font-display text-xl text-foreground truncate">
-                Ikwe Sample Report (Public, Redacted)
-              </DialogTitle>
-              <DialogDescription className="text-xs text-foreground-subtle">
-                Illustrative format only. No client-identifiable content.
-              </DialogDescription>
-            </div>
-          </div>
+      <section className="site-section py-10">
+        <article className="card-surface p-3 md:p-4">
           <iframe
             title="Ikwe sample report"
-            src={SAMPLE_REPORT_PATH}
-            className="w-full h-[calc(88vh-58px)] border-0 bg-white"
+            src={SAMPLE_REPORT_HTML_PATH}
+            className="w-full h-[78vh] min-h-[720px] border-0 rounded bg-background"
           />
-        </DialogContent>
-      </Dialog>
+        </article>
+      </section>
     </PageShell>
   );
 }

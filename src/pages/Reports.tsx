@@ -6,7 +6,8 @@ import ActionDock from "@/components/ActionDock";
 import AssetPreviewModal from "@/components/AssetPreviewModal";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 
-const SAMPLE_REPORT_PATH = "/sample-report";
+const SAMPLE_REPORT_PAGE_PATH = "/sample-report";
+const SAMPLE_REPORT_PREVIEW_PATH = "/reports/ikwe-sample-report-public.html";
 
 export default function Reports() {
   const [activeSample, setActiveSample] = useState<{ title: string; src: string } | null>(null);
@@ -109,7 +110,7 @@ export default function Reports() {
               </a>
               <button
                 type="button"
-                onClick={() => openSample("Ikwe Sample Report (Public, Redacted)", SAMPLE_REPORT_PATH)}
+                onClick={() => openSample("Ikwe Sample Report (Public, Redacted)", SAMPLE_REPORT_PREVIEW_PATH)}
                 className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-quiet"
               >
                 Open Public Sample Report
@@ -124,10 +125,10 @@ export default function Reports() {
               items={[
                 { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
                 {
-                  href: SAMPLE_REPORT_PATH,
+                  href: SAMPLE_REPORT_PAGE_PATH,
                   label: "Open Sample Report",
                   tone: "outline",
-                  onClick: () => openSample("Ikwe Sample Report (Public, Redacted)", SAMPLE_REPORT_PATH),
+                  onClick: () => openSample("Ikwe Sample Report (Public, Redacted)", SAMPLE_REPORT_PREVIEW_PATH),
                 },
                 { href: "/trust", label: "Trust Standards", tone: "quiet" },
               ]}
@@ -180,10 +181,10 @@ export default function Reports() {
               Need a format example before engagement? Open the public sample report in-site modal (public, redacted, no
               client data):{" "}
               <a
-                href={SAMPLE_REPORT_PATH}
+                href={SAMPLE_REPORT_PAGE_PATH}
                 onClick={(event) => {
                   event.preventDefault();
-                  openSample("Ikwe Sample Report (Public, Redacted)", SAMPLE_REPORT_PATH);
+                  openSample("Ikwe Sample Report (Public, Redacted)", SAMPLE_REPORT_PREVIEW_PATH);
                 }}
                 className="link-lilac"
               >
