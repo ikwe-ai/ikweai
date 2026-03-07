@@ -59,7 +59,7 @@ export default function Audit() {
       tag: "CONTINUOUS EVALUATION | RECURRING ENGAGEMENT",
       paragraphs: [
         "Behavioral risk is not static. Model updates, prompt changes, deployment scale, and user population shifts all change how your system behaves. Active monitoring catches drift before it becomes a documented failure.",
-        "We run synthetic scenario monitoring on a defined schedule against your registered endpoint. When risk patterns shift, you receive a structured alert with recommended response steps.",
+        "We run API-connected monitoring on a defined schedule against your registered endpoint and evaluate live system outputs over time. When risk patterns shift, you receive a structured alert with recommended response steps.",
       ],
       receives: [
         "Quarterly benchmark re-evaluation against registered endpoint",
@@ -178,8 +178,9 @@ export default function Audit() {
         </p>
         <h1 className="font-display fluid-title text-foreground mb-4">Independent behavioral safety evaluation for executive decisions.</h1>
         <p className="text-foreground-muted lede mb-6">
-          Start with a documented risk baseline, then move through remediation support and active monitoring as needed.
-          This pathway is built for CTO and CFO decisions, not just technical review.
+          Start with the EQ Safety Benchmark framework, establish a documented risk baseline through private
+          evaluation, then move through remediation support and active monitoring as needed. This pathway is built for
+          CTO and CFO decisions, not just technical review.
         </p>
         <div className="summary-headline-strip mb-7 max-w-4xl">
           <div className="summary-headline-item">{BENCHMARK_CURRENT.nValue}</div>
