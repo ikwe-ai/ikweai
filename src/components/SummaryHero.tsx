@@ -141,6 +141,16 @@ export default function SummaryHero({
             </div>
           ) : null}
 
+          {hasJumpLinks ? (
+            <div className="flex flex-wrap gap-2 mt-4">
+              {jumpLinks.map((item) => (
+                <a key={item.href} href={item.href} className="summary-jump">
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          ) : null}
+
           {hasVisual ? (
             <div className="mt-5 lg:hidden">
               <HeroVisualCard

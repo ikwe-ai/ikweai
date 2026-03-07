@@ -10,6 +10,7 @@ import MethodAccordion from "@/components/visuals/MethodAccordion";
 import StageDiagram from "@/components/visuals/StageDiagram";
 import DimensionsGrid from "@/components/visuals/DimensionsGrid";
 import DomainsTagWall from "@/components/visuals/DomainsTagWall";
+import ConnectedPages from "@/components/ConnectedPages";
 
 export default function Research() {
   const vulnerableStates = [
@@ -92,6 +93,8 @@ export default function Research() {
           </aside>
         </div>
       </section>
+
+      <ConnectedPages current="research" />
 
       <section className="site-section py-10 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Research Snapshot</p>

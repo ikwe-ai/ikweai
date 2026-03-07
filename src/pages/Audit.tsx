@@ -7,6 +7,7 @@ import StatsRow from "@/components/visuals/StatsRow";
 import DeliverablesGrid from "@/components/visuals/DeliverablesGrid";
 import ArtifactsPreviewRow from "@/components/visuals/ArtifactsPreviewRow";
 import ScenarioDomainMatrix from "@/components/visuals/ScenarioDomainMatrix";
+import ConnectedPages from "@/components/ConnectedPages";
 
 type PathwayStage = {
   step: string;
@@ -226,6 +227,8 @@ export default function Audit() {
           </article>
         </div>
       </section>
+
+      <ConnectedPages current="audit" />
 
       <section id="deliverables-previews" className="site-section py-10 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Audit At A Glance</p>
