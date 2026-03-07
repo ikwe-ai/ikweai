@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ConnectedPages from "@/components/ConnectedPages";
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
