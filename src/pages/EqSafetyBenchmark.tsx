@@ -1,4 +1,5 @@
 import ActionDock from "@/components/ActionDock";
+import ConnectedPages from "@/components/ConnectedPages";
 import PageMeta from "@/components/PageMeta";
 import PageShell from "@/components/PageShell";
 import SummaryHero from "@/components/SummaryHero";
@@ -336,6 +337,8 @@ export default function EqSafetyBenchmark() {
           { href: "#meth-transparency", label: "Review Method", tone: "quiet" },
         ]}
       />
+
+      <ConnectedPages current="benchmark" />
 
       <section id="what-this-measures" className="site-section py-12 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">What This Measures</p>
