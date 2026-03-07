@@ -184,11 +184,10 @@ export default function Home() {
               <em>for Human-Facing AI.</em>
             </h1>
             <p className="home-hero-sub">
-              Independent behavioral safety validation for human-facing AI — powered by the EQ Safety Benchmark.
+              If your system interacts with users in vulnerable moments, you need evidence of how it behaves under
+              emotional stress.
             </p>
-            <p className="home-hero-subtle">
-              AI doesn&apos;t fail. It drifts.
-            </p>
+            <p className="home-hero-subtle">Not what it says. How it behaves.</p>
             <div className="home-hero-actions">
               <Link to="/intake#application-form" className="home-btn home-btn-gold">
                 Request Evaluation
@@ -199,16 +198,16 @@ export default function Home() {
             </div>
             <div className="home-hero-stats">
               <article className="home-hero-stat">
-                <div className="home-stat-number">Safety Gate</div>
-                <div className="home-stat-label">Binary first-contact screen for harmful behavioral patterns</div>
+                <div className="home-stat-number">{BENCHMARK_CURRENT.failedGatePct}</div>
+                <div className="home-stat-label">of baseline AI responses introduce emotional risk</div>
               </article>
               <article className="home-hero-stat">
-                <div className="home-stat-number">8 Dimensions</div>
-                <div className="home-stat-label">Weighted behavioral scoring across every evaluated response</div>
+                <div className="home-stat-number">{PUBLIC_STATS.outputsEvaluatedDisplay}</div>
+                <div className="home-stat-label">outputs evaluated across 79 baseline scenarios</div>
               </article>
               <article className="home-hero-stat">
-                <div className="home-stat-number">79 Scenarios</div>
-                <div className="home-stat-label">Baseline drawn from real-world emotional support interaction datasets</div>
+                <div className="home-stat-number">44.9%</div>
+                <div className="home-stat-label">of systems tested fail the Safety Gate</div>
               </article>
             </div>
           </div>
@@ -460,16 +459,9 @@ export default function Home() {
             <div className="home-grid-two home-benchmark-header">
               <div>
                 <span className="home-eyebrow">The Ikwe Behavioral Safety Benchmark</span>
-                <h2 className="home-section-title">
-                  Eight dimensions that evaluate
-                  <br />
-                  how AI behaves under emotional pressure.
-                </h2>
+                <h2 className="home-section-title">Eight dimensions. One clear answer.</h2>
               </div>
-              <p className="home-copy home-copy-tight">
-                The EQ Safety Benchmark is a behavioral evaluation framework that scores AI responses using a binary
-                Safety Gate and eight weighted dimensions.
-              </p>
+              <p className="home-copy home-copy-tight">Built to answer one question: is your system safe when it matters most?</p>
             </div>
 
             <p className="home-beforeline">Real scenarios. Structured evaluation. Defensible outputs.</p>
@@ -496,21 +488,98 @@ export default function Home() {
 
         <div className="home-divider" />
 
-        <section id="system" className="home-section home-band">
+        <section id="safety-gate" className="home-section home-band">
           <div className="home-wrap">
-            <span className="home-eyebrow">Product Architecture</span>
+            <span className="home-eyebrow">The Safety Gate</span>
             <h2 className="home-section-title">
-              Framework, public benchmark,
+              Binary Pass/Fail Gate Testing
               <br />
-              and ongoing governance
+              Under Pressure.
             </h2>
             <p className="home-section-subtext home-section-subtext-left">
-              Ikwe first establishes a behavioral safety benchmark, then continuously evaluates live system outputs to
-              detect drift over time. The framework, the public benchmark audit, and private monitoring are distinct.
+              The first question we answer: does your system pass under high-impact stress scenarios? Before
+              dimensional scoring, we determine whether harmful behavioral patterns appear at all.
+            </p>
+
+            <div className="home-grid-two">
+              <div>
+                <div className="home-column-label">Failure Patterns We Test For</div>
+                <div className="home-list-stack">
+                  {[
+                    "Crisis mishandling",
+                    "Harmful reframing",
+                    "Premature closure",
+                    "Escalation amplification",
+                    "Authority displacement",
+                    "Inadequate repair",
+                  ].map((item) => (
+                    <div key={item} className="home-list-card">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                <div className="home-pullquote">44.9% of systems tested fail the Safety Gate.</div>
+              </div>
+
+              <div>
+                <div className="home-column-label">Three Possible Outcomes</div>
+                <div className="home-list-stack">
+                  {[
+                    ["✕ Fail", "Unacceptable risk present"],
+                    ["! Conditional Pass", "Issues require mitigation"],
+                    ["✓ Pass", "No immediate failures detected"],
+                  ].map(([result, meaning]) => (
+                    <div key={result} className="home-list-card">
+                      <strong>{result}</strong> — {meaning}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div className="home-divider" />
+
+        <section id="system" className="home-section home-band">
+          <div className="home-wrap">
+            <span className="home-eyebrow">How We Evaluate</span>
+            <h2 className="home-section-title">
+              Three phases.
+              <br />
+              One infrastructure.
+            </h2>
+            <p className="home-section-subtext home-section-subtext-left">
+              Each step builds on the last — from immediate risk detection to ongoing drift monitoring.
             </p>
 
             <div className="home-phases">
-              {phases.map((phase) => (
+              {[
+                {
+                  number: "01",
+                  title: "Binary Safety Gate",
+                  description:
+                    "Pass / fail evaluation across 79 emotionally vulnerable scenarios. Determines whether harmful behavioral patterns appear at all.",
+                  tag: "Pre-deployment",
+                  outcome: "Launch risk determination",
+                },
+                {
+                  number: "02",
+                  title: "Dimensional Scoring",
+                  description:
+                    "Behavioral evaluation across all 8 dimensions, 12 vulnerability categories. Structured failure mapping and remediation guidance.",
+                  tag: "Deep evaluation",
+                  outcome: "Tier I–IV classification + remediation plan",
+                },
+                {
+                  number: "03",
+                  title: "Ongoing Governance Monitoring",
+                  description:
+                    "Continuous behavioral drift monitoring after each deployment change. Quarterly re-evaluation. A versioned, defensible safety record.",
+                  tag: "Continuous",
+                  outcome: "Sustained safety posture over time",
+                },
+              ].map((phase) => (
                 <article key={phase.number} className="home-phase">
                   <div className="home-phase-number">{phase.number}</div>
                   <div>
@@ -525,15 +594,6 @@ export default function Home() {
                 </article>
               ))}
             </div>
-
-            <article className="home-benchmark-callout mt-5">
-              <div className="home-benchmark-highlight">Public benchmark vs private monitoring</div>
-              <p className="home-benchmark-copy">
-                Ikwe continuously evaluates frontier models publicly against the 79-scenario baseline audit, while
-                client systems are evaluated privately using the same framework. Ongoing monitoring evaluates live
-                system outputs via API-connected monitoring to detect behavioral drift over time.
-              </p>
-            </article>
           </div>
         </section>
 
