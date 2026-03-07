@@ -14,7 +14,7 @@ export default function About() {
       <SummaryHero
         kicker="Institutional Standards"
         title="About Ikwe.ai"
-        summary="Ikwe.ai is an independent behavioral AI evaluation organization. This page defines our conflict-of-interest standards, governance controls, and evidence management standards."
+        summary="Ikwe.ai is the independent behavioral safety layer for human-facing AI. The EQ Safety Benchmark is our behavioral evaluation framework, and this page defines the independence, governance, and evidence standards behind that work."
         highlights={[
           "No financial ties to evaluated model developers",
           "Versioned evidence policy",
@@ -34,6 +34,11 @@ export default function About() {
       <section id="independence" className="py-14 border-b border-border max-w-2xl">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Independence</p>
         <h2 className="font-display text-2xl text-foreground mb-4">No commercial affiliations</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-4">
+          The EQ Safety Benchmark is a behavioral evaluation framework that scores AI responses using a binary Safety
+          Gate and eight weighted dimensions. It can be applied to any scenario or interaction and is validated against
+          a baseline of 79 real-world emotional support interaction scenarios drawn from established datasets.
+        </p>
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
           Ikwe.ai has no financial, contractual, or operational relationships with any AI developer evaluated in our benchmarks. 
           We do not accept sponsorship, research grants, or in-kind support from companies whose products are evaluated.
