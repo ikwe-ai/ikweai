@@ -178,18 +178,18 @@ def build_page(page: dict[str, object]) -> None:
     add_radial_glow(image, (830, 220, 1320, 720), "#1d274f", 120)
     add_starfield(image)
 
-    panel = Image.new("RGBA", image.size, (0, 0, 0, 0))
-    panel_draw = ImageDraw.Draw(panel)
-    panel_draw.rounded_rectangle((56, 56, 1144, 574), radius=34, fill=(24, 22, 31, 218), outline=BORDER, width=2)
-    panel_draw.rounded_rectangle((76, 76, 686, 554), radius=28, fill=(255, 255, 255, 4))
-    image.alpha_composite(panel)
+    atmosphere = Image.new("RGBA", image.size, (0, 0, 0, 0))
+    atmosphere_draw = ImageDraw.Draw(atmosphere)
+    atmosphere_draw.ellipse((530, -120, 1330, 700), fill=(12, 14, 32, 120))
+    atmosphere_draw.ellipse((-120, -140, 760, 640), fill=(34, 24, 58, 72))
+    image.alpha_composite(atmosphere)
 
     draw_brand_mark(image, 943, 314, 110)
 
     draw = ImageDraw.Draw(image)
-    draw.text((96, 98), "IKWE.AI", font=FONT_KICKER, fill=PURPLE_LIGHT)
+    draw.text((96, 84), "IKWE.AI", font=FONT_KICKER, fill=PURPLE_LIGHT)
 
-    y = draw_multiline(draw, (96, 144), str(page["title"]), title_font, WHITE, 8, 540)
+    y = draw_multiline(draw, (96, 126), str(page["title"]), title_font, WHITE, 8, 560)
     y = draw_multiline(draw, (96, y + 10), str(page["subtitle"]), FONT_SUBTITLE, SOFT, 8, 560)
 
     chip_x = 96
@@ -203,10 +203,10 @@ def build_page(page: dict[str, object]) -> None:
 
     line_layer = Image.new("RGBA", image.size, (0, 0, 0, 0))
     line_draw = ImageDraw.Draw(line_layer)
-    line_draw.rounded_rectangle((770, 468, 1110, 472), radius=2, fill=(123, 79, 212, 120))
-    line_draw.rounded_rectangle((770, 468, 960, 472), radius=2, fill=(232, 201, 122, 180))
-    line_draw.rounded_rectangle((770, 506, 1110, 510), radius=2, fill=(123, 79, 212, 70))
-    line_draw.rounded_rectangle((770, 506, 1030, 510), radius=2, fill=(155, 114, 232, 180))
+    line_draw.rounded_rectangle((750, 468, 1110, 472), radius=2, fill=(123, 79, 212, 120))
+    line_draw.rounded_rectangle((750, 468, 960, 472), radius=2, fill=(232, 201, 122, 180))
+    line_draw.rounded_rectangle((750, 506, 1110, 510), radius=2, fill=(123, 79, 212, 70))
+    line_draw.rounded_rectangle((750, 506, 1030, 510), radius=2, fill=(155, 114, 232, 180))
     image.alpha_composite(line_layer)
 
     rgb = Image.new("RGB", image.size, BG)
