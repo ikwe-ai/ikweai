@@ -141,11 +141,10 @@ const audienceItems = [
 ] as const;
 
 const urgencyItems = [
-  "One behavioral incident can halt enterprise procurement for 18+ months",
-  "AI litigation exposure is moving from edge case to precedent",
-  "Board-level AI governance now requires documented behavioral evidence",
-  "Governance standards are expanding past bias and accuracy",
-  "Behavioral safety validation is becoming a procurement requirement",
+  "Regulated industries are beginning to require behavioral safety records — not just capability benchmarks",
+  "Enterprise liability exposure from emotionally unsafe AI is no longer theoretical",
+  "The window to establish a safety record before it becomes mandatory is closing",
+  "Independent evaluation now is cheaper than remediation after a public failure",
 ] as const;
 
 const engagementLevels = [
@@ -197,7 +196,7 @@ export default function Home() {
 
         <section id="hero" className="home-section home-hero">
           <div className="home-wrap">
-            <div className="home-hero-tag">Independent AI behavior review</div>
+            <div className="home-hero-tag">The Standard for Emotionally Sensitive AI</div>
             <h1 className="home-hero-title">
               The Behavioral
               <br />

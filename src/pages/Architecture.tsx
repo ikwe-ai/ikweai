@@ -7,28 +7,33 @@ export default function Architecture() {
   const pipeline = [
     {
       step: "01",
-      title: "Scenario testing",
-      body: "Structured scenarios are run across high-risk behavioral states.",
+      title: "Scenario Testing",
+      body:
+        "Structured scenario testing runs the system through high-risk behavioral conditions drawn from emotionally sensitive user contexts. This creates a controlled evidence set that shows how the system behaves before institutional buyers rely on internal claims alone.",
     },
     {
       step: "02",
-      title: "Independent evaluation",
-      body: "Responses are evaluated under consistent conditions for comparable outcomes.",
+      title: "Safety Gate Screening",
+      body:
+        "First-contact responses are screened for harmful behavioral patterns before any broader scoring is applied. For buyers, this matters because an early fail condition creates a clear threshold for escalation, remediation, and launch restraint.",
     },
     {
       step: "03",
-      title: "Safety Gate screening",
-      body: "First-contact responses are screened for harmful behavior before further assessment.",
+      title: "Independent Evaluation",
+      body:
+        "Outputs are reviewed under consistent conditions by an independent evaluation process rather than by the system builder. That separation gives legal, compliance, and procurement teams a record they can defend beyond internal QA documentation.",
     },
     {
       step: "04",
-      title: "Behavioral scoring",
-      body: "Responses are scored across behavioral dimensions in aggregate benchmark reporting.",
+      title: "Dimensional Scoring",
+      body:
+        "Responses are scored across defined behavioral safety dimensions so risk is not reduced to a single anecdotal failure. Institutional buyers need this structure because it translates model behavior into comparable patterns, severity, and remediation priorities.",
     },
     {
       step: "05",
-      title: "Reporting and monitoring",
-      body: "Findings are documented for governance use, with optional monitoring for deployed systems.",
+      title: "Governance Reporting",
+      body:
+        "Findings are converted into documented governance evidence for launch decisions, oversight review, and downstream monitoring. This stage matters because institutions need a durable record that can travel across product, legal, compliance, procurement, and board review.",
     },
   ] as const;
 
@@ -42,7 +47,7 @@ export default function Architecture() {
       <SummaryHero
         kicker="System Overview"
         title="Architecture"
-        summary="Public overview of the evaluation approach. Detailed implementation details are not published on the public site."
+        summary="Behavioral safety cannot be self-certified. The evaluation pipeline is designed for institutional review — independent, documented, and structured for governance use."
         highlights={[
           "Independent third-party evaluation flow",
           "Safety Gate before broader scoring",
@@ -71,6 +76,27 @@ export default function Architecture() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section id="independence" className="py-14 border-b border-border">
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">
+          Why Independent Evaluation Matters
+        </p>
+        <div className="space-y-4 text-sm text-foreground-muted max-w-2xl">
+          <p>
+            Internal QA can improve product quality, but it cannot self-certify behavioral safety in the eyes of outside
+            reviewers. When the builder is also the evaluator, the record does not carry the same institutional weight.
+          </p>
+          <p>
+            Independent evaluation creates a defensible record. It gives procurement, compliance, and legal stakeholders
+            structured evidence they can use when the question is not whether a system works, but whether it can be trusted
+            in sensitive conditions.
+          </p>
+          <p>
+            Governance infrastructure requires separation between builder and auditor. That separation is what turns testing
+            from an internal process into a credible oversight mechanism.
+          </p>
         </div>
       </section>
 
