@@ -1,7 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 
-import { PUBLIC_STATS } from "@/content/stats";
-
 export default function Footer() {
   const location = useLocation();
 
@@ -12,8 +10,7 @@ export default function Footer() {
           <strong>ikwe.ai</strong> · Independent AI behavior review · Third-party evaluation for human-facing systems
         </div>
         <div className="home-footer-right">
-          {PUBLIC_STATS.outputsEvaluatedLabel} · {PUBLIC_STATS.scenarios} scenarios · {PUBLIC_STATS.behavioralDomains}{" "}
-          risk categories
+          Binary Safety Gate · 8 weighted dimensions · 79 baseline scenarios
         </div>
       </footer>
     );
