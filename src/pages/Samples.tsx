@@ -70,7 +70,7 @@ export default function Samples() {
         ]}
       />
 
-      <section id="sample-access" className="py-14 border-b border-border">
+      <section id="sample-access" className="site-section py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">Sample Access</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
           <article className="card-surface p-6">
@@ -117,7 +117,7 @@ export default function Samples() {
         </div>
       </section>
 
-      <section id="deliverables" className="py-14 border-b border-border">
+      <section id="deliverables" className="site-section py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">What You Receive</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
           {deliverableItems.map((item) => (
@@ -133,7 +133,7 @@ export default function Samples() {
         </p>
       </section>
 
-      <section id="faq" className="py-14 border-b border-border max-w-4xl">
+      <section id="faq" className="site-section py-14 border-b border-border max-w-4xl">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">FAQ</p>
         <div className="space-y-0 divide-y divide-border">
           {faqs.map((item) => (
@@ -145,7 +145,7 @@ export default function Samples() {
         </div>
       </section>
 
-      <section className="py-14">
+      <section className="site-section py-14">
         <article className="card-surface p-6 max-w-4xl">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Ready to validate your system?</p>
           <h2 className="font-display text-3xl text-foreground mb-2">Request Third-Party Independent Evaluation.</h2>
