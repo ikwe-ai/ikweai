@@ -1,6 +1,25 @@
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
+import { PUBLIC_STATS } from "@/content/stats";
 
 export default function Footer() {
+  const location = useLocation();
+
+  if (location.pathname === "/") {
+    return (
+      <footer className="home-footer">
+        <div className="home-footer-left">
+          <strong>ikwe.ai</strong> · Independent Behavioral Safety Validation · EQ Safety Benchmark
+        </div>
+        <div className="home-footer-right">
+          {PUBLIC_STATS.outputsEvaluatedLabel} · {PUBLIC_STATS.scenarios} scenarios · {PUBLIC_STATS.behavioralDomains}{" "}
+          behavioral domains
+        </div>
+      </footer>
+    );
+  }
+
   return (
     <footer className="border-t border-border mt-20 bg-background-card">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 py-12">
