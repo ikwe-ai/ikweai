@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const links = [
+  { label: "Research", path: "/research" },
   { label: "Benchmark", path: "/benchmark" },
   { label: "Audit & Validation", path: "/audit" },
-  { label: "Writings", path: "/archive/research/writings" },
   { label: "Trust", path: "/trust" },
 ] as const;
 

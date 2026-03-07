@@ -27,6 +27,7 @@ export default function Footer() {
             <p className="font-mono text-[10px] uppercase tracking-widest text-foreground-subtle">Public Site Map</p>
             <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm">
               <Link to="/" className="text-foreground-muted hover:text-foreground transition-colors">Home</Link>
+              <Link to="/research" className="text-foreground-muted hover:text-foreground transition-colors">Research</Link>
               <Link to="/benchmark" className="text-foreground-muted hover:text-foreground transition-colors">Benchmark</Link>
               <Link to="/archive/research/writings" className="text-foreground-muted hover:text-foreground transition-colors">Writings</Link>
               <Link to="/audit#deliverables-previews" className="text-foreground-muted hover:text-foreground transition-colors">Sample Outputs</Link>
@@ -63,6 +64,9 @@ export default function Footer() {
           <div>
             <p className="text-xs font-mono text-foreground-subtle uppercase tracking-widest mb-3">Core Pages</p>
             <nav className="flex flex-col gap-2.5">
+              <Link to="/research" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                Research Summary
+              </Link>
               <Link to="/benchmark" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Benchmark Framework
               </Link>

@@ -17,6 +17,7 @@ import Trust from "./pages/Trust";
 import Contact from "./pages/Contact";
 import Archive from "./pages/Archive";
 import NotFound from "./pages/NotFound";
+import Research from "./pages/Research";
 
 import Architecture from "./pages/Architecture";
 import About from "./pages/About";
@@ -69,20 +70,27 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/benchmark" element={<EqSafetyBenchmark />} />
-          <Route path="/research" element={<Navigate to="/benchmark" replace />} />
+          <Route path="/research" element={<Research />} />
+          <Route path="/research.html" element={<Navigate to="/research" replace />} />
           <Route path="/deliverables" element={<Navigate to="/audit#deliverables-previews" replace />} />
           <Route path="/samples" element={<Navigate to="/audit#deliverables-previews" replace />} />
           <Route path="/audit" element={<Audit />} />
+          <Route path="/audit.html" element={<Navigate to="/audit" replace />} />
           <Route path="/trust" element={<Trust />} />
           <Route path="/intake" element={<Contact />} />
+          <Route path="/intake.html" element={<Navigate to="/intake" replace />} />
           <Route path="/request-audit" element={<Navigate to="/intake" replace />} />
+          <Route path="/request-evaluation" element={<Navigate to="/intake" replace />} />
+          <Route path="/request-evaluation-intake" element={<Navigate to="/intake" replace />} />
+          <Route path="/evaluation-request" element={<Navigate to="/intake" replace />} />
           <Route path="/archive" element={<Archive />} />
 
           <Route path="/outputs" element={<Navigate to="/audit#deliverables-previews" replace />} />
           <Route path="/reports" element={<Navigate to="/audit#deliverables-previews" replace />} />
           <Route path="/sample-report" element={<SampleReport />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/inquiry" element={<Navigate to="/contact" replace />} />
+          <Route path="/contact" element={<Navigate to="/intake" replace />} />
+          <Route path="/contact.html" element={<Navigate to="/intake" replace />} />
+          <Route path="/inquiry" element={<Navigate to="/intake" replace />} />
           <Route path="/audit-request" element={<Navigate to="/intake" replace />} />
           <Route path="/request-audit-intake" element={<Navigate to="/intake" replace />} />
 
@@ -177,6 +185,9 @@ const App = () => (
           <Route path="/explorer" element={<Navigate to="/research" replace />} />
           <Route path="/research-summary" element={<Navigate to="/research" replace />} />
           <Route path="/support" element={<Navigate to="/intake" replace />} />
+          <Route path="/sample-outputs" element={<Navigate to="/audit#deliverables-previews" replace />} />
+          <Route path="/audit-and-validation" element={<Navigate to="/audit" replace />} />
+          <Route path="/audit-validation" element={<Navigate to="/audit" replace />} />
           <Route path="/faq" element={<Navigate to="/trust" replace />} />
           <Route path="/downloads/*" element={<Navigate to="/audit#deliverables-previews" replace />} />
 

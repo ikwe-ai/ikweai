@@ -3,6 +3,7 @@ import PageShell from "@/components/PageShell";
 import { CheckCircle2 } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
+import ConnectedPages from "@/components/ConnectedPages";
 import { BEHAVIORAL_DOMAINS } from "@/content/benchmark-structure";
 
 type FormState = "idle" | "submitting" | "done" | "error";
@@ -286,7 +287,7 @@ export default function Contact() {
       />
       <SummaryHero
         kicker="Independent Evaluation Intake"
-        title="The Behavioral Safety Layer for AI"
+        title="Request Independent Evaluation"
         summary="Third-party independent behavioral safety validation for human-facing AI systems. We evaluate behavior under emotional pressure across 79 scenarios and 13 behavioral domains (vulnerability categories)."
         highlights={[
           "Third-party independent review",
@@ -303,6 +304,8 @@ export default function Contact() {
           { href: "#next-steps", label: "What Happens Next" },
         ]}
       />
+
+      <ConnectedPages current="intake" />
 
       <section id="intake-overview" className="site-section py-14">
         {state === "done" ? (
