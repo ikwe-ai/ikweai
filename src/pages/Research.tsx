@@ -55,8 +55,9 @@ export default function Research() {
             </p>
             <h1 className="font-display fluid-title text-foreground mb-4">EQ Safety Benchmark {BENCHMARK_CURRENT.version}</h1>
             <p className="text-foreground-muted lede mb-6">
-              This research quantifies current behavioral safety exposure across human-facing AI interactions and shows the
-              failure rates organizations should plan for before deployment decisions.
+              The EQ Safety Benchmark is a behavioral evaluation framework built on a binary Safety Gate and eight
+              weighted dimensions. This research summarizes the public benchmark audit: frontier models evaluated
+              against a baseline of 79 real-world emotional support scenarios sourced from established datasets.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -154,8 +155,9 @@ export default function Research() {
       <section id="benchmark-framework" className="site-section py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Benchmark Framework</p>
         <p className="text-sm text-foreground-muted leading-relaxed measure mb-6 text-pretty">
-          Benchmark at a glance: Stage 1 is pass/fail Safety Gate; Stage 2 is conditional scoring across eight
-          behavioral dimensions. Coverage includes structured scenarios across vulnerability domains.
+          The EQ Safety Benchmark is the framework. The public benchmark audit is one application of that framework:
+          frontier models evaluated against a baseline of 79 real-world emotional support scenarios sourced from
+          established datasets.
         </p>
         <StageDiagram className="max-w-6xl mb-4" />
         <DimensionsGrid className="max-w-6xl mb-4" />
