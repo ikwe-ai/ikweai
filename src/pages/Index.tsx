@@ -98,10 +98,38 @@ const dimensions = [
 ] as const;
 
 const tiers = [
-  ["TIER I", "Stable Behavioral Integrity", "Launch with confidence", "Standard monitoring", "tier-1"],
-  ["TIER II", "Moderate Behavioral Risk", "Launch with mitigations", "Safeguards + quarterly review", "tier-2"],
-  ["TIER III", "Escalation Instability", "Remediate before launch", "Engineering fixes required, retest", "tier-3"],
-  ["TIER IV", "High Vulnerability Exposure", "Do not launch", "Fundamental redesign needed", "tier-4"],
+  [
+    "TIER I",
+    "Stable Behavioral Integrity",
+    "Launch with confidence",
+    "Standard monitoring",
+    "tier-1",
+    "Safety record established. Trusted for deployment.",
+  ],
+  [
+    "TIER II",
+    "Moderate Behavioral Risk",
+    "Launch with mitigations",
+    "Safeguards + quarterly review",
+    "tier-2",
+    "Conditional safety record. Mitigations required before trust is established.",
+  ],
+  [
+    "TIER III",
+    "Escalation Instability",
+    "Remediate before launch",
+    "Engineering fixes required, retest",
+    "tier-3",
+    "Safety record withheld. Remediation required.",
+  ],
+  [
+    "TIER IV",
+    "High Vulnerability Exposure",
+    "Do not launch",
+    "Fundamental redesign needed",
+    "tier-4",
+    "Safety record denied. Do not deploy.",
+  ],
 ] as const;
 
 const deliverables = [
@@ -121,11 +149,11 @@ const audienceItems = [
 ] as const;
 
 const urgencyItems = [
-  "Regulatory expectations for AI are accelerating globally",
-  "Emotionally interactive AI is under increasing scrutiny",
-  "AI litigation exposure is moving from edge case to precedent",
-  "Board-level AI governance now requires documented behavioral evidence",
-  "Behavioral safety is becoming a procurement requirement",
+  "AI liability exposure is moving from edge case to legal precedent",
+  "Board-level governance now requires documented behavioral safety evidence",
+  "Procurement teams are beginning to require independent safety records",
+  "Regulatory expectations are expanding past bias and accuracy into behavioral safety",
+  "One trust failure can halt deployment for 18+ months",
 ] as const;
 
 const engagementLevels = [
@@ -165,7 +193,7 @@ export default function Home() {
     <>
       <PageMeta
         title="Ikwe.ai - The Behavioral Safety Layer for Human-Facing AI"
-        description="Independent behavioral safety validation for human-facing AI systems. Built to detect behavioral drift under emotional pressure before harm, liability, or headlines."
+        description="The behavioral safety standard for human-facing AI. An independent safety record that proves your system can be trusted with humans — before harm, liability, or headlines."
         path="/"
         ogImagePath="/og/home.png"
       />
@@ -175,7 +203,7 @@ export default function Home() {
 
         <section id="hero" className="home-section home-hero">
           <div className="home-wrap">
-            <div className="home-hero-tag">The Standard for Emotionally Sensitive AI</div>
+            <div className="home-hero-tag">The Behavioral Safety Standard for Human-Facing AI</div>
             <h1 className="home-hero-title">
               The Behavioral
               <br />
@@ -184,10 +212,10 @@ export default function Home() {
               <em>for Human-Facing AI.</em>
             </h1>
             <p className="home-hero-sub">
-              If your system interacts with users in vulnerable moments, you need evidence of how it behaves under
-              emotional stress.
+              If your system interacts with humans, you need an independent record of whether it can be trusted —
+              before it causes harm, liability, or a public failure.
             </p>
-            <p className="home-hero-subtle">Not what it says. How it behaves.</p>
+            <p className="home-hero-subtle">Not capability. Trustworthiness.</p>
             <div className="home-hero-actions">
               <Link to="/intake#application-form" className="home-btn home-btn-gold">
                 Request Evaluation
@@ -202,12 +230,12 @@ export default function Home() {
                 <div className="home-stat-label">of baseline AI responses introduce emotional risk</div>
               </article>
               <article className="home-hero-stat">
-                <div className="home-stat-number">{PUBLIC_STATS.outputsEvaluatedDisplay}</div>
-                <div className="home-stat-label">outputs evaluated across 79 baseline scenarios</div>
+                <div className="home-stat-number">44.9%</div>
+                <div className="home-stat-label">of systems fail the binary Safety Gate</div>
               </article>
               <article className="home-hero-stat">
-                <div className="home-stat-number">44.9%</div>
-                <div className="home-stat-label">of systems tested fail the Safety Gate</div>
+                <div className="home-stat-number">{PUBLIC_STATS.outputsEvaluatedDisplay}</div>
+                <div className="home-stat-label">outputs evaluated across 79 baseline scenarios</div>
               </article>
             </div>
           </div>
@@ -345,10 +373,7 @@ export default function Home() {
 
             <div className="home-core-callout">
               <p>Companies build AI systems.</p>
-              <p>
-                We test how those systems behave when people are emotionally vulnerable and provide an independent,
-                documented record of what we find.
-              </p>
+              <p>Ikwe produces the independent safety record that proves those systems can be trusted with humans.</p>
             </div>
 
             <div className="home-flow-grid">
@@ -476,7 +501,9 @@ export default function Home() {
             </div>
 
             <div className="home-benchmark-callout">
-              <div className="home-benchmark-highlight">Framework → baseline → outputs</div>
+              <div className="home-benchmark-highlight">
+                Binary Safety Gate. Eight weighted dimensions. One trust record.
+              </div>
               <p className="home-benchmark-copy">
                 The framework can score any response or interaction. It is validated against a baseline of 79
                 real-world emotional support scenarios, produces public frontier model benchmark scores, and powers
@@ -497,8 +524,9 @@ export default function Home() {
               Under Pressure.
             </h2>
             <p className="home-section-subtext home-section-subtext-left">
-              The first question we answer: does your system pass under high-impact stress scenarios? Before
-              dimensional scoring, we determine whether harmful behavioral patterns appear at all.
+              The first question isn&apos;t how well it performs. It&apos;s whether it&apos;s safe to deploy with
+              humans at all. Before dimensional scoring begins, we determine whether harmful behavioral patterns appear
+              at all.
             </p>
 
             <div className="home-grid-two">
@@ -518,7 +546,10 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                <div className="home-pullquote">44.9% of systems tested fail the Safety Gate.</div>
+                <div className="home-pullquote">
+                  44.9% of systems fail the binary Safety Gate. The first question is never performance. It&apos;s
+                  whether the system is safe to deploy with humans.
+                </div>
               </div>
 
               <div>
@@ -604,7 +635,7 @@ export default function Home() {
             <div>
               <span className="home-eyebrow">What You Get</span>
               <h2 className="home-section-title home-output-title">
-                What you receive is a decision, not just a document.
+                What you receive is a safety record, not just a score.
               </h2>
               <p className="home-copy">
                 Ikwe produces governance-ready evidence that enables deployment decisions.
@@ -615,7 +646,7 @@ export default function Home() {
               </p>
 
               <div className="home-tier-list">
-                {tiers.map(([badge, title, subtitle, action, tone]) => (
+                {tiers.map(([badge, title, subtitle, action, tone, trustRecord]) => (
                   <article key={badge} className="home-tier">
                     <div className={`home-tier-badge ${tone}`}>{badge}</div>
                     <div>
@@ -623,6 +654,7 @@ export default function Home() {
                       <div className="home-tier-subtitle">{subtitle}</div>
                     </div>
                     <div className="home-tier-action">{action}</div>
+                    <div className="home-tier-trust">{trustRecord}</div>
                   </article>
                 ))}
               </div>
@@ -746,8 +778,8 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="home-pullquote">
-                  One behavioral incident can halt procurement for 18+ months. The time to establish your behavioral
-                  safety record is before you need it.
+                  One trust failure can halt deployment for 18+ months. The time to establish your safety record is
+                  before you need it.
                 </div>
               </div>
             </div>
@@ -814,8 +846,8 @@ export default function Home() {
               <strong>behavioral validation cannot be optional.</strong>
             </h2>
             <p className="home-close-copy">
-              Technical capability is not the only measure of readiness. Behavioral stability under pressure determines
-              long-term viability. The systems shaping human lives deserve something underneath them we can trust.
+              The systems interacting with humans at scale need something underneath them we can trust. That record
+              has to come from outside.
             </p>
             <div className="home-close-actions">
               <Link to="/intake#application-form" className="home-btn home-btn-gold">
