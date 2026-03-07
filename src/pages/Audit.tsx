@@ -168,6 +168,7 @@ export default function Audit() {
         title="Audit & Validation | Ikwe.ai"
         description="Independent behavioral safety audits for human-facing AI. Structured evaluation, implementation support, and continuous monitoring. Ikwe.ai."
         path="/audit"
+        ogImagePath="/og/audit.png"
       />
 
       <section className="site-section py-14 border-b border-border audit-hero">

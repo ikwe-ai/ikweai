@@ -284,6 +284,7 @@ export default function Contact() {
         title="Request Independent Evaluation | Ikwe.ai"
         description="Request third-party independent behavioral safety evaluation. Share deployment and governance context to receive a scoped plan."
         path="/intake"
+        ogImagePath="/og/intake.png"
       />
       <SummaryHero
         kicker="Independent Evaluation Intake"

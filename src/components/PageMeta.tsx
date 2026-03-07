@@ -39,7 +39,7 @@ function upsertCanonical(url: string) {
 }
 
 const SITE_URL = "https://ikwe.ai";
-const DEFAULT_OG_IMAGE = "/ikwe-og.png";
+const DEFAULT_OG_IMAGE = "/og/home.png";
 
 function toAbsolute(pathOrUrl: string) {
   if (pathOrUrl.startsWith("http://") || pathOrUrl.startsWith("https://")) {
@@ -69,6 +69,7 @@ export default function PageMeta({
     upsertMetaByName("twitter:title", title);
     upsertMetaByName("twitter:description", description);
     upsertMetaByName("twitter:image", absoluteImage);
+    upsertMetaByName("twitter:image:alt", "Ikwe.ai social preview");
     upsertMetaByName("twitter:url", absoluteUrl);
     upsertMetaByProperty("og:title", title);
     upsertMetaByProperty("og:description", description);
@@ -76,7 +77,9 @@ export default function PageMeta({
     upsertMetaByProperty("og:type", "website");
     upsertMetaByProperty("og:site_name", "Ikwe.ai");
     upsertMetaByProperty("og:image", absoluteImage);
-    upsertMetaByProperty("og:image:alt", "Ikwe.ai brand image");
+    upsertMetaByProperty("og:image:alt", "Ikwe.ai social preview");
+    upsertMetaByProperty("og:image:width", "1200");
+    upsertMetaByProperty("og:image:height", "630");
     upsertCanonical(absoluteUrl);
   }, [title, description, path, noIndex, ogImagePath]);
 
