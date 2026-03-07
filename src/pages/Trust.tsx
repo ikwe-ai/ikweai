@@ -64,6 +64,8 @@ export default function Trust() {
         ]}
       />
 
+      <ConnectedPages current="trust" />
+
       <section id="information-needs" className="site-section py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Information Needs</p>
         <p className="text-xs text-foreground-subtle mb-6 max-w-4xl">
