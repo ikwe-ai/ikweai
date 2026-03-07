@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-type PageKey = "research" | "audit" | "intake";
+type PageKey = "research" | "audit" | "intake" | "benchmark" | "trust";
 
 type ConnectedPagesProps = {
   current: PageKey;
