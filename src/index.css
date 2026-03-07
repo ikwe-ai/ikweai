@@ -1423,6 +1423,19 @@
     gap: 2.5rem;
   }
 
+  .home-section {
+    padding: 5.75rem 1.5rem;
+  }
+
+  .home-center-block {
+    margin-bottom: 3rem;
+  }
+
+  .home-section-subtext-left {
+    max-width: 100%;
+    margin-bottom: 2.25rem;
+  }
+
   .home-flow-grid,
   .home-dimensions-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1458,6 +1471,18 @@
     grid-template-columns: 1fr;
   }
 
+  .home-output-intro {
+    margin-bottom: 2.25rem;
+  }
+
+  .home-output-sections {
+    gap: 2rem;
+  }
+
+  .home-output-block {
+    gap: 0.85rem;
+  }
+
   .home-close-props,
   .home-note,
   .home-benchmark-callout {
@@ -1472,11 +1497,84 @@
 
 @media (max-width: 640px) {
   .home-section {
-    padding: 5.25rem 1.15rem;
+    padding: 4.5rem 1rem;
   }
 
   .home-hero {
-    padding-top: 7.5rem;
+    min-height: auto;
+    padding-top: 6.75rem;
+    padding-bottom: 4rem;
+  }
+
+  .home-hero-tag {
+    margin-bottom: 1.3rem;
+  }
+
+  .home-hero-sub {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .home-hero-subtle {
+    margin-bottom: 1.8rem;
+  }
+
+  .home-hero-stats {
+    margin-top: 2.5rem;
+  }
+
+  .home-hero-stat {
+    padding: 1rem 1.1rem;
+  }
+
+  .home-center-block,
+  .home-center-block-tight {
+    margin-bottom: 2.25rem;
+  }
+
+  .home-grid-two,
+  .home-output-intro {
+    gap: 2rem;
+  }
+
+  .home-copy,
+  .home-section-subtext,
+  .home-note-copy,
+  .home-benchmark-copy,
+  .home-phase-copy,
+  .home-level-copy,
+  .home-close-copy {
+    font-size: 0.92rem;
+    line-height: 1.72;
+  }
+
+  .home-core-callout {
+    margin-bottom: 2.2rem;
+    padding: 1.2rem 1.15rem;
+  }
+
+  .home-core-callout p {
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+
+  .home-core-callout p + p {
+    font-size: 0.95rem;
+  }
+
+  .home-benchmark-header {
+    margin-bottom: 2rem;
+  }
+
+  .home-note,
+  .home-benchmark-callout,
+  .home-pullquote,
+  .home-phase,
+  .home-level-card,
+  .home-deliverable-card,
+  .home-list-card {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .home-flow-grid,
@@ -1495,23 +1593,51 @@
     display: grid;
   }
 
+  .home-score-row {
+    gap: 0.35rem;
+  }
+
   .home-score-label,
   .home-score-value,
   .home-score-status {
     flex: initial;
+    text-align: left;
   }
 
   .home-score-track {
     width: 100%;
   }
 
-  .home-tier-action,
+  .home-report-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.1rem;
+  }
+
+  .home-report-body {
+    padding: 1.1rem;
+  }
+
   .home-report-chip-wrap {
+    text-align: left;
+  }
+
+  .home-tier-action,
+  .home-tier-trust {
     text-align: left;
   }
 
   .home-close-props {
     gap: 1.2rem;
+  }
+
+  .home-output-sections {
+    gap: 1.6rem;
+  }
+
+  .home-footer {
+    gap: 0.55rem;
+    padding: 1.25rem 1rem;
   }
 
   .home-nav-bar {
