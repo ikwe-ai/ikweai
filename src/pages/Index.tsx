@@ -174,6 +174,7 @@ export default function Home() {
         title="Ikwe.ai - Independent AI Behavior Review"
         description="Independent behavioral safety validation for human-facing AI systems. Built to detect behavioral drift under emotional pressure before harm, liability, or headlines."
         path="/"
+        ogImagePath="/og/home.png"
       />
 
       <div className="home-page">

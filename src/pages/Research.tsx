@@ -44,6 +44,7 @@ export default function Research() {
         title="Research — EQ Safety Benchmark | Ikwe.ai"
         description="Public research summary for the EQ Safety Benchmark: methodology, scope, findings, and access pathways."
         path="/research"
+        ogImagePath="/og/research.png"
       />
 
       <section className="site-section py-14 border-b border-border research-hero">

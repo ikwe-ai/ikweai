@@ -58,6 +58,7 @@ export default function EqSafetyBenchmark() {
         title="EQ Safety Benchmark | Ikwe.ai"
         description="Public framework for behavioral safety evaluation in human-facing AI: Safety Gate, public dimensions, and benchmark-level outcomes."
         path="/benchmark"
+        ogImagePath="/og/benchmark.png"
       />
       <SummaryHero
         kicker="Public Framework"
