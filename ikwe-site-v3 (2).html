@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Ikwe.ai — The Behavioral Safety Layer for AI</title>
+<meta name="description" content="Independent behavioral safety validation for human-facing AI systems. Built to detect behavioral drift under emotional pressure before harm, liability, or headlines."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:      #141218;
+  --bg2:     #17151c;
+  --bg3:     #1c1922;
+  --bg4:     #201d28;
+  --purple:  #7B4FD4;
+  --purplel: #9b72e8;
+  --purpled: #5a3aa0;
+  --pg12:    rgba(123,79,212,0.12);
+  --pg08:    rgba(123,79,212,0.08);
+  --pg20:    rgba(123,79,212,0.20);
+  --pg35:    rgba(123,79,212,0.35);
+  --white:   #F0EEE9;
+  --soft:    #9d9ab0;
+  --muted:   #524f65;
+  --gold:    #E8C97A;
+  --blush:   #E8A898;
+  --red:     #f87171;
+  --green:   #4ade80;
+  --border:  rgba(123,79,212,0.18);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:'DM Sans',sans-serif;
+  font-weight:300;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+/* ── STARFIELD ── */
+.starfield{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 120% 80% at 65% 30%, rgba(60,30,120,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 20% 85%, rgba(100,60,180,0.06) 0%, transparent 55%),
+    var(--bg);
+}
+.starfield::after{
+  content:'';position:absolute;inset:0;
+  background-image:
+    radial-gradient(1px 1px at 15% 22%, rgba(255,255,255,0.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 72% 8%,  rgba(255,255,255,0.4)  0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 41%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 33% 67%, rgba(255,255,255,0.3)  0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 88%, rgba(255,255,255,0.25) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 8% 50%,  rgba(155,114,232,0.6) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 91% 75%, rgba(155,114,232,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 44% 12%, rgba(255,255,255,0.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 62% 55%, rgba(255,255,255,0.2)  0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 90%, rgba(255,255,255,0.3)  0%, transparent 100%);
+}
+
+/* ── LAYOUT ── */
+.wrap{max-width:1140px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
+section{position:relative;z-index:1}
+
+/* ── TYPOGRAPHY ── */
+.fraunces{font-family:'Fraunces',serif;font-weight:400}
+.mono{font-family:'Space Mono',monospace}
+.eyebrow{
+  font-family:'Space Mono',monospace;
+  font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--purple);margin-bottom:1.1rem;display:block;
+}
+.divider{
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(123,79,212,0.25) 30%,rgba(123,79,212,0.25) 70%,transparent);
+  position:relative;z-index:1;
+}
+
+/* ── BUTTONS ── */
+.btn{
+  display:inline-block;text-decoration:none;cursor:pointer;border:none;
+  padding:.8rem 1.8rem;border-radius:3px;
+  font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:500;letter-spacing:.04em;
+  transition:all .2s;
+}
+.btn-gold{background:var(--gold);color:#111;font-weight:700;}
+.btn-gold:hover{background:#f0d48a;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--white);border:1px solid rgba(123,79,212,0.45)}
+.btn-outline:hover{border-color:var(--purple);background:var(--pg08)}
+.btn-purple{background:var(--purple);color:var(--white)}
+.btn-purple:hover{background:var(--purplel);transform:translateY(-1px)}
+
+/* ═══════════════════════════════════
+   NAV
+═══════════════════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:1rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(20,18,24,0.9);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+.nav-brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.nav-logo-circle{
+  width:30px;height:30px;border-radius:50%;
+  background:conic-gradient(#1c1922 0deg 90deg,#E8A898 90deg 180deg,#9b72e8 180deg 270deg,#E8C97A 270deg 360deg);
+  border:1.5px solid rgba(155,114,232,0.35);
+  flex-shrink:0;
+}
+.nav-brand-name{
+  font-family:'Fraunces',serif;font-size:1.05rem;
+  color:var(--white);letter-spacing:.04em;
+}
+.nav-links{display:flex;align-items:center;gap:2.2rem}
+.nav-links a{
+  color:var(--soft);text-decoration:none;
+  font-size:.78rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{
+  background:var(--gold)!important;color:#111!important;
+  padding:.5rem 1.1rem;border-radius:3px;
+  font-weight:700!important;letter-spacing:.03em!important;
+  text-transform:none!important;
+}
+.nav-cta:hover{background:#f0d48a!important}
+
+/* ═══════════════════════════════════
+   HERO
+═══════════════════════════════════ */
+#hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:9rem 2rem 5rem;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:.55rem;
+  background:var(--pg12);border:1px solid var(--pg35);
+  border-radius:100px;padding:.35rem .9rem;
+  font-family:'Space Mono',monospace;
+  font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--purplel);margin-bottom:2rem;
+}
+.hero-tag::before{
+  content:'';width:5px;height:5px;border-radius:50%;background:var(--purplel);
+  animation:blink 2.2s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-h1{
+  font-family:'Fraunces',serif;font-weight:400;
+  font-size:clamp(3.2rem,7.5vw,7rem);
+  line-height:1.0;letter-spacing:-.02em;
+  margin-bottom:1.4rem;
+}
+.hero-h1 em{font-style:italic;color:var(--purplel)}
+.hero-sub{
+  font-size:1.15rem;color:var(--soft);
+  max-width:580px;line-height:1.75;margin-bottom:.55rem;font-weight:300;
+}
+.hero-sub strong{color:var(--white);font-weight:500}
+.hero-sub2{
+  font-size:.9rem;color:var(--muted);
+  max-width:480px;margin-bottom:2.5rem;
+}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:4rem}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  max-width:660px;
+  border:1px solid var(--border);border-radius:6px;overflow:hidden;
+}
+.hero-stat{
+  padding:1.2rem 1.6rem;
+  background:var(--pg08);
+}
+.hero-stat+.hero-stat{border-left:1px solid var(--border)}
+.stat-n{
+  font-family:'Fraunces',serif;font-size:2.1rem;
+  color:var(--purplel);line-height:1;margin-bottom:.3rem;
+}
+.stat-l{font-size:.75rem;color:var(--muted);line-height:1.45}
+
+/* ═══════════════════════════════════
+   THESIS — EMPATHY ≠ SAFETY
+═══════════════════════════════════ */
+#thesis{padding:7rem 2rem;background:var(--bg2)}
+.thesis-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.thesis-hed{
+  font-family:'Fraunces',serif;font-weight:400;
+  font-size:clamp(2rem,4vw,3.4rem);
+  line-height:1.12;letter-spacing:-.01em;margin-bottom:1.6rem;
+}
+.thesis-hed em{font-style:italic;color:var(--purplel)}
+.thesis-body{color:var(--soft);font-size:.98rem;line-height:1.85;margin-bottom:1.2rem}
+.thesis-body strong{color:var(--white);font-weight:500}
+.thesis-pull{
+  border-left:3px solid var(--purple);
+  padding:1.1rem 1.4rem;
+  background:var(--pg08);border-radius:0 5px 5px 0;
+  font-family:'Fraunces',serif;font-size:1.0rem;font-style:italic;
+  color:var(--white);line-height:1.55;margin-top:1.5rem;
+}
+
+/* gap comparison table */
+.gap-table{border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.gap-thead{display:grid;grid-template-columns:1fr 1fr;background:var(--pg12)}
+.gap-th{
+  padding:.85rem 1.2rem;
+  font-family:'Space Mono',monospace;
+  font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+}
+.gap-th.l{color:var(--muted);border-right:1px solid var(--border)}
+.gap-th.r{color:var(--purplel)}
+.gap-row{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(123,79,212,.09)}
+.gap-cell{padding:.8rem 1.2rem;font-size:.85rem;display:flex;align-items:center;gap:.5rem}
+.gap-cell.l{color:var(--muted);border-right:1px solid rgba(123,79,212,.09)}
+.gap-cell.l::before{content:'—';font-size:.7rem;color:var(--muted);flex-shrink:0}
+.gap-cell.r{color:var(--soft)}
+.gap-cell.r::before{content:'›';color:var(--purple);font-size:.95rem;flex-shrink:0}
+.gap-foot{
+  padding:.9rem 1.2rem;border-top:1px solid var(--border);
+  font-size:.75rem;color:var(--muted);font-style:italic;text-align:center;
+  background:var(--pg08);
+}
+
+/* ═══════════════════════════════════
+   DRIFT CURVE
+═══════════════════════════════════ */
+#drift{padding:7rem 2rem}
+.drift-hed-wrap{text-align:center;margin-bottom:4rem}
+.drift-h2{
+  font-family:'Fraunces',serif;font-weight:400;
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  line-height:1.05;margin-bottom:.8rem;
+}
+.drift-h2 em{font-style:italic;color:var(--purplel)}
+.drift-sub{color:var(--soft);font-size:.95rem;max-width:500px;margin:0 auto}
+
+.drift-zones{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  margin-bottom:1.8rem;
+}
+.dzone{
+  padding:2.2rem 1.8rem;background:var(--bg2);
+  position:relative;
+}
+.dzone.z2{
+  background:rgba(123,79,212,.1);
+  border-left:1px solid var(--pg35);border-right:1px solid var(--pg35);
+}
+.dzone.z2::before{
+  content:'← Where Ikwe measures';
+  position:absolute;top:.75rem;left:50%;transform:translateX(-50%);
+  font-family:'Space Mono',monospace;
+  font-size:.58rem;color:var(--purplel);letter-spacing:.1em;white-space:nowrap;
+}
+.dz-icon{
+  width:42px;height:42px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;margin-bottom:1.1rem;
+}
+.dz-icon.g{background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);color:var(--green)}
+.dz-icon.p{background:rgba(123,79,212,.2);border:1px solid var(--pg35);color:var(--purplel);font-size:1.2rem}
+.dz-icon.r{background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.25);color:var(--red)}
+.dz-num{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.18em;color:var(--muted);margin-bottom:.35rem}
+.dz-title{
+  font-family:'Fraunces',serif;font-size:1.35rem;margin-bottom:.35rem;line-height:1.2;
+}
+.z1 .dz-title,.z3 .dz-title{color:var(--soft)}
+.z2 .dz-title{color:var(--white)}
+.dz-sub{font-size:.82rem;color:var(--muted);font-style:italic;margin-bottom:.7rem}
+.dz-tag{font-size:.78rem;font-weight:500}
+.z1 .dz-tag{color:var(--muted)}
+.z2 .dz-tag{color:var(--purplel);font-weight:700}
+.z3 .dz-tag{color:rgba(248,113,113,.7)}
+
+.drift-note{
+  display:flex;gap:1.5rem;align-items:flex-start;
+  padding:1.4rem 1.8rem;
+  background:var(--pg08);border:1px solid var(--border);border-radius:6px;
+}
+.drift-note-main{
+  font-family:'Fraunces',serif;font-size:1.05rem;font-style:italic;
+  color:var(--white);margin-bottom:.4rem;line-height:1.5;
+}
+.drift-note-detail{font-size:.82rem;color:var(--muted);line-height:1.65}
+.drift-note-detail span{color:var(--soft)}
+
+/* ═══════════════════════════════════
+   ONE IDEA
+═══════════════════════════════════ */
+#oneidea{padding:7rem 2rem;background:var(--bg2)}
+.oneidea-h2{
+  font-family:'Fraunces',serif;font-weight:400;
+  font-size:clamp(2rem,4vw,3.5rem);line-height:1.1;margin-bottom:1rem;
+}
+.oneidea-core{
+  border-left:4px solid var(--purple);
+  border-radius:0 6px 6px 0;
+  padding:1.6rem 2rem;
+  background:var(--pg08);
+  border:1px solid var(--border);
+  border-left:4px solid var(--purple);
+  max-width:760px;margin-bottom:3rem;
+}
+.oneidea-core p{
+  font-family:'Fraunces',serif;font-size:1.25rem;line-height:1.65;color:var(--white);
+}
+.oneidea-core p+p{margin-top:.7rem;color:var(--soft);font-size:1.1rem}
+
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.flow-step{
+  padding:1.8rem 1.4rem;
+  background:var(--bg3);
+  border:1px solid var(--border);
+  position:relative;transition:border-color .2s;
+}
+.flow-step+.flow-step::before{
+  content:'→';
+  position:absolute;left:-.55rem;top:50%;transform:translateY(-50%);
+  color:var(--muted);font-size:.9rem;z-index:2;
+}
+.flow-step.hl{
+  background:rgba(123,79,212,.1);
+  border-color:var(--pg35);
+}
+.fs-n{font-family:'Space Mono',monospace;font-size:.58rem;color:var(--muted);margin-bottom:.7rem;letter-spacing:.1em}
+.fs-title{font-family:'Fraunces',serif;font-size:.95rem;color:var(--white);margin-bottom:.3rem}
+.flow-step.hl .fs-title{color:var(--purplel)}
+.fs-sub{font-size:.78rem;color:var(--muted);font-style:italic}
+.fs-badge{
+  display:inline-flex;align-items:center;gap:.3rem;
+  margin-top:.6rem;font-family:'Space Mono',monospace;
+  font-size:.58rem;color:var(--purplel);letter-spacing:.1em;
+}
+.fs-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--purple)}
+
+.tagline-before{margin-top:1.6rem;font-size:.85rem;color:var(--muted);font-style:italic}
+.use-pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.use-pill{
+  padding:.35rem .9rem;border:1px solid rgba(123,79,212,.22);border-radius:100px;
+  font-size:.78rem;color:var(--soft);background:var(--pg08);
+}
+
+/* ═══════════════════════════════════
+   BENCHMARK — 8 DIMENSIONS
+═══════════════════════════════════ */
+#benchmark{padding:7rem 2rem}
+.bench-hdr{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-bottom:3rem;align-items:end}
+.bench-h2{
+  font-family:'Fraunces',serif;font-weight:400;
+  font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;
+}
+.bench-body{color:var(--soft);font-size:.95rem;line-height:1.8}
+
+.dims{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--pg12);
+  border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  margin-bottom:2rem;
+}
+.dim{
+  padding:1.4rem 1.3rem;background:var(--bg2);
+  transition:background .2s;
+}
+.dim:hover{background:rgba(123,79,212,.07)}
+.dim-name{
+  font-family:'Fraunces',serif;font-size:.92rem;color:var(--white);
+  margin-bottom:.35rem;line-height:1.3;
+}
+.dim-q{font-size:.78rem;color:var(--muted);font-style:italic;line-height:1.5}
+
+.bench-thesis{
+  display:flex;align-items:center;gap:2rem;
+  padding:1.4rem 2rem;
+  background:var(--pg08);border:1px solid var(--border);border-radius:6px;
+}
+.bench-thesis-hl{
+  font-family:'Fraunces',serif;font-size:1.4rem;font-style:italic;
+  color:var(--purplel);white-space:nowrap;
+}
+.bench-thesis-body{font-size:.85rem;color:var(--soft);line-height:1.65}
+
+/* ═══════════════════════════════════
+   THREE PHASES
+═══════════════════════════════════ */
+#system{padding:7rem 2rem;background:var(--bg2)}
+.system-h2{
+  font-family:'Fraunces',serif;font-weight:400;
+  font-size:clamp(2rem,4vw,3.5rem);line-height:1.1;margin-bottom:.8rem;
+}
+.system-sub{color:var(--soft);font-size:.9rem;max-width:540px;margin-bottom:3rem}
+
+.phases{display:flex;flex-direction:column;gap:1px}
+.phase{
+  display:grid;grid-template-columns:110px 1fr 200px;
+  align-items:center;gap:2.5rem;
+  padding:2rem 2.5rem;
+  background:var(--bg3);
+  border:1px solid var(--border);border-radius:5px;
+  transition:border-color .22s,background .22s;
+}
+.phase:hover{border-color:var(--pg35);background:rgba(123,79,212,.04)}
+.phase-n{
+  font-family:'Fraunces',serif;font-size:3rem;
+  color:rgba(123,79,212,.22);line-height:1;transition:color .22s;
+}
+.phase:hover .phase-n{color:rgba(123,79,212,.45)}
+.phase-title{
+  font-family:'Fraunces',serif;font-size:1.25rem;color:var(--white);margin-bottom:.35rem;
+}
+.phase-desc{font-size:.88rem;color:var(--soft);line-height:1.65}
+.phase-tag{
+  display:inline-block;margin-top:.5rem;
+  font-family:'Space Mono',monospace;
+  font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);
+}
+.phase-out{text-align:right}
+.phase-out-l{
+  font-family:'Space Mono',monospace;
+  font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;
+}
+.phase-out-v{font-family:'Fraunces',serif;font-size:.88rem;font-style:italic;color:var(--purplel)}
+
+/* ═══════════════════════════════════
+   SAMPLE REPORT + TIER SYSTEM
+═══════════════════════════════════ */
+#output{padding:7rem 2rem}
+.output-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+
+.output-h2{
+  font-family:'Fraunces',serif;font-weight:400;
+  font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.1;margin-bottom:1rem;
+}
+.output-body{color:var(--soft);font-size:.9rem;line-height:1.8;margin-bottom:2rem}
+
+.tiers{display:flex;flex-direction:column;gap:.7rem}
+.tier{
+  display:grid;grid-template-columns:72px 1fr auto;
+  align-items:center;gap:1rem;
+  padding:.9rem 1.1rem;
+  border:1px solid var(--border);border-radius:5px;
+  background:var(--bg3);transition:border-color .2s;
+}
+.tier:hover{border-color:rgba(123,79,212,.3)}
+.tbadge{
+  font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.1em;
+  padding:.28rem .5rem;border-radius:3px;text-align:center;font-weight:700;
+}
+.t1{background:rgba(74,222,128,.1);color:var(--green);border:1px solid rgba(74,222,128,.25)}
+.t2{background:rgba(123,79,212,.15);color:var(--purplel);border:1px solid var(--pg35)}
+.t3{background:rgba(232,201,122,.1);color:var(--gold);border:1px solid rgba(232,201,122,.25)}
+.t4{background:rgba(248,113,113,.1);color:var(--red);border:1px solid rgba(248,113,113,.25)}
+.tier-name{font-size:.85rem;color:var(--white);font-weight:500}
+.tier-dec{font-size:.75rem;color:var(--muted);font-style:italic}
+.tier-act{font-size:.72rem;color:var(--muted);text-align:right;line-height:1.4}
+.tiers-note{font-size:.72rem;color:var(--muted);font-style:italic;margin-top:1rem}
+
+/* sample report card */
+.report{
+  border:1px solid rgba(123,79,212,.28);border-radius:8px;overflow:hidden;
+  background:var(--bg3);
+}
+.report-hdr{
+  padding:1.1rem 1.5rem;
+  background:rgba(123,79,212,.1);border-bottom:1px solid rgba(123,79,212,.2);
+  display:flex;justify-content:space-between;align-items:flex-start;
+}
+.report-sys{font-size:.8rem;color:var(--muted)}
+.report-sys strong{color:var(--soft);font-weight:500}
+.report-chip{
+  font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.1em;
+  padding:.3rem .75rem;border-radius:3px;
+  background:rgba(123,79,212,.2);color:var(--purplel);border:1px solid var(--pg35);
+}
+.report-chip-sub{font-size:.68rem;color:var(--muted);font-style:italic;margin-top:.25rem;text-align:right}
+.report-body{padding:1.4rem 1.5rem}
+.rsect{
+  font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:.8rem;margin-top:1.2rem;
+}
+.rsect:first-child{margin-top:0}
+.scores{display:flex;flex-direction:column;gap:.65rem}
+.srow{display:flex;align-items:center;gap:.8rem}
+.sdim{font-size:.78rem;color:var(--soft);flex:0 0 150px}
+.strack{flex:1;height:4px;background:rgba(123,79,212,.1);border-radius:2px;overflow:hidden}
+.sfill{height:100%;border-radius:2px}
+.sval{font-family:'Space Mono',monospace;font-size:.7rem;color:var(--purplel);flex:0 0 34px;text-align:right}
+.sstatus{font-size:.7rem;color:var(--muted);font-style:italic;flex:0 0 130px}
+.report-acts{border-top:1px solid rgba(123,79,212,.12);padding-top:1.1rem;margin-top:1.1rem}
+.ract{
+  display:flex;align-items:flex-start;gap:.5rem;
+  font-size:.8rem;color:var(--soft);margin-bottom:.45rem;
+}
+.ract::before{content:'→';color:var(--purple);flex-shrink:0}
+
+/* what you deliver — 4-quadrant */
+.deliver-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem;
+}
+.deliver-card{
+  padding:1.2rem 1.4rem;
+  background:var(--bg3);border:1px solid var(--border);border-radius:5px;
+  transition:border-color .2s;
+}
+.deliver-card:hover{border-color:rgba(123,79,212,.35)}
+.dc-who{
+  font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.14em;
+  color:var(--purple);margin-bottom:.4rem;
+}
+.dc-title{font-family:'Fraunces',serif;font-size:1rem;color:var(--white);margin-bottom:.3rem}
+.dc-desc{font-size:.8rem;color:var(--muted);line-height:1.55}
+
+/* ═══════════════════════════════════
+   WHO / WHY NOW
+═══════════════════════════════════ */
+#who{padding:7rem 2rem;background:var(--bg2)}
+.who-center{text-align:center;margin-bottom:3rem}
+.who-h2{
+  font-family:'Fraunces',serif;font-weight:400;
+  font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;
+}
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.who-col-l{
+  font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--purple);margin-bottom:1.3rem;
+}
+.who-items{display:flex;flex-direction:column;gap:.55rem}
+.who-item{
+  padding:.85rem 1.1rem;
+  border:1px solid var(--border);border-radius:5px;background:var(--bg3);
+  font-size:.88rem;color:var(--soft);
+  display:flex;align-items:center;gap:.7rem;
+  transition:border-color .2s,color .2s;
+}
+.who-item:hover{border-color:var(--pg35);color:var(--white)}
+.who-item::before{content:'›';color:var(--purple);font-size:.95rem}
+.why-items{display:flex;flex-direction:column;gap:.55rem}
+.why-item{
+  padding:.8rem 1.1rem;font-size:.85rem;color:var(--muted);
+  border-bottom:1px solid rgba(123,79,212,.08);
+  display:flex;align-items:flex-start;gap:.65rem;
+}
+.why-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--purple);flex-shrink:0;margin-top:.55rem}
+.why-close{
+  margin-top:1.8rem;padding:1.1rem 1.4rem;
+  border:1px solid var(--border);border-left:3px solid var(--purple);
+  background:var(--pg08);border-radius:0 5px 5px 0;
+  font-style:italic;font-size:.88rem;color:var(--soft);line-height:1.65;
+}
+.why-close strong{color:var(--white);font-style:normal}
+
+/* ═══════════════════════════════════
+   ENGAGEMENT LEVELS
+═══════════════════════════════════ */
+#engage{padding:7rem 2rem}
+.engage-center{text-align:center;margin-bottom:3.5rem}
+.engage-h2{
+  font-family:'Fraunces',serif;font-weight:400;
+  font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;margin-bottom:.7rem;
+}
+.engage-sub{color:var(--soft);font-size:.92rem;max-width:480px;margin:0 auto}
+
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.lv{
+  padding:2.4rem 2rem;background:var(--bg2);
+  display:flex;flex-direction:column;
+  border-right:1px solid var(--border);
+  transition:background .25s;
+}
+.lv:last-child{border-right:none}
+.lv:hover{background:rgba(123,79,212,.05)}
+.lv.feat{background:rgba(123,79,212,.1);border-top:3px solid var(--purple)}
+.lv-n{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.18em;color:var(--purple);margin-bottom:.45rem}
+.lv-name{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--white);margin-bottom:.7rem}
+.lv-desc{font-size:.86rem;color:var(--soft);line-height:1.7;margin-bottom:1.4rem}
+.lv-for-l{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.lv-for{list-style:none;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.lv-for li{font-size:.82rem;color:var(--soft);display:flex;align-items:center;gap:.45rem}
+.lv-for li::before{content:'—';color:var(--muted);font-size:.7rem}
+.lv-result{
+  margin-top:1.5rem;padding-top:1.1rem;border-top:1px solid rgba(123,79,212,.15);
+  font-size:.78rem;color:var(--muted);font-style:italic;line-height:1.55;
+}
+.lv.feat .lv-result{color:var(--soft)}
+
+.engage-cta{text-align:center;margin-top:3rem}
+.engage-cta-note{font-size:.82rem;color:var(--muted);font-style:italic;margin-top:.9rem}
+
+/* ═══════════════════════════════════
+   CLOSE
+═══════════════════════════════════ */
+#close{
+  padding:8rem 2rem;background:var(--bg2);
+  text-align:center;position:relative;overflow:hidden;
+}
+#close::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(123,79,212,.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.close-in{max-width:740px;margin:0 auto;position:relative;z-index:1}
+.close-h2{
+  font-family:'Fraunces',serif;font-weight:300;
+  font-size:clamp(2rem,5vw,4rem);line-height:1.1;margin-bottom:1.2rem;color:var(--soft);
+}
+.close-h2 strong{color:var(--white);font-weight:400}
+.close-body{color:var(--muted);font-size:.95rem;line-height:1.8;margin-bottom:2.5rem}
+.close-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.close-props{
+  display:flex;justify-content:center;gap:3.5rem;
+  margin-top:3rem;padding-top:2rem;
+  border-top:1px solid rgba(123,79,212,.15);
+}
+.cprop-v{font-family:'Fraunces',serif;font-size:1.1rem;font-style:italic;color:var(--purplel)}
+.cprop-l{font-size:.72rem;color:var(--muted);margin-top:.15rem}
+
+/* ── FOOTER ── */
+footer{
+  padding:1.8rem 2rem;
+  border-top:1px solid rgba(123,79,212,.12);
+  display:flex;align-items:center;justify-content:space-between;
+  position:relative;z-index:1;
+}
+.foot-l{font-size:.75rem;color:var(--muted)}
+.foot-l strong{color:var(--soft)}
+.foot-r{font-size:.7rem;color:var(--muted)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .thesis-grid,.output-grid,.who-grid,.bench-hdr{grid-template-columns:1fr;gap:2.5rem}
+  .flow{grid-template-columns:repeat(2,1fr)}
+  .drift-zones{grid-template-columns:1fr}
+  .levels{grid-template-columns:1fr}
+  .dims{grid-template-columns:repeat(2,1fr)}
+  .phase{grid-template-columns:70px 1fr;gap:1.5rem}
+  .phase-out{display:none}
+  .deliver-grid{grid-template-columns:1fr}
+  .close-props{flex-direction:column;gap:1.2rem}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .hero-stats{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr}
+  .dims{grid-template-columns:1fr}
+  .output-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="starfield"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">
+    <div class="nav-logo-circle"></div>
+    <span class="nav-brand-name">ikwe.ai</span>
+  </a>
+  <div class="nav-links">
+    <a href="#thesis">The Problem</a>
+    <a href="#benchmark">The Benchmark</a>
+    <a href="#system">How It Works</a>
+    <a href="#output">Results</a>
+    <a href="#engage">Work With Us</a>
+    <a href="#engage" class="nav-cta">Request Evaluation</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-tag">Independent Behavioral Safety Validation</div>
+    <h1 class="hero-h1">
+      The Behavioral<br>
+      Safety Layer<br>
+      <em>for AI.</em>
+    </h1>
+    <p class="hero-sub">
+      If your system interacts with humans during <strong>vulnerable moments</strong>,
+      you need evidence of how it behaves under emotional pressure.
+    </p>
+    <p class="hero-sub2">
+      Not what it says. How it behaves. That distinction is what Ikwe was built to measure.
+    </p>
+    <div class="hero-btns">
+      <a href="#engage" class="btn btn-gold">Request Evaluation</a>
+      <a href="#benchmark" class="btn btn-outline">View the Benchmark</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="stat-n">54.7%</div>
+        <div class="stat-l">of baseline AI responses<br>introduce emotional risk</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-n">21K+</div>
+        <div class="stat-l">outputs evaluated across<br>79 scenarios</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-n">12</div>
+        <div class="stat-l">vulnerability categories<br>measured</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ EMPATHY ≠ SAFETY ═══ -->
+<section id="thesis">
+  <div class="wrap">
+    <div class="thesis-grid">
+      <div>
+        <span class="eyebrow">The Problem</span>
+        <h2 class="thesis-hed fraunces">
+          <em>Empathy ≠ Safety.</em><br>
+          Recognition is not the same as protection.
+        </h2>
+        <p class="thesis-body">
+          An AI system can acknowledge that a person is in distress —
+          and still respond in a way that <strong>escalates harm</strong>.
+          It can sound warm while reinforcing dependency. It can appear helpful
+          while suppressing autonomy. It can seem to handle a crisis
+          while mishandling it entirely.
+        </p>
+        <p class="thesis-body">
+          This is not a model failure. It is a <strong>behavioral pattern</strong> —
+          one that does not appear in standard evaluations, accuracy benchmarks,
+          or compliance audits. It surfaces when humans are vulnerable.
+          That is exactly where current governance stops measuring.
+        </p>
+        <div class="thesis-pull">
+          "When behavioral failure surfaces publicly, decisions are made under pressure.
+          Independent evaluation prevents that from being your only defense."
+        </div>
+      </div>
+
+      <div>
+        <span class="eyebrow">What Existing Governance Misses</span>
+        <div class="gap-table">
+          <div class="gap-thead">
+            <div class="gap-th l">Current Governance Covers</div>
+            <div class="gap-th r">Behavioral Safety (Ikwe)</div>
+          </div>
+          <div class="gap-row">
+            <div class="gap-cell l">Data security</div>
+            <div class="gap-cell r">Multi-turn emotional trajectory</div>
+          </div>
+          <div class="gap-row">
+            <div class="gap-cell l">Model documentation</div>
+            <div class="gap-cell r">Escalation stability under stress</div>
+          </div>
+          <div class="gap-row">
+            <div class="gap-cell l">Bias detection</div>
+            <div class="gap-cell r">Vulnerable-user handling patterns</div>
+          </div>
+          <div class="gap-row">
+            <div class="gap-cell l">Compliance workflows</div>
+            <div class="gap-cell r">Dependency reinforcement risk</div>
+          </div>
+          <div class="gap-row">
+            <div class="gap-cell l">Accuracy benchmarks</div>
+            <div class="gap-cell r">Repair capacity after failure</div>
+          </div>
+          <div class="gap-foot">
+            Behavioral safety is the missing operational layer in current governance frameworks.
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem">
+          <span class="eyebrow">This Creates</span>
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+            <span class="use-pill">Governance exposure</span>
+            <span class="use-pill">Legal vulnerability</span>
+            <span class="use-pill">Delayed procurement</span>
+            <span class="use-pill">Remediation costs</span>
+            <span class="use-pill">Reputational damage</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ DRIFT CURVE ═══ -->
+<section id="drift">
+  <div class="wrap">
+    <div class="drift-hed-wrap">
+      <span class="eyebrow">The Drift Curve — Ikwe's Core Finding</span>
+      <h2 class="drift-h2 fraunces">AI doesn't "fail."<br><em>It drifts.</em></h2>
+      <p class="drift-sub">
+        Behavioral risk doesn't appear all at once. It accumulates across
+        interaction types, pressure levels, and user vulnerability states.
+        Standard evals only see Zone 1.
+      </p>
+    </div>
+
+    <div class="drift-zones">
+      <div class="dzone z1">
+        <div class="dz-icon g">✓</div>
+        <div class="dz-num">ZONE 1</div>
+        <div class="dz-title fraunces">Looks Fine</div>
+        <div class="dz-sub">Normal use</div>
+        <div class="dz-tag">Passes standard evals</div>
+      </div>
+      <div class="dzone z2">
+        <div class="dz-icon p">⚠</div>
+        <div class="dz-num">ZONE 2</div>
+        <div class="dz-title fraunces">Drift Window</div>
+        <div class="dz-sub">Vulnerable user conditions</div>
+        <div class="dz-tag">← Where Ikwe measures</div>
+      </div>
+      <div class="dzone z3">
+        <div class="dz-icon r">!</div>
+        <div class="dz-num">ZONE 3</div>
+        <div class="dz-title fraunces">Consequences</div>
+        <div class="dz-sub">Harm · Legal · Brand</div>
+        <div class="dz-tag">Too late to catch</div>
+      </div>
+    </div>
+
+    <div class="drift-note">
+      <div>
+        <div class="drift-note-main">Ikwe detects behavioral risk early — before it becomes harm, headlines, or liability.</div>
+        <div class="drift-note-detail">
+          <span>Measures trajectories, not just outputs</span> &nbsp;·&nbsp;
+          <span>Flags escalation, manipulation, dependency loops</span> &nbsp;·&nbsp;
+          <span>Delivers audit-ready reports with mitigation guidance</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ ONE IDEA ═══ -->
+<section id="oneidea">
+  <div class="wrap">
+    <span class="eyebrow">What Ikwe Is — One Idea</span>
+    <h2 class="oneidea-h2 fraunces">Simple enough to explain.<br>Specific enough to act on.</h2>
+
+    <div class="oneidea-core">
+      <p>Companies build AI systems.</p>
+      <p>Ikwe tests how those systems behave when humans are emotionally vulnerable — and provides an independent, documented record of what it finds.</p>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="fs-n">01</div>
+        <div class="fs-title fraunces">User in distress</div>
+        <div class="fs-sub">Vulnerable moment</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-n">02</div>
+        <div class="fs-title fraunces">AI response</div>
+        <div class="fs-sub">What the system does</div>
+      </div>
+      <div class="flow-step hl">
+        <div class="fs-n">03</div>
+        <div class="fs-title fraunces">Ikwe evaluation</div>
+        <div class="fs-sub">Behavioral analysis</div>
+        <div class="fs-badge">ikwe.ai</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-n">04</div>
+        <div class="fs-title fraunces">Risk score + report</div>
+        <div class="fs-sub">Audit-ready output</div>
+      </div>
+    </div>
+
+    <p class="tagline-before">Before it becomes harm. Before it becomes headlines.</p>
+    <div class="use-pills">
+      <div class="use-pill">Mental health AI</div>
+      <div class="use-pill">AI companions</div>
+      <div class="use-pill">Fintech assistants</div>
+      <div class="use-pill">Healthcare AI</div>
+      <div class="use-pill">Enterprise copilots</div>
+      <div class="use-pill">Education AI</div>
+      <div class="use-pill">Consumer-facing AI</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ BENCHMARK ═══ -->
+<section id="benchmark">
+  <div class="wrap">
+    <div class="bench-hdr">
+      <div>
+        <span class="eyebrow">The EQ Safety Benchmark</span>
+        <h2 class="bench-h2 fraunces">Eight dimensions.<br>One clear answer.</h2>
+      </div>
+      <div class="bench-body">
+        Purpose-built to measure behavioral safety failure in emotionally-loaded interactions.
+        Each dimension answers a specific question about how your system actually behaves
+        when a human needs it most — not how it performs on neutral test prompts.
+      </div>
+    </div>
+
+    <div class="dims">
+      <div class="dim">
+        <div class="dim-name fraunces">Escalation Stability</div>
+        <div class="dim-q">Does the system amplify or de-escalate distress?</div>
+      </div>
+      <div class="dim">
+        <div class="dim-name fraunces">Vulnerable User Response</div>
+        <div class="dim-q">How does the system respond under crisis or instability?</div>
+      </div>
+      <div class="dim">
+        <div class="dim-name fraunces">Manipulation Susceptibility</div>
+        <div class="dim-q">Can prompts override behavioral safeguards?</div>
+      </div>
+      <div class="dim">
+        <div class="dim-name fraunces">Power Asymmetry</div>
+        <div class="dim-q">Does the system exploit vulnerability or imbalance?</div>
+      </div>
+      <div class="dim">
+        <div class="dim-name fraunces">Multi-Turn Trajectory</div>
+        <div class="dim-q">Does behavioral drift emerge over sustained interaction?</div>
+      </div>
+      <div class="dim">
+        <div class="dim-name fraunces">Dependency Reinforcement</div>
+        <div class="dim-q">Does the system encourage emotional reliance?</div>
+      </div>
+      <div class="dim">
+        <div class="dim-name fraunces">Correction &amp; Recovery</div>
+        <div class="dim-q">Can the system recover from harmful conversational drift?</div>
+      </div>
+      <div class="dim">
+        <div class="dim-name fraunces">Stress Condition Performance</div>
+        <div class="dim-q">Does behavioral stability hold under emotional intensity?</div>
+      </div>
+    </div>
+
+    <div class="bench-thesis">
+      <div class="bench-thesis-hl">Empathy ≠ Safety</div>
+      <div class="bench-thesis-body">
+        A system can acknowledge distress and still respond in a way that escalates harm.
+        The EQ Safety Benchmark was built to measure that gap — across 79 emotionally vulnerable scenarios,
+        21,000+ evaluated outputs, and 12 vulnerability categories. The result is scored, reproducible,
+        and audit-ready.
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ THREE PHASES ═══ -->
+<section id="system">
+  <div class="wrap">
+    <span class="eyebrow">How We Evaluate</span>
+    <h2 class="system-h2 fraunces">Three phases.<br>One infrastructure.</h2>
+    <p class="system-sub">Each step builds on the last — from immediate risk detection to ongoing drift monitoring. You choose how deep you need to go.</p>
+
+    <div class="phases">
+      <div class="phase">
+        <div class="phase-n fraunces">01</div>
+        <div>
+          <div class="phase-title fraunces">Binary Safety Gate</div>
+          <div class="phase-desc">Pass / fail evaluation across 79 emotionally vulnerable scenarios. Determines whether harmful behavioral patterns appear at all. The first question: does launch risk exist?</div>
+          <span class="phase-tag">Pre-deployment</span>
+        </div>
+        <div class="phase-out">
+          <div class="phase-out-l">Outcome</div>
+          <div class="phase-out-v">Launch risk determination</div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-n fraunces">02</div>
+        <div>
+          <div class="phase-title fraunces">Dimensional Scoring</div>
+          <div class="phase-desc">Behavioral evaluation across all 8 dimensions and 12 vulnerability categories. Produces Tier I–IV classification with specific performance thresholds, failure mapping, and a remediation plan your engineering team can act on.</div>
+          <span class="phase-tag">Deep evaluation</span>
+        </div>
+        <div class="phase-out">
+          <div class="phase-out-l">Outcome</div>
+          <div class="phase-out-v">Tier classification + remediation plan</div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-n fraunces">03</div>
+        <div>
+          <div class="phase-title fraunces">Ongoing Governance Monitoring</div>
+          <div class="phase-desc">Continuous behavioral drift monitoring after each deployment change. Quarterly re-evaluation to catch degradation before it reaches incident scale. A versioned, defensible safety record that compounds over time.</div>
+          <span class="phase-tag">Continuous</span>
+        </div>
+        <div class="phase-out">
+          <div class="phase-out-l">Outcome</div>
+          <div class="phase-out-v">Sustained safety posture over time</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ SAMPLE OUTPUT + TIERS + DELIVERABLES ═══ -->
+<section id="output">
+  <div class="wrap">
+    <div class="output-grid">
+
+      <!-- LEFT: Tier system + what you receive -->
+      <div>
+        <span class="eyebrow">From Evaluation to Decision</span>
+        <h2 class="output-h2 fraunces">What you receive is a decision, not just a document.</h2>
+        <p class="output-body">
+          Every evaluation produces a Tier classification with structured failure mapping,
+          specific mitigation guidance, and reproducible compliance evidence.
+        </p>
+
+        <div class="tiers">
+          <div class="tier">
+            <div class="tbadge t1">TIER I</div>
+            <div>
+              <div class="tier-name">Stable Behavioral Integrity</div>
+              <div class="tier-dec">Launch with confidence</div>
+            </div>
+            <div class="tier-act">Standard<br>monitoring</div>
+          </div>
+          <div class="tier">
+            <div class="tbadge t2">TIER II</div>
+            <div>
+              <div class="tier-name">Moderate Behavioral Risk</div>
+              <div class="tier-dec">Launch with mitigations</div>
+            </div>
+            <div class="tier-act">Safeguards<br>required</div>
+          </div>
+          <div class="tier">
+            <div class="tbadge t3">TIER III</div>
+            <div>
+              <div class="tier-name">Escalation Instability</div>
+              <div class="tier-dec">Remediate before launch</div>
+            </div>
+            <div class="tier-act">Engineering<br>fixes + retest</div>
+          </div>
+          <div class="tier">
+            <div class="tbadge t4">TIER IV</div>
+            <div>
+              <div class="tier-name">High Vulnerability Exposure</div>
+              <div class="tier-dec">Do not launch</div>
+            </div>
+            <div class="tier-act">Fundamental<br>redesign needed</div>
+          </div>
+        </div>
+        <p class="tiers-note">Every tier result includes structured failure mapping and documented mitigation guidance.</p>
+
+        <!-- 4-quadrant deliverables -->
+        <span class="eyebrow" style="margin-top:2.5rem">What Each Stakeholder Gets</span>
+        <div class="deliver-grid">
+          <div class="deliver-card">
+            <div class="dc-who">Board</div>
+            <div class="dc-title fraunces">Defensible audit record</div>
+            <div class="dc-desc">Governance documentation for board-level review and oversight.</div>
+          </div>
+          <div class="deliver-card">
+            <div class="dc-who">Legal</div>
+            <div class="dc-title fraunces">Due diligence evidence</div>
+            <div class="dc-desc">Documented behavioral evidence for legal exposure and liability review.</div>
+          </div>
+          <div class="deliver-card">
+            <div class="dc-who">Compliance</div>
+            <div class="dc-title fraunces">Versioned evidence packages</div>
+            <div class="dc-desc">Reproducible, versioned compliance documentation updated over time.</div>
+          </div>
+          <div class="deliver-card">
+            <div class="dc-who">Engineering</div>
+            <div class="dc-title fraunces">Structured failure mapping</div>
+            <div class="dc-desc">Specific failure mode data your team can act on before the trajectory turns crisis.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Sample report card -->
+      <div>
+        <span class="eyebrow">Sample Evaluation Output</span>
+        <div class="report">
+          <div class="report-hdr">
+            <div class="report-sys">
+              <strong>System Name:</strong> [Example AI System]<br>
+              <strong>Evaluation Date:</strong> [Date]
+            </div>
+            <div>
+              <div class="report-chip">TIER II</div>
+              <div class="report-chip-sub">Moderate Behavioral Risk</div>
+            </div>
+          </div>
+          <div class="report-body">
+
+            <!-- Safety Gate result -->
+            <div class="rsect">Safety Gate Result</div>
+            <div style="display:flex;gap:1rem;margin-bottom:1.2rem">
+              <div style="flex:1;padding:.85rem 1rem;border:1px solid rgba(248,113,113,.3);border-radius:4px;background:rgba(248,113,113,.06);text-align:center">
+                <div style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--red);letter-spacing:.12em;margin-bottom:.3rem">FAIL PATTERNS DETECTED</div>
+                <div style="font-size:.8rem;color:var(--soft)">Crisis mishandling<br>Escalation amplification</div>
+              </div>
+              <div style="flex:1;padding:.85rem 1rem;border:1px solid rgba(123,79,212,.3);border-radius:4px;background:var(--pg08);text-align:center">
+                <div style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--purplel);letter-spacing:.12em;margin-bottom:.3rem">RESULT</div>
+                <div style="font-size:.8rem;color:var(--white);font-weight:500">Conditional Pass</div>
+                <div style="font-size:.72rem;color:var(--muted);font-style:italic">Issues require mitigation</div>
+              </div>
+            </div>
+
+            <!-- Dimensional scores -->
+            <div class="rsect">Dimensional Scores</div>
+            <div class="scores">
+              <div class="srow">
+                <div class="sdim">Escalation Stability</div>
+                <div class="strack"><div class="sfill" style="width:70%;background:var(--purplel)"></div></div>
+                <div class="sval">70%</div>
+                <div class="sstatus">Conditional — minor drift</div>
+              </div>
+              <div class="srow">
+                <div class="sdim">Multi-Turn Trajectory</div>
+                <div class="strack"><div class="sfill" style="width:90%;background:var(--green)"></div></div>
+                <div class="sval">90%</div>
+                <div class="sstatus">Stable</div>
+              </div>
+              <div class="srow">
+                <div class="sdim">Vulnerable User Response</div>
+                <div class="strack"><div class="sfill" style="width:60%;background:var(--gold)"></div></div>
+                <div class="sval">60%</div>
+                <div class="sstatus">Adequate — needs mitigation</div>
+              </div>
+              <div class="srow">
+                <div class="sdim">Repair Capacity</div>
+                <div class="strack"><div class="sfill" style="width:90%;background:var(--green)"></div></div>
+                <div class="sval">90%</div>
+                <div class="sstatus">Strong</div>
+              </div>
+              <div class="srow">
+                <div class="sdim">Dependency Reinforcement</div>
+                <div class="strack"><div class="sfill" style="width:78%;background:var(--purplel)"></div></div>
+                <div class="sval">78%</div>
+                <div class="sstatus">Low risk detected</div>
+              </div>
+              <div class="srow">
+                <div class="sdim">Manipulation Susceptibility</div>
+                <div class="strack"><div class="sfill" style="width:55%;background:var(--gold)"></div></div>
+                <div class="sval">55%</div>
+                <div class="sstatus">Safeguards needed</div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="report-acts">
+              <div class="rsect" style="margin-top:0">Recommended Actions</div>
+              <div class="ract">Implement escalation guardrails for crisis scenarios</div>
+              <div class="ract">Add user autonomy reinforcement prompts</div>
+              <div class="ract">Strengthen manipulation resistance in system prompt</div>
+              <div class="ract">Quarterly re-evaluation after implementation</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ WHO / WHY NOW ═══ -->
+<section id="who">
+  <div class="wrap">
+    <div class="who-center">
+      <span class="eyebrow">Who This Is For</span>
+      <h2 class="who-h2 fraunces">Any system that touches human vulnerability.</h2>
+    </div>
+    <div class="who-grid">
+      <div>
+        <div class="who-col-l">Designed For</div>
+        <div class="who-items">
+          <div class="who-item">Companion AI platforms</div>
+          <div class="who-item">AI mental health systems</div>
+          <div class="who-item">Education AI products</div>
+          <div class="who-item">Consumer-facing AI systems</div>
+          <div class="who-item">Enterprise AI with human consequence</div>
+          <div class="who-item">Fintech and healthcare AI</div>
+        </div>
+      </div>
+      <div>
+        <div class="who-col-l">Why Now</div>
+        <div class="why-items">
+          <div class="why-item">Regulatory expectations for AI are accelerating globally</div>
+          <div class="why-item">Emotionally interactive AI is under increasing scrutiny</div>
+          <div class="why-item">Litigation exposure from AI behavioral harm is emerging</div>
+          <div class="why-item">Governance standards are expanding past bias and accuracy</div>
+          <div class="why-item">Behavioral safety is becoming a procurement requirement</div>
+        </div>
+        <div class="why-close">
+          Every regulated industry eventually needs an auditor.
+          Finance got credit rating agencies. Healthcare got clinical trials oversight.
+          <strong>AI is here now.</strong>
+          The time to establish your behavioral safety record is before you need it.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ ENGAGEMENT LEVELS ═══ -->
+<section id="engage">
+  <div class="wrap">
+    <div class="engage-center">
+      <span class="eyebrow">How to Work With Us</span>
+      <h2 class="engage-h2 fraunces">Three levels of independent validation.</h2>
+      <p class="engage-sub">Choose the level of external trust signal your system requires. Each level is cumulative — deeper evaluation builds on what came before.</p>
+    </div>
+
+    <div class="levels">
+      <div class="lv">
+        <div class="lv-n">LEVEL I</div>
+        <div class="lv-name fraunces">Baseline Gate</div>
+        <div class="lv-desc">Determine if your system passes or fails under controlled emotional stress scenarios. The first external stress test on record.</div>
+        <div class="lv-for-l">Designed For</div>
+        <ul class="lv-for">
+          <li>Early-stage systems</li>
+          <li>Pre-deployment validation</li>
+          <li>Internal confidence check</li>
+        </ul>
+        <div class="lv-result">Your system has been externally stress-tested. A safety gate result is on record.</div>
+      </div>
+
+      <div class="lv feat">
+        <div class="lv-n">LEVEL II</div>
+        <div class="lv-name fraunces">Full Benchmark</div>
+        <div class="lv-desc">Structured evaluation across all 8 behavioral safety dimensions with Tier I–IV classification, failure mapping, and a documented remediation plan.</div>
+        <div class="lv-for-l">Designed For</div>
+        <ul class="lv-for">
+          <li>Board-level governance</li>
+          <li>Regulated deployment</li>
+          <li>Enterprise procurement</li>
+        </ul>
+        <div class="lv-result">Your board, legal, and compliance teams have documented third-party behavioral evidence.</div>
+      </div>
+
+      <div class="lv">
+        <div class="lv-n">LEVEL III</div>
+        <div class="lv-name fraunces">Ongoing Governance</div>
+        <div class="lv-desc">Continuous behavioral drift monitoring after each deployment change. Quarterly re-evaluation. A versioned, defensible safety record over time.</div>
+        <div class="lv-for-l">Designed For</div>
+        <ul class="lv-for">
+          <li>Live systems at scale</li>
+          <li>High-consequence AI deployment</li>
+          <li>Sustained regulatory posture</li>
+        </ul>
+        <div class="lv-result">Your system has an independent behavioral safety record — updated, versioned, defensible over time.</div>
+      </div>
+    </div>
+
+    <div class="engage-cta">
+      <a href="/cdn-cgi/l/email-protection#cda5a8a1a1a28da4a6baa8e3aca4" class="btn btn-gold" style="font-size:.95rem;padding:.9rem 2.5rem">Request Evaluation →</a>
+      <p class="engage-cta-note">Get a third-party baseline before launch risk becomes board risk.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ CLOSE ═══ -->
+<section id="close">
+  <div class="close-in">
+    <span class="eyebrow">The Standard Ikwe Is Building</span>
+    <h2 class="close-h2 fraunces">
+      If AI systems are going to interact<br>
+      with humans at scale —<br>
+      <strong>behavioral validation<br>cannot be optional.</strong>
+    </h2>
+    <p class="close-body">
+      Technical capability is not the only measure of readiness.
+      Behavioral stability under pressure determines long-term viability.
+      The systems shaping human lives deserve something underneath them we can trust.
+    </p>
+    <div class="close-btns">
+      <a href="/cdn-cgi/l/email-protection#79111c1515163910120e1c571810" class="btn btn-gold">Request Evaluation</a>
+      <a href="#benchmark" class="btn btn-outline">View the Benchmark</a>
+    </div>
+    <div class="close-props">
+      <div><div class="cprop-v fraunces">Independent</div><div class="cprop-l">No conflict of interest</div></div>
+      <div><div class="cprop-v fraunces">Quantified</div><div class="cprop-l">Scored, not subjective</div></div>
+      <div><div class="cprop-v fraunces">Longitudinal</div><div class="cprop-l">Tracks drift over time</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-l"><strong>ikwe.ai</strong> &nbsp;·&nbsp; Independent Behavioral Safety Validation &nbsp;·&nbsp; EQ Safety Benchmark</div>
+  <div class="foot-r">21,000+ outputs evaluated &nbsp;·&nbsp; 79 scenarios &nbs
