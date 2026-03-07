@@ -403,7 +403,7 @@ export default function Home() {
 
         <div className="home-divider" />
 
-        <section id="architecture" className="home-section">
+        <section id="architecture" className="home-section home-section-merge home-section-cluster-start">
           <div className="home-wrap">
             <div className="home-center-block">
               <span className="home-eyebrow">Where Ikwe Fits</span>
@@ -477,9 +477,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="home-divider" />
-
-        <section id="benchmark" className="home-section">
+        <section id="benchmark" className="home-section home-section-merge">
           <div className="home-wrap">
             <div className="home-grid-two home-benchmark-header">
               <div>
@@ -513,9 +511,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="home-divider" />
-
-        <section id="safety-gate" className="home-section home-band">
+        <section id="safety-gate" className="home-section home-band home-section-merge">
           <div className="home-wrap">
             <span className="home-eyebrow">The Safety Gate</span>
             <h2 className="home-section-title">
@@ -570,9 +566,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="home-divider" />
-
-        <section id="system" className="home-section home-band">
+        <section id="system" className="home-section home-band home-section-merge">
           <div className="home-wrap">
             <span className="home-eyebrow">How We Evaluate</span>
             <h2 className="home-section-title">
@@ -628,9 +622,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="home-divider" />
-
-        <section id="output" className="home-section">
+        <section id="output" className="home-section home-section-merge">
           <div className="home-wrap">
             <div className="home-grid-two home-output-intro">
               <div>
@@ -754,7 +746,7 @@ export default function Home() {
 
         <div className="home-divider" />
 
-        <section id="who" className="home-section home-band">
+        <section id="who" className="home-section home-band home-section-merge home-section-cluster-start">
           <div className="home-wrap">
             <div className="home-center-block home-center-block-tight">
               <span className="home-eyebrow">Who This Is For</span>
@@ -795,9 +787,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="home-divider" />
-
-        <section id="engage" className="home-section">
+        <section id="engage" className="home-section home-section-merge">
           <div className="home-wrap">
             <div className="home-center-block">
               <span className="home-eyebrow">Engagement Model</span>

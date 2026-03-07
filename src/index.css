@@ -140,8 +140,21 @@
   padding: 7rem 2rem;
 }
 
+.home-section-merge {
+  padding-top: 2.6rem;
+  padding-bottom: 2.6rem;
+}
+
+.home-section-cluster-start {
+  padding-top: 4.75rem;
+}
+
 .home-band {
   background: var(--home-bg-2);
+}
+
+.home-section-merge.home-band {
+  background: transparent;
 }
 
 .home-wrap {
@@ -158,6 +171,23 @@
     rgba(123, 79, 212, 0.25) 70%,
     transparent
   );
+}
+
+.home-section-merge .home-center-block {
+  margin-bottom: 2.5rem;
+}
+
+.home-section-merge .home-benchmark-header,
+.home-section-merge .home-output-intro {
+  margin-bottom: 2rem;
+}
+
+.home-section-merge .home-section-subtext-left {
+  margin-bottom: 2rem;
+}
+
+.home-section-merge .home-beforeline {
+  margin-top: 1.1rem;
 }
 
 .home-eyebrow {
@@ -1417,6 +1447,15 @@
 }
 
 @media (max-width: 960px) {
+  .home-section-merge {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .home-section-cluster-start {
+    padding-top: 3.25rem;
+  }
+
   .home-grid-two,
   .home-output-intro {
     grid-template-columns: 1fr;
@@ -1498,6 +1537,15 @@
 @media (max-width: 640px) {
   .home-section {
     padding: 4.5rem 1rem;
+  }
+
+  .home-section-merge {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+
+  .home-section-cluster-start {
+    padding-top: 2.5rem;
   }
 
   .home-hero {
