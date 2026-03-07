@@ -875,6 +875,17 @@
   text-align: right;
 }
 
+.home-tier-trust {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  color: var(--home-muted);
+  font-style: italic;
+  margin-top: 0.35rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--home-border);
+}
+
 .home-tier-note,
 .home-engage-note {
   margin-top: 1rem;
