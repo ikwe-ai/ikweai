@@ -631,112 +631,121 @@ export default function Home() {
         <div className="home-divider" />
 
         <section id="output" className="home-section">
-          <div className="home-wrap home-grid-two home-output-grid">
-            <div>
-              <span className="home-eyebrow">What You Get</span>
-              <h2 className="home-section-title home-output-title">
-                What you receive is a safety record, not just a score.
-              </h2>
-              <p className="home-copy">
-                Ikwe produces governance-ready evidence that enables deployment decisions.
-              </p>
-              <p className="home-copy">
-                Every review produces a clear risk rating, examples of where things go wrong, recommended fixes, and
-                documentation your teams can actually use.
-              </p>
-
-              <div className="home-tier-list">
-                {tiers.map(([badge, title, subtitle, action, tone, trustRecord]) => (
-                  <article key={badge} className="home-tier">
-                    <div className={`home-tier-badge ${tone}`}>{badge}</div>
-                    <div>
-                      <div className="home-tier-title">{title}</div>
-                      <div className="home-tier-subtitle">{subtitle}</div>
-                    </div>
-                    <div className="home-tier-action">{action}</div>
-                    <div className="home-tier-trust">{trustRecord}</div>
-                  </article>
-                ))}
+          <div className="home-wrap">
+            <div className="home-grid-two home-output-intro">
+              <div>
+                <span className="home-eyebrow">What You Get</span>
+                <h2 className="home-section-title home-output-title">
+                  What you receive is a safety record, not just a score.
+                </h2>
+                <p className="home-copy">
+                  Ikwe produces governance-ready evidence that enables deployment decisions.
+                </p>
+                <p className="home-copy">
+                  Every review produces a clear risk rating, examples of where things go wrong, recommended fixes, and
+                  documentation your teams can actually use.
+                </p>
               </div>
-              <p className="home-tier-note">
-                Every result includes concrete examples of issues found and recommended next steps.
-              </p>
 
-              <span className="home-eyebrow home-deliverables-label">What Each Stakeholder Gets</span>
-              <div className="home-deliverables-grid">
-                {deliverables.map(([role, title, copy]) => (
-                  <article key={role} className="home-deliverable-card">
-                    <div className="home-deliverable-role">{role}</div>
-                    <h3 className="home-deliverable-title">{title}</h3>
-                    <p className="home-deliverable-copy">{copy}</p>
-                  </article>
-                ))}
+              <div>
+                <span className="home-eyebrow">Sample Output</span>
+                <div className="home-report-card">
+                  <div className="home-report-header">
+                    <div className="home-report-system">
+                      <strong>System Name:</strong> Example AI System
+                      <br />
+                      <strong>Evaluation Date:</strong> February 2026
+                    </div>
+                    <div className="home-report-chip-wrap">
+                      <div className="home-report-chip">MODERATE RISK</div>
+                      <div className="home-report-chip-subtitle">Needs safeguards before wider use</div>
+                    </div>
+                  </div>
+
+                  <div className="home-report-body">
+                    <div className="home-report-section-label">Initial Screen Result</div>
+                    <div className="home-report-gate-grid">
+                      <div className="home-report-gate home-report-gate-risk">
+                        <div className="home-report-gate-label">ISSUES FOUND</div>
+                        <div className="home-report-gate-copy">Crisis mishandling<br />Escalation under pressure</div>
+                      </div>
+                      <div className="home-report-gate home-report-gate-watch">
+                        <div className="home-report-gate-label">OVERALL READ</div>
+                        <div className="home-report-gate-copy">Proceed with fixes</div>
+                        <div className="home-report-gate-note">Needs mitigation before broader release</div>
+                      </div>
+                    </div>
+
+                    <div className="home-report-section-label">Review Breakdown</div>
+                    <div className="home-score-list">
+                      {[
+                        ["Escalation Stability", "70%", "Some drift under pressure", "70%", "var(--home-purple-light)"],
+                        ["Multi-Turn Trajectory", "90%", "Stable", "90%", "var(--home-green)"],
+                        ["Vulnerable User Response", "60%", "Needs work in higher-risk cases", "60%", "var(--home-gold)"],
+                        ["Repair Capacity", "90%", "Strong", "90%", "var(--home-green)"],
+                        ["Dependency Reinforcement", "78%", "Limited risk detected", "78%", "var(--home-purple-light)"],
+                        ["Manipulation Susceptibility", "55%", "Additional safeguards needed", "55%", "var(--home-gold)"],
+                      ].map(([label, value, status, width, color]) => (
+                        <div key={label} className="home-score-row">
+                          <div className="home-score-label">{label}</div>
+                          <div className="home-score-track">
+                            <div className="home-score-fill" style={{ width, background: color }} />
+                          </div>
+                          <div className="home-score-value">{value}</div>
+                          <div className="home-score-status">{status}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="home-report-actions">
+                      <div className="home-report-section-label">Recommended Next Steps</div>
+                      {[
+                        "Add stronger guardrails for crisis scenarios",
+                        "Reinforce user autonomy in higher-risk conversations",
+                        "Harden the system prompt against manipulation",
+                        "Re-test after changes are in place",
+                      ].map((action) => (
+                        <div key={action} className="home-report-action">
+                          {action}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div>
-              <span className="home-eyebrow">Sample Output</span>
-              <div className="home-report-card">
-                <div className="home-report-header">
-                  <div className="home-report-system">
-                    <strong>System Name:</strong> Example AI System
-                    <br />
-                    <strong>Evaluation Date:</strong> February 2026
-                  </div>
-                  <div className="home-report-chip-wrap">
-                    <div className="home-report-chip">MODERATE RISK</div>
-                    <div className="home-report-chip-subtitle">Needs safeguards before wider use</div>
-                  </div>
+            <div className="home-output-sections">
+              <div className="home-output-block">
+                <span className="home-eyebrow">Tier Classifications</span>
+                <div className="home-tier-list">
+                  {tiers.map(([badge, title, subtitle, action, tone, trustRecord]) => (
+                    <article key={badge} className="home-tier">
+                      <div className={`home-tier-badge ${tone}`}>{badge}</div>
+                      <div>
+                        <div className="home-tier-title">{title}</div>
+                        <div className="home-tier-subtitle">{subtitle}</div>
+                      </div>
+                      <div className="home-tier-action">{action}</div>
+                      <div className="home-tier-trust">{trustRecord}</div>
+                    </article>
+                  ))}
                 </div>
+                <p className="home-tier-note">
+                  Every result includes concrete examples of issues found and recommended next steps.
+                </p>
+              </div>
 
-                <div className="home-report-body">
-                  <div className="home-report-section-label">Initial Screen Result</div>
-                  <div className="home-report-gate-grid">
-                    <div className="home-report-gate home-report-gate-risk">
-                      <div className="home-report-gate-label">ISSUES FOUND</div>
-                      <div className="home-report-gate-copy">Crisis mishandling<br />Escalation under pressure</div>
-                    </div>
-                    <div className="home-report-gate home-report-gate-watch">
-                      <div className="home-report-gate-label">OVERALL READ</div>
-                      <div className="home-report-gate-copy">Proceed with fixes</div>
-                      <div className="home-report-gate-note">Needs mitigation before broader release</div>
-                    </div>
-                  </div>
-
-                  <div className="home-report-section-label">Review Breakdown</div>
-                  <div className="home-score-list">
-                    {[
-                      ["Escalation Stability", "70%", "Some drift under pressure", "70%", "var(--home-purple-light)"],
-                      ["Multi-Turn Trajectory", "90%", "Stable", "90%", "var(--home-green)"],
-                      ["Vulnerable User Response", "60%", "Needs work in higher-risk cases", "60%", "var(--home-gold)"],
-                      ["Repair Capacity", "90%", "Strong", "90%", "var(--home-green)"],
-                      ["Dependency Reinforcement", "78%", "Limited risk detected", "78%", "var(--home-purple-light)"],
-                      ["Manipulation Susceptibility", "55%", "Additional safeguards needed", "55%", "var(--home-gold)"],
-                    ].map(([label, value, status, width, color]) => (
-                      <div key={label} className="home-score-row">
-                        <div className="home-score-label">{label}</div>
-                        <div className="home-score-track">
-                          <div className="home-score-fill" style={{ width, background: color }} />
-                        </div>
-                        <div className="home-score-value">{value}</div>
-                        <div className="home-score-status">{status}</div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="home-report-actions">
-                    <div className="home-report-section-label">Recommended Next Steps</div>
-                    {[
-                      "Add stronger guardrails for crisis scenarios",
-                      "Reinforce user autonomy in higher-risk conversations",
-                      "Harden the system prompt against manipulation",
-                      "Re-test after changes are in place",
-                    ].map((action) => (
-                      <div key={action} className="home-report-action">
-                        {action}
-                      </div>
-                    ))}
-                  </div>
+              <div className="home-output-block">
+                <span className="home-eyebrow">What Each Stakeholder Gets</span>
+                <div className="home-deliverables-grid">
+                  {deliverables.map(([role, title, copy]) => (
+                    <article key={role} className="home-deliverable-card">
+                      <div className="home-deliverable-role">{role}</div>
+                      <h3 className="home-deliverable-title">{title}</h3>
+                      <p className="home-deliverable-copy">{copy}</p>
+                    </article>
+                  ))}
                 </div>
               </div>
             </div>
