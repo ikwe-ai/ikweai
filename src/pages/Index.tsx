@@ -166,7 +166,7 @@ const engagementLevels = [
   },
   {
     level: "LEVEL II",
-    title: "Full Benchmark",
+    title: "Ikwe EQ Safety Evaluation",
     description:
       "Evaluation across all 8 dimensions with Tier I–IV classification, failure mapping, and a remediation plan.",
     forItems: ["Board-level governance", "Regulated deployment", "Enterprise procurement"],
@@ -175,7 +175,7 @@ const engagementLevels = [
   },
   {
     level: "LEVEL III",
-    title: "Ongoing Governance",
+    title: "Ikwe Behavioral Monitoring",
     description: "Continuous behavioral drift monitoring after each deployment change. Quarterly re-evaluation.",
     forItems: ["Live systems at scale", "High-consequence AI deployment", "Sustained regulatory posture"],
     result: "Your system has an independent behavioral safety record — versioned and defensible over time.",
@@ -442,7 +442,7 @@ export default function Home() {
                     </ul>
                   </div>
                   <div className="rounded border border-border bg-background-surface px-4 py-4">
-                    <h3 className="font-display text-xl text-foreground mb-3">Public Benchmark Audit</h3>
+                    <h3 className="font-display text-xl text-foreground mb-3">Frontier AI Behavioral Safety Index</h3>
                     <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
                       <li>• 79 real-world baseline scenarios</li>
                       <li>• Scenarios sourced from established datasets</li>
@@ -451,12 +451,12 @@ export default function Home() {
                     </ul>
                   </div>
                   <div className="rounded border border-border bg-background-surface px-4 py-4">
-                    <h3 className="font-display text-xl text-foreground mb-3">Private Evaluation + Monitoring</h3>
+                    <h3 className="font-display text-xl text-foreground mb-3">Ikwe EQ Safety Evaluation</h3>
                     <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-                      <li>• Private client benchmark audits</li>
+                      <li>• Private client benchmark evaluations</li>
                       <li>• Optional client-specific scenarios</li>
-                      <li>• Live output / API monitoring</li>
-                      <li>• Drift detection over time</li>
+                      <li>• Comparison to public index scores</li>
+                      <li>• Ikwe Behavioral Monitoring for live outputs</li>
                     </ul>
                   </div>
                 </div>
@@ -616,7 +616,7 @@ export default function Home() {
                 },
                 {
                   number: "03",
-                  title: "Ongoing Governance Monitoring",
+                  title: "Ikwe Behavioral Monitoring",
                   description:
                     "Continuous behavioral drift monitoring after each deployment change. Quarterly re-evaluation. A versioned, defensible safety record.",
                   tag: "Continuous",

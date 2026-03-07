@@ -23,11 +23,11 @@ export default function Audit() {
   const pathway: PathwayStage[] = [
     {
       step: "01",
-      title: "Diagnostic Audit",
+      title: "Ikwe EQ Safety Evaluation",
       tag: "ENTRY POINT | BILLABLE STANDALONE",
       paragraphs: [
-        "Establish a documented behavioral risk baseline for your system. We run the EQ Safety Benchmark against your deployment context using structured scenarios, versioned methodology, and reproducible outputs.",
-        "This is where most organizations start. The audit surfaces failure modes in-house testing misses, quantifies severity, and produces documentation your board and legal team can use immediately.",
+        "Establish a documented behavioral safety baseline for your system. We run the EQ Safety Benchmark against your deployment context using structured scenarios, versioned methodology, and reproducible outputs.",
+        "This is where most organizations start. The Ikwe EQ Safety Evaluation surfaces failure modes in-house testing misses, quantifies severity, and produces documentation your board and legal team can use immediately.",
       ],
       receives: [
         "Board Brief - executive risk summary with classification band",
@@ -55,10 +55,10 @@ export default function Audit() {
     },
     {
       step: "03",
-      title: "Active Monitoring",
+      title: "Ikwe Behavioral Monitoring",
       tag: "CONTINUOUS EVALUATION | RECURRING ENGAGEMENT",
       paragraphs: [
-        "Behavioral risk is not static. Model updates, prompt changes, deployment scale, and user population shifts all change how your system behaves. Active monitoring catches drift before it becomes a documented failure.",
+        "Behavioral risk is not static. Model updates, prompt changes, deployment scale, and user population shifts all change how your system behaves. Ikwe Behavioral Monitoring catches drift before it becomes a documented failure.",
         "We run API-connected monitoring on a defined schedule against your registered endpoint and evaluate live system outputs over time. When risk patterns shift, you receive a structured alert with recommended response steps.",
       ],
       receives: [
@@ -117,7 +117,7 @@ export default function Audit() {
 
   const stageMatrix = [
     {
-      stage: "01 · Diagnostic Audit",
+      stage: "01 · Ikwe EQ Safety Evaluation",
       cfo: "Risk baseline and governance-ready decision context",
       cto: "Failure patterns, severity mapping, and technical findings brief",
       output: "Board Brief · Risk Scorecard · Evidence Pack",
@@ -129,7 +129,7 @@ export default function Audit() {
       output: "Remediation roadmap · Technical consultation summary",
     },
     {
-      stage: "03 · Active Monitoring",
+      stage: "03 · Ikwe Behavioral Monitoring",
       cfo: "Ongoing oversight and continuity of governance documentation",
       cto: "Recurring drift signals and escalation alerts",
       output: "Quarterly re-evaluation · Drift Alert reports",
@@ -150,13 +150,13 @@ export default function Audit() {
     },
     {
       level: "Level II",
-      title: "Full Benchmark",
+      title: "Ikwe EQ Safety Evaluation",
       note: "Full dimensional scoring and board-level governance package.",
       link: "#stage-02",
     },
     {
       level: "Level III",
-      title: "Ongoing Governance",
+      title: "Ikwe Behavioral Monitoring",
       note: "Recurring monitoring and drift alerts for live systems at scale.",
       link: "#stage-03",
     },
@@ -165,22 +165,22 @@ export default function Audit() {
   return (
     <PageShell>
       <PageMeta
-        title="Audit & Validation | Ikwe.ai"
-        description="Independent behavioral safety audits for human-facing AI. Structured evaluation, implementation support, and continuous monitoring. Ikwe.ai."
+        title="Ikwe EQ Safety Evaluation | Ikwe.ai"
+        description="Behavioral Safety Validation for human-facing AI through Ikwe EQ Safety Evaluation and Ikwe Behavioral Monitoring."
         path="/audit"
         ogImagePath="/og/audit.png"
       />
 
       <section className="site-section py-14 border-b border-border audit-hero">
-        <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Audit &amp; Validation</p>
+        <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Ikwe EQ Safety Evaluation</p>
         <p className="text-xs text-foreground-subtle mb-4">
           Framework basis: EQ Safety Benchmark {BENCHMARK_CURRENT.version} · Updated {BENCHMARK_CURRENT.lastUpdated}
         </p>
-        <h1 className="font-display fluid-title text-foreground mb-4">Independent behavioral safety evaluation for executive decisions.</h1>
+        <h1 className="font-display fluid-title text-foreground mb-4">Behavioral Safety Validation for AI systems.</h1>
         <p className="text-foreground-muted lede mb-6">
-          Start with the EQ Safety Benchmark framework, establish a documented risk baseline through private
-          evaluation, then move through remediation support and active monitoring as needed. This pathway is built for
-          CTO and CFO decisions, not just technical review.
+          Start with the EQ Safety Benchmark framework, establish a documented risk baseline through an Ikwe EQ Safety
+          Evaluation, then extend into remediation support and Ikwe Behavioral Monitoring as needed. This pathway is
+          built for CTO and CFO decisions, not just technical review.
         </p>
         <div className="summary-headline-strip mb-7 max-w-4xl">
           <div className="summary-headline-item">{BENCHMARK_CURRENT.nValue}</div>
@@ -193,7 +193,7 @@ export default function Audit() {
             href="/intake#application-form"
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
           >
-            Request Evaluation
+            Request Ikwe EQ Safety Evaluation
           </a>
           <a
             href="#validation-pathway"
@@ -215,7 +215,7 @@ export default function Audit() {
           <article className="audit-decision-card">
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-1">Start</p>
             <p className="text-sm text-foreground">Need a risk baseline and board-ready evidence.</p>
-            <a href="#stage-01" className="summary-jump mt-3">Diagnostic audit</a>
+            <a href="#stage-01" className="summary-jump mt-3">Ikwe EQ Safety Evaluation</a>
           </article>
           <article className="audit-decision-card">
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-1">Remediate</p>
@@ -225,7 +225,7 @@ export default function Audit() {
           <article className="audit-decision-card">
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-1">Operate</p>
             <p className="text-sm text-foreground">Need continuity and drift detection after launch.</p>
-            <a href="#stage-03" className="summary-jump mt-3">Active monitoring</a>
+            <a href="#stage-03" className="summary-jump mt-3">Ikwe Behavioral Monitoring</a>
           </article>
         </div>
       </section>
@@ -233,7 +233,7 @@ export default function Audit() {
       <ConnectedPages current="audit" />
 
       <section id="deliverables-previews" className="site-section py-10 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Audit At A Glance</p>
+        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Evaluation At A Glance</p>
         <StatsRow className="max-w-6xl mb-4" />
         <DeliverablesGrid className="max-w-6xl mb-4" />
         <ArtifactsPreviewRow className="max-w-6xl mb-4" />
@@ -258,7 +258,7 @@ export default function Audit() {
         title="Next Step"
         subtitle="Pick your stage, confirm scope, and start independent evaluation."
         items={[
-          { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
+          { href: "/intake#application-form", label: "Request Ikwe EQ Safety Evaluation", tone: "primary" },
           { href: "#validation-pathway", label: "Validation Pathway", tone: "outline" },
           {
             href: "/forms/ikwe-intake-form-fillable.pdf",
@@ -274,8 +274,8 @@ export default function Audit() {
           <div className="audit-section-head">
             <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Validation Pathway</p>
             <p className="text-sm text-foreground-muted leading-relaxed measure text-pretty mb-8">
-              Most teams start with Diagnostic Audit, then add Implementation Support or Active Monitoring based on risk
-              profile and timeline.
+              Most teams start with Ikwe EQ Safety Evaluation, then add Implementation Support or Ikwe Behavioral
+              Monitoring based on risk profile and timeline.
             </p>
           </div>
 
@@ -371,10 +371,10 @@ export default function Audit() {
           <div className="audit-section-body">
             <div className="space-y-4 max-w-6xl">
               <article className="card-surface p-6">
-                <h2 className="font-display text-2xl text-foreground mb-3">What the audit measures</h2>
+                <h2 className="font-display text-2xl text-foreground mb-3">What the evaluation measures</h2>
                 <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-                  The audit gives leadership a defensible answer to one question: what is our current behavioral safety
-                  exposure, and what should we do next?
+                  The Ikwe EQ Safety Evaluation gives leadership a defensible answer to one question: what is our
+                  current behavioral safety exposure, and what should we do next?
                 </p>
                 <details className="progressive-details">
                   <summary
@@ -495,7 +495,7 @@ export default function Audit() {
       <section id="request-start" className="site-section py-14 audit-section-block">
         <div className="audit-section-layout">
           <div className="audit-section-head">
-            <h2 className="font-display fluid-heading text-foreground mb-3">Request Evaluation</h2>
+            <h2 className="font-display fluid-heading text-foreground mb-3">Request Ikwe EQ Safety Evaluation</h2>
             <p className="text-sm text-foreground-muted leading-relaxed mb-3 measure text-pretty">
               Share your deployment context and decision timeline. We respond with a scoped recommendation and next steps.
             </p>
@@ -511,7 +511,7 @@ export default function Audit() {
                   href="/intake#application-form"
                   className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
                 >
-                  Request Evaluation
+                  Request Ikwe EQ Safety Evaluation
                 </a>
                 <a
                   href="/trust"
