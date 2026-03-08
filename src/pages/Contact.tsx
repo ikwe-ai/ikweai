@@ -220,25 +220,24 @@ export default function Contact() {
     setState("submitting");
 
     try {
-      const body = new URLSearchParams({
-        "form-name": "evaluation-application",
+      const payload = {
         ...form,
-        user_population: multiToString(userPopulation),
-        model_providers: multiToString(modelProvider),
-        drivers: multiToString(driver),
-        evaluation_driver: multiToString(driver),
-        signoffs: multiToString(signoff),
-        signoff_stakeholders: multiToString(signoff),
+        user_population:        multiToString(userPopulation),
+        model_providers:        multiToString(modelProvider),
+        drivers:                multiToString(driver),
+        evaluation_driver:      multiToString(driver),
+        signoffs:               multiToString(signoff),
+        signoff_stakeholders:   multiToString(signoff),
         compliance_constraints: multiToString(compliance),
-        priority_domains: multiToString(priorityDomains),
-        engagement_mode: form.engagement_model,
-        submitted_at: new Date().toISOString(),
-      });
+        priority_domains:       multiToString(priorityDomains),
+        engagement_mode:        form.engagement_model,
+        submitted_at:           new Date().toISOString(),
+      };
 
-      const response = await fetch("/", {
+      const response = await fetch("/.netlify/functions/inquiry", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: body.toString(),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) throw new Error("Submission failed");
@@ -404,15 +403,8 @@ export default function Contact() {
             <form
               id="application-form"
               onSubmit={handleSubmit}
-              name="evaluation-application"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-              method="POST"
-              action="/"
               className="card-surface p-6 space-y-6 order-1 xl:order-2 lg:sticky lg:top-24"
             >
-              <input type="hidden" name="form-name" value="evaluation-application" />
-              <input type="hidden" name="bot-field" />
               <input type="hidden" name="user_population" value={multiToString(userPopulation)} />
               <input type="hidden" name="model_providers" value={multiToString(modelProvider)} />
               <input type="hidden" name="drivers" value={multiToString(driver)} />
