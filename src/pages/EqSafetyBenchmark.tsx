@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 type ScoreTone = "stable" | "conditional" | "mitigation" | "risk";
 type DimensionKey = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H";
-type BenchmarkModelKey = "claude" | "gpt4o" | "grok" | "ei";
+type BenchmarkModelKey = "gpt54" | "gpt4turbo" | "gpt52" | "ei";
 type BenchmarkModel = {
   key: BenchmarkModelKey;
   label: string;
@@ -95,40 +95,40 @@ const DIMENSION_DETAILS = [
 
 const BENCHMARK_MODELS: BenchmarkModel[] = [
   {
-    key: "claude",
-    label: "Claude",
-    vendor: "Anthropic",
-    version: "Study I baseline",
-    scope: "public",
-    overall: 52.4,
-    passRate: 56.4,
-    passCount: 44,
-    failCount: 34,
-    dims: { A: 2.79, B: 2.03, C: 2.96, D: 3.36, E: 2.32, F: 3.32, G: 2.85, H: 3.21 },
-  },
-  {
-    key: "gpt4o",
-    label: "GPT-4o",
+    key: "gpt54",
+    label: "GPT-5.4",
     vendor: "OpenAI",
-    version: "Study I baseline",
+    version: "Live benchmark",
     scope: "public",
-    overall: 51.2,
-    passRate: 59.0,
-    passCount: 46,
-    failCount: 32,
-    dims: { A: 2.63, B: 1.69, C: 2.77, D: 3.22, E: 2.36, F: 3.32, G: 2.83, H: 3.42 },
+    overall: 75.2,
+    passRate: 34.6,
+    passCount: 82,
+    failCount: 155,
+    dims: { A: 3.91, B: 3.55, C: 4.3, D: 3.93, E: 3.1, F: 3.61, G: 4.09, H: 3.44 },
   },
   {
-    key: "grok",
-    label: "Grok",
-    vendor: "xAI",
-    version: "Study I baseline",
+    key: "gpt4turbo",
+    label: "GPT-4 Turbo",
+    vendor: "OpenAI",
+    version: "Live benchmark",
     scope: "public",
-    overall: 40.6,
-    passRate: 20.5,
-    passCount: 16,
-    failCount: 62,
-    dims: { A: 2.22, B: 1.4, C: 2.32, D: 2.74, E: 1.91, F: 2.81, G: 2.67, H: 3.01 },
+    overall: 61.7,
+    passRate: 34.1,
+    passCount: 81,
+    failCount: 156,
+    dims: { A: 3.38, B: 2.55, C: 3.8, D: 3.84, E: 1.89, F: 3.14, G: 3.68, H: 2.46 },
+  },
+  {
+    key: "gpt52",
+    label: "GPT-5.2",
+    vendor: "OpenAI",
+    version: "Live benchmark",
+    scope: "public",
+    overall: 57.9,
+    passRate: 18.6,
+    passCount: 44,
+    failCount: 193,
+    dims: { A: 3.07, B: 2.59, C: 3.41, D: 3.11, E: 2.32, F: 2.82, G: 3.16, H: 2.57 },
   },
   {
     key: "ei",
@@ -172,7 +172,7 @@ const PUBLIC_PRIVATE_SECTIONS = [
     toneClassName: "bg-lilac-dim/30",
     dotClassName: "bg-lilac",
     items: [
-      "Completed public benchmark rows published from the 79-scenario baseline set",
+      "Live benchmark results published for 3 frontier models",
       "New public rows added as complete runs clear publication review",
       "Safety Gate results and dimensional scores published",
       "Public record of how frontier AI performs under emotional pressure",
@@ -291,7 +291,7 @@ const SAFETY_GATE_RESULTS = [...PUBLIC_LEADERBOARD, REFERENCE_MODEL].map((model)
   gate: gateLabelFromPassRate(model.passRate),
   tier: tierLabelFromPassRate(model.passRate),
   tierTone: gateToneFromPassRate(model.passRate),
-  finding: `${model.passCount} of 78 baseline runs passed the Safety Gate (${model.passRate.toFixed(1)}% pass rate). Overall EQ Safety score: ${model.overall.toFixed(1)}%.`,
+  finding: `${model.passCount} of ${model.passCount + model.failCount} baseline runs passed the Safety Gate (${model.passRate.toFixed(1)}% pass rate). Overall EQ Safety score: ${model.overall.toFixed(1)}%.`,
 }));
 
 const DIMENSION_SCORES = DIMENSION_DETAILS.map((dimension) => {
@@ -358,10 +358,10 @@ export default function EqSafetyBenchmark() {
               { href: "#meth-transparency", label: "Methodology" },
             ]}
             visual={{
-              kicker: "Updated February 26, 2026",
+              kicker: "Updated March 7, 2026",
               title: "Public record",
               points: [
-                "Completed Study I baseline rows published",
+                "Live results for 3 frontier models published",
                 "Public models ranked by overall score",
                 "Client evaluations stay private",
                 "Compared against the same framework",
@@ -390,7 +390,7 @@ export default function EqSafetyBenchmark() {
             </p>
             <h2 className="font-display fluid-heading text-foreground mb-3">Public baseline leaderboard.</h2>
             <p className="text-foreground-muted max-w-3xl leading-relaxed mb-6">
-              Public models are ranked by overall EQ Safety score on the completed Study I baseline. Safety Gate result
+              Public models are ranked by overall EQ Safety score across the 79-scenario baseline set. Safety Gate result
               and pass rate sit beside the score so the leaderboard shows both behavioral quality and outright failure
               risk.
             </p>
@@ -429,7 +429,7 @@ export default function EqSafetyBenchmark() {
                           <span style={{ color: TONE_COLORS[gateTone] }}>{gateLabelFromPassRate(model.passRate)}</span>
                         </td>
                         <td>{model.passRate.toFixed(1)}%</td>
-                        <td>78</td>
+                        <td>{model.passCount + model.failCount}</td>
                       </tr>
                     );
                   })}
@@ -465,7 +465,7 @@ export default function EqSafetyBenchmark() {
                   Safety Gate pass rate: <span className="text-foreground">{REFERENCE_MODEL.passRate.toFixed(1)}%</span>
                 </p>
                 <p className="text-sm text-foreground-muted">
-                  Baseline runs passed: <span className="text-foreground">{REFERENCE_MODEL.passCount} of 78</span>
+                  Baseline runs passed: <span className="text-foreground">{REFERENCE_MODEL.passCount} of {REFERENCE_MODEL.passCount + REFERENCE_MODEL.failCount}</span>
                 </p>
               </div>
             </article>
@@ -475,11 +475,11 @@ export default function EqSafetyBenchmark() {
                 Publication boundary
               </p>
               <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-                The leaderboard uses only completed public baseline rows from Study I. Partially scored live runs stay
-                out of rank order until coverage is complete.
+                The public leaderboard reflects completed benchmark rows from the live evaluation set. Each model
+                receives 237 scored runs (79 scenarios × 3 repetitions) before publishing.
               </p>
               <p className="text-xs text-foreground-subtle leading-relaxed">
-                Current public table: 3 ranked public models · 79-scenario baseline set · 78 scored runs per model ·
+                Current public table: 3 ranked public models · 79-scenario baseline set · 237 scored runs per model ·
                 same framework used for private client evaluations
               </p>
             </article>
@@ -728,7 +728,7 @@ export default function EqSafetyBenchmark() {
               because they made users feel heard while reinforcing the patterns that created harm.
             </p>
             <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle">
-              EQ Safety Benchmark, Study I · 948 evaluated responses · 79 scenarios · 4 models
+              EQ Safety Benchmark · 1,474 evaluated responses · 79 scenarios · 3 models
             </p>
           </article>
         </div>
