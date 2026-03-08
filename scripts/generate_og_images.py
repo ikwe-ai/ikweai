@@ -8,8 +8,11 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_DIR = ROOT / "public"
 OG_DIR = PUBLIC_DIR / "og"
+SOCIAL_DIR = PUBLIC_DIR / "social"
 WIDTH = 1200
 HEIGHT = 630
+LINKEDIN_WIDTH = 1584
+LINKEDIN_HEIGHT = 396
 
 BG = "#141218"
 PURPLE = "#7b4fd4"
@@ -239,10 +242,77 @@ def build_page(page: dict[str, object]) -> None:
         rgb.save(target, format="PNG", optimize=True)
 
 
+def build_linkedin_home_banner() -> None:
+    image = Image.new("RGBA", (LINKEDIN_WIDTH, LINKEDIN_HEIGHT), BG)
+    title_font = load_font(GEORGIA_BOLD, 70)
+    subtitle_font = load_font(ARIAL, 24)
+    foot_font = load_font(ARIAL, 19)
+    chip_font = load_font(ARIAL, 18)
+    kicker_font = load_font(ARIAL, 20)
+
+    add_radial_glow(image, (-220, -180, 820, 520), PURPLE, 140)
+    add_radial_glow(image, (1040, -160, 1760, 340), "#4c2c86", 110)
+    add_radial_glow(image, (1120, 120, 1820, 560), "#1d274f", 130)
+    add_starfield(image)
+
+    atmosphere = Image.new("RGBA", image.size, (0, 0, 0, 0))
+    atmosphere_draw = ImageDraw.Draw(atmosphere)
+    atmosphere_draw.ellipse((700, -200, 1720, 560), fill=(12, 14, 32, 110))
+    atmosphere_draw.ellipse((-180, -220, 980, 620), fill=(34, 24, 58, 68))
+    image.alpha_composite(atmosphere)
+
+    draw_brand_mark(image, 1270, 198, 112)
+
+    draw = ImageDraw.Draw(image)
+    draw.text((110, 56), "IKWE.AI", font=kicker_font, fill=PURPLE_LIGHT)
+
+    y = draw_multiline(draw, (110, 84), "Behavioral Trust Under Pressure", title_font, WHITE, 8, 820)
+    y = draw_multiline(
+        draw,
+        (110, y + 2),
+        "Independent behavioral safety validation for human-facing AI systems.",
+        subtitle_font,
+        SOFT,
+        8,
+        920,
+    )
+
+    chip_y = y + 10
+    chip_specs = [
+        ("Independent validation", 238),
+        ("Human-facing AI", 186),
+    ]
+    chip_x = 110
+    for label, width in chip_specs:
+        draw.rounded_rectangle((chip_x, chip_y, chip_x + width, chip_y + 38), radius=19, fill=(123, 79, 212, 28), outline=BORDER, width=1)
+        draw.text((chip_x + 18, chip_y + 9), label, font=chip_font, fill=SOFT)
+        chip_x += width + 14
+
+    footer_y = 354
+    draw.text((110, footer_y), "ikwe.ai", font=foot_font, fill=PURPLE_LIGHT)
+
+    line_layer = Image.new("RGBA", image.size, (0, 0, 0, 0))
+    line_draw = ImageDraw.Draw(line_layer)
+    line_draw.rounded_rectangle((1096, 292, 1470, 296), radius=2, fill=(123, 79, 212, 118))
+    line_draw.rounded_rectangle((1096, 292, 1302, 296), radius=2, fill=(232, 201, 122, 180))
+    line_draw.rounded_rectangle((1096, 324, 1470, 328), radius=2, fill=(123, 79, 212, 76))
+    line_draw.rounded_rectangle((1096, 324, 1392, 328), radius=2, fill=(155, 114, 232, 180))
+    image.alpha_composite(line_layer)
+
+    rgb = Image.new("RGB", image.size, BG)
+    rgb.paste(image, mask=image.split()[3])
+
+    target = SOCIAL_DIR / "linkedin-home.png"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    rgb.save(target, format="PNG", optimize=True)
+
+
 def main() -> None:
     OG_DIR.mkdir(parents=True, exist_ok=True)
+    SOCIAL_DIR.mkdir(parents=True, exist_ok=True)
     for page in PAGES:
         build_page(page)
+    build_linkedin_home_banner()
 
 
 if __name__ == "__main__":

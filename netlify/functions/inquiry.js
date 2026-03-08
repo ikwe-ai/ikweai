@@ -5,7 +5,7 @@
 const { Client } = require('@notionhq/client');
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
-const NOTION_DB = process.env.NOTION_INQUIRIES_DB;
+const NOTION_DB = process.env.NOTION_INQUIRY_DB_ID || process.env.NOTION_INQUIRIES_DB;
 
 const CUSTOMERIO_SITE_ID   = process.env.CUSTOMERIO_SITE_ID;
 const CUSTOMERIO_TRACK_KEY = process.env.CUSTOMERIO_TRACK_API_KEY;
@@ -122,7 +122,7 @@ async function pushToCustomerIO(data) {
 // Maps Contact.tsx field names → legacy Notion property names (no DB schema change needed)
 async function pushToNotion(data) {
   if (!NOTION_DB) {
-    console.warn('NOTION_INQUIRIES_DB not set — skipping Notion push');
+    console.warn('NOTION_INQUIRY_DB_ID / NOTION_INQUIRIES_DB not set — skipping Notion push');
     return null;
   }
 
