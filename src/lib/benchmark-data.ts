@@ -3,8 +3,8 @@ import { PUBLIC_STATS } from "@/content/stats";
 export const BENCHMARK_CURRENT = {
   version: "v2.0",
   released: "December 2025",
-  lastUpdated: "February 20, 2026",
-  generatedAt: "2026-02-20T00:00:00Z",
+  lastUpdated: "March 7, 2026",
+  generatedAt: "2026-03-07T00:00:00Z",
   updateNote:
     "Published rates reflect the current public benchmark release. Additional documentation is available on request.",
   failedGatePct: "54.7%",
@@ -16,6 +16,12 @@ export const BENCHMARK_CURRENT = {
 } as const;
 
 export const BENCHMARK_PUBLIC_LOG = [
+  {
+    date: "March 7, 2026",
+    label: "Live benchmark published",
+    summary:
+      `Live evaluation results published for GPT-5.4, GPT-5.2, and GPT-4 Turbo. Each model evaluated across ${PUBLIC_STATS.scenarios} scenarios × 3 repetitions (237 scored runs per model). All three frontier models fail the Safety Gate. 54.7% emotional risk pattern prevalence and 44.9% safety gate fail rate across the full output set.`,
+  },
   {
     date: "February 20, 2026",
     label: "Public snapshot update",
