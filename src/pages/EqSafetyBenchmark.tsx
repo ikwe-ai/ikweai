@@ -288,9 +288,14 @@ const SAFETY_GATE_RESULTS = [...PUBLIC_LEADERBOARD, REFERENCE_MODEL].map((model)
   model: model.label,
   vendor: model.vendor,
   version: model.version,
+  scope: model.scope,
   gate: gateLabelFromPassRate(model.passRate),
   tier: tierLabelFromPassRate(model.passRate),
   tierTone: gateToneFromPassRate(model.passRate),
+  passRate: model.passRate,
+  passCount: model.passCount,
+  totalCount: model.passCount + model.failCount,
+  overall: model.overall,
   finding: `${model.passCount} of ${model.passCount + model.failCount} baseline runs passed the Safety Gate (${model.passRate.toFixed(1)}% pass rate). Overall EQ Safety score: ${model.overall.toFixed(1)}%.`,
 }));
 
@@ -320,6 +325,43 @@ function ScoreBar({ pct, tone }: { pct: number; tone: ScoreTone }) {
       <p className="font-mono text-xs" style={{ color }}>
         {pct}%
       </p>
+    </div>
+  );
+}
+
+function GateBadge({ passRate }: { passRate: number }) {
+  const tone = gateToneFromPassRate(passRate);
+  const color = TONE_COLORS[tone];
+  const label = gateLabelFromPassRate(passRate);
+  return (
+    <span
+      className="inline-flex items-center gap-1.5 rounded border px-2.5 py-0.5 text-[11px] font-mono uppercase tracking-wider whitespace-nowrap"
+      style={{ color, borderColor: color }}
+    >
+      <span className="h-1.5 w-1.5 flex-none rounded-full" style={{ backgroundColor: color }} />
+      {label}
+    </span>
+  );
+}
+
+function PassCountBar({ passCount, totalCount }: { passCount: number; totalCount: number }) {
+  const passPct = Number(((passCount / totalCount) * 100).toFixed(1));
+  return (
+    <div className="grid gap-1.5">
+      <div className="flex h-2 w-full rounded-full overflow-hidden bg-background-surface">
+        {passPct > 0 && (
+          <div style={{ width: `${passPct}%`, backgroundColor: TONE_COLORS.stable }} />
+        )}
+        <div style={{ flex: 1, backgroundColor: TONE_COLORS.risk }} />
+      </div>
+      <div className="flex items-center justify-between">
+        <p className="font-mono text-[10px]" style={{ color: TONE_COLORS.stable }}>
+          {passCount} passed
+        </p>
+        <p className="font-mono text-[10px]" style={{ color: TONE_COLORS.risk }}>
+          {totalCount - passCount} failed
+        </p>
+      </div>
     </div>
   );
 }
@@ -394,6 +436,16 @@ export default function EqSafetyBenchmark() {
               and pass rate sit beside the score so the leaderboard shows both behavioral quality and outright failure
               risk.
             </p>
+            <article className="mb-6 rounded border-l-2 border-[hsl(var(--danger))] bg-[hsl(var(--danger)/0.05)] px-5 py-4">
+              <p className="font-display text-2xl text-foreground">
+                0 of {PUBLIC_LEADERBOARD.length} frontier models pass the Safety Gate.
+              </p>
+              <p className="mt-1 text-sm text-foreground-muted">
+                All ranked models are Tier III. High overall scores don't prevent safety gate failure — the benchmark
+                measures behavioral patterns standard capability tests miss.
+              </p>
+            </article>
+
             <div className="overflow-x-auto">
               <table className="enterprise-table">
                 <thead>
@@ -403,36 +455,73 @@ export default function EqSafetyBenchmark() {
                     <th>Overall Score</th>
                     <th>Safety Gate</th>
                     <th>Gate Pass Rate</th>
-                    <th>Scored Runs</th>
+                    <th>Passes / Total</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {PUBLIC_LEADERBOARD.map((model, index) => {
-                    const gateTone = gateToneFromPassRate(model.passRate);
-                    return (
-                      <tr key={model.key}>
-                        <td className="font-mono text-foreground">{index + 1}</td>
-                        <td>
-                          <div className="grid gap-1">
-                            <span className="text-foreground">{model.label}</span>
-                            <span className="text-xs text-foreground-subtle">
-                              {model.vendor} · {model.version}
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <span style={{ color: TONE_COLORS[scoreToneFromPct(model.overall)] }}>
-                            {model.overall.toFixed(1)}%
+                  {PUBLIC_LEADERBOARD.map((model, index) => (
+                    <tr key={model.key}>
+                      <td className="font-mono text-foreground">{index + 1}</td>
+                      <td>
+                        <div className="grid gap-1">
+                          <span className="text-foreground">{model.label}</span>
+                          <span className="text-xs text-foreground-subtle">
+                            {model.vendor} · {model.version}
                           </span>
-                        </td>
-                        <td>
-                          <span style={{ color: TONE_COLORS[gateTone] }}>{gateLabelFromPassRate(model.passRate)}</span>
-                        </td>
-                        <td>{model.passRate.toFixed(1)}%</td>
-                        <td>{model.passCount + model.failCount}</td>
-                      </tr>
-                    );
-                  })}
+                        </div>
+                      </td>
+                      <td>
+                        <span style={{ color: TONE_COLORS[scoreToneFromPct(model.overall)] }}>
+                          {model.overall.toFixed(1)}%
+                        </span>
+                      </td>
+                      <td>
+                        <GateBadge passRate={model.passRate} />
+                      </td>
+                      <td>
+                        <span className="font-mono text-sm" style={{ color: TONE_COLORS[gateToneFromPassRate(model.passRate)] }}>
+                          {model.passRate.toFixed(1)}%
+                        </span>
+                      </td>
+                      <td className="font-mono text-sm">
+                        <span style={{ color: TONE_COLORS.stable }}>{model.passCount}</span>
+                        <span className="text-foreground-subtle"> / {model.passCount + model.failCount}</span>
+                      </td>
+                    </tr>
+                  ))}
+                  <tr className="border-t-2 border-lilac/30 bg-lilac-dim/10">
+                    <td className="font-mono text-foreground-subtle text-xs">Ref</td>
+                    <td>
+                      <div className="grid gap-1">
+                        <div className="flex items-center gap-2">
+                          <span className="text-foreground">{REFERENCE_MODEL.label}</span>
+                          <span className="inline-flex items-center rounded border border-lilac/40 px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider text-lilac">
+                            Ikwe Reference
+                          </span>
+                        </div>
+                        <span className="text-xs text-foreground-subtle">
+                          {REFERENCE_MODEL.vendor} · {REFERENCE_MODEL.version}
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <span style={{ color: TONE_COLORS[scoreToneFromPct(REFERENCE_MODEL.overall)] }}>
+                        {REFERENCE_MODEL.overall.toFixed(1)}%
+                      </span>
+                    </td>
+                    <td>
+                      <GateBadge passRate={REFERENCE_MODEL.passRate} />
+                    </td>
+                    <td>
+                      <span className="font-mono text-sm" style={{ color: TONE_COLORS[gateToneFromPassRate(REFERENCE_MODEL.passRate)] }}>
+                        {REFERENCE_MODEL.passRate.toFixed(1)}%
+                      </span>
+                    </td>
+                    <td className="font-mono text-sm">
+                      <span style={{ color: TONE_COLORS.stable }}>{REFERENCE_MODEL.passCount}</span>
+                      <span className="text-foreground-subtle"> / {REFERENCE_MODEL.passCount + REFERENCE_MODEL.failCount}</span>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -584,13 +673,45 @@ export default function EqSafetyBenchmark() {
             dimensional scoring begins.
           </p>
 
+          {/* At-a-glance model overview */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            {SAFETY_GATE_RESULTS.map((item) => {
+              const color = TONE_COLORS[item.tierTone];
+              return (
+                <article
+                  key={item.model}
+                  className={`card-surface p-5 ${item.scope === "reference" ? "border-lilac/30" : ""}`}
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 className="font-display text-xl text-foreground leading-tight">{item.model}</h3>
+                      <p className="text-xs text-foreground-subtle mt-0.5">
+                        {item.vendor}
+                        {item.scope === "reference" && (
+                          <span className="ml-1.5 text-lilac">· Reference</span>
+                        )}
+                      </p>
+                    </div>
+                    <GateBadge passRate={item.passRate} />
+                  </div>
+                  <p className="font-display text-4xl leading-none mb-1" style={{ color }}>
+                    {item.passRate.toFixed(1)}%
+                  </p>
+                  <p className="text-xs text-foreground-subtle mb-4">gate pass rate</p>
+                  <PassCountBar passCount={item.passCount} totalCount={item.totalCount} />
+                </article>
+              );
+            })}
+          </div>
+
+          {/* Per-model detail cards */}
           <div className="grid gap-4">
             {SAFETY_GATE_RESULTS.map((item) => {
-              const toneColor = item.tierTone === "risk" ? TONE_COLORS.risk : TONE_COLORS.conditional;
+              const toneColor = TONE_COLORS[item.tierTone];
 
               return (
                 <article key={item.model} className="card-surface p-6">
-                  <div className="grid gap-4 lg:grid-cols-[minmax(0,220px)_160px_120px_minmax(0,1fr)] lg:items-start">
+                  <div className="grid gap-4 lg:grid-cols-[minmax(0,220px)_auto_120px_minmax(0,1fr)] lg:items-start">
                     <div>
                       <h3 className="font-display text-2xl text-foreground mb-1">{item.model}</h3>
                       <p className="text-sm text-foreground-subtle">
@@ -599,9 +720,7 @@ export default function EqSafetyBenchmark() {
                     </div>
                     <div>
                       <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle mb-2">Gate Result</p>
-                      <p className="font-mono text-sm" style={{ color: toneColor }}>
-                        {item.gate}
-                      </p>
+                      <GateBadge passRate={item.passRate} />
                     </div>
                     <div>
                       <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle mb-2">Tier</p>
@@ -674,30 +793,65 @@ export default function EqSafetyBenchmark() {
             </div>
           </article>
 
-          <div className="grid gap-4">
-            {DIMENSION_SCORES.map((dimension) => (
-              <article key={dimension.name} className="card-surface p-6">
-                <div className="grid gap-6 xl:grid-cols-[minmax(0,260px)_1fr]">
-                  <div>
-                    <h3 className="font-display text-2xl text-foreground mb-2">{dimension.name}</h3>
-                    <p className="text-sm text-foreground-muted leading-relaxed">{dimension.question}</p>
+          <div className="grid gap-3">
+            {DIMENSION_SCORES.map((dimension, dimIndex) => {
+              const allPcts = MODEL_COLUMNS.map((m) => dimension.scores[m.key].pct);
+              const maxPct = Math.max(...allPcts);
+              const minPct = Math.min(...allPcts);
+              return (
+                <article key={dimension.name} className="card-surface p-6">
+                  <div className="grid gap-6 xl:grid-cols-[minmax(0,280px)_1fr]">
+                    <div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="inline-flex h-6 w-6 items-center justify-center rounded bg-lilac-dim/30 text-[11px] font-mono text-lilac">
+                          {String.fromCharCode(65 + dimIndex)}
+                        </span>
+                        <h3 className="font-display text-xl text-foreground">{dimension.name}</h3>
+                      </div>
+                      <p className="text-sm text-foreground-muted leading-relaxed">{dimension.question}</p>
+                    </div>
+                    <div className="grid grid-cols-2 xl:grid-cols-4 gap-3">
+                      {MODEL_COLUMNS.map((model) => {
+                        const score = dimension.scores[model.key];
+                        const isBest = score.pct === maxPct;
+                        const isWorst = score.pct === minPct && minPct !== maxPct;
+                        return (
+                          <div
+                            key={model.key}
+                            className="rounded border bg-background-surface px-4 py-4"
+                            style={{
+                              borderColor: isBest ? TONE_COLORS[score.tone] : undefined,
+                              borderTopWidth: "3px",
+                              borderTopColor: TONE_COLORS[score.tone],
+                            }}
+                          >
+                            <div className="flex items-center justify-between mb-2">
+                              <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle">
+                                {model.label}
+                              </p>
+                              {isBest && (
+                                <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color: TONE_COLORS[score.tone] }}>
+                                  ↑ Best
+                                </span>
+                              )}
+                              {isWorst && (
+                                <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color: TONE_COLORS[score.tone] }}>
+                                  ↓ Low
+                                </span>
+                              )}
+                            </div>
+                            <p className="font-display text-2xl mb-2" style={{ color: TONE_COLORS[score.tone] }}>
+                              {score.pct}%
+                            </p>
+                            <ScoreBar pct={score.pct} tone={score.tone} />
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-                    {MODEL_COLUMNS.map((model) => {
-                      const score = dimension.scores[model.key];
-                      return (
-                        <div key={model.key} className="rounded border border-border bg-background-surface px-4 py-4">
-                          <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle mb-3">
-                            {model.label}
-                          </p>
-                          <ScoreBar pct={score.pct} tone={score.tone} />
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
 
           <p className="text-sm text-foreground-subtle leading-relaxed mt-6 max-w-4xl">
