@@ -43,6 +43,7 @@ export default function Architecture() {
         title="Architecture — Evaluation Pipeline | Ikwe.ai"
         description="Public architecture overview for Ikwe's independent behavioral safety evaluation pipeline and governance reporting model."
         path="/technology/architecture"
+        ogImagePath="/og/governance-gap.png"
       />
       <SummaryHero
         kicker="System Overview"

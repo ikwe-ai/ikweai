@@ -9,6 +9,7 @@ export default function AIGovernanceCompliance() {
         title="AI Governance Is Becoming a Compliance Issue | Ikwe.ai"
         description="Trust-layer thesis on why AI governance is now an evidence and compliance discipline."
         path="/research/writings/ai-governance-is-becoming-a-compliance-issue"
+        ogImagePath="/og/governance-gap.png"
       />
       <SummaryHero
         kicker="Published Essay"
