@@ -43,6 +43,7 @@ export default function Trust() {
         title="Trust & Confidentiality | Ikwe.ai"
         description="Customer-facing trust standards for data handling, confidentiality boundaries, and report access."
         path="/trust"
+        ogImagePath="/og/trust.png"
       />
       <SummaryHero
         kicker="Trust Standards"

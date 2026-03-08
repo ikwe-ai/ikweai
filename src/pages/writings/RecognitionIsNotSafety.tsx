@@ -9,6 +9,7 @@ export default function RecognitionIsNotSafety() {
         title="Recognition Is Not Safety | Ikwe.ai"
         description="Founder writing abstract on the distinction between emotional recognition and behavioral safety outcomes."
         path="/research/writings/recognition-is-not-safety"
+        ogImagePath="/og/problem.png"
       />
       <SummaryHero
         kicker="Research Note"

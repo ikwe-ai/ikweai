@@ -29,11 +29,25 @@ ARIAL = "/Library/Fonts/Arial Unicode.ttf"
 
 PAGES = [
     {
-        "title": "Independent\nAI review",
-        "subtitle": "Outside evaluation for human-facing systems before product risk turns into business risk.",
-        "chips": ["Home", "Third-party review", "Human-facing AI"],
-        "title_size": 74,
+        "title": "Behavioral Trust\nUnder Pressure",
+        "subtitle": "Independent behavioral safety validation for human-facing AI systems.",
+        "chips": ["Home", "Independent validation", "Human-facing AI"],
+        "title_size": 66,
         "output": ["ikwe-og.png", "og/home.png"],
+    },
+    {
+        "title": "Recognition Is\nNot Safety",
+        "subtitle": "An AI can sound empathetic and still cause harm.",
+        "chips": ["Research note", "Behavioral risk", "Independent validation"],
+        "title_size": 68,
+        "output": ["og/problem.png"],
+    },
+    {
+        "title": "What AI\nGovernance Misses",
+        "subtitle": "Behavioral safety is the missing operational layer.",
+        "chips": ["Governance gap", "Operational evidence", "Human-facing AI"],
+        "title_size": 66,
+        "output": ["og/governance-gap.png"],
     },
     {
         "title": "Research\nsummary",
@@ -43,10 +57,10 @@ PAGES = [
         "output": ["og/research.png"],
     },
     {
-        "title": "Benchmark\nframework",
-        "subtitle": "Eight checks, structured scenarios, and a repeatable way to review behavior under pressure.",
-        "chips": ["Benchmark", "8 checks", "Repeatable method"],
-        "title_size": 72,
+        "title": "Eight Dimensions.\nOne Clear Answer.",
+        "subtitle": "Behavioral safety testing under emotional stress.",
+        "chips": ["EQ Safety Benchmark", "Safety Gate", "8 dimensions"],
+        "title_size": 60,
         "output": ["og/benchmark.png"],
     },
     {
@@ -55,6 +69,13 @@ PAGES = [
         "chips": ["Audit", "Sample outputs", "Decision support"],
         "title_size": 72,
         "output": ["og/audit.png"],
+    },
+    {
+        "title": "Know Where Your\nSystem Stands",
+        "subtitle": "Get a third-party baseline before launch risk becomes board risk.",
+        "chips": ["Trust", "Third-party baseline", "Launch readiness"],
+        "title_size": 62,
+        "output": ["og/trust.png"],
     },
     {
         "title": "Request\nan evaluation",
@@ -198,7 +219,7 @@ def build_page(page: dict[str, object]) -> None:
         chip_x = draw_chip(draw, chip_x, chip_y, str(label))
 
     footer_y = 548
-    draw.text((96, footer_y), "Independent review for human-facing AI", font=FONT_FOOT, fill=MUTED)
+    draw.text((96, footer_y), "Independent validation for human-facing AI", font=FONT_FOOT, fill=MUTED)
     draw.text((96, footer_y + 22), "ikwe.ai", font=FONT_FOOT, fill=PURPLE_LIGHT)
 
     line_layer = Image.new("RGBA", image.size, (0, 0, 0, 0))
