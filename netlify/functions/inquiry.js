@@ -2,7 +2,7 @@
 // Handles evaluation intake form submissions from /intake (Contact.tsx)
 // Writes to Notion Engagement Inquiries DB + identifies contact in Customer.io
 
-const { Client } = require('@notionhq/client');
+import { Client } from '@notionhq/client';
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const NOTION_DB = process.env.NOTION_INQUIRY_DB_ID || process.env.NOTION_INQUIRIES_DB;
@@ -188,7 +188,7 @@ async function pushToNotion(data) {
 
 // ── Handler ───────────────────────────────────────────────────────────────────
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
   const headers = corsHeaders();
 
   if (event.httpMethod === 'OPTIONS') {

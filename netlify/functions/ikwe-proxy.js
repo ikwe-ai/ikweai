@@ -10,7 +10,7 @@
  *   Body: { model, max_tokens, system, messages }
  */
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
   // Only allow POST
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Method Not Allowed" };
