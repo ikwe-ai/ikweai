@@ -311,10 +311,9 @@ def build_linkedin_home_banner() -> None:
 
 def build_linkedin_company_home_banner() -> None:
     image = Image.new("RGBA", (LINKEDIN_COMPANY_WIDTH, LINKEDIN_COMPANY_HEIGHT), BG)
-    title_font = load_font(GEORGIA_BOLD, 190)
-    subtitle_font = load_font(ARIAL, 62)
+    title_font = load_font(GEORGIA_BOLD, 160)
+    subtitle_font = load_font(ARIAL, 54)
     kicker_font = load_font(ARIAL, 42)
-    foot_font = load_font(ARIAL, 44)
 
     add_radial_glow(image, (-420, -260, 1820, 980), PURPLE, 180)
     add_radial_glow(image, (2520, -220, 4540, 920), "#4c2c86", 160)
@@ -345,18 +344,16 @@ def build_linkedin_company_home_banner() -> None:
     draw_brand_mark(image, 3320, 350, 200)
 
     draw.text((280, 120), "IKWE.AI", font=kicker_font, fill=PURPLE_LIGHT)
-    y = draw_multiline(draw, (280, 180), "Behavioral Trust Under Pressure", title_font, WHITE, 12, 1900)
+    y = draw_multiline(draw, (280, 150), "Behavioral Trust Under Pressure", title_font, WHITE, 8, 1900)
     y = draw_multiline(
         draw,
-        (280, y + 16),
+        (280, y + 8),
         "Independent behavioral safety validation for human-facing AI systems.",
         subtitle_font,
         SOFT,
-        10,
+        8,
         2000,
     )
-
-    draw.text((280, 602), "ikwe.ai", font=foot_font, fill=PURPLE_LIGHT)
 
     line_layer = Image.new("RGBA", image.size, (0, 0, 0, 0))
     line_draw = ImageDraw.Draw(line_layer)
