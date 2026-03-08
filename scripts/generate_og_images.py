@@ -13,6 +13,8 @@ WIDTH = 1200
 HEIGHT = 630
 LINKEDIN_WIDTH = 1584
 LINKEDIN_HEIGHT = 396
+LINKEDIN_COMPANY_WIDTH = 4200
+LINKEDIN_COMPANY_HEIGHT = 700
 
 BG = "#141218"
 PURPLE = "#7b4fd4"
@@ -307,12 +309,78 @@ def build_linkedin_home_banner() -> None:
     rgb.save(target, format="PNG", optimize=True)
 
 
+def build_linkedin_company_home_banner() -> None:
+    image = Image.new("RGBA", (LINKEDIN_COMPANY_WIDTH, LINKEDIN_COMPANY_HEIGHT), BG)
+    title_font = load_font(GEORGIA_BOLD, 190)
+    subtitle_font = load_font(ARIAL, 62)
+    kicker_font = load_font(ARIAL, 42)
+    foot_font = load_font(ARIAL, 44)
+
+    add_radial_glow(image, (-420, -260, 1820, 980), PURPLE, 180)
+    add_radial_glow(image, (2520, -220, 4540, 920), "#4c2c86", 160)
+    add_radial_glow(image, (2780, 80, 4660, 940), "#1d274f", 180)
+
+    atmosphere = Image.new("RGBA", image.size, (0, 0, 0, 0))
+    atmosphere_draw = ImageDraw.Draw(atmosphere)
+    atmosphere_draw.ellipse((1350, -260, 4550, 980), fill=(12, 14, 32, 110))
+    atmosphere_draw.ellipse((-380, -260, 2320, 980), fill=(34, 24, 58, 68))
+    image.alpha_composite(atmosphere)
+
+    draw = ImageDraw.Draw(image)
+    star_positions = [
+        (280, 120),
+        (720, 190),
+        (1160, 108),
+        (1840, 260),
+        (2380, 140),
+        (3040, 220),
+        (3480, 150),
+        (3880, 250),
+        (1640, 540),
+        (3320, 570),
+    ]
+    for x, y in star_positions:
+        draw.ellipse((x - 6, y - 6, x + 6, y + 6), fill=(255, 255, 255, 72))
+
+    draw_brand_mark(image, 3320, 350, 200)
+
+    draw.text((280, 120), "IKWE.AI", font=kicker_font, fill=PURPLE_LIGHT)
+    y = draw_multiline(draw, (280, 180), "Behavioral Trust Under Pressure", title_font, WHITE, 12, 1900)
+    y = draw_multiline(
+        draw,
+        (280, y + 16),
+        "Independent behavioral safety validation for human-facing AI systems.",
+        subtitle_font,
+        SOFT,
+        10,
+        2000,
+    )
+
+    draw.text((280, 602), "ikwe.ai", font=foot_font, fill=PURPLE_LIGHT)
+
+    line_layer = Image.new("RGBA", image.size, (0, 0, 0, 0))
+    line_draw = ImageDraw.Draw(line_layer)
+    line_draw.rounded_rectangle((2860, 520, 3880, 532), radius=6, fill=(123, 79, 212, 118))
+    line_draw.rounded_rectangle((2860, 520, 3380, 532), radius=6, fill=(232, 201, 122, 180))
+    line_draw.rounded_rectangle((2860, 576, 3980, 588), radius=6, fill=(123, 79, 212, 76))
+    line_draw.rounded_rectangle((2860, 576, 3740, 588), radius=6, fill=(155, 114, 232, 180))
+    image.alpha_composite(line_layer)
+
+    rgb = Image.new("RGB", image.size, BG)
+    rgb.paste(image, mask=image.split()[3])
+
+    target = SOCIAL_DIR / "linkedin-company-home.png"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    rgb.save(target, format="PNG", optimize=True)
+
+
 def main() -> None:
     OG_DIR.mkdir(parents=True, exist_ok=True)
     SOCIAL_DIR.mkdir(parents=True, exist_ok=True)
     for page in PAGES:
         build_page(page)
     build_linkedin_home_banner()
+    build_linkedin_company_home_banner()
 
 
 if __name__ == "__main__":
