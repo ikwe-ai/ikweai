@@ -18,6 +18,7 @@ export default function Archive() {
         title="Archive | Ikwe.ai"
         description="Archived pages retained for reference while current live pages focus on core audit, deliverables, and research pathways."
         path="/archive"
+        noIndex
       />
 
       <section className="py-14 border-b border-border">
