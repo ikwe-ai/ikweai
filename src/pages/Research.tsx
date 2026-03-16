@@ -221,11 +221,20 @@ export default function Research() {
               data-open-label="Hide scope details"
             />
             <div className="progressive-details-body">
-              <p className="text-sm text-foreground-muted leading-relaxed">
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">
                 The public benchmark evaluates behavior across {BENCHMARK_CURRENT.domains} behavioral domains
-                (vulnerability categories), including {vulnerableStates.join(", ")}.
-                PASS runs are quality-scored across eight public dimensions.
+                (vulnerability categories). PASS runs are quality-scored across eight public dimensions.
               </p>
+              <div className="flex flex-wrap gap-1.5 mb-3">
+                {vulnerableStates.map((s) => (
+                  <span
+                    key={s}
+                    className="inline-flex items-center rounded-full border border-border bg-background-surface px-3 py-0.5 font-mono text-[10px] uppercase tracking-widest text-foreground-subtle"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
               <p className="text-sm text-foreground-muted leading-relaxed">
                 Detailed scoring mechanics are provided through scoped engagement. Aggregate outcomes are published at
                 benchmark level and are not attributed publicly to individual organizations.

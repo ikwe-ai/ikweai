@@ -4,6 +4,7 @@ import PageMeta from "@/components/PageMeta";
 import PageShell from "@/components/PageShell";
 import SummaryHero from "@/components/SummaryHero";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 type ScoreTone = "stable" | "conditional" | "mitigation" | "risk";
@@ -367,6 +368,8 @@ function PassCountBar({ passCount, totalCount }: { passCount: number; totalCount
 }
 
 export default function EqSafetyBenchmark() {
+  const [expandedDim, setExpandedDim] = useState<string | null>(null);
+
   return (
     <PageShell>
       <PageMeta
@@ -790,62 +793,106 @@ export default function EqSafetyBenchmark() {
             </div>
           </article>
 
-          <div className="grid gap-3">
+          <div className="grid gap-2">
             {DIMENSION_SCORES.map((dimension, dimIndex) => {
+              const letter = String.fromCharCode(65 + dimIndex);
+              const isOpen = expandedDim === letter;
               const allPcts = MODEL_COLUMNS.map((m) => dimension.scores[m.key].pct);
               const maxPct = Math.max(...allPcts);
               const minPct = Math.min(...allPcts);
+              // Compute overall tone for collapsed summary bar
+              const avgPct = Math.round(allPcts.reduce((a, b) => a + b, 0) / allPcts.length);
+              const avgTone: ScoreTone = avgPct >= 80 ? "stable" : avgPct >= 65 ? "conditional" : avgPct >= 50 ? "mitigation" : "risk";
+
               return (
-                <article key={dimension.name} className="card-surface p-6">
-                  <div className="grid gap-6 xl:grid-cols-[minmax(0,280px)_1fr]">
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="inline-flex h-6 w-6 items-center justify-center rounded bg-lilac-dim/30 text-[11px] font-mono text-lilac">
-                          {String.fromCharCode(65 + dimIndex)}
-                        </span>
-                        <h3 className="font-display text-xl text-foreground">{dimension.name}</h3>
-                      </div>
-                      <p className="text-sm text-foreground-muted leading-relaxed">{dimension.question}</p>
-                    </div>
-                    <div className="grid grid-cols-2 xl:grid-cols-4 gap-3">
-                      {MODEL_COLUMNS.map((model) => {
-                        const score = dimension.scores[model.key];
-                        const isBest = score.pct === maxPct;
-                        const isWorst = score.pct === minPct && minPct !== maxPct;
+                <article key={dimension.name} className="card-surface overflow-hidden">
+                  {/* ── Collapsed header — always visible ── */}
+                  <button
+                    type="button"
+                    onClick={() => setExpandedDim(isOpen ? null : letter)}
+                    className="w-full flex items-center gap-3 px-5 py-4 text-left hover:bg-background-surface/50 transition-colors group"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded bg-lilac-dim/30 text-[11px] font-mono text-lilac">
+                      {letter}
+                    </span>
+                    <h3 className="font-display text-base text-foreground flex-1">{dimension.name}</h3>
+                    {/* Mini score pills */}
+                    <div className="hidden sm:flex items-center gap-1.5 shrink-0">
+                      {MODEL_COLUMNS.map((m) => {
+                        const s = dimension.scores[m.key];
                         return (
-                          <div
-                            key={model.key}
-                            className="rounded border bg-background-surface px-4 py-4"
-                            style={{
-                              borderColor: isBest ? TONE_COLORS[score.tone] : undefined,
-                              borderTopWidth: "3px",
-                              borderTopColor: TONE_COLORS[score.tone],
-                            }}
+                          <span
+                            key={m.key}
+                            className="font-mono text-[10px] tabular-nums"
+                            style={{ color: TONE_COLORS[s.tone] }}
                           >
-                            <div className="flex items-center justify-between mb-2">
-                              <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle">
-                                {model.label}
-                              </p>
-                              {isBest && (
-                                <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color: TONE_COLORS[score.tone] }}>
-                                  ↑ Best
-                                </span>
-                              )}
-                              {isWorst && (
-                                <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color: TONE_COLORS[score.tone] }}>
-                                  ↓ Low
-                                </span>
-                              )}
-                            </div>
-                            <p className="font-display text-2xl mb-2" style={{ color: TONE_COLORS[score.tone] }}>
-                              {score.pct}%
-                            </p>
-                            <ScoreBar pct={score.pct} tone={score.tone} />
-                          </div>
+                            {s.pct}%
+                          </span>
                         );
                       })}
                     </div>
-                  </div>
+                    {/* Avg bar */}
+                    <div className="hidden md:flex items-center gap-2 w-20 shrink-0">
+                      <div className="flex-1 h-1.5 rounded-full bg-border overflow-hidden">
+                        <div
+                          className="h-full rounded-full transition-all"
+                          style={{ width: `${avgPct}%`, backgroundColor: TONE_COLORS[avgTone] }}
+                        />
+                      </div>
+                    </div>
+                    <span
+                      className="font-mono text-[10px] opacity-40 group-hover:opacity-70 transition-all shrink-0"
+                      style={{ transform: isOpen ? "rotate(180deg)" : "none", display: "inline-block" }}
+                    >
+                      ▾
+                    </span>
+                  </button>
+
+                  {/* ── Expanded detail ── */}
+                  {isOpen && (
+                    <div className="border-t border-border px-5 pb-5 pt-4">
+                      <p className="text-sm text-foreground-muted leading-relaxed mb-5">{dimension.question}</p>
+                      <div className="grid grid-cols-2 xl:grid-cols-4 gap-3">
+                        {MODEL_COLUMNS.map((model) => {
+                          const score = dimension.scores[model.key];
+                          const isBest = score.pct === maxPct;
+                          const isWorst = score.pct === minPct && minPct !== maxPct;
+                          return (
+                            <div
+                              key={model.key}
+                              className="rounded border bg-background-surface px-4 py-4"
+                              style={{
+                                borderColor: isBest ? TONE_COLORS[score.tone] : undefined,
+                                borderTopWidth: "3px",
+                                borderTopColor: TONE_COLORS[score.tone],
+                              }}
+                            >
+                              <div className="flex items-center justify-between mb-2">
+                                <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle">
+                                  {model.label}
+                                </p>
+                                {isBest && (
+                                  <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color: TONE_COLORS[score.tone] }}>
+                                    ↑ Best
+                                  </span>
+                                )}
+                                {isWorst && (
+                                  <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color: TONE_COLORS[score.tone] }}>
+                                    ↓ Low
+                                  </span>
+                                )}
+                              </div>
+                              <p className="font-display text-2xl mb-2" style={{ color: TONE_COLORS[score.tone] }}>
+                                {score.pct}%
+                              </p>
+                              <ScoreBar pct={score.pct} tone={score.tone} />
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
                 </article>
               );
             })}
