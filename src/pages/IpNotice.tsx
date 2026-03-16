@@ -1,6 +1,7 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
+import ArchiveBanner from "@/components/ArchiveBanner";
 
 export default function IpNotice() {
   return (
@@ -8,8 +9,10 @@ export default function IpNotice() {
       <PageMeta
         title="IP Notice | Ikwe.ai"
         description="Intellectual property notice for Ikwe.ai names, content, and permitted use."
-        path="/ip-notice"
+        path="/archive/ip-notice"
+        noIndex
       />
+      <ArchiveBanner />
 
       <SummaryHero
         kicker="Legal Notice"

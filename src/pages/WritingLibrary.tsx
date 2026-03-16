@@ -2,6 +2,7 @@ import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 import { CASE_STUDIES_INDEX, WRITINGS_INDEX } from "@/lib/content-index";
+import ArchiveBanner from "@/components/ArchiveBanner";
 
 export default function WritingLibrary() {
   return (
@@ -9,8 +10,9 @@ export default function WritingLibrary() {
       <PageMeta
         title="Writing Library | Ikwe.ai"
         description="Research notes, analysis, and opinion on AI behavioral safety, governance risk, and what it means to build systems that can be trusted with humans."
-        path="/research/writings"
+        path="/archive/research/writings"
       />
+      <ArchiveBanner type="library" />
       <SummaryHero
         kicker="Research Index"
         title="Writing Library"

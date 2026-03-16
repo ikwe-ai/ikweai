@@ -1,6 +1,7 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
+import ArchiveBanner from "@/components/ArchiveBanner";
 
 export default function Consultation() {
   return (
@@ -8,8 +9,10 @@ export default function Consultation() {
       <PageMeta
         title="Scope Review | Ikwe.ai"
         description="Scope review aligns the depth, timeline, and deliverables of an Ikwe EQ Safety Evaluation before the formal audit sequence begins."
-        path="/consult"
+        path="/archive/consult"
+        noIndex
       />
+      <ArchiveBanner />
 
       <SummaryHero
         kicker="Scope Review"

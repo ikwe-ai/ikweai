@@ -1,6 +1,7 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
+import ArchiveBanner from "@/components/ArchiveBanner";
 
 export default function RecognitionIsNotSafety() {
   return (
@@ -8,9 +9,10 @@ export default function RecognitionIsNotSafety() {
       <PageMeta
         title="Recognition Is Not Safety | Ikwe.ai"
         description="Founder writing abstract on the distinction between emotional recognition and behavioral safety outcomes."
-        path="/research/writings/recognition-is-not-safety"
+        path="/archive/research/writings/recognition-is-not-safety"
         ogImagePath="/og/problem.png"
       />
+      <ArchiveBanner type="library" />
       <SummaryHero
         kicker="Research Note"
         title="Recognition Is Not Safety"

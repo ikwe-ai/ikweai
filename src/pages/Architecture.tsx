@@ -2,6 +2,7 @@ import PageShell from "@/components/PageShell";
 import GatedCallout from "@/components/GatedCallout";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
+import ArchiveBanner from "@/components/ArchiveBanner";
 
 export default function Architecture() {
   const pipeline = [
@@ -42,9 +43,10 @@ export default function Architecture() {
       <PageMeta
         title="Architecture — Evaluation Pipeline | Ikwe.ai"
         description="Public architecture overview for Ikwe's independent behavioral safety evaluation pipeline and governance reporting model."
-        path="/technology/architecture"
+        path="/archive/architecture"
         ogImagePath="/og/governance-gap.png"
       />
+      <ArchiveBanner />
       <SummaryHero
         kicker="System Overview"
         title="How The Evaluation Works"
