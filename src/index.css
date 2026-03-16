@@ -3233,3 +3233,60 @@
     }
   }
 }
+
+/* ── Get Started page ── */
+.gs-input {
+  width: 100%;
+  background: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+  border-radius: 4px;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.85rem;
+  color: hsl(var(--foreground));
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.gs-input::placeholder {
+  color: hsl(var(--foreground-subtle));
+}
+.gs-input:focus {
+  border-color: hsl(var(--lilac));
+}
+.gs-btn-gold {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  background: hsl(var(--amber));
+  color: #111;
+  border: none;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s, opacity 0.2s;
+}
+.gs-btn-gold:hover { background: #f0d48a; }
+.gs-btn-gold:disabled { opacity: 0.6; cursor: not-allowed; }
+.gs-btn-outline {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  background: transparent;
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: var(--font-body);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s, opacity 0.2s;
+}
+.gs-btn-outline:hover {
+  border-color: hsl(var(--lilac));
+  background: hsl(var(--lilac-dim));
+}
+.gs-btn-outline:disabled { opacity: 0.6; cursor: not-allowed; }

@@ -221,12 +221,12 @@ export default function Nav() {
 
           {/* ── CTA ── */}
           {isHome ? (
-            <Link to="/intake#application-form" className="home-nav-cta hidden md:inline-flex">
+            <Link to="/get-started" className="home-nav-cta hidden md:inline-flex">
               Request Evaluation
             </Link>
           ) : (
             <Link
-              to="/intake#application-form"
+              to="/get-started"
               className="hidden md:inline-flex items-center gap-1.5 shrink-0 rounded bg-lilac px-4 py-2 text-xs font-medium text-primary-foreground uppercase tracking-widest hover:bg-lilac-glow transition-colors"
               style={{ fontFamily: "var(--font-mono)" }}
             >
@@ -265,7 +265,7 @@ export default function Nav() {
                   </a>
                 )
               ))}
-              <Link to="/intake#application-form" className="home-nav-mobile-cta" onClick={closeMobileMenu}>
+              <Link to="/get-started" className="home-nav-mobile-cta" onClick={closeMobileMenu}>
                 Request Evaluation
               </Link>
             </nav>
@@ -348,7 +348,7 @@ export default function Nav() {
               </Link>
 
               <Link
-                to="/intake#application-form"
+                to="/get-started"
                 className="mt-2 inline-flex w-full items-center justify-center rounded bg-lilac px-4 py-2.5 text-xs font-medium text-primary-foreground uppercase tracking-widest hover:bg-lilac-glow transition-colors"
                 style={{ fontFamily: "var(--font-mono)" }}
                 onClick={closeMobileMenu}

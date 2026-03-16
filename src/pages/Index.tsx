@@ -195,7 +195,7 @@ export default function Home() {
             </p>
             <p className="home-hero-subtle">Not capability. Trustworthiness.</p>
             <div className="home-hero-actions">
-              <Link to="/intake#application-form" className="home-btn home-btn-gold">
+              <Link to="/get-started" className="home-btn home-btn-gold">
                 Request Evaluation
               </Link>
               <Link to="/benchmark" className="home-btn home-btn-outline">
@@ -685,7 +685,7 @@ export default function Home() {
             </div>
 
             <div className="home-engage-cta">
-              <Link to="/intake#application-form" className="home-btn home-btn-gold home-btn-large">
+              <Link to="/get-started" className="home-btn home-btn-gold home-btn-large">
                 Request Evaluation
               </Link>
               <Link to="/audit" className="home-btn home-btn-outline home-btn-large">
@@ -715,7 +715,7 @@ export default function Home() {
               has to come from outside.
             </p>
             <div className="home-close-actions">
-              <Link to="/intake#application-form" className="home-btn home-btn-gold">
+              <Link to="/get-started" className="home-btn home-btn-gold">
                 Request Evaluation
               </Link>
               <Link to="/benchmark" className="home-btn home-btn-outline">

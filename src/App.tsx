@@ -32,6 +32,7 @@ import AIGovernanceCompliance from "./pages/writings/AIGovernanceCompliance";
 import ChooseYourPath from "./pages/writings/ChooseYourPath";
 import EmotionalAiHighTrustEnvironments from "./pages/writings/EmotionalAiHighTrustEnvironments";
 import CaseStudyDetail from "./pages/cases/CaseStudyDetail";
+import GetStarted from "./pages/GetStarted";
 
 const queryClient = new QueryClient();
 
@@ -77,6 +78,7 @@ const App = () => (
           <Route path="/audit" element={<Audit />} />
           <Route path="/audit.html" element={<Navigate to="/audit" replace />} />
           <Route path="/trust" element={<Trust />} />
+          <Route path="/get-started" element={<GetStarted />} />
           <Route path="/intake" element={<Contact />} />
           <Route path="/intake.html" element={<Navigate to="/intake" replace />} />
           <Route path="/request-audit" element={<Navigate to="/intake" replace />} />
