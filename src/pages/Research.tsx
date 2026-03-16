@@ -64,7 +64,7 @@ export default function Research() {
                 href="/get-started"
                 className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
               >
-                Request Full Report Access
+                Get Started
               </a>
               <a
                 href="#benchmark-framework"
@@ -73,15 +73,6 @@ export default function Research() {
                 View Benchmark Framework
               </a>
             </div>
-            <ActionDock
-              title="Next Step"
-              subtitle="Use the findings for executive alignment, then request scope for your system."
-              items={[
-                { href: "/get-started", label: "Request Ikwe EQ Safety Evaluation", tone: "primary" },
-                { href: "/benchmark", label: "Open Public Index", tone: "outline" },
-                { href: "/audit#deliverables-previews", label: "View Sample Outputs", tone: "quiet" },
-              ]}
-            />
           </div>
           <aside className="site-hero-rail card-surface p-5">
             <div className="summary-headline-strip">
@@ -97,6 +88,16 @@ export default function Research() {
       </section>
 
       <ConnectedPages current="research" />
+
+      <ActionDock
+        title="Next Step"
+        subtitle="Use the findings for executive alignment, then request scope for your system."
+        items={[
+          { href: "/get-started", label: "Request Ikwe EQ Safety Evaluation", tone: "primary" },
+          { href: "/benchmark", label: "Open Public Index", tone: "outline" },
+          { href: "/audit#deliverables-previews", label: "View Sample Outputs", tone: "quiet" },
+        ]}
+      />
 
       <section className="site-section py-10 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Research Snapshot</p>

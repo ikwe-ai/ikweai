@@ -1,5 +1,6 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
+import SummaryHero from "@/components/SummaryHero";
 import EnterpriseStepper from "@/components/EnterpriseStepper";
 import ActionDock from "@/components/ActionDock";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
@@ -171,47 +172,39 @@ export default function Audit() {
         ogImagePath="/og/audit.png"
       />
 
-      <section className="site-section py-14 border-b border-border audit-hero">
-        <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">Ikwe EQ Safety Evaluation</p>
-        <p className="text-xs text-foreground-subtle mb-4">
-          Framework basis: EQ Safety Benchmark {BENCHMARK_CURRENT.version} · Updated {BENCHMARK_CURRENT.lastUpdated}
-        </p>
-        <h1 className="font-display fluid-title text-foreground mb-4">Behavioral Safety Validation for AI systems.</h1>
-        <p className="text-foreground-muted lede mb-6">
-          Start with the EQ Safety Benchmark framework, establish a documented risk baseline through an Ikwe EQ Safety
-          Evaluation, then extend into remediation support and Ikwe Behavioral Monitoring as needed. This pathway is
-          built for CTO and CFO decisions, not just technical review.
-        </p>
-        <div className="summary-headline-strip mb-7 max-w-4xl">
-          <div className="summary-headline-item">{BENCHMARK_CURRENT.nValue}</div>
-          <div className="summary-headline-item">{BENCHMARK_CURRENT.scenarios} scenarios</div>
-          <div className="summary-headline-item">{BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)</div>
-          <div className="summary-headline-item">Stage 1 Safety Gate + Stage 2 conditional scoring</div>
-        </div>
-        <div className="flex flex-wrap gap-3">
-          <a
-            href="/get-started"
-            className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
-          >
-            Request Ikwe EQ Safety Evaluation
-          </a>
-          <a
-            href="#validation-pathway"
-            className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
-          >
-            View the Validation Pathway ↓
-          </a>
-        </div>
-        <div className="flex flex-wrap gap-2 mt-4">
-          <a href="#engagement-levels" className="summary-jump">Engagement levels</a>
-          <a href="#validation-pathway" className="summary-jump">Full pathway detail</a>
-          <a href="#request-start" className="summary-jump">Request evaluation</a>
-        </div>
-        <p className="text-xs text-foreground-subtle mt-3">
-          Use engagement levels for fast stage selection, then open detailed scope only where needed.
-        </p>
+      <SummaryHero
+        kicker={`Ikwe EQ Safety Evaluation · EQ Safety Benchmark ${BENCHMARK_CURRENT.version}`}
+        title="Behavioral Safety Validation for AI systems."
+        summary="Start with the EQ Safety Benchmark framework, establish a documented risk baseline through an Ikwe EQ Safety Evaluation, then extend into remediation support and Ikwe Behavioral Monitoring as needed. This pathway is built for CTO and CFO decisions, not just technical review."
+        highlights={[
+          BENCHMARK_CURRENT.nValue,
+          `${BENCHMARK_CURRENT.scenarios} scenarios`,
+          `${BENCHMARK_CURRENT.domains} behavioral domains`,
+          "Safety Gate + 8 weighted dimensions",
+        ]}
+        primaryAction={{ href: "/get-started", label: "Request Ikwe EQ Safety Evaluation" }}
+        secondaryAction={{ href: "#validation-pathway", label: "View the Validation Pathway ↓" }}
+        jumpLinks={[
+          { href: "#engagement-levels", label: "Engagement levels" },
+          { href: "#validation-pathway", label: "Full pathway detail" },
+          { href: "#request-start", label: "Request evaluation" },
+        ]}
+        visual={{
+          kicker: `Updated ${BENCHMARK_CURRENT.lastUpdated}`,
+          title: "The validation pathway",
+          points: [
+            "Stage 01 — EQ Safety Evaluation",
+            "Stage 02 — Implementation Support",
+            "Stage 03 — Behavioral Monitoring",
+            "Stage 04 — Certification (2026)",
+          ],
+          tone: "danger",
+        }}
+      />
 
-        <div className="audit-decision-grid mt-6">
+      <section className="site-section py-8 border-b border-border">
+        <p className="text-xs text-foreground-subtle mb-5">Use these to jump to the right stage for your situation.</p>
+        <div className="audit-decision-grid">
           <article className="audit-decision-card">
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-1">Start</p>
             <p className="text-sm text-foreground">Need a risk baseline and board-ready evidence.</p>
