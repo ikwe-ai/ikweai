@@ -74,7 +74,7 @@ export default function CaseStudyDetail() {
 
         {"signals" in entry && entry.signals ? (
           <div id="observed-signals" className="mt-10 scroll-mt-24">
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">
+            <p className="section-kicker mb-4">
               Observed Signals
             </p>
             <ul className="space-y-2 text-sm text-foreground-muted">
@@ -87,7 +87,7 @@ export default function CaseStudyDetail() {
 
         {"interventions" in entry && entry.interventions ? (
           <div id="governance-interventions" className="mt-10 scroll-mt-24">
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">
+            <p className="section-kicker mb-4">
               Governance Interventions
             </p>
             <ul className="space-y-2 text-sm text-foreground-muted">
@@ -100,7 +100,7 @@ export default function CaseStudyDetail() {
 
         {"outcomes" in entry && entry.outcomes ? (
           <div id="outcome-snapshot" className="mt-10 scroll-mt-24">
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">
+            <p className="section-kicker mb-4">
               Outcome Snapshot
             </p>
             <ul className="space-y-2 text-sm text-foreground-muted">

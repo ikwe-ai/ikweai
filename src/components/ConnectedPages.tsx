@@ -36,7 +36,7 @@ const pages = [
 export default function ConnectedPages({ current }: ConnectedPagesProps) {
   return (
     <section className="site-section py-8 border-b border-border">
-      <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-5">Connected Pages</p>
+      <p className="section-kicker mb-5">Connected Pages</p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
         {pages.map((page) => {
           const active = page.key === current;

@@ -33,24 +33,24 @@ export default function Consultation() {
       />
 
       <section id="how-it-fits" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">How Scope Review Fits</p>
+        <p className="section-kicker mb-6">How Scope Review Fits</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <article className="card-surface p-5">
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-2">01</p>
+            <p className="section-kicker mb-2">01</p>
             <h2 className="font-display text-lg mb-2">Submit Audit Request</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
               Provide deployment context, risk domain, and review objective using the request form.
             </p>
           </article>
           <article className="card-surface p-5">
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-2">02</p>
+            <p className="section-kicker mb-2">02</p>
             <h2 className="font-display text-lg mb-2">Scope Review</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
               Align scope depth, output expectations, and timeline boundaries for the engagement.
             </p>
           </article>
           <article className="card-surface p-5">
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-2">03</p>
+            <p className="section-kicker mb-2">03</p>
             <h2 className="font-display text-lg mb-2">Audit Overview</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
               Move into the formal audit sequence and output delivery process.
@@ -60,7 +60,7 @@ export default function Consultation() {
       </section>
 
       <section id="scope-review-uses" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">When To Use Scope Review</p>
+        <p className="section-kicker mb-6">When To Use Scope Review</p>
         <div className="space-y-3 text-sm text-foreground-muted max-w-2xl">
           <p>Use scope review when deployment context is complex, multi-surface, or institutionally high-sensitivity.</p>
           <p>Use scope review when the organization needs outputs shaped for board, insurer, or governance review flows.</p>
@@ -70,7 +70,7 @@ export default function Consultation() {
 
       <section id="next-actions" className="py-14">
         <div className="card-surface p-6">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Next Actions</p>
+          <p className="section-kicker mb-3">Next Actions</p>
           <div className="flex flex-wrap items-center gap-5 text-sm">
             <a href="/get-started" className="link-lilac">
               Open request form →

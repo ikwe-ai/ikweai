@@ -417,7 +417,7 @@ export default function Contact() {
               <input type="hidden" name="submitted_at" value={new Date().toISOString()} />
 
               <div>
-                <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest">
+                <p className="section-kicker">
                   Independent Evaluation Intake
                 </p>
                 <p className="text-xs text-foreground-subtle mt-1">Fields marked * are required.</p>

@@ -32,7 +32,7 @@ export default function WritingLibrary() {
       />
 
       <section id="writings" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Writings</p>
+        <p className="section-kicker mb-8">Writings</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
           {WRITINGS_INDEX.map((writing) => (
             <article key={writing.title} className="card-surface p-5 space-y-3">
@@ -68,7 +68,7 @@ export default function WritingLibrary() {
       </section>
 
       <section id="case-analyses" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Case Analyses</p>
+        <p className="section-kicker mb-8">Case Analyses</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {CASE_STUDIES_INDEX.map((item) => (
             <article key={item.title} className="card-surface p-5">
@@ -100,7 +100,7 @@ export default function WritingLibrary() {
       </section>
 
       <section id="press-updates" className="py-14">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">Press & Updates</p>
+        <p className="section-kicker mb-4">Press & Updates</p>
         <p className="text-sm text-foreground-muted leading-relaxed max-w-2xl mb-4">
           Team media notes, benchmark updates, and newsletter-style publications are maintained in the Research
           press section.
