@@ -34,7 +34,7 @@ export default function AIGovernanceCompliance() {
       />
 
       <section className="py-14 border-b border-border max-w-3xl article-reading">
-        <p id="trust-layer-thesis" className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6 scroll-mt-24">
+        <p id="trust-layer-thesis" className="section-kicker mb-6 scroll-mt-24">
           Trust-Layer Thesis
         </p>
 

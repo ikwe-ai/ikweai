@@ -169,7 +169,7 @@ export default function Reports() {
       </section>
 
       <section id="output-previews" className="site-section py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Deliverables Previews</p>
+        <p className="section-kicker mb-8">Deliverables Previews</p>
         <details className="progressive-details mb-5 max-w-4xl">
           <summary
             aria-label="Toggle sample report note"
@@ -225,7 +225,7 @@ export default function Reports() {
       </section>
 
       <section id="transparency-boundary" className="site-section py-14">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">What&apos;s public, what&apos;s not</p>
+        <p className="section-kicker mb-8">What&apos;s public, what&apos;s not</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-5xl">
           <article className="card-surface p-6">
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Public</p>

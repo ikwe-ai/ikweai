@@ -71,7 +71,7 @@ export default function Samples() {
       />
 
       <section id="sample-access" className="site-section py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">Sample Access</p>
+        <p className="section-kicker mb-7">Sample Access</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
           <article className="card-surface p-6">
             <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">Public Excerpt</p>
@@ -118,7 +118,7 @@ export default function Samples() {
       </section>
 
       <section id="deliverables" className="site-section py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">What You Receive</p>
+        <p className="section-kicker mb-7">What You Receive</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
           {deliverableItems.map((item) => (
             <article key={item.title} className="card-surface p-5">
@@ -134,7 +134,7 @@ export default function Samples() {
       </section>
 
       <section id="faq" className="site-section py-14 border-b border-border max-w-4xl">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">FAQ</p>
+        <p className="section-kicker mb-7">FAQ</p>
         <div className="space-y-0 divide-y divide-border">
           {faqs.map((item) => (
             <article key={item.q} className="py-5">
@@ -147,7 +147,7 @@ export default function Samples() {
 
       <section className="site-section py-14">
         <article className="card-surface p-6 max-w-4xl">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Ready to validate your system?</p>
+          <p className="section-kicker mb-3">Ready to validate your system?</p>
           <h2 className="font-display text-3xl text-foreground mb-2">Request Third-Party Independent Evaluation.</h2>
           <p className="text-sm text-foreground-muted leading-relaxed mb-5">
             Start with intake. We scope around your deployment architecture, risk exposure, and decision timeline for

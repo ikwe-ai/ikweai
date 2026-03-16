@@ -30,7 +30,7 @@ export default function CaseStudies() {
       />
 
       <section id="cases" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Case Index</p>
+        <p className="section-kicker mb-8">Case Index</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {CASE_STUDIES_INDEX.map((item) => (
             <article key={item.slug} className="card-surface p-5">

@@ -31,7 +31,7 @@ export default function RecognitionIsNotSafety() {
       />
 
       <section id="research-note" className="py-14 border-b border-border max-w-3xl article-reading">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Research Note</p>
+        <p className="section-kicker mb-6">Research Note</p>
         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
           A system can correctly detect emotional distress and still fail at behavioral safety. Recognition quality and
           safety quality are related, but they are not the same control objective.

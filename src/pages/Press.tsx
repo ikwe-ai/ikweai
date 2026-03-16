@@ -75,7 +75,7 @@ export default function Press() {
       />
 
       <section id="benchmark-framing" className="py-14 border-b border-border max-w-5xl">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">Benchmark Framing</p>
+        <p className="section-kicker mb-7">Benchmark Framing</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <article className="card-surface p-5">
             <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">Stage 1</p>
@@ -95,7 +95,7 @@ export default function Press() {
       </section>
 
       <section id="published-communications" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Published Communications</p>
+        <p className="section-kicker mb-8">Published Communications</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
           {publications.map((item) => (
             <article key={item.title} className="card-surface p-5 flex flex-col gap-3">
@@ -111,7 +111,7 @@ export default function Press() {
       </section>
 
       <section id="upcoming-communications" className="py-14 border-b border-border max-w-3xl">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Upcoming</p>
+        <p className="section-kicker mb-6">Upcoming</p>
         <div className="space-y-0 divide-y divide-border">
           {upcoming.map((item) => (
             <div key={item.title} className="py-5">

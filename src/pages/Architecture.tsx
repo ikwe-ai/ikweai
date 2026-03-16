@@ -68,7 +68,7 @@ export default function Architecture() {
 
       {/* Pipeline overview */}
       <section id="pipeline" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Evaluation Pipeline</p>
+        <p className="section-kicker mb-8">Evaluation Pipeline</p>
         <div className="space-y-0 max-w-2xl">
           {pipeline.map(({ step, title, body }) => (
             <div key={step} className="flex gap-6 py-8 border-b border-border last:border-b-0">
@@ -83,7 +83,7 @@ export default function Architecture() {
       </section>
 
       <section id="control-terms" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Why Independent Evaluation Matters</p>
+        <p className="section-kicker mb-6">Why Independent Evaluation Matters</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
           <article className="card-surface p-6">
             <p className="text-sm text-foreground-muted leading-relaxed">
@@ -111,7 +111,7 @@ export default function Architecture() {
 
       {/* What's not here */}
       <section id="public-scope" className="py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Public Scope</p>
+        <p className="section-kicker mb-6">Public Scope</p>
         <p className="text-sm text-foreground-muted max-w-xl leading-relaxed mb-6">
           This page provides a public overview only. Detailed process documentation and implementation-specific technical
           documents are not publicly displayed.

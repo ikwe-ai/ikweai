@@ -34,7 +34,7 @@ export default function IpNotice() {
       />
 
       <section id="ownership" className="py-14 border-b border-border max-w-3xl">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Ownership</p>
+        <p className="section-kicker mb-6">Ownership</p>
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
           Ikwe.ai is operated by Visible Healing Inc. All site content, benchmark materials, report formats, and
           release documentation are owned by Visible Healing Inc. unless otherwise stated.
@@ -45,7 +45,7 @@ export default function IpNotice() {
       </section>
 
       <section id="permitted-use" className="py-14 border-b border-border max-w-3xl">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Permitted Use</p>
+        <p className="section-kicker mb-6">Permitted Use</p>
         <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
           <li>• You may reference and cite published public pages with attribution to Ikwe.ai.</li>
           <li>• You may share links to public benchmark pages and public writing pages.</li>
@@ -54,7 +54,7 @@ export default function IpNotice() {
       </section>
 
       <section id="restricted-use" className="py-14 border-b border-border max-w-3xl">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Restricted Use</p>
+        <p className="section-kicker mb-6">Restricted Use</p>
         <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
           <li>• No reproduction, redistribution, or derivative implementation of benchmark materials without written permission.</li>
           <li>• No use of Ikwe.ai names or marks in a way that implies partnership, endorsement, or certification without authorization.</li>
@@ -63,7 +63,7 @@ export default function IpNotice() {
       </section>
 
       <section id="contact" className="py-14 max-w-3xl">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">Permission Requests</p>
+        <p className="section-kicker mb-4">Permission Requests</p>
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
           For licensing, republication, or brand/name usage requests, contact:
         </p>

@@ -121,7 +121,7 @@ export default function About() {
           to a specific methodological state.
         </p>
         <div className="stat-block rounded p-5">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-2">Current Version Reference</p>
+          <p className="section-kicker mb-2">Current Version Reference</p>
           <p className="text-sm text-foreground">Public benchmark snapshot · Updated {BENCHMARK_CURRENT.lastUpdated}</p>
           <p className="text-xs text-foreground-subtle mt-1">
             {BENCHMARK_COPY.snapshotLine}
