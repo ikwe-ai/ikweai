@@ -190,12 +190,12 @@ export default function Home() {
               <em>safety test.</em>
             </h1>
             <p className="home-hero-sub">
-              If your mental health or youth-facing AI has never had an independent behavioral audit, you don't know
-              whether it makes vulnerable users safer — or quietly makes things worse.
+              If your human-facing AI has never had an independent behavioral audit, you don't know whether it
+              protects users in vulnerable moments — or quietly makes things worse.
             </p>
             <p className="home-hero-subtle">
               We run independent behavioral safety audits on human-facing AI systems and produce documented evidence
-              your board, legal team, and clinical advisors can trust.
+              your board, legal team, and compliance advisors can trust.
             </p>
             <div className="home-hero-actions">
               <Link to="/get-started" className="home-btn home-btn-gold">
@@ -226,7 +226,9 @@ export default function Home() {
           <div className="home-wrap">
             <p className="home-plain-p">
               Ikwe is the behavioral safety layer for human-facing AI. We evaluate how your system behaves when users
-              are distressed, suicidal, spiraling, or highly impressionable — not just whether it's "on policy."
+              are distressed, in crisis, or emotionally vulnerable — whether that's a mental health app, a youth
+              platform, a companion AI, or any system that reaches people in high-stakes moments. Not just whether
+              it's "on policy."
             </p>
             <p className="home-plain-p">
               Our EQ Safety Benchmark and Safety Gate framework measure whether your system stabilizes, escalates, or
