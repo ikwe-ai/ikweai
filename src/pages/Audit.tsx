@@ -190,7 +190,7 @@ export default function Audit() {
         </div>
         <div className="flex flex-wrap gap-3">
           <a
-            href="/intake#application-form"
+            href="/get-started"
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
           >
             Request Ikwe EQ Safety Evaluation
@@ -258,7 +258,7 @@ export default function Audit() {
         title="Next Step"
         subtitle="Pick your stage, confirm scope, and start independent evaluation."
         items={[
-          { href: "/intake#application-form", label: "Request Ikwe EQ Safety Evaluation", tone: "primary" },
+          { href: "/get-started", label: "Request Ikwe EQ Safety Evaluation", tone: "primary" },
           { href: "#validation-pathway", label: "Validation Pathway", tone: "outline" },
           {
             href: "/forms/ikwe-intake-form-fillable.pdf",
@@ -508,7 +508,7 @@ export default function Audit() {
               </p>
               <div className="flex flex-wrap gap-3 mb-4">
                 <a
-                  href="/intake#application-form"
+                  href="/get-started"
                   className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
                 >
                   Request Ikwe EQ Safety Evaluation

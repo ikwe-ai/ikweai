@@ -62,7 +62,7 @@ export default function Press() {
           `${BENCHMARK_CURRENT.failedGatePct} emotional risk pattern prevalence`,
           `${BENCHMARK_CURRENT.noRepairPct} safety gate fail rate`,
         ]}
-        primaryAction={{ href: "/intake#application-form", label: "Request Evaluation →" }}
+        primaryAction={{ href: "/get-started", label: "Request Evaluation →" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
         jumpLinks={[
           { href: "#benchmark-framing", label: "Benchmark Framing" },
@@ -125,7 +125,7 @@ export default function Press() {
           For media requests, include your outlet, deadline, and topic scope. Use the audit request form as the
           primary intake path; scope review follows for briefing alignment.
         </p>
-        <a href="/intake#application-form" className="text-sm link-lilac">
+        <a href="/get-started" className="text-sm link-lilac">
           Open request intake →
         </a>
       </section>

@@ -97,7 +97,7 @@ export default function Reports() {
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <a
-                href="/intake#application-form"
+                href="/get-started"
                 className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
               >
                 Request Evaluation
@@ -123,7 +123,7 @@ export default function Reports() {
               title="Next Step"
               subtitle="Review sample outputs now, then request a scoped evaluation plan."
               items={[
-                { href: "/intake#application-form", label: "Request Evaluation", tone: "primary" },
+                { href: "/get-started", label: "Request Evaluation", tone: "primary" },
                 {
                   href: SAMPLE_REPORT_PAGE_PATH,
                   label: "Open Sample Report",
@@ -206,7 +206,7 @@ export default function Reports() {
               <div className="progressive-details-body">
                   <p className="text-sm text-foreground-muted leading-relaxed">{item.detail}</p>
                   <div className="flex flex-wrap gap-2">
-                    <a href="/intake#application-form" className="summary-jump">
+                    <a href="/get-started" className="summary-jump">
                       Request this output
                     </a>
                     <button
@@ -253,7 +253,7 @@ export default function Reports() {
 
         <div className="mt-7 flex flex-wrap gap-3">
           <a
-            href="/intake#application-form"
+            href="/get-started"
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
           >
             Request Evaluation
@@ -274,7 +274,7 @@ export default function Reports() {
         <div className="flex flex-wrap gap-2 mt-4">
           <a href="/research" className="summary-jump">Research evidence</a>
           <a href="/audit" className="summary-jump">Audit &amp; Validation</a>
-          <a href="/intake#application-form" className="summary-jump">Request intake</a>
+          <a href="/get-started" className="summary-jump">Request intake</a>
         </div>
       </section>
 
