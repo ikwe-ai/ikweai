@@ -51,29 +51,7 @@ const flowSteps = [
   { number: "01", title: "User in distress", subtitle: "Vulnerable moment" },
   { number: "02", title: "AI response", subtitle: "What the system does" },
   { number: "03", title: "Independent review", subtitle: "How it actually behaves", featured: true },
-  { number: "04", title: "Risk summary + next steps", subtitle: "Clear decision support" },
-] as const;
-
-const architectureStackTop = [
-  {
-    title: "AI System",
-    body: "The application, assistant, or agent your team is shipping.",
-  },
-  {
-    title: "Human Interaction",
-    body: "Where the system meets vulnerable users and emotionally sensitive contexts.",
-  },
-] as const;
-
-const architectureStackBottom = [
-  {
-    title: "Governance Evidence",
-    body: "Clear documentation for product, legal, compliance, and leadership teams.",
-  },
-  {
-    title: "Deployment Decisions",
-    body: "A defensible basis for launch, remediation, or ongoing monitoring decisions.",
-  },
+  { number: "04", title: "Risk score + report", subtitle: "Audit-ready output" },
 ] as const;
 
 const audiencePills = [
@@ -175,8 +153,8 @@ const engagementLevels = [
   },
   {
     level: "LEVEL III",
-    title: "Ikwe Behavioral Monitoring",
-    description: "Continuous behavioral drift monitoring after each deployment change. Quarterly re-evaluation.",
+    title: "Ongoing Governance Monitoring",
+    description: "Continuous behavioral drift monitoring after each deployment change. Quarterly re-evaluation to catch degradation before it reaches incident scale.",
     forItems: ["Live systems at scale", "High-consequence AI deployment", "Sustained regulatory posture"],
     result: "Your system has an independent behavioral safety record — versioned and defensible over time.",
   },
@@ -245,15 +223,6 @@ export default function Home() {
 
         <section id="thesis" className="home-section home-band">
           <div className="home-wrap">
-            <div className="mb-10 max-w-3xl">
-              <p className="text-foreground-muted leading-relaxed border-l-2 border-lilac pl-5 text-base">
-                The EQ Safety Benchmark is a behavioral evaluation framework that scores AI responses using a binary
-                Safety Gate and eight weighted dimensions. It can be applied to any scenario or interaction and is
-                validated against a baseline of 79 real-world emotional support interaction scenarios drawn from
-                established datasets.
-              </p>
-            </div>
-
             <div className="home-grid-two">
               <div>
                 <span className="home-eyebrow">The Problem</span>
@@ -278,7 +247,7 @@ export default function Home() {
               </div>
 
               <div>
-                <span className="home-eyebrow">What Most Reviews Miss</span>
+                <span className="home-eyebrow">What Existing Governance Misses</span>
                 <div className="home-gap-table">
                   <div className="home-gap-header">
                     <div className="home-gap-heading home-gap-heading-muted">Current Governance Covers</div>
@@ -291,7 +260,7 @@ export default function Home() {
                     </div>
                   ))}
                   <div className="home-gap-foot">
-                    This is the gap between a model that looks acceptable and one that is actually safe to deploy.
+                    Behavioral safety is the missing operational layer in current governance frameworks.
                   </div>
                 </div>
 
@@ -366,9 +335,9 @@ export default function Home() {
           <div className="home-wrap">
             <span className="home-eyebrow">How Behavioral Safety Validation Works</span>
             <h2 className="home-section-title">
-              A structured evaluation system
+              Simple enough to explain.
               <br />
-              designed for emotional AI interactions.
+              Specific enough to act on.
             </h2>
 
             <div className="home-core-callout">
@@ -403,90 +372,7 @@ export default function Home() {
 
         <div className="home-divider" />
 
-        <section id="architecture" className="home-section home-section-merge home-section-cluster-start">
-          <div className="home-wrap">
-            <div className="home-center-block">
-              <span className="home-eyebrow">Where Ikwe Fits</span>
-              <h2 className="home-section-title home-section-title-center">The missing layer in AI governance.</h2>
-              <p className="home-section-subtext">
-                Most AI governance frameworks measure capability, bias, and compliance. Ikwe measures how systems behave
-                against real-world behavioral risk scenarios and monitors live outputs for drift over time.
-              </p>
-            </div>
-
-            <div className="max-w-6xl space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {architectureStackTop.map((item, index) => (
-                  <article key={item.title} className="card-surface p-5">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">0{index + 1}</p>
-                    <h3 className="font-display text-xl text-foreground mb-2">{item.title}</h3>
-                    <p className="text-sm text-foreground-muted leading-relaxed">{item.body}</p>
-                  </article>
-                ))}
-              </div>
-
-              <p className="font-mono text-sm text-center text-foreground-subtle">↓</p>
-
-              <article className="card-surface p-6">
-                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">
-                  03 IKWE BEHAVIORAL SAFETY LAYER
-                </p>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                  <div className="rounded border border-border bg-background-surface px-4 py-4">
-                    <h3 className="font-display text-xl text-foreground mb-3">EQ Safety Benchmark</h3>
-                    <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-                      <li>• Binary Safety Gate</li>
-                      <li>• 8 weighted behavioral dimensions</li>
-                      <li>• Framework can score any response</li>
-                      <li>• Built for emotionally sensitive contexts</li>
-                    </ul>
-                  </div>
-                  <div className="rounded border border-border bg-background-surface px-4 py-4">
-                    <h3 className="font-display text-xl text-foreground mb-3">Frontier AI Behavioral Safety Index</h3>
-                    <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-                      <li>• 79 real-world baseline scenarios</li>
-                      <li>• Scenarios sourced from established datasets</li>
-                      <li>• Public frontier model scoring</li>
-                      <li>• Continuously updated public record</li>
-                    </ul>
-                  </div>
-                  <div className="rounded border border-border bg-background-surface px-4 py-4">
-                    <h3 className="font-display text-xl text-foreground mb-3">Ikwe EQ Safety Evaluation</h3>
-                    <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
-                      <li>• Private client benchmark evaluations</li>
-                      <li>• Optional client-specific scenarios</li>
-                      <li>• Comparison to public index scores</li>
-                      <li>• Ikwe Behavioral Monitoring for live outputs</li>
-                    </ul>
-                  </div>
-                </div>
-              </article>
-
-              <p className="font-mono text-sm text-center text-foreground-subtle">↓</p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {architectureStackBottom.map((item, index) => (
-                  <article key={item.title} className="card-surface p-5">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">0{index + 4}</p>
-                    <h3 className="font-display text-xl text-foreground mb-2">{item.title}</h3>
-                    <p className="text-sm text-foreground-muted leading-relaxed">{item.body}</p>
-                  </article>
-                ))}
-              </div>
-
-              <div className="home-hero-actions">
-                <Link to="/technology/architecture" className="home-btn home-btn-outline">
-                  View Architecture
-                </Link>
-                <Link to="/research" className="home-btn home-btn-outline">
-                  Read Research Summary
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="benchmark" className="home-section home-section-merge">
+        <section id="benchmark" className="home-section home-section-cluster-start">
           <div className="home-wrap">
             <div className="home-grid-two home-benchmark-header">
               <div>
@@ -529,61 +415,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="safety-gate" className="home-section home-band home-section-merge">
-          <div className="home-wrap">
-            <span className="home-eyebrow">The Safety Gate</span>
-            <h2 className="home-section-title">
-              Binary Pass/Fail Gate Testing
-              <br />
-              Under Pressure.
-            </h2>
-            <p className="home-section-subtext home-section-subtext-left">
-              The first question isn&apos;t how well it performs. It&apos;s whether it&apos;s safe to deploy with
-              humans at all. Before dimensional scoring begins, we determine whether harmful behavioral patterns appear
-              at all.
-            </p>
-
-            <div className="home-grid-two">
-              <div>
-                <div className="home-column-label">Failure Patterns We Test For</div>
-                <div className="home-list-stack">
-                  {[
-                    "Crisis mishandling",
-                    "Harmful reframing",
-                    "Premature closure",
-                    "Escalation amplification",
-                    "Authority displacement",
-                    "Inadequate repair",
-                  ].map((item) => (
-                    <div key={item} className="home-list-card">
-                      {item}
-                    </div>
-                  ))}
-                </div>
-                <div className="home-pullquote">
-                  44.9% of systems fail the binary Safety Gate. The first question is never performance. It&apos;s
-                  whether the system is safe to deploy with humans.
-                </div>
-              </div>
-
-              <div>
-                <div className="home-column-label">Three Possible Outcomes</div>
-                <div className="home-list-stack">
-                  {[
-                    ["✕ Fail", "Unacceptable risk present"],
-                    ["! Conditional Pass", "Issues require mitigation"],
-                    ["✓ Pass", "No immediate failures detected"],
-                  ].map(([result, meaning]) => (
-                    <div key={result} className="home-list-card">
-                      <strong>{result}</strong> — {meaning}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section id="system" className="home-section home-band home-section-merge">
           <div className="home-wrap">
             <span className="home-eyebrow">How We Evaluate</span>
@@ -593,7 +424,7 @@ export default function Home() {
               One infrastructure.
             </h2>
             <p className="home-section-subtext home-section-subtext-left">
-              Each step builds on the last — from immediate risk detection to ongoing drift monitoring.
+              Each step builds on the last — from immediate risk detection to ongoing drift monitoring. You choose how deep you need to go.
             </p>
 
             <div className="home-phases">
@@ -616,9 +447,9 @@ export default function Home() {
                 },
                 {
                   number: "03",
-                  title: "Ikwe Behavioral Monitoring",
+                  title: "Ongoing Governance Monitoring",
                   description:
-                    "Continuous behavioral drift monitoring after each deployment change. Quarterly re-evaluation. A versioned, defensible safety record.",
+                    "Continuous behavioral drift monitoring after each deployment change. Quarterly re-evaluation to catch degradation before it reaches incident scale. A versioned, defensible safety record that compounds over time.",
                   tag: "Continuous",
                   outcome: "Sustained safety posture over time",
                 },
