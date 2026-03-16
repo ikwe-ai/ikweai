@@ -51,7 +51,7 @@ export default function About() {
 
       {/* Independence */}
       <section id="independence" className="site-section py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Independence</p>
+        <p className="section-kicker mb-6">Independence</p>
         <h2 className="font-display text-2xl text-foreground mb-4">No commercial affiliations</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
           The EQ Safety Benchmark is a behavioral evaluation framework that scores AI responses using a binary Safety
@@ -108,7 +108,7 @@ export default function About() {
 
       {/* Versioning standards */}
       <section id="versioning" className="site-section py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Versioning Standards</p>
+        <p className="section-kicker mb-6">Versioning Standards</p>
         <h2 className="font-display text-2xl text-foreground mb-4">Version lock is enforced on released results</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
           Once a study metric block is published, those values are frozen. If methodology changes, a new version is

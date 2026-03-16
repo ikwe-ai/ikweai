@@ -226,7 +226,7 @@ export default function Audit() {
       <ConnectedPages current="audit" />
 
       <section id="deliverables-previews" className="site-section py-10 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Evaluation At A Glance</p>
+        <p className="section-kicker mb-6">Evaluation At A Glance</p>
         <StatsRow className="max-w-6xl mb-4" />
         <DeliverablesGrid className="max-w-6xl mb-4" />
         <ArtifactsPreviewRow className="max-w-6xl mb-4" />
@@ -234,7 +234,7 @@ export default function Audit() {
       </section>
 
       <section id="engagement-levels" className="site-section py-10 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Engagement Levels</p>
+        <p className="section-kicker mb-6">Engagement Levels</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
           {engagementLevels.map((item) => (
             <article key={item.level} className="card-surface p-5">
@@ -265,7 +265,7 @@ export default function Audit() {
       <section id="validation-pathway" className="site-section py-14 border-b border-border audit-section-block">
         <div className="audit-section-layout">
           <div className="audit-section-head">
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">The Validation Pathway</p>
+            <p className="section-kicker mb-6">The Validation Pathway</p>
             <p className="text-sm text-foreground-muted leading-relaxed measure text-pretty mb-8">
               Most teams start with Ikwe EQ Safety Evaluation, then add Implementation Support or Ikwe Behavioral
               Monitoring based on risk profile and timeline.
@@ -356,7 +356,7 @@ export default function Audit() {
       <section id="deep-dive" className="site-section py-14 border-b border-border audit-section-block">
         <div className="audit-section-layout">
           <div className="audit-section-head">
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Optional Detail</p>
+            <p className="section-kicker mb-6">Optional Detail</p>
             <p className="text-sm text-foreground-muted leading-relaxed measure text-pretty">
               Decision-critical flow appears above. Use these sections only when your team needs deeper review.
             </p>

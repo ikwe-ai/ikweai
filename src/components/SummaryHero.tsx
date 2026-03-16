@@ -77,23 +77,23 @@ export default function SummaryHero({
   return (
     <section className="site-section summary-hero border-b border-border">
       <div
-        className={`relative z-10 py-6 md:py-8 ${
-          hasRail ? "grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8" : ""
+        className={`relative z-10 py-10 md:py-16 ${
+          hasRail ? "grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-10" : ""
         }`}
       >
         <div className="max-w-3xl">
-          <p className="font-mono text-[11px] text-lilac uppercase tracking-widest mb-3">{kicker}</p>
-          <h1 className="font-display fluid-title text-foreground mb-3">{title}</h1>
+          <p className="section-kicker-live mb-4">{kicker}</p>
+          <h1 className="font-display fluid-title text-foreground mb-4">{title}</h1>
           <p className="text-foreground-muted lede">{summary}</p>
 
           {(primaryAction || secondaryAction) && (
-            <div className="flex flex-wrap gap-2.5 mt-5">
+            <div className="flex flex-wrap gap-3 mt-7">
               {primaryAction ? (
                 primaryAction.onClick ? (
                   <button
                     type="button"
                     onClick={primaryAction.onClick}
-                    className="inline-flex items-center rounded bg-lilac px-4 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+                    className="inline-flex items-center rounded bg-lilac px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
                     style={{ fontFamily: "var(--font-body)" }}
                   >
                     {primaryAction.label}
@@ -101,7 +101,7 @@ export default function SummaryHero({
                 ) : (
                   <a
                     href={primaryAction.href}
-                    className="inline-flex items-center rounded bg-lilac px-4 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+                    className="inline-flex items-center rounded bg-lilac px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
                     style={{ fontFamily: "var(--font-body)" }}
                   >
                     {primaryAction.label}
@@ -113,7 +113,7 @@ export default function SummaryHero({
                   <button
                     type="button"
                     onClick={secondaryAction.onClick}
-                    className="inline-flex items-center rounded border border-border px-4 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
+                    className="inline-flex items-center rounded border border-border px-5 py-3 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
                     style={{ fontFamily: "var(--font-body)" }}
                   >
                     {secondaryAction.label}
@@ -121,7 +121,7 @@ export default function SummaryHero({
                 ) : (
                   <a
                     href={secondaryAction.href}
-                    className="inline-flex items-center rounded border border-border px-4 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
+                    className="inline-flex items-center rounded border border-border px-5 py-3 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
                     style={{ fontFamily: "var(--font-body)" }}
                   >
                     {secondaryAction.label}

@@ -47,14 +47,14 @@ export default function Research() {
         ogImagePath="/og/research.png"
       />
 
-      <section className="site-section py-14 border-b border-border research-hero">
+      <section className="site-section py-10 md:py-16 border-b border-border research-hero">
         <div className="site-hero-layout">
           <div>
-            <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-4">
+            <p className="section-kicker-live mb-4">
               Behavioral Safety Validation Research · Released {BENCHMARK_CURRENT.released} · Updated {BENCHMARK_CURRENT.lastUpdated}
             </p>
             <h1 className="font-display fluid-title text-foreground mb-4">Behavioral Safety Testing for Human-Facing AI</h1>
-            <p className="text-foreground-muted lede mb-6">
+            <p className="text-foreground-muted lede mb-7">
               Behavioral Safety Validation is the emerging governance layer for human-facing AI. The EQ Safety
               Benchmark is the framework, and the Frontier AI Behavioral Safety Index is the public index produced from
               it. This research summarizes the methodology, scope, and baseline results.
@@ -62,13 +62,13 @@ export default function Research() {
             <div className="flex flex-wrap gap-3">
               <a
                 href="/get-started"
-                className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+                className="inline-flex items-center rounded bg-lilac px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
               >
                 Get Started
               </a>
               <a
                 href="#benchmark-framework"
-                className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
+                className="inline-flex items-center rounded border border-border px-5 py-3 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
               >
                 View Benchmark Framework
               </a>
@@ -100,13 +100,13 @@ export default function Research() {
       />
 
       <section className="site-section py-10 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Research Snapshot</p>
+        <p className="section-kicker mb-6">Research Snapshot</p>
         <StatsRow className="max-w-6xl mb-4" />
         <FindingsCards className="max-w-6xl" />
       </section>
 
       <section className="site-section py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Read This First</p>
+        <p className="section-kicker mb-6">Read This First</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mb-5">
           <article className="card-surface p-5">
             <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">Stage 1</p>
@@ -154,7 +154,7 @@ export default function Research() {
       </section>
 
       <section id="benchmark-framework" className="site-section py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Benchmark Framework</p>
+        <p className="section-kicker mb-6">Benchmark Framework</p>
         <p className="text-sm text-foreground-muted leading-relaxed measure mb-6 text-pretty">
           Behavioral Safety Validation is the category. The EQ Safety Benchmark is the framework. The Frontier AI
           Behavioral Safety Index is one public application of that framework: frontier models evaluated against a
@@ -166,7 +166,7 @@ export default function Research() {
       </section>
 
       <section id="findings-snapshot" className="site-section py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">Findings Snapshot</p>
+        <p className="section-kicker mb-7">Findings Snapshot</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4 max-w-5xl">
           <article className="card-surface p-4">
             <p className="font-display text-3xl text-danger mb-1">{BENCHMARK_CURRENT.failedGatePct}</p>
@@ -245,12 +245,12 @@ export default function Research() {
       </section>
 
       <section id="research-charts" className="site-section py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Charts</p>
+        <p className="section-kicker mb-6">Charts</p>
         <ChartsBlock className="max-w-6xl" />
       </section>
 
       <section id="research-method" className="site-section py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Method</p>
+        <p className="section-kicker mb-6">Method</p>
         <MethodAccordion className="max-w-5xl" />
       </section>
 
