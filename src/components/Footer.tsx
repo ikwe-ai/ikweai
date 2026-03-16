@@ -30,7 +30,7 @@ export default function Footer() {
               <Link to="/audit#deliverables-previews" className="text-foreground-muted hover:text-foreground transition-colors">Sample Outputs</Link>
               <Link to="/audit" className="text-foreground-muted hover:text-foreground transition-colors">Audit &amp; Validation</Link>
               <Link to="/trust" className="text-foreground-muted hover:text-foreground transition-colors">Trust</Link>
-              <Link to="/intake#application-form" className="text-foreground-muted hover:text-foreground transition-colors">Request Evaluation</Link>
+              <Link to="/get-started" className="text-foreground-muted hover:text-foreground transition-colors">Request Evaluation</Link>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function Footer() {
               <Link to="/audit" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Audit &amp; Validation
               </Link>
-              <Link to="/intake#application-form" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+              <Link to="/get-started" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Request Evaluation
               </Link>
               <Link to="/trust" className="text-sm text-foreground-muted hover:text-foreground transition-colors">

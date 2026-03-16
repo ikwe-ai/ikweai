@@ -28,7 +28,7 @@ const pages = [
     eyebrow: "Intake",
     title: "Request Evaluation",
     body: "Share deployment context, timeline, and stakeholders so the scope can be sized correctly.",
-    href: "/intake#application-form",
+    href: "/get-started",
     cta: "Open intake",
   },
 ] as const;
