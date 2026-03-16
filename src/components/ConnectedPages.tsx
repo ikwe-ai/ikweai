@@ -25,11 +25,11 @@ const pages = [
   },
   {
     key: "intake" as const,
-    eyebrow: "Intake",
-    title: "Request Evaluation",
-    body: "Share deployment context, timeline, and stakeholders so the scope can be sized correctly.",
+    eyebrow: "Get Started",
+    title: "Get Started",
+    body: "Book a scope call, subscribe to benchmark updates, or go straight into a full evaluation request.",
     href: "/get-started",
-    cta: "Open intake",
+    cta: "Get started →",
   },
 ] as const;
 

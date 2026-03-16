@@ -57,7 +57,7 @@ export default function Architecture() {
           "Governance-ready reporting outputs",
         ]}
         primaryAction={{ href: "/audit#deliverables-previews", label: "View Deliverables & Transparency →" }}
-        secondaryAction={{ href: "/get-started", label: "Request Evaluation" }}
+        secondaryAction={{ href: "/get-started", label: "Get Started" }}
         jumpLinks={[
           { href: "#pipeline", label: "Pipeline" },
           { href: "#control-terms", label: "Evaluation Standards" },

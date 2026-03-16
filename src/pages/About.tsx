@@ -33,7 +33,7 @@ export default function About() {
       />
 
       {/* Independence */}
-      <section id="independence" className="py-14 border-b border-border max-w-2xl">
+      <section id="independence" className="site-section py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Independence</p>
         <h2 className="font-display text-2xl text-foreground mb-4">No commercial affiliations</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
@@ -56,7 +56,7 @@ export default function About() {
       </section>
 
       {/* COI Policy */}
-      <section id="coi-policy" className="py-14 border-b border-border max-w-2xl">
+      <section id="coi-policy" className="site-section py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Conflict of Interest Policy</p>
         <div className="space-y-0 divide-y divide-border">
           {[
@@ -86,7 +86,7 @@ export default function About() {
       </section>
 
       {/* Operating principles */}
-      <section id="operating-principles" className="py-14 border-b border-border max-w-2xl">
+      <section id="operating-principles" className="site-section py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Operating Principles</p>
         <div className="space-y-0 divide-y divide-border">
           {[
@@ -116,7 +116,7 @@ export default function About() {
       </section>
 
       {/* Versioning standards */}
-      <section id="versioning" className="py-14 border-b border-border max-w-2xl">
+      <section id="versioning" className="site-section py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Versioning Standards</p>
         <h2 className="font-display text-2xl text-foreground mb-4">Version lock is enforced on released results</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
@@ -146,7 +146,7 @@ export default function About() {
       </section>
 
       {/* Contact nudge */}
-      <section className="py-14 max-w-2xl">
+      <section className="site-section py-14">
         <p className="text-sm text-foreground-muted">
           Questions about our independence standards or COI policy?{" "}
           <a href="/get-started" className="link-lilac underline">get in touch</a>.

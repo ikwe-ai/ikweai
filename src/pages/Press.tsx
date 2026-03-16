@@ -64,7 +64,7 @@ export default function Press() {
           `${BENCHMARK_CURRENT.failedGatePct} emotional risk pattern prevalence`,
           `${BENCHMARK_CURRENT.noRepairPct} safety gate fail rate`,
         ]}
-        primaryAction={{ href: "/get-started", label: "Request Evaluation →" }}
+        primaryAction={{ href: "/get-started", label: "Get Started →" }}
         secondaryAction={{ href: "/research", label: "Back to Research" }}
         jumpLinks={[
           { href: "#benchmark-framing", label: "Benchmark Framing" },

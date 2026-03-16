@@ -70,7 +70,7 @@ export default function GetStarted() {
         ogImagePath="/og/intake.png"
       />
 
-      <div className="py-16 md:py-24">
+      <div className="site-section py-16 md:py-24">
         {/* Header */}
         <div className="mb-14">
           <span
@@ -198,7 +198,7 @@ export default function GetStarted() {
 
             <div className="mt-auto flex flex-col gap-3">
               <Link
-                to="/intake#application-form"
+                to="/intake"
                 className="gs-btn-outline text-center"
               >
                 Open evaluation request →
