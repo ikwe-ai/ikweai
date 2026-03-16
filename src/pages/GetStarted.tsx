@@ -67,6 +67,7 @@ export default function GetStarted() {
         title="Get Started | Ikwe.ai"
         description="Talk to us about your AI system, subscribe to benchmark updates, or submit a full evaluation request. Three ways to connect with Ikwe.ai."
         path="/get-started"
+        ogImagePath="/og/intake.png"
       />
 
       <div className="py-16 md:py-24">
