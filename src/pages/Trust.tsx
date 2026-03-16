@@ -54,8 +54,8 @@ export default function Trust() {
           "Detailed materials shared with authorized stakeholders",
           "Independent third-party evaluation standards",
         ]}
-        primaryAction={{ href: "#handling-boundary", label: "View Handling Boundary ↓" }}
-        secondaryAction={{ href: "/get-started", label: "Request Evaluation" }}
+        primaryAction={{ href: "/get-started", label: "Get Started" }}
+        secondaryAction={{ href: "#handling-boundary", label: "View Trust Standards ↓" }}
         jumpLinks={[
           { href: "#information-needs", label: "Information Needs" },
           { href: "#faq", label: "FAQ" },
