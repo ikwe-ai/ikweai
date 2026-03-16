@@ -68,7 +68,7 @@ export default function Trust() {
       <ConnectedPages current="trust" />
 
       <section id="information-needs" className="site-section py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Information Needs</p>
+        <p className="section-kicker mb-8">Information Needs</p>
         <p className="text-xs text-foreground-subtle mb-6 max-w-4xl">
           Share only what is needed to scope evaluation. Access and reporting stay controlled and traceable.
         </p>
@@ -99,7 +99,7 @@ export default function Trust() {
       </section>
 
       <section id="handling-boundary" className="site-section py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">Public Information and Client Materials</p>
+        <p className="section-kicker mb-8">Public Information and Client Materials</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-5xl">
           <article className="card-surface p-6">
             <p className="font-mono text-[10px] uppercase tracking-widest text-lilac mb-3">Public Transparency</p>
@@ -127,7 +127,7 @@ export default function Trust() {
       </section>
 
       <section id="faq" className="site-section py-14 border-b border-border max-w-5xl">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-7">FAQ</p>
+        <p className="section-kicker mb-7">FAQ</p>
         <article className="card-surface p-6">
           <h2 className="font-display text-2xl text-foreground mb-3">What are the 13 behavioral domains (vulnerability categories)?</h2>
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
@@ -144,7 +144,7 @@ export default function Trust() {
       </section>
 
       <section id="confidentiality" className="site-section py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Confidentiality Principles</p>
+        <p className="section-kicker mb-6">Confidentiality Principles</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
           {[
             {

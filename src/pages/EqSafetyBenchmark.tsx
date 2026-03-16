@@ -427,7 +427,7 @@ export default function EqSafetyBenchmark() {
       <section id="leaderboard" className="site-section py-12 border-b border-border">
         <div className="grid gap-6 max-w-6xl lg:grid-cols-[minmax(0,1fr)_320px]">
           <div>
-            <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">
+            <p className="section-kicker-live mb-4">
               Frontier AI Behavioral Safety Index
             </p>
             <h2 className="font-display fluid-heading text-foreground mb-3">Public baseline leaderboard.</h2>
@@ -577,7 +577,7 @@ export default function EqSafetyBenchmark() {
       </section>
 
       <section id="what-this-measures" className="site-section py-12 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-8">What This Measures</p>
+        <p className="section-kicker mb-8">What This Measures</p>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-6xl">
           {WHAT_THIS_MEASURES.map((item) => (
             <article key={item.label} className="card-surface p-6">
@@ -593,7 +593,7 @@ export default function EqSafetyBenchmark() {
         <div className="grid gap-8 max-w-6xl">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-end">
             <div>
-              <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">
+              <p className="section-kicker mb-4">
                 The EQ Safety Benchmark — Research Foundation
               </p>
               <h2 className="font-display fluid-heading text-foreground mb-3">
@@ -666,7 +666,7 @@ export default function EqSafetyBenchmark() {
 
       <section id="safety-gate" className="site-section py-14 border-b border-border">
         <div className="max-w-6xl">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">Safety Gate Results</p>
+          <p className="section-kicker mb-4">Safety Gate Results</p>
           <h2 className="font-display fluid-heading text-foreground mb-3">Pass or fail under emotional pressure.</h2>
           <p className="text-foreground-muted max-w-3xl leading-relaxed mb-8">
             The first question is binary. Does harmful behavioral pattern appear at all? Safety Gate answers that before
@@ -747,7 +747,7 @@ export default function EqSafetyBenchmark() {
 
       <section id="dim-scores" className="site-section py-14 border-b border-border">
         <div className="max-w-6xl">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">Dimensional Scores — All 8 Dimensions</p>
+          <p className="section-kicker mb-4">Dimensional Scores — All 8 Dimensions</p>
           <h2 className="font-display fluid-heading text-foreground mb-3">How each model performs across every dimension.</h2>
           <p className="text-foreground-muted max-w-3xl leading-relaxed mb-8">
             Each dimension scores a specific behavioral safety question. Higher is safer. Scores below 60% indicate active
@@ -907,7 +907,7 @@ export default function EqSafetyBenchmark() {
 
       <section id="findings" className="site-section py-14 border-b border-border">
         <div className="max-w-6xl">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">What The Data Shows</p>
+          <p className="section-kicker mb-4">What The Data Shows</p>
           <h2 className="font-display fluid-heading text-foreground mb-8">Key findings from the baseline evaluation.</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
@@ -934,7 +934,7 @@ export default function EqSafetyBenchmark() {
 
       <section id="meth-transparency" className="site-section py-14 border-b border-border">
         <div className="max-w-6xl">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">Methodology</p>
+          <p className="section-kicker mb-4">Methodology</p>
           <h2 className="font-display fluid-heading text-foreground mb-3">How these scores are produced.</h2>
           <p className="text-foreground-muted max-w-3xl leading-relaxed mb-8">
             The EQ Safety Benchmark is a public research instrument. The methodology is documented, the scenario set is
@@ -961,7 +961,7 @@ export default function EqSafetyBenchmark() {
 
       <section id="compare-cta" className="site-section py-14">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-4">How Your System Compares</p>
+          <p className="section-kicker mb-4">How Your System Compares</p>
           <h2 className="font-display fluid-heading text-foreground mb-3">These are the frontier model scores. Where does your system land?</h2>
           <p className="text-foreground-muted leading-relaxed mb-6">
             Ikwe EQ Safety Evaluations run against the same {BENCHMARK_CURRENT.scenarios}-scenario baseline set.
