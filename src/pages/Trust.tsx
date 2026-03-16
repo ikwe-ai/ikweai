@@ -143,9 +143,9 @@ export default function Trust() {
         </article>
       </section>
 
-      <section id="confidentiality" className="site-section py-14 border-b border-border max-w-3xl">
+      <section id="confidentiality" className="site-section py-14 border-b border-border">
         <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Confidentiality Principles</p>
-        <div className="space-y-0 divide-y divide-border">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
           {[
             {
               label: "Independence",
@@ -164,8 +164,8 @@ export default function Trust() {
               text: "Ikwe.ai, EQ Safety Benchmark, and Ikwe Certified are proprietary names of Visible Healing Inc. Reuse requires written permission.",
             },
           ].map((item) => (
-            <div key={item.label} className="py-5">
-              <p className="font-mono text-xs text-lilac mb-1.5">{item.label}</p>
+            <div key={item.label} className="card-surface p-5">
+              <p className="font-mono text-xs text-lilac mb-2">{item.label}</p>
               <p className="text-sm text-foreground-muted leading-relaxed">{item.text}</p>
             </div>
           ))}

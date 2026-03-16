@@ -3,8 +3,25 @@ import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 import { BENCHMARK_COPY, BENCHMARK_CURRENT, BENCHMARK_LOG_REQUEST } from "@/lib/benchmark-data";
 import ArchiveBanner from "@/components/ArchiveBanner";
+import { useState } from "react";
+
+const COI_ITEMS = [
+  { label: "Evaluator affiliations", text: "Evaluators disclose all professional relationships with AI developers. Any evaluator with a material relationship to a model under test is recused from that evaluation." },
+  { label: "Funding sources", text: "Ikwe.ai is independently funded. We disclose any institutional funding sources on a per-study basis. Benchmark publication pages disclose funding status for each release state." },
+  { label: "Deliverables review", text: "No evaluated party reviews or approves published findings, public copy, or metric blocks before publication." },
+  { label: "Disclosure updates", text: "COI disclosures are updated with each study. Any change to funding or affiliation status is disclosed in version notes." },
+];
+
+const PRINCIPLES_ITEMS = [
+  { label: "Adversarial standard", text: "Evaluations are structured to test failure conditions, not best-case interaction outcomes. We do not allow evaluated parties to define benchmark pass criteria." },
+  { label: "Publication discipline", text: "Public materials provide framework clarity while detailed scoring specifications are managed through controlled documentation." },
+  { label: "Evidence traceability", text: "Each evidence package is versioned with change context so external reviewers can attribute language and numbers to a specific methodological state." },
+  { label: "No guarantees", text: "We measure behavioral safety risk and support governance review. We do not claim guaranteed safety, guaranteed compliance, or guaranteed harm prevention." },
+];
 
 export default function About() {
+  const [activeTab, setActiveTab] = useState<"coi" | "principles">("coi");
+
   return (
     <PageShell>
       <PageMeta
@@ -55,60 +72,34 @@ export default function About() {
         </p>
       </section>
 
-      {/* COI Policy */}
+      {/* COI Policy + Operating Principles — tabbed */}
       <section id="coi-policy" className="site-section py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Conflict of Interest Policy</p>
-        <div className="space-y-0 divide-y divide-border">
-          {[
-            {
-              label: "Evaluator affiliations",
-              text: "Evaluators disclose all professional relationships with AI developers. Any evaluator with a material relationship to a model under test is recused from that evaluation.",
-            },
-            {
-              label: "Funding sources",
-              text: "Ikwe.ai is independently funded. We disclose any institutional funding sources on a per-study basis. Benchmark publication pages disclose funding status for each release state.",
-            },
-            {
-              label: "Deliverables review",
-              text: "No evaluated party reviews or approves published findings, public copy, or metric blocks before publication.",
-            },
-            {
-              label: "Disclosure updates",
-              text: "COI disclosures are updated with each study. Any change to funding or affiliation status is disclosed in version notes.",
-            },
-          ].map(({ label, text }) => (
-            <div key={label} className="py-5">
-              <p className="font-mono text-xs text-lilac mb-1.5">{label}</p>
-              <p className="text-sm text-foreground-muted leading-relaxed">{text}</p>
-            </div>
+        {/* Tab bar */}
+        <div className="flex gap-1 mb-8 border-b border-border">
+          {([
+            { key: "coi" as const, label: "Conflict of Interest Policy" },
+            { key: "principles" as const, label: "Operating Principles" },
+          ]).map((tab) => (
+            <button
+              key={tab.key}
+              type="button"
+              onClick={() => setActiveTab(tab.key)}
+              className={`font-mono text-[11px] uppercase tracking-widest px-4 py-2.5 border-b-2 transition-colors -mb-px ${
+                activeTab === tab.key
+                  ? "border-lilac text-lilac"
+                  : "border-transparent text-foreground-subtle hover:text-foreground-muted"
+              }`}
+            >
+              {tab.label}
+            </button>
           ))}
         </div>
-      </section>
 
-      {/* Operating principles */}
-      <section id="operating-principles" className="site-section py-14 border-b border-border">
-        <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-6">Operating Principles</p>
-        <div className="space-y-0 divide-y divide-border">
-          {[
-            {
-              label: "Adversarial standard",
-              text: "Evaluations are structured to test failure conditions, not best-case interaction outcomes. We do not allow evaluated parties to define benchmark pass criteria.",
-            },
-            {
-              label: "Publication discipline",
-              text: "Public materials provide framework clarity while detailed scoring specifications are managed through controlled documentation.",
-            },
-            {
-              label: "Evidence traceability",
-              text: "Each evidence package is versioned with change context so external reviewers can attribute language and numbers to a specific methodological state.",
-            },
-            {
-              label: "No guarantees",
-              text: "We measure behavioral safety risk and support governance review. We do not claim guaranteed safety, guaranteed compliance, or guaranteed harm prevention.",
-            },
-          ].map(({ label, text }) => (
-            <div key={label} className="py-5">
-              <p className="font-mono text-xs text-lilac mb-1.5">{label}</p>
+        {/* Tab content */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {(activeTab === "coi" ? COI_ITEMS : PRINCIPLES_ITEMS).map(({ label, text }) => (
+            <div key={label} className="card-surface p-5">
+              <p className="font-mono text-xs text-lilac mb-2">{label}</p>
               <p className="text-sm text-foreground-muted leading-relaxed">{text}</p>
             </div>
           ))}
