@@ -7,21 +7,21 @@ export default function About() {
   return (
     <PageShell>
       <PageMeta
-        title="About — Independence & Governance | Ikwe.ai"
-        description="Institutional independence, conflict-of-interest policy, and governance controls for benchmark evidence."
+        title="About | Ikwe.ai"
+        description="Ikwe.ai is the independent behavioral safety layer for human-facing AI. Independence standards, COI policy, and evidence governance."
         path="/about"
       />
       <SummaryHero
-        kicker="Institutional Standards"
-        title="About Ikwe.ai"
-        summary="Ikwe.ai is the independent behavioral safety layer for human-facing AI. The EQ Safety Benchmark is our behavioral evaluation framework, and this page defines the independence, governance, and evidence standards behind that work."
+        kicker="About Ikwe.ai"
+        title="Built to be independent."
+        summary="Ikwe.ai is the behavioral safety layer for human-facing AI. This page covers the independence standards, conflict-of-interest policy, and evidence governance that make our evaluations defensible."
         highlights={[
           "No financial ties to evaluated model developers",
-          "Versioned evidence policy",
-          "Structured disclosure and COI recusal practices",
+          "Versioned evidence with frozen metric blocks",
+          "Structured COI disclosure and recusal practices",
         ]}
-        primaryAction={{ href: "/get-started", label: "Request Evaluation →" }}
-        secondaryAction={{ href: "/audit#deliverables-previews", label: "View Sample Outputs & Transparency" }}
+        primaryAction={{ href: "/benchmark", label: "View the Benchmark →" }}
+        secondaryAction={{ href: "/research", label: "Read Research Summary" }}
         jumpLinks={[
           { href: "#independence", label: "Independence" },
           { href: "#coi-policy", label: "COI Policy" },
@@ -147,7 +147,7 @@ export default function About() {
       <section className="py-14 max-w-2xl">
         <p className="text-sm text-foreground-muted">
           Questions about our independence standards or COI policy?{" "}
-          <a href="/get-started" className="link-lilac underline">Contact us</a>.
+          <a href="/get-started" className="link-lilac underline">get in touch</a>.
         </p>
       </section>
     </PageShell>
