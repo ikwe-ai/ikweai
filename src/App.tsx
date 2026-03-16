@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation, useParams } from "react-router-dom";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -41,6 +42,11 @@ const LegacyCaseStudyRedirect = () => {
   return <Navigate to={slug ? `/archive/research/case-studies/${slug}` : "/archive/research/case-studies"} replace />;
 };
 
+const AnalyticsManager = () => {
+  useAnalytics();
+  return null;
+};
+
 const ScrollManager = () => {
   const location = useLocation();
 
@@ -66,6 +72,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <AnalyticsManager />
         <ScrollManager />
         <Nav />
         <Routes>

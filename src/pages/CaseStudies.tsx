@@ -8,7 +8,7 @@ export default function CaseStudies() {
     <PageShell>
       <PageMeta
         title="Case Studies | Ikwe.ai"
-        description="Indexed case-study analyses for behavioral safety trajectories and governance outcomes."
+        description="Applied behavioral safety case studies — real scenarios, real drift patterns, real governance outcomes from the Ikwe EQ Safety framework."
         path="/research/case-studies"
       />
       <SummaryHero

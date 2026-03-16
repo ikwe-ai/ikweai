@@ -9,7 +9,7 @@ export default function SampleReport() {
     <PageShell>
       <PageMeta
         title="Sample Report | Ikwe.ai"
-        description="Public redacted sample report preview inside Ikwe.ai."
+        description="A redacted sample of an Ikwe EQ Safety Evaluation report — showing the tier classification, dimensional scoring, and recommended next steps format."
         path="/sample-report"
       />
 
