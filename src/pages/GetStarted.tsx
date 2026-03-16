@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageMeta from "@/components/PageMeta";
 import PageShell from "@/components/PageShell";
+import SummaryHero from "@/components/SummaryHero";
 
 const CALENDLY_URL = "https://calendly.com/stephanie-ikwe/30-min-chat-with-stephanie-ikweai";
 
@@ -40,7 +41,6 @@ export default function GetStarted() {
         note: callForm.note,
         submitted_at: new Date().toISOString(),
       });
-      // Redirect to Calendly after successful submission
       window.location.href = CALENDLY_URL;
     } catch {
       setCallState("error");
@@ -70,29 +70,27 @@ export default function GetStarted() {
         ogImagePath="/og/intake.png"
       />
 
-      <div className="site-section py-16 md:py-24">
-        {/* Header */}
-        <div className="mb-14">
-          <span
-            className="font-mono text-[0.62rem] uppercase tracking-[0.2em] text-lilac mb-4 block"
-          >
-            Get Started
-          </span>
-          <h1 className="font-display text-4xl md:text-5xl text-foreground leading-tight mb-4">
-            Choose how you want<br />to connect.
-          </h1>
-          <p className="text-foreground-muted text-base max-w-xl leading-relaxed">
-            No pressure, no long forms yet. Start wherever makes sense — a quick call, staying in the loop,
-            or going straight into a full evaluation request.
-          </p>
-        </div>
+      {/* ── Hero ── */}
+      <SummaryHero
+        kicker="Get Started"
+        title="Choose how you want to connect."
+        summary="No pressure, no long forms yet. Start wherever makes sense — a quick call, staying in the loop, or going straight into a full evaluation request."
+        jumpLinks={[
+          { href: "#scope-call", label: "Book a scope call" },
+          { href: "#updates", label: "Stay in the loop" },
+          { href: "#intake", label: "Full evaluation request" },
+        ]}
+      />
 
-        {/* Three paths */}
+      {/* ── Three paths ── */}
+      <section className="site-section py-10 md:py-14 border-b border-border">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 
-          {/* ── PATH 1: Scope call ── */}
-          <article className="card-surface p-7 flex flex-col">
-            <span className="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-lilac mb-5 block">01</span>
+          {/* PATH 1: Scope call */}
+          <article id="scope-call" className="card-surface p-6 flex flex-col">
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded bg-lilac-dim/30 text-[10px] font-mono text-lilac mb-5">
+              01
+            </span>
             <h2 className="font-display text-2xl text-foreground mb-2">Let's talk.</h2>
             <p className="text-sm text-foreground-muted leading-relaxed mb-6">
               Schedule a 30-min EQ Safety scope call with Stephanie. We'll look at your system,
@@ -135,12 +133,15 @@ export default function GetStarted() {
                   className="gs-input resize-none"
                 />
                 {callState === "error" && (
-                  <p className="text-xs text-danger">Something went wrong. Try again or email us directly.</p>
+                  <p className="text-xs" style={{ color: "hsl(var(--danger))" }}>
+                    Something went wrong. Try again or email us directly.
+                  </p>
                 )}
                 <button
                   type="submit"
                   disabled={callState === "submitting"}
-                  className="gs-btn-gold mt-1"
+                  className="inline-flex items-center justify-center rounded bg-lilac px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors disabled:opacity-60 disabled:cursor-not-allowed mt-1"
+                  style={{ fontFamily: "var(--font-body)" }}
                 >
                   {callState === "submitting" ? "Sending…" : "Book a scope call →"}
                 </button>
@@ -148,9 +149,11 @@ export default function GetStarted() {
             )}
           </article>
 
-          {/* ── PATH 2: Newsletter ── */}
-          <article className="card-surface p-7 flex flex-col">
-            <span className="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-lilac mb-5 block">02</span>
+          {/* PATH 2: Newsletter */}
+          <article id="updates" className="card-surface p-6 flex flex-col">
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded bg-lilac-dim/30 text-[10px] font-mono text-lilac mb-5">
+              02
+            </span>
             <h2 className="font-display text-2xl text-foreground mb-2">Stay in the loop.</h2>
             <p className="text-sm text-foreground-muted leading-relaxed mb-6">
               Get notified when new frontier model scores, scenario expansions, or benchmark
@@ -158,10 +161,10 @@ export default function GetStarted() {
             </p>
 
             {newsState === "done" ? (
-              <div className="mt-auto">
-                <div className="rounded border border-border bg-background-surface px-4 py-4 text-sm text-foreground-muted leading-relaxed">
+              <div className="mt-auto card-surface p-4">
+                <p className="text-sm text-foreground-muted leading-relaxed">
                   You're on the list. We'll reach out when new benchmark data drops.
-                </div>
+                </p>
               </div>
             ) : (
               <form onSubmit={handleNewsSubmit} className="flex flex-col gap-3 mt-auto">
@@ -174,12 +177,15 @@ export default function GetStarted() {
                   className="gs-input"
                 />
                 {newsState === "error" && (
-                  <p className="text-xs text-danger">Something went wrong. Try again.</p>
+                  <p className="text-xs" style={{ color: "hsl(var(--danger))" }}>
+                    Something went wrong. Try again.
+                  </p>
                 )}
                 <button
                   type="submit"
                   disabled={newsState === "submitting"}
-                  className="gs-btn-outline mt-1"
+                  className="inline-flex items-center justify-center rounded border border-border px-5 py-3 text-sm text-foreground hover:border-foreground-muted transition-colors btn-outline disabled:opacity-60 disabled:cursor-not-allowed mt-1"
+                  style={{ fontFamily: "var(--font-body)" }}
                 >
                   {newsState === "submitting" ? "Subscribing…" : "Subscribe to updates →"}
                 </button>
@@ -187,9 +193,11 @@ export default function GetStarted() {
             )}
           </article>
 
-          {/* ── PATH 3: Full intake ── */}
-          <article className="card-surface p-7 flex flex-col">
-            <span className="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-lilac mb-5 block">03</span>
+          {/* PATH 3: Full intake */}
+          <article id="intake" className="card-surface p-6 flex flex-col">
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded bg-lilac-dim/30 text-[10px] font-mono text-lilac mb-5">
+              03
+            </span>
             <h2 className="font-display text-2xl text-foreground mb-2">Go straight in.</h2>
             <p className="text-sm text-foreground-muted leading-relaxed mb-6">
               Already know what you need? Submit a full evaluation request with your system
@@ -199,7 +207,8 @@ export default function GetStarted() {
             <div className="mt-auto flex flex-col gap-3">
               <Link
                 to="/intake"
-                className="gs-btn-outline text-center"
+                className="inline-flex items-center justify-center rounded border border-border px-5 py-3 text-sm text-foreground hover:border-foreground-muted transition-colors btn-outline"
+                style={{ fontFamily: "var(--font-body)" }}
               >
                 Open evaluation request →
               </Link>
@@ -208,32 +217,34 @@ export default function GetStarted() {
               </p>
             </div>
           </article>
-        </div>
 
-        {/* Footer note */}
-        <div className="mt-12 pt-8 border-t border-border">
-          <p className="text-sm text-foreground-subtle max-w-2xl">
-            Not sure which path is right?{" "}
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lilac hover:text-lilac-bright underline underline-offset-2 transition-colors"
-            >
-              Book a call directly
-            </a>{" "}
-            — no form required. Or explore the{" "}
-            <Link to="/benchmark" className="text-lilac hover:text-lilac-bright underline underline-offset-2 transition-colors">
-              benchmark
-            </Link>{" "}
-            and{" "}
-            <Link to="/audit" className="text-lilac hover:text-lilac-bright underline underline-offset-2 transition-colors">
-              audit overview
-            </Link>{" "}
-            first.
-          </p>
         </div>
-      </div>
+      </section>
+
+      {/* ── Footer note ── */}
+      <section className="site-section py-8 md:py-10">
+        <p className="text-sm text-foreground-subtle max-w-2xl leading-relaxed">
+          Not sure which path is right?{" "}
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lilac hover:text-lilac-bright underline underline-offset-2 transition-colors"
+          >
+            Book a call directly
+          </a>{" "}
+          — no form required. Or explore the{" "}
+          <Link to="/benchmark" className="text-lilac hover:text-lilac-bright underline underline-offset-2 transition-colors">
+            benchmark
+          </Link>{" "}
+          and{" "}
+          <Link to="/audit" className="text-lilac hover:text-lilac-bright underline underline-offset-2 transition-colors">
+            audit overview
+          </Link>{" "}
+          first.
+        </p>
+      </section>
+
     </PageShell>
   );
 }
