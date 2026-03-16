@@ -53,18 +53,25 @@ export default function Research() {
             <p className="section-kicker-live mb-4">
               Behavioral Safety Validation Research · Released {BENCHMARK_CURRENT.released} · Updated {BENCHMARK_CURRENT.lastUpdated}
             </p>
-            <h1 className="font-display fluid-title text-foreground mb-4">Behavioral Safety Testing for Human-Facing AI</h1>
-            <p className="text-foreground-muted lede mb-7">
-              Behavioral Safety Validation is the emerging governance layer for human-facing AI. The EQ Safety
-              Benchmark is the framework, and the Frontier AI Behavioral Safety Index is the public index produced from
-              it. This research summarizes the methodology, scope, and baseline results.
+            <h1 className="font-display fluid-title text-foreground mb-4">The behavioral safety standard for human-facing AI</h1>
+            <p className="text-foreground-muted lede mb-4">
+              {BENCHMARK_CURRENT.scenarios} scenarios across {BENCHMARK_CURRENT.domains} vulnerability types, tested against multiple frontier systems for emotional and behavioral safety.
             </p>
+            <div className="research-stat-band mb-7">
+              <span>{BENCHMARK_CURRENT.scenarios} scenarios</span>
+              <span aria-hidden="true">·</span>
+              <span>{BENCHMARK_CURRENT.domains} vulnerability types</span>
+              <span aria-hidden="true">·</span>
+              <span>{BENCHMARK_CURRENT.nShort} responses scored</span>
+              <span aria-hidden="true">·</span>
+              <span className="research-stat-band-alert">{BENCHMARK_CURRENT.failedGatePct} failed the Safety Gate at first contact</span>
+            </div>
             <div className="flex flex-wrap gap-3">
               <a
-                href="/get-started"
+                href="/audit"
                 className="inline-flex items-center rounded bg-lilac px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
               >
-                Get Started
+                Book an Audit Scope Call
               </a>
               <a
                 href="#benchmark-framework"
