@@ -7,7 +7,7 @@ export default function Consultation() {
     <PageShell>
       <PageMeta
         title="Scope Review | Ikwe.ai"
-        description="Scope review overview for audit alignment, readiness, and delivery planning."
+        description="Scope review aligns the depth, timeline, and deliverables of an Ikwe EQ Safety Evaluation before the formal audit sequence begins."
         path="/consult"
       />
 

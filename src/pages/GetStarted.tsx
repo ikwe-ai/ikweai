@@ -65,7 +65,7 @@ export default function GetStarted() {
     <PageShell>
       <PageMeta
         title="Get Started | Ikwe.ai"
-        description="Schedule a scope call, get leaderboard updates, or submit a full evaluation request."
+        description="Talk to us about your AI system, subscribe to benchmark updates, or submit a full evaluation request. Three ways to connect with Ikwe.ai."
         path="/get-started"
       />
 

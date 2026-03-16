@@ -50,7 +50,7 @@ export default function Press() {
     <PageShell>
       <PageMeta
         title="Press & Updates | Ikwe.ai"
-        description="Published communications and media routing for Ikwe.ai benchmark publications."
+        description="Benchmark publications, updates, and press resources from Ikwe.ai — the behavioral safety standard for human-facing AI."
         path="/research/press"
       />
       <SummaryHero

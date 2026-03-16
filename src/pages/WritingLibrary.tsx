@@ -8,7 +8,7 @@ export default function WritingLibrary() {
     <PageShell>
       <PageMeta
         title="Writing Library | Ikwe.ai"
-        description="Opinions, research notes, and case analyses with links to full writing pages."
+        description="Research notes, analysis, and opinion on AI behavioral safety, governance risk, and what it means to build systems that can be trusted with humans."
         path="/research/writings"
       />
       <SummaryHero

@@ -170,7 +170,7 @@ export default function Home() {
   return (
     <>
       <PageMeta
-        title="Ikwe.ai - The Behavioral Safety Layer for Human-Facing AI"
+        title="Ikwe.ai — The Behavioral Safety Standard for Human-Facing AI"
         description="The behavioral safety standard for human-facing AI. An independent safety record that proves your system can be trusted with humans — before harm, liability, or headlines."
         path="/"
         ogImagePath="/og/home.png"
