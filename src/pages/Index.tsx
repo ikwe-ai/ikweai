@@ -181,31 +181,34 @@ export default function Home() {
 
         <section id="hero" className="home-section home-hero">
           <div className="home-wrap">
-            <div className="home-hero-tag">The Behavioral Safety Standard for Human-Facing AI</div>
+            <div className="home-hero-tag">Independent Behavioral Safety Audits · Human-Facing AI</div>
             <h1 className="home-hero-title">
-              The Behavioral
+              Most AI systems fail
               <br />
-              Safety Layer
+              their first behavioral
               <br />
-              <em>for Human-Facing AI.</em>
+              <em>safety test.</em>
             </h1>
             <p className="home-hero-sub">
-              If your system interacts with humans, you need an independent record of whether it can be trusted —
-              before it causes harm, liability, or a public failure.
+              If your mental health or youth-facing AI has never had an independent behavioral audit, you don't know
+              whether it makes vulnerable users safer — or quietly makes things worse.
             </p>
-            <p className="home-hero-subtle">Not capability. Trustworthiness.</p>
+            <p className="home-hero-subtle">
+              We run independent behavioral safety audits on human-facing AI systems and produce documented evidence
+              your board, legal team, and clinical advisors can trust.
+            </p>
             <div className="home-hero-actions">
               <Link to="/get-started" className="home-btn home-btn-gold">
-                Request Evaluation
+                Request a Behavioral Safety Audit
               </Link>
-              <Link to="/benchmark" className="home-btn home-btn-outline">
-                View the Benchmark
+              <Link to="/samples" className="home-btn home-btn-outline">
+                See a Sample Risk Report
               </Link>
             </div>
             <div className="home-hero-stats">
               <article className="home-hero-stat">
                 <div className="home-stat-number">{BENCHMARK_CURRENT.failedGatePct}</div>
-                <div className="home-stat-label">of baseline AI responses introduce emotional risk</div>
+                <div className="home-stat-label">of frontier-model responses introduced emotional risk at first contact — most appeared supportive, not harmful</div>
               </article>
               <article className="home-hero-stat">
                 <div className="home-stat-number">44.9%</div>
@@ -218,6 +221,19 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <div className="home-plain-english">
+          <div className="home-wrap">
+            <p className="home-plain-p">
+              Ikwe is the behavioral safety layer for human-facing AI. We evaluate how your system behaves when users
+              are distressed, suicidal, spiraling, or highly impressionable — not just whether it's "on policy."
+            </p>
+            <p className="home-plain-p">
+              Our EQ Safety Benchmark and Safety Gate framework measure whether your system stabilizes, escalates, or
+              ignores emotional risk — and give you a defensible safety record before you scale.
+            </p>
+          </div>
+        </div>
 
         <div className="home-divider" />
 
