@@ -23,7 +23,7 @@ export default function Consultation() {
           "Scope and timeline alignment",
           "Governance-oriented delivery planning",
         ]}
-        primaryAction={{ href: "/get-started", label: "Request Evaluation →" }}
+        primaryAction={{ href: "/get-started", label: "Get Started →" }}
         secondaryAction={{ href: "/audit", label: "View Audit Overview" }}
         jumpLinks={[
           { href: "#how-it-fits", label: "How It Fits" },

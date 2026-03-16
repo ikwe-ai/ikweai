@@ -31,8 +31,8 @@ const ASK_PREFIX = "ask://";
 const LAUNCHER_DELAY_MS = 9000;
 const LAUNCHER_SCROLL_THRESHOLD = 220;
 const LEAD_CAPTURE_LINKS: AssistantLink[] = [
-  { label: "Request Evaluation", href: "/get-started" },
-  { label: "Book Consultation", href: "/archive/consult" },
+  { label: "Get Started", href: "/get-started" },
+  { label: "View Benchmark", href: "/benchmark" },
 ];
 
 const IKWE_TOPIC_PROMPTS = [
@@ -550,14 +550,14 @@ export default function SiteAssistant() {
                   className="rounded bg-lilac px-2.5 py-1.5 text-[11px] text-primary-foreground"
                   onClick={() => onOpenLink("/get-started")}
                 >
-                  Request Evaluation
+                  Get Started
                 </button>
                 <button
                   type="button"
                   className="btn-outline rounded px-2.5 py-1.5 text-[11px] text-foreground"
-                  onClick={() => onOpenLink("/archive/consult")}
+                  onClick={() => onOpenLink("/benchmark")}
                 >
-                  Book Consultation
+                  View Benchmark
                 </button>
               </div>
             </div>

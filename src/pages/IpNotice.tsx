@@ -24,7 +24,7 @@ export default function IpNotice() {
           "License and restriction terms",
         ]}
         primaryAction={{ href: "#ownership", label: "View IP Terms ↓" }}
-        secondaryAction={{ href: "/get-started", label: "Request Evaluation" }}
+        secondaryAction={{ href: "/get-started", label: "Get Started" }}
         jumpLinks={[
           { href: "#ownership", label: "Ownership" },
           { href: "#permitted-use", label: "Permitted Use" },

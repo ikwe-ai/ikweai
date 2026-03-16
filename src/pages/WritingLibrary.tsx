@@ -90,11 +90,11 @@ export default function WritingLibrary() {
             Open case studies index →
           </a>
           <a
-            href="/consult"
+            href="/get-started"
             className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Request scope review
+            Get Started
           </a>
         </div>
       </section>
