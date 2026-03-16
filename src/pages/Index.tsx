@@ -198,7 +198,7 @@ export default function Home() {
               your board, legal team, and compliance advisors can trust.
             </p>
             <div className="home-hero-actions">
-              <Link to="/get-started" className="home-btn home-btn-gold">
+              <Link to="/audit" className="home-btn home-btn-gold">
                 Request a Behavioral Safety Audit
               </Link>
               <Link to="/samples" className="home-btn home-btn-outline">
@@ -366,6 +366,9 @@ export default function Home() {
               <p className="home-failure-legend">
                 Ikwe audits are designed to catch and quantify these behaviors before they reach real users.
               </p>
+              <Link to="/audit" className="home-section-text-link home-section-text-link-sm">
+                Learn how the audit works →
+              </Link>
             </div>
 
             <div className="home-note">
@@ -694,6 +697,9 @@ export default function Home() {
                   behavioral safety seriously before deployment?
                 </div>
               </div>
+              <Link to="/audit" className="home-section-text-link">
+                See how an Ikwe audit answers these questions →
+              </Link>
             </div>
 
             <div className="home-grid-two">
@@ -725,6 +731,44 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section id="two-ways" className="home-section home-band home-section-merge">
+          <div className="home-wrap">
+            <div className="home-center-block home-center-block-tight">
+              <span className="home-eyebrow">Two Ways to Work With Us</span>
+            </div>
+            <div className="home-grid-two home-two-ways-grid">
+              <article className="home-two-way-card">
+                <div className="home-two-way-tag">Framework Licensing</div>
+                <p className="home-two-way-desc">
+                  You're designing or refactoring a product and want behavioral safety baked into development.
+                </p>
+                <p className="home-two-way-body">
+                  License the EQ Safety Benchmark framework to guide your system's development and establish
+                  internal testing standards around emotional and behavioral safety.
+                </p>
+                <Link to="/benchmark" className="home-btn home-btn-outline">
+                  Talk about integrating the framework
+                </Link>
+              </article>
+              <article className="home-two-way-card home-two-way-card-primary">
+                <div className="home-two-way-tag">Evaluation &amp; Audits</div>
+                <p className="home-two-way-desc">
+                  You have a system in use (or about to deploy) and need independent behavioral safety evidence.
+                </p>
+                <p className="home-two-way-body">
+                  Ikwe evaluates your system against the EQ Safety Benchmark and delivers governance-ready
+                  documentation your board, legal, and compliance teams can stand behind.
+                </p>
+                <Link to="/audit" className="home-btn home-btn-gold">
+                  Book an Audit Scope Call
+                </Link>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <div className="home-divider" />
 
         <section id="engage" className="home-section home-section-merge">
           <div className="home-wrap">
@@ -761,11 +805,11 @@ export default function Home() {
             </div>
 
             <div className="home-engage-cta">
-              <Link to="/get-started" className="home-btn home-btn-gold home-btn-large">
-                Request Evaluation
+              <Link to="/audit" className="home-btn home-btn-gold home-btn-large">
+                Book an Audit Scope Call
               </Link>
               <Link to="/audit" className="home-btn home-btn-outline home-btn-large">
-                View Audit Options
+                View the Full Pathway
               </Link>
               <p className="home-engage-note">
                 Choose the level of external trust signal your system requires. Each level is cumulative.
@@ -773,6 +817,24 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <div className="home-divider" />
+
+        <div className="home-founder-strip">
+          <div className="home-wrap">
+            <div className="home-founder-inner">
+              <div className="home-founder-avatar" aria-hidden="true">SS</div>
+              <div className="home-founder-text">
+                <p className="home-founder-name">Stephanie Stranko · Founder</p>
+                <p className="home-founder-bio">
+                  Ikwe is led by Stephanie Stranko, a systems builder focused on emotional and behavioral safety in AI,
+                  with frameworks tested across hundreds of scenarios and multiple frontier systems.
+                </p>
+                <Link to="/about" className="home-section-text-link">Read the founder story →</Link>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div className="home-divider" />
 
@@ -791,8 +853,8 @@ export default function Home() {
               has to come from outside.
             </p>
             <div className="home-close-actions">
-              <Link to="/get-started" className="home-btn home-btn-gold">
-                Request Evaluation
+              <Link to="/audit" className="home-btn home-btn-gold">
+                Book an Audit Scope Call
               </Link>
               <Link to="/benchmark" className="home-btn home-btn-outline">
                 View the Benchmark
