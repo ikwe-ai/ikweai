@@ -376,10 +376,7 @@ export default function EqSafetyBenchmark() {
         ogImagePath="/og/benchmark.png"
       />
 
-      <div className="home-page">
-        <div aria-hidden="true" className="home-starfield" />
-        <div className="relative z-10">
-          <SummaryHero
+      <SummaryHero
             kicker="EQ Safety Benchmark — Public Leaderboard"
             title="Frontier AI Behavioral Safety Index."
             summary="The EQ Safety Benchmark is a behavioral evaluation framework that scores AI responses using a binary Safety Gate and eight weighted dimensions. Validated against a baseline of 79 real-world emotional support interaction scenarios drawn from established datasets, it can be applied to any AI system operating in emotionally sensitive contexts. Frontier model scores are public. Client evaluations are private and compared against the same baseline."
@@ -943,8 +940,6 @@ export default function EqSafetyBenchmark() {
           <p className="text-xs text-foreground-subtle mt-4">Client scores are never published. Your evaluation results belong to you.</p>
         </div>
       </section>
-        </div>
-      </div>
     </PageShell>
   );
 }
