@@ -263,29 +263,24 @@ export default function Research() {
 
       <section id="full-report" className="site-section py-14">
         <article className="card-surface p-6 max-w-4xl">
-          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-[0.14em] mb-3">Full Benchmark Access</p>
+          <p className="font-mono text-xs text-foreground-subtle uppercase tracking-[0.14em] mb-3">Want to see how your system performs?</p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-            Full benchmark documentation is available for institutional review when your team needs deeper diligence
-            for procurement, legal, or board review, or when you are preparing for an Ikwe EQ Safety Evaluation.
+            This benchmark shows how frontier models perform. An Ikwe audit runs the same framework against your
+            specific system and produces documented evidence your board, compliance, and partners can use — before you
+            scale.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
-              href="/get-started"
+              href="/audit"
               className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
             >
-              Request Full Report Access
+              Request an Audit →
             </a>
             <a
               href="/audit#deliverables-previews"
               className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
             >
-              View Sample Outputs & Transparency
-            </a>
-            <a
-              href="/audit"
-              className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground-muted hover:text-foreground hover:border-foreground-muted transition-colors btn-quiet"
-            >
-              Open Audit &amp; Validation
+              View Sample Outputs
             </a>
           </div>
         </article>
