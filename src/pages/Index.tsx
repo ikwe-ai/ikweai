@@ -629,13 +629,38 @@ export default function Home() {
 
         <section id="who" className="home-section home-band home-section-merge home-section-cluster-start">
           <div className="home-wrap">
-            <div className="home-center-block home-center-block-tight">
+            <div className="home-center-block">
               <span className="home-eyebrow">Who This Is For</span>
               <h2 className="home-section-title home-section-title-center">
-                AI systems that interact with users
+                Teams deploying AI
                 <br />
-                in emotionally sensitive contexts.
+                in high-trust contexts.
               </h2>
+              <p className="home-section-subtext">
+                When people come to your system, they're not just "users." They're patients, students, clients, or
+                community members who assume it's safe to keep talking.
+              </p>
+              <p className="home-section-subtext home-section-subtext-stacked">
+                Ikwe is built for teams shipping AI into situations where a single bad response can damage trust,
+                reputation, or someone's well-being — whether that's a mental health app, a youth platform, a
+                companion AI, or any product that meets people in vulnerable moments.
+              </p>
+            </div>
+
+            <div className="home-who-questions">
+              <div className="home-who-questions-label">We help you answer three questions before you scale:</div>
+              <div className="home-who-question-list">
+                <div className="home-who-question">
+                  What actually happens when someone in distress or crisis talks to your AI?
+                </div>
+                <div className="home-who-question">
+                  Where does the system quietly introduce emotional risk, even when it "sounds" supportive?
+                </div>
+                <div className="home-who-question">
+                  What evidence can you put in front of your board, compliance, and partners to show you took
+                  behavioral safety seriously before deployment?
+                </div>
+              </div>
             </div>
 
             <div className="home-grid-two">
