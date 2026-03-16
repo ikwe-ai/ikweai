@@ -11,6 +11,7 @@ import StageDiagram from "@/components/visuals/StageDiagram";
 import DimensionsGrid from "@/components/visuals/DimensionsGrid";
 import DomainsTagWall from "@/components/visuals/DomainsTagWall";
 import ConnectedPages from "@/components/ConnectedPages";
+import { trackEvent } from "@/hooks/useAnalytics";
 
 export default function Research() {
   const vulnerableStates = [
@@ -70,6 +71,7 @@ export default function Research() {
               <a
                 href="/audit"
                 className="inline-flex items-center rounded bg-lilac px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+                onClick={() => trackEvent("audit_cta_research", { source: "hero" })}
               >
                 Book an Audit Scope Call
               </a>
@@ -273,12 +275,14 @@ export default function Research() {
             <a
               href="/audit"
               className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+              onClick={() => trackEvent("audit_cta_research", { source: "bottom" })}
             >
               Request an Audit →
             </a>
             <a
               href="/audit#deliverables-previews"
               className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
+              onClick={() => trackEvent("cta_sample_report", { source: "research_bottom" })}
             >
               View Sample Outputs
             </a>

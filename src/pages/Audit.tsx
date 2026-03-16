@@ -9,6 +9,7 @@ import DeliverablesGrid from "@/components/visuals/DeliverablesGrid";
 import ArtifactsPreviewRow from "@/components/visuals/ArtifactsPreviewRow";
 import ScenarioDomainMatrix from "@/components/visuals/ScenarioDomainMatrix";
 import ConnectedPages from "@/components/ConnectedPages";
+import { trackEvent } from "@/hooks/useAnalytics";
 
 type PathwayStage = {
   step: string;
@@ -240,6 +241,7 @@ export default function Audit() {
           <a
             href="/get-started"
             className="inline-flex items-center rounded bg-lilac px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+            onClick={() => trackEvent("audit_cta_audit_page")}
           >
             Book an Audit Scope Call
           </a>
@@ -563,6 +565,7 @@ export default function Audit() {
                 <a
                   href="/get-started"
                   className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+                  onClick={() => trackEvent("audit_cta_request_bottom")}
                 >
                   Request Ikwe EQ Safety Evaluation
                 </a>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PageMeta from "@/components/PageMeta";
 import { PUBLIC_STATS } from "@/content/stats";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
+import { trackEvent } from "@/hooks/useAnalytics";
 
 const governanceRows = [
   ["Data security", "Multi-turn emotional trajectory"],
@@ -198,10 +199,10 @@ export default function Home() {
               your board, legal team, and compliance advisors can trust.
             </p>
             <div className="home-hero-actions">
-              <Link to="/audit" className="home-btn home-btn-gold">
+              <Link to="/audit" className="home-btn home-btn-gold" onClick={() => trackEvent("audit_cta_hero")}>
                 Request a Behavioral Safety Audit
               </Link>
-              <Link to="/samples" className="home-btn home-btn-outline">
+              <Link to="/samples" className="home-btn home-btn-outline" onClick={() => trackEvent("cta_sample_report", { source: "hero" })}>
                 See a Sample Risk Report
               </Link>
             </div>
@@ -366,7 +367,7 @@ export default function Home() {
               <p className="home-failure-legend">
                 Ikwe audits are designed to catch and quantify these behaviors before they reach real users.
               </p>
-              <Link to="/audit" className="home-section-text-link home-section-text-link-sm">
+              <Link to="/audit" className="home-section-text-link home-section-text-link-sm" onClick={() => trackEvent("audit_cta_drift_soft")}>
                 Learn how the audit works →
               </Link>
             </div>
@@ -649,7 +650,7 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="home-hero-actions">
-                  <Link to="/audit#deliverables-previews" className="home-btn home-btn-gold">
+                  <Link to="/audit#deliverables-previews" className="home-btn home-btn-gold" onClick={() => trackEvent("cta_sample_report", { source: "output_section" })}>
                     View Sample Outputs
                   </Link>
                   <Link to="/audit" className="home-btn home-btn-outline">
@@ -697,7 +698,7 @@ export default function Home() {
                   behavioral safety seriously before deployment?
                 </div>
               </div>
-              <Link to="/audit" className="home-section-text-link">
+              <Link to="/audit" className="home-section-text-link" onClick={() => trackEvent("audit_cta_who_soft")}>
                 See how an Ikwe audit answers these questions →
               </Link>
             </div>
@@ -760,7 +761,7 @@ export default function Home() {
                   Ikwe evaluates your system against the EQ Safety Benchmark and delivers governance-ready
                   documentation your board, legal, and compliance teams can stand behind.
                 </p>
-                <Link to="/audit" className="home-btn home-btn-gold">
+                <Link to="/audit" className="home-btn home-btn-gold" onClick={() => trackEvent("audit_cta_two_ways")}>
                   Book an Audit Scope Call
                 </Link>
               </article>
@@ -805,10 +806,10 @@ export default function Home() {
             </div>
 
             <div className="home-engage-cta">
-              <Link to="/audit" className="home-btn home-btn-gold home-btn-large">
+              <Link to="/audit" className="home-btn home-btn-gold home-btn-large" onClick={() => trackEvent("audit_cta_engage")}>
                 Book an Audit Scope Call
               </Link>
-              <Link to="/audit" className="home-btn home-btn-outline home-btn-large">
+              <Link to="/audit" className="home-btn home-btn-outline home-btn-large" onClick={() => trackEvent("cta_view_pathway")}>
                 View the Full Pathway
               </Link>
               <p className="home-engage-note">
@@ -853,10 +854,10 @@ export default function Home() {
               has to come from outside.
             </p>
             <div className="home-close-actions">
-              <Link to="/audit" className="home-btn home-btn-gold">
+              <Link to="/audit" className="home-btn home-btn-gold" onClick={() => trackEvent("audit_cta_close")}>
                 Book an Audit Scope Call
               </Link>
-              <Link to="/benchmark" className="home-btn home-btn-outline">
+              <Link to="/benchmark" className="home-btn home-btn-outline" onClick={() => trackEvent("cta_benchmark", { source: "close" })}>
                 View the Benchmark
               </Link>
             </div>
