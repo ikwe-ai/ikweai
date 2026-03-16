@@ -20,7 +20,7 @@ export default function About() {
           "Versioned evidence policy",
           "Structured disclosure and COI recusal practices",
         ]}
-        primaryAction={{ href: "/intake#application-form", label: "Request Evaluation →" }}
+        primaryAction={{ href: "/get-started", label: "Request Evaluation →" }}
         secondaryAction={{ href: "/audit#deliverables-previews", label: "View Sample Outputs & Transparency" }}
         jumpLinks={[
           { href: "#independence", label: "Independence" },
@@ -147,7 +147,7 @@ export default function About() {
       <section className="py-14 max-w-2xl">
         <p className="text-sm text-foreground-muted">
           Questions about our independence standards or COI policy?{" "}
-          <a href="/intake#application-form" className="link-lilac underline">Contact us</a>.
+          <a href="/get-started" className="link-lilac underline">Contact us</a>.
         </p>
       </section>
     </PageShell>

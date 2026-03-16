@@ -55,7 +55,7 @@ export default function Trust() {
           "Independent third-party evaluation standards",
         ]}
         primaryAction={{ href: "#handling-boundary", label: "View Handling Boundary ↓" }}
-        secondaryAction={{ href: "/intake#application-form", label: "Request Evaluation" }}
+        secondaryAction={{ href: "/get-started", label: "Request Evaluation" }}
         jumpLinks={[
           { href: "#information-needs", label: "Information Needs" },
           { href: "#faq", label: "FAQ" },
@@ -181,7 +181,7 @@ export default function Trust() {
           version for review.
         </p>
         <a
-          href="/intake#application-form"
+          href="/get-started"
           className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
           style={{ fontFamily: "var(--font-body)" }}
         >

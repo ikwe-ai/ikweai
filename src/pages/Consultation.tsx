@@ -20,7 +20,7 @@ export default function Consultation() {
           "Scope and timeline alignment",
           "Governance-oriented delivery planning",
         ]}
-        primaryAction={{ href: "/intake#application-form", label: "Request Evaluation →" }}
+        primaryAction={{ href: "/get-started", label: "Request Evaluation →" }}
         secondaryAction={{ href: "/audit", label: "View Audit Overview" }}
         jumpLinks={[
           { href: "#how-it-fits", label: "How It Fits" },
@@ -69,7 +69,7 @@ export default function Consultation() {
         <div className="card-surface p-6">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-widest mb-3">Next Actions</p>
           <div className="flex flex-wrap items-center gap-5 text-sm">
-            <a href="/intake#application-form" className="link-lilac">
+            <a href="/get-started" className="link-lilac">
               Open request form →
             </a>
             <a href="/audit#deliverables-previews" className="link-lilac">

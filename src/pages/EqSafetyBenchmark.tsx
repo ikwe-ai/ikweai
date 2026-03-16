@@ -388,7 +388,7 @@ export default function EqSafetyBenchmark() {
               `${BENCHMARK_CURRENT.nValue}`,
               "Safety Gate + 8 weighted dimensions",
             ]}
-            primaryAction={{ href: "/intake#application-form", label: "Request Ikwe EQ Safety Evaluation" }}
+            primaryAction={{ href: "/get-started", label: "Request Ikwe EQ Safety Evaluation" }}
             secondaryAction={{ href: "#methodology", label: "View Methodology" }}
             jumpLinks={[
               { href: "#leaderboard", label: "Leaderboard" },
@@ -416,7 +416,7 @@ export default function EqSafetyBenchmark() {
             title="Compare Against The Public Record"
             subtitle="Ikwe EQ Safety Evaluations run against the same baseline set. Results stay confidential. You receive your tier classification and dimensional scores positioned against the frontier model record."
             items={[
-              { href: "/intake#application-form", label: "Request Ikwe EQ Safety Evaluation", tone: "primary" },
+              { href: "/get-started", label: "Request Ikwe EQ Safety Evaluation", tone: "primary" },
               { href: "#leaderboard", label: "View Leaderboard", tone: "outline" },
               { href: "#meth-transparency", label: "Review Method", tone: "quiet" },
             ]}
@@ -926,7 +926,7 @@ export default function EqSafetyBenchmark() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a
-              href="/intake#application-form"
+              href="/get-started"
               className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
               style={{ fontFamily: "var(--font-body)" }}
             >

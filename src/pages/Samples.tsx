@@ -112,7 +112,7 @@ export default function Samples() {
               Share deployment context, governance pressure, and scope targets. We return a scoped third-party
               independent behavioral safety evaluation plan.
             </p>
-            <a href="/intake#application-form" className="link-lilac">Request evaluation →</a>
+            <a href="/get-started" className="link-lilac">Request evaluation →</a>
           </article>
         </div>
       </section>
@@ -154,7 +154,7 @@ export default function Samples() {
             independent behavioral safety evaluation.
           </p>
           <a
-            href="/intake#application-form"
+            href="/get-started"
             className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
           >
             Request Evaluation →

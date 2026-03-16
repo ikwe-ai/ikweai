@@ -61,7 +61,7 @@ export default function Research() {
             </p>
             <div className="flex flex-wrap gap-3">
               <a
-                href="/intake#application-form"
+                href="/get-started"
                 className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
               >
                 Request Full Report Access
@@ -77,7 +77,7 @@ export default function Research() {
               title="Next Step"
               subtitle="Use the findings for executive alignment, then request scope for your system."
               items={[
-                { href: "/intake#application-form", label: "Request Ikwe EQ Safety Evaluation", tone: "primary" },
+                { href: "/get-started", label: "Request Ikwe EQ Safety Evaluation", tone: "primary" },
                 { href: "/benchmark", label: "Open Public Index", tone: "outline" },
                 { href: "/audit#deliverables-previews", label: "View Sample Outputs", tone: "quiet" },
               ]}
@@ -253,7 +253,7 @@ export default function Research() {
           </p>
           <div className="flex flex-wrap gap-3">
             <a
-              href="/intake#application-form"
+              href="/get-started"
               className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
             >
               Request Full Report Access
