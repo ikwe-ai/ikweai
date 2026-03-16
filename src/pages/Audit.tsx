@@ -312,6 +312,10 @@ export default function Audit() {
 
       <section id="how-it-works" className="site-section py-10 border-b border-border">
         <p className="section-kicker mb-6">How the Audit Works</p>
+        <p className="text-sm text-foreground-muted leading-relaxed max-w-3xl mb-3">
+          Every audit follows a structured, four-stage pathway — from scoping your risk surface to delivering a
+          board-ready brief.
+        </p>
         <p className="text-sm text-foreground-muted leading-relaxed max-w-3xl">
           Most teams start with an Ikwe EQ Safety Evaluation to establish a documented risk baseline, then add
           Implementation Support or Ikwe Behavioral Monitoring based on their risk profile and deployment timeline.
