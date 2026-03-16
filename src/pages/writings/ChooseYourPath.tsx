@@ -1,6 +1,7 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
+import ArchiveBanner from "@/components/ArchiveBanner";
 
 export default function ChooseYourPath() {
   return (
@@ -8,8 +9,9 @@ export default function ChooseYourPath() {
       <PageMeta
         title="Choose Your Path | Ikwe.ai"
         description="An opinion essay on interruption, cumulative risk, and how better paths are built through repeated governance choices."
-        path="/research/writings/choose-your-path"
+        path="/archive/research/writings/choose-your-path"
       />
+      <ArchiveBanner type="library" />
       <SummaryHero
         kicker="Opinion Essay"
         title="Choose Your Path"

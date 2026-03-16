@@ -2,6 +2,7 @@ import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
+import ArchiveBanner from "@/components/ArchiveBanner";
 
 export default function Press() {
   const publications = [
@@ -9,14 +10,14 @@ export default function Press() {
       label: "Published",
       title: "Writing Library",
       body: "Full public essays, opinions, and research notes with direct page links.",
-      href: "/research/writings",
+      href: "/archive/research/writings",
       cta: "Open writing library →",
     },
     {
       label: "Published",
       title: "Case Studies Index",
       body: "Full case-study pages with trajectory context, interventions, and outcome snapshots.",
-      href: "/research/case-studies",
+      href: "/archive/research/case-studies",
       cta: "Open case index →",
     },
     {
@@ -53,6 +54,7 @@ export default function Press() {
         description="Benchmark publications, updates, and press resources from Ikwe.ai — the behavioral safety standard for human-facing AI."
         path="/research/press"
       />
+      <ArchiveBanner type="library" />
       <SummaryHero
         kicker="Research Communications"
         title="Press & Updates"

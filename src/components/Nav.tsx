@@ -27,10 +27,9 @@ const researchLinks = [
 const homeSectionLinks = [
   { label: "The Problem", href: "#thesis" },
   { label: "The Benchmark", href: "#benchmark" },
-  { label: "Leaderboard", to: "/benchmark" },
-  { label: "Safety Gate", href: "#safety-gate" },
   { label: "How We Evaluate", href: "#system" },
   { label: "Work With Us", href: "#engage" },
+  { label: "Leaderboard", to: "/benchmark" },
 ] as const;
 
 export default function Nav() {
@@ -39,7 +38,9 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileResearchOpen, setMobileResearchOpen] = useState(false);
   const [researchOpen, setResearchOpen] = useState(false);
+  const [homeOpen, setHomeOpen] = useState(false);
   const researchRef = useRef<HTMLDivElement>(null);
+  const homeRef = useRef<HTMLDivElement>(null);
   const isHome = location.pathname === "/";
 
   useEffect(() => {
@@ -52,9 +53,10 @@ export default function Nav() {
     setMobileOpen(false);
     setMobileResearchOpen(false);
     setResearchOpen(false);
+    setHomeOpen(false);
   }, [location.pathname]);
 
-  // Close mega panel on outside click (touch-device fallback)
+  // Close mega panels on outside click (touch-device fallback)
   useEffect(() => {
     if (!researchOpen) return;
     const handler = (e: MouseEvent) => {
@@ -65,6 +67,17 @@ export default function Nav() {
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   }, [researchOpen]);
+
+  useEffect(() => {
+    if (!homeOpen) return;
+    const handler = (e: MouseEvent) => {
+      if (homeRef.current && !homeRef.current.contains(e.target as Node)) {
+        setHomeOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [homeOpen]);
 
   const isActive = (path: string) =>
     path === "/" ? location.pathname === "/" : location.pathname === path || location.pathname.startsWith(`${path}/`);
@@ -136,14 +149,58 @@ export default function Nav() {
               className="hidden lg:flex items-center gap-1 rounded-full border border-border bg-background-card p-1 nav-pill"
               aria-label="Site navigation"
             >
-              <Link
-                to="/"
-                className={`nav-link-pill rounded-full px-3 py-1.5 text-sm transition-colors whitespace-nowrap ${
-                  isActive("/") ? "bg-lilac-dim text-lilac-bright" : "text-foreground-muted hover:text-foreground"
-                }`}
+              {/* ── Home dropdown ── */}
+              <div
+                ref={homeRef}
+                className="relative"
+                onMouseEnter={() => setHomeOpen(true)}
+                onMouseLeave={() => setHomeOpen(false)}
               >
-                Home
-              </Link>
+                <button
+                  onClick={() => setHomeOpen((v) => !v)}
+                  aria-expanded={homeOpen}
+                  aria-haspopup="true"
+                  className={`nav-link-pill rounded-full px-3 py-1.5 text-sm transition-colors whitespace-nowrap flex items-center gap-1 ${
+                    isActive("/") ? "bg-lilac-dim text-lilac-bright" : "text-foreground-muted hover:text-foreground"
+                  }`}
+                >
+                  Home
+                  <span
+                    aria-hidden="true"
+                    className="text-[9px] opacity-50 transition-transform duration-200 inline-block"
+                    style={{ transform: homeOpen ? "rotate(180deg)" : "none" }}
+                  >
+                    ▾
+                  </span>
+                </button>
+
+                {homeOpen && (
+                  <div className="mega-panel" role="menu" aria-label="Homepage sections">
+                    <Link
+                      to="/"
+                      className="mega-link"
+                      role="menuitem"
+                      onClick={() => setHomeOpen(false)}
+                    >
+                      <span className="mega-link-title">Homepage</span>
+                      <span className="mega-link-desc">Back to the ikwe.ai homepage</span>
+                    </Link>
+                    <div className="mt-2 pt-2 border-t border-border grid grid-cols-2 gap-1">
+                      {homeSectionLinks.filter(l => "href" in l).map((link) => (
+                        <a
+                          key={"href" in link ? link.href : ""}
+                          href={`/${"href" in link ? link.href : ""}`}
+                          className="mega-link"
+                          role="menuitem"
+                          onClick={() => setHomeOpen(false)}
+                        >
+                          <span className="mega-link-title">{link.label}</span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
 
               {/* ── Research dropdown ── */}
               <div
@@ -273,15 +330,38 @@ export default function Nav() {
         ) : (
           <div className="lg:hidden nav-blur border-t border-border">
             <nav className="container mx-auto max-w-6xl px-4 sm:px-6 py-5 flex flex-col gap-2">
-              <Link
-                to="/"
-                className={`rounded border px-3 py-2 text-sm ${
+              {/* Home group — accordion on mobile */}
+              <button
+                onClick={() => setHomeOpen((v) => !v)}
+                className={`text-left rounded border px-3 py-2 text-sm flex items-center justify-between ${
                   isActive("/") ? "border-lilac text-lilac-bright bg-lilac-dim" : "border-border text-foreground-muted"
                 }`}
-                onClick={closeMobileMenu}
               >
-                Home
-              </Link>
+                <span>Home</span>
+                <span className="font-mono text-[10px] opacity-50">{homeOpen ? "▲" : "▼"}</span>
+              </button>
+
+              {homeOpen && (
+                <div className="pl-3 flex flex-col gap-1.5 pb-1">
+                  <Link
+                    to="/"
+                    className="rounded border border-border/50 px-3 py-2 text-sm text-foreground-subtle hover:text-foreground hover:border-border transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    Homepage
+                  </Link>
+                  {homeSectionLinks.filter(l => "href" in l).map((link) => (
+                    <a
+                      key={"href" in link ? link.href : ""}
+                      href={`/${"href" in link ? link.href : ""}`}
+                      className="rounded border border-border/50 px-3 py-2 text-sm text-foreground-subtle hover:text-foreground hover:border-border transition-colors"
+                      onClick={closeMobileMenu}
+                    >
+                      {"label" in link ? link.label : ""}
+                    </a>
+                  ))}
+                </div>
+              )}
 
               {/* Research group — accordion on mobile */}
               <button

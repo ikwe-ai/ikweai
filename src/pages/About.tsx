@@ -2,6 +2,7 @@ import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 import { BENCHMARK_COPY, BENCHMARK_CURRENT, BENCHMARK_LOG_REQUEST } from "@/lib/benchmark-data";
+import ArchiveBanner from "@/components/ArchiveBanner";
 
 export default function About() {
   return (
@@ -9,8 +10,9 @@ export default function About() {
       <PageMeta
         title="About | Ikwe.ai"
         description="Ikwe.ai is the independent behavioral safety layer for human-facing AI. Independence standards, COI policy, and evidence governance."
-        path="/about"
+        path="/archive/about"
       />
+      <ArchiveBanner />
       <SummaryHero
         kicker="About Ikwe.ai"
         title="Built to be independent."
