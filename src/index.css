@@ -715,6 +715,67 @@
   line-height: 1.5;
 }
 
+.home-failure-modes {
+  margin: 2.5rem 0 2rem;
+}
+
+.home-failure-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: hsl(var(--lilac) / 0.7);
+  margin-bottom: 0.5rem;
+}
+
+.home-failure-oneliner {
+  color: var(--home-muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.home-failure-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 680px) {
+  .home-failure-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-failure-card {
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--home-border);
+  border-top: 2px solid hsl(var(--signal) / 0.45);
+  border-radius: 4px;
+  background: var(--home-purple-8);
+}
+
+.home-failure-card-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--home-white);
+  margin-bottom: 0.5rem;
+}
+
+.home-failure-card-body {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--home-muted);
+}
+
+.home-failure-legend {
+  font-size: 0.78rem;
+  color: hsl(var(--lilac) / 0.55);
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+
 .home-core-callout {
   max-width: 780px;
   margin-bottom: 2rem;

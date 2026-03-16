@@ -173,20 +173,20 @@ export default function Audit() {
       />
 
       <SummaryHero
-        kicker={`Ikwe EQ Safety Evaluation · EQ Safety Benchmark ${BENCHMARK_CURRENT.version}`}
-        title="Behavioral Safety Validation for AI systems."
-        summary="Start with the EQ Safety Benchmark framework, establish a documented risk baseline through an Ikwe EQ Safety Evaluation, then extend into remediation support and Ikwe Behavioral Monitoring as needed. This pathway is built for CTO and CFO decisions, not just technical review."
+        kicker="Independent Behavioral Safety Audits"
+        title="Independent behavioral safety audits for human-facing AI."
+        summary="Most AI systems have never been tested for what happens when a real person shows up distressed, in crisis, or emotionally vulnerable. An Ikwe audit tells you exactly how your system behaves in those moments — and gives you evidence your board, compliance, and partners can stand behind."
         highlights={[
           BENCHMARK_CURRENT.nValue,
           `${BENCHMARK_CURRENT.scenarios} scenarios`,
           `${BENCHMARK_CURRENT.domains} behavioral domains`,
           "Safety Gate + 8 weighted dimensions",
         ]}
-        primaryAction={{ href: "/get-started", label: "Request Ikwe EQ Safety Evaluation" }}
-        secondaryAction={{ href: "#validation-pathway", label: "View the Validation Pathway ↓" }}
+        primaryAction={{ href: "/get-started", label: "Book an Audit Scope Call" }}
+        secondaryAction={{ href: "/samples", label: "View a Sample Risk Report" }}
         jumpLinks={[
-          { href: "#engagement-levels", label: "Engagement levels" },
-          { href: "#validation-pathway", label: "Full pathway detail" },
+          { href: "#what-you-get", label: "What you get" },
+          { href: "#how-it-works", label: "How it works" },
           { href: "#request-start", label: "Request evaluation" },
         ]}
         visual={{
@@ -201,6 +201,54 @@ export default function Audit() {
           tone: "danger",
         }}
       />
+
+      <section id="what-you-get" className="site-section py-10 border-b border-border">
+        <p className="section-kicker mb-6">What You Get</p>
+        <p className="text-sm text-foreground-muted leading-relaxed max-w-3xl mb-8">
+          We run structured, scenario-based behavioral safety audits on your AI system, focused on first-contact and
+          early-trajectory interactions. You receive a formal risk report, a behavioral scorecard, and a board-ready
+          brief that documents where your system is safe to scale, where it drifts, and where it quietly introduces
+          emotional risk.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mb-8">
+          <article className="card-surface p-5">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-3">01</p>
+            <h3 className="font-display text-lg text-foreground mb-2">Behavioral risk scorecard</h3>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              Clear scoring across emotional safety dimensions — stabilizing vs. escalating behavior, repair attempts,
+              neglect patterns — with concrete examples from your own system.
+            </p>
+          </article>
+          <article className="card-surface p-5">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-3">02</p>
+            <h3 className="font-display text-lg text-foreground mb-2">Safety Gate verdict</h3>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              A pass / conditional / fail verdict for first-contact behavioral safety, tied to specific failure modes
+              and remediation priorities.
+            </p>
+          </article>
+          <article className="card-surface p-5">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-3">03</p>
+            <h3 className="font-display text-lg text-foreground mb-2">Board and regulator brief</h3>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              A concise narrative your leadership, compliance, and external partners can use as proof of independent
+              behavioral validation before and after deployment.
+            </p>
+          </article>
+        </div>
+        <div className="flex flex-wrap items-center gap-4">
+          <a
+            href="/get-started"
+            className="inline-flex items-center rounded bg-lilac px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
+          >
+            Book an Audit Scope Call
+          </a>
+          <p className="text-xs text-foreground-subtle">
+            15–30 minutes. We review your system, data flows, and user risk profile to define the right audit level —
+            no obligation.
+          </p>
+        </div>
+      </section>
 
       <section className="site-section py-8 border-b border-border">
         <p className="text-xs text-foreground-subtle mb-5">Use these to jump to the right stage for your situation.</p>
@@ -261,6 +309,14 @@ export default function Audit() {
           },
         ]}
       />
+
+      <section id="how-it-works" className="site-section py-10 border-b border-border">
+        <p className="section-kicker mb-6">How the Audit Works</p>
+        <p className="text-sm text-foreground-muted leading-relaxed max-w-3xl">
+          Most teams start with an Ikwe EQ Safety Evaluation to establish a documented risk baseline, then add
+          Implementation Support or Ikwe Behavioral Monitoring based on their risk profile and deployment timeline.
+        </p>
+      </section>
 
       <section id="validation-pathway" className="site-section py-14 border-b border-border audit-section-block">
         <div className="audit-section-layout">

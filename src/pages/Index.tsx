@@ -335,6 +335,39 @@ export default function Home() {
               ))}
             </div>
 
+            <div className="home-failure-modes">
+              <div className="home-failure-label">Behavioral failure modes we see most often</div>
+              <p className="home-failure-oneliner">
+                In our EQ Safety Benchmark, nearly half of risky responses fell into just three patterns.
+              </p>
+              <div className="home-failure-cards">
+                <article className="home-failure-card">
+                  <div className="home-failure-card-title">Supportive escalation</div>
+                  <p className="home-failure-card-body">
+                    Looks caring on the surface, but never actually interrupts risky trajectories like self-harm
+                    spirals or giving up on care.
+                  </p>
+                </article>
+                <article className="home-failure-card">
+                  <div className="home-failure-card-title">Polite neglect</div>
+                  <p className="home-failure-card-body">
+                    Answers the literal question and ignores obvious distress. Everything seems normal — except the
+                    person doesn't get help.
+                  </p>
+                </article>
+                <article className="home-failure-card">
+                  <div className="home-failure-card-title">Unrepaired harm</div>
+                  <p className="home-failure-card-body">
+                    Notices something is off once, then moves on. No attempt to clarify, correct, or repair in later
+                    turns.
+                  </p>
+                </article>
+              </div>
+              <p className="home-failure-legend">
+                Ikwe audits are designed to catch and quantify these behaviors before they reach real users.
+              </p>
+            </div>
+
             <div className="home-note">
               <p className="home-note-title">
                 We help teams catch risky behavior before it becomes harm, liability, or a public issue.
