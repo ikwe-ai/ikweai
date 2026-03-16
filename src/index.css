@@ -3005,6 +3005,61 @@
     text-wrap: pretty;
   }
 
+  /* ── Artifact preview cards ── */
+  .artifact-preview-btn {
+    display: block;
+    width: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .artifact-preview-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: hsl(var(--background-surface));
+  }
+
+  .artifact-preview-iframe {
+    border: none;
+    display: block;
+    pointer-events: none;
+  }
+
+  .artifact-preview-overlay {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0.5rem 0.65rem;
+    transition: background 0.15s;
+  }
+
+  .artifact-preview-btn:hover .artifact-preview-overlay {
+    background: hsl(var(--lilac) / 0.08);
+  }
+
+  .artifact-preview-hint {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: hsl(var(--lilac) / 0);
+    background: hsl(var(--background-card) / 0.85);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    transition: color 0.15s;
+  }
+
+  .artifact-preview-btn:hover .artifact-preview-hint {
+    color: hsl(var(--lilac) / 0.8);
+  }
+
   .audit-decision-grid {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
