@@ -4,6 +4,14 @@ import { useLocation } from "react-router-dom";
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
+    // Customer.io CDP analytics snippet
+    cioanalytics?: {
+      identify: (userId: string, traits?: Record<string, unknown>) => void;
+      track: (event: string, properties?: Record<string, unknown>) => void;
+      page: (name?: string, properties?: Record<string, unknown>) => void;
+      reset: () => void;
+      push: (args: unknown[]) => void;
+    };
   }
 }
 
@@ -15,12 +23,48 @@ export function useAnalytics() {
   const location = useLocation();
 
   useEffect(() => {
-    if (typeof window.gtag !== "function") return;
-    window.gtag("event", "page_view", {
-      page_path: location.pathname + location.search,
-      page_location: window.location.href,
-    });
+    const path = location.pathname + location.search;
+
+    // GA4 page view
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "page_view", {
+        page_path: path,
+        page_location: window.location.href,
+      });
+    }
+
+    // Customer.io page view (SPA — must be called manually per route)
+    if (window.cioanalytics?.page) {
+      window.cioanalytics.page(document.title, {
+        path,
+        url: window.location.href,
+        title: document.title,
+      });
+    }
   }, [location.pathname, location.search]);
+}
+
+/**
+ * Identify a visitor in Customer.io.
+ * Call after a form submission when you have their email.
+ */
+export function cioIdentify(
+  email: string,
+  traits?: Record<string, unknown>,
+) {
+  if (!window.cioanalytics?.identify) return;
+  window.cioanalytics.identify(email, { email, ...traits });
+}
+
+/**
+ * Fire a named Customer.io event.
+ */
+export function cioTrack(
+  event: string,
+  properties?: Record<string, unknown>,
+) {
+  if (!window.cioanalytics?.track) return;
+  window.cioanalytics.track(event, properties ?? {});
 }
 
 /**

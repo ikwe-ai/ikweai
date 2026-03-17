@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PageMeta from "@/components/PageMeta";
 import PageShell from "@/components/PageShell";
 import SummaryHero from "@/components/SummaryHero";
+import { cioIdentify, cioTrack } from "@/hooks/useAnalytics";
 
 const CALENDLY_URL = "https://calendly.com/stephanie-ikwe/30-min-chat-with-stephanie-ikweai";
 
@@ -41,6 +42,18 @@ export default function GetStarted() {
         note: callForm.note,
         submitted_at: new Date().toISOString(),
       });
+      // Identify in Customer.io + fire conversion event
+      cioIdentify(callForm.email, {
+        first_name: callForm.name.split(' ')[0],
+        last_name: callForm.name.split(' ').slice(1).join(' ') || '',
+        company: callForm.company,
+        lead_source: 'scope_call_form',
+      });
+      cioTrack('scope_call_booked', {
+        name: callForm.name,
+        company: callForm.company,
+        note: callForm.note,
+      });
       window.location.href = CALENDLY_URL;
     } catch {
       setCallState("error");
@@ -55,6 +68,9 @@ export default function GetStarted() {
         email: newsForm.email,
         submitted_at: new Date().toISOString(),
       });
+      // Identify in Customer.io + fire newsletter event
+      cioIdentify(newsForm.email, { lead_source: 'newsletter_signup' });
+      cioTrack('newsletter_subscribed', { source: 'get_started_page' });
       setNewsState("done");
     } catch {
       setNewsState("error");

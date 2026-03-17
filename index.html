@@ -42,6 +42,13 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
+    <!-- Customer.io CDP JavaScript Snippet -->
+    <script type="text/javascript">
+      var cioanalytics=window.cioanalytics=window.cioanalytics||{},methods=["identify","track","page","group","alias","reset","on","off","once","ready"],factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);return e.unshift(t),cioanalytics.push(e),cioanalytics}};for(var i=0;i<methods.length;i++){var key=methods[i];cioanalytics[key]=factory(key)}cioanalytics.load=function(t,e){cioanalytics._writeKey=t;var n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://cdp.customer.io/v1/analytics-js/snippet/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a),cioanalytics._loadOptions=e},cioanalytics.SNIPPET_VERSION="4.15.3";
+      cioanalytics.load("2e0371f0ea49350575f4");
+      // SPA: page() is called manually via useCioAnalytics hook — auto-page disabled
+    </script>
+
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LV7G292YD8"></script>
     <script>

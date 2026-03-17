@@ -7,8 +7,8 @@ import { Client } from '@notionhq/client';
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const NOTION_DB = process.env.NOTION_INQUIRY_DB_ID || process.env.NOTION_INQUIRIES_DB;
 
-const CUSTOMERIO_SITE_ID   = process.env.CUSTOMERIO_SITE_ID;
-const CUSTOMERIO_TRACK_KEY = process.env.CUSTOMERIO_TRACK_API_KEY;
+// CDP (Pipelines) API — uses Write Key as Basic auth username, blank password
+const CUSTOMERIO_CDP_KEY = process.env.CUSTOMERIO_CDP_KEY || process.env.CUSTOMERIO_SITE_ID;
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -47,29 +47,27 @@ function mapScenarioVolumeToEngagementType(v) {
   return 'Unsure';
 }
 
-// Push contact + event to Customer.io Track API
+// Push contact + event to Customer.io CDP (Pipelines) API
 async function pushToCustomerIO(data) {
-  if (!CUSTOMERIO_SITE_ID || !CUSTOMERIO_TRACK_KEY) {
-    console.warn('Customer.io env vars not set — skipping CIO push');
+  if (!CUSTOMERIO_CDP_KEY) {
+    console.warn('CUSTOMERIO_CDP_KEY not set — skipping CIO push');
     return;
   }
 
-  const authHeader = 'Basic ' + Buffer.from(
-    `${CUSTOMERIO_SITE_ID}:${CUSTOMERIO_TRACK_KEY}`
-  ).toString('base64');
+  // CDP API: Basic auth = "WriteKey:" (key as username, blank password)
+  const authHeader = 'Basic ' + Buffer.from(`${CUSTOMERIO_CDP_KEY}:`).toString('base64');
 
   const email      = (data.work_email || data.email || '').toLowerCase().trim();
-  const customerId = encodeURIComponent(email);
   const segment    = deriveSegment(data.deployment_type, data.use_case);
   const nameParts  = (data.name || '').split(' ');
 
-  // 1. Identify / upsert the person
-  const identifyRes = await fetch(
-    `https://track.customer.io/api/v1/customers/${customerId}`,
-    {
-      method: 'PUT',
-      headers: { Authorization: authHeader, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
+  // 1. Identify / upsert the person (CDP /identify)
+  const identifyRes = await fetch('https://cdp.customer.io/v1/identify', {
+    method: 'POST',
+    headers: { Authorization: authHeader, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      userId: email,
+      traits: {
         email,
         first_name:       nameParts[0] || data.name,
         last_name:        nameParts.slice(1).join(' ') || '',
@@ -84,34 +82,31 @@ async function pushToCustomerIO(data) {
         region:           data.region || '',
         company_size:     data.company_size || '',
         lead_source:      'inbound_inquiry',
-        created_at:       Math.floor(Date.now() / 1000),
-      }),
-    }
-  );
+      },
+    }),
+  });
 
   if (!identifyRes.ok) {
     console.error('CIO identify failed:', identifyRes.status, await identifyRes.text());
   }
 
-  // 2. Track the inquiry_submitted event (triggers inbound campaign sequence)
-  const eventRes = await fetch(
-    `https://track.customer.io/api/v1/customers/${customerId}/events`,
-    {
-      method: 'POST',
-      headers: { Authorization: authHeader, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: 'inquiry_submitted',
-        data: {
-          segment,
-          use_case:         data.use_case || '',
-          deployment_type:  data.deployment_type || '',
-          scenario_volume:  data.scenario_volume || '',
-          engagement_model: data.engagement_model || '',
-          company:          data.company,
-        },
-      }),
-    }
-  );
+  // 2. Track inquiry_submitted event (triggers inbound campaign sequence)
+  const eventRes = await fetch('https://cdp.customer.io/v1/track', {
+    method: 'POST',
+    headers: { Authorization: authHeader, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      userId: email,
+      event: 'inquiry_submitted',
+      properties: {
+        segment,
+        use_case:         data.use_case || '',
+        deployment_type:  data.deployment_type || '',
+        scenario_volume:  data.scenario_volume || '',
+        engagement_model: data.engagement_model || '',
+        company:          data.company,
+      },
+    }),
+  });
 
   if (!eventRes.ok) {
     console.error('CIO event failed:', eventRes.status, await eventRes.text());
