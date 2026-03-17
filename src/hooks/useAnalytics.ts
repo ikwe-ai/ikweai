@@ -34,7 +34,9 @@ export function useAnalytics() {
     }
 
     // Customer.io page view (SPA — must be called manually per route)
-    if (window.cioanalytics?.page) {
+    // Guard: only call if the real analytics.min.js has loaded (not the stub)
+    if (typeof window.cioanalytics?.page === 'function' &&
+        typeof window.cioanalytics?.push !== 'function') {
       window.cioanalytics.page(document.title, {
         path,
         url: window.location.href,
@@ -52,8 +54,11 @@ export function cioIdentify(
   email: string,
   traits?: Record<string, unknown>,
 ) {
-  if (!window.cioanalytics?.identify) return;
-  window.cioanalytics.identify(email, { email, ...traits });
+  try {
+    if (typeof window.cioanalytics?.identify === 'function') {
+      window.cioanalytics.identify(email, { email, ...traits });
+    }
+  } catch { /* silently skip if CIO not loaded */ }
 }
 
 /**
@@ -63,8 +68,11 @@ export function cioTrack(
   event: string,
   properties?: Record<string, unknown>,
 ) {
-  if (!window.cioanalytics?.track) return;
-  window.cioanalytics.track(event, properties ?? {});
+  try {
+    if (typeof window.cioanalytics?.track === 'function') {
+      window.cioanalytics.track(event, properties ?? {});
+    }
+  } catch { /* silently skip if CIO not loaded */ }
 }
 
 /**
