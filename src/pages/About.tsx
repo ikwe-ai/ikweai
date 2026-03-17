@@ -2,7 +2,6 @@ import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 import { BENCHMARK_COPY, BENCHMARK_CURRENT, BENCHMARK_LOG_REQUEST } from "@/lib/benchmark-data";
-import ArchiveBanner from "@/components/ArchiveBanner";
 import { useState } from "react";
 
 const COI_ITEMS = [
@@ -27,9 +26,8 @@ export default function About() {
       <PageMeta
         title="About | Ikwe.ai"
         description="Ikwe.ai is the independent behavioral safety layer for human-facing AI. Independence standards, COI policy, and evidence governance."
-        path="/archive/about"
+        path="/about"
       />
-      <ArchiveBanner />
       <SummaryHero
         kicker="About Ikwe.ai"
         title="Built to be independent."
@@ -46,6 +44,8 @@ export default function About() {
           { href: "#coi-policy", label: "COI Policy" },
           { href: "#operating-principles", label: "Operating Principles" },
           { href: "#versioning", label: "Versioning" },
+          { href: "#calibration", label: "Benchmark Calibration" },
+          { href: "#founder", label: "Founder" },
         ]}
       />
 
@@ -136,10 +136,50 @@ export default function About() {
         </div>
       </section>
 
+      {/* Benchmark Calibration */}
+      <section id="calibration" className="site-section py-14 border-b border-border">
+        <p className="section-kicker mb-6">Benchmark Calibration</p>
+        <h2 className="font-display text-2xl text-foreground mb-4">Why the bar is set where it is</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-4">
+          The EQ Safety Benchmark evaluates AI behavior specifically in emotionally vulnerable contexts —
+          grief, crisis, identity challenges, power asymmetry. The scenarios are adversarial by design.
+        </p>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-4">
+          Standard AI safety benchmarks test for factual accuracy, hallucination, or general harm.
+          They are not designed to detect the failure modes that emerge when a real user is in distress —
+          supportive escalation, polite neglect, dependency reinforcement, unrepaired harm across turns.
+        </p>
+        <p className="text-sm text-foreground-muted leading-relaxed">
+          A system can pass general safety evaluations and still fail in emotionally loaded interactions.
+          That is the gap Ikwe.ai measures. The calibration reflects the stakes — protecting vulnerable
+          users demands a higher standard than general safety benchmarks are built to enforce.
+        </p>
+      </section>
+
+      {/* Founder */}
+      <section id="founder" className="site-section py-14 border-b border-border">
+        <p className="section-kicker mb-6">Founder</p>
+        <h2 className="font-display text-2xl text-foreground mb-4">Stephanie Stranko</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-4">
+          Stephanie Stranko is the founder of Ikwe.ai and Visible Healing Inc., based in Des Moines, Iowa.
+          Her work focuses on emotional safety and behavioral failure modes in human-facing AI systems.
+        </p>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-4">
+          The EQ Safety Benchmark emerged from years of building emotionally intelligent AI applications
+          and observing the gap between how AI systems perform on standard benchmarks and how they actually
+          behave when a real person is vulnerable. Ikwe.ai exists to make that gap visible and measurable.
+        </p>
+        <p className="text-sm text-foreground-muted leading-relaxed">
+          Visible Healing Inc. operates Ikwe.ai as an independent research and evaluation entity.
+          No external investment from AI developers evaluated. No sponsorship. No affiliate arrangements
+          with evaluated systems.
+        </p>
+      </section>
+
       {/* Contact nudge */}
       <section className="site-section py-14">
         <p className="text-sm text-foreground-muted">
-          Questions about our independence standards or COI policy?{" "}
+          Questions about our independence standards, COI policy, or benchmark calibration?{" "}
           <a href="/get-started" className="link-lilac underline">get in touch</a>.
         </p>
       </section>

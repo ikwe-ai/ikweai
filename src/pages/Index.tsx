@@ -525,7 +525,7 @@ export default function Home() {
             </div>
 
             <div className="home-hero-actions">
-              <Link to="/technology/architecture" className="home-btn home-btn-outline">
+              <Link to="/audit" className="home-btn home-btn-outline">
                 See Full Evaluation Pipeline
               </Link>
               <Link to="/audit" className="home-btn home-btn-outline">
@@ -831,7 +831,7 @@ export default function Home() {
                   Ikwe is led by Stephanie Stranko, a systems builder focused on emotional and behavioral safety in AI,
                   with frameworks tested across hundreds of scenarios and multiple frontier systems.
                 </p>
-                <Link to="/about" className="home-section-text-link">Read the founder story →</Link>
+                <Link to="/get-started" className="home-section-text-link">Work with us →</Link>
               </div>
             </div>
           </div>
