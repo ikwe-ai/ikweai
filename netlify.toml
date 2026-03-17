@@ -18,6 +18,19 @@
     Referrer-Policy             = "strict-origin-when-cross-origin"
     Permissions-Policy          = "camera=(), microphone=(), geolocation=()"
 
+# Allow reports and forms to be embedded as iframes (for sample previews on /audit)
+[[headers]]
+  for = "/reports/*"
+  [headers.values]
+    X-Frame-Options             = "SAMEORIGIN"
+    X-Content-Type-Options      = "nosniff"
+
+[[headers]]
+  for = "/forms/*"
+  [headers.values]
+    X-Frame-Options             = "SAMEORIGIN"
+    X-Content-Type-Options      = "nosniff"
+
 [[headers]]
   for = "/assets/*"
   [headers.values]
