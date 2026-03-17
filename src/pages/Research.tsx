@@ -15,28 +15,21 @@ import { trackEvent } from "@/hooks/useAnalytics";
 
 export default function Research() {
   const vulnerableStates = [
-    "Anxiety",
-    "Depression",
-    "Loneliness",
-    "Anger",
-    "Overwhelm",
-    "Grief",
-    "Suicidal Ideation",
-    "Relationship Distress",
-    "Career Trauma",
-    "and more",
+    "Anxiety", "Depression", "Loneliness", "Anger", "Overwhelm",
+    "Grief", "Suicidal Ideation", "Relationship Distress",
+    "Career Trauma", "and more",
   ] as const;
 
   const parsePercent = (value: string) => Number.parseFloat(value.replace("%", ""));
   const formatPercent = (value: number) => (Number.isInteger(value) ? `${value}%` : `${value.toFixed(1)}%`);
 
-  const ssfAnyPct = parsePercent(BENCHMARK_CURRENT.failedGatePct);
+  const ssfAnyPct  = parsePercent(BENCHMARK_CURRENT.failedGatePct);
   const gateFailPct = parsePercent(BENCHMARK_CURRENT.noRepairPct);
   const gatePassPct = Math.max(0, +(100 - gateFailPct).toFixed(1));
 
   const benchmarkSummaryRows = [
     { label: "Emotional risk pattern prevalence", value: ssfAnyPct },
-    { label: "Safety gate fail rate", value: gateFailPct },
+    { label: "Safety gate fail rate",             value: gateFailPct },
   ] as const;
 
   return (
@@ -48,6 +41,7 @@ export default function Research() {
         ogImagePath="/og/research.png"
       />
 
+      {/* ── Hero ── */}
       <section className="site-section py-10 md:py-16 border-b border-border research-hero">
         <div className="site-hero-layout">
           <div>
@@ -56,7 +50,7 @@ export default function Research() {
             </p>
             <h1 className="font-display fluid-title text-foreground mb-4">The behavioral safety standard for human-facing AI</h1>
             <p className="text-foreground-muted lede mb-4">
-              {BENCHMARK_CURRENT.scenarios} scenarios across {BENCHMARK_CURRENT.domains} vulnerability types, tested against multiple frontier systems for emotional and behavioral safety.
+              {BENCHMARK_CURRENT.scenarios} scenarios across {BENCHMARK_CURRENT.domains} vulnerability types, tested against multiple frontier systems.
             </p>
             <div className="research-stat-band mb-7">
               <span>{BENCHMARK_CURRENT.scenarios} scenarios</span>
@@ -87,7 +81,7 @@ export default function Research() {
             <div className="summary-headline-strip">
               <div className="summary-headline-item">{BENCHMARK_CURRENT.nValue}</div>
               <div className="summary-headline-item">
-                {BENCHMARK_CURRENT.scenarios} scenarios across {BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories)
+                {BENCHMARK_CURRENT.scenarios} scenarios across {BENCHMARK_CURRENT.domains} behavioral domains
               </div>
               <div className="summary-headline-item">Stage 1 Safety Gate + Stage 2 conditional behavioral scoring</div>
             </div>
@@ -108,35 +102,51 @@ export default function Research() {
         ]}
       />
 
+      {/* ── Research Snapshot ── */}
       <section className="site-section py-10 border-b border-border">
         <p className="section-kicker mb-6">Research Snapshot</p>
         <StatsRow className="max-w-6xl mb-4" />
         <FindingsCards className="max-w-6xl" />
       </section>
 
+      {/* ── Two-Stage Framework ── */}
       <section className="site-section py-14 border-b border-border">
-        <p className="section-kicker mb-6">Read This First</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mb-5">
+        <p className="section-kicker mb-6">How Scoring Works</p>
+
+        {/* Visual two-stage flow */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mb-6">
           <article className="card-surface p-5">
             <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">Stage 1</p>
-            <h2 className="font-display text-xl text-foreground mb-2">Safety Gate (Pass/Fail)</h2>
+            <h2 className="font-display text-xl text-foreground mb-2">Safety Gate</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              First-contact screen: did the response introduce emotional risk.
+              First-contact screen: did the response introduce emotional risk?
             </p>
+            <div className="mt-3 flex items-center gap-2">
+              <span className="text-danger font-mono text-xs">{BENCHMARK_CURRENT.noRepairPct} FAIL</span>
+              <span className="text-foreground-subtle text-xs">·</span>
+              <span className="text-safe font-mono text-xs">{formatPercent(gatePassPct)} PASS</span>
+            </div>
           </article>
           <article className="card-surface p-5">
             <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">Stage 2</p>
-            <h2 className="font-display text-xl text-foreground mb-2">Behavioral Scoring (Conditional)</h2>
+            <h2 className="font-display text-xl text-foreground mb-2">Behavioral Scoring</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Quality scoring runs only on Stage 1 PASS responses.
+              Quality scoring runs only on Stage 1 PASS responses across 8 weighted dimensions.
             </p>
+            <div className="mt-3">
+              <span className="text-foreground-subtle font-mono text-xs">Conditional on Stage 1 pass</span>
+            </div>
           </article>
         </div>
+
+        {/* What this means — tight callout, not prose */}
         <article className="card-surface p-6 max-w-5xl safe-panel">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-safe mb-3">What this means for your organization</p>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-1">
+            These are measured exposure rates — not edge-case speculation.
+          </p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-            These rates are measured exposure, not edge-case speculation. They show what leadership should plan for
-            before deployment decisions.
+            Plan for them before deployment decisions.
           </p>
           <details className="progressive-details">
             <summary
@@ -146,34 +156,45 @@ export default function Research() {
             />
             <div className="progressive-details-body">
               <p className="text-sm text-foreground-muted leading-relaxed">
-                {BENCHMARK_CURRENT.failedGatePct} of responses showed at least one emotional risk pattern.
-                This metric captures prevalence, not binary gate failure.
+                {BENCHMARK_CURRENT.failedGatePct} of responses showed at least one emotional risk pattern — this captures prevalence, not binary gate failure.
               </p>
               <p className="text-sm text-foreground-muted leading-relaxed">
-                {BENCHMARK_CURRENT.noRepairPct} of responses failed the aggregate safety gate under the published binary
-                threshold.
+                {BENCHMARK_CURRENT.noRepairPct} failed the aggregate safety gate under the published binary threshold.
               </p>
               <p className="text-sm text-foreground-muted leading-relaxed">
-                Your system may perform better or worse. Independent evaluation is how you replace assumption with
-                evidence.
+                Your system may perform better or worse. Independent evaluation replaces assumption with evidence.
               </p>
             </div>
           </details>
         </article>
       </section>
 
+      {/* ── Benchmark Framework ── */}
       <section id="benchmark-framework" className="site-section py-14 border-b border-border">
-        <p className="section-kicker mb-6">Benchmark Framework</p>
-        <p className="text-sm text-foreground-muted leading-relaxed measure mb-6 text-pretty">
-          Behavioral Safety Validation is the category. The EQ Safety Benchmark is the framework. The Frontier AI
-          Behavioral Safety Index is one public application of that framework: frontier models evaluated against a
-          baseline of 79 real-world emotional support scenarios sourced from established datasets.
-        </p>
+        <p className="section-kicker mb-3">Benchmark Framework</p>
+
+        {/* Three-part definition strip — no long paragraph */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-5xl mb-8">
+          <div className="card-surface p-4 border-l-2 border-lilac">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-1">The category</p>
+            <p className="text-sm text-foreground font-medium">Behavioral Safety Validation</p>
+          </div>
+          <div className="card-surface p-4 border-l-2 border-teal">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-teal mb-1">The framework</p>
+            <p className="text-sm text-foreground font-medium">EQ Safety Benchmark</p>
+          </div>
+          <div className="card-surface p-4 border-l-2 border-amber">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-amber mb-1">One public application</p>
+            <p className="text-sm text-foreground font-medium">Frontier AI Behavioral Safety Index</p>
+          </div>
+        </div>
+
         <StageDiagram className="max-w-6xl mb-4" />
         <DimensionsGrid className="max-w-6xl mb-4" />
         <DomainsTagWall className="max-w-6xl" />
       </section>
 
+      {/* ── Findings Snapshot ── */}
       <section id="findings-snapshot" className="site-section py-14 border-b border-border">
         <p className="section-kicker mb-7">Findings Snapshot</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4 max-w-5xl">
@@ -231,8 +252,7 @@ export default function Research() {
             />
             <div className="progressive-details-body">
               <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-                The public benchmark evaluates behavior across {BENCHMARK_CURRENT.domains} behavioral domains
-                (vulnerability categories). PASS runs are quality-scored across eight public dimensions.
+                The public benchmark evaluates behavior across {BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories). PASS runs are quality-scored across eight public dimensions.
               </p>
               <div className="flex flex-wrap gap-1.5 mb-3">
                 {vulnerableStates.map((s) => (
@@ -245,31 +265,31 @@ export default function Research() {
                 ))}
               </div>
               <p className="text-sm text-foreground-muted leading-relaxed">
-                Detailed scoring mechanics are provided through scoped engagement. Aggregate outcomes are published at
-                benchmark level and are not attributed publicly to individual organizations.
+                Detailed scoring mechanics are provided through scoped engagement. Aggregate outcomes are published at benchmark level and are not attributed publicly to individual organizations.
               </p>
             </div>
           </details>
         </article>
       </section>
 
+      {/* ── Charts ── */}
       <section id="research-charts" className="site-section py-14 border-b border-border">
         <p className="section-kicker mb-6">Charts</p>
         <ChartsBlock className="max-w-6xl" />
       </section>
 
+      {/* ── Method ── */}
       <section id="research-method" className="site-section py-14 border-b border-border">
         <p className="section-kicker mb-6">Method</p>
         <MethodAccordion className="max-w-5xl" />
       </section>
 
+      {/* ── CTA ── */}
       <section id="full-report" className="site-section py-14">
         <article className="card-surface p-6 max-w-4xl">
           <p className="font-mono text-xs text-foreground-subtle uppercase tracking-[0.14em] mb-3">Want to see how your system performs?</p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-            This benchmark shows how frontier models perform. An Ikwe audit runs the same framework against your
-            specific system and produces documented evidence your board, compliance, and partners can use — before you
-            scale.
+            This benchmark shows frontier model performance. An Ikwe audit runs the same framework against your specific system — producing documented evidence your board, compliance, and partners can use before you scale.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
