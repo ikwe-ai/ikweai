@@ -4,72 +4,117 @@
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+<< /Type /Pages /Kids [6 0 R] /Count 1 >>
 endobj
 3 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 4 0 obj
-<< /Length 2525 >>
-stream
-0.09 0.07 0.17 rg
-0.82 0.73 0.98 RG
-BT /F1 11 Tf 1 0 0 1 50 758 Tm (EQ Safety Benchmark v2.0) Tj ET
-BT /F1 24 Tf 1 0 0 1 50 734 Tm (1-Page Executive Excerpt) Tj ET
-BT /F1 10 Tf 1 0 0 1 50 714 Tm (Public sample deliverable • proprietary format) Tj ET
-0.78 0.68 0.95 RG
-50 704 m 562 704 l S
-BT /F1 11 Tf 1 0 0 1 50 678 Tm (This one-page excerpt shows format and structure only. Content is illustrative and redacted.) Tj ET
-0.93 0.92 0.99 RG
-50 606 160 58 re S
-BT /F1 20 Tf 1 0 0 1 62 642 Tm (73%) Tj ET
-BT /F1 9 Tf 1 0 0 1 62 624 Tm (Illustrative overall safety score) Tj ET
-0.93 0.92 0.99 RG
-226 606 160 58 re S
-BT /F1 20 Tf 1 0 0 1 238 642 Tm (Tier II) Tj ET
-BT /F1 9 Tf 1 0 0 1 238 624 Tm (Illustrative risk classification) Tj ET
-0.93 0.92 0.99 RG
-402 606 160 58 re S
-BT /F1 20 Tf 1 0 0 1 414 642 Tm (4) Tj ET
-BT /F1 9 Tf 1 0 0 1 414 624 Tm (Priority remediation controls) Tj ET
-0.92 0.9 0.99 RG
-50 490 512 96 re S
-BT /F1 12 Tf 1 0 0 1 62 567 Tm (Executive Summary) Tj ET
-BT /F1 10 Tf 1 0 0 1 62 547 Tm (Stable behavior appears in low-volatility interactions, while escalation pathways show) Tj ET
-BT /F1 10 Tf 1 0 0 1 62 533 Tm (higher interruption and routing risk. Current profile supports controlled rollout with) Tj ET
-BT /F1 10 Tf 1 0 0 1 62 519 Tm (remediation and re-test gates before broad deployment.) Tj ET
-0.92 0.9 0.99 RG
-50 336 512 140 re S
-BT /F1 12 Tf 1 0 0 1 62 456 Tm (What Leadership Receives) Tj ET
-BT /F1 10 Tf 1 0 0 1 62 436 Tm (• Executive risk summary for board and procurement review) Tj ET
-BT /F1 10 Tf 1 0 0 1 62 422 Tm (• Severity classification with threshold language) Tj ET
-BT /F1 10 Tf 1 0 0 1 62 408 Tm (• Scenario findings appendix \(engagement package\)) Tj ET
-BT /F1 10 Tf 1 0 0 1 62 394 Tm (• Remediation roadmap and re-test recommendation) Tj ET
-0.92 0.9 0.99 RG
-50 252 512 68 re S
-BT /F1 12 Tf 1 0 0 1 62 300 Tm (Boundary Note) Tj ET
-BT /F1 10 Tf 1 0 0 1 62 282 Tm (Not public: exact scenario text, rubric mechanics, client-identifying evidence, and) Tj ET
-BT /F1 10 Tf 1 0 0 1 62 268 Tm (organization-specific confidential findings.) Tj ET
-BT /F1 10 Tf 1 0 0 1 50 214 Tm (Ready for independent review? Request third-party independent behavioral safety evaluation.) Tj ET
-BT /F1 10 Tf 1 0 0 1 50 196 Tm (Intake: https://ikwe.ai/intake   |   Full sample report: https://ikwe.ai/sample-report) Tj ET
-0.62 0.56 0.8 rg
-BT /F1 8 Tf 1 0 0 1 50 36 Tm (Ikwe.ai • Independent behavioral safety evaluation • Public sample excerpt) Tj ET
-BT /F1 8 Tf 1 0 0 1 498 36 Tm (Page 1) Tj ET
-endstream
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
 endobj
 5 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+<< /Length 4257 >>
+stream
+0.051 0.059 0.078 rg
+0.0 0.0 612.0 792.0 re f
+0.106 0.122 0.180 rg
+0.0 730.0 612.0 62.0 re f
+2.00 w
+0.486 0.310 0.827 RG
+0.0 730.0 m 612.0 730.0 l S
+0.910 0.788 0.478 rg BT /F2 8 Tf 1 0 0 1 50.0 769.0 Tm (IKWE AI  ·  PUBLIC SAMPLE EXCERPT) Tj ET
+0.910 0.918 0.957 rg BT /F2 20 Tf 1 0 0 1 50.0 748.0 Tm (1-Page Executive Excerpt) Tj ET
+0.616 0.639 0.745 rg BT /F1 8 Tf 1 0 0 1 50.0 733.0 Tm (EQ Safety Benchmark v2.0  ·  Proprietary format illustration) Tj ET
+0.078 0.090 0.125 rg
+50.0 706.0 512.0 20.0 re f
+0.616 0.639 0.745 rg BT /F1 8 Tf 1 0 0 1 60.0 713.0 Tm (This excerpt shows format and structure only. Content is illustrative and redacted.) Tj ET
+0.078 0.090 0.125 rg
+50.0 634.0 165.0 58.0 re f
+0.75 w
+0.137 0.157 0.251 RG
+50.0 634.0 165.0 58.0 re S
+0.239 0.839 0.549 rg BT /F2 18 Tf 1 0 0 1 62.0 670.0 Tm (73%) Tj ET
+0.616 0.639 0.745 rg BT /F1 8 Tf 1 0 0 1 62.0 652.0 Tm (Illustrative overall safety score) Tj ET
+0.078 0.090 0.125 rg
+223.0 634.0 165.0 58.0 re f
+0.75 w
+0.137 0.157 0.251 RG
+223.0 634.0 165.0 58.0 re S
+0.961 0.651 0.137 rg BT /F2 18 Tf 1 0 0 1 235.0 670.0 Tm (Tier II) Tj ET
+0.616 0.639 0.745 rg BT /F1 8 Tf 1 0 0 1 235.0 652.0 Tm (Illustrative risk classification) Tj ET
+0.078 0.090 0.125 rg
+396.0 634.0 165.0 58.0 re f
+0.75 w
+0.137 0.157 0.251 RG
+396.0 634.0 165.0 58.0 re S
+0.545 0.361 0.965 rg BT /F2 18 Tf 1 0 0 1 408.0 670.0 Tm (4) Tj ET
+0.616 0.639 0.745 rg BT /F1 8 Tf 1 0 0 1 408.0 652.0 Tm (Priority remediation controls) Tj ET
+0.078 0.090 0.125 rg
+50.0 520.0 512.0 96.0 re f
+0.75 w
+0.137 0.157 0.251 RG
+50.0 520.0 512.0 96.0 re S
+0.910 0.918 0.957 rg BT /F2 11 Tf 1 0 0 1 62.0 597.0 Tm (Executive Summary) Tj ET
+0.50 w
+0.137 0.157 0.251 RG
+62.0 590.0 m 550.0 590.0 l S
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 62.0 576.0 Tm (Stable behavior appears in low-volatility interactions, while escalation pathways show) Tj ET
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 62.0 563.0 Tm (higher interruption and routing risk. Current profile supports controlled rollout with) Tj ET
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 62.0 550.0 Tm (remediation and re-test gates before broad deployment.) Tj ET
+0.408 0.439 0.549 rg BT /F1 8 Tf 1 0 0 1 62.0 533.0 Tm (This sample mirrors the report structure clients receive after a completed evaluation cycle.) Tj ET
+0.078 0.090 0.125 rg
+50.0 376.0 512.0 116.0 re f
+0.75 w
+0.137 0.157 0.251 RG
+50.0 376.0 512.0 116.0 re S
+0.910 0.918 0.957 rg BT /F2 11 Tf 1 0 0 1 62.0 473.0 Tm (What Leadership Receives) Tj ET
+0.50 w
+0.137 0.157 0.251 RG
+62.0 466.0 m 550.0 466.0 l S
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 62.0 452.0 Tm (•  Executive risk summary for board and procurement review) Tj ET
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 62.0 436.0 Tm (•  Severity classification with threshold language) Tj ET
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 62.0 420.0 Tm (•  Scenario findings appendix \(engagement package\)) Tj ET
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 62.0 404.0 Tm (•  Remediation roadmap and re-test recommendation) Tj ET
+0.078 0.090 0.125 rg
+50.0 270.0 512.0 80.0 re f
+0.75 w
+0.137 0.157 0.251 RG
+50.0 270.0 512.0 80.0 re S
+0.910 0.918 0.957 rg BT /F2 11 Tf 1 0 0 1 62.0 330.0 Tm (Boundary Note) Tj ET
+0.50 w
+0.137 0.157 0.251 RG
+62.0 323.0 m 550.0 323.0 l S
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 62.0 308.0 Tm (Not public: exact scenario text, rubric mechanics, client-identifying evidence, and) Tj ET
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 62.0 294.0 Tm (organization-specific confidential findings.) Tj ET
+0.106 0.122 0.180 rg
+50.0 192.0 512.0 58.0 re f
+0.75 w
+0.486 0.310 0.827 RG
+50.0 192.0 512.0 58.0 re S
+0.910 0.788 0.478 rg BT /F2 10 Tf 1 0 0 1 62.0 232.0 Tm (Ready for independent review?) Tj ET
+0.910 0.918 0.957 rg BT /F1 9 Tf 1 0 0 1 62.0 216.0 Tm (Request a third-party independent behavioral safety evaluation.) Tj ET
+0.545 0.361 0.965 rg BT /F1 8 Tf 1 0 0 1 62.0 202.0 Tm (Intake: https://ikwe.ai/intake   |   Full sample: https://ikwe.ai/reports/ikwe-sample-report-public.html) Tj ET
+0.50 w
+0.137 0.157 0.251 RG
+50.0 52.0 m 562.0 52.0 l S
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50.0 40.0 Tm (Ikwe.ai  ·  Independent behavioral safety evaluation  ·  Public sample excerpt) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 518.0 40.0 Tm (Page 1) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
 endobj
 xref
-0 6
+0 7
 0000000000 65535 f 
 0000000015 00000 n 
 0000000064 00000 n 
 0000000121 00000 n 
 0000000191 00000 n 
-0000002768 00000 n 
+0000000266 00000 n 
+0000004575 00000 n 
 trailer
-<< /Size 6 /Root 1 0 R >>
+<< /Size 7 /Root 1 0 R >>
 startxref
-2894
+4711
 %%EOF
