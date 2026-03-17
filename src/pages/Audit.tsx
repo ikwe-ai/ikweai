@@ -26,58 +26,58 @@ export default function Audit() {
     {
       step: "01",
       title: "Ikwe EQ Safety Evaluation",
-      tag: "ENTRY POINT | BILLABLE STANDALONE",
+      tag: "ENTRY POINT · BILLABLE STANDALONE",
       paragraphs: [
-        "Establish a documented behavioral safety baseline for your system. We run the EQ Safety Benchmark against your deployment context using structured scenarios, versioned methodology, and reproducible outputs.",
-        "This is where most organizations start. The Ikwe EQ Safety Evaluation surfaces failure modes in-house testing misses, quantifies severity, and produces documentation your board and legal team can use immediately.",
+        "Run the EQ Safety Benchmark against your deployment context — structured scenarios, versioned methodology, reproducible outputs.",
+        "Surfaces failure modes in-house testing misses. Produces documentation your board and legal team can use immediately.",
       ],
       receives: [
-        "Board Brief - executive risk summary with classification band",
-        "Risk Scorecard - dimension-level outcomes in plain governance language",
-        "Evidence Pack - versioned scenario battery and scoring documentation",
-        "Findings Briefing - live walkthrough with technical and compliance teams",
+        "Board Brief — executive risk summary with classification band",
+        "Risk Scorecard — dimension-level outcomes in plain governance language",
+        "Evidence Pack — versioned scenario battery and scoring documentation",
+        "Findings Briefing — live walkthrough with technical and compliance teams",
       ],
-      pricing: "Commercial terms are provided through scoped review after intake.",
+      pricing: "Commercial terms provided through scoped review after intake.",
     },
     {
       step: "02",
       title: "Implementation Support",
-      tag: "REMEDIATION PARTNERSHIP | BILLABLE ENGAGEMENT",
+      tag: "REMEDIATION PARTNERSHIP · BILLABLE ENGAGEMENT",
       paragraphs: [
-        "Audit findings show where failures are. Implementation support is how you fix them. We work alongside engineering and product teams to translate behavioral risk findings into concrete remediation actions.",
-        "This is not a handoff. We stay engaged through the remediation window, review proposed changes, re-test specific failure modes, and confirm fixes address root patterns rather than surface symptoms.",
+        "Translate audit findings into concrete fixes. We stay engaged through the remediation window — not a handoff.",
+        "Review proposed changes, re-test specific failure modes, confirm fixes address root patterns.",
       ],
       receives: [
-        "Remediation roadmap - prioritized failure modes with recommended action types",
-        "Technical consultation - working sessions on guardrail and prompt changes",
-        "Targeted re-testing - post-remediation spot evaluation of specific failure modes",
-        "Remediation summary - documented record of changes made and outcomes verified",
+        "Remediation roadmap — prioritized failure modes with recommended action types",
+        "Technical consultation — working sessions on guardrail and prompt changes",
+        "Targeted re-testing — post-remediation spot evaluation of specific failure modes",
+        "Remediation summary — documented record of changes made and outcomes verified",
       ],
       pricing: "Scoped per engagement. Contact for commercial terms.",
     },
     {
       step: "03",
       title: "Ikwe Behavioral Monitoring",
-      tag: "CONTINUOUS EVALUATION | RECURRING ENGAGEMENT",
+      tag: "CONTINUOUS EVALUATION · RECURRING ENGAGEMENT",
       paragraphs: [
-        "Behavioral risk is not static. Model updates, prompt changes, deployment scale, and user population shifts all change how your system behaves. Ikwe Behavioral Monitoring catches drift before it becomes a documented failure.",
-        "We run API-connected monitoring on a defined schedule against your registered endpoint and evaluate live system outputs over time. When risk patterns shift, you receive a structured alert with recommended response steps.",
+        "Model updates, prompt changes, and user shifts all change how your system behaves. Monitoring catches drift before it becomes a documented failure.",
+        "API-connected, defined schedule, evaluated against your registered endpoint. Risk pattern shifts trigger a structured alert with recommended response steps.",
       ],
       receives: [
         "Quarterly benchmark re-evaluation against registered endpoint",
-        "Drift Alert reports - structured view of changed risk patterns",
+        "Drift Alert reports — structured view of changed risk patterns",
         "Updated governance documentation for compliance and board reference",
-        "Escalation protocol - defined pathway to human review when indicators rise",
+        "Escalation protocol — defined pathway to human review when indicators rise",
       ],
-      pricing: "Monitoring terms are provided through scoped endpoint review.",
+      pricing: "Monitoring terms provided through scoped endpoint review.",
     },
     {
       step: "04",
       title: "Ikwe Certification",
-      tag: "VALIDATION DESTINATION | PATHWAY IN DEVELOPMENT",
+      tag: "VALIDATION DESTINATION · PATHWAY IN DEVELOPMENT",
       paragraphs: [
-        "Certification is the formal destination for organizations that complete the full validation pathway: audit, remediation, and verified re-test. The Ikwe certification program is in active development.",
-        "Organizations currently engaged in audit or monitoring will be first eligible when the certification program formalizes. There is no separate application; eligibility is established through the validation pathway.",
+        "Formal destination for organizations that complete the full validation pathway: audit, remediation, verified re-test.",
+        "No separate application. Eligibility established through the validation pathway. Current audit and monitoring clients are first eligible.",
       ],
       receives: [],
       pricing: "Certification formalization target: 2026",
@@ -86,25 +86,25 @@ export default function Audit() {
   ];
 
   const measures = [
-    "Whether the system introduces harm at first contact at measurable rates across structured scenarios",
-    "Whether it repairs after a harmful response or continues and escalates",
-    "Whether risk increases across a conversation over time (trajectory instability)",
-    "Whether the system creates dependency, claims therapeutic authority, or fails to route a crisis appropriately",
-    "How behavior changes across model versions, prompt updates, and deployment scale (drift detection)",
+    "Harm introduced at first contact across structured scenarios",
+    "Repair behavior — does it recover or continue escalating?",
+    "Risk trajectory — does danger increase over a conversation?",
+    "Dependency creation, therapeutic overreach, or crisis routing failure",
+    "Behavioral drift across model versions, prompt updates, and deployment scale",
   ] as const;
 
   const goodFit = [
-    "You are deploying conversational AI where failure carries legal, regulatory, or human consequences",
-    "You need external validation your in-house team cannot provide",
-    "Your board, legal team, or compliance function has raised behavioral risk questions",
-    "You are preparing for AI governance requirements and need documented due diligence",
-    "You have already shipped and need a measured view of your actual risk profile",
+    "Deploying conversational AI where failure carries legal or human consequences",
+    "Need external validation your in-house team can't provide",
+    "Board, legal, or compliance has raised behavioral risk questions",
+    "Preparing for AI governance requirements — need documented due diligence",
+    "Already shipped and need a measured view of your actual risk profile",
   ] as const;
 
   const notFit = [
     "Pre-deployment prototypes with no near-term production timeline",
     "Consumer demos without regulated or high-stakes surface area",
-    "Organizations not yet in a position to act on audit findings",
+    "Organizations not yet able to act on audit findings",
   ] as const;
 
   const pathwaySummarySteps = pathway.map((stage) => ({
@@ -143,6 +143,7 @@ export default function Audit() {
       output: "Program formalization target: 2026",
     },
   ] as const;
+
   const engagementLevels = [
     {
       level: "Level I",
@@ -176,7 +177,7 @@ export default function Audit() {
       <SummaryHero
         kicker="Independent Behavioral Safety Audits"
         title="Independent behavioral safety audits for human-facing AI."
-        summary="Most AI systems have never been tested for what happens when a real person shows up distressed, in crisis, or emotionally vulnerable. An Ikwe audit tells you exactly how your system behaves in those moments — and gives you evidence your board, compliance, and partners can stand behind."
+        summary="Most AI systems have never been tested for what happens when a real person shows up distressed, in crisis, or emotionally vulnerable. An Ikwe audit tells you exactly how your system behaves — and gives you evidence your board, compliance, and partners can stand behind."
         highlights={[
           BENCHMARK_CURRENT.nValue,
           `${BENCHMARK_CURRENT.scenarios} scenarios`,
@@ -203,40 +204,50 @@ export default function Audit() {
         }}
       />
 
+      {/* ── What You Get ── */}
       <section id="what-you-get" className="site-section py-10 border-b border-border">
         <p className="section-kicker mb-6">What You Get</p>
-        <p className="text-sm text-foreground-muted leading-relaxed max-w-3xl mb-8">
-          We run structured, scenario-based behavioral safety audits on your AI system, focused on first-contact and
-          early-trajectory interactions. You receive a formal risk report, a behavioral scorecard, and a board-ready
-          brief that documents where your system is safe to scale, where it drifts, and where it quietly introduces
-          emotional risk.
-        </p>
+
+        {/* Pull-quote stat strip */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-6xl mb-8">
+          <div className="card-surface p-5 border-l-2 border-lilac">
+            <p className="font-display text-2xl text-foreground mb-1">Score</p>
+            <p className="text-xs text-foreground-muted">Overall behavioral safety score across 8 weighted dimensions</p>
+          </div>
+          <div className="card-surface p-5 border-l-2 border-amber">
+            <p className="font-display text-2xl text-foreground mb-1">Gate</p>
+            <p className="text-xs text-foreground-muted">Pass / Conditional / Fail verdict tied to specific failure modes</p>
+          </div>
+          <div className="card-surface p-5 border-l-2 border-teal">
+            <p className="font-display text-2xl text-foreground mb-1">Brief</p>
+            <p className="text-xs text-foreground-muted">Board-ready narrative your leadership and compliance can use immediately</p>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mb-8">
           <article className="card-surface p-5">
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-3">01</p>
             <h3 className="font-display text-lg text-foreground mb-2">Behavioral risk scorecard</h3>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Clear scoring across emotional safety dimensions — stabilizing vs. escalating behavior, repair attempts,
-              neglect patterns — with concrete examples from your own system.
+              Scoring across emotional safety dimensions — what stabilizes, what escalates, what gets neglected — with examples from your own system.
             </p>
           </article>
           <article className="card-surface p-5">
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-3">02</p>
             <h3 className="font-display text-lg text-foreground mb-2">Safety Gate verdict</h3>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              A pass / conditional / fail verdict for first-contact behavioral safety, tied to specific failure modes
-              and remediation priorities.
+              Pass / conditional / fail for first-contact behavioral safety — tied to specific failure modes and remediation priorities.
             </p>
           </article>
           <article className="card-surface p-5">
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-3">03</p>
             <h3 className="font-display text-lg text-foreground mb-2">Board and regulator brief</h3>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              A concise narrative your leadership, compliance, and external partners can use as proof of independent
-              behavioral validation before and after deployment.
+              Independent validation your leadership, compliance, and external partners can use before and after deployment.
             </p>
           </article>
         </div>
+
         <div className="flex flex-wrap items-center gap-4">
           <a
             href="/get-started"
@@ -246,14 +257,14 @@ export default function Audit() {
             Book an Audit Scope Call
           </a>
           <p className="text-xs text-foreground-subtle">
-            15–30 minutes. We review your system, data flows, and user risk profile to define the right audit level —
-            no obligation.
+            15–30 min. We scope your system, risk profile, and right audit level — no obligation.
           </p>
         </div>
       </section>
 
+      {/* ── Stage Selector ── */}
       <section className="site-section py-8 border-b border-border">
-        <p className="text-xs text-foreground-subtle mb-5">Use these to jump to the right stage for your situation.</p>
+        <p className="text-xs text-foreground-subtle mb-5">Jump to the right stage for your situation.</p>
         <div className="audit-decision-grid">
           <article className="audit-decision-card">
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-1">Start</p>
@@ -275,6 +286,7 @@ export default function Audit() {
 
       <ConnectedPages current="audit" />
 
+      {/* ── Evaluation At A Glance ── */}
       <section id="deliverables-previews" className="site-section py-10 border-b border-border">
         <p className="section-kicker mb-6">Evaluation At A Glance</p>
         <StatsRow className="max-w-6xl mb-4" />
@@ -283,6 +295,7 @@ export default function Audit() {
         <ScenarioDomainMatrix className="max-w-6xl" />
       </section>
 
+      {/* ── Engagement Levels ── */}
       <section id="engagement-levels" className="site-section py-10 border-b border-border">
         <p className="section-kicker mb-6">Engagement Levels</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
@@ -312,25 +325,34 @@ export default function Audit() {
         ]}
       />
 
+      {/* ── How the Audit Works ── */}
       <section id="how-it-works" className="site-section py-10 border-b border-border">
         <p className="section-kicker mb-6">How the Audit Works</p>
-        <p className="text-sm text-foreground-muted leading-relaxed max-w-3xl mb-3">
-          Every audit follows a structured, four-stage pathway — from scoping your risk surface to delivering a
-          board-ready brief.
-        </p>
-        <p className="text-sm text-foreground-muted leading-relaxed max-w-3xl">
-          Most teams start with an Ikwe EQ Safety Evaluation to establish a documented risk baseline, then add
-          Implementation Support or Ikwe Behavioral Monitoring based on their risk profile and deployment timeline.
-        </p>
+
+        {/* 4-step horizontal flow */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-6xl mb-8">
+          {[
+            { n: "01", label: "Scope", desc: "Define risk surface and deployment context" },
+            { n: "02", label: "Evaluate", desc: "Run structured scenario battery against your system" },
+            { n: "03", label: "Document", desc: "Score, classify, and package findings for governance" },
+            { n: "04", label: "Remediate", desc: "Fix, re-test, and maintain with ongoing monitoring" },
+          ].map((s) => (
+            <div key={s.n} className="card-surface p-5 text-center">
+              <p className="font-mono text-2xl text-lilac mb-2">{s.n}</p>
+              <p className="font-display text-base text-foreground mb-1">{s.label}</p>
+              <p className="text-xs text-foreground-muted leading-relaxed">{s.desc}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
+      {/* ── Validation Pathway ── */}
       <section id="validation-pathway" className="site-section py-14 border-b border-border audit-section-block">
         <div className="audit-section-layout">
           <div className="audit-section-head">
             <p className="section-kicker mb-6">The Validation Pathway</p>
             <p className="text-sm text-foreground-muted leading-relaxed measure text-pretty mb-8">
-              Most teams start with Ikwe EQ Safety Evaluation, then add Implementation Support or Ikwe Behavioral
-              Monitoring based on risk profile and timeline.
+              Most teams start with an EQ Safety Evaluation, then add Implementation Support or Monitoring based on risk profile and timeline.
             </p>
           </div>
 
@@ -364,48 +386,46 @@ export default function Audit() {
                         <p className="font-mono text-xs text-lilac uppercase tracking-widest mb-2">{stage.step}</p>
                         <h2 className="font-display fluid-heading text-foreground mb-2">{stage.title}</h2>
                         <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-4">{stage.tag}</p>
-                        <div className="space-y-3 mb-2">
-                          <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">{stage.paragraphs[0]}</p>
-                        </div>
+                        <p className="text-sm text-foreground-muted leading-relaxed text-pretty measure">{stage.paragraphs[0]}</p>
                       </div>
                       <div className="audit-stage-meta">
                         <p className={`text-xs ${stage.coming ? "text-foreground-subtle" : "text-lilac"}`}>{stage.pricing}</p>
                       </div>
                     </div>
 
-                    <div className="space-y-3 mt-2">
-                      {(stage.paragraphs.length > 1 || stage.receives.length > 0) ? (
-                        <details className="progressive-details">
-                          <summary
-                            aria-label="Toggle stage details"
-                            data-label="Stage details and deliverables"
-                            data-open-label="Hide stage details"
-                          />
-                          <div className="progressive-details-body">
-                            {stage.paragraphs.slice(1).map((paragraph) => (
-                              <p key={paragraph} className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
-                                {paragraph}
-                              </p>
-                            ))}
+                    {(stage.paragraphs.length > 1 || stage.receives.length > 0) ? (
+                      <details className="progressive-details mt-4">
+                        <summary
+                          aria-label="Toggle stage details"
+                          data-label="Stage details and deliverables"
+                          data-open-label="Hide stage details"
+                        />
+                        <div className="progressive-details-body">
+                          {stage.paragraphs.slice(1).map((paragraph) => (
+                            <p key={paragraph} className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
+                              {paragraph}
+                            </p>
+                          ))}
 
-                            {stage.receives.length > 0 ? (
-                              <>
-                                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-1">What You Receive</p>
-                                <ul className="audit-deliverables-list space-y-2 text-sm text-foreground-muted leading-relaxed">
-                                  {stage.receives.map((item) => (
-                                    <li key={item}>• {item}</li>
-                                  ))}
-                                </ul>
-                              </>
-                            ) : null}
-                          </div>
-                        </details>
-                      ) : null}
-                    </div>
+                          {stage.receives.length > 0 ? (
+                            <>
+                              <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle mb-3">What You Receive</p>
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                {stage.receives.map((item) => (
+                                  <div key={item} className="card-surface p-3 text-sm text-foreground-muted leading-relaxed border-l border-lilac pl-3">
+                                    {item}
+                                  </div>
+                                ))}
+                              </div>
+                            </>
+                          ) : null}
+                        </div>
+                      </details>
+                    ) : null}
                   </article>
 
                   {index < pathway.length - 1 ? (
-                    <p className="text-center text-foreground-subtle font-mono text-xs mt-3">Next stage</p>
+                    <p className="text-center text-foreground-subtle font-mono text-xs mt-3">↓</p>
                   ) : null}
                 </div>
               ))}
@@ -415,22 +435,20 @@ export default function Audit() {
         </div>
       </section>
 
+      {/* ── Optional Detail ── */}
       <section id="deep-dive" className="site-section py-14 border-b border-border audit-section-block">
         <div className="audit-section-layout">
           <div className="audit-section-head">
             <p className="section-kicker mb-6">Optional Detail</p>
             <p className="text-sm text-foreground-muted leading-relaxed measure text-pretty">
-              Decision-critical flow appears above. Use these sections only when your team needs deeper review.
+              Decision-critical flow is above. Use these only when your team needs deeper review.
             </p>
           </div>
           <div className="audit-section-body">
             <div className="space-y-4 max-w-6xl">
+
               <article className="card-surface p-6">
                 <h2 className="font-display text-2xl text-foreground mb-3">What the evaluation measures</h2>
-                <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-                  The Ikwe EQ Safety Evaluation gives leadership a defensible answer to one question: what is our
-                  current behavioral safety exposure, and what should we do next?
-                </p>
                 <details className="progressive-details">
                   <summary
                     aria-label="Toggle measures"
@@ -438,9 +456,9 @@ export default function Audit() {
                     data-open-label="Hide measurement detail"
                   />
                   <div className="progressive-details-body">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {measures.map((item, idx) => (
-                        <article key={item} className="card-surface p-5 safe-panel">
+                        <article key={item} className="card-surface p-4 safe-panel">
                           <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-safe mb-2">Measure {idx + 1}</p>
                           <p className="text-sm text-foreground-muted leading-relaxed text-pretty">{item}</p>
                         </article>
@@ -451,10 +469,7 @@ export default function Audit() {
               </article>
 
               <article className="card-surface p-6">
-                <h2 className="font-display text-2xl text-foreground mb-3">CTO/CFO stage matrix</h2>
-                <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-                  Compare commercial and technical decision value by stage in one view.
-                </p>
+                <h2 className="font-display text-2xl text-foreground mb-3">CTO / CFO stage matrix</h2>
                 <details className="progressive-details">
                   <summary
                     aria-label="Toggle matrix"
@@ -510,10 +525,7 @@ export default function Audit() {
               </article>
 
               <article className="card-surface p-6">
-                <h2 className="font-display text-2xl text-foreground mb-3">Engagement fit</h2>
-                <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-                  Use this check only if your team is deciding whether to start now or defer.
-                </p>
+                <h2 className="font-display text-2xl text-foreground mb-1">Engagement fit</h2>
                 <details className="progressive-details">
                   <summary
                     aria-label="Toggle fit guidance"
@@ -523,18 +535,18 @@ export default function Audit() {
                   <div className="progressive-details-body">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                       <article className="card-surface p-6">
-                        <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">Good fit</p>
+                        <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-safe mb-3">Good fit</p>
                         <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
                           {goodFit.map((item) => (
-                            <li key={item}>• {item}</li>
+                            <li key={item} className="flex gap-2"><span className="text-safe shrink-0">✓</span>{item}</li>
                           ))}
                         </ul>
                       </article>
                       <article className="card-surface p-6">
-                        <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">Not a fit</p>
+                        <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-danger mb-3">Not a fit</p>
                         <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
                           {notFit.map((item) => (
-                            <li key={item}>• {item}</li>
+                            <li key={item} className="flex gap-2"><span className="text-foreground-subtle shrink-0">–</span>{item}</li>
                           ))}
                         </ul>
                       </article>
@@ -542,11 +554,13 @@ export default function Audit() {
                   </div>
                 </details>
               </article>
+
             </div>
           </div>
         </div>
       </section>
 
+      {/* ── Request ── */}
       <section id="request-start" className="site-section py-14 audit-section-block">
         <div className="audit-section-layout">
           <div className="audit-section-head">
@@ -558,8 +572,7 @@ export default function Audit() {
           <div className="audit-section-body">
             <article className="card-surface p-6 max-w-4xl">
               <p className="text-xs text-foreground-subtle mb-5">
-                Fields: Organization · AI system or product name · Deployment context · Regulatory environment · Approximate user
-                scale · Timeline · Your name and email
+                Organization · AI system · Deployment context · Regulatory environment · User scale · Timeline · Contact
               </p>
               <div className="flex flex-wrap gap-3 mb-4">
                 <a
@@ -578,7 +591,6 @@ export default function Audit() {
               </div>
               <p className="text-xs text-foreground-subtle measure text-pretty">
                 All intake information is treated as confidential. We do not share organization details with third parties.
-                See our Trust &amp; Confidentiality page for full standards.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
                 <a href="/benchmark" className="summary-jump">Benchmark framework</a>
