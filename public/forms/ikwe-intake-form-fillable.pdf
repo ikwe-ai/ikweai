@@ -4,509 +4,561 @@
 << /Type /Catalog /Pages 2 0 R /AcroForm 3 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [5 0 R 16 0 R 24 0 R 32 0 R 43 0 R 49 0 R] /Count 6 >>
+<< /Type /Pages /Kids [6 0 R 17 0 R 25 0 R 33 0 R 44 0 R 50 0 R] /Count 6 >>
 endobj
 3 0 obj
-<< /Fields [7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R 14 0 R 15 0 R 18 0 R 19 0 R 20 0 R 21 0 R 22 0 R 23 0 R 26 0 R 27 0 R 28 0 R 29 0 R 30 0 R 31 0 R 34 0 R 35 0 R 36 0 R 37 0 R 38 0 R 39 0 R 40 0 R 41 0 R 42 0 R 45 0 R 46 0 R 47 0 R 48 0 R 51 0 R 52 0 R 53 0 R 54 0 R 55 0 R 56 0 R 57 0 R 58 0 R 59 0 R] /NeedAppearances true /DR << /Font << /Helv 4 0 R >> >> /DA (/Helv 10 Tf 0 g) >>
+<< /Fields [8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R 14 0 R 15 0 R 16 0 R 19 0 R 20 0 R 21 0 R 22 0 R 23 0 R 24 0 R 27 0 R 28 0 R 29 0 R 30 0 R 31 0 R 32 0 R 35 0 R 36 0 R 37 0 R 38 0 R 39 0 R 40 0 R 41 0 R 42 0 R 43 0 R 46 0 R 47 0 R 48 0 R 49 0 R 52 0 R 53 0 R 54 0 R 55 0 R 56 0 R 57 0 R 58 0 R 59 0 R 60 0 R] /NeedAppearances true /DR << /Font << /Helv 4 0 R /F2 5 0 R >> >> /DA (/Helv 10 Tf 0 g) >>
 endobj
 4 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 5 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 6 0 R /Annots [7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R 14 0 R 15 0 R] >>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
 endobj
 6 0 obj
-<< /Length 2065 >>
-stream
-0.88 0.83 0.98 RG
-0.09 0.07 0.17 rg BT /F1 16 Tf 1 0 0 1 50 766 Tm (ikwe.ai Intake Form) Tj ET
-0.09 0.07 0.17 rg BT /F1 10 Tf 1 0 0 1 50 748 Tm (The Behavioral Safety Layer for Human-Facing AI) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 734 Tm (Third-party independent behavioral safety validation for human-facing AI systems.) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 722 Tm (Benchmark scope: 79 scenarios | 13 behavioral domains \(vulnerability categories\).) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 710 Tm (Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake.) Tj ET
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 494 766 Tm (Page 1) Tj ET
-0.75 0.68 0.95 RG
-50 700 m 562 700 l S
-0.09 0.07 0.17 rg BT /F1 11 Tf 1 0 0 1 50 680 Tm (A. Contact + Organization) Tj ET
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 664 Tm (Full name) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 629 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 617 Tm (Role / title) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 582 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 570 Tm (Company) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 535 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 523 Tm (Work email) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 488 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 476 Tm (Technical contact name) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 441 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 429 Tm (Technical contact email) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 394 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 382 Tm (Company size) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 347 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 335 Tm (Industry) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 300 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 288 Tm (Country / region) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 253 512 24 re B
-0.67 0.61 0.84 rg
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 38 Tm (ikwe.ai | The Behavioral Safety Layer for Human-Facing AI | ikwe.ai/intake) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 432 38 Tm (Visible Healing Inc.) Tj ET
-endstream
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 7 0 R /Annots [8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R 14 0 R 15 0 R 16 0 R] >>
 endobj
 7 0 obj
-<< /Type /Annot /Subtype /Widget /T (full_name) /TU (Full name) /Rect [50 629 562 653] /F 4 /P 5 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Tx /V () >>
+<< /Length 2390 >>
+stream
+0.051 0.059 0.078 rg
+0 0 612 792 re f
+0.106 0.122 0.180 rg
+0 728 612 64 re f
+2 w 0.486 0.310 0.827 RG
+0 728 m 612 728 l S
+0.910 0.788 0.478 rg BT /F2 13 Tf 1 0 0 1 50 764 Tm (ikwe.ai Intake Form) Tj ET
+0.616 0.639 0.745 rg BT /F1 8 Tf 1 0 0 1 50 748 Tm (The Behavioral Safety Layer for Human-Facing AI) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 738 Tm (Third-party independent behavioral safety validation. Benchmark: 79 scenarios | 13 behavioral domains.) Tj ET
+0.616 0.639 0.745 rg BT /F1 8 Tf 1 0 0 1 494 764 Tm (Page 1) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 730 Tm (Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake.) Tj ET
+0.50 w 0.137 0.157 0.251 RG
+50 722 m 562 722 l S
+0.545 0.361 0.965 rg BT /F2 10 Tf 1 0 0 1 50 670 Tm (A. Contact + Organization) Tj ET
+0.50 w 0.137 0.157 0.251 RG
+50 658 m 562 658 l S
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 650 Tm (Full name) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 615 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 605 Tm (Role / title) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 570 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 560 Tm (Company) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 525 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 515 Tm (Work email) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 480 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 470 Tm (Technical contact name) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 435 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 425 Tm (Technical contact email) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 390 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 380 Tm (Company size) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 345 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 335 Tm (Industry) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 300 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 290 Tm (Country / region) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 255 512 24 re B
+0.50 w 0.137 0.157 0.251 RG
+50 50 m 562 50 l S
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 38 Tm (ikwe.ai  |  The Behavioral Safety Layer for Human-Facing AI  |  ikwe.ai/intake) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 466 38 Tm (Visible Healing Inc.) Tj ET
+endstream
 endobj
 8 0 obj
-<< /Type /Annot /Subtype /Widget /T (role_title) /TU (Role / title) /Rect [50 582 562 606] /F 4 /P 5 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Tx /V () >>
+<< /Type /Annot /Subtype /Widget /T (full_name) /TU (Full name) /Rect [50 615 562 639] /F 4 /P 6 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Tx /V () >>
 endobj
 9 0 obj
-<< /Type /Annot /Subtype /Widget /T (company) /TU (Company) /Rect [50 535 562 559] /F 4 /P 5 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Tx /V () >>
+<< /Type /Annot /Subtype /Widget /T (role_title) /TU (Role / title) /Rect [50 570 562 594] /F 4 /P 6 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Tx /V () >>
 endobj
 10 0 obj
-<< /Type /Annot /Subtype /Widget /T (work_email) /TU (Work email) /Rect [50 488 562 512] /F 4 /P 5 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Tx /V () >>
+<< /Type /Annot /Subtype /Widget /T (company) /TU (Company) /Rect [50 525 562 549] /F 4 /P 6 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Tx /V () >>
 endobj
 11 0 obj
-<< /Type /Annot /Subtype /Widget /T (technical_contact_name) /TU (Technical contact name) /Rect [50 441 562 465] /F 4 /P 5 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Tx /V () >>
+<< /Type /Annot /Subtype /Widget /T (work_email) /TU (Work email) /Rect [50 480 562 504] /F 4 /P 6 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Tx /V () >>
 endobj
 12 0 obj
-<< /Type /Annot /Subtype /Widget /T (technical_contact_email) /TU (Technical contact email) /Rect [50 394 562 418] /F 4 /P 5 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Tx /V () >>
+<< /Type /Annot /Subtype /Widget /T (technical_contact_name) /TU (Technical contact name) /Rect [50 435 562 459] /F 4 /P 6 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Tx /V () >>
 endobj
 13 0 obj
-<< /Type /Annot /Subtype /Widget /T (company_size) /TU (Company size) /Rect [50 347 562 371] /F 4 /P 5 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(1-10) (11-50) (51-200) (201-1000) (1000+)] /V () /DV () >>
+<< /Type /Annot /Subtype /Widget /T (technical_contact_email) /TU (Technical contact email) /Rect [50 390 562 414] /F 4 /P 6 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Tx /V () >>
 endobj
 14 0 obj
-<< /Type /Annot /Subtype /Widget /T (industry) /TU (Industry) /Rect [50 300 562 324] /F 4 /P 5 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(Financial Services) (Healthcare) (Government / Public Sector) (Legal) (Education) (Technology) (Retail / Consumer) (Other)] /V () /DV () >>
+<< /Type /Annot /Subtype /Widget /T (company_size) /TU (Company size) /Rect [50 345 562 369] /F 4 /P 6 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(1-10) (11-50) (51-200) (201-1000) (1000+)] /V () /DV () >>
 endobj
 15 0 obj
-<< /Type /Annot /Subtype /Widget /T (country_region) /TU (Country / region) /Rect [50 253 562 277] /F 4 /P 5 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(United States) (Canada) (UK) (EU) (APAC) (LATAM) (Middle East / Africa) (Other)] /V () /DV () >>
+<< /Type /Annot /Subtype /Widget /T (industry) /TU (Industry) /Rect [50 300 562 324] /F 4 /P 6 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(Financial Services) (Healthcare) (Government / Public Sector) (Legal) (Education) (Technology) (Retail / Consumer) (Other)] /V () /DV () >>
 endobj
 16 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 17 0 R /Annots [18 0 R 19 0 R 20 0 R 21 0 R 22 0 R 23 0 R] >>
+<< /Type /Annot /Subtype /Widget /T (country_region) /TU (Country / region) /Rect [50 255 562 279] /F 4 /P 6 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(United States) (Canada) (UK) (EU) (APAC) (LATAM) (Middle East / Africa) (Other)] /V () /DV () >>
 endobj
 17 0 obj
-<< /Length 1773 >>
-stream
-0.88 0.83 0.98 RG
-0.09 0.07 0.17 rg BT /F1 16 Tf 1 0 0 1 50 766 Tm (ikwe.ai Intake Form) Tj ET
-0.09 0.07 0.17 rg BT /F1 10 Tf 1 0 0 1 50 748 Tm (The Behavioral Safety Layer for Human-Facing AI) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 734 Tm (Third-party independent behavioral safety validation for human-facing AI systems.) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 722 Tm (Benchmark scope: 79 scenarios | 13 behavioral domains \(vulnerability categories\).) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 710 Tm (Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake.) Tj ET
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 494 766 Tm (Page 2) Tj ET
-0.75 0.68 0.95 RG
-50 700 m 562 700 l S
-0.09 0.07 0.17 rg BT /F1 11 Tf 1 0 0 1 50 680 Tm (B. Deployment Context) Tj ET
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 664 Tm (Primary use case) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 629 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 617 Tm (What are you deploying?) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 582 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 570 Tm (Is it user-facing?) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 535 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 523 Tm (User population \(select all that apply\)) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 458 512 54 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 446 Tm (Other user population) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 411 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 399 Tm (Where is it deployed?) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 364 512 24 re B
-0.67 0.61 0.84 rg
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 38 Tm (ikwe.ai | The Behavioral Safety Layer for Human-Facing AI | ikwe.ai/intake) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 432 38 Tm (Visible Healing Inc.) Tj ET
-endstream
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 18 0 R /Annots [19 0 R 20 0 R 21 0 R 22 0 R 23 0 R 24 0 R] >>
 endobj
 18 0 obj
-<< /Type /Annot /Subtype /Widget /T (use_case) /TU (Primary use case) /Rect [50 629 562 653] /F 4 /P 16 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(Companion AI) (Mental health technology) (Healthcare AI) (Fintech assistant) (Customer support AI) (Education AI) (Enterprise copilot) (Other)] /V () /DV () >>
+<< /Length 2012 >>
+stream
+0.051 0.059 0.078 rg
+0 0 612 792 re f
+0.106 0.122 0.180 rg
+0 728 612 64 re f
+2 w 0.486 0.310 0.827 RG
+0 728 m 612 728 l S
+0.910 0.788 0.478 rg BT /F2 13 Tf 1 0 0 1 50 764 Tm (ikwe.ai Intake Form) Tj ET
+0.616 0.639 0.745 rg BT /F1 8 Tf 1 0 0 1 50 748 Tm (The Behavioral Safety Layer for Human-Facing AI) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 738 Tm (Third-party independent behavioral safety validation. Benchmark: 79 scenarios | 13 behavioral domains.) Tj ET
+0.616 0.639 0.745 rg BT /F1 8 Tf 1 0 0 1 494 764 Tm (Page 2) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 730 Tm (Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake.) Tj ET
+0.50 w 0.137 0.157 0.251 RG
+50 722 m 562 722 l S
+0.545 0.361 0.965 rg BT /F2 10 Tf 1 0 0 1 50 670 Tm (B. Deployment Context) Tj ET
+0.50 w 0.137 0.157 0.251 RG
+50 658 m 562 658 l S
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 650 Tm (Primary use case) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 615 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 605 Tm (What are you deploying?) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 570 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 560 Tm (Is it user-facing?) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 525 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 515 Tm (User population \(select all\)) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 450 512 54 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 440 Tm (Other user population) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 405 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 395 Tm (Where is it deployed?) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 360 512 24 re B
+0.50 w 0.137 0.157 0.251 RG
+50 50 m 562 50 l S
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 38 Tm (ikwe.ai  |  The Behavioral Safety Layer for Human-Facing AI  |  ikwe.ai/intake) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 466 38 Tm (Visible Healing Inc.) Tj ET
+endstream
 endobj
 19 0 obj
-<< /Type /Annot /Subtype /Widget /T (deployment_type) /TU (What are you deploying?) /Rect [50 582 562 606] /F 4 /P 16 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(AI assistant / copilot) (Customer support agent) (Clinical / health guidance assistant) (HR / workforce assistant) (Autonomous agent \(tool-using\)) (Other)] /V () /DV () >>
+<< /Type /Annot /Subtype /Widget /T (use_case) /TU (Primary use case) /Rect [50 615 562 639] /F 4 /P 17 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(Companion AI) (Mental health technology) (Healthcare AI) (Fintech assistant) (Customer support AI) (Education AI) (Enterprise copilot) (Other)] /V () /DV () >>
 endobj
 20 0 obj
-<< /Type /Annot /Subtype /Widget /T (is_user_facing) /TU (Is it user-facing?) /Rect [50 535 562 559] /F 4 /P 16 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No)] /V () /DV () >>
+<< /Type /Annot /Subtype /Widget /T (deployment_type) /TU (What are you deploying?) /Rect [50 570 562 594] /F 4 /P 17 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(AI assistant / copilot) (Customer support agent) (Clinical / health guidance assistant) (HR / workforce assistant) (Autonomous agent \(tool-using\)) (Other)] /V () /DV () >>
 endobj
 21 0 obj
-<< /Type /Annot /Subtype /Widget /T (user_population) /TU (User population \(select all that apply\)) /Rect [50 458 562 512] /F 4 /P 16 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 2097152 /Opt [(General consumers) (Patients) (Employees) (Students) (Vulnerable users \(minors, mental health, crisis contexts\)) (Other)] /V [] >>
+<< /Type /Annot /Subtype /Widget /T (is_user_facing) /TU (Is it user-facing?) /Rect [50 525 562 549] /F 4 /P 17 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No)] /V () /DV () >>
 endobj
 22 0 obj
-<< /Type /Annot /Subtype /Widget /T (user_population_other) /TU (Other user population) /Rect [50 411 562 435] /F 4 /P 16 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Tx /V () >>
+<< /Type /Annot /Subtype /Widget /T (user_population) /TU (User population \(select all\)) /Rect [50 450 562 504] /F 4 /P 17 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 2097152 /Opt [(General consumers) (Patients) (Employees) (Students) (Vulnerable users \(minors, mental health, crisis contexts\)) (Other)] /V [] >>
 endobj
 23 0 obj
-<< /Type /Annot /Subtype /Widget /T (deployment_channel) /TU (Where is it deployed?) /Rect [50 364 562 388] /F 4 /P 16 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(Web app) (Mobile) (Internal Slack/Teams) (API integration) (Other)] /V () /DV () >>
+<< /Type /Annot /Subtype /Widget /T (user_population_other) /TU (Other user population) /Rect [50 405 562 429] /F 4 /P 17 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Tx /V () >>
 endobj
 24 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 25 0 R /Annots [26 0 R 27 0 R 28 0 R 29 0 R 30 0 R 31 0 R] >>
+<< /Type /Annot /Subtype /Widget /T (deployment_channel) /TU (Where is it deployed?) /Rect [50 360 562 384] /F 4 /P 17 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(Web app) (Mobile) (Internal Slack/Teams) (API integration) (Other)] /V () /DV () >>
 endobj
 25 0 obj
-<< /Length 1771 >>
-stream
-0.88 0.83 0.98 RG
-0.09 0.07 0.17 rg BT /F1 16 Tf 1 0 0 1 50 766 Tm (ikwe.ai Intake Form) Tj ET
-0.09 0.07 0.17 rg BT /F1 10 Tf 1 0 0 1 50 748 Tm (The Behavioral Safety Layer for Human-Facing AI) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 734 Tm (Third-party independent behavioral safety validation for human-facing AI systems.) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 722 Tm (Benchmark scope: 79 scenarios | 13 behavioral domains \(vulnerability categories\).) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 710 Tm (Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake.) Tj ET
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 494 766 Tm (Page 3) Tj ET
-0.75 0.68 0.95 RG
-50 700 m 562 700 l S
-0.09 0.07 0.17 rg BT /F1 11 Tf 1 0 0 1 50 680 Tm (C. Model + Stack) Tj ET
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 664 Tm (Model provider\(s\) \(select all that apply\)) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 599 512 54 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 587 Tm (Other model provider) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 552 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 540 Tm (Use system prompts?) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 505 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 493 Tm (Use RAG / knowledge base?) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 458 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 446 Tm (Use tools/actions?) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 411 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 399 Tm (Use fine-tuning?) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 364 512 24 re B
-0.67 0.61 0.84 rg
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 38 Tm (ikwe.ai | The Behavioral Safety Layer for Human-Facing AI | ikwe.ai/intake) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 432 38 Tm (Visible Healing Inc.) Tj ET
-endstream
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 26 0 R /Annots [27 0 R 28 0 R 29 0 R 30 0 R 31 0 R 32 0 R] >>
 endobj
 26 0 obj
-<< /Type /Annot /Subtype /Widget /T (model_providers) /TU (Model provider\(s\) \(select all that apply\)) /Rect [50 599 562 653] /F 4 /P 24 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 2097152 /Opt [(OpenAI) (Anthropic) (Google) (Meta / open-source) (Other)] /V [] >>
+<< /Length 2010 >>
+stream
+0.051 0.059 0.078 rg
+0 0 612 792 re f
+0.106 0.122 0.180 rg
+0 728 612 64 re f
+2 w 0.486 0.310 0.827 RG
+0 728 m 612 728 l S
+0.910 0.788 0.478 rg BT /F2 13 Tf 1 0 0 1 50 764 Tm (ikwe.ai Intake Form) Tj ET
+0.616 0.639 0.745 rg BT /F1 8 Tf 1 0 0 1 50 748 Tm (The Behavioral Safety Layer for Human-Facing AI) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 738 Tm (Third-party independent behavioral safety validation. Benchmark: 79 scenarios | 13 behavioral domains.) Tj ET
+0.616 0.639 0.745 rg BT /F1 8 Tf 1 0 0 1 494 764 Tm (Page 3) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 730 Tm (Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake.) Tj ET
+0.50 w 0.137 0.157 0.251 RG
+50 722 m 562 722 l S
+0.545 0.361 0.965 rg BT /F2 10 Tf 1 0 0 1 50 670 Tm (C. Model + Stack) Tj ET
+0.50 w 0.137 0.157 0.251 RG
+50 658 m 562 658 l S
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 650 Tm (Model provider\(s\) \(select all\)) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 585 512 54 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 575 Tm (Other model provider) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 540 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 530 Tm (Use system prompts?) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 495 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 485 Tm (Use RAG / knowledge base?) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 450 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 440 Tm (Use tools/actions?) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 405 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 395 Tm (Use fine-tuning?) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 360 512 24 re B
+0.50 w 0.137 0.157 0.251 RG
+50 50 m 562 50 l S
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 38 Tm (ikwe.ai  |  The Behavioral Safety Layer for Human-Facing AI  |  ikwe.ai/intake) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 466 38 Tm (Visible Healing Inc.) Tj ET
+endstream
 endobj
 27 0 obj
-<< /Type /Annot /Subtype /Widget /T (model_provider_other) /TU (Other model provider) /Rect [50 552 562 576] /F 4 /P 24 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Tx /V () >>
+<< /Type /Annot /Subtype /Widget /T (model_providers) /TU (Model provider\(s\) \(select all\)) /Rect [50 585 562 639] /F 4 /P 25 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 2097152 /Opt [(OpenAI) (Anthropic) (Google) (Meta / open-source) (Other)] /V [] >>
 endobj
 28 0 obj
-<< /Type /Annot /Subtype /Widget /T (system_prompts) /TU (Use system prompts?) /Rect [50 505 562 529] /F 4 /P 24 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No) (Not sure)] /V () /DV () >>
+<< /Type /Annot /Subtype /Widget /T (model_provider_other) /TU (Other model provider) /Rect [50 540 562 564] /F 4 /P 25 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Tx /V () >>
 endobj
 29 0 obj
-<< /Type /Annot /Subtype /Widget /T (rag_kb) /TU (Use RAG / knowledge base?) /Rect [50 458 562 482] /F 4 /P 24 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No) (Not sure)] /V () /DV () >>
+<< /Type /Annot /Subtype /Widget /T (system_prompts) /TU (Use system prompts?) /Rect [50 495 562 519] /F 4 /P 25 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No) (Not sure)] /V () /DV () >>
 endobj
 30 0 obj
-<< /Type /Annot /Subtype /Widget /T (tools_actions) /TU (Use tools/actions?) /Rect [50 411 562 435] /F 4 /P 24 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No) (Not sure)] /V () /DV () >>
+<< /Type /Annot /Subtype /Widget /T (rag_kb) /TU (Use RAG / knowledge base?) /Rect [50 450 562 474] /F 4 /P 25 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No) (Not sure)] /V () /DV () >>
 endobj
 31 0 obj
-<< /Type /Annot /Subtype /Widget /T (fine_tuning) /TU (Use fine-tuning?) /Rect [50 364 562 388] /F 4 /P 24 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No) (Not sure)] /V () /DV () >>
+<< /Type /Annot /Subtype /Widget /T (tools_actions) /TU (Use tools/actions?) /Rect [50 405 562 429] /F 4 /P 25 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No) (Not sure)] /V () /DV () >>
 endobj
 32 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 33 0 R /Annots [34 0 R 35 0 R 36 0 R 37 0 R 38 0 R 39 0 R 40 0 R 41 0 R 42 0 R] >>
+<< /Type /Annot /Subtype /Widget /T (fine_tuning) /TU (Use fine-tuning?) /Rect [50 360 562 384] /F 4 /P 25 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No) (Not sure)] /V () /DV () >>
 endobj
 33 0 obj
-<< /Length 2404 >>
-stream
-0.88 0.83 0.98 RG
-0.09 0.07 0.17 rg BT /F1 16 Tf 1 0 0 1 50 766 Tm (ikwe.ai Intake Form) Tj ET
-0.09 0.07 0.17 rg BT /F1 10 Tf 1 0 0 1 50 748 Tm (The Behavioral Safety Layer for Human-Facing AI) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 734 Tm (Third-party independent behavioral safety validation for human-facing AI systems.) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 722 Tm (Benchmark scope: 79 scenarios | 13 behavioral domains \(vulnerability categories\).) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 710 Tm (Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake.) Tj ET
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 494 766 Tm (Page 4) Tj ET
-0.75 0.68 0.95 RG
-50 700 m 562 700 l S
-0.09 0.07 0.17 rg BT /F1 11 Tf 1 0 0 1 50 680 Tm (D. Risk / Governance Pressure) Tj ET
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 664 Tm (What is driving this evaluation? \(select all that apply\)) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 591 512 62 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 579 Tm (Other evaluation driver) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 544 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 532 Tm (Any deadlines?) Tj ET
-0.09 0.07 0.17 rg BT /F1 7 Tf 1 0 0 1 50 521 Tm (Date or timeline) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 487 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 475 Tm (Who needs to sign off? \(select all that apply\)) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 402 512 62 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 390 Tm (Other sign-off stakeholder) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 355 512 24 re B
-0.09 0.07 0.17 rg BT /F1 11 Tf 1 0 0 1 50 343 Tm (E. Access Feasibility) Tj ET
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 327 Tm (Preferred testing method) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 292 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 280 Tm (Can you provide sandbox/staging access?) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 245 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 233 Tm (Can you provide 2-3 controlled test accounts?) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 198 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 186 Tm (Are outputs confidential?) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 151 512 24 re B
-0.67 0.61 0.84 rg
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 38 Tm (ikwe.ai | The Behavioral Safety Layer for Human-Facing AI | ikwe.ai/intake) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 432 38 Tm (Visible Healing Inc.) Tj ET
-endstream
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 34 0 R /Annots [35 0 R 36 0 R 37 0 R 38 0 R 39 0 R 40 0 R 41 0 R 42 0 R 43 0 R] >>
 endobj
 34 0 obj
-<< /Type /Annot /Subtype /Widget /T (evaluation_driver) /TU (What is driving this evaluation? \(select all that apply\)) /Rect [50 591 562 653] /F 4 /P 32 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 2097152 /Opt [(Board request) (Customer procurement/security review) (Partner requirement) (Compliance readiness) (Incident/near-miss) (Pre-launch risk baseline) (Other)] /V [] >>
+<< /Length 2762 >>
+stream
+0.051 0.059 0.078 rg
+0 0 612 792 re f
+0.106 0.122 0.180 rg
+0 728 612 64 re f
+2 w 0.486 0.310 0.827 RG
+0 728 m 612 728 l S
+0.910 0.788 0.478 rg BT /F2 13 Tf 1 0 0 1 50 764 Tm (ikwe.ai Intake Form) Tj ET
+0.616 0.639 0.745 rg BT /F1 8 Tf 1 0 0 1 50 748 Tm (The Behavioral Safety Layer for Human-Facing AI) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 738 Tm (Third-party independent behavioral safety validation. Benchmark: 79 scenarios | 13 behavioral domains.) Tj ET
+0.616 0.639 0.745 rg BT /F1 8 Tf 1 0 0 1 494 764 Tm (Page 4) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 730 Tm (Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake.) Tj ET
+0.50 w 0.137 0.157 0.251 RG
+50 722 m 562 722 l S
+0.545 0.361 0.965 rg BT /F2 10 Tf 1 0 0 1 50 670 Tm (D. Risk / Governance Pressure) Tj ET
+0.50 w 0.137 0.157 0.251 RG
+50 658 m 562 658 l S
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 650 Tm (What is driving this evaluation? \(select all\)) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 577 512 62 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 567 Tm (Other evaluation driver) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 532 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 522 Tm (Any deadlines?) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 511 Tm (Date or timeline) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 477 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 467 Tm (Who needs to sign off? \(select all\)) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 394 512 62 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 384 Tm (Other sign-off stakeholder) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 349 512 24 re B
+0.545 0.361 0.965 rg BT /F2 10 Tf 1 0 0 1 50 339 Tm (E. Access Feasibility) Tj ET
+0.50 w 0.137 0.157 0.251 RG
+50 327 m 562 327 l S
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 319 Tm (Preferred testing method) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 284 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 274 Tm (Can you provide sandbox/staging access?) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 239 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 229 Tm (Can you provide 2-3 controlled test accounts?) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 194 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 184 Tm (Are outputs confidential?) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 149 512 24 re B
+0.50 w 0.137 0.157 0.251 RG
+50 50 m 562 50 l S
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 38 Tm (ikwe.ai  |  The Behavioral Safety Layer for Human-Facing AI  |  ikwe.ai/intake) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 466 38 Tm (Visible Healing Inc.) Tj ET
+endstream
 endobj
 35 0 obj
-<< /Type /Annot /Subtype /Widget /T (evaluation_driver_other) /TU (Other evaluation driver) /Rect [50 544 562 568] /F 4 /P 32 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Tx /V () >>
+<< /Type /Annot /Subtype /Widget /T (evaluation_driver) /TU (What is driving this evaluation? \(select all\)) /Rect [50 577 562 639] /F 4 /P 33 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 2097152 /Opt [(Board request) (Customer procurement/security review) (Partner requirement) (Compliance readiness) (Incident/near-miss) (Pre-launch risk baseline) (Other)] /V [] >>
 endobj
 36 0 obj
-<< /Type /Annot /Subtype /Widget /T (deadline) /TU (Any deadlines?) /Rect [50 487 562 511] /F 4 /P 32 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Tx /V () >>
+<< /Type /Annot /Subtype /Widget /T (evaluation_driver_other) /TU (Other evaluation driver) /Rect [50 532 562 556] /F 4 /P 33 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Tx /V () >>
 endobj
 37 0 obj
-<< /Type /Annot /Subtype /Widget /T (signoff_stakeholders) /TU (Who needs to sign off? \(select all that apply\)) /Rect [50 402 562 464] /F 4 /P 32 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 2097152 /Opt [(CEO/founder) (CTO) (Head of Compliance / Risk) (Legal) (Customer security/procurement) (Board) (Other)] /V [] >>
+<< /Type /Annot /Subtype /Widget /T (deadline) /TU (Any deadlines?) /Rect [50 477 562 501] /F 4 /P 33 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Tx /V () >>
 endobj
 38 0 obj
-<< /Type /Annot /Subtype /Widget /T (signoff_other) /TU (Other sign-off stakeholder) /Rect [50 355 562 379] /F 4 /P 32 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Tx /V () >>
+<< /Type /Annot /Subtype /Widget /T (signoff_stakeholders) /TU (Who needs to sign off? \(select all\)) /Rect [50 394 562 456] /F 4 /P 33 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 2097152 /Opt [(CEO/founder) (CTO) (Head of Compliance / Risk) (Legal) (Customer security/procurement) (Board) (Other)] /V [] >>
 endobj
 39 0 obj
-<< /Type /Annot /Subtype /Widget /T (access_method) /TU (Preferred testing method) /Rect [50 292 562 316] /F 4 /P 32 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(API key / endpoint) (Staging UI) (Production with controlled accounts) (Transcript export)] /V () /DV () >>
+<< /Type /Annot /Subtype /Widget /T (signoff_other) /TU (Other sign-off stakeholder) /Rect [50 349 562 373] /F 4 /P 33 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Tx /V () >>
 endobj
 40 0 obj
-<< /Type /Annot /Subtype /Widget /T (sandbox_access) /TU (Can you provide sandbox/staging access?) /Rect [50 245 562 269] /F 4 /P 32 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No) (Not sure)] /V () /DV () >>
+<< /Type /Annot /Subtype /Widget /T (access_method) /TU (Preferred testing method) /Rect [50 284 562 308] /F 4 /P 33 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(API key / endpoint) (Staging UI) (Production with controlled accounts) (Transcript export)] /V () /DV () >>
 endobj
 41 0 obj
-<< /Type /Annot /Subtype /Widget /T (test_accounts) /TU (Can you provide 2-3 controlled test accounts?) /Rect [50 198 562 222] /F 4 /P 32 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No) (Not sure)] /V () /DV () >>
+<< /Type /Annot /Subtype /Widget /T (sandbox_access) /TU (Can you provide sandbox/staging access?) /Rect [50 239 562 263] /F 4 /P 33 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No) (Not sure)] /V () /DV () >>
 endobj
 42 0 obj
-<< /Type /Annot /Subtype /Widget /T (outputs_confidential) /TU (Are outputs confidential?) /Rect [50 151 562 175] /F 4 /P 32 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No)] /V () /DV () >>
+<< /Type /Annot /Subtype /Widget /T (test_accounts) /TU (Can you provide 2-3 controlled test accounts?) /Rect [50 194 562 218] /F 4 /P 33 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No) (Not sure)] /V () /DV () >>
 endobj
 43 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 44 0 R /Annots [45 0 R 46 0 R 47 0 R 48 0 R] >>
+<< /Type /Annot /Subtype /Widget /T (outputs_confidential) /TU (Are outputs confidential?) /Rect [50 149 562 173] /F 4 /P 33 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No)] /V () /DV () >>
 endobj
 44 0 obj
-<< /Length 1670 >>
-stream
-0.88 0.83 0.98 RG
-0.09 0.07 0.17 rg BT /F1 16 Tf 1 0 0 1 50 766 Tm (ikwe.ai Intake Form) Tj ET
-0.09 0.07 0.17 rg BT /F1 10 Tf 1 0 0 1 50 748 Tm (The Behavioral Safety Layer for Human-Facing AI) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 734 Tm (Third-party independent behavioral safety validation for human-facing AI systems.) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 722 Tm (Benchmark scope: 79 scenarios | 13 behavioral domains \(vulnerability categories\).) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 710 Tm (Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake.) Tj ET
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 494 766 Tm (Page 5) Tj ET
-0.75 0.68 0.95 RG
-50 700 m 562 700 l S
-0.09 0.07 0.17 rg BT /F1 11 Tf 1 0 0 1 50 680 Tm (F. Scope Signals) Tj ET
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 664 Tm (Approximate scenario volume) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 629 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 617 Tm (Preferred engagement mode) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 582 512 24 re B
-0.09 0.07 0.17 rg BT /F1 11 Tf 1 0 0 1 50 570 Tm (G. Open Text) Tj ET
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 554 Tm (Briefly describe your system and what you are most concerned about.) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 471 512 72 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 459 Tm (List any specific red-lines your organization must enforce.) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 376 512 72 re B
-0.67 0.61 0.84 rg
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 38 Tm (ikwe.ai | The Behavioral Safety Layer for Human-Facing AI | ikwe.ai/intake) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 432 38 Tm (Visible Healing Inc.) Tj ET
-endstream
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 45 0 R /Annots [46 0 R 47 0 R 48 0 R 49 0 R] >>
 endobj
 45 0 obj
-<< /Type /Annot /Subtype /Widget /T (scenario_volume) /TU (Approximate scenario volume) /Rect [50 629 562 653] /F 4 /P 43 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(25 \(pilot\)) (50) (100+)] /V () /DV () >>
-endobj
-46 0 obj
-<< /Type /Annot /Subtype /Widget /T (engagement_mode) /TU (Preferred engagement mode) /Rect [50 582 562 606] /F 4 /P 43 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(Pilot only) (Pilot + re-test after remediation) (Ongoing monitoring)] /V () /DV () >>
-endobj
-47 0 obj
-<< /Type /Annot /Subtype /Widget /T (system_description_concerns) /TU (Briefly describe your system and what you are most concerned about.) /Rect [50 471 562 543] /F 4 /P 43 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Tx /Ff 4096 /V () >>
-endobj
-48 0 obj
-<< /Type /Annot /Subtype /Widget /T (required_red_lines) /TU (List any specific red-lines your organization must enforce.) /Rect [50 376 562 448] /F 4 /P 43 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Tx /Ff 4096 /V () >>
-endobj
-49 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 50 0 R /Annots [51 0 R 52 0 R 53 0 R 54 0 R 55 0 R 56 0 R 57 0 R 58 0 R 59 0 R] >>
-endobj
-50 0 obj
-<< /Length 2324 >>
+<< /Length 1922 >>
 stream
-0.88 0.83 0.98 RG
-0.09 0.07 0.17 rg BT /F1 16 Tf 1 0 0 1 50 766 Tm (ikwe.ai Intake Form) Tj ET
-0.09 0.07 0.17 rg BT /F1 10 Tf 1 0 0 1 50 748 Tm (The Behavioral Safety Layer for Human-Facing AI) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 734 Tm (Third-party independent behavioral safety validation for human-facing AI systems.) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 722 Tm (Benchmark scope: 79 scenarios | 13 behavioral domains \(vulnerability categories\).) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 710 Tm (Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake.) Tj ET
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 494 766 Tm (Page 6) Tj ET
-0.75 0.68 0.95 RG
-50 700 m 562 700 l S
-0.09 0.07 0.17 rg BT /F1 11 Tf 1 0 0 1 50 680 Tm (H. Data Handling + Security) Tj ET
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 664 Tm (Can Ikwe store outputs for analysis?) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 629 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 617 Tm (Can outputs include PII?) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 582 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 570 Tm (Required retention period) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 535 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 523 Tm (Custom retention detail) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 488 512 24 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 476 Tm (Compliance constraints \(select all that apply\)) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 395 512 70 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 383 Tm (Other compliance constraints) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 348 512 24 re B
-0.09 0.07 0.17 rg BT /F1 11 Tf 1 0 0 1 50 336 Tm (I. Scope + Success Criteria) Tj ET
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 320 Tm (What does "pass" mean for your team?) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 247 512 62 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 235 Tm (Priority behavioral domains \(select all that apply\)) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 138 512 86 re B
-0.09 0.07 0.17 rg BT /F1 9 Tf 1 0 0 1 50 126 Tm (Languages supported) Tj ET
-0.75 0.70 0.95 RG
-1 1 1 rg
-50 91 512 24 re B
-0.67 0.61 0.84 rg
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 50 38 Tm (ikwe.ai | The Behavioral Safety Layer for Human-Facing AI | ikwe.ai/intake) Tj ET
-0.09 0.07 0.17 rg BT /F1 8 Tf 1 0 0 1 432 38 Tm (Visible Healing Inc.) Tj ET
+0.051 0.059 0.078 rg
+0 0 612 792 re f
+0.106 0.122 0.180 rg
+0 728 612 64 re f
+2 w 0.486 0.310 0.827 RG
+0 728 m 612 728 l S
+0.910 0.788 0.478 rg BT /F2 13 Tf 1 0 0 1 50 764 Tm (ikwe.ai Intake Form) Tj ET
+0.616 0.639 0.745 rg BT /F1 8 Tf 1 0 0 1 50 748 Tm (The Behavioral Safety Layer for Human-Facing AI) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 738 Tm (Third-party independent behavioral safety validation. Benchmark: 79 scenarios | 13 behavioral domains.) Tj ET
+0.616 0.639 0.745 rg BT /F1 8 Tf 1 0 0 1 494 764 Tm (Page 5) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 730 Tm (Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake.) Tj ET
+0.50 w 0.137 0.157 0.251 RG
+50 722 m 562 722 l S
+0.545 0.361 0.965 rg BT /F2 10 Tf 1 0 0 1 50 670 Tm (F. Scope Signals) Tj ET
+0.50 w 0.137 0.157 0.251 RG
+50 658 m 562 658 l S
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 650 Tm (Approximate scenario volume) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 615 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 605 Tm (Preferred engagement mode) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 570 512 24 re B
+0.545 0.361 0.965 rg BT /F2 10 Tf 1 0 0 1 50 560 Tm (G. Open Text) Tj ET
+0.50 w 0.137 0.157 0.251 RG
+50 548 m 562 548 l S
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 540 Tm (Briefly describe your system and what you are most concerned about.) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 457 512 72 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 447 Tm (List any specific red-lines your organization must enforce.) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 364 512 72 re B
+0.50 w 0.137 0.157 0.251 RG
+50 50 m 562 50 l S
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 38 Tm (ikwe.ai  |  The Behavioral Safety Layer for Human-Facing AI  |  ikwe.ai/intake) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 466 38 Tm (Visible Healing Inc.) Tj ET
 endstream
 endobj
+46 0 obj
+<< /Type /Annot /Subtype /Widget /T (scenario_volume) /TU (Approximate scenario volume) /Rect [50 615 562 639] /F 4 /P 44 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(25 \(pilot\)) (50) (100+)] /V () /DV () >>
+endobj
+47 0 obj
+<< /Type /Annot /Subtype /Widget /T (engagement_mode) /TU (Preferred engagement mode) /Rect [50 570 562 594] /F 4 /P 44 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(Pilot only) (Pilot + re-test after remediation) (Ongoing monitoring)] /V () /DV () >>
+endobj
+48 0 obj
+<< /Type /Annot /Subtype /Widget /T (system_description_concerns) /TU (Briefly describe your system and what you are most concerned about.) /Rect [50 457 562 529] /F 4 /P 44 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Tx /Ff 4096 /V () >>
+endobj
+49 0 obj
+<< /Type /Annot /Subtype /Widget /T (required_red_lines) /TU (List any specific red-lines your organization must enforce.) /Rect [50 364 562 436] /F 4 /P 44 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Tx /Ff 4096 /V () >>
+endobj
+50 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 51 0 R /Annots [52 0 R 53 0 R 54 0 R 55 0 R 56 0 R 57 0 R 58 0 R 59 0 R 60 0 R] >>
+endobj
 51 0 obj
-<< /Type /Annot /Subtype /Widget /T (outputs_storage_allowed) /TU (Can Ikwe store outputs for analysis?) /Rect [50 629 562 653] /F 4 /P 49 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No)] /V () /DV () >>
+<< /Length 2679 >>
+stream
+0.051 0.059 0.078 rg
+0 0 612 792 re f
+0.106 0.122 0.180 rg
+0 728 612 64 re f
+2 w 0.486 0.310 0.827 RG
+0 728 m 612 728 l S
+0.910 0.788 0.478 rg BT /F2 13 Tf 1 0 0 1 50 764 Tm (ikwe.ai Intake Form) Tj ET
+0.616 0.639 0.745 rg BT /F1 8 Tf 1 0 0 1 50 748 Tm (The Behavioral Safety Layer for Human-Facing AI) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 738 Tm (Third-party independent behavioral safety validation. Benchmark: 79 scenarios | 13 behavioral domains.) Tj ET
+0.616 0.639 0.745 rg BT /F1 8 Tf 1 0 0 1 494 764 Tm (Page 6) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 730 Tm (Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake.) Tj ET
+0.50 w 0.137 0.157 0.251 RG
+50 722 m 562 722 l S
+0.545 0.361 0.965 rg BT /F2 10 Tf 1 0 0 1 50 670 Tm (H. Data Handling + Security) Tj ET
+0.50 w 0.137 0.157 0.251 RG
+50 658 m 562 658 l S
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 650 Tm (Can Ikwe store outputs for analysis?) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 615 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 605 Tm (Can outputs include PII?) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 570 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 560 Tm (Required retention period) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 525 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 515 Tm (Custom retention detail) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 480 512 24 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 470 Tm (Compliance constraints \(select all\)) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 389 512 70 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 379 Tm (Other compliance constraints) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 344 512 24 re B
+0.545 0.361 0.965 rg BT /F2 10 Tf 1 0 0 1 50 334 Tm (I. Scope + Success Criteria) Tj ET
+0.50 w 0.137 0.157 0.251 RG
+50 322 m 562 322 l S
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 314 Tm (What does "pass" mean for your team?) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 241 512 62 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 231 Tm (Priority behavioral domains \(select all\)) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 134 512 86 re B
+0.616 0.639 0.745 rg BT /F1 9 Tf 1 0 0 1 50 124 Tm (Languages supported) Tj ET
+0.078 0.090 0.125 rg
+0.75 w 0.486 0.310 0.827 RG
+50 89 512 24 re B
+0.50 w 0.137 0.157 0.251 RG
+50 50 m 562 50 l S
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 50 38 Tm (ikwe.ai  |  The Behavioral Safety Layer for Human-Facing AI  |  ikwe.ai/intake) Tj ET
+0.408 0.439 0.549 rg BT /F1 7 Tf 1 0 0 1 466 38 Tm (Visible Healing Inc.) Tj ET
+endstream
 endobj
 52 0 obj
-<< /Type /Annot /Subtype /Widget /T (outputs_include_pii) /TU (Can outputs include PII?) /Rect [50 582 562 606] /F 4 /P 49 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No) (Not sure)] /V () /DV () >>
+<< /Type /Annot /Subtype /Widget /T (outputs_storage_allowed) /TU (Can Ikwe store outputs for analysis?) /Rect [50 615 562 639] /F 4 /P 50 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No)] /V () /DV () >>
 endobj
 53 0 obj
-<< /Type /Annot /Subtype /Widget /T (retention_period) /TU (Required retention period) /Rect [50 535 562 559] /F 4 /P 49 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 131072 /Opt [(30 days) (60 days) (90 days) (Custom)] /V () /DV () >>
+<< /Type /Annot /Subtype /Widget /T (outputs_include_pii) /TU (Can outputs include PII?) /Rect [50 570 562 594] /F 4 /P 50 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(Yes) (No) (Not sure)] /V () /DV () >>
 endobj
 54 0 obj
-<< /Type /Annot /Subtype /Widget /T (retention_custom) /TU (Custom retention detail) /Rect [50 488 562 512] /F 4 /P 49 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Tx /V () >>
+<< /Type /Annot /Subtype /Widget /T (retention_period) /TU (Required retention period) /Rect [50 525 562 549] /F 4 /P 50 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 131072 /Opt [(30 days) (60 days) (90 days) (Custom)] /V () /DV () >>
 endobj
 55 0 obj
-<< /Type /Annot /Subtype /Widget /T (compliance_constraints) /TU (Compliance constraints \(select all that apply\)) /Rect [50 395 562 465] /F 4 /P 49 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 2097152 /Opt [(HIPAA / PHI) (PCI) (FERPA) (GDPR) (Minors) (No additional constraints) (Other)] /V [] >>
+<< /Type /Annot /Subtype /Widget /T (retention_custom) /TU (Custom retention detail) /Rect [50 480 562 504] /F 4 /P 50 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Tx /V () >>
 endobj
 56 0 obj
-<< /Type /Annot /Subtype /Widget /T (compliance_other) /TU (Other compliance constraints) /Rect [50 348 562 372] /F 4 /P 49 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Tx /V () >>
+<< /Type /Annot /Subtype /Widget /T (compliance_constraints) /TU (Compliance constraints \(select all\)) /Rect [50 389 562 459] /F 4 /P 50 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 2097152 /Opt [(HIPAA / PHI) (PCI) (FERPA) (GDPR) (Minors) (No additional constraints) (Other)] /V [] >>
 endobj
 57 0 obj
-<< /Type /Annot /Subtype /Widget /T (pass_criteria) /TU (What does "pass" mean for your team?) /Rect [50 247 562 309] /F 4 /P 49 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Tx /Ff 4096 /V () >>
+<< /Type /Annot /Subtype /Widget /T (compliance_other) /TU (Other compliance constraints) /Rect [50 344 562 368] /F 4 /P 50 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Tx /V () >>
 endobj
 58 0 obj
-<< /Type /Annot /Subtype /Widget /T (priority_domains) /TU (Priority behavioral domains \(select all that apply\)) /Rect [50 138 562 224] /F 4 /P 49 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Ch /Ff 2097152 /Opt [(Anxiety) (Depression) (Loneliness) (Anger) (Overwhelm) (Grief) (Suicidal Ideation) (Relationship Distress) (Career Trauma) (Financial Stress) (Identity Stress) (Family Conflict) (Crisis Escalation)] /V [] >>
+<< /Type /Annot /Subtype /Widget /T (pass_criteria) /TU (What does "pass" mean for your team?) /Rect [50 241 562 303] /F 4 /P 50 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Tx /Ff 4096 /V () >>
 endobj
 59 0 obj
-<< /Type /Annot /Subtype /Widget /T (languages_supported) /TU (Languages supported) /Rect [50 91 562 115] /F 4 /P 49 0 R /Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> /MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >> /FT /Tx /V () >>
+<< /Type /Annot /Subtype /Widget /T (priority_domains) /TU (Priority behavioral domains \(select all\)) /Rect [50 134 562 220] /F 4 /P 50 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Ch /Ff 2097152 /Opt [(Anxiety) (Depression) (Loneliness) (Anger) (Overwhelm) (Grief) (Suicidal Ideation) (Relationship Distress) (Career Trauma) (Financial Stress) (Identity Stress) (Family Conflict) (Crisis Escalation)] /V [] >>
+endobj
+60 0 obj
+<< /Type /Annot /Subtype /Widget /T (languages_supported) /TU (Languages supported) /Rect [50 89 562 113] /F 4 /P 50 0 R /Q 0 /DA (/Helv 11 Tf 0.910 0.918 0.957 rg) /BS << /W 1 /S /S >> /MK << /BC [0.486 0.310 0.827] /BG [0.078 0.090 0.125] >> /FT /Tx /V () >>
 endobj
 xref
-0 60
+0 61
 0000000000 65535 f 
 0000000015 00000 n 
 0000000080 00000 n 
 0000000172 00000 n 
-0000000579 00000 n 
-0000000649 00000 n 
-0000000845 00000 n 
-0000002962 00000 n 
-0000003186 00000 n 
-0000003414 00000 n 
-0000003634 00000 n 
-0000003861 00000 n 
-0000004112 00000 n 
-0000004365 00000 n 
-0000004664 00000 n 
-0000005036 00000 n 
-0000005379 00000 n 
-0000005559 00000 n 
-0000007385 00000 n 
-0000007786 00000 n 
-0000008215 00000 n 
-0000008491 00000 n 
-0000008898 00000 n 
-0000009148 00000 n 
-0000009488 00000 n 
-0000009668 00000 n 
-0000011492 00000 n 
-0000011838 00000 n 
-0000012086 00000 n 
-0000012374 00000 n 
-0000012660 00000 n 
-0000012946 00000 n 
-0000013228 00000 n 
-0000013429 00000 n 
-0000015886 00000 n 
-0000016344 00000 n 
-0000016598 00000 n 
-0000016828 00000 n 
-0000017227 00000 n 
-0000017474 00000 n 
-0000017836 00000 n 
-0000018144 00000 n 
-0000018457 00000 n 
-0000018746 00000 n 
-0000018912 00000 n 
-0000020635 00000 n 
-0000020937 00000 n 
-0000021280 00000 n 
-0000021591 00000 n 
-0000021885 00000 n 
-0000022086 00000 n 
-0000024463 00000 n 
-0000024766 00000 n 
-0000025064 00000 n 
-0000025377 00000 n 
-0000025624 00000 n 
-0000026001 00000 n 
-0000026253 00000 n 
-0000026519 00000 n 
-0000027014 00000 n 
+0000000590 00000 n 
+0000000660 00000 n 
+0000000735 00000 n 
+0000000942 00000 n 
+0000003384 00000 n 
+0000003640 00000 n 
+0000003900 00000 n 
+0000004153 00000 n 
+0000004412 00000 n 
+0000004695 00000 n 
+0000004980 00000 n 
+0000005311 00000 n 
+0000005715 00000 n 
+0000006090 00000 n 
+0000006280 00000 n 
+0000008345 00000 n 
+0000008778 00000 n 
+0000009239 00000 n 
+0000009547 00000 n 
+0000009975 00000 n 
+0000010257 00000 n 
+0000010629 00000 n 
+0000010819 00000 n 
+0000012882 00000 n 
+0000013249 00000 n 
+0000013529 00000 n 
+0000013849 00000 n 
+0000014167 00000 n 
+0000014485 00000 n 
+0000014799 00000 n 
+0000015010 00000 n 
+0000017825 00000 n 
+0000018304 00000 n 
+0000018590 00000 n 
+0000018852 00000 n 
+0000019272 00000 n 
+0000019551 00000 n 
+0000019945 00000 n 
+0000020285 00000 n 
+0000020630 00000 n 
+0000020951 00000 n 
+0000021127 00000 n 
+0000023102 00000 n 
+0000023436 00000 n 
+0000023811 00000 n 
+0000024154 00000 n 
+0000024480 00000 n 
+0000024691 00000 n 
+0000027423 00000 n 
+0000027758 00000 n 
+0000028088 00000 n 
+0000028433 00000 n 
+0000028712 00000 n 
+0000029110 00000 n 
+0000029394 00000 n 
+0000029692 00000 n 
+0000030208 00000 n 
 trailer
-<< /Size 60 /Root 1 0 R >>
+<< /Size 61 /Root 1 0 R >>
 startxref
-27259
+30485
 %%EOF
