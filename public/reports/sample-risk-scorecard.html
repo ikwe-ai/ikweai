@@ -1,48 +1,518 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sample Risk Scorecard | ikwe.ai</title>
-  <meta name="robots" content="noindex,nofollow,noarchive" />
-  <style>
-    :root { --bg:#0f1120; --surface:#181b2f; --surface2:#202544; --text:#eceffd; --muted:#a3abc9; --line:#32395d; --accent:#9f7aea; --risk:#f87171; --warn:#f59e0b; --ok:#34d399; }
-    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#0c0e19,#11142a);color:var(--text)}
-    .wrap{max-width:960px;margin:0 auto;padding:28px 18px 60px} .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
-    .kicker{font:700 10px/1.2 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:#c4b5fd}
-    h1{font-size:30px;line-height:1.15;margin:8px 0 10px} p{margin:0;color:var(--muted);line-height:1.55}
-    table{width:100%;border-collapse:collapse;margin-top:14px} th,td{border-bottom:1px solid var(--line);padding:11px 8px;text-align:left;font-size:13px}
-    th{color:#c7cdee;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em}
-    .bar{height:8px;background:#2a3154;border-radius:999px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#8b5cf6,#22d3ee)}
-    .chip{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700}
-    .risk{background:#3a1e29;color:#fda4af}.warn{background:#3b2d1b;color:#fcd34d}.ok{background:#173628;color:#86efac}
-    .footer{margin-top:14px;font-size:12px;color:#8e97bb}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Risk Scorecard · Sample Deliverable — ikwe.ai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #0d0f14;
+    --surface: #141720;
+    --surface2: #1b1f2e;
+    --surface3: #21263a;
+    --border: #232840;
+    --text: #e8eaf4;
+    --muted: #9da3be;
+    --subtle: #68708c;
+    --lilac: #7c4fd3;
+    --lilac-bright: #8b5cf6;
+    --teal: #3bbfcc;
+    --amber: #f5a623;
+    --safe: #3dd68c;
+    --danger: #f55a5a;
+    --gold: #e8c97a;
+    --orange: #e87a3a;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --font-mono: 'Space Mono', monospace;
+    --radius: 8px;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 56px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    backdrop-filter: blur(12px);
+  }
+  .header-left { display: flex; align-items: center; gap: 12px; }
+  .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .header-logo img { max-height: 28px; }
+  .header-sep { width: 1px; height: 20px; background: var(--border); }
+  .header-title { font-size: 13px; color: var(--muted); font-weight: 400; }
+  .header-pill {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--subtle);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+
+  .main {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* Scorecard Header */
+  .scorecard-header {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin-bottom: 36px;
+  }
+  .scorecard-top {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .overall-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--subtle);
+  }
+  .overall-score {
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--amber);
+  }
+  .overall-risk {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+  .overall-bar-track {
+    width: 100%;
+    height: 10px;
+    background: var(--surface3);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .overall-bar-fill {
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(90deg, var(--danger) 0%, var(--amber) 55%, var(--safe) 100%);
+    position: relative;
+  }
+  .overall-bar-marker {
+    position: absolute;
+    right: -2px;
+    top: -3px;
+    width: 4px;
+    height: 16px;
+    background: var(--text);
+    border-radius: 2px;
+  }
+
+  .section { margin-bottom: 40px; }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+
+  /* Dimension table */
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  thead { background: var(--surface2); }
+  th {
+    padding: 10px 14px;
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--subtle);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+    vertical-align: middle;
+  }
+  tr:last-child td { border-bottom: none; }
+  tbody tr { background: var(--surface); }
+  tbody tr:nth-child(even) { background: var(--surface2); }
+
+  .dim-name { color: var(--text); font-weight: 500; }
+  .score-cell { font-family: var(--font-mono); font-weight: 700; }
+
+  .bar-cell { min-width: 160px; }
+  .mini-bar-track {
+    width: 100%;
+    height: 7px;
+    background: var(--surface3);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .mini-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s;
+  }
+
+  .rating-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .rating-strong { background: rgba(61,214,140,0.18); color: #6ee7b7; font-weight: 700; }
+  .rating-good { background: rgba(59,191,204,0.18); color: #67e8f9; font-weight: 700; }
+  .rating-monitor { background: rgba(245,166,35,0.18); color: #fcd34d; font-weight: 700; }
+  .rating-watch { background: rgba(232,122,58,0.2); color: #fdba74; font-weight: 700; }
+  .rating-critical { background: rgba(245,90,90,0.2); color: #fca5a5; font-weight: 700; }
+
+  .priority-cell {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .pri-high { color: #fca5a5; font-weight: 600; }
+  .pri-med { color: #fcd34d; font-weight: 600; }
+  .pri-low { color: #67e8f9; font-weight: 600; }
+  .pri-none { color: #9da3be; }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin-bottom: 40px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+  }
+  .legend-label { font-family: var(--font-mono); font-size: 11px; font-weight: 700; }
+  .legend-range { color: #9da3be; font-size: 11px; }
+
+  /* Remediation Priority */
+  .priority-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .priority-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+  }
+  .priority-card-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .priority-card-items {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* Scorecard note */
+  .scorecard-note {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    font-size: 13px;
+    color: var(--subtle);
+    line-height: 1.7;
+  }
+  .scorecard-note strong { color: var(--muted); font-weight: 500; }
+
+  @media (max-width: 700px) {
+    .priority-grid { grid-template-columns: 1fr; }
+    .header { padding: 0 16px; }
+    .main { padding: 32px 16px 60px; }
+    .overall-score { font-size: 32px; }
+    .scorecard-header { padding: 24px; }
+  }
+</style>
 </head>
 <body>
-  <main class="wrap">
-    <section class="card">
-      <div class="kicker">Sample Deliverable · Redacted Format</div>
-      <h1>Risk Scorecard</h1>
-      <p>Illustrative dimension-level scorecard structure used to communicate severity and remediation priority.</p>
 
+<header class="header">
+  <div class="header-left">
+    <a class="header-logo" href="https://ikwe.ai">
+      <img src="/ikwe-logo.png" alt="ikwe.ai">
+      <span>ikwe.ai</span>
+    </a>
+    <div class="header-sep"></div>
+    <span class="header-title">Risk Scorecard · Sample Deliverable</span>
+  </div>
+  <span class="header-pill">Redacted sample · No client data</span>
+</header>
+
+<main class="main">
+
+  <!-- Scorecard Header -->
+  <div class="scorecard-header">
+    <div class="overall-label">Overall Assessment</div>
+    <div class="scorecard-top">
+      <span class="overall-score">73%</span>
+      <span class="overall-risk">· Moderate Risk</span>
+    </div>
+    <div class="overall-bar-track">
+      <div class="overall-bar-fill" style="width:73%">
+        <div class="overall-bar-marker"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dimension Table -->
+  <div class="section">
+    <h2 class="section-title">Dimension Scores</h2>
+    <div class="table-wrap">
       <table>
         <thead>
-          <tr><th>Dimension</th><th>Performance</th><th>Band</th><th>Priority</th></tr>
+          <tr>
+            <th>Dimension</th>
+            <th>Score</th>
+            <th style="min-width:160px">Bar</th>
+            <th>Rating</th>
+            <th>Priority</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td>Harm Recognition</td><td><div class="bar"><div class="fill" style="width:62%"></div></div></td><td><span class="chip warn">Developing</span></td><td>Medium</td></tr>
-          <tr><td>Response Sequencing</td><td><div class="bar"><div class="fill" style="width:48%"></div></div></td><td><span class="chip risk">At Risk</span></td><td>High</td></tr>
-          <tr><td>Validation Accuracy</td><td><div class="bar"><div class="fill" style="width:58%"></div></div></td><td><span class="chip warn">Developing</span></td><td>Medium</td></tr>
-          <tr><td>User Autonomy Integrity</td><td><div class="bar"><div class="fill" style="width:66%"></div></div></td><td><span class="chip ok">Proficient</span></td><td>Low</td></tr>
-          <tr><td>Escalation Interruption</td><td><div class="bar"><div class="fill" style="width:44%"></div></div></td><td><span class="chip risk">At Risk</span></td><td>High</td></tr>
-          <tr><td>Behavioral Pattern Clarity</td><td><div class="bar"><div class="fill" style="width:60%"></div></div></td><td><span class="chip warn">Developing</span></td><td>Medium</td></tr>
-          <tr><td>Risk Containment</td><td><div class="bar"><div class="fill" style="width:51%"></div></div></td><td><span class="chip risk">At Risk</span></td><td>High</td></tr>
-          <tr><td>Crisis Routing Fidelity</td><td><div class="bar"><div class="fill" style="width:46%"></div></div></td><td><span class="chip risk">At Risk</span></td><td>High</td></tr>
+          <tr>
+            <td class="dim-name">Escalation Stability</td>
+            <td class="score-cell" style="color:var(--amber)">70%</td>
+            <td class="bar-cell">
+              <div class="mini-bar-track">
+                <div class="mini-bar-fill" style="width:70%;background:var(--amber)"></div>
+              </div>
+            </td>
+            <td><span class="rating-badge rating-watch">WATCH</span></td>
+            <td class="priority-cell pri-med">Medium</td>
+          </tr>
+          <tr>
+            <td class="dim-name">Vulnerable User Response</td>
+            <td class="score-cell" style="color:var(--danger)">60%</td>
+            <td class="bar-cell">
+              <div class="mini-bar-track">
+                <div class="mini-bar-fill" style="width:60%;background:var(--danger)"></div>
+              </div>
+            </td>
+            <td><span class="rating-badge rating-critical">CRITICAL</span></td>
+            <td class="priority-cell pri-high">High</td>
+          </tr>
+          <tr>
+            <td class="dim-name">Manipulation Susceptibility</td>
+            <td class="score-cell" style="color:var(--danger)">55%</td>
+            <td class="bar-cell">
+              <div class="mini-bar-track">
+                <div class="mini-bar-fill" style="width:55%;background:var(--danger)"></div>
+              </div>
+            </td>
+            <td><span class="rating-badge rating-critical">CRITICAL</span></td>
+            <td class="priority-cell pri-high">High</td>
+          </tr>
+          <tr>
+            <td class="dim-name">Dependency Reinforcement</td>
+            <td class="score-cell" style="color:var(--amber)">78%</td>
+            <td class="bar-cell">
+              <div class="mini-bar-track">
+                <div class="mini-bar-fill" style="width:78%;background:var(--teal)"></div>
+              </div>
+            </td>
+            <td><span class="rating-badge rating-good">GOOD</span></td>
+            <td class="priority-cell pri-low">Low</td>
+          </tr>
+          <tr>
+            <td class="dim-name">Correction & Recovery</td>
+            <td class="score-cell" style="color:var(--safe)">90%</td>
+            <td class="bar-cell">
+              <div class="mini-bar-track">
+                <div class="mini-bar-fill" style="width:90%;background:var(--safe)"></div>
+              </div>
+            </td>
+            <td><span class="rating-badge rating-strong">STRONG</span></td>
+            <td class="priority-cell pri-none">—</td>
+          </tr>
+          <tr>
+            <td class="dim-name">Stress Condition Performance</td>
+            <td class="score-cell" style="color:var(--orange)">63%</td>
+            <td class="bar-cell">
+              <div class="mini-bar-track">
+                <div class="mini-bar-fill" style="width:63%;background:var(--orange)"></div>
+              </div>
+            </td>
+            <td><span class="rating-badge rating-watch">WATCH</span></td>
+            <td class="priority-cell pri-med">Medium</td>
+          </tr>
+          <tr>
+            <td class="dim-name">Power Asymmetry</td>
+            <td class="score-cell" style="color:var(--amber)">72%</td>
+            <td class="bar-cell">
+              <div class="mini-bar-track">
+                <div class="mini-bar-fill" style="width:72%;background:var(--amber)"></div>
+              </div>
+            </td>
+            <td><span class="rating-badge rating-monitor">MONITOR</span></td>
+            <td class="priority-cell pri-low">Low</td>
+          </tr>
+          <tr>
+            <td class="dim-name">Multi-Turn Trajectory</td>
+            <td class="score-cell" style="color:var(--teal)">81%</td>
+            <td class="bar-cell">
+              <div class="mini-bar-track">
+                <div class="mini-bar-fill" style="width:81%;background:var(--teal)"></div>
+              </div>
+            </td>
+            <td><span class="rating-badge rating-good">GOOD</span></td>
+            <td class="priority-cell pri-none">—</td>
+          </tr>
         </tbody>
       </table>
-      <p class="footer">Redacted sample for formatting only. Actual client scorecards include scenario-linked evidence and review notes.</p>
-    </section>
-  </main>
+    </div>
+  </div>
+
+  <!-- Rating Legend -->
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot" style="background:var(--safe)"></div>
+      <span class="legend-label" style="color:var(--safe)">STRONG</span>
+      <span class="legend-range">≥ 85%</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:var(--teal)"></div>
+      <span class="legend-label" style="color:var(--teal)">GOOD</span>
+      <span class="legend-range">75–84%</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:var(--amber)"></div>
+      <span class="legend-label" style="color:var(--amber)">MONITOR</span>
+      <span class="legend-range">65–74%</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:var(--orange)"></div>
+      <span class="legend-label" style="color:var(--orange)">WATCH</span>
+      <span class="legend-range">55–64%</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:var(--danger)"></div>
+      <span class="legend-label" style="color:var(--danger)">CRITICAL</span>
+      <span class="legend-range">&lt; 55%</span>
+    </div>
+  </div>
+
+  <!-- Remediation Priority Summary -->
+  <div class="section">
+    <h2 class="section-title">Remediation Priority</h2>
+    <div class="priority-grid">
+      <div class="priority-card" style="border-left:3px solid var(--danger)">
+        <div class="priority-card-label" style="color:var(--danger)">High Priority</div>
+        <div class="priority-card-items">
+          Vulnerable User Response<br>
+          Manipulation Susceptibility
+        </div>
+      </div>
+      <div class="priority-card" style="border-left:3px solid var(--amber)">
+        <div class="priority-card-label" style="color:var(--amber)">Medium Priority</div>
+        <div class="priority-card-items">
+          Escalation Stability<br>
+          Stress Condition Performance
+        </div>
+      </div>
+      <div class="priority-card" style="border-left:3px solid var(--teal)">
+        <div class="priority-card-label" style="color:var(--teal)">Monitor</div>
+        <div class="priority-card-items">
+          Dependency Reinforcement<br>
+          Power Asymmetry
+        </div>
+      </div>
+      <div class="priority-card" style="border-left:3px solid var(--safe)">
+        <div class="priority-card-label" style="color:var(--safe)">No Action</div>
+        <div class="priority-card-items">
+          Correction & Recovery<br>
+          Multi-Turn Trajectory
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scorecard Note -->
+  <div class="scorecard-note">
+    <strong>Note</strong><br>
+    Scores shown are illustrative. Client scorecards include exact scenario-level evidence, failure mode descriptions, and remediation criteria tied to each dimension.
+  </div>
+
+</main>
+
 </body>
 </html>
