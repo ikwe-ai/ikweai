@@ -1,27 +1,50 @@
 #!/usr/bin/env python3
-"""Generate a fillable PDF intake form (AcroForm) without external dependencies."""
+"""Generate a fillable PDF intake form (AcroForm) — ikwe.ai v2 dark brand."""
 
 from __future__ import annotations
-
 from dataclasses import dataclass
 from pathlib import Path
 
-PAGE_WIDTH = 612
+PAGE_WIDTH  = 612
 PAGE_HEIGHT = 792
-LEFT = 50
-RIGHT = 562
-TOP_DEFAULT = 680
-BOTTOM = 58
+LEFT        = 50
+RIGHT       = 562
+TOP_DEFAULT = 670
+BOTTOM      = 58
 FIELD_WIDTH = RIGHT - LEFT
-TEXT_RGB = (0.09, 0.07, 0.17)
+
+# ── brand palette ────────────────────────────────────────────────────────────
+BG        = (0.051, 0.059, 0.078)
+SURFACE   = (0.078, 0.090, 0.125)
+SURFACE2  = (0.106, 0.122, 0.180)
+BORDER_C  = (0.137, 0.157, 0.251)
+TEXT_C    = (0.910, 0.918, 0.957)
+MUTED_C   = (0.616, 0.639, 0.745)
+SUBTLE_C  = (0.408, 0.439, 0.549)
+LILAC     = (0.486, 0.310, 0.827)
+LILAC_BR  = (0.545, 0.361, 0.965)
+GOLD      = (0.910, 0.788, 0.478)
+
+# Convenience floats for inline PDF strings
+BG_R, BG_G, BG_B = BG
+SF_R, SF_G, SF_B = SURFACE
+S2_R, S2_G, S2_B = SURFACE2
+TX_R, TX_G, TX_B = TEXT_C
+MT_R, MT_G, MT_B = MUTED_C
+SB_R, SB_G, SB_B = SUBTLE_C
+LI_R, LI_G, LI_B = LILAC
+LB_R, LB_G, LB_B = LILAC_BR
+GO_R, GO_G, GO_B = GOLD
+BO_R, BO_G, BO_B = BORDER_C
+# ─────────────────────────────────────────────────────────────────────────────
 
 
 @dataclass
 class Field:
     name: str
     label: str
-    kind: str = "text"  # text, textarea, combo, list
-    options: tuple[str, ...] = ()
+    kind: str = "text"   # text | textarea | combo | list
+    options: tuple = ()
     height: int = 24
     help_text: str | None = None
 
@@ -30,105 +53,99 @@ SECTIONS = [
     (
         "A. Contact + Organization",
         [
-            Field("full_name", "Full name"),
-            Field("role_title", "Role / title"),
-            Field("company", "Company"),
-            Field("work_email", "Work email"),
-            Field("technical_contact_name", "Technical contact name"),
+            Field("full_name",               "Full name"),
+            Field("role_title",              "Role / title"),
+            Field("company",                 "Company"),
+            Field("work_email",              "Work email"),
+            Field("technical_contact_name",  "Technical contact name"),
             Field("technical_contact_email", "Technical contact email"),
-            Field("company_size", "Company size", kind="combo", options=("1-10", "11-50", "51-200", "201-1000", "1000+")),
-            Field("industry", "Industry", kind="combo", options=("Financial Services", "Healthcare", "Government / Public Sector", "Legal", "Education", "Technology", "Retail / Consumer", "Other")),
-            Field("country_region", "Country / region", kind="combo", options=("United States", "Canada", "UK", "EU", "APAC", "LATAM", "Middle East / Africa", "Other")),
+            Field("company_size",  "Company size",    kind="combo", options=("1-10","11-50","51-200","201-1000","1000+")),
+            Field("industry",      "Industry",         kind="combo", options=("Financial Services","Healthcare","Government / Public Sector","Legal","Education","Technology","Retail / Consumer","Other")),
+            Field("country_region","Country / region", kind="combo", options=("United States","Canada","UK","EU","APAC","LATAM","Middle East / Africa","Other")),
         ],
     ),
     (
         "B. Deployment Context",
         [
-            Field("use_case", "Primary use case", kind="combo", options=("Companion AI", "Mental health technology", "Healthcare AI", "Fintech assistant", "Customer support AI", "Education AI", "Enterprise copilot", "Other")),
-            Field("deployment_type", "What are you deploying?", kind="combo", options=("AI assistant / copilot", "Customer support agent", "Clinical / health guidance assistant", "HR / workforce assistant", "Autonomous agent (tool-using)", "Other")),
-            Field("is_user_facing", "Is it user-facing?", kind="combo", options=("Yes", "No")),
-            Field("user_population", "User population (select all that apply)", kind="list", options=("General consumers", "Patients", "Employees", "Students", "Vulnerable users (minors, mental health, crisis contexts)", "Other"), height=54),
+            Field("use_case",          "Primary use case",              kind="combo", options=("Companion AI","Mental health technology","Healthcare AI","Fintech assistant","Customer support AI","Education AI","Enterprise copilot","Other")),
+            Field("deployment_type",   "What are you deploying?",       kind="combo", options=("AI assistant / copilot","Customer support agent","Clinical / health guidance assistant","HR / workforce assistant","Autonomous agent (tool-using)","Other")),
+            Field("is_user_facing",    "Is it user-facing?",            kind="combo", options=("Yes","No")),
+            Field("user_population",   "User population (select all)",  kind="list",  options=("General consumers","Patients","Employees","Students","Vulnerable users (minors, mental health, crisis contexts)","Other"), height=54),
             Field("user_population_other", "Other user population"),
-            Field("deployment_channel", "Where is it deployed?", kind="combo", options=("Web app", "Mobile", "Internal Slack/Teams", "API integration", "Other")),
+            Field("deployment_channel","Where is it deployed?",         kind="combo", options=("Web app","Mobile","Internal Slack/Teams","API integration","Other")),
         ],
     ),
     (
         "C. Model + Stack",
         [
-            Field("model_providers", "Model provider(s) (select all that apply)", kind="list", options=("OpenAI", "Anthropic", "Google", "Meta / open-source", "Other"), height=54),
-            Field("model_provider_other", "Other model provider"),
-            Field("system_prompts", "Use system prompts?", kind="combo", options=("Yes", "No", "Not sure")),
-            Field("rag_kb", "Use RAG / knowledge base?", kind="combo", options=("Yes", "No", "Not sure")),
-            Field("tools_actions", "Use tools/actions?", kind="combo", options=("Yes", "No", "Not sure")),
-            Field("fine_tuning", "Use fine-tuning?", kind="combo", options=("Yes", "No", "Not sure")),
+            Field("model_providers",       "Model provider(s) (select all)", kind="list", options=("OpenAI","Anthropic","Google","Meta / open-source","Other"), height=54),
+            Field("model_provider_other",  "Other model provider"),
+            Field("system_prompts",        "Use system prompts?",    kind="combo", options=("Yes","No","Not sure")),
+            Field("rag_kb",                "Use RAG / knowledge base?", kind="combo", options=("Yes","No","Not sure")),
+            Field("tools_actions",         "Use tools/actions?",     kind="combo", options=("Yes","No","Not sure")),
+            Field("fine_tuning",           "Use fine-tuning?",       kind="combo", options=("Yes","No","Not sure")),
         ],
     ),
     (
         "D. Risk / Governance Pressure",
         [
-            Field("evaluation_driver", "What is driving this evaluation? (select all that apply)", kind="list", options=("Board request", "Customer procurement/security review", "Partner requirement", "Compliance readiness", "Incident/near-miss", "Pre-launch risk baseline", "Other"), height=62),
-            Field("evaluation_driver_other", "Other evaluation driver"),
-            Field("deadline", "Any deadlines?", help_text="Date or timeline"),
-            Field("signoff_stakeholders", "Who needs to sign off? (select all that apply)", kind="list", options=("CEO/founder", "CTO", "Head of Compliance / Risk", "Legal", "Customer security/procurement", "Board", "Other"), height=62),
-            Field("signoff_other", "Other sign-off stakeholder"),
+            Field("evaluation_driver",     "What is driving this evaluation? (select all)", kind="list", options=("Board request","Customer procurement/security review","Partner requirement","Compliance readiness","Incident/near-miss","Pre-launch risk baseline","Other"), height=62),
+            Field("evaluation_driver_other","Other evaluation driver"),
+            Field("deadline",              "Any deadlines?", help_text="Date or timeline"),
+            Field("signoff_stakeholders",  "Who needs to sign off? (select all)", kind="list", options=("CEO/founder","CTO","Head of Compliance / Risk","Legal","Customer security/procurement","Board","Other"), height=62),
+            Field("signoff_other",         "Other sign-off stakeholder"),
         ],
     ),
     (
         "E. Access Feasibility",
         [
-            Field("access_method", "Preferred testing method", kind="combo", options=("API key / endpoint", "Staging UI", "Production with controlled accounts", "Transcript export")),
-            Field("sandbox_access", "Can you provide sandbox/staging access?", kind="combo", options=("Yes", "No", "Not sure")),
-            Field("test_accounts", "Can you provide 2-3 controlled test accounts?", kind="combo", options=("Yes", "No", "Not sure")),
-            Field("outputs_confidential", "Are outputs confidential?", kind="combo", options=("Yes", "No")),
+            Field("access_method",        "Preferred testing method",                 kind="combo", options=("API key / endpoint","Staging UI","Production with controlled accounts","Transcript export")),
+            Field("sandbox_access",       "Can you provide sandbox/staging access?",  kind="combo", options=("Yes","No","Not sure")),
+            Field("test_accounts",        "Can you provide 2-3 controlled test accounts?", kind="combo", options=("Yes","No","Not sure")),
+            Field("outputs_confidential", "Are outputs confidential?",                kind="combo", options=("Yes","No")),
         ],
     ),
     (
         "F. Scope Signals",
         [
-            Field("scenario_volume", "Approximate scenario volume", kind="combo", options=("25 (pilot)", "50", "100+")),
-            Field("engagement_mode", "Preferred engagement mode", kind="combo", options=("Pilot only", "Pilot + re-test after remediation", "Ongoing monitoring")),
+            Field("scenario_volume",   "Approximate scenario volume",  kind="combo", options=("25 (pilot)","50","100+")),
+            Field("engagement_mode",   "Preferred engagement mode",    kind="combo", options=("Pilot only","Pilot + re-test after remediation","Ongoing monitoring")),
         ],
     ),
     (
         "G. Open Text",
         [
             Field("system_description_concerns", "Briefly describe your system and what you are most concerned about.", kind="textarea", height=72),
-            Field("required_red_lines", "List any specific red-lines your organization must enforce.", kind="textarea", height=72),
+            Field("required_red_lines",          "List any specific red-lines your organization must enforce.",         kind="textarea", height=72),
         ],
     ),
     (
         "H. Data Handling + Security",
         [
-            Field("outputs_storage_allowed", "Can Ikwe store outputs for analysis?", kind="combo", options=("Yes", "No")),
-            Field("outputs_include_pii", "Can outputs include PII?", kind="combo", options=("Yes", "No", "Not sure")),
-            Field("retention_period", "Required retention period", kind="combo", options=("30 days", "60 days", "90 days", "Custom")),
-            Field("retention_custom", "Custom retention detail"),
-            Field("compliance_constraints", "Compliance constraints (select all that apply)", kind="list", options=("HIPAA / PHI", "PCI", "FERPA", "GDPR", "Minors", "No additional constraints", "Other"), height=70),
-            Field("compliance_other", "Other compliance constraints"),
+            Field("outputs_storage_allowed", "Can Ikwe store outputs for analysis?", kind="combo", options=("Yes","No")),
+            Field("outputs_include_pii",     "Can outputs include PII?",             kind="combo", options=("Yes","No","Not sure")),
+            Field("retention_period",        "Required retention period",            kind="combo", options=("30 days","60 days","90 days","Custom")),
+            Field("retention_custom",        "Custom retention detail"),
+            Field("compliance_constraints",  "Compliance constraints (select all)",  kind="list",  options=("HIPAA / PHI","PCI","FERPA","GDPR","Minors","No additional constraints","Other"), height=70),
+            Field("compliance_other",        "Other compliance constraints"),
         ],
     ),
     (
         "I. Scope + Success Criteria",
         [
-            Field("pass_criteria", "What does \"pass\" mean for your team?", kind="textarea", height=62),
-            Field("priority_domains", "Priority behavioral domains (select all that apply)", kind="list", options=("Anxiety", "Depression", "Loneliness", "Anger", "Overwhelm", "Grief", "Suicidal Ideation", "Relationship Distress", "Career Trauma", "Financial Stress", "Identity Stress", "Family Conflict", "Crisis Escalation"), height=86),
-            Field("languages_supported", "Languages supported"),
+            Field("pass_criteria",         'What does "pass" mean for your team?', kind="textarea", height=62),
+            Field("priority_domains",      "Priority behavioral domains (select all)", kind="list", options=("Anxiety","Depression","Loneliness","Anger","Overwhelm","Grief","Suicidal Ideation","Relationship Distress","Career Trauma","Financial Stress","Identity Stress","Family Conflict","Crisis Escalation"), height=86),
+            Field("languages_supported",   "Languages supported"),
         ],
     ),
 ]
 
 
 def clean_ascii(text: str) -> str:
-    # Keep strings PDFDocEncoding-safe for broad viewer compatibility.
     return (
-        text.replace("•", "|")
-        .replace("—", "-")
-        .replace("–", "-")
-        .replace("’", "'")
-        .replace("“", '"')
-        .replace("”", '"')
-        .encode("ascii", errors="ignore")
-        .decode("ascii")
+        text.replace("\u2022", "|").replace("\u2014", "-").replace("\u2013", "-")
+            .replace("\u2019", "'").replace("\u201c", '"').replace("\u201d", '"')
+            .encode("ascii", errors="ignore").decode("ascii")
     )
 
 
@@ -151,24 +168,18 @@ class PDFBuilder:
     def build(self, root_id: int, path: Path) -> None:
         out = b"%PDF-1.7\n%\xe2\xe3\xcf\xd3\n"
         offsets = [0]
-
         for i, obj in enumerate(self.objects, start=1):
             offsets.append(len(out))
-            out += f"{i} 0 obj\n".encode("ascii")
-            out += obj
-            out += b"\nendobj\n"
-
+            out += f"{i} 0 obj\n".encode("ascii") + obj + b"\nendobj\n"
         xref_pos = len(out)
         out += f"xref\n0 {len(self.objects) + 1}\n".encode("ascii")
         out += b"0000000000 65535 f \n"
         for off in offsets[1:]:
             out += f"{off:010d} 00000 n \n".encode("ascii")
-
         out += (
             f"trailer\n<< /Size {len(self.objects) + 1} /Root {root_id} 0 R >>\n"
             f"startxref\n{xref_pos}\n%%EOF\n"
         ).encode("ascii")
-
         path.write_bytes(out)
 
 
@@ -177,15 +188,20 @@ def make_stream(commands: list[str]) -> bytes:
     return f"<< /Length {len(data)} >>\nstream\n".encode("ascii") + data + b"\nendstream"
 
 
-def text_cmd(x: int, y: int, size: int, text: str) -> str:
-    return f"{TEXT_RGB[0]} {TEXT_RGB[1]} {TEXT_RGB[2]} rg BT /F1 {size} Tf 1 0 0 1 {x} {y} Tm ({esc(text)}) Tj ET"
+def text_cmd(x: int, y: int, size: int, value: str, color: tuple = TEXT_C) -> str:
+    r, g, b = color
+    return f"{r:.3f} {g:.3f} {b:.3f} rg BT /F1 {size} Tf 1 0 0 1 {x} {y} Tm ({esc(value)}) Tj ET"
+
+
+def text_bold(x: int, y: int, size: int, value: str, color: tuple = TEXT_C) -> str:
+    r, g, b = color
+    return f"{r:.3f} {g:.3f} {b:.3f} rg BT /F2 {size} Tf 1 0 0 1 {x} {y} Tm ({esc(value)}) Tj ET"
 
 
 def wrap_text(text: str, size: int, max_width: int) -> list[str]:
     words = clean_ascii(text).split()
     if not words:
         return [""]
-
     max_chars = max(10, int(max_width / (size * 0.53)))
     lines: list[str] = []
     current = words[0]
@@ -201,17 +217,29 @@ def wrap_text(text: str, size: int, max_width: int) -> list[str]:
 
 
 def header_commands(page_num: int) -> list[str]:
-    return [
-        "0.88 0.83 0.98 RG",
-        text_cmd(LEFT, 766, 16, "ikwe.ai Intake Form"),
-        text_cmd(LEFT, 748, 10, "The Behavioral Safety Layer for Human-Facing AI"),
-        text_cmd(LEFT, 734, 8, "Third-party independent behavioral safety validation for human-facing AI systems."),
-        text_cmd(LEFT, 722, 8, "Benchmark scope: 79 scenarios | 13 behavioral domains (vulnerability categories)."),
-        text_cmd(LEFT, 710, 8, "Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake."),
-        text_cmd(RIGHT - 68, 766, 9, f"Page {page_num}"),
-        "0.75 0.68 0.95 RG",
-        f"{LEFT} 700 m {RIGHT} 700 l S",
+    """Dark-branded page header with ikwe.ai v2 palette."""
+    cmds = [
+        # Full-page dark background
+        f"{BG_R:.3f} {BG_G:.3f} {BG_B:.3f} rg",
+        f"0 0 {PAGE_WIDTH} {PAGE_HEIGHT} re f",
+        # Header band
+        f"{S2_R:.3f} {S2_G:.3f} {S2_B:.3f} rg",
+        f"0 728 {PAGE_WIDTH} 64 re f",
+        # Lilac accent line at bottom of header band
+        f"2 w {LI_R:.3f} {LI_G:.3f} {LI_B:.3f} RG",
+        f"0 728 m {PAGE_WIDTH} 728 l S",
+        # Header text
+        text_bold(LEFT, 764, 13, "ikwe.ai Intake Form", color=GOLD),
+        text_cmd(LEFT, 748, 8,  "The Behavioral Safety Layer for Human-Facing AI", color=MUTED_C),
+        text_cmd(LEFT, 738, 7,  "Third-party independent behavioral safety validation. Benchmark: 79 scenarios | 13 behavioral domains.", color=SUBTLE_C),
+        text_cmd(RIGHT - 68, 764, 8, f"Page {page_num}", color=MUTED_C),
+        # Sub-header note
+        text_cmd(LEFT, 730, 7, "Send completed PDF to research@ikwe.ai or submit online at ikwe.ai/intake.", color=SUBTLE_C),
+        # Divider
+        f"0.50 w {BO_R:.3f} {BO_G:.3f} {BO_B:.3f} RG",
+        f"{LEFT} 722 m {RIGHT} 722 l S",
     ]
+    return cmds
 
 
 def field_height(field: Field) -> int:
@@ -219,7 +247,6 @@ def field_height(field: Field) -> int:
 
 
 def field_space_needed(field: Field) -> int:
-    # wrapped label lines + optional wrapped help + field box + spacing
     label_lines = wrap_text(field.label, 9, FIELD_WIDTH)
     label_space = len(label_lines) * 11 + 1
     help_space = 0
@@ -233,9 +260,9 @@ def section_space_needed(section_title: str, fields: list[Field]) -> int:
     return 20 + sum(field_space_needed(f) for f in fields)
 
 
-def render() -> tuple[list[list[str]], list[list[tuple[str, str, str, tuple[str, ...], int, int, int, int]]]]:
+def render() -> tuple[list[list[str]], list]:
     pages_cmds: list[list[str]] = [[]]
-    pages_widgets: list[list[tuple[str, str, str, tuple[str, ...], int, int, int, int]]] = [[]]
+    pages_widgets: list[list] = [[]]
 
     page_num = 1
     y = TOP_DEFAULT
@@ -254,45 +281,55 @@ def render() -> tuple[list[list[str]], list[list[tuple[str, str, str, tuple[str,
         if y - needed < BOTTOM:
             new_page()
 
-        pages_cmds[-1].append(text_cmd(LEFT, y, 11, section_title))
-        y -= 16
+        # Section title — lilac accent
+        pages_cmds[-1].append(text_bold(LEFT, y, 10, section_title, color=LILAC_BR))
+        y -= 14
+        # Thin divider under section title
+        pages_cmds[-1].extend([
+            f"0.50 w {BO_R:.3f} {BO_G:.3f} {BO_B:.3f} RG",
+            f"{LEFT} {y+2} m {RIGHT} {y+2} l S",
+        ])
+        y -= 6
 
         for f in fields:
             n = field_space_needed(f)
             if y - n < BOTTOM:
                 new_page()
-                pages_cmds[-1].append(text_cmd(LEFT, y, 11, section_title + " (continued)"))
+                pages_cmds[-1].append(text_bold(LEFT, y, 10, section_title + " (continued)", color=LILAC_BR))
                 y -= 16
 
             for label_line in wrap_text(f.label, 9, FIELD_WIDTH):
-                pages_cmds[-1].append(text_cmd(LEFT, y, 9, label_line))
+                pages_cmds[-1].append(text_cmd(LEFT, y, 9, label_line, color=MUTED_C))
                 y -= 11
 
             if f.help_text:
                 for help_line in wrap_text(f.help_text, 7, FIELD_WIDTH):
-                    pages_cmds[-1].append(text_cmd(LEFT, y, 7, help_line))
+                    pages_cmds[-1].append(text_cmd(LEFT, y, 7, help_line, color=SUBTLE_C))
                     y -= 8
                 y -= 2
 
             h = field_height(f)
             x = LEFT
             y_box = y - h
-            pages_cmds[-1].append("0.75 0.70 0.95 RG")
-            pages_cmds[-1].append("1 1 1 rg")
-            pages_cmds[-1].append(f"{x} {y_box} {FIELD_WIDTH} {h} re B")
+            # Field box — surface fill with lilac border
+            pages_cmds[-1].extend([
+                f"{SF_R:.3f} {SF_G:.3f} {SF_B:.3f} rg",
+                f"0.75 w {LI_R:.3f} {LI_G:.3f} {LI_B:.3f} RG",
+                f"{x} {y_box} {FIELD_WIDTH} {h} re B",
+            ])
 
             pages_widgets[-1].append((f.name, f.label, f.kind, f.options, x, y_box, x + FIELD_WIDTH, y_box + h))
-            y = y_box - 12
+            y = y_box - 10
 
     # Footer on each page
     for i, page_cmds in enumerate(pages_cmds, start=1):
-        page_cmds.extend(
-            [
-                "0.67 0.61 0.84 rg",
-                text_cmd(LEFT, 38, 8, "ikwe.ai | The Behavioral Safety Layer for Human-Facing AI | ikwe.ai/intake"),
-                text_cmd(RIGHT - 130, 38, 8, "Visible Healing Inc."),
-            ]
-        )
+        page_cmds.extend([
+            # Footer line
+            f"0.50 w {BO_R:.3f} {BO_G:.3f} {BO_B:.3f} RG",
+            f"{LEFT} 50 m {RIGHT} 50 l S",
+            text_cmd(LEFT,       38, 7, "ikwe.ai  |  The Behavioral Safety Layer for Human-Facing AI  |  ikwe.ai/intake", color=SUBTLE_C),
+            text_cmd(RIGHT - 96, 38, 7, "Visible Healing Inc.", color=SUBTLE_C),
+        ])
 
     return pages_cmds, pages_widgets
 
@@ -302,19 +339,19 @@ def generate_pdf(path: Path) -> None:
 
     b = PDFBuilder()
 
-    # Reserve core objects
-    catalog_id = b.add(b"<< >>")
-    pages_id = b.add(b"<< >>")
+    catalog_id  = b.add(b"<< >>")
+    pages_id    = b.add(b"<< >>")
     acroform_id = b.add(b"<< >>")
-    font_id = b.add(b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>")
+    font_id     = b.add(b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>")
+    font_bold_id= b.add(b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>")
 
-    page_ids: list[int] = []
+    page_ids:    list[int] = []
     content_ids: list[int] = []
-    widget_ids: list[int] = []
+    widget_ids:  list[int] = []
     page_annots: list[list[int]] = []
 
     for cmds, widgets in zip(pages_cmds, pages_widgets):
-        page_id = b.add(b"<< >>")
+        page_id    = b.add(b"<< >>")
         content_id = b.add(make_stream(cmds))
         page_ids.append(page_id)
         content_ids.append(content_id)
@@ -324,8 +361,8 @@ def generate_pdf(path: Path) -> None:
             common = (
                 f"/Type /Annot /Subtype /Widget /T ({esc(name)}) /TU ({esc(label)}) "
                 f"/Rect [{x1} {y1} {x2} {y2}] /F 4 /P {page_id} 0 R "
-                f"/Q 0 /DA (/Helv 11 Tf 0 g) /BS << /W 1 /S /S >> "
-                f"/MK << /BC [0.75 0.70 0.95] /BG [1 1 1] >>"
+                f"/Q 0 /DA (/Helv 11 Tf {TX_R:.3f} {TX_G:.3f} {TX_B:.3f} rg) /BS << /W 1 /S /S >> "
+                f"/MK << /BC [{LI_R:.3f} {LI_G:.3f} {LI_B:.3f}] /BG [{SF_R:.3f} {SF_G:.3f} {SF_B:.3f}] >>"
             )
 
             if kind == "textarea":
@@ -338,16 +375,16 @@ def generate_pdf(path: Path) -> None:
                 widget_body = f"<< {common} /FT /Ch /Ff 2097152 /Opt [{opt}] /V [] >>".encode("utf-8")
             else:
                 widget_body = f"<< {common} /FT /Tx /V () >>".encode("utf-8")
+
             wid = b.add(widget_body)
             widget_ids.append(wid)
             page_annots[-1].append(wid)
 
-    # Fill page objects
     for idx, page_id in enumerate(page_ids):
-        annots = " ".join(f"{aid} 0 R" for aid in page_annots[idx])
+        annots    = " ".join(f"{aid} 0 R" for aid in page_annots[idx])
         page_body = (
             f"<< /Type /Page /Parent {pages_id} 0 R /MediaBox [0 0 {PAGE_WIDTH} {PAGE_HEIGHT}] "
-            f"/Resources << /Font << /F1 {font_id} 0 R >> >> "
+            f"/Resources << /Font << /F1 {font_id} 0 R /F2 {font_bold_id} 0 R >> >> "
             f"/Contents {content_ids[idx]} 0 R /Annots [{annots}] >>"
         ).encode("ascii")
         b.set_obj(page_id, page_body)
@@ -356,9 +393,9 @@ def generate_pdf(path: Path) -> None:
     b.set_obj(pages_id, f"<< /Type /Pages /Kids [{kids}] /Count {len(page_ids)} >>".encode("ascii"))
 
     fields = " ".join(f"{wid} 0 R" for wid in widget_ids)
-    acro = (
+    acro   = (
         f"<< /Fields [{fields}] /NeedAppearances true "
-        f"/DR << /Font << /Helv {font_id} 0 R >> >> /DA (/Helv 10 Tf 0 g) >>"
+        f"/DR << /Font << /Helv {font_id} 0 R /F2 {font_bold_id} 0 R >> >> /DA (/Helv 10 Tf 0 g) >>"
     ).encode("ascii")
     b.set_obj(acroform_id, acro)
 
