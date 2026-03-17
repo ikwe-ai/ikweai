@@ -3,16 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://ikwe.ai/reports/ikwe-sample-report-public.html">
-<meta name="theme-color" content="#141218">
-<title>Proprietary Sample Report — EQSB v2.0 · Ikwe.ai</title>
-<meta name="description" content="Public sample of an Ikwe EQ Safety Benchmark deliverable. Format is proprietary and all client-identifiable details are removed.">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-
-<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Ikwe EQ Safety Evaluation · Public Sample Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body {
+  background: #0d0f14;
+  color: #e8eaf4;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+/* ── Tokens ── */
 :root {
   --bg: #0d0f14;
   --surface: #141720;
@@ -20,635 +30,816 @@
   --surface3: #21263a;
   --border: #232840;
   --text: #e8eaf4;
-  --dim: #68708c;
-  --accent: #5b8af5;
-  --purple: #a56cf5;
-  --client-purple: #8b5cf6;
-  --green: #3dd68c;
-  --yellow: #f5c842;
-  --red: #f55a5a;
-  --orange: #f5933a;
-  --teal: #3dd6c8;
+  --muted: #9da3be;
+  --subtle: #68708c;
+  --lilac: #7c4fd3;
+  --lilac-bright: #8b5cf6;
+  --lilac-glow: #9b72e8;
+  --signal-blue: #4d87f0;
+  --teal: #3bbfcc;
+  --amber: #f5a623;
+  --safe: #3dd68c;
+  --danger: #f55a5a;
+  --gold: #e8c97a;
+  --radius: 0.55rem;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'Space Mono', monospace;
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  background: var(--bg);
+
+/* ── Typography ── */
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.25; color: var(--text); }
+h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+h2 { font-size: clamp(1.25rem, 2.5vw, 1.65rem); margin-bottom: 0.35rem; }
+h3 { font-size: 1.1rem; font-weight: 500; }
+p { color: var(--muted); }
+.mono { font-family: var(--font-mono); }
+
+/* ── Layout ── */
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.25rem; }
+section { padding: 3.5rem 0 2rem; }
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border) 20%, var(--lilac) 50%, var(--border) 80%, transparent);
+  opacity: 0.45;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+/* ── Sticky Header ── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  background: linear-gradient(135deg, #0d0f14 0%, #12102a 100%);
+  border-bottom: 1px solid rgba(124, 79, 211, 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+.header-left img { height: 28px; width: auto; }
+.header-title {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 500;
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Avenir Next', sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-  min-height: 100vh;
+  letter-spacing: -0.01em;
 }
-
-/* ── Top bar ── */
-.top-bar {
-  background: var(--surface); border-bottom: 1px solid var(--border);
-  padding: 10px 28px; display: flex; align-items: center; justify-content: space-between;
-  gap: 12px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100;
-}
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.brand-name { font-size: 13px; font-weight: 700; color: var(--text); }
-.brand-badge {
-  background: rgba(139,92,246,.15); color: var(--client-purple);
-  border: 1px solid rgba(139,92,246,.3); border-radius: 4px;
-  padding: 2px 7px; font-size: 10px; font-weight: 700; letter-spacing: .05em;
-}
-.top-nav { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-.nav-link {
-  color: #b8c8e8; font-size: 12px; font-weight: 600; text-decoration: none;
-  padding: 4px 10px; border-radius: 5px; border: 1px solid rgba(91,138,245,.25);
-  background: rgba(91,138,245,.08); transition: opacity .15s;
-}
-.nav-link.active { color: #e2d4ff; border-color: rgba(139,92,246,.45); background: rgba(139,92,246,.15); }
-.nav-link.cta { background: rgba(139,92,246,.15); color: #c4a9ff; border-color: rgba(139,92,246,.35); }
-.nav-link:hover { opacity: .82; }
-.nav-sep { display:inline-block; width:1px; height:14px; background:rgba(255,255,255,.12); vertical-align:middle; }
-
-/* ── Sample watermark banner ── */
-.sample-banner {
-  background: rgba(245,193,66,.08); border-bottom: 1px solid rgba(245,193,66,.2);
-  padding: 8px 28px; text-align: center; font-size: 12px; color: var(--yellow);
-  font-weight: 600; letter-spacing: .04em;
-}
-.sample-banner span { opacity: .7; font-weight: 400; margin-left: 6px; }
-
-/* ── Page ── */
-.page { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; }
-
-/* ── Report header ── */
-.report-header {
-  background: linear-gradient(135deg, rgba(91,138,245,.1), rgba(139,92,246,.08));
-  border: 1px solid var(--border); border-radius: 14px;
-  padding: 28px 32px; margin-bottom: 28px;
-  display: flex; justify-content: space-between; align-items: flex-start;
-  gap: 20px; flex-wrap: wrap;
-}
-.report-meta { flex: 1; min-width: 200px; }
-.report-eyebrow {
-  font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
-  color: var(--client-purple); margin-bottom: 6px;
-}
-.report-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 4px; }
-.report-subtitle { font-size: 13px; color: var(--dim); }
-.report-meta-table { margin-top: 16px; }
-.report-meta-table tr td { padding: 3px 0; font-size: 12px; }
-.report-meta-table tr td:first-child { color: var(--dim); width: 100px; }
-.redact {
-  display: inline-block; background: var(--surface3); border-radius: 3px;
-  color: transparent; font-size: 12px; user-select: none;
+.header-title span { color: var(--muted); font-weight: 400; }
+.header-pill {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--muted);
+  background: rgba(35, 40, 64, 0.6);
   border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  white-space: nowrap;
 }
 
-.overall-score-box {
-  text-align: center; min-width: 140px;
+/* ── Score Hero ── */
+.hero { padding: 4rem 0 2.5rem; text-align: center; }
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
 }
-.score-circle {
-  width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 10px;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  background: conic-gradient(#3dd68c 0% 73%, var(--surface3) 73% 100%);
+.score-ring-wrap { position: relative; width: 200px; height: 200px; flex-shrink: 0; }
+.score-ring-bg {
+  fill: none;
+  stroke: var(--surface3);
+  stroke-width: 10;
+}
+.score-ring-fill {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke: url(#ringGrad);
+  transform: rotate(-90deg);
+  transform-origin: center;
+  stroke-dasharray: 502.65;
+  stroke-dashoffset: 135.72; /* 502.65 * (1 - 0.73) */
+  transition: stroke-dashoffset 1.2s ease;
+}
+.score-value {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.score-number {
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--lilac-bright), var(--teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+.score-label { color: #c4b8e8 !important;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+  letter-spacing: 0.03em;
+}
+.hero-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+  text-align: left;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius);
+  white-space: nowrap;
+}
+.badge-outline {
+  border: 1.5px solid var(--lilac);
+  color: var(--lilac-glow);
+  background: rgba(124, 79, 211, 0.08);
+}
+.badge-filled {
+  background: var(--lilac);
+  color: #fff;
+  border: none;
+}
+.stance-line {
+  font-size: 0.88rem;
+  color: var(--muted);
+  max-width: 340px;
+  line-height: 1.55;
+  margin-top: 0.25rem;
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.card-accent-left {
+  border-left: 3px solid var(--lilac);
+}
+.card h3 { margin-bottom: 0.75rem; color: var(--lilac-glow); }
+.card ul { list-style: none; padding: 0; }
+.card ul li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.55rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.card ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--lilac);
+}
+
+/* ── Grid layouts ── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 640px) {
+  .grid-2, .grid-2x2 { grid-template-columns: 1fr; }
+  .hero-inner { flex-direction: column; align-items: center; }
+  .hero-meta { align-items: center; text-align: center; }
+  .stance-line { text-align: center; }
+}
+
+/* ── Stat boxes ── */
+.stat-box {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+}
+.stat-box .stat-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #c4b8e8;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+.stat-box .stat-value {
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.45;
+}
+
+/* ── Team cards ── */
+.team-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+.team-card-header {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--lilac-glow);
+  margin-bottom: 0.45rem;
+}
+.team-card p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* ── Dimension bars ── */
+.dim-row {
+  display: grid;
+  grid-template-columns: 1fr 52px 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(35, 40, 64, 0.6);
+}
+.dim-row:last-child { border-bottom: none; }
+.dim-name {
+  font-size: 0.88rem;
+  color: var(--text);
+  font-weight: 500;
+  text-align: right;
+}
+.dim-score {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-align: center;
+}
+.dim-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.dim-bar {
+  height: 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
   position: relative;
 }
-.score-circle::before {
-  content: ''; position: absolute;
-  width: 76px; height: 76px; border-radius: 50%; background: var(--surface);
+.dim-tag {
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+  font-style: italic;
 }
-.score-inner { position: relative; z-index: 1; text-align: center; }
-.score-number { font-size: 1.5rem; font-weight: 900; color: var(--green); line-height: 1; }
-.score-pct { font-size: 11px; color: var(--green); font-weight: 700; }
-.score-label { font-size: 11px; color: var(--dim); font-weight: 600; }
-.score-tier {
-  display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700;
-  background: rgba(245,193,66,.12); color: var(--yellow); border: 1px solid rgba(245,193,66,.3);
+.color-safe { color: var(--safe); }
+.color-amber { color: var(--amber); }
+.color-danger { color: var(--danger); }
+.color-gold { color: var(--gold); }
+.bg-safe { background: var(--safe); }
+.bg-amber { background: var(--amber); }
+.bg-danger { background: var(--danger); }
+.bg-gold { background: var(--gold); }
+
+/* ── Priority findings ── */
+.finding-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.25rem;
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+.finding-num {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--lilac-bright);
+  flex-shrink: 0;
+  width: 1.5rem;
+  text-align: center;
+  line-height: 1.4;
+}
+.finding-text {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
-/* ── Section headers ── */
-.section-title {
-  font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--dim); padding-bottom: 10px;
-  border-bottom: 1px solid var(--border); margin-bottom: 16px;
+/* ── Benchmark bars ── */
+.bench-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
 }
-
-/* ── KPI row ── */
-.kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px; }
-.kpi-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px;
+.bench-label {
+  width: 200px;
+  flex-shrink: 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-align: right;
 }
-.kpi-value { font-size: 1.6rem; font-weight: 900; margin-bottom: 2px; }
-.kpi-label { font-size: 11px; color: var(--dim); font-weight: 600; }
-.kpi-sub { font-size: 11px; margin-top: 5px; }
-
-/* ── Executive summary ── */
-.exec-summary {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-  padding: 24px 28px; margin-bottom: 28px;
+.bench-bar-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
 }
-.exec-summary p { font-size: 14px; color: #c4cde6; margin-bottom: 12px; }
-.exec-summary p:last-child { margin-bottom: 0; }
-
-/* ── Domain score table ── */
-.domain-section {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-  padding: 24px 28px; margin-bottom: 28px;
+.bench-bar {
+  height: 22px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+  min-width: 40px;
+  transition: width 0.8s ease;
 }
-.domain-grid { display: flex; flex-direction: column; gap: 14px; }
-.domain-row {
-  display: grid; grid-template-columns: 180px 1fr 56px 56px 56px;
-  align-items: center; gap: 12px;
+.bench-highlight {
+  font-size: 0.68rem;
+  font-family: var(--font-mono);
+  color: var(--lilac-bright);
+  white-space: nowrap;
+  font-weight: 600;
 }
-.domain-row.header {
-  font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-  color: var(--dim); padding-bottom: 10px; border-bottom: 1px solid var(--border);
-}
-.domain-name { font-size: 13px; font-weight: 600; }
-.domain-desc { font-size: 11px; color: var(--dim); font-weight: 400; }
-.bar-wrap { background: var(--surface3); border-radius: 4px; height: 7px; overflow: hidden; }
-.bar-fill { height: 100%; border-radius: 4px; }
-.domain-score { font-size: 13px; font-weight: 800; text-align: right; }
-.domain-baseline { font-size: 12px; color: var(--dim); text-align: right; }
-.domain-delta { font-size: 12px; font-weight: 700; text-align: right; }
-.delta-pos { color: var(--green); }
-.delta-neg { color: var(--red); }
-.delta-neu { color: var(--dim); }
-
-/* ── Risk flags ── */
-.risk-section {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-  padding: 24px 28px; margin-bottom: 28px;
-}
-.risk-list { display: flex; flex-direction: column; gap: 12px; }
-.risk-item {
-  display: flex; gap: 14px; align-items: flex-start;
-  padding: 14px 16px; border-radius: 9px; border: 1px solid;
-}
-.risk-item.high { border-color: rgba(245,90,90,.25); background: rgba(245,90,90,.05); }
-.risk-item.medium { border-color: rgba(245,147,58,.2); background: rgba(245,147,58,.04); }
-.risk-item.low { border-color: rgba(61,214,140,.2); background: rgba(61,214,140,.04); }
-.risk-severity {
-  font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
-  padding: 2px 8px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; margin-top: 1px;
-}
-.risk-item.high .risk-severity { background: rgba(245,90,90,.15); color: var(--red); }
-.risk-item.medium .risk-severity { background: rgba(245,147,58,.15); color: var(--orange); }
-.risk-item.low .risk-severity { background: rgba(61,214,140,.12); color: var(--green); }
-.risk-content {}
-.risk-title { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
-.risk-desc { font-size: 12px; color: var(--dim); }
-
-/* ── Comparison table ── */
-.comparison-section {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-  padding: 24px 28px; margin-bottom: 28px;
-}
-.comp-table { width: 100%; border-collapse: collapse; }
-.comp-table th, .comp-table td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--border); font-size: 13px; }
-.comp-table th { font-size: 11px; font-weight: 700; color: var(--dim); text-transform: uppercase; letter-spacing: .06em; }
-.comp-table tr:last-child td { border-bottom: none; }
-.comp-table .highlight td { background: rgba(91,138,245,.06); }
-.comp-table .you-badge {
-  display: inline-block; font-size: 9px; font-weight: 700; padding: 1px 6px;
-  border-radius: 3px; background: rgba(91,138,245,.15); color: var(--accent);
-  margin-left: 6px; letter-spacing: .04em;
-}
-.tier-badge {
-  display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700;
-}
-.tier-leader { background: rgba(61,214,140,.12); color: var(--green); }
-.tier-proficient { background: rgba(91,138,245,.12); color: var(--accent); }
-.tier-developing { background: rgba(245,193,66,.12); color: var(--yellow); }
-.tier-at-risk { background: rgba(245,90,90,.12); color: var(--red); }
-
-/* ── Recommendations ── */
-.rec-section {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-  padding: 24px 28px; margin-bottom: 28px;
-}
-.rec-list { display: flex; flex-direction: column; gap: 14px; }
-.rec-item { display: flex; gap: 14px; align-items: flex-start; }
-.rec-num {
-  flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
-  background: rgba(139,92,246,.15); color: var(--client-purple);
-  font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center;
-  border: 1px solid rgba(139,92,246,.3);
-}
-.rec-body {}
-.rec-title { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
-.rec-desc { font-size: 12px; color: var(--dim); }
-
-/* ── What's not included box ── */
-.not-included {
-  background: rgba(245,193,66,.05); border: 1px solid rgba(245,193,66,.2);
-  border-radius: 10px; padding: 18px 20px; margin-bottom: 28px;
-}
-.not-included h4 { font-size: 12px; font-weight: 700; color: var(--yellow); margin-bottom: 10px; letter-spacing: .04em; }
-.not-included ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-.not-included ul li { font-size: 12px; color: var(--dim); padding-left: 16px; position: relative; }
-.not-included ul li::before { content: '—'; position: absolute; left: 0; color: rgba(245,193,66,.5); }
-
-/* ── CTA footer ── */
-.cta-block {
-  background: linear-gradient(135deg, rgba(91,138,245,.1), rgba(139,92,246,.1));
-  border: 1px solid rgba(139,92,246,.3); border-radius: 14px;
-  padding: 32px; text-align: center; margin-bottom: 32px;
-}
-.cta-block h2 { font-size: 1.25rem; font-weight: 800; margin-bottom: 8px; }
-.cta-block p { font-size: 14px; color: var(--dim); margin-bottom: 20px; max-width: 480px; margin-left: auto; margin-right: auto; }
-.cta-block a {
-  display: inline-block; background: linear-gradient(135deg, var(--client-purple), #5b4fd6);
-  color: #fff; text-decoration: none; padding: 12px 32px;
-  border-radius: 9px; font-size: 14px; font-weight: 700;
-}
-.cta-block a:hover { opacity: .88; }
-
-.footer { text-align: center; padding-top: 24px; border-top: 1px solid var(--border); }
-.footer p { font-size: 12px; color: var(--dim); }
-.footer a { color: var(--dim); text-decoration: none; }
-.footer a:hover { color: var(--accent); }
 
 @media (max-width: 640px) {
-  .report-header { flex-direction: column; }
-  .kpi-row { grid-template-columns: repeat(2, 1fr); }
-  .domain-row { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .domain-row .bar-wrap, .domain-row.header .bar-col { display: none; }
-  .comp-table { font-size: 12px; }
+  .dim-row { grid-template-columns: 1fr; gap: 0.3rem; text-align: left; }
+  .dim-name { text-align: left; }
+  .bench-row { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+  .bench-label { width: auto; text-align: left; }
 }
 
-/* ── Print / PDF export ── */
-@media print {
-  .top-bar, .sample-banner, .nav-link, .nav-sep, .no-print { display: none !important; }
-  body { background: #ffffff !important; color: #111827 !important; }
-  .page { max-width: 980px; padding: 24px 18px 24px; }
-  .report-header, .kpi-card, .exec-summary, .domain-section, .risk-section, .comparison-section, .rec-section, .not-included, .cta-block {
-    background: #ffffff !important;
-    border-color: rgba(17,24,39,.18) !important;
-    box-shadow: none !important;
-  }
-  .section-title { color: #374151 !important; border-bottom-color: rgba(17,24,39,.18) !important; }
-  .report-subtitle, .domain-desc, .risk-desc, .rec-desc, .footer p, .comp-table th { color: #4b5563 !important; }
-  .brand-name { color: #111827 !important; }
-  a { color: #111827 !important; text-decoration: none !important; }
+/* ── Flow diagram ── */
+.flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+.flow-node {
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-align: center;
+  white-space: nowrap;
+  position: relative;
+}
+.flow-node.active {
+  border-color: var(--lilac-bright);
+  color: var(--text);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.12);
+}
+.flow-arrow {
+  color: var(--muted);
+  font-size: 1.2rem;
+  padding: 0 0.4rem;
+  user-select: none;
 }
 
+/* ── Steps list ── */
+.step-item {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(35, 40, 64, 0.5);
+}
+.step-item:last-child { border-bottom: none; }
+.step-num {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--lilac-bright);
+  flex-shrink: 0;
+  width: 1.5rem;
+  text-align: center;
+}
+.step-text {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── Boundary note ── */
+.boundary-note {
+  background: rgba(27, 31, 46, 0.5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-top: 2.5rem;
+}
+.boundary-note p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* ── Section titles ── */
+.section-title {
+  margin-bottom: 0.3rem;
+}
+.section-subtitle {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  padding: 2.5rem 1rem 3rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+.footer a {
+  color: var(--lilac-glow);
+  text-decoration: none;
+}
+
+/* ── Utility ── */
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
 </style>
 </head>
 <body>
 
-<div id="app-content">
+<!-- ═══ HEADER ═══ -->
+<header class="header">
+  <div class="header-left">
+    <img src="/ikwe-logo.png" onerror="this.style.display='none'" alt="ikwe.ai logo">
+    <span class="header-title">Ikwe EQ Safety Evaluation <span>· Public Sample</span></span>
+  </div>
+  <span class="header-pill">Redacted sample · No client data</span>
+</header>
 
-<!-- Document toolbar -->
-<div class="top-bar">
-  <a class="brand" href="/sample-report">
-    <span class="brand-name">Ikwe Research</span>
-    <span class="brand-badge">Public, Redacted</span>
-  </a>
-  <nav class="top-nav" id="main-nav">
-    <a class="nav-link" href="/reports/ikwe-sample-excerpt-one-page.pdf">1-Page Excerpt</a>
-    <a class="nav-link active" href="/reports/ikwe-sample-report-public.pdf">Download Styled PDF</a>
-    <a class="nav-link cta" href="/intake#application-form">Request Evaluation</a>
-  </nav>
-</div>
+<!-- ═══════════════════════════════════════ -->
+<!-- PAGE 1 — Overview & Decision           -->
+<!-- ═══════════════════════════════════════ -->
 
-<!-- Sample watermark -->
-<div class="sample-banner">
-  📋 PUBLIC SAMPLE DELIVERABLE — PROPRIETARY FORMAT
-  <span>Illustrative content only. No client-identifiable data is shown.</span>
-</div>
-
-<div class="page">
-
-  <!-- Report header -->
-  <div class="report-header">
-    <div class="report-meta">
-      <div class="report-eyebrow">EQ Safety Benchmark · Proprietary Sample Deliverable</div>
-      <div class="report-title">Meridian Health Systems</div>
-      <div class="report-subtitle">AI Safety Assessment — Customer Support Deployment</div>
-      <table class="report-meta-table">
-        <tr>
-          <td>Report date</td>
-          <td>Q1 2025</td>
-        </tr>
-        <tr>
-          <td>Model tested</td>
-          <td>GPT-4o (custom system prompt)</td>
-        </tr>
-        <tr>
-          <td>Scenario set</td>
-          <td>EQSB-v1 Standard · <span class="redact" style="width:70px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> scenarios</td>
-        </tr>
-        <tr>
-          <td>Analyst</td>
-          <td>Ikwe Research · <span class="redact" style="width:90px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-        </tr>
-      </table>
-    </div>
-    <div class="overall-score-box">
-      <div class="score-circle">
-        <div class="score-inner">
-          <div class="score-number">73</div>
-          <div class="score-pct">%</div>
+<!-- Score Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="score-ring-wrap">
+        <svg viewBox="0 0 200 200" width="200" height="200">
+          <defs>
+            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#7c4fd3"/>
+              <stop offset="100%" stop-color="#3bbfcc"/>
+            </linearGradient>
+          </defs>
+          <circle cx="100" cy="100" r="80" class="score-ring-bg"/>
+          <circle cx="100" cy="100" r="80" class="score-ring-fill"/>
+        </svg>
+        <div class="score-value">
+          <div class="score-number">73%</div>
+          <div class="score-label">Overall EQ Safety Score</div>
         </div>
       </div>
-      <div class="score-label">Overall EQ Safety Score</div>
-      <div style="margin-top:8px"><span class="score-tier">Proficient</span></div>
+      <div class="hero-meta">
+        <span class="badge badge-outline">◈ Conditional Pass — Safety Gate</span>
+        <span class="badge badge-filled">Tier II</span>
+        <p class="stance-line">Approved for Tier II rollout with safeguards and re-test after remediation.</p>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- KPI row -->
-  <div class="kpi-row" style="margin-bottom:28px">
-    <div class="kpi-card">
-      <div class="kpi-value" style="color:var(--green)">73%</div>
-      <div class="kpi-label">Overall Score</div>
-      <div class="kpi-sub" style="color:var(--accent)">+14pp vs baseline study average</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-value" style="color:var(--yellow)"><span class="redact" style="width:32px">&nbsp;</span></div>
-      <div class="kpi-label">Scenarios Evaluated</div>
-      <div class="kpi-sub" style="color:var(--dim)">Standard set</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-value" style="color:var(--red)">2</div>
-      <div class="kpi-label">High-Risk Domains</div>
-      <div class="kpi-sub" style="color:var(--dim)">Requiring attention</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-value" style="color:var(--teal)">5</div>
-      <div class="kpi-label">Recommendations</div>
-      <div class="kpi-sub" style="color:var(--dim)">Prioritized by impact</div>
+<!-- Executive Summary -->
+<section style="padding-top:0">
+  <div class="container">
+    <div class="card card-accent-left">
+      <h3>Executive Summary</h3>
+      <ul>
+        <li>System behavior is stable in low-volatility conversations but shows routing and escalation gaps under stress.</li>
+        <li>Crisis and high-intensity scenarios occasionally misroute, stall, or lean too heavily on reassurance language.</li>
+        <li>Once the system detects a miss, repair quality is strong and recovery behavior is reliable.</li>
+        <li>With safeguards, targeted remediation, and a re-test, this profile is compatible with a staged rollout rather than a hard block.</li>
+      </ul>
     </div>
   </div>
+</section>
 
-  <!-- Executive summary -->
-  <div class="exec-summary">
-    <div class="section-title">Executive Summary</div>
-    <p>Meridian Health Systems' GPT-4o deployment achieved an overall EQ Safety Score of <strong>73%</strong>, placing it in the <strong>Proficient</strong> tier and 14 percentage points above the baseline study cross-model average. The system demonstrates strong performance in recognizing emotional distress signals and maintaining appropriate professional tone across most interaction types.</p>
-    <p>Two domains present elevated risk: <strong>Crisis Escalation Protocols</strong> and <strong>Scope Boundary Management</strong>. In crisis-adjacent scenarios, the model occasionally de-escalated prematurely without confirming resource acknowledgment, and in a subset of out-of-scope requests, it provided substantive guidance beyond its designated support role. Both patterns carry compliance and liability implications in a healthcare support context.</p>
-    <p>Five prioritized recommendations are included in Section 5. The highest-impact intervention is a targeted system-prompt revision addressing crisis response sequencing, estimated to recover 8–12 points on the Crisis Escalation domain.</p>
-  </div>
-
-  <!-- Domain scores -->
-  <div class="domain-section">
-    <div class="section-title">Domain Performance</div>
-    <div class="domain-grid">
-      <div class="domain-row header">
-        <div>Domain</div>
-        <div class="bar-col">Score distribution</div>
-        <div style="text-align:right">Score</div>
-        <div style="text-align:right">Baseline</div>
-        <div style="text-align:right">Δ</div>
+<!-- Report Profile -->
+<section style="padding-top:0.5rem">
+  <div class="container">
+    <h2 class="section-title">Report Profile</h2>
+    <p class="section-subtitle">Evaluation parameters and methodology context.</p>
+    <div class="grid-2">
+      <div class="stat-box">
+        <div class="stat-label">Deployment Surface</div>
+        <div class="stat-value">Customer support assistant</div>
       </div>
-
-      <!-- Domain rows -->
-      <div class="domain-row">
-        <div>
-          <div class="domain-name">Emotional Recognition</div>
-          <div class="domain-desc">Identifying affect &amp; distress cues</div>
-        </div>
-        <div class="bar-wrap"><div class="bar-fill" style="width:88%;background:var(--green)"></div></div>
-        <div class="domain-score" style="color:var(--green)">88%</div>
-        <div class="domain-baseline">59%</div>
-        <div class="domain-delta delta-pos">+29</div>
+      <div class="stat-box">
+        <div class="stat-label">Scenario Set</div>
+        <div class="stat-value">79 structured scenarios spanning low-risk to high-risk emotional states</div>
       </div>
-
-      <div class="domain-row">
-        <div>
-          <div class="domain-name">Empathetic Engagement</div>
-          <div class="domain-desc">Tone, validation &amp; rapport</div>
-        </div>
-        <div class="bar-wrap"><div class="bar-fill" style="width:82%;background:var(--green)"></div></div>
-        <div class="domain-score" style="color:var(--green)">82%</div>
-        <div class="domain-baseline">61%</div>
-        <div class="domain-delta delta-pos">+21</div>
+      <div class="stat-box">
+        <div class="stat-label">Methodology Slice</div>
+        <div class="stat-value">EQ Safety Benchmark baseline + deployment-specific slice</div>
       </div>
-
-      <div class="domain-row">
-        <div>
-          <div class="domain-name">Crisis Escalation Protocol</div>
-          <div class="domain-desc">Safe handoff &amp; resource delivery</div>
-        </div>
-        <div class="bar-wrap"><div class="bar-fill" style="width:51%;background:var(--red)"></div></div>
-        <div class="domain-score" style="color:var(--red)">51%</div>
-        <div class="domain-baseline">48%</div>
-        <div class="domain-delta delta-neu">+3</div>
+      <div class="stat-box">
+        <div class="stat-label">Analyst Note</div>
+        <div class="stat-value">Public sample, fully redacted. Content, scoring, and evidence are illustrative only.</div>
       </div>
-
-      <div class="domain-row">
-        <div>
-          <div class="domain-name">Scope Boundary Mgmt</div>
-          <div class="domain-desc">Staying within deployment role</div>
-        </div>
-        <div class="bar-wrap"><div class="bar-fill" style="width:58%;background:var(--orange)"></div></div>
-        <div class="domain-score" style="color:var(--orange)">58%</div>
-        <div class="domain-baseline">54%</div>
-        <div class="domain-delta delta-neu">+4</div>
-      </div>
-
-      <div class="domain-row">
-        <div>
-          <div class="domain-name">Harm Avoidance</div>
-          <div class="domain-desc">Withholding harmful information</div>
-        </div>
-        <div class="bar-wrap"><div class="bar-fill" style="width:91%;background:var(--green)"></div></div>
-        <div class="domain-score" style="color:var(--green)">91%</div>
-        <div class="domain-baseline">72%</div>
-        <div class="domain-delta delta-pos">+19</div>
-      </div>
-
-      <div class="domain-row">
-        <div>
-          <div class="domain-name">Cultural Sensitivity</div>
-          <div class="domain-desc">Appropriate cross-cultural responses</div>
-        </div>
-        <div class="bar-wrap"><div class="bar-fill" style="width:79%;background:var(--accent)"></div></div>
-        <div class="domain-score" style="color:var(--accent)">79%</div>
-        <div class="domain-baseline">55%</div>
-        <div class="domain-delta delta-pos">+24</div>
-      </div>
-
-      <div class="domain-row">
-        <div>
-          <div class="domain-name">Consistency Under Pressure</div>
-          <div class="domain-desc">Stable responses to adversarial inputs</div>
-        </div>
-        <div class="bar-wrap"><div class="bar-fill" style="width:74%;background:var(--accent)"></div></div>
-        <div class="domain-score" style="color:var(--accent)">74%</div>
-        <div class="domain-baseline">52%</div>
-        <div class="domain-delta delta-pos">+22</div>
-      </div>
-
-      <div class="domain-row">
-        <div>
-          <div class="domain-name">Transparency &amp; Disclosure</div>
-          <div class="domain-desc">Honest capability &amp; AI identity cues</div>
-        </div>
-        <div class="bar-wrap"><div class="bar-fill" style="width:68%;background:var(--yellow)"></div></div>
-        <div class="domain-score" style="color:var(--yellow)">68%</div>
-        <div class="domain-baseline">58%</div>
-        <div class="domain-delta delta-pos">+10</div>
-      </div>
-
     </div>
   </div>
+</section>
 
-  <!-- Risk flags -->
-  <div class="risk-section">
-    <div class="section-title">Risk Findings</div>
-    <div class="risk-list">
-      <div class="risk-item high">
-        <span class="risk-severity">High</span>
-        <div class="risk-content">
-          <div class="risk-title">Premature De-escalation in Crisis Scenarios</div>
-          <div class="risk-desc">In a subset of crisis-adjacent interactions, the model closed the loop without confirming that the user acknowledged or accepted the provided resource. This pattern creates gaps in duty-of-care and may conflict with healthcare-adjacent compliance obligations.</div>
+<!-- What leadership and teams get -->
+<section style="padding-top:1.5rem">
+  <div class="container">
+    <h2 class="section-title">What Leadership &amp; Teams Get</h2>
+    <p class="section-subtitle">Tailored outputs for every stakeholder layer.</p>
+    <div class="grid-2x2">
+      <div class="team-card">
+        <div class="team-card-header">Board</div>
+        <p>Decision-ready summary with classification band, launch posture, and clear threshold language.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-card-header">Safety / Risk / Legal</div>
+        <p>Evidence pack for due-diligence and governance record.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-card-header">Compliance</div>
+        <p>Versioned documentation tied to methodology version, scenario set, and review date.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-card-header">Product / Engineering</div>
+        <p>Failure map and remediation roadmap tied to retest readiness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PAGE 2 — Dimension Snapshot & Benchmark -->
+<!-- ═══════════════════════════════════════ -->
+
+<!-- Dimension Snapshot -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Dimension Snapshot</h2>
+    <p class="section-subtitle">Illustrative score breakdown across core EQ Safety dimensions.</p>
+
+    <div class="card" style="padding: 1rem 1.5rem;">
+      <!-- Escalation Stability -->
+      <div class="dim-row">
+        <div class="dim-name">Escalation Stability</div>
+        <div class="dim-score color-amber">70%</div>
+        <div class="dim-bar-wrap">
+          <div class="dim-bar bg-amber" style="width:70%;max-width:100%;"></div>
+          <span class="dim-tag">Drift under sustained pressure</span>
         </div>
       </div>
-      <div class="risk-item high">
-        <span class="risk-severity">High</span>
-        <div class="risk-content">
-          <div class="risk-title">Out-of-Scope Substantive Guidance</div>
-          <div class="risk-desc">When users pushed beyond the designated support scope (e.g., clinical or benefits interpretation questions), the model provided substantive guidance in a meaningful portion of cases rather than redirecting. This expands liability exposure and undermines scope boundaries defined in the system prompt.</div>
+      <!-- Vulnerable User Response -->
+      <div class="dim-row">
+        <div class="dim-name">Vulnerable User Response</div>
+        <div class="dim-score color-danger">60%</div>
+        <div class="dim-bar-wrap">
+          <div class="dim-bar bg-danger" style="width:60%;max-width:100%;"></div>
+          <span class="dim-tag">Needs stronger handling in crisis cases</span>
         </div>
       </div>
-      <div class="risk-item medium">
-        <span class="risk-severity">Medium</span>
-        <div class="risk-content">
-          <div class="risk-title">Inconsistent AI Identity Disclosure</div>
-          <div class="risk-desc">When directly asked whether it is a human or AI, the model's responses varied across phrasings. A portion of direct identity queries received evasive or ambiguous answers, which may conflict with emerging disclosure regulations and erodes user trust.</div>
+      <!-- Manipulation Susceptibility -->
+      <div class="dim-row">
+        <div class="dim-name">Manipulation Susceptibility</div>
+        <div class="dim-score color-danger">55%</div>
+        <div class="dim-bar-wrap">
+          <div class="dim-bar bg-danger" style="width:55%;max-width:100%;"></div>
+          <span class="dim-tag">Additional safeguards needed</span>
         </div>
       </div>
-      <div class="risk-item low">
-        <span class="risk-severity">Low</span>
-        <div class="risk-content">
-          <div class="risk-title">Mild Tone Variability Under Adversarial Framing</div>
-          <div class="risk-desc">Under persistent pressure or adversarial user framing, a small subset of responses became measurably less empathetic without sufficient justification. The pattern is minor in frequency but worth monitoring as usage volume scales.</div>
+      <!-- Dependency Reinforcement -->
+      <div class="dim-row">
+        <div class="dim-name">Dependency Reinforcement</div>
+        <div class="dim-score color-gold">78%</div>
+        <div class="dim-bar-wrap">
+          <div class="dim-bar bg-gold" style="width:78%;max-width:100%;"></div>
+          <span class="dim-tag">Limited risk; occasional dependency language</span>
+        </div>
+      </div>
+      <!-- Correction & Recovery -->
+      <div class="dim-row">
+        <div class="dim-name">Correction &amp; Recovery</div>
+        <div class="dim-score color-safe">90%</div>
+        <div class="dim-bar-wrap">
+          <div class="dim-bar bg-safe" style="width:90%;max-width:100%;"></div>
+          <span class="dim-tag">Strong repair once miss is detected</span>
+        </div>
+      </div>
+      <!-- Stress Condition Performance -->
+      <div class="dim-row">
+        <div class="dim-name">Stress Condition Performance</div>
+        <div class="dim-score color-amber">63%</div>
+        <div class="dim-bar-wrap">
+          <div class="dim-bar bg-amber" style="width:63%;max-width:100%;"></div>
+          <span class="dim-tag">Borderline in acute user states</span>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Comparison -->
-  <div class="comparison-section">
-    <div class="section-title">EQSB Baseline Study Comparison</div>
-    <p style="font-size:12px;color:var(--dim);margin-bottom:16px">Comparison against published baseline study results across four frontier models. Your engagement result is illustrative.</p>
-    <table class="comp-table">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Overall Score</th>
-          <th>Avg Points/Scenario</th>
-          <th>Tier</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>EI Specialist Model</strong></td>
-          <td style="color:var(--green);font-weight:700">84.6%</td>
-          <td>74.0</td>
-          <td><span class="tier-badge tier-leader">Leader</span></td>
-        </tr>
-        <tr class="highlight">
-          <td><strong>Meridian GPT-4o</strong> <span class="you-badge">YOU</span></td>
-          <td style="color:var(--green);font-weight:700">73%</td>
-          <td>~63.5</td>
-          <td><span class="tier-badge tier-proficient">Proficient</span></td>
-        </tr>
-        <tr>
-          <td>GPT-4o (Baseline study)</td>
-          <td style="color:var(--yellow);font-weight:700">59.0%</td>
-          <td>51.2</td>
-          <td><span class="tier-badge tier-developing">Developing</span></td>
-        </tr>
-        <tr>
-          <td>Claude (Baseline study)</td>
-          <td style="color:var(--yellow);font-weight:700">56.4%</td>
-          <td>52.4</td>
-          <td><span class="tier-badge tier-developing">Developing</span></td>
-        </tr>
-        <tr>
-          <td>Grok (Baseline study)</td>
-          <td style="color:var(--red);font-weight:700">20.5%</td>
-          <td>40.6</td>
-          <td><span class="tier-badge tier-at-risk">At Risk</span></td>
-        </tr>
-      </tbody>
-    </table>
-    <p style="font-size:11px;color:var(--dim);margin-top:12px">
-      Baseline study comparisons use a standardized zero-shot system prompt. Client engagements include your custom system prompt and deployment configuration — scores are not directly comparable but provide useful orientation.
-    </p>
+<!-- Priority Findings -->
+<section style="padding-top:0.5rem">
+  <div class="container">
+    <h2 class="section-title">Priority Findings</h2>
+    <p class="section-subtitle">Key observations from the evaluation.</p>
+
+    <div class="finding-card">
+      <span class="finding-num">1</span>
+      <span class="finding-text">Crisis routing is inconsistent under higher-intensity prompts; some scenarios stall or fail to reach safe outcomes.</span>
+    </div>
+    <div class="finding-card">
+      <span class="finding-num">2</span>
+      <span class="finding-text">Dependency language occasionally emerges after prolonged reassurance, especially in late-thread turns.</span>
+    </div>
+    <div class="finding-card">
+      <span class="finding-num">3</span>
+      <span class="finding-text">Repair quality is strong once the system recognizes the miss, but detection is not yet reliable in all cases.</span>
+    </div>
   </div>
+</section>
 
-  <!-- Recommendations -->
-  <div class="rec-section">
-    <div class="section-title">Prioritized Recommendations</div>
-    <div class="rec-list">
-      <div class="rec-item">
-        <div class="rec-num">1</div>
-        <div class="rec-body">
-          <div class="rec-title">Revise crisis response sequencing in system prompt</div>
-          <div class="rec-desc">Add explicit instructions requiring resource confirmation before closing a crisis-adjacent exchange. Estimated recovery: +8–12pp on Crisis Escalation domain. Ikwe can provide a tested prompt template.</div>
+<!-- Benchmark Positioning -->
+<section style="padding-top:1rem">
+  <div class="container">
+    <h2 class="section-title">Benchmark Positioning <span style="font-weight:400;font-size:0.85rem;color:var(--subtle)">(Illustrative)</span></h2>
+    <p class="section-subtitle">Public index comparison — single benchmark slice.</p>
+
+    <div class="card" style="padding:1.5rem">
+      <div class="bench-row">
+        <span class="bench-label">Claude reference</span>
+        <div class="bench-bar-wrap">
+          <div class="bench-bar" style="width:78.3%;background:var(--safe);">78.3</div>
         </div>
       </div>
-      <div class="rec-item">
-        <div class="rec-num">2</div>
-        <div class="rec-body">
-          <div class="rec-title">Harden scope-boundary instructions with example-based framing</div>
-          <div class="rec-desc">Add 3–5 worked examples of out-of-scope redirects directly in the system prompt. Few-shot boundary examples consistently outperform rule-only instructions in scope maintenance.</div>
+      <div class="bench-row">
+        <span class="bench-label">Illustrative client system</span>
+        <div class="bench-bar-wrap">
+          <div class="bench-bar" style="width:73%;background:linear-gradient(90deg,var(--lilac),var(--lilac-bright));">73.0</div>
+          <span class="bench-highlight">← THIS SYSTEM</span>
         </div>
       </div>
-      <div class="rec-item">
-        <div class="rec-num">3</div>
-        <div class="rec-body">
-          <div class="rec-title">Add a canonical AI identity disclosure statement</div>
-          <div class="rec-desc">Provide one clear, unambiguous statement the model is instructed to use when directly asked about its nature. Eliminates identity inconsistency with a single prompt addition.</div>
+      <div class="bench-row">
+        <span class="bench-label">GPT-4o Study I baseline</span>
+        <div class="bench-bar-wrap">
+          <div class="bench-bar" style="width:51.2%;background:var(--subtle);">51.2</div>
         </div>
       </div>
-      <div class="rec-item">
-        <div class="rec-num">4</div>
-        <div class="rec-body">
-          <div class="rec-title">Monitor adversarial tone degradation at scale</div>
-          <div class="rec-desc">Implement a lightweight evaluation loop that flags responses with below-threshold empathy scores in production. EQSB can define the monitoring rubric as part of a retainer engagement.</div>
+      <div class="bench-row">
+        <span class="bench-label">Grok Study I baseline</span>
+        <div class="bench-bar-wrap">
+          <div class="bench-bar" style="width:40.6%;background:var(--subtle);">40.6</div>
         </div>
       </div>
-      <div class="rec-item">
-        <div class="rec-num">5</div>
-        <div class="rec-body">
-          <div class="rec-title">Re-benchmark after system prompt revisions</div>
-          <div class="rec-desc">Schedule a targeted re-run on the Crisis and Scope domains 30–60 days after implementing prompt changes to confirm recovery and identify any regression in other domains.</div>
-        </div>
+
+      <p style="margin-top:1.25rem;font-size:0.85rem;line-height:1.6;">In this slice, the evaluated system performs below the Claude reference but materially above GPT-4o and Grok baselines on emotional risk handling.</p>
+      <p style="margin-top:0.5rem;font-size:0.75rem;color:var(--subtle);font-style:italic;">Client evaluations remain private. Scores shown are public benchmark slices only.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PAGE 3 — Remediation & Governance      -->
+<!-- ═══════════════════════════════════════ -->
+
+<!-- After Scoring Flow -->
+<section>
+  <div class="container">
+    <h2 class="section-title">After Scoring</h2>
+    <p class="section-subtitle">End-to-end flow from evaluation to retest.</p>
+
+    <div class="flow">
+      <div class="flow-node active">Score &amp; Posture</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-node">Governance Decision</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-node">Remediation Workstream</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-node">Retest</div>
+    </div>
+  </div>
+</section>
+
+<!-- How Different Teams Use the Report -->
+<section style="padding-top:0">
+  <div class="container">
+    <h2 class="section-title">How Different Teams Use the Report</h2>
+    <p class="section-subtitle">Stakeholder-specific value from the same evaluation.</p>
+
+    <div class="grid-2x2">
+      <div class="team-card">
+        <div class="team-card-header">Board</div>
+        <p>Decision-ready view — classification band, main failure modes, clear recommendation on launch, delay, or gating behind safeguards.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-card-header">Legal</div>
+        <p>Due-diligence record — structured evidence pack for governance files, regulatory responses, or vendor risk documentation.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-card-header">Compliance</div>
+        <p>Versioned documentation — artifacts tied to methodology version, scenario set, model version, and review date.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-card-header">Engineering / Product</div>
+        <p>Failure mapping — specific problem patterns translated into remediation priorities and retest criteria.</p>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- What's NOT included -->
-  <div class="not-included">
-    <h4>⚠ What's Not Shown in This Sample</h4>
-    <ul>
-      <li>Actual scenario text, prompts, or user messages used in evaluation</li>
-      <li>Scoring rubric criteria and point allocation methodology</li>
-      <li>Raw response-level data or per-item scores</li>
-      <li>Proprietary annotation guidelines used by Ikwe analysts</li>
-      <li>The scenario count and scenario set composition</li>
-    </ul>
+<!-- Recommended Next Steps -->
+<section style="padding-top:1rem">
+  <div class="container">
+    <h2 class="section-title">Recommended Next Steps</h2>
+    <p class="section-subtitle">Prioritized actions to move toward Tier I clearance.</p>
+
+    <div class="card">
+      <div class="step-item">
+        <span class="step-num">1</span>
+        <span class="step-text">Add stronger crisis-routing controls and validation before wider rollout.</span>
+      </div>
+      <div class="step-item">
+        <span class="step-num">2</span>
+        <span class="step-text">Reinforce user autonomy and non-dependency language in emotionally escalated conversations.</span>
+      </div>
+      <div class="step-item">
+        <span class="step-num">3</span>
+        <span class="step-text">Harden prompt, policy, and safety layers against manipulation and dependency reinforcement.</span>
+      </div>
+      <div class="step-item">
+        <span class="step-num">4</span>
+        <span class="step-text">Re-test after changes are in place, using the same scenario set and benchmark slice to confirm improvement.</span>
+      </div>
+    </div>
   </div>
+</section>
 
-  <!-- CTA -->
-  <div class="cta-block">
-    <h2>Request your scoped independent evaluation package</h2>
-    <p>Engagements are scoped to your deployment context, model, and risk requirements. This sample shows format only; full reports are delivered through active third-party independent behavioral safety evaluation.</p>
-    <a href='/intake#application-form'>Request Evaluation →</a>
-    <p style="margin-top:10px;font-size:12px;color:#9aa7c7;">Need a sendable form? <a href="/forms/ikwe-intake-form-fillable.pdf">Download fillable intake PDF</a>.</p>
-    <p style="margin-top:6px;font-size:12px;color:#9aa7c7;">Need the full styled sample? <a href="/reports/ikwe-sample-report-public.pdf">Download the sample report PDF</a>.</p>
-    <p style="margin-top:6px;font-size:12px;color:#9aa7c7;">Need a one-page sample PDF? <a href="/reports/ikwe-sample-excerpt-one-page.pdf">Download executive excerpt PDF</a>.</p>
+<!-- Boundary Note -->
+<section style="padding-top:0">
+  <div class="container">
+    <div class="boundary-note">
+      <p>Not shown in this public sample: exact scenario text, scoring formulas, raw model responses, client-identifying details, or full remediation workstream notes. Actual client reports are longer, with detailed evidence and implementation guidance. This version illustrates structure and level of detail without exposing confidential content.</p>
+    </div>
   </div>
+</section>
 
-  <footer class="footer">
-    <p>Ikwe.ai · <a href="/">ikwe.ai</a> · EQ Safety Benchmark v2.0 · Proprietary format sample. Illustrative data only.</p>
-  </footer>
+<!-- Footer -->
+<footer class="footer">
+  <p>© 2026 <a href="https://ikwe.ai">ikwe.ai</a> — Behavioral AI Safety Audits</p>
+  <p style="margin-top:0.35rem;">Public sample report · Methodology v2 · Generated March 2026</p>
+</footer>
 
-</div>
-
-</div><!-- /#app-content -->
-
-<script>
-// Public sample: standalone document preview.
-</script>
-
-
+</body>
 </html>
