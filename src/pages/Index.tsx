@@ -785,22 +785,22 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="home-levels">
+            <div className="home-engagement-grid">
               {engagementLevels.map((level) => (
                 <article
                   key={level.level}
-                  className={`home-level-card ${level.featured ? "home-level-card-featured" : ""}`}
+                  className={`home-engagement-card ${level.featured ? "home-engagement-card-featured" : ""}`}
                 >
-                  <div className="home-level-number">{level.level}</div>
-                  <h3 className="home-level-title">{level.title}</h3>
-                  <p className="home-level-copy">{level.description}</p>
-                  <div className="home-level-for-label">Includes</div>
-                  <ul className="home-level-list">
+                  <div className="home-engagement-level">{level.level}</div>
+                  <h3 className="home-engagement-title">{level.title}</h3>
+                  <p className="home-engagement-description">{level.description}</p>
+                  <div className="home-engagement-for-label">Includes</div>
+                  <ul className="home-engagement-for-list">
                     {level.forItems.map((item) => (
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
-                  <p className="home-level-result">{level.result}</p>
+                  <p className="home-engagement-result">{level.result}</p>
                 </article>
               ))}
             </div>
@@ -862,10 +862,10 @@ export default function Home() {
               </Link>
             </div>
             <div className="home-close-props">
-              {closingProps.map(([title, copy]) => (
-                <div key={title} className="home-close-prop">
-                  <div className="home-close-prop-title">{title}</div>
-                  <div className="home-close-prop-copy">{copy}</div>
+              {closingProps.map(([value, label]) => (
+                <div key={value}>
+                  <div className="home-close-prop-value">{value}</div>
+                  <div className="home-close-prop-label">{label}</div>
                 </div>
               ))}
             </div>
