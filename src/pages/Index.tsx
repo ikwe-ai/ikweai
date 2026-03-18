@@ -21,50 +21,6 @@ const exposurePills = [
   "Reputational damage",
 ] as const;
 
-const driftZones = [
-  {
-    id: "ZONE 1",
-    title: "Looks Fine",
-    subtitle: "Normal use",
-    tag: "Passes standard evals",
-    tone: "good",
-    icon: "✓",
-  },
-  {
-    id: "ZONE 2",
-    title: "Drift Window",
-    subtitle: "Vulnerable user conditions",
-    tag: "Where problems start",
-    tone: "watch",
-    icon: "⚠",
-  },
-  {
-    id: "ZONE 3",
-    title: "Consequences",
-    subtitle: "Harm · Legal · Brand",
-    tag: "Too late to catch",
-    tone: "risk",
-    icon: "!",
-  },
-] as const;
-
-const flowSteps = [
-  { number: "01", title: "User in distress", subtitle: "Vulnerable moment" },
-  { number: "02", title: "AI response", subtitle: "What the system does" },
-  { number: "03", title: "Independent review", subtitle: "How it actually behaves", featured: true },
-  { number: "04", title: "Risk score + report", subtitle: "Audit-ready output" },
-] as const;
-
-const audiencePills = [
-  "Mental health AI",
-  "AI companions",
-  "Coaching AI",
-  "Customer support AI",
-  "Healthcare AI",
-  "Education AI",
-  "Consumer-facing AI",
-] as const;
-
 const dimensions = [
   ["Escalation Stability", "Does the system amplify or de-escalate distress?"],
   ["Vulnerable User Response", "How does the system respond under crisis or instability?"],
@@ -77,45 +33,17 @@ const dimensions = [
 ] as const;
 
 const tiers = [
-  [
-    "TIER I",
-    "Stable Behavioral Integrity",
-    "Launch with confidence",
-    "Standard monitoring",
-    "tier-1",
-    "Safety record established. Trusted for deployment.",
-  ],
-  [
-    "TIER II",
-    "Moderate Behavioral Risk",
-    "Launch with mitigations",
-    "Safeguards + quarterly review",
-    "tier-2",
-    "Conditional safety record. Mitigations required before trust is established.",
-  ],
-  [
-    "TIER III",
-    "Escalation Instability",
-    "Remediate before launch",
-    "Engineering fixes required, retest",
-    "tier-3",
-    "Safety record withheld. Remediation required.",
-  ],
-  [
-    "TIER IV",
-    "High Vulnerability Exposure",
-    "Do not launch",
-    "Fundamental redesign needed",
-    "tier-4",
-    "Safety record denied. Do not deploy.",
-  ],
+  ["TIER I",  "Stable Behavioral Integrity",  "Launch with confidence",      "Standard monitoring",                "tier-1"],
+  ["TIER II", "Moderate Behavioral Risk",      "Launch with mitigations",     "Safeguards + quarterly review",      "tier-2"],
+  ["TIER III","Escalation Instability",        "Remediate before launch",     "Engineering fixes required, retest", "tier-3"],
+  ["TIER IV", "High Vulnerability Exposure",   "Do not launch",               "Fundamental redesign needed",        "tier-4"],
 ] as const;
 
 const deliverables = [
-  ["Board", "Defensible audit record", "Governance documentation your directors can stand behind."],
-  ["Legal", "Due diligence evidence", "Documented behavioral evidence for legal exposure and liability review."],
-  ["Compliance", "Versioned evidence packages", "Reproducible compliance documentation updated after each deployment change."],
-  ["Engineering", "Structured failure mapping", "Specific failure mode data your team can act on in real time."],
+  ["Board",      "Defensible audit record",       "Governance documentation your directors can stand behind."],
+  ["Legal",      "Due diligence evidence",        "Documented behavioral evidence for legal exposure and liability review."],
+  ["Compliance", "Versioned evidence packages",   "Reproducible compliance documentation updated after each deployment change."],
+  ["Engineering","Structured failure mapping",    "Specific failure mode data your team can act on in real time."],
 ] as const;
 
 const audienceItems = [
@@ -146,8 +74,7 @@ const engagementLevels = [
   {
     level: "LEVEL II",
     title: "Ikwe EQ Safety Evaluation",
-    description:
-      "Evaluation across all 8 dimensions with Tier I–IV classification, failure mapping, and a remediation plan.",
+    description: "Evaluation across all 8 dimensions with Tier I–IV classification, failure mapping, and a remediation plan.",
     forItems: ["Board-level governance", "Regulated deployment", "Enterprise procurement"],
     result: "Your board, legal, and compliance teams have documented third-party behavioral evidence.",
     featured: true,
@@ -163,8 +90,8 @@ const engagementLevels = [
 
 const closingProps = [
   ["Independent", "No conflict of interest"],
-  ["Quantified", "Scored, not subjective"],
-  ["Longitudinal", "Tracks drift over time"],
+  ["Quantified",  "Scored, not subjective"],
+  ["Longitudinal","Tracks drift over time"],
 ] as const;
 
 export default function Home() {
@@ -180,97 +107,123 @@ export default function Home() {
       <div className="home-page">
         <div aria-hidden="true" className="home-starfield" />
 
-        <section id="hero" className="home-section home-hero">
-          <div className="home-wrap">
-            <div className="home-hero-tag">Independent Behavioral Safety Audits · Human-Facing AI</div>
-            <h1 className="home-hero-title">
-              Most AI systems fail
-              <br />
-              their first behavioral
-              <br />
-              <em>safety test.</em>
-            </h1>
-            <p className="home-hero-sub">
-              If your human-facing AI has never had an independent behavioral audit, you don't know whether it
-              protects users in vulnerable moments — or quietly makes things worse.
-            </p>
-            <p className="home-hero-subtle">
-              We run independent behavioral safety audits on human-facing AI systems and produce documented evidence
-              your board, legal team, and compliance advisors can trust.
-            </p>
-            <div className="home-hero-actions">
-              <Link to="/audit" className="home-btn home-btn-gold" onClick={() => trackEvent("audit_cta_hero")}>
-                Request a Behavioral Safety Audit
-              </Link>
-              <Link to="/samples" className="home-btn home-btn-outline" onClick={() => trackEvent("cta_sample_report", { source: "hero" })}>
-                See a Sample Risk Report
-              </Link>
+        {/* ── HERO ── */}
+        <section id="hero" className="home-hero-section">
+          {/* ambient glow blobs */}
+          <div aria-hidden="true" className="home-glow-blob home-glow-blob-left" />
+          <div aria-hidden="true" className="home-glow-blob home-glow-blob-right" />
+
+          <div className="home-wrap home-hero-grid">
+            {/* left column */}
+            <div className="home-hero-left">
+              <div className="home-hero-tag">
+                <span className="home-hero-tag-dot" />
+                Behavioral Safety Layer · Human-Facing AI
+              </div>
+              <h1 className="home-hero-title">
+                Building AI<br />
+                that humans<br />
+                can actually <em>trust.</em>
+              </h1>
+              <p className="home-hero-sub">
+                If your human-facing AI has never had an independent behavioral audit, you don't know whether it
+                protects users in <strong>vulnerable moments</strong> — or quietly makes things worse.
+              </p>
+              <p className="home-hero-subtle">
+                We run independent behavioral safety audits and produce documented evidence your board, legal team,
+                and compliance advisors can stand behind.
+              </p>
+              <div className="home-hero-actions">
+                <Link to="/audit" className="home-btn home-btn-primary" onClick={() => trackEvent("audit_cta_hero")}>
+                  Request a Behavioral Safety Audit
+                </Link>
+                <Link to="/samples" className="home-btn home-btn-ghost" onClick={() => trackEvent("cta_sample_report", { source: "hero" })}>
+                  See a Sample Risk Report
+                </Link>
+              </div>
             </div>
-            <div className="home-hero-stats">
-              <article className="home-hero-stat">
-                <div className="home-stat-number">{BENCHMARK_CURRENT.failedGatePct}</div>
-                <div className="home-stat-label">of frontier-model responses introduced emotional risk at first contact — most appeared supportive, not harmful</div>
-              </article>
-              <article className="home-hero-stat">
-                <div className="home-stat-number">44.9%</div>
-                <div className="home-stat-label">of systems fail the binary Safety Gate</div>
-              </article>
-              <article className="home-hero-stat">
-                <div className="home-stat-number">{PUBLIC_STATS.outputsEvaluatedDisplay}</div>
-                <div className="home-stat-label">outputs evaluated across 79 baseline scenarios</div>
-              </article>
+
+            {/* right column — stats panel */}
+            <div className="home-hero-right">
+              <div className="home-hero-stats">
+                <div className="home-hero-stat">
+                  <div className="home-stat-number">{BENCHMARK_CURRENT.failedGatePct}</div>
+                  <div className="home-stat-label">of frontier-model responses introduced emotional risk at first contact</div>
+                </div>
+                <div className="home-hero-stat">
+                  <div className="home-stat-number">44.9%</div>
+                  <div className="home-stat-label">of systems fail the binary Safety Gate</div>
+                </div>
+                <div className="home-hero-stat">
+                  <div className="home-stat-number">{PUBLIC_STATS.outputsEvaluatedDisplay}</div>
+                  <div className="home-stat-label">outputs evaluated across 79 baseline scenarios</div>
+                </div>
+              </div>
+              <p className="home-hero-stat-note">
+                Not what it says. How it behaves.<br />That distinction is what Ikwe was built to measure.
+              </p>
             </div>
           </div>
         </section>
 
-        <div className="home-plain-english">
+        {/* ── THESIS: EMPATHY ≠ SAFETY ── */}
+        <section id="thesis" className="home-section home-section-alt">
           <div className="home-wrap">
-            <p className="home-plain-p">
-              Ikwe is the behavioral safety layer for human-facing AI. We evaluate how your system behaves when users
-              are distressed, in crisis, or emotionally vulnerable — whether that's a mental health app, a youth
-              platform, a companion AI, or any system that reaches people in high-stakes moments. Not just whether
-              it's "on policy."
-            </p>
-            <p className="home-plain-p">
-              Our EQ Safety Benchmark and Safety Gate framework measure whether your system stabilizes, escalates, or
-              ignores emotional risk — and give you a defensible safety record before you scale.
-            </p>
-          </div>
-        </div>
+            <div className="home-section-header">
+              <span className="home-eyebrow">Section 01 // Conflict</span>
+              <div className="home-section-header-right">
+                <span className="home-section-aside">
+                  A polite AI is not necessarily a safe AI.
+                </span>
+              </div>
+            </div>
 
-        <div className="home-divider" />
-
-        <section id="thesis" className="home-section home-band">
-          <div className="home-wrap">
-            <div className="home-grid-two">
+            <div className="home-grid-two home-thesis-grid">
               <div>
-                <span className="home-eyebrow">The Problem</span>
                 <h2 className="home-thesis-title">
-                  <em>Empathy ≠ Safety.</em>
-                  <br />
-                  Recognition is not the same as protection.
+                  The Paradox:<br /><em>Empathy ≠ Safety.</em>
                 </h2>
                 <p className="home-copy">
                   An AI system can acknowledge distress and still respond in a way that <strong>escalates harm</strong>.
                   It can sound warm while reinforcing dependency. It can appear helpful while suppressing autonomy.
+                  It can seem to handle a crisis while mishandling it entirely.
                 </p>
                 <p className="home-copy">
                   This is a <strong>behavioral pattern</strong> that does not appear in standard evaluations, accuracy
-                  benchmarks, or typical compliance checks. It surfaces when humans are vulnerable. That is exactly
+                  benchmarks, or compliance audits. It surfaces when humans are vulnerable. That is exactly
                   where current governance stops measuring.
                 </p>
                 <div className="home-pullquote">
-                  When behavioral failure surfaces publicly, decisions are made under pressure. Independent evaluation
-                  prevents that from being your only defense.
+                  "When behavioral failure surfaces publicly, decisions are made under pressure.
+                  Independent evaluation prevents that from being your only defense."
+                </div>
+
+                <div className="home-failure-cards" style={{ marginTop: "2.5rem" }}>
+                  <article className="home-failure-card">
+                    <div className="home-failure-card-icon home-failure-icon-warn">⚠</div>
+                    <div className="home-failure-card-title">Supportive escalation</div>
+                    <p className="home-failure-card-body">
+                      Looks caring on the surface, but never actually interrupts risky trajectories like self-harm
+                      spirals or giving up on care.
+                    </p>
+                  </article>
+                  <article className="home-failure-card">
+                    <div className="home-failure-card-icon home-failure-icon-secondary">◎</div>
+                    <div className="home-failure-card-title">Polite neglect</div>
+                    <p className="home-failure-card-body">
+                      Answers the literal question and ignores obvious distress. Everything seems normal — except the
+                      person doesn't get help.
+                    </p>
+                  </article>
                 </div>
               </div>
 
               <div>
-                <span className="home-eyebrow">What Existing Governance Misses</span>
+                <span className="home-eyebrow" style={{ marginBottom: "1rem" }}>What Existing Governance Misses</span>
                 <div className="home-gap-table">
                   <div className="home-gap-header">
                     <div className="home-gap-heading home-gap-heading-muted">Current Governance Covers</div>
-                    <div className="home-gap-heading">What still needs testing</div>
+                    <div className="home-gap-heading">Behavioral Safety (Ikwe)</div>
                   </div>
                   {governanceRows.map(([left, right]) => (
                     <div key={left} className="home-gap-row">
@@ -287,9 +240,7 @@ export default function Home() {
                   <span className="home-eyebrow">This Creates</span>
                   <div className="home-pill-group">
                     {exposurePills.map((pill) => (
-                      <span key={pill} className="home-pill">
-                        {pill}
-                      </span>
+                      <span key={pill} className="home-pill">{pill}</span>
                     ))}
                   </div>
                 </div>
@@ -298,100 +249,93 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="home-divider" />
-
+        {/* ── DRIFT — BENTO GRID ── */}
         <section id="drift" className="home-section">
           <div className="home-wrap">
-            <div className="home-center-block">
-              <span className="home-eyebrow">What Most Teams Miss</span>
-              <h2 className="home-section-title home-section-title-center">
-                AI doesn&apos;t fail.
-                <br />
-                <em>It drifts.</em>
-              </h2>
-              <p className="home-section-subtext">
-                Behavioral risk does not appear all at once. It accumulates across interaction types, pressure levels,
-                and user vulnerability states. Standard evals only see Zone 1.
-              </p>
-            </div>
-
-            <div className="home-drift-grid">
-              {driftZones.map((zone) => (
-                <article
-                  key={zone.id}
-                  className={`home-drift-card ${
-                    zone.tone === "watch"
-                      ? "home-drift-card-featured"
-                      : zone.tone === "risk"
-                        ? "home-drift-card-risk"
-                        : "home-drift-card-good"
-                  }`}
-                >
-                  <div className="home-drift-icon">{zone.icon}</div>
-                  <div className="home-drift-number">{zone.id}</div>
-                  <h3 className="home-drift-title">{zone.title}</h3>
-                  <p className="home-drift-subtitle">{zone.subtitle}</p>
-                  <p className="home-drift-tag">{zone.tag}</p>
-                </article>
-              ))}
-            </div>
-
-            <div className="home-failure-modes">
-              <div className="home-failure-label">Behavioral failure modes we see most often</div>
-              <p className="home-failure-oneliner">
-                In our EQ Safety Benchmark, nearly half of risky responses fell into just three patterns.
-              </p>
-              <div className="home-failure-cards">
-                <article className="home-failure-card">
-                  <div className="home-failure-card-title">Supportive escalation</div>
-                  <p className="home-failure-card-body">
-                    Looks caring on the surface, but never actually interrupts risky trajectories like self-harm
-                    spirals or giving up on care.
-                  </p>
-                </article>
-                <article className="home-failure-card">
-                  <div className="home-failure-card-title">Polite neglect</div>
-                  <p className="home-failure-card-body">
-                    Answers the literal question and ignores obvious distress. Everything seems normal — except the
-                    person doesn't get help.
-                  </p>
-                </article>
-                <article className="home-failure-card">
-                  <div className="home-failure-card-title">Unrepaired harm</div>
-                  <p className="home-failure-card-body">
-                    Notices something is off once, then moves on. No attempt to clarify, correct, or repair in later
-                    turns.
-                  </p>
-                </article>
+            <div className="home-section-header">
+              <div>
+                <span className="home-eyebrow">Section 02 // Entropy</span>
+                <h2 className="home-section-title">
+                  Detecting the invisible:<br /><em>AI Drift.</em>
+                </h2>
               </div>
-              <p className="home-failure-legend">
-                Ikwe audits are designed to catch and quantify these behaviors before they reach real users.
-              </p>
-              <Link to="/audit" className="home-section-text-link home-section-text-link-sm" onClick={() => trackEvent("audit_cta_drift_soft")}>
+              <div className="home-section-header-right home-section-aside-block">
+                <span className="home-section-aside">Real-time Behavioral Monitoring</span>
+                <span className="home-section-aside-sub">79 Scenarios · 12 Vulnerability Categories</span>
+              </div>
+            </div>
+
+            {/* Bento grid */}
+            <div className="home-bento-grid">
+              {/* Large feature — semantic entropy */}
+              <div className="home-bento-large">
+                <div className="home-bento-icon home-bento-icon-primary">◈</div>
+                <h3 className="home-bento-title">Behavioral risk doesn't appear all at once.</h3>
+                <p className="home-bento-body">
+                  It accumulates across interaction types, pressure levels, and user vulnerability states.
+                  Standard evaluations only see Zone 1 — normal use. Ikwe measures the drift window where problems start.
+                </p>
+                {/* Mini drift bar visual */}
+                <div className="home-bento-bars">
+                  <div className="home-bento-bar" style={{ height: "40%", opacity: 0.2 }} />
+                  <div className="home-bento-bar" style={{ height: "60%", opacity: 0.3 }} />
+                  <div className="home-bento-bar" style={{ height: "25%", opacity: 0.15 }} />
+                  <div className="home-bento-bar" style={{ height: "80%", opacity: 0.4 }} />
+                  <div className="home-bento-bar" style={{ height: "55%", opacity: 0.25 }} />
+                  <div className="home-bento-bar" style={{ height: "75%", opacity: 0.5 }} />
+                  <div className="home-bento-bar home-bento-bar-alert" style={{ height: "35%" }} />
+                </div>
+              </div>
+
+              {/* Zone 2 — the drift window */}
+              <div className="home-bento-medium home-bento-featured">
+                <div className="home-bento-badge">← Where Ikwe Measures</div>
+                <div className="home-bento-icon home-bento-icon-watch">⚠</div>
+                <h3 className="home-bento-title">The Drift Window</h3>
+                <p className="home-bento-body">Vulnerable user conditions. Where problems start — invisible to standard evals.</p>
+              </div>
+
+              {/* Zone 1 */}
+              <div className="home-bento-small">
+                <div className="home-bento-icon home-bento-icon-safe">✓</div>
+                <h3 className="home-bento-title-sm">Zone 1 — Looks Fine</h3>
+                <p className="home-bento-body-sm">Normal use. Passes standard evals.</p>
+              </div>
+
+              {/* Zone 3 */}
+              <div className="home-bento-small">
+                <div className="home-bento-icon home-bento-icon-risk">!</div>
+                <h3 className="home-bento-title-sm">Zone 3 — Consequences</h3>
+                <p className="home-bento-body-sm">Harm · Legal · Brand. Too late to catch.</p>
+              </div>
+            </div>
+
+            <div className="home-drift-note">
+              <div>
+                <p className="home-drift-note-main">
+                  Ikwe detects behavioral risk early — before it becomes harm, headlines, or liability.
+                </p>
+                <p className="home-drift-note-detail">
+                  <span>Measures trajectories, not just outputs</span>
+                  <span className="home-dot">·</span>
+                  <span>Flags escalation, manipulation, dependency loops</span>
+                  <span className="home-dot">·</span>
+                  <span>Produces audit-ready reports</span>
+                </p>
+              </div>
+              <Link to="/audit" className="home-section-text-link" onClick={() => trackEvent("audit_cta_drift_soft")}>
                 Learn how the audit works →
               </Link>
-            </div>
-
-            <div className="home-note">
-              <p className="home-note-title">
-                We help teams catch risky behavior before it becomes harm, liability, or a public issue.
-              </p>
-              <p className="home-note-copy">
-                Looks at patterns across conversations, not one-off answers · Flags escalation, manipulation, and
-                over-reliance · Produces reports your product, legal, and leadership teams can use
-              </p>
             </div>
           </div>
         </section>
 
-        <div className="home-divider" />
-
-        <section id="oneidea" className="home-section home-band">
+        {/* ── HOW IT WORKS ── */}
+        <section id="oneidea" className="home-section home-section-alt">
           <div className="home-wrap">
-            <span className="home-eyebrow">How Behavioral Safety Validation Works</span>
+            <span className="home-eyebrow">Section 03 // Method</span>
             <h2 className="home-section-title">
-              Simple enough to explain.
-              <br />
+              Simple enough to explain.<br />
               Specific enough to act on.
             </h2>
 
@@ -401,7 +345,12 @@ export default function Home() {
             </div>
 
             <div className="home-flow-grid">
-              {flowSteps.map((step) => (
+              {[
+                { number: "01", title: "User in distress",      subtitle: "Vulnerable moment" },
+                { number: "02", title: "AI response",           subtitle: "What the system does" },
+                { number: "03", title: "Ikwe evaluation",       subtitle: "Behavioral analysis", featured: true },
+                { number: "04", title: "Risk score + report",   subtitle: "Audit-ready output" },
+              ].map((step) => (
                 <article
                   key={step.number}
                   className={`home-flow-step ${step.featured ? "home-flow-step-featured" : ""}`}
@@ -409,35 +358,36 @@ export default function Home() {
                   <div className="home-flow-number">{step.number}</div>
                   <h3 className="home-flow-title">{step.title}</h3>
                   <p className="home-flow-subtitle">{step.subtitle}</p>
-                  {step.featured ? <div className="home-flow-badge">ikwe.ai</div> : null}
+                  {step.featured && <div className="home-flow-badge">ikwe.ai</div>}
                 </article>
               ))}
             </div>
 
             <p className="home-beforeline">Before it becomes harm. Before it becomes headlines.</p>
             <div className="home-pill-group">
-              {audiencePills.map((pill) => (
-                <span key={pill} className="home-pill">
-                  {pill}
-                </span>
+              {["Mental health AI", "AI companions", "Coaching AI", "Customer support AI", "Healthcare AI", "Education AI", "Consumer-facing AI"].map((pill) => (
+                <span key={pill} className="home-pill">{pill}</span>
               ))}
             </div>
           </div>
         </section>
 
-        <div className="home-divider" />
-
-        <section id="benchmark" className="home-section home-section-cluster-start">
+        {/* ── BENCHMARK ── */}
+        <section id="benchmark" className="home-section">
           <div className="home-wrap">
-            <div className="home-grid-two home-benchmark-header">
+            <div className="home-section-header">
               <div>
-                <span className="home-eyebrow">The Ikwe Behavioral Safety Benchmark</span>
-                <h2 className="home-section-title">Eight dimensions. One clear answer.</h2>
+                <span className="home-eyebrow">Section 04 // Standard</span>
+                <h2 className="home-section-title">
+                  Eight dimensions.<br />One clear answer.
+                </h2>
               </div>
-              <p className="home-copy home-copy-tight">Built to answer one question: is your system safe when it matters most?</p>
+              <p className="home-copy home-copy-tight home-section-header-right">
+                Purpose-built to measure behavioral safety failure in emotionally-loaded interactions.
+                Each dimension answers a specific question about how your system actually behaves
+                when a human needs it most — not how it performs on neutral test prompts.
+              </p>
             </div>
-
-            <p className="home-beforeline">Real scenarios. Structured evaluation. Defensible outputs.</p>
 
             <div className="home-dimensions-grid">
               {dimensions.map(([title, question]) => (
@@ -449,69 +399,65 @@ export default function Home() {
             </div>
 
             <div className="home-benchmark-callout">
-              <div className="home-benchmark-highlight">
-                Binary Safety Gate. Eight weighted dimensions. One trust record.
-              </div>
-              <p className="home-benchmark-copy">
-                The framework can score any response or interaction. It is validated against a baseline of 79
-                real-world emotional support scenarios, produces public frontier model benchmark scores, and powers
-                private client evaluations against the same baseline.
+              <div className="home-benchmark-highlight">Empathy ≠ Safety</div>
+              <p className="home-benchmark-body">
+                A system can acknowledge distress and still respond in a way that escalates harm.
+                The EQ Safety Benchmark was built to measure that gap — across 79 emotionally vulnerable scenarios,
+                {PUBLIC_STATS.outputsEvaluatedDisplay}+ evaluated outputs, and 12 vulnerability categories.
+                The result is scored, reproducible, and audit-ready.
               </p>
             </div>
 
             <div className="home-hero-actions">
-              <Link to="/benchmark" className="home-btn home-btn-gold">
+              <Link to="/benchmark" className="home-btn home-btn-primary">
                 View Public Leaderboard
               </Link>
-              <Link to="/research" className="home-btn home-btn-outline">
+              <Link to="/research" className="home-btn home-btn-ghost">
                 Read Research Summary
               </Link>
             </div>
           </div>
         </section>
 
-        <section id="system" className="home-section home-band home-section-merge">
+        {/* ── THREE PHASES ── */}
+        <section id="system" className="home-section home-section-alt">
           <div className="home-wrap">
-            <span className="home-eyebrow">How We Evaluate</span>
-            <h2 className="home-section-title">
-              Three phases.
-              <br />
-              One infrastructure.
-            </h2>
-            <p className="home-section-subtext home-section-subtext-left">
-              Each step builds on the last — from immediate risk detection to ongoing drift monitoring. You choose how deep you need to go.
-            </p>
+            <div className="home-section-center">
+              <span className="home-eyebrow">Section 05 // Protocol</span>
+              <h2 className="home-section-title">The Tri-Phase Evaluation</h2>
+              <p className="home-section-subtext">
+                The ikwe protocol provides a rigorous framework for behavioral validation.
+                Each step builds on the last — you choose how deep you need to go.
+              </p>
+            </div>
 
-            <div className="home-phases">
+            <div className="home-phases-grid">
               {[
                 {
                   number: "01",
                   title: "Binary Safety Gate",
-                  description:
-                    "Pass / fail evaluation across 79 emotionally vulnerable scenarios. Determines whether harmful behavioral patterns appear at all.",
+                  description: "Pass / fail evaluation across 79 emotionally vulnerable scenarios. Determines whether harmful behavioral patterns appear at all. The first question: does launch risk exist?",
                   tag: "Pre-deployment",
                   outcome: "Launch risk determination",
                 },
                 {
                   number: "02",
                   title: "Dimensional Scoring",
-                  description:
-                    "Behavioral evaluation across all 8 dimensions, 12 vulnerability categories. Structured failure mapping and remediation guidance.",
+                  description: "Behavioral evaluation across all 8 dimensions and 12 vulnerability categories. Produces Tier I–IV classification with structured failure mapping and a remediation plan your engineering team can act on.",
                   tag: "Deep evaluation",
-                  outcome: "Tier I–IV classification + remediation plan",
+                  outcome: "Tier classification + remediation plan",
                 },
                 {
                   number: "03",
                   title: "Ongoing Governance Monitoring",
-                  description:
-                    "Continuous behavioral drift monitoring after each deployment change. Quarterly re-evaluation to catch degradation before it reaches incident scale. A versioned, defensible safety record that compounds over time.",
+                  description: "Continuous behavioral drift monitoring after each deployment change. Quarterly re-evaluation to catch degradation before it reaches incident scale. A versioned, defensible safety record that compounds over time.",
                   tag: "Continuous",
                   outcome: "Sustained safety posture over time",
                 },
               ].map((phase) => (
-                <article key={phase.number} className="home-phase">
+                <article key={phase.number} className="home-phase-card">
                   <div className="home-phase-number">{phase.number}</div>
-                  <div>
+                  <div className="home-phase-body">
                     <h3 className="home-phase-title">{phase.title}</h3>
                     <p className="home-phase-copy">{phase.description}</p>
                     <span className="home-phase-tag">{phase.tag}</span>
@@ -523,92 +469,93 @@ export default function Home() {
                 </article>
               ))}
             </div>
-
-            <div className="home-hero-actions">
-              <Link to="/audit" className="home-btn home-btn-outline">
-                See Full Evaluation Pipeline
-              </Link>
-              <Link to="/audit" className="home-btn home-btn-outline">
-                Open Audit Pathway
-              </Link>
-            </div>
           </div>
         </section>
 
-        <section id="output" className="home-section home-section-merge">
+        {/* ── OUTPUT / WHAT YOU GET ── */}
+        <section id="output" className="home-section">
           <div className="home-wrap">
-            <div className="home-output-layout">
-              <div className="home-output-primary">
-                <span className="home-eyebrow">What You Get</span>
-                <h2 className="home-section-title home-output-title">
-                  What you receive is a safety record, not just a score.
-                </h2>
-                <p className="home-copy">
-                  Ikwe produces governance-ready evidence that enables deployment decisions.
+            <span className="home-eyebrow">Section 06 // Output</span>
+            <h2 className="home-section-title" style={{ maxWidth: "620px", marginBottom: "3rem" }}>
+              What you receive is a decision,<br />not just a document.
+            </h2>
+
+            <div className="home-output-grid">
+              {/* Left — tiers + deliverables */}
+              <div>
+                <p className="home-copy" style={{ marginBottom: "2rem" }}>
+                  Every evaluation produces a Tier classification with structured failure mapping,
+                  specific mitigation guidance, and reproducible compliance evidence.
                 </p>
-                <p className="home-copy">
-                  Every review produces a clear risk rating, examples of where things go wrong, recommended fixes, and
-                  documentation your teams can actually use.
+
+                <div className="home-tier-list">
+                  {tiers.map(([badge, title, subtitle, action, tone]) => (
+                    <article key={badge} className="home-tier">
+                      <div className={`home-tier-badge ${tone}`}>{badge}</div>
+                      <div>
+                        <div className="home-tier-title">{title}</div>
+                        <div className="home-tier-subtitle">{subtitle}</div>
+                      </div>
+                      <div className="home-tier-action">{action}</div>
+                    </article>
+                  ))}
+                </div>
+                <p className="home-tier-note">
+                  Every tier result includes structured failure mapping and documented mitigation guidance.
                 </p>
-                <div className="home-output-block">
-                  <span className="home-eyebrow">Tier Classifications</span>
-                  <div className="home-tier-list">
-                    {tiers.map(([badge, title, subtitle, action, tone, trustRecord]) => (
-                      <article key={badge} className="home-tier">
-                        <div className={`home-tier-badge ${tone}`}>{badge}</div>
-                        <div>
-                          <div className="home-tier-title">{title}</div>
-                          <div className="home-tier-subtitle">{subtitle}</div>
-                        </div>
-                        <div className="home-tier-action">{action}</div>
-                        <div className="home-tier-trust">{trustRecord}</div>
+
+                <div style={{ marginTop: "2.5rem" }}>
+                  <span className="home-eyebrow">What Each Stakeholder Gets</span>
+                  <div className="home-deliverables-grid">
+                    {deliverables.map(([role, title, copy]) => (
+                      <article key={role} className="home-deliverable-card">
+                        <div className="home-deliverable-role">{role}</div>
+                        <h3 className="home-deliverable-title">{title}</h3>
+                        <p className="home-deliverable-copy">{copy}</p>
                       </article>
                     ))}
                   </div>
-                  <p className="home-tier-note">
-                    Every result includes concrete examples of issues found and recommended next steps.
-                  </p>
                 </div>
               </div>
 
-              <div className="home-output-secondary">
-                <span className="home-eyebrow">Sample Output</span>
+              {/* Right — sample report card */}
+              <div>
+                <span className="home-eyebrow">Sample Evaluation Output</span>
                 <div className="home-report-card">
                   <div className="home-report-header">
                     <div className="home-report-system">
-                      <strong>System Name:</strong> Example AI System
-                      <br />
+                      <strong>System Name:</strong> Example AI System<br />
                       <strong>Evaluation Date:</strong> February 2026
                     </div>
-                    <div className="home-report-chip-wrap">
-                      <div className="home-report-chip">MODERATE RISK</div>
-                      <div className="home-report-chip-subtitle">Needs safeguards before wider use</div>
+                    <div>
+                      <div className="home-report-chip tier-2">TIER II</div>
+                      <div className="home-report-chip-subtitle">Moderate Behavioral Risk</div>
                     </div>
                   </div>
 
                   <div className="home-report-body">
-                    <div className="home-report-section-label">Initial Screen Result</div>
+                    <div className="home-report-section-label">Safety Gate Result</div>
                     <div className="home-report-gate-grid">
                       <div className="home-report-gate home-report-gate-risk">
-                        <div className="home-report-gate-label">ISSUES FOUND</div>
-                        <div className="home-report-gate-copy">Crisis mishandling<br />Escalation under pressure</div>
+                        <div className="home-report-gate-label">FAIL PATTERNS DETECTED</div>
+                        <div className="home-report-gate-copy">Crisis mishandling<br />Escalation amplification</div>
                       </div>
                       <div className="home-report-gate home-report-gate-watch">
-                        <div className="home-report-gate-label">OVERALL READ</div>
-                        <div className="home-report-gate-copy">Proceed with fixes</div>
-                        <div className="home-report-gate-note">Needs mitigation before broader release</div>
+                        <div className="home-report-gate-label">RESULT</div>
+                        <div className="home-report-gate-copy">Conditional Pass</div>
+                        <div className="home-report-gate-note">Issues require mitigation</div>
                       </div>
                     </div>
 
-                    <div className="home-report-section-label">Review Breakdown</div>
+                    <div className="home-report-section-label">Dimensional Scores</div>
                     <div className="home-score-list">
                       {[
-                        ["Escalation Stability", "70%", "Some drift under pressure", "70%", "var(--home-purple-light)"],
-                        ["Multi-Turn Trajectory", "90%", "Stable", "90%", "var(--home-green)"],
-                        ["Vulnerable User Response", "60%", "Needs work in higher-risk cases", "60%", "var(--home-gold)"],
-                        ["Repair Capacity", "90%", "Strong", "90%", "var(--home-green)"],
-                        ["Dependency Reinforcement", "78%", "Limited risk detected", "78%", "var(--home-purple-light)"],
-                        ["Manipulation Susceptibility", "55%", "Additional safeguards needed", "55%", "var(--home-gold)"],
+                        ["Escalation Stability",       "70%", "Conditional — minor drift",    "70%",  "var(--home-purple-light)"],
+                        ["Multi-Turn Trajectory",      "90%", "Stable",                       "90%",  "var(--home-green)"],
+                        ["Vulnerable User Response",   "60%", "Needs mitigation",             "60%",  "var(--home-gold)"],
+                        ["Repair Capacity",            "90%", "Strong",                       "90%",  "var(--home-green)"],
+                        ["Dependency Reinforcement",   "78%", "Low risk",                     "78%",  "var(--home-purple-light)"],
+                        ["Manipulation Susceptibility","55%", "Safeguards needed",            "55%",  "var(--home-gold)"],
                       ].map(([label, value, status, width, color]) => (
                         <div key={label} className="home-score-row">
                           <div className="home-score-label">{label}</div>
@@ -622,39 +569,22 @@ export default function Home() {
                     </div>
 
                     <div className="home-report-actions">
-                      <div className="home-report-section-label">Recommended Next Steps</div>
+                      <div className="home-report-section-label">Recommended Actions</div>
                       {[
-                        "Add stronger guardrails for crisis scenarios",
-                        "Reinforce user autonomy in higher-risk conversations",
-                        "Harden the system prompt against manipulation",
-                        "Re-test after changes are in place",
+                        "Implement escalation guardrails for crisis scenarios",
+                        "Add user autonomy reinforcement prompts",
+                        "Strengthen manipulation resistance in system prompt",
+                        "Quarterly re-evaluation after implementation",
                       ].map((action) => (
-                        <div key={action} className="home-report-action">
-                          {action}
-                        </div>
+                        <div key={action} className="home-report-action">→ {action}</div>
                       ))}
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="home-output-block home-output-stakeholders">
-                <span className="home-eyebrow">What Each Stakeholder Gets</span>
-                <div className="home-deliverables-grid">
-                  {deliverables.map(([role, title, copy]) => (
-                    <article key={role} className="home-deliverable-card">
-                      <div className="home-deliverable-role">{role}</div>
-                      <h3 className="home-deliverable-title">{title}</h3>
-                      <p className="home-deliverable-copy">{copy}</p>
-                    </article>
-                  ))}
-                </div>
-                <div className="home-hero-actions">
-                  <Link to="/audit#deliverables-previews" className="home-btn home-btn-gold" onClick={() => trackEvent("cta_sample_report", { source: "output_section" })}>
-                    View Sample Outputs
-                  </Link>
-                  <Link to="/audit" className="home-btn home-btn-outline">
-                    Open Audit Pathway
+                <div className="home-hero-actions" style={{ marginTop: "1.5rem" }}>
+                  <Link to="/audit#deliverables-previews" className="home-btn home-btn-ghost">
+                    View Sample Reports
                   </Link>
                 </div>
               </div>
@@ -662,208 +592,121 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="home-divider" />
-
-        <section id="who" className="home-section home-band home-section-merge home-section-cluster-start">
+        {/* ── WHO / WHY NOW ── */}
+        <section id="who" className="home-section home-section-alt">
           <div className="home-wrap">
-            <div className="home-center-block">
-              <span className="home-eyebrow">Who This Is For</span>
-              <h2 className="home-section-title home-section-title-center">
-                Teams deploying AI
-                <br />
-                in high-trust contexts.
+            <div className="home-section-center" style={{ marginBottom: "3rem" }}>
+              <span className="home-eyebrow">Section 07 // Audience</span>
+              <h2 className="home-section-title">
+                Any system that touches<br />human vulnerability.
               </h2>
-              <p className="home-section-subtext">
-                When people come to your system, they're not just "users." They're patients, students, clients, or
-                community members who assume it's safe to keep talking.
-              </p>
-              <p className="home-section-subtext home-section-subtext-stacked">
-                Ikwe is built for teams shipping AI into situations where a single bad response can damage trust,
-                reputation, or someone's well-being — whether that's a mental health app, a youth platform, a
-                companion AI, or any product that meets people in vulnerable moments.
-              </p>
-            </div>
-
-            <div className="home-who-questions">
-              <div className="home-who-questions-label">We help you answer three questions before you scale:</div>
-              <div className="home-who-question-list">
-                <div className="home-who-question">
-                  What actually happens when someone in distress or crisis talks to your AI?
-                </div>
-                <div className="home-who-question">
-                  Where does the system quietly introduce emotional risk, even when it "sounds" supportive?
-                </div>
-                <div className="home-who-question">
-                  What evidence can you put in front of your board, compliance, and partners to show you took
-                  behavioral safety seriously before deployment?
-                </div>
-              </div>
-              <Link to="/audit" className="home-section-text-link" onClick={() => trackEvent("audit_cta_who_soft")}>
-                See how an Ikwe audit answers these questions →
-              </Link>
             </div>
 
             <div className="home-grid-two">
               <div>
                 <div className="home-column-label">Designed For</div>
-                <div className="home-list-stack">
+                <div className="home-who-items">
                   {audienceItems.map((item) => (
-                    <div key={item} className="home-list-card">
-                      {item}
-                    </div>
+                    <div key={item} className="home-who-item">› {item}</div>
                   ))}
                 </div>
               </div>
-
               <div>
                 <div className="home-column-label">Why Now</div>
-                <div className="home-why-list">
+                <div className="home-why-items">
                   {urgencyItems.map((item) => (
-                    <div key={item} className="home-why-item">
-                      {item}
-                    </div>
+                    <div key={item} className="home-why-item">{item}</div>
                   ))}
                 </div>
-                <div className="home-pullquote">
-                  One trust failure can halt deployment for 18+ months. The time to establish your safety record is
-                  before you need it.
+                <div className="home-pullquote" style={{ marginTop: "1.5rem" }}>
+                  Every regulated industry eventually needs an auditor.
+                  Finance got credit rating agencies. Healthcare got clinical trials oversight.{" "}
+                  <strong>AI is here now.</strong>{" "}
+                  The time to establish your behavioral safety record is before you need it.
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="two-ways" className="home-section home-band home-section-merge">
+        {/* ── ENGAGEMENT LEVELS ── */}
+        <section id="engage" className="home-section">
           <div className="home-wrap">
-            <div className="home-center-block home-center-block-tight">
-              <span className="home-eyebrow">Two Ways to Work With Us</span>
-            </div>
-            <div className="home-grid-two home-two-ways-grid">
-              <article className="home-two-way-card">
-                <div className="home-two-way-tag">Framework Licensing</div>
-                <p className="home-two-way-desc">
-                  You're designing or refactoring a product and want behavioral safety baked into development.
-                </p>
-                <p className="home-two-way-body">
-                  License the EQ Safety Benchmark framework to guide your system's development and establish
-                  internal testing standards around emotional and behavioral safety.
-                </p>
-                <Link to="/benchmark" className="home-btn home-btn-outline">
-                  Talk about integrating the framework
-                </Link>
-              </article>
-              <article className="home-two-way-card home-two-way-card-primary">
-                <div className="home-two-way-tag">Evaluation &amp; Audits</div>
-                <p className="home-two-way-desc">
-                  You have a system in use (or about to deploy) and need independent behavioral safety evidence.
-                </p>
-                <p className="home-two-way-body">
-                  Ikwe evaluates your system against the EQ Safety Benchmark and delivers governance-ready
-                  documentation your board, legal, and compliance teams can stand behind.
-                </p>
-                <Link to="/audit" className="home-btn home-btn-gold" onClick={() => trackEvent("audit_cta_two_ways")}>
-                  Book an Audit Scope Call
-                </Link>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <div className="home-divider" />
-
-        <section id="engage" className="home-section home-section-merge">
-          <div className="home-wrap">
-            <div className="home-center-block">
-              <span className="home-eyebrow">Engagement Model</span>
-              <h2 className="home-section-title home-section-title-center">
-                Three levels of behavioral
-                <br />
-                safety validation.
-              </h2>
+            <div className="home-section-center">
+              <span className="home-eyebrow">Section 08 // Engagement</span>
+              <h2 className="home-section-title">Three levels of independent validation.</h2>
               <p className="home-section-subtext">
-                Start with benchmark evaluation, add remediation, then extend into continuous governance monitoring.
+                Choose the level of external trust signal your system requires. Each level is cumulative —
+                deeper evaluation builds on what came before.
               </p>
             </div>
 
             <div className="home-engagement-grid">
               {engagementLevels.map((level) => (
-                <article
+                <div
                   key={level.level}
                   className={`home-engagement-card ${level.featured ? "home-engagement-card-featured" : ""}`}
                 >
                   <div className="home-engagement-level">{level.level}</div>
                   <h3 className="home-engagement-title">{level.title}</h3>
                   <p className="home-engagement-description">{level.description}</p>
-                  <div className="home-engagement-for-label">Includes</div>
+                  <div className="home-engagement-for-label">Designed For</div>
                   <ul className="home-engagement-for-list">
                     {level.forItems.map((item) => (
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
-                  <p className="home-engagement-result">{level.result}</p>
-                </article>
+                  <div className="home-engagement-result">{level.result}</div>
+                </div>
               ))}
             </div>
 
             <div className="home-engage-cta">
-              <Link to="/audit" className="home-btn home-btn-gold home-btn-large" onClick={() => trackEvent("audit_cta_engage")}>
-                Book an Audit Scope Call
+              <Link
+                to="/audit"
+                className="home-btn home-btn-primary home-btn-large"
+                onClick={() => trackEvent("audit_cta_engage")}
+              >
+                Request Evaluation →
               </Link>
-              <Link to="/audit" className="home-btn home-btn-outline home-btn-large" onClick={() => trackEvent("cta_view_pathway")}>
-                View the Full Pathway
-              </Link>
-              <p className="home-engage-note">
-                Choose the level of external trust signal your system requires. Each level is cumulative.
+              <p className="home-engage-cta-note">
+                Get a third-party baseline before launch risk becomes board risk.
               </p>
             </div>
           </div>
         </section>
 
-        <div className="home-divider" />
-
-        <div className="home-founder-strip">
-          <div className="home-wrap">
-            <div className="home-founder-inner">
-              <div className="home-founder-avatar" aria-hidden="true">SS</div>
-              <div className="home-founder-text">
-                <p className="home-founder-name">Stephanie Stranko · Founder</p>
-                <p className="home-founder-bio">
-                  Ikwe is led by Stephanie Stranko, a systems builder focused on emotional and behavioral safety in AI,
-                  with frameworks tested across hundreds of scenarios and multiple frontier systems.
-                </p>
-                <Link to="/get-started" className="home-section-text-link">Work with us →</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="home-divider" />
-
-        <section id="close" className="home-section home-band home-close">
+        {/* ── CLOSE ── */}
+        <section id="close" className="home-close-section">
+          <div aria-hidden="true" className="home-close-glow" />
           <div className="home-close-inner">
-            <span className="home-eyebrow">Why This Matters</span>
+            <span className="home-eyebrow">Section 09 // Mission</span>
             <h2 className="home-close-title">
-              If AI systems are going to interact
-              <br />
-              with humans at scale,
-              <br />
-              <strong>behavioral validation cannot be optional.</strong>
+              Secure your<br />
+              <strong>model's integrity.</strong>
             </h2>
             <p className="home-close-copy">
-              The systems interacting with humans at scale need something underneath them we can trust. That record
-              has to come from outside.
+              Technical capability is not the only measure of readiness.
+              Behavioral stability under emotional pressure determines long-term viability.
+              The systems shaping human lives deserve something underneath them we can trust.
             </p>
             <div className="home-close-actions">
-              <Link to="/audit" className="home-btn home-btn-gold" onClick={() => trackEvent("audit_cta_close")}>
-                Book an Audit Scope Call
-              </Link>
-              <Link to="/benchmark" className="home-btn home-btn-outline" onClick={() => trackEvent("cta_benchmark", { source: "close" })}>
+              <div className="home-btn-gradient-wrap">
+                <Link
+                  to="/audit"
+                  className="home-btn home-btn-gradient"
+                  onClick={() => trackEvent("audit_cta_close")}
+                >
+                  Request Evaluation
+                </Link>
+              </div>
+              <Link to="/benchmark" className="home-btn home-btn-ghost">
                 View the Benchmark
               </Link>
             </div>
             <div className="home-close-props">
               {closingProps.map(([value, label]) => (
-                <div key={value}>
+                <div key={value} className="home-close-prop">
                   <div className="home-close-prop-value">{value}</div>
                   <div className="home-close-prop-label">{label}</div>
                 </div>
@@ -871,6 +714,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
       </div>
     </>
   );
