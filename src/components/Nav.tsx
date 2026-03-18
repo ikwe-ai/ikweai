@@ -185,8 +185,13 @@ export default function Nav() {
           {/* ── CTA ── */}
           <Link
             to="/get-started"
-            className="hidden sm:inline-flex items-center gap-1.5 shrink-0 rounded bg-lilac px-4 py-2 text-xs font-medium text-primary-foreground uppercase tracking-widest hover:bg-lilac-glow transition-colors"
-            style={{ fontFamily: "var(--font-mono)" }}
+            className="hidden sm:inline-flex items-center gap-1.5 shrink-0 rounded px-4 py-2 text-xs font-medium uppercase tracking-widest transition-all"
+            style={{
+              fontFamily: "var(--font-label, 'Space Grotesk', sans-serif)",
+              background: "linear-gradient(135deg, #c8a0f8 0%, #9b72e8 100%)",
+              color: "#0f0a1a",
+              boxShadow: "0 0 16px rgba(155,114,232,0.35)",
+            }}
           >
             Get Started
           </Link>
@@ -285,8 +290,13 @@ export default function Nav() {
 
             <Link
               to="/get-started"
-              className="mt-2 inline-flex w-full items-center justify-center rounded bg-lilac px-4 py-2.5 text-xs font-medium text-primary-foreground uppercase tracking-widest hover:bg-lilac-glow transition-colors"
-              style={{ fontFamily: "var(--font-mono)" }}
+              className="mt-2 inline-flex w-full items-center justify-center rounded px-4 py-2.5 text-xs font-medium uppercase tracking-widest transition-all"
+              style={{
+                fontFamily: "var(--font-label, 'Space Grotesk', sans-serif)",
+                background: "linear-gradient(135deg, #c8a0f8 0%, #9b72e8 100%)",
+                color: "#0f0a1a",
+                boxShadow: "0 0 16px rgba(155,114,232,0.35)",
+              }}
               onClick={closeMobileMenu}
             >
               Get Started →
