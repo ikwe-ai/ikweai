@@ -1,11 +1,6 @@
 import { useState } from "react";
 import AssetPreviewModal from "@/components/AssetPreviewModal";
 
-const IFRAME_RENDER_WIDTH = 1100;
-const IFRAME_RENDER_HEIGHT = 720;
-const PREVIEW_SCALE = 0.295; // rendered width × scale ≈ card width (~325px)
-const PREVIEW_CONTAINER_HEIGHT = Math.round(IFRAME_RENDER_HEIGHT * PREVIEW_SCALE); // ~212px
-
 export default function ArtifactsPreviewRow({ className = "" }: { className?: string }) {
   const [activePreview, setActivePreview] = useState<{ title: string; href: string } | null>(null);
 
@@ -13,20 +8,26 @@ export default function ArtifactsPreviewRow({ className = "" }: { className?: st
     {
       title: "Sample Report",
       href: "/reports/ikwe-sample-report-public.html",
-      body: "Public redacted report structure.",
+      thumb: "/reports/thumb-sample-report.png",
+      body: "Score, risk picture, benchmark position, and what to fix before you scale.",
       tag: "Full Report",
+      alt: "Ikwe EQ Safety sample report showing 73% score, Conditional Pass gate, and plain-language summary",
     },
     {
       title: "Board Brief",
       href: "/reports/sample-board-brief.html",
-      body: "Executive decision format.",
+      thumb: "/reports/thumb-board-brief.png",
+      body: "One-page decision summary for board, risk committee, and executive review.",
       tag: "Board & Legal",
+      alt: "Ikwe board brief showing Tier II Conditional Launch classification, 44.9% gate failure rate, and decision options",
     },
     {
       title: "Evidence Pack",
       href: "/reports/sample-evidence-pack.html",
-      body: "Scenario traceability format.",
+      thumb: "/reports/thumb-evidence-pack.png",
+      body: "Traceable scenario records for legal, compliance, and safety teams.",
       tag: "Compliance & Audit",
+      alt: "Ikwe evidence pack showing scenario traceability table with vulnerability domains and FAIL/PASS gate results",
     },
   ] as const;
 
@@ -35,30 +36,19 @@ export default function ArtifactsPreviewRow({ className = "" }: { className?: st
       <div className={`grid grid-cols-1 md:grid-cols-3 gap-4 ${className}`.trim()}>
         {items.map((item) => (
           <article key={item.title} className="card-surface overflow-hidden">
-            {/* Live scaled iframe preview */}
+            {/* Screenshot thumbnail */}
             <button
               type="button"
               aria-label={`Open ${item.title} preview`}
               onClick={() => setActivePreview({ title: `${item.title} Preview`, href: item.href })}
               className="artifact-preview-btn"
             >
-              <div
-                className="artifact-preview-wrap"
-                style={{ height: `${PREVIEW_CONTAINER_HEIGHT}px` }}
-              >
-                <iframe
-                  src={item.href}
-                  title={`${item.title} preview`}
-                  scrolling="no"
-                  tabIndex={-1}
-                  aria-hidden="true"
-                  className="artifact-preview-iframe"
-                  style={{
-                    width: `${IFRAME_RENDER_WIDTH}px`,
-                    height: `${IFRAME_RENDER_HEIGHT}px`,
-                    transform: `scale(${PREVIEW_SCALE})`,
-                    transformOrigin: "top left",
-                  }}
+              <div className="artifact-preview-wrap">
+                <img
+                  src={item.thumb}
+                  alt={item.alt}
+                  className="artifact-preview-img"
+                  draggable={false}
                 />
                 <div className="artifact-preview-overlay">
                   <span className="artifact-preview-hint">Click to open</span>

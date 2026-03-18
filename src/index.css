@@ -3029,6 +3029,14 @@
     pointer-events: none;
   }
 
+  .artifact-preview-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    object-fit: cover;
+  }
+
   .artifact-preview-overlay {
     position: absolute;
     inset: 0;
