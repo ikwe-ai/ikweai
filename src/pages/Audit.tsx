@@ -175,7 +175,7 @@ export default function Audit() {
       />
 
       <SummaryHero
-        kicker="Independent Behavioral Safety Audits"
+        kicker="Evaluation Services"
         title="Independent behavioral safety audits for human-facing AI."
         summary="Most AI systems have never been tested for what happens when a real person shows up distressed, in crisis, or emotionally vulnerable. An Ikwe audit tells you exactly how your system behaves — and gives you evidence your board, compliance, and partners can stand behind."
         highlights={[
