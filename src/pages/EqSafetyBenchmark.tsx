@@ -317,13 +317,12 @@ const DIMENSION_SCORES = DIMENSION_DETAILS.map((dimension) => {
 
 function ScoreBar({ pct, tone }: { pct: number; tone: ScoreTone }) {
   const color = TONE_COLORS[tone];
-
   return (
     <div className="grid gap-2">
-      <div className="h-2 rounded-full bg-background-surface overflow-hidden">
-        <div className="h-full rounded-full" style={{ width: `${pct}%`, backgroundColor: color }} />
+      <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
+        <div className="h-full rounded-full transition-all duration-500" style={{ width: `${pct}%`, backgroundColor: color }} />
       </div>
-      <p className="font-mono text-xs" style={{ color }}>
+      <p className="bm-label-xs" style={{ color }}>
         {pct}%
       </p>
     </div>
@@ -336,10 +335,10 @@ function GateBadge({ passRate }: { passRate: number }) {
   const label = gateLabelFromPassRate(passRate);
   return (
     <span
-      className="inline-flex items-center gap-1.5 rounded border px-2.5 py-0.5 text-[11px] font-mono uppercase tracking-wider whitespace-nowrap"
-      style={{ color, borderColor: color }}
+      className="bm-gate-badge"
+      style={{ color, borderColor: `${color}40` }}
     >
-      <span className="h-1.5 w-1.5 flex-none rounded-full" style={{ backgroundColor: color }} />
+      <span className="bm-gate-dot" style={{ backgroundColor: color }} />
       {label}
     </span>
   );
@@ -348,18 +347,18 @@ function GateBadge({ passRate }: { passRate: number }) {
 function PassCountBar({ passCount, totalCount }: { passCount: number; totalCount: number }) {
   const passPct = Number(((passCount / totalCount) * 100).toFixed(1));
   return (
-    <div className="grid gap-1.5">
-      <div className="flex h-2 w-full rounded-full overflow-hidden bg-background-surface">
+    <div className="grid gap-2">
+      <div className="flex h-1.5 w-full rounded-full overflow-hidden bg-white/5">
         {passPct > 0 && (
           <div style={{ width: `${passPct}%`, backgroundColor: TONE_COLORS.stable }} />
         )}
         <div style={{ flex: 1, backgroundColor: TONE_COLORS.risk }} />
       </div>
       <div className="flex items-center justify-between">
-        <p className="font-mono text-[10px]" style={{ color: TONE_COLORS.stable }}>
+        <p className="bm-label-xs" style={{ color: TONE_COLORS.stable }}>
           {passCount} passed
         </p>
-        <p className="font-mono text-[10px]" style={{ color: TONE_COLORS.risk }}>
+        <p className="bm-label-xs" style={{ color: TONE_COLORS.risk }}>
           {totalCount - passCount} failed
         </p>
       </div>
@@ -380,312 +379,330 @@ export default function EqSafetyBenchmark() {
       />
 
       <SummaryHero
-            kicker="EQ Safety Benchmark — Public Leaderboard"
-            title="Frontier AI Behavioral Safety Index."
-            summary="The EQ Safety Benchmark is a behavioral evaluation framework that scores AI responses using a binary Safety Gate and eight weighted dimensions. Validated against a baseline of 79 real-world emotional support interaction scenarios drawn from established datasets, it can be applied to any AI system operating in emotionally sensitive contexts. Frontier model scores are public. Client evaluations are private and compared against the same baseline."
-            highlights={[
-              `${BENCHMARK_CURRENT.scenarios} baseline scenarios`,
-              `${BENCHMARK_CURRENT.nValue}`,
-              "Safety Gate + 8 weighted dimensions",
-            ]}
-            primaryAction={{ href: "/get-started", label: "Request Ikwe EQ Safety Evaluation" }}
-            secondaryAction={{ href: "#methodology", label: "View Methodology" }}
-            jumpLinks={[
-              { href: "#leaderboard", label: "Leaderboard" },
-              { href: "#what-this-measures", label: "What This Measures" },
-              { href: "#methodology", label: "Research Foundation" },
-              { href: "#safety-gate", label: "Safety Gate" },
-              { href: "#dim-scores", label: "Dimensional Scores" },
-              { href: "#findings", label: "Key Findings" },
-              { href: "#meth-transparency", label: "Methodology" },
-            ]}
-            visual={{
-              kicker: "Updated March 7, 2026",
-              title: "Public record",
-              points: [
-                "Live results for 3 frontier models published",
-                "Public models ranked by overall score",
-                "Client evaluations stay private",
-                "Compared against the same framework",
-              ],
-              tone: "teal",
-            }}
-          />
+        kicker="EQ Safety Benchmark — Public Leaderboard"
+        title="Frontier AI Behavioral Safety Index."
+        summary="The EQ Safety Benchmark is a behavioral evaluation framework that scores AI responses using a binary Safety Gate and eight weighted dimensions. Validated against a baseline of 79 real-world emotional support interaction scenarios drawn from established datasets, it can be applied to any AI system operating in emotionally sensitive contexts. Frontier model scores are public. Client evaluations are private and compared against the same baseline."
+        highlights={[
+          `${BENCHMARK_CURRENT.scenarios} baseline scenarios`,
+          `${BENCHMARK_CURRENT.nValue}`,
+          "Safety Gate + 8 weighted dimensions",
+        ]}
+        primaryAction={{ href: "/get-started", label: "Request Ikwe EQ Safety Evaluation" }}
+        secondaryAction={{ href: "#methodology", label: "View Methodology" }}
+        jumpLinks={[
+          { href: "#leaderboard", label: "Leaderboard" },
+          { href: "#what-this-measures", label: "What This Measures" },
+          { href: "#methodology", label: "Research Foundation" },
+          { href: "#safety-gate", label: "Safety Gate" },
+          { href: "#dim-scores", label: "Dimensional Scores" },
+          { href: "#findings", label: "Key Findings" },
+          { href: "#meth-transparency", label: "Methodology" },
+        ]}
+        visual={{
+          kicker: "Updated March 7, 2026",
+          title: "Public record",
+          points: [
+            "Live results for 3 frontier models published",
+            "Public models ranked by overall score",
+            "Client evaluations stay private",
+            "Compared against the same framework",
+          ],
+          tone: "teal",
+        }}
+      />
 
-          <ActionDock
-            title="Compare Against The Public Record"
-            subtitle="Ikwe EQ Safety Evaluations run against the same baseline set. Results stay confidential. You receive your tier classification and dimensional scores positioned against the frontier model record."
-            items={[
-              { href: "/get-started", label: "Request Ikwe EQ Safety Evaluation", tone: "primary" },
-              { href: "#leaderboard", label: "View Leaderboard", tone: "outline" },
-              { href: "#meth-transparency", label: "Review Method", tone: "quiet" },
-            ]}
-          />
+      <ActionDock
+        title="Compare Against The Public Record"
+        subtitle="Ikwe EQ Safety Evaluations run against the same baseline set. Results stay confidential. You receive your tier classification and dimensional scores positioned against the frontier model record."
+        items={[
+          { href: "/get-started", label: "Request Ikwe EQ Safety Evaluation", tone: "primary" },
+          { href: "#leaderboard", label: "View Leaderboard", tone: "outline" },
+          { href: "#meth-transparency", label: "Review Method", tone: "quiet" },
+        ]}
+      />
 
-          <ConnectedPages current="benchmark" />
+      <ConnectedPages current="benchmark" />
 
-      <section id="leaderboard" className="site-section py-12 border-b border-border">
-        <div className="grid gap-6 max-w-6xl lg:grid-cols-[minmax(0,1fr)_320px]">
-          <div>
-            <p className="section-kicker-live mb-4">
-              Frontier AI Behavioral Safety Index
-            </p>
-            <h2 className="font-display fluid-heading text-foreground mb-3">Public baseline leaderboard.</h2>
-            <p className="text-foreground-muted max-w-3xl leading-relaxed mb-6">
-              Public models are ranked by overall EQ Safety score across the 79-scenario baseline set. Safety Gate result
-              and pass rate sit beside the score so the leaderboard shows both behavioral quality and outright failure
-              risk.
-            </p>
-            <article className="mb-6 rounded border-l-2 border-[hsl(var(--danger))] bg-[hsl(var(--danger)/0.05)] px-5 py-4">
-              <p className="font-display text-2xl text-foreground">
-                0 of {PUBLIC_LEADERBOARD.length} frontier models pass the Safety Gate.
+      {/* ── 01 // Leaderboard ── */}
+      <section id="leaderboard" className="bm-section">
+        <div className="bm-section-inner">
+
+          {/* Section eyebrow */}
+          <div className="bm-eyebrow-row">
+            <span className="bm-eyebrow-num">01 //</span>
+            <span className="bm-eyebrow-label">Frontier AI Behavioral Safety Index</span>
+          </div>
+
+          <div className="bm-hero-grid">
+            {/* Left — headline + table */}
+            <div>
+              <h2 className="bm-section-heading">Public baseline <em>leaderboard.</em></h2>
+              <p className="bm-body-muted mb-8 max-w-2xl">
+                Public models ranked by overall EQ Safety score across the 79-scenario baseline set. Safety Gate result
+                and pass rate sit beside the score so the leaderboard shows both behavioral quality and outright failure risk.
               </p>
-              <p className="mt-1 text-sm text-foreground-muted">
-                All ranked models are Tier III. High overall scores don't prevent safety gate failure — the benchmark
-                measures behavioral patterns standard capability tests miss.
-              </p>
-            </article>
 
-            <div className="overflow-x-auto">
-              <table className="enterprise-table">
-                <thead>
-                  <tr>
-                    <th>Rank</th>
-                    <th>Model</th>
-                    <th>Overall Score</th>
-                    <th>Safety Gate</th>
-                    <th>Gate Pass Rate</th>
-                    <th>Passes / Total</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {PUBLIC_LEADERBOARD.map((model, index) => (
-                    <tr key={model.key}>
-                      <td className="font-mono text-foreground">{index + 1}</td>
+              {/* Alert callout */}
+              <div className="bm-alert-callout mb-8">
+                <p className="bm-alert-stat">
+                  0 of {PUBLIC_LEADERBOARD.length} frontier models pass the Safety Gate.
+                </p>
+                <p className="bm-alert-body">
+                  All ranked models are Tier III. High overall scores don't prevent safety gate failure — the benchmark
+                  measures behavioral patterns standard capability tests miss.
+                </p>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="bm-table">
+                  <thead>
+                    <tr>
+                      <th>Rank</th>
+                      <th>Model</th>
+                      <th>Overall Score</th>
+                      <th>Safety Gate</th>
+                      <th>Gate Pass Rate</th>
+                      <th>Passes / Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {PUBLIC_LEADERBOARD.map((model, index) => (
+                      <tr key={model.key}>
+                        <td className="font-mono text-foreground">{index + 1}</td>
+                        <td>
+                          <div className="grid gap-0.5">
+                            <span className="text-foreground font-medium">{model.label}</span>
+                            <span className="bm-label-xs text-foreground-subtle">
+                              {model.vendor} · {model.version}
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <span className="font-mono font-semibold" style={{ color: TONE_COLORS[scoreToneFromPct(model.overall)] }}>
+                            {model.overall.toFixed(1)}%
+                          </span>
+                        </td>
+                        <td>
+                          <GateBadge passRate={model.passRate} />
+                        </td>
+                        <td>
+                          <span className="font-mono text-sm" style={{ color: TONE_COLORS[gateToneFromPassRate(model.passRate)] }}>
+                            {model.passRate.toFixed(1)}%
+                          </span>
+                        </td>
+                        <td className="font-mono text-sm">
+                          <span style={{ color: TONE_COLORS.stable }}>{model.passCount}</span>
+                          <span className="text-foreground-subtle"> / {model.passCount + model.failCount}</span>
+                        </td>
+                      </tr>
+                    ))}
+                    <tr className="bm-table-ref-row">
+                      <td className="font-mono text-foreground-subtle text-xs">Ref</td>
                       <td>
-                        <div className="grid gap-1">
-                          <span className="text-foreground">{model.label}</span>
-                          <span className="text-xs text-foreground-subtle">
-                            {model.vendor} · {model.version}
+                        <div className="grid gap-0.5">
+                          <div className="flex items-center gap-2">
+                            <span className="text-foreground font-medium">{REFERENCE_MODEL.label}</span>
+                            <span className="bm-ref-chip">Ikwe Reference</span>
+                          </div>
+                          <span className="bm-label-xs text-foreground-subtle">
+                            {REFERENCE_MODEL.vendor} · {REFERENCE_MODEL.version}
                           </span>
                         </div>
                       </td>
                       <td>
-                        <span style={{ color: TONE_COLORS[scoreToneFromPct(model.overall)] }}>
-                          {model.overall.toFixed(1)}%
+                        <span className="font-mono font-semibold" style={{ color: TONE_COLORS[scoreToneFromPct(REFERENCE_MODEL.overall)] }}>
+                          {REFERENCE_MODEL.overall.toFixed(1)}%
                         </span>
                       </td>
                       <td>
-                        <GateBadge passRate={model.passRate} />
+                        <GateBadge passRate={REFERENCE_MODEL.passRate} />
                       </td>
                       <td>
-                        <span className="font-mono text-sm" style={{ color: TONE_COLORS[gateToneFromPassRate(model.passRate)] }}>
-                          {model.passRate.toFixed(1)}%
+                        <span className="font-mono text-sm" style={{ color: TONE_COLORS[gateToneFromPassRate(REFERENCE_MODEL.passRate)] }}>
+                          {REFERENCE_MODEL.passRate.toFixed(1)}%
                         </span>
                       </td>
                       <td className="font-mono text-sm">
-                        <span style={{ color: TONE_COLORS.stable }}>{model.passCount}</span>
-                        <span className="text-foreground-subtle"> / {model.passCount + model.failCount}</span>
+                        <span style={{ color: TONE_COLORS.stable }}>{REFERENCE_MODEL.passCount}</span>
+                        <span className="text-foreground-subtle"> / {REFERENCE_MODEL.passCount + REFERENCE_MODEL.failCount}</span>
                       </td>
                     </tr>
-                  ))}
-                  <tr className="border-t-2 border-lilac/30 bg-lilac-dim/10">
-                    <td className="font-mono text-foreground-subtle text-xs">Ref</td>
-                    <td>
-                      <div className="grid gap-1">
-                        <div className="flex items-center gap-2">
-                          <span className="text-foreground">{REFERENCE_MODEL.label}</span>
-                          <span className="inline-flex items-center rounded border border-lilac/40 px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider text-lilac">
-                            Ikwe Reference
-                          </span>
-                        </div>
-                        <span className="text-xs text-foreground-subtle">
-                          {REFERENCE_MODEL.vendor} · {REFERENCE_MODEL.version}
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <span style={{ color: TONE_COLORS[scoreToneFromPct(REFERENCE_MODEL.overall)] }}>
-                        {REFERENCE_MODEL.overall.toFixed(1)}%
-                      </span>
-                    </td>
-                    <td>
-                      <GateBadge passRate={REFERENCE_MODEL.passRate} />
-                    </td>
-                    <td>
-                      <span className="font-mono text-sm" style={{ color: TONE_COLORS[gateToneFromPassRate(REFERENCE_MODEL.passRate)] }}>
-                        {REFERENCE_MODEL.passRate.toFixed(1)}%
-                      </span>
-                    </td>
-                    <td className="font-mono text-sm">
-                      <span style={{ color: TONE_COLORS.stable }}>{REFERENCE_MODEL.passCount}</span>
-                      <span className="text-foreground-subtle"> / {REFERENCE_MODEL.passCount + REFERENCE_MODEL.failCount}</span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="home-hero-actions mt-6">
-              <a href="#dim-scores" className="home-btn home-btn-gold">
-                View Full Score Breakdown
-              </a>
-              <Link to="/research" className="home-btn home-btn-outline">
-                Read Research Summary
-              </Link>
-              <Link to="/technology/architecture" className="home-btn home-btn-outline">
-                See Evaluation Architecture
-              </Link>
-            </div>
-          </div>
+                  </tbody>
+                </table>
+              </div>
 
-          <aside className="grid gap-4">
-            <article className="card-surface p-6">
-              <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-lilac mb-3">Reference ceiling</p>
-              <h3 className="font-display text-2xl text-foreground mb-2">{REFERENCE_MODEL.label}</h3>
-              <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-                Shown as a reference row, not ranked with public frontier models. It establishes the current benchmark
-                ceiling from the completed Study I baseline.
-              </p>
-              <div className="grid gap-2">
-                <p className="text-sm text-foreground-muted">
-                  Overall EQ Safety score: <span className="text-foreground">{REFERENCE_MODEL.overall.toFixed(1)}%</span>
+              <div className="bm-action-row mt-8">
+                <a href="#dim-scores" className="home-btn home-btn-primary">
+                  View Full Score Breakdown
+                </a>
+                <Link to="/research" className="home-btn home-btn-outline">
+                  Read Research Summary
+                </Link>
+                <Link to="/technology/architecture" className="home-btn home-btn-outline">
+                  See Evaluation Architecture
+                </Link>
+              </div>
+            </div>
+
+            {/* Right — sidebar cards */}
+            <aside className="grid gap-4 content-start">
+              <div className="bm-card">
+                <p className="bm-card-eyebrow text-lilac">Reference ceiling</p>
+                <h3 className="bm-card-title">{REFERENCE_MODEL.label}</h3>
+                <p className="bm-body-muted mb-5 text-sm">
+                  Shown as a reference row, not ranked with public frontier models. It establishes the current benchmark
+                  ceiling from the completed Study I baseline.
                 </p>
-                <p className="text-sm text-foreground-muted">
-                  Safety Gate pass rate: <span className="text-foreground">{REFERENCE_MODEL.passRate.toFixed(1)}%</span>
+                <div className="grid gap-2.5">
+                  <div className="flex items-center justify-between">
+                    <span className="bm-label-xs text-foreground-subtle">Overall EQ Safety</span>
+                    <span className="font-mono text-sm text-foreground">{REFERENCE_MODEL.overall.toFixed(1)}%</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="bm-label-xs text-foreground-subtle">Safety Gate pass rate</span>
+                    <span className="font-mono text-sm text-foreground">{REFERENCE_MODEL.passRate.toFixed(1)}%</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="bm-label-xs text-foreground-subtle">Baseline runs passed</span>
+                    <span className="font-mono text-sm text-foreground">{REFERENCE_MODEL.passCount} of {REFERENCE_MODEL.passCount + REFERENCE_MODEL.failCount}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bm-card">
+                <p className="bm-card-eyebrow">Publication boundary</p>
+                <p className="bm-body-muted text-sm mb-3">
+                  The public leaderboard reflects completed benchmark rows from the live evaluation set. Each model
+                  receives 237 scored runs (79 scenarios × 3 repetitions) before publishing.
                 </p>
-                <p className="text-sm text-foreground-muted">
-                  Baseline runs passed: <span className="text-foreground">{REFERENCE_MODEL.passCount} of {REFERENCE_MODEL.passCount + REFERENCE_MODEL.failCount}</span>
+                <p className="bm-label-xs text-foreground-subtle leading-relaxed">
+                  Current public table: 3 ranked public models · 79-scenario baseline set · 237 scored runs per model ·
+                  same framework used for private client evaluations
                 </p>
               </div>
-            </article>
-
-            <article className="card-surface p-6">
-              <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-foreground-subtle mb-3">
-                Publication boundary
-              </p>
-              <p className="text-sm text-foreground-muted leading-relaxed mb-3">
-                The public leaderboard reflects completed benchmark rows from the live evaluation set. Each model
-                receives 237 scored runs (79 scenarios × 3 repetitions) before publishing.
-              </p>
-              <p className="text-xs text-foreground-subtle leading-relaxed">
-                Current public table: 3 ranked public models · 79-scenario baseline set · 237 scored runs per model ·
-                same framework used for private client evaluations
-              </p>
-            </article>
-          </aside>
+            </aside>
+          </div>
         </div>
       </section>
 
-      <section id="what-this-measures" className="site-section py-12 border-b border-border">
-        <p className="section-kicker mb-8">What This Measures</p>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-6xl">
-          {WHAT_THIS_MEASURES.map((item) => (
-            <article key={item.label} className="card-surface p-6">
-              <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">{item.label}</p>
-              <h2 className="font-display text-2xl text-foreground mb-3">{item.title}</h2>
-              <p className="text-sm text-foreground-muted leading-relaxed">{item.description}</p>
-            </article>
-          ))}
+      {/* ── 02 // What This Measures ── */}
+      <section id="what-this-measures" className="bm-section bm-section-alt">
+        <div className="bm-section-inner">
+          <div className="bm-eyebrow-row">
+            <span className="bm-eyebrow-num">02 //</span>
+            <span className="bm-eyebrow-label">What This Measures</span>
+          </div>
+          <h2 className="bm-section-heading mb-10">Three layers that make the <em>score meaningful.</em></h2>
+          <div className="bm-tri-grid">
+            {WHAT_THIS_MEASURES.map((item) => (
+              <div key={item.label} className="bm-card">
+                <p className="bm-card-eyebrow text-lilac">{item.label}</p>
+                <h3 className="bm-card-title">{item.title}</h3>
+                <p className="bm-body-muted text-sm">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section id="methodology" className="site-section py-14 border-b border-border">
-        <div className="grid gap-8 max-w-6xl">
-          <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-end">
+      {/* ── 03 // Research Foundation ── */}
+      <section id="methodology" className="bm-section">
+        <div className="bm-section-inner">
+          <div className="bm-eyebrow-row">
+            <span className="bm-eyebrow-num">03 //</span>
+            <span className="bm-eyebrow-label">The EQ Safety Benchmark — Research Foundation</span>
+          </div>
+
+          <div className="bm-hero-grid mb-10">
             <div>
-              <p className="section-kicker mb-4">
-                The EQ Safety Benchmark — Research Foundation
-              </p>
-              <h2 className="font-display fluid-heading text-foreground mb-3">
-                A framework that evaluates any response. A baseline that establishes the public record.
+              <h2 className="bm-section-heading">
+                A framework that evaluates any response. A baseline that establishes the <em>public record.</em>
               </h2>
-              <p className="text-foreground-muted max-w-2xl leading-relaxed">
+              <p className="bm-body-muted max-w-2xl">
                 The EQ Safety Benchmark scores AI responses using a binary Safety Gate and eight weighted dimensions. The
                 79-scenario baseline set validates the framework against real-world emotional support interaction data and
                 establishes the public frontier model record.
               </p>
             </div>
-            <div className="card-surface p-5">
-              <a href="#dim-scores" className="summary-jump">
-                View Public Benchmark Scores
-              </a>
-              <p className="text-xs text-foreground-subtle mt-3 leading-relaxed">
+            <div className="bm-card content-start">
+              <a href="#dim-scores" className="bm-jump-link">View Public Benchmark Scores →</a>
+              <p className="bm-label-xs text-foreground-subtle mt-3">
                 Frontier model scores are public. Client evaluations are private.
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          {/* 3-stat bento */}
+          <div className="bm-tri-grid mb-8">
             {METHODOLOGY_STATS.map((item) => (
-              <article key={item.label} className="card-surface p-6">
-                <p className="font-display text-5xl text-lilac mb-2">{item.value}</p>
-                <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-lilac mb-3">{item.label}</p>
-                <p className="text-sm text-foreground-muted leading-relaxed">{item.description}</p>
-              </article>
+              <div key={item.label} className="bm-card bm-stat-card">
+                <p className="bm-stat-num text-lilac">{item.value}</p>
+                <p className="bm-card-eyebrow text-lilac mb-3">{item.label}</p>
+                <p className="bm-body-muted text-sm">{item.description}</p>
+              </div>
             ))}
           </div>
 
-          <div className="grid grid-cols-1 xl:grid-cols-[1fr_auto_1fr] gap-4 items-stretch">
-            {PUBLIC_PRIVATE_SECTIONS.map((item, index) => (
-              <article
-                key={item.label}
-                className={`card-surface p-6 ${item.toneClassName} ${index === 1 ? "xl:col-start-3" : ""}`}
-              >
-                <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-foreground-subtle mb-3">{item.label}</p>
-                <h3 className="font-display text-2xl text-foreground mb-4">{item.title}</h3>
+          {/* Public vs Private 2-col */}
+          <div className="bm-split-grid mb-8">
+            {PUBLIC_PRIVATE_SECTIONS.map((item) => (
+              <div key={item.label} className={`bm-card ${item.toneClassName}`}>
+                <p className="bm-card-eyebrow">{item.label}</p>
+                <h3 className="bm-card-title mb-5">{item.title}</h3>
                 <div className="grid gap-3">
                   {item.items.map((point) => (
-                    <div key={point} className="grid grid-cols-[10px_1fr] gap-3 items-start">
-                      <span className={`mt-1.5 h-2.5 w-2.5 rounded-full ${item.dotClassName}`} aria-hidden="true" />
-                      <p className="text-sm text-foreground-muted leading-relaxed">{point}</p>
+                    <div key={point} className="flex items-start gap-3">
+                      <span className={`mt-1.5 h-2 w-2 shrink-0 rounded-full ${item.dotClassName}`} aria-hidden="true" />
+                      <p className="bm-body-muted text-sm leading-relaxed">{point}</p>
                     </div>
                   ))}
                 </div>
-              </article>
+              </div>
             ))}
-            <div className="hidden xl:block self-stretch w-px bg-border mx-auto" aria-hidden="true" />
           </div>
 
-          <article className="card-surface p-6">
-            <p className="font-display text-2xl italic text-foreground leading-relaxed mb-3">
+          {/* Pull quote */}
+          <blockquote className="bm-pullquote">
+            <p className="bm-pullquote-text">
               Recognition ≠ Safety emerged from the data. Systems with higher emotional articulation often performed worse
               on safety dimensions. That is what the benchmark was built to measure.
             </p>
-            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle">
-              EQ Safety Benchmark, Study I findings
-            </p>
-          </article>
+            <cite className="bm-pullquote-cite">EQ Safety Benchmark, Study I findings</cite>
+          </blockquote>
 
-          <p className="text-xs text-foreground-subtle leading-relaxed text-center">
+          <p className="bm-label-xs text-foreground-subtle text-center mt-6">
             Scenarios sourced from established emotional support interaction datasets · {BENCHMARK_CURRENT.nValue} and
-            growing · Weighted dimensional scoring · Safety Gate binary pass/fail · Consistent judge methodology across all
-            evaluations
+            growing · Weighted dimensional scoring · Safety Gate binary pass/fail · Consistent judge methodology across all evaluations
           </p>
         </div>
       </section>
 
-      <section id="safety-gate" className="site-section py-14 border-b border-border">
-        <div className="max-w-6xl">
-          <p className="section-kicker mb-4">Safety Gate Results</p>
-          <h2 className="font-display fluid-heading text-foreground mb-3">Pass or fail under emotional pressure.</h2>
-          <p className="text-foreground-muted max-w-3xl leading-relaxed mb-8">
-            The first question is binary. Does harmful behavioral pattern appear at all? Safety Gate answers that before
-            dimensional scoring begins.
+      {/* ── 04 // Safety Gate ── */}
+      <section id="safety-gate" className="bm-section bm-section-alt">
+        <div className="bm-section-inner">
+          <div className="bm-eyebrow-row">
+            <span className="bm-eyebrow-num">04 //</span>
+            <span className="bm-eyebrow-label">Safety Gate Results</span>
+          </div>
+          <h2 className="bm-section-heading">Pass or fail under <em>emotional pressure.</em></h2>
+          <p className="bm-body-muted max-w-3xl mb-10">
+            The first question is binary. Does a harmful behavioral pattern appear at all? The Safety Gate answers that
+            before dimensional scoring begins.
           </p>
 
-          {/* At-a-glance model overview */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          {/* At-a-glance model cards */}
+          <div className="bm-quad-grid mb-10">
             {SAFETY_GATE_RESULTS.map((item) => {
               const color = TONE_COLORS[item.tierTone];
               return (
-                <article
+                <div
                   key={item.model}
-                  className={`card-surface p-5 ${item.scope === "reference" ? "border-lilac/30" : ""}`}
+                  className={`bm-card ${item.scope === "reference" ? "bm-card-ref" : ""}`}
                 >
-                  <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-start justify-between mb-5">
                     <div>
                       <h3 className="font-display text-xl text-foreground leading-tight">{item.model}</h3>
-                      <p className="text-xs text-foreground-subtle mt-0.5">
+                      <p className="bm-label-xs text-foreground-subtle mt-0.5">
                         {item.vendor}
                         {item.scope === "reference" && (
                           <span className="ml-1.5 text-lilac">· Reference</span>
@@ -694,46 +711,45 @@ export default function EqSafetyBenchmark() {
                     </div>
                     <GateBadge passRate={item.passRate} />
                   </div>
-                  <p className="font-display text-4xl leading-none mb-1" style={{ color }}>
+                  <p className="font-display text-5xl leading-none mb-1" style={{ color }}>
                     {item.passRate.toFixed(1)}%
                   </p>
-                  <p className="text-xs text-foreground-subtle mb-4">gate pass rate</p>
+                  <p className="bm-label-xs text-foreground-subtle mb-5">gate pass rate</p>
                   <PassCountBar passCount={item.passCount} totalCount={item.totalCount} />
-                </article>
+                </div>
               );
             })}
           </div>
 
           {/* Per-model detail cards */}
-          <div className="grid gap-4">
+          <div className="grid gap-3">
             {SAFETY_GATE_RESULTS.map((item) => {
               const toneColor = TONE_COLORS[item.tierTone];
-
               return (
-                <article key={item.model} className="card-surface p-6">
-                  <div className="grid gap-4 lg:grid-cols-[minmax(0,220px)_auto_120px_minmax(0,1fr)] lg:items-start">
+                <div key={item.model} className="bm-card">
+                  <div className="grid gap-4 lg:grid-cols-[200px_auto_100px_1fr] lg:items-start">
                     <div>
-                      <h3 className="font-display text-2xl text-foreground mb-1">{item.model}</h3>
-                      <p className="text-sm text-foreground-subtle">
+                      <h3 className="font-display text-xl text-foreground mb-0.5">{item.model}</h3>
+                      <p className="bm-label-xs text-foreground-subtle">
                         {item.vendor} · {item.version}
                       </p>
                     </div>
                     <div>
-                      <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle mb-2">Gate Result</p>
+                      <p className="bm-label-xs text-foreground-subtle mb-2">Gate Result</p>
                       <GateBadge passRate={item.passRate} />
                     </div>
                     <div>
-                      <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle mb-2">Tier</p>
-                      <p className="font-mono text-sm" style={{ color: toneColor }}>
+                      <p className="bm-label-xs text-foreground-subtle mb-2">Tier</p>
+                      <p className="font-mono text-sm font-semibold" style={{ color: toneColor }}>
                         {item.tier}
                       </p>
                     </div>
                     <div>
-                      <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle mb-2">Key Finding</p>
+                      <p className="bm-label-xs text-foreground-subtle mb-2">Key Finding</p>
                       <p className="text-sm text-foreground-muted leading-relaxed">{item.finding}</p>
                     </div>
                   </div>
-                </article>
+                </div>
               );
             })}
           </div>
@@ -745,42 +761,48 @@ export default function EqSafetyBenchmark() {
         </div>
       </section>
 
-      <section id="dim-scores" className="site-section py-14 border-b border-border">
-        <div className="max-w-6xl">
-          <p className="section-kicker mb-4">Dimensional Scores — All 8 Dimensions</p>
-          <h2 className="font-display fluid-heading text-foreground mb-3">How each model performs across every dimension.</h2>
-          <p className="text-foreground-muted max-w-3xl leading-relaxed mb-8">
+      {/* ── 05 // Dimensional Scores ── */}
+      <section id="dim-scores" className="bm-section">
+        <div className="bm-section-inner">
+          <div className="bm-eyebrow-row">
+            <span className="bm-eyebrow-num">05 //</span>
+            <span className="bm-eyebrow-label">Dimensional Scores — All 8 Dimensions</span>
+          </div>
+          <h2 className="bm-section-heading">How each model performs <em>across every dimension.</em></h2>
+          <p className="bm-body-muted max-w-3xl mb-10">
             Each dimension scores a specific behavioral safety question. Higher is safer. Scores below 60% indicate active
             mitigation needs.
           </p>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+          {/* Legend */}
+          <div className="bm-quad-grid mb-6">
             {[
-              { label: "80-100%", note: "Stable", tone: "stable" as const },
-              { label: "65-79%", note: "Conditional", tone: "conditional" as const },
-              { label: "50-64%", note: "Mitigation needed", tone: "mitigation" as const },
+              { label: "80–100%", note: "Stable", tone: "stable" as const },
+              { label: "65–79%", note: "Conditional", tone: "conditional" as const },
+              { label: "50–64%", note: "Mitigation needed", tone: "mitigation" as const },
               { label: "Below 50%", note: "Active risk", tone: "risk" as const },
             ].map((item) => (
-              <div key={item.label} className="card-surface p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <span
-                    className="inline-flex h-2.5 w-2.5 rounded-full"
-                    style={{ backgroundColor: TONE_COLORS[item.tone] }}
-                    aria-hidden="true"
-                  />
-                  <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle">{item.label}</p>
+              <div key={item.label} className="bm-legend-chip">
+                <span
+                  className="h-2 w-2 rounded-full shrink-0"
+                  style={{ backgroundColor: TONE_COLORS[item.tone] }}
+                  aria-hidden="true"
+                />
+                <div>
+                  <p className="bm-label-xs text-foreground-muted">{item.label}</p>
+                  <p className="text-xs text-foreground-subtle">{item.note}</p>
                 </div>
-                <p className="text-sm text-foreground-muted">{item.note}</p>
               </div>
             ))}
           </div>
 
-          <article className="card-surface p-6 mb-4">
-            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-4">Overall EQ Safety Score</p>
+          {/* Overall scores card */}
+          <div className="bm-card mb-4">
+            <p className="bm-card-eyebrow text-lilac mb-5">Overall EQ Safety Score</p>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {MODEL_COLUMNS.map((model) => (
-                <div key={model.key} className="rounded border border-border bg-background-surface px-4 py-4">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle mb-3">{model.label}</p>
+                <div key={model.key} className="bm-score-cell">
+                  <p className="bm-label-xs text-foreground-subtle mb-3">{model.label}</p>
                   <p
                     className="font-display text-4xl mb-3"
                     style={{ color: TONE_COLORS[OVERALL_SCORES[model.key].tone] }}
@@ -791,8 +813,9 @@ export default function EqSafetyBenchmark() {
                 </div>
               ))}
             </div>
-          </article>
+          </div>
 
+          {/* Expandable dimension rows */}
           <div className="grid gap-2">
             {DIMENSION_SCORES.map((dimension, dimIndex) => {
               const letter = String.fromCharCode(65 + dimIndex);
@@ -800,25 +823,21 @@ export default function EqSafetyBenchmark() {
               const allPcts = MODEL_COLUMNS.map((m) => dimension.scores[m.key].pct);
               const maxPct = Math.max(...allPcts);
               const minPct = Math.min(...allPcts);
-              // Compute overall tone for collapsed summary bar
               const avgPct = Math.round(allPcts.reduce((a, b) => a + b, 0) / allPcts.length);
               const avgTone: ScoreTone = avgPct >= 80 ? "stable" : avgPct >= 65 ? "conditional" : avgPct >= 50 ? "mitigation" : "risk";
 
               return (
-                <article key={dimension.name} className="card-surface overflow-hidden">
-                  {/* ── Collapsed header — always visible ── */}
+                <div key={dimension.name} className="bm-dim-row">
                   <button
                     type="button"
                     onClick={() => setExpandedDim(isOpen ? null : letter)}
-                    className="w-full flex items-center gap-3 px-5 py-4 text-left hover:bg-background-surface/50 transition-colors group"
+                    className="bm-dim-trigger"
                     aria-expanded={isOpen}
                   >
-                    <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded bg-lilac-dim/30 text-[11px] font-mono text-lilac">
-                      {letter}
-                    </span>
-                    <h3 className="font-display text-base text-foreground flex-1">{dimension.name}</h3>
+                    <span className="bm-dim-letter">{letter}</span>
+                    <h3 className="font-display text-base text-foreground flex-1 text-left">{dimension.name}</h3>
                     {/* Mini score pills */}
-                    <div className="hidden sm:flex items-center gap-1.5 shrink-0">
+                    <div className="hidden sm:flex items-center gap-2 shrink-0">
                       {MODEL_COLUMNS.map((m) => {
                         const s = dimension.scores[m.key];
                         return (
@@ -834,25 +853,25 @@ export default function EqSafetyBenchmark() {
                     </div>
                     {/* Avg bar */}
                     <div className="hidden md:flex items-center gap-2 w-20 shrink-0">
-                      <div className="flex-1 h-1.5 rounded-full bg-border overflow-hidden">
+                      <div className="flex-1 h-1 rounded-full bg-white/5 overflow-hidden">
                         <div
-                          className="h-full rounded-full transition-all"
+                          className="h-full rounded-full"
                           style={{ width: `${avgPct}%`, backgroundColor: TONE_COLORS[avgTone] }}
                         />
                       </div>
                     </div>
                     <span
-                      className="font-mono text-[10px] opacity-40 group-hover:opacity-70 transition-all shrink-0"
-                      style={{ transform: isOpen ? "rotate(180deg)" : "none", display: "inline-block" }}
+                      className="text-[10px] opacity-30 transition-transform shrink-0 inline-block"
+                      style={{ transform: isOpen ? "rotate(180deg)" : "none" }}
+                      aria-hidden="true"
                     >
                       ▾
                     </span>
                   </button>
 
-                  {/* ── Expanded detail ── */}
                   {isOpen && (
-                    <div className="border-t border-border px-5 pb-5 pt-4">
-                      <p className="text-sm text-foreground-muted leading-relaxed mb-5">{dimension.question}</p>
+                    <div className="bm-dim-expanded">
+                      <p className="text-sm text-foreground-muted leading-relaxed mb-6">{dimension.question}</p>
                       <div className="grid grid-cols-2 xl:grid-cols-4 gap-3">
                         {MODEL_COLUMNS.map((model) => {
                           const score = dimension.scores[model.key];
@@ -861,26 +880,18 @@ export default function EqSafetyBenchmark() {
                           return (
                             <div
                               key={model.key}
-                              className="rounded border bg-background-surface px-4 py-4"
+                              className="bm-score-cell"
                               style={{
-                                borderColor: isBest ? TONE_COLORS[score.tone] : undefined,
-                                borderTopWidth: "3px",
-                                borderTopColor: TONE_COLORS[score.tone],
+                                borderTop: `2px solid ${TONE_COLORS[score.tone]}`,
                               }}
                             >
                               <div className="flex items-center justify-between mb-2">
-                                <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-subtle">
-                                  {model.label}
-                                </p>
+                                <p className="bm-label-xs text-foreground-subtle">{model.label}</p>
                                 {isBest && (
-                                  <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color: TONE_COLORS[score.tone] }}>
-                                    ↑ Best
-                                  </span>
+                                  <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color: TONE_COLORS[score.tone] }}>↑ Best</span>
                                 )}
                                 {isWorst && (
-                                  <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color: TONE_COLORS[score.tone] }}>
-                                    ↓ Low
-                                  </span>
+                                  <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color: TONE_COLORS[score.tone] }}>↓ Low</span>
                                 )}
                               </div>
                               <p className="font-display text-2xl mb-2" style={{ color: TONE_COLORS[score.tone] }}>
@@ -893,7 +904,7 @@ export default function EqSafetyBenchmark() {
                       </div>
                     </div>
                   )}
-                </article>
+                </div>
               );
             })}
           </div>
@@ -905,53 +916,61 @@ export default function EqSafetyBenchmark() {
         </div>
       </section>
 
-      <section id="findings" className="site-section py-14 border-b border-border">
-        <div className="max-w-6xl">
-          <p className="section-kicker mb-4">What The Data Shows</p>
-          <h2 className="font-display fluid-heading text-foreground mb-8">Key findings from the baseline evaluation.</h2>
+      {/* ── 06 // Key Findings ── */}
+      <section id="findings" className="bm-section bm-section-alt">
+        <div className="bm-section-inner">
+          <div className="bm-eyebrow-row">
+            <span className="bm-eyebrow-num">06 //</span>
+            <span className="bm-eyebrow-label">What The Data Shows</span>
+          </div>
+          <h2 className="bm-section-heading">Key findings from the <em>baseline evaluation.</em></h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div className="bm-split-grid mb-6">
             {FINDINGS.map((item) => (
-              <article key={item.label} className="card-surface p-6">
-                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">{item.label}</p>
-                <h3 className="font-display text-2xl text-foreground mb-3">{item.title}</h3>
-                <p className="text-sm text-foreground-muted leading-relaxed">{item.body}</p>
-              </article>
+              <div key={item.label} className="bm-card">
+                <p className="bm-card-eyebrow text-lilac">{item.label}</p>
+                <h3 className="bm-card-title">{item.title}</h3>
+                <p className="bm-body-muted text-sm">{item.body}</p>
+              </div>
             ))}
           </div>
 
-          <article className="card-surface p-6 border-l-2 border-lilac">
-            <p className="font-display text-2xl italic text-foreground leading-relaxed mb-3">
+          <blockquote className="bm-pullquote bm-pullquote-lilac">
+            <p className="bm-pullquote-text">
               The systems with the highest empathy articulation scores were often the most dangerous under emotional pressure
               because they made users feel heard while reinforcing the patterns that created harm.
             </p>
-            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle">
-              EQ Safety Benchmark · 1,474 evaluated responses · 79 scenarios · 3 models
-            </p>
-          </article>
+            <cite className="bm-pullquote-cite">
+              EQ Safety Benchmark · {BENCHMARK_CURRENT.nShort} evaluated responses · {BENCHMARK_CURRENT.scenarios} scenarios · 3 models
+            </cite>
+          </blockquote>
         </div>
       </section>
 
-      <section id="meth-transparency" className="site-section py-14 border-b border-border">
-        <div className="max-w-6xl">
-          <p className="section-kicker mb-4">Methodology</p>
-          <h2 className="font-display fluid-heading text-foreground mb-3">How these scores are produced.</h2>
-          <p className="text-foreground-muted max-w-3xl leading-relaxed mb-8">
+      {/* ── 07 // Methodology ── */}
+      <section id="meth-transparency" className="bm-section">
+        <div className="bm-section-inner">
+          <div className="bm-eyebrow-row">
+            <span className="bm-eyebrow-num">07 //</span>
+            <span className="bm-eyebrow-label">Methodology</span>
+          </div>
+          <h2 className="bm-section-heading">How these scores <em>are produced.</em></h2>
+          <p className="bm-body-muted max-w-3xl mb-10">
             The EQ Safety Benchmark is a public research instrument. The methodology is documented, the scenario set is
             consistent, and the same evaluation process is applied to every system.
           </p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
+          <div className="bm-tri-grid mb-6">
             {METHOD_TRANSPARENCY.map((item) => (
-              <article key={item.label} className="card-surface p-6">
-                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-3">{item.label}</p>
-                <p className="font-display text-5xl text-lilac mb-3">{item.value}</p>
-                <p className="text-sm text-foreground-muted leading-relaxed">{item.description}</p>
-              </article>
+              <div key={item.label} className="bm-card bm-stat-card">
+                <p className="bm-card-eyebrow text-lilac mb-1">{item.label}</p>
+                <p className="bm-stat-num text-lilac">{item.value}</p>
+                <p className="bm-body-muted text-sm">{item.description}</p>
+              </div>
             ))}
           </div>
 
-          <p className="text-xs text-foreground-subtle leading-relaxed text-center">
+          <p className="bm-label-xs text-foreground-subtle text-center">
             Scenarios sourced from established emotional support interaction datasets · Rubric developed for behavioral
             safety evaluation in emotional contexts · v2.1 scoring with Safety Gate binary plus 8 weighted dimensions ·
             Consistent judge methodology across all evaluations
@@ -959,32 +978,35 @@ export default function EqSafetyBenchmark() {
         </div>
       </section>
 
-      <section id="compare-cta" className="site-section py-14">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="section-kicker mb-4">How Your System Compares</p>
-          <h2 className="font-display fluid-heading text-foreground mb-3">These are the frontier model scores. Where does your system land?</h2>
-          <p className="text-foreground-muted leading-relaxed mb-6">
-            Ikwe EQ Safety Evaluations run against the same {BENCHMARK_CURRENT.scenarios}-scenario baseline set.
-            Results are fully confidential. You receive your tier classification and dimensional scores positioned
-            against this public record.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <a
-              href="/get-started"
-              className="inline-flex items-center rounded bg-lilac px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-lilac-glow transition-colors"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              Request Ikwe EQ Safety Evaluation
-            </a>
-            <a
-              href="/"
-              className="inline-flex items-center rounded border border-border px-5 py-2.5 text-sm text-foreground hover:text-foreground hover:border-foreground-muted transition-colors btn-outline"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              How It Works
-            </a>
+      {/* ── 08 // Closing CTA ── */}
+      <section id="compare-cta" className="bm-section bm-close-section">
+        <div className="bm-section-inner">
+          <div className="bm-cta-inner">
+            <div className="bm-eyebrow-row justify-center">
+              <span className="bm-eyebrow-num">08 //</span>
+              <span className="bm-eyebrow-label">How Your System Compares</span>
+            </div>
+            <h2 className="bm-cta-heading">
+              These are the frontier model scores.<br />
+              Where does your system <em>land?</em>
+            </h2>
+            <p className="bm-cta-body">
+              Ikwe EQ Safety Evaluations run against the same {BENCHMARK_CURRENT.scenarios}-scenario baseline set.
+              Results are fully confidential. You receive your tier classification and dimensional scores positioned
+              against this public record.
+            </p>
+            <div className="bm-cta-actions">
+              <Link to="/get-started" className="home-btn home-btn-primary">
+                Request Ikwe EQ Safety Evaluation
+              </Link>
+              <Link to="/" className="home-btn home-btn-outline">
+                How It Works
+              </Link>
+            </div>
+            <p className="bm-label-xs text-foreground-subtle mt-5">
+              Client scores are never published. Your evaluation results belong to you.
+            </p>
           </div>
-          <p className="text-xs text-foreground-subtle mt-4">Client scores are never published. Your evaluation results belong to you.</p>
         </div>
       </section>
     </PageShell>
