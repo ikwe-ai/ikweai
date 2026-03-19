@@ -15,7 +15,7 @@ export default function Consultation() {
       <ArchiveBanner />
 
       <SummaryHero
-        kicker="Scope Review"
+        kicker="Pre-Audit Planning"
         title="Scope Review"
         summary="Scope review is the alignment layer around an audit request. Start with intake, then use scope review for planning and delivery fit."
         highlights={[
