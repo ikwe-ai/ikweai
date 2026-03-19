@@ -286,7 +286,7 @@ export default function Contact() {
         ogImagePath="/og/intake.png"
       />
       <SummaryHero
-        kicker="Independent Evaluation Intake"
+        kicker="Start Here"
         title="Request Independent Evaluation"
         summary="Third-party Behavioral Safety Validation for human-facing AI systems. We use the EQ Safety Benchmark through an Ikwe EQ Safety Evaluation, then extend into Ikwe Behavioral Monitoring as needed."
         highlights={[

@@ -15,7 +15,7 @@ export default function SampleReport() {
       />
 
       <SummaryHero
-        kicker="Sample Report"
+        kicker="Deliverable Preview"
         title="Public Redacted Sample Report"
         summary="Review the report structure used in client-facing deliverables. The web preview shows the format. The styled PDF is the sendable sample asset."
         highlights={[
