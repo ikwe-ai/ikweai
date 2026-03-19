@@ -2486,9 +2486,8 @@ body {
   border-color: hsla(var(--lilac) / 0.5);
 }
 
-/* Context rail aside */
+/* Context rail aside – display is handled by Tailwind (hidden lg:flex) */
 .summary-context {
-  display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
