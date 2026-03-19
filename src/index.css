@@ -1483,3 +1483,417 @@
   .home-hero-section     { padding: 7rem 1.25rem 4rem; }
   .home-close-section    { padding: 6rem 1.25rem; }
 }
+
+
+/* ============================================================
+   BENCHMARK PAGE — Design System (Stitch editorial treatment)
+   Scoped to .bm-* to avoid collisions with other pages
+   ============================================================ */
+
+/* ── Layout tokens ── */
+:root {
+  --bm-bg:         #18101d;
+  --bm-bg-alt:     #1e1527;
+  --bm-surface:    #231a2e;
+  --bm-surface-hi: #2d2240;
+  --bm-border:     rgba(155, 114, 232, 0.10);
+  --bm-lilac:      #dbb8ff;
+  --bm-lilac-dim:  rgba(219, 184, 255, 0.08);
+}
+
+/* ── Section shells ── */
+.bm-section {
+  background: var(--bm-bg);
+  padding: 5.5rem 1.5rem;
+  border-bottom: 1px solid var(--bm-border);
+}
+.bm-section-alt {
+  background: var(--bm-bg-alt);
+}
+.bm-close-section {
+  background: var(--bm-bg);
+  padding: 7rem 1.5rem;
+  border-bottom: none;
+}
+.bm-section-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+/* ── Section eyebrow row (editorial numbering) ── */
+.bm-eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.bm-eyebrow-num {
+  font-family: var(--font-label, 'Space Grotesk', sans-serif);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bm-lilac);
+  opacity: 0.7;
+}
+.bm-eyebrow-label {
+  font-family: var(--font-label, 'Space Grotesk', sans-serif);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: hsl(var(--foreground-subtle));
+}
+
+/* ── Headings ── */
+.bm-section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.12;
+  color: hsl(var(--foreground));
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+.bm-section-heading em {
+  font-style: italic;
+  color: var(--bm-lilac);
+}
+
+/* ── Body text ── */
+.bm-body-muted {
+  color: hsl(var(--foreground-muted));
+  line-height: 1.7;
+}
+.bm-label-xs {
+  font-family: var(--font-label, 'Space Grotesk', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+/* ── Cards (borderless tonal depth) ── */
+.bm-card {
+  background: var(--bm-surface);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: background 0.2s;
+}
+.bm-card:hover {
+  background: var(--bm-surface-hi);
+}
+.bm-card-ref {
+  box-shadow: 0 0 0 1px rgba(219, 184, 255, 0.2) inset;
+}
+.bm-card-eyebrow {
+  font-family: var(--font-label, 'Space Grotesk', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: hsl(var(--foreground-subtle));
+  margin-bottom: 0.6rem;
+}
+.bm-card-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: hsl(var(--foreground));
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+/* ── Stat cards ── */
+.bm-stat-card {
+  display: flex;
+  flex-direction: column;
+}
+.bm-stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.03em;
+}
+
+/* ── Score cell (inside bm-card) ── */
+.bm-score-cell {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+/* ── Reference chip ── */
+.bm-ref-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid rgba(219, 184, 255, 0.3);
+  padding: 0.1rem 0.5rem;
+  font-family: var(--font-label, 'Space Grotesk', sans-serif);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bm-lilac);
+}
+
+/* ── Gate badge ── */
+.bm-gate-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 4px;
+  border: 1px solid;
+  padding: 0.2rem 0.6rem;
+  font-family: var(--font-label, 'Space Grotesk', sans-serif);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.bm-gate-dot {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Alert callout (0/3 fail) ── */
+.bm-alert-callout {
+  border-left: 2px solid hsl(var(--danger));
+  background: hsl(var(--danger) / 0.06);
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 1.25rem 1.5rem;
+}
+.bm-alert-stat {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+.bm-alert-body {
+  font-size: 0.875rem;
+  color: hsl(var(--foreground-muted));
+  line-height: 1.65;
+}
+
+/* ── Pull quote ── */
+.bm-pullquote {
+  background: var(--bm-surface);
+  border-radius: 0.75rem;
+  padding: 2rem 2.5rem;
+  border-left: 2px solid rgba(219, 184, 255, 0.3);
+}
+.bm-pullquote-lilac {
+  border-left-color: var(--bm-lilac);
+}
+.bm-pullquote-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  font-style: italic;
+  color: hsl(var(--foreground));
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+.bm-pullquote-cite {
+  font-family: var(--font-label, 'Space Grotesk', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: hsl(var(--foreground-subtle));
+  font-style: normal;
+}
+
+/* ── Jump link ── */
+.bm-jump-link {
+  font-family: var(--font-label, 'Space Grotesk', sans-serif);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--bm-lilac);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: opacity 0.15s;
+}
+.bm-jump-link:hover { opacity: 0.75; }
+
+/* ── Legend chip ── */
+.bm-legend-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--bm-surface);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+/* ── Dimension accordion row ── */
+.bm-dim-row {
+  background: var(--bm-surface);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: background 0.15s;
+}
+.bm-dim-row:hover {
+  background: var(--bm-surface-hi);
+}
+.bm-dim-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: background 0.15s;
+}
+.bm-dim-trigger:hover {
+  background: rgba(255,255,255,0.025);
+}
+.bm-dim-letter {
+  display: inline-flex;
+  height: 1.75rem;
+  width: 1.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background: var(--bm-lilac-dim);
+  font-family: var(--font-label, 'Space Grotesk', sans-serif);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--bm-lilac);
+  flex-shrink: 0;
+}
+.bm-dim-expanded {
+  border-top: 1px solid var(--bm-border);
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+/* ── Table ── */
+.bm-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.bm-table thead tr {
+  border-bottom: 1px solid var(--bm-border);
+}
+.bm-table thead th {
+  font-family: var(--font-label, 'Space Grotesk', sans-serif);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: hsl(var(--foreground-subtle));
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  white-space: nowrap;
+}
+.bm-table tbody td {
+  padding: 0.85rem 0.75rem;
+  color: hsl(var(--foreground-muted));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  vertical-align: middle;
+}
+.bm-table tbody tr:last-child td { border-bottom: none; }
+.bm-table-ref-row {
+  border-top: 1px solid rgba(219, 184, 255, 0.15) !important;
+  background: rgba(219, 184, 255, 0.03);
+}
+
+/* ── Action row (inline button group) ── */
+.bm-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* ── CTA section ── */
+.bm-cta-inner {
+  max-width: 42rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.bm-cta-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: hsl(var(--foreground));
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+.bm-cta-heading em {
+  font-style: italic;
+  color: var(--bm-lilac);
+}
+.bm-cta-body {
+  font-size: 1rem;
+  color: hsl(var(--foreground-muted));
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.bm-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+/* ── Grid layouts ── */
+.bm-hero-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1024px) {
+  .bm-hero-grid {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    align-items: start;
+  }
+}
+
+.bm-tri-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .bm-tri-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.bm-split-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .bm-split-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.bm-quad-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 1024px) {
+  .bm-quad-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ── Responsive tweaks ── */
+@media (max-width: 640px) {
+  .bm-section { padding: 4rem 1.25rem; }
+  .bm-close-section { padding: 5rem 1.25rem; }
+  .bm-quad-grid { grid-template-columns: 1fr; }
+  .bm-pullquote { padding: 1.5rem; }
+  .bm-table thead th,
+  .bm-table tbody td { padding: 0.65rem 0.5rem; }
+}
