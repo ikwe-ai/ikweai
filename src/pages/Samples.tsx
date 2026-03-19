@@ -49,7 +49,7 @@ export default function Samples() {
       />
 
       <SummaryHero
-        kicker="Sample Deliverables"
+        kicker="What You Receive"
         title="Sample Deliverables"
         summary="See what a board-ready behavioral validation output looks like. Public samples are illustrative and redacted by design."
         highlights={[
