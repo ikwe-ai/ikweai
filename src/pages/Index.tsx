@@ -22,37 +22,105 @@ const exposurePills = [
 ] as const;
 
 const dimensions = [
-  ["Escalation Stability", "Does the system amplify or de-escalate distress?"],
-  ["Vulnerable User Response", "How does the system respond under crisis or instability?"],
-  ["Manipulation Susceptibility", "Can prompts override behavioral safeguards?"],
-  ["Power Asymmetry", "Does the system exploit vulnerability or imbalance?"],
-  ["Multi-Turn Trajectory", "Does behavioral drift emerge over sustained interaction?"],
-  ["Dependency Reinforcement", "Does the system encourage emotional reliance?"],
-  ["Correction & Recovery", "Can the system recover from harmful conversational drift?"],
-  ["Stress Condition Performance", "Does behavioral stability hold under emotional intensity?"],
+  {
+    title: "Escalation Stability",
+    question: "Does the system amplify or de-escalate distress?",
+    detail: "Tests 23 crisis-response scenarios where user distress signals are explicit. Measures whether the system actively reduces emotional intensity.",
+    fail: "Mirrors user panic, increases urgency, or steers toward worse outcomes.",
+  },
+  {
+    title: "Vulnerable User Response",
+    question: "How does the system respond under crisis or instability?",
+    detail: "Evaluates responses when users express self-harm ideation, acute mental health crises, or requests for help they can't articulate.",
+    fail: "Answers the literal question while ignoring obvious distress signals.",
+  },
+  {
+    title: "Manipulation Susceptibility",
+    question: "Can prompts override behavioral safeguards?",
+    detail: "Tests whether social engineering — roleplay, emotional pressure, or identity framing — can bypass the system's safety behaviors.",
+    fail: "Safeguards collapse under persona requests or user-led reframing.",
+  },
+  {
+    title: "Power Asymmetry",
+    question: "Does the system exploit vulnerability or imbalance?",
+    detail: "Evaluates whether the system leverages user emotional states to steer decisions or behavior in ways that serve the system over the user.",
+    fail: "Limits user autonomy, fosters dependence, or deflects accountability.",
+  },
+  {
+    title: "Multi-Turn Trajectory",
+    question: "Does behavioral drift emerge over sustained interaction?",
+    detail: "Measures how the system's behavioral profile shifts across 8+ turn conversations. Stability should hold or improve, not erode.",
+    fail: "Emotional tone worsens over time without correction or repair.",
+  },
+  {
+    title: "Dependency Reinforcement",
+    question: "Does the system encourage emotional reliance?",
+    detail: "Detects patterns that position the AI as a substitute for human relationships, professional support, or the user's own judgment.",
+    fail: "Actively encourages return visits for emotional support it shouldn't provide.",
+  },
+  {
+    title: "Correction & Recovery",
+    question: "Can the system recover from harmful conversational drift?",
+    detail: "Tests whether the system can identify and interrupt a deteriorating interaction — and whether it does so meaningfully rather than performatively.",
+    fail: "Harm trajectory continues even after clear distress signals and re-prompting.",
+  },
+  {
+    title: "Stress Condition Performance",
+    question: "Does behavioral stability hold under emotional intensity?",
+    detail: "Evaluates behavior when users display acute emotional intensity, urgency, or volatility. Stability should not require calm inputs.",
+    fail: "System destabilizes, over-accommodates demands, or disengages entirely.",
+  },
 ] as const;
 
 const tiers = [
-  ["TIER I",  "Stable Behavioral Integrity",  "Launch with confidence",      "Standard monitoring",                "tier-1"],
-  ["TIER II", "Moderate Behavioral Risk",      "Launch with mitigations",     "Safeguards + quarterly review",      "tier-2"],
-  ["TIER III","Escalation Instability",        "Remediate before launch",     "Engineering fixes required, retest", "tier-3"],
-  ["TIER IV", "High Vulnerability Exposure",   "Do not launch",               "Fundamental redesign needed",        "tier-4"],
+  {
+    badge: "TIER I",
+    title: "Stable Behavioral Integrity",
+    subtitle: "Launch with confidence",
+    action: "Standard monitoring",
+    detail: "System demonstrates consistently safe behavioral patterns. Board, legal, and compliance receive a positive safety record.",
+    tone: "tier-1",
+  },
+  {
+    badge: "TIER II",
+    title: "Moderate Behavioral Risk",
+    subtitle: "Launch with mitigations",
+    action: "Safeguards + quarterly review",
+    detail: "Specific failure modes identified and mapped. Engineering receives actionable remediation guidance before next deployment.",
+    tone: "tier-2",
+  },
+  {
+    badge: "TIER III",
+    title: "Escalation Instability",
+    subtitle: "Remediate before launch",
+    action: "Engineering fixes required, retest",
+    detail: "Structural behavioral failures present. Retest required after fixes. Legal exposure is significant at current state.",
+    tone: "tier-3",
+  },
+  {
+    badge: "TIER IV",
+    title: "High Vulnerability Exposure",
+    subtitle: "Do not launch",
+    action: "Fundamental redesign needed",
+    detail: "System poses demonstrable harm risk to vulnerable users. Fundamental architectural changes required before re-evaluation.",
+    tone: "tier-4",
+  },
 ] as const;
 
 const deliverables = [
-  ["Board",      "Defensible audit record",       "Governance documentation your directors can stand behind."],
-  ["Legal",      "Due diligence evidence",        "Documented behavioral evidence for legal exposure and liability review."],
-  ["Compliance", "Versioned evidence packages",   "Reproducible compliance documentation updated after each deployment change."],
-  ["Engineering","Structured failure mapping",    "Specific failure mode data your team can act on in real time."],
+  ["Board",       "Defensible audit record",       "Governance documentation your directors can stand behind."],
+  ["Legal",       "Due diligence evidence",        "Documented behavioral evidence for legal exposure and liability review."],
+  ["Compliance",  "Versioned evidence packages",   "Reproducible compliance documentation updated after each deployment change."],
+  ["Engineering", "Structured failure mapping",    "Specific failure mode data your team can act on in real time."],
 ] as const;
 
 const audienceItems = [
-  "Companion AI platforms",
-  "AI mental health systems",
-  "Education AI products",
-  "Consumer-facing AI systems",
-  "Enterprise AI with human consequence",
-  "Fintech and healthcare AI",
+  { icon: "💬", label: "Companion AI platforms",              sub: "Long-form emotional engagement, always-on support" },
+  { icon: "🧠", label: "AI mental health systems",            sub: "Crisis exposure, therapeutic framing, vulnerable users" },
+  { icon: "📚", label: "Education AI products",               sub: "Minors, stress contexts, dependency risk" },
+  { icon: "📱", label: "Consumer-facing AI systems",          sub: "High volume, diverse vulnerability profiles" },
+  { icon: "🏢", label: "Enterprise AI with human consequence",sub: "HR, performance, benefits decisions" },
+  { icon: "🏥", label: "Fintech and healthcare AI",           sub: "Regulated exposure, high-stakes advice" },
 ] as const;
 
 const urgencyItems = [
@@ -70,6 +138,7 @@ const engagementLevels = [
     description: "Determine if your system passes or fails under controlled emotional stress scenarios.",
     forItems: ["Early-stage systems", "Pre-deployment validation", "Internal confidence check"],
     result: "Your system has been externally stress-tested. A safety gate result is on record.",
+    timeline: "5–7 business days",
   },
   {
     level: "LEVEL II",
@@ -78,6 +147,7 @@ const engagementLevels = [
     forItems: ["Board-level governance", "Regulated deployment", "Enterprise procurement"],
     result: "Your board, legal, and compliance teams have documented third-party behavioral evidence.",
     featured: true,
+    timeline: "3–4 weeks",
   },
   {
     level: "LEVEL III",
@@ -85,13 +155,76 @@ const engagementLevels = [
     description: "Continuous behavioral drift monitoring after each deployment change. Quarterly re-evaluation to catch degradation before it reaches incident scale.",
     forItems: ["Live systems at scale", "High-consequence AI deployment", "Sustained regulatory posture"],
     result: "Your system has an independent behavioral safety record — versioned and defensible over time.",
+    timeline: "Ongoing · Quarterly",
   },
 ] as const;
 
 const closingProps = [
-  ["Independent", "No conflict of interest"],
-  ["Quantified",  "Scored, not subjective"],
-  ["Longitudinal","Tracks drift over time"],
+  ["Independent",  "No conflict of interest"],
+  ["Quantified",   "Scored, not subjective"],
+  ["Longitudinal", "Tracks drift over time"],
+] as const;
+
+const flowSteps = [
+  {
+    number: "01",
+    title: "User in distress",
+    subtitle: "Vulnerable moment",
+    detail: "A real user reaches your AI during crisis, grief, or emotional need — the moments that define long-term trust.",
+    featured: false,
+  },
+  {
+    number: "02",
+    title: "AI response",
+    subtitle: "What the system does",
+    detail: "Ikwe captures actual outputs across 79 controlled emotional scenarios — not what the system was designed to say, but what it does.",
+    featured: false,
+  },
+  {
+    number: "03",
+    title: "Ikwe evaluation",
+    subtitle: "Behavioral analysis",
+    detail: "Each response is scored across 8 behavioral safety dimensions using the EQ Safety Benchmark framework.",
+    featured: true,
+  },
+  {
+    number: "04",
+    title: "Risk score + report",
+    subtitle: "Audit-ready output",
+    detail: "You receive a Tier I–IV classification, structured failure map, and remediation guidance your team can act on.",
+    featured: false,
+  },
+] as const;
+
+const bentoBars = [
+  { height: "40%", opacity: 0.2,  label: "T1", alert: false },
+  { height: "60%", opacity: 0.3,  label: "T2", alert: false },
+  { height: "25%", opacity: 0.15, label: "T3", alert: false },
+  { height: "80%", opacity: 0.4,  label: "T4", alert: false },
+  { height: "55%", opacity: 0.25, label: "T5", alert: false },
+  { height: "75%", opacity: 0.5,  label: "T6", alert: false },
+  { height: "35%", opacity: 1,    label: "T7", alert: true  },
+] as const;
+
+const driftNoteBullets = [
+  { icon: "⟳", text: "Measures trajectories, not just outputs" },
+  { icon: "⚑", text: "Flags escalation, manipulation, dependency loops" },
+  { icon: "◎", text: "Produces audit-ready reports" },
+] as const;
+
+const phaseIncludes = [
+  {
+    items: ["79 emotionally vulnerable scenarios", "Binary pass / fail result", "Launch risk assessment document"],
+    timeline: "5–7 business days",
+  },
+  {
+    items: ["All 8 dimensions · 12 vulnerability categories", "Tier I–IV classification", "Failure map + remediation plan"],
+    timeline: "3–4 weeks",
+  },
+  {
+    items: ["Post-deployment behavioral monitoring", "Quarterly re-evaluation", "Versioned safety record over time"],
+    timeline: "Ongoing · Quarterly",
+  },
 ] as const;
 
 export default function Home() {
@@ -109,12 +242,10 @@ export default function Home() {
 
         {/* ── HERO ── */}
         <section id="hero" className="home-hero-section">
-          {/* ambient glow blobs */}
           <div aria-hidden="true" className="home-glow-blob home-glow-blob-left" />
           <div aria-hidden="true" className="home-glow-blob home-glow-blob-right" />
 
           <div className="home-wrap home-hero-grid">
-            {/* left column */}
             <div className="home-hero-left">
               <div className="home-hero-tag">
                 <span className="home-hero-tag-dot" />
@@ -125,6 +256,9 @@ export default function Home() {
                 that humans<br />
                 can actually <em>trust.</em>
               </h1>
+              <p className="home-hero-mission">
+                ikwe audits ensure safety remains a <em>constant</em>, not a coincidence.
+              </p>
               <p className="home-hero-sub">
                 If your human-facing AI has never had an independent behavioral audit, you don't know whether it
                 protects users in <strong>vulnerable moments</strong> — or quietly makes things worse.
@@ -143,7 +277,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* right column — stats panel */}
             <div className="home-hero-right">
               <div className="home-hero-stats">
                 <div className="home-hero-stat">
@@ -166,15 +299,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── THESIS: EMPATHY ≠ SAFETY ── */}
+        {/* ── THESIS ── */}
         <section id="thesis" className="home-section home-section-alt">
           <div className="home-wrap">
             <div className="home-section-header">
               <span className="home-eyebrow">Section 01 // Conflict</span>
               <div className="home-section-header-right">
-                <span className="home-section-aside">
-                  A polite AI is not necessarily a safe AI.
-                </span>
+                <span className="home-section-aside">A polite AI is not necessarily a safe AI.</span>
               </div>
             </div>
 
@@ -190,7 +321,7 @@ export default function Home() {
                 </p>
                 <p className="home-copy">
                   This is a <strong>behavioral pattern</strong> that does not appear in standard evaluations, accuracy
-                  benchmarks, or compliance audits. It surfaces when humans are vulnerable. That is exactly
+                  benchmarks, or compliance audits. It surfaces when humans are vulnerable — exactly
                   where current governance stops measuring.
                 </p>
                 <div className="home-pullquote">
@@ -199,7 +330,7 @@ export default function Home() {
                 </div>
 
                 <div className="home-failure-cards" style={{ marginTop: "2.5rem" }}>
-                  <article className="home-failure-card">
+                  <article className="home-failure-card home-failure-card-warn">
                     <div className="home-failure-card-icon home-failure-icon-warn">⚠</div>
                     <div className="home-failure-card-title">Supportive escalation</div>
                     <p className="home-failure-card-body">
@@ -207,7 +338,7 @@ export default function Home() {
                       spirals or giving up on care.
                     </p>
                   </article>
-                  <article className="home-failure-card">
+                  <article className="home-failure-card home-failure-card-secondary">
                     <div className="home-failure-card-icon home-failure-icon-secondary">◎</div>
                     <div className="home-failure-card-title">Polite neglect</div>
                     <p className="home-failure-card-body">
@@ -249,7 +380,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── DRIFT — BENTO GRID ── */}
+        {/* ── DRIFT ── */}
         <section id="drift" className="home-section">
           <div className="home-wrap">
             <div className="home-section-header">
@@ -265,9 +396,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Bento grid */}
             <div className="home-bento-grid">
-              {/* Large feature — semantic entropy */}
+              {/* Large feature */}
               <div className="home-bento-large">
                 <div className="home-bento-icon home-bento-icon-primary">◈</div>
                 <h3 className="home-bento-title">Behavioral risk doesn't appear all at once.</h3>
@@ -275,15 +405,30 @@ export default function Home() {
                   It accumulates across interaction types, pressure levels, and user vulnerability states.
                   Standard evaluations only see Zone 1 — normal use. Ikwe measures the drift window where problems start.
                 </p>
-                {/* Mini drift bar visual */}
+                {/* Annotated drift bar chart */}
                 <div className="home-bento-bars">
-                  <div className="home-bento-bar" style={{ height: "40%", opacity: 0.2 }} />
-                  <div className="home-bento-bar" style={{ height: "60%", opacity: 0.3 }} />
-                  <div className="home-bento-bar" style={{ height: "25%", opacity: 0.15 }} />
-                  <div className="home-bento-bar" style={{ height: "80%", opacity: 0.4 }} />
-                  <div className="home-bento-bar" style={{ height: "55%", opacity: 0.25 }} />
-                  <div className="home-bento-bar" style={{ height: "75%", opacity: 0.5 }} />
-                  <div className="home-bento-bar home-bento-bar-alert" style={{ height: "35%" }} />
+                  {bentoBars.map((bar) => (
+                    <div key={bar.label} className="home-bento-bar-wrap">
+                      <div
+                        className={bar.alert ? "home-bento-bar home-bento-bar-alert" : "home-bento-bar"}
+                        style={{ height: bar.height, opacity: bar.alert ? undefined : bar.opacity }}
+                      />
+                      <span className="home-bento-bar-label">{bar.label}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="home-drift-legend">
+                  <div className="home-drift-legend-item">
+                    <div className="home-drift-legend-dot" style={{ background: "var(--home-purple)", opacity: 0.4 }} />
+                    Behavioral signal
+                  </div>
+                  <div className="home-drift-legend-item">
+                    <div className="home-drift-legend-dot" style={{ background: "var(--home-red)" }} />
+                    Drift event detected
+                  </div>
+                  <div className="home-drift-legend-item" style={{ marginLeft: "auto", opacity: 0.55 }}>
+                    T1–T7 = conversation turns
+                  </div>
                 </div>
               </div>
 
@@ -292,21 +437,21 @@ export default function Home() {
                 <div className="home-bento-badge">← Where Ikwe Measures</div>
                 <div className="home-bento-icon home-bento-icon-watch">⚠</div>
                 <h3 className="home-bento-title">The Drift Window</h3>
-                <p className="home-bento-body">Vulnerable user conditions. Where problems start — invisible to standard evals.</p>
+                <p className="home-bento-body">Vulnerable user conditions. Where behavioral problems start — invisible to standard evaluations that only test neutral inputs.</p>
               </div>
 
               {/* Zone 1 */}
               <div className="home-bento-small">
                 <div className="home-bento-icon home-bento-icon-safe">✓</div>
                 <h3 className="home-bento-title-sm">Zone 1 — Looks Fine</h3>
-                <p className="home-bento-body-sm">Normal use. Passes standard evals.</p>
+                <p className="home-bento-body-sm">Normal use. Passes standard evals. Most safety testing stops here.</p>
               </div>
 
               {/* Zone 3 */}
               <div className="home-bento-small">
                 <div className="home-bento-icon home-bento-icon-risk">!</div>
                 <h3 className="home-bento-title-sm">Zone 3 — Consequences</h3>
-                <p className="home-bento-body-sm">Harm · Legal · Brand. Too late to catch.</p>
+                <p className="home-bento-body-sm">Harm · Legal · Brand. By the time it's visible, it's too late to catch quietly.</p>
               </div>
             </div>
 
@@ -315,13 +460,14 @@ export default function Home() {
                 <p className="home-drift-note-main">
                   Ikwe detects behavioral risk early — before it becomes harm, headlines, or liability.
                 </p>
-                <p className="home-drift-note-detail">
-                  <span>Measures trajectories, not just outputs</span>
-                  <span className="home-dot">·</span>
-                  <span>Flags escalation, manipulation, dependency loops</span>
-                  <span className="home-dot">·</span>
-                  <span>Produces audit-ready reports</span>
-                </p>
+                <div className="home-drift-note-bullets">
+                  {driftNoteBullets.map(({ icon, text }) => (
+                    <div key={text} className="home-drift-note-bullet">
+                      <span className="home-drift-note-bullet-icon">{icon}</span>
+                      {text}
+                    </div>
+                  ))}
+                </div>
               </div>
               <Link to="/audit" className="home-section-text-link" onClick={() => trackEvent("audit_cta_drift_soft")}>
                 Learn how the audit works →
@@ -345,12 +491,7 @@ export default function Home() {
             </div>
 
             <div className="home-flow-grid">
-              {[
-                { number: "01", title: "User in distress",      subtitle: "Vulnerable moment" },
-                { number: "02", title: "AI response",           subtitle: "What the system does" },
-                { number: "03", title: "Ikwe evaluation",       subtitle: "Behavioral analysis", featured: true },
-                { number: "04", title: "Risk score + report",   subtitle: "Audit-ready output" },
-              ].map((step) => (
+              {flowSteps.map((step) => (
                 <article
                   key={step.number}
                   className={`home-flow-step ${step.featured ? "home-flow-step-featured" : ""}`}
@@ -358,6 +499,7 @@ export default function Home() {
                   <div className="home-flow-number">{step.number}</div>
                   <h3 className="home-flow-title">{step.title}</h3>
                   <p className="home-flow-subtitle">{step.subtitle}</p>
+                  <p className="home-flow-detail">{step.detail}</p>
                   {step.featured && <div className="home-flow-badge">ikwe.ai</div>}
                 </article>
               ))}
@@ -385,15 +527,24 @@ export default function Home() {
               <p className="home-copy home-copy-tight home-section-header-right">
                 Purpose-built to measure behavioral safety failure in emotionally-loaded interactions.
                 Each dimension answers a specific question about how your system actually behaves
-                when a human needs it most — not how it performs on neutral test prompts.
+                when a human needs it most — not how it performs on neutral test prompts.{" "}
+                <em style={{ color: "var(--home-muted)", fontSize: "0.85em" }}>Hover any card to see what's tested.</em>
               </p>
             </div>
 
             <div className="home-dimensions-grid">
-              {dimensions.map(([title, question]) => (
+              {dimensions.map(({ title, question, detail, fail }) => (
                 <article key={title} className="home-dimension-card">
                   <h3 className="home-dimension-title">{title}</h3>
                   <p className="home-dimension-copy">{question}</p>
+                  {/* Hover detail reveal */}
+                  <div className="home-dimension-detail">
+                    <div className="home-dimension-detail-label">What's tested</div>
+                    <p className="home-dimension-detail-body">{detail}</p>
+                    <p className="home-dimension-detail-fail">
+                      <strong>Fail pattern:</strong> {fail}
+                    </p>
+                  </div>
                 </article>
               ))}
             </div>
@@ -409,12 +560,8 @@ export default function Home() {
             </div>
 
             <div className="home-hero-actions">
-              <Link to="/benchmark" className="home-btn home-btn-primary">
-                View Public Leaderboard
-              </Link>
-              <Link to="/research" className="home-btn home-btn-ghost">
-                Read Research Summary
-              </Link>
+              <Link to="/benchmark" className="home-btn home-btn-primary">View Public Leaderboard</Link>
+              <Link to="/research" className="home-btn home-btn-ghost">Read Research Summary</Link>
             </div>
           </div>
         </section>
@@ -427,7 +574,7 @@ export default function Home() {
               <h2 className="home-section-title">The Tri-Phase Evaluation</h2>
               <p className="home-section-subtext">
                 The ikwe protocol provides a rigorous framework for behavioral validation.
-                Each step builds on the last — you choose how deep you need to go.
+                Each phase builds on the last — choose how deep your governance posture requires.
               </p>
             </div>
 
@@ -439,6 +586,7 @@ export default function Home() {
                   description: "Pass / fail evaluation across 79 emotionally vulnerable scenarios. Determines whether harmful behavioral patterns appear at all. The first question: does launch risk exist?",
                   tag: "Pre-deployment",
                   outcome: "Launch risk determination",
+                  includes: phaseIncludes[0],
                 },
                 {
                   number: "02",
@@ -446,6 +594,7 @@ export default function Home() {
                   description: "Behavioral evaluation across all 8 dimensions and 12 vulnerability categories. Produces Tier I–IV classification with structured failure mapping and a remediation plan your engineering team can act on.",
                   tag: "Deep evaluation",
                   outcome: "Tier classification + remediation plan",
+                  includes: phaseIncludes[1],
                 },
                 {
                   number: "03",
@@ -453,6 +602,7 @@ export default function Home() {
                   description: "Continuous behavioral drift monitoring after each deployment change. Quarterly re-evaluation to catch degradation before it reaches incident scale. A versioned, defensible safety record that compounds over time.",
                   tag: "Continuous",
                   outcome: "Sustained safety posture over time",
+                  includes: phaseIncludes[2],
                 },
               ].map((phase) => (
                 <article key={phase.number} className="home-phase-card">
@@ -461,10 +611,20 @@ export default function Home() {
                     <h3 className="home-phase-title">{phase.title}</h3>
                     <p className="home-phase-copy">{phase.description}</p>
                     <span className="home-phase-tag">{phase.tag}</span>
+                    {/* Hover-reveal includes */}
+                    <div className="home-phase-includes">
+                      {phase.includes.items.map((item) => (
+                        <div key={item} className="home-phase-include-item">{item}</div>
+                      ))}
+                    </div>
                   </div>
                   <div className="home-phase-outcome">
                     <div className="home-phase-outcome-label">Outcome</div>
                     <div className="home-phase-outcome-value">{phase.outcome}</div>
+                    <div className="home-phase-timeline">
+                      <span className="home-phase-timeline-dot" />
+                      {phase.includes.timeline}
+                    </div>
                   </div>
                 </article>
               ))}
@@ -472,7 +632,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── OUTPUT / WHAT YOU GET ── */}
+        {/* ── OUTPUT ── */}
         <section id="output" className="home-section">
           <div className="home-wrap">
             <span className="home-eyebrow">Section 06 // Output</span>
@@ -481,7 +641,6 @@ export default function Home() {
             </h2>
 
             <div className="home-output-grid">
-              {/* Left — tiers + deliverables */}
               <div>
                 <p className="home-copy" style={{ marginBottom: "2rem" }}>
                   Every evaluation produces a Tier classification with structured failure mapping,
@@ -489,12 +648,13 @@ export default function Home() {
                 </p>
 
                 <div className="home-tier-list">
-                  {tiers.map(([badge, title, subtitle, action, tone]) => (
+                  {tiers.map(({ badge, title, subtitle, action, detail, tone }) => (
                     <article key={badge} className="home-tier">
                       <div className={`home-tier-badge ${tone}`}>{badge}</div>
                       <div>
                         <div className="home-tier-title">{title}</div>
                         <div className="home-tier-subtitle">{subtitle}</div>
+                        <div className="home-tier-detail">{detail}</div>
                       </div>
                       <div className="home-tier-action">{action}</div>
                     </article>
@@ -518,7 +678,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Right — sample report card */}
+              {/* Sample report */}
               <div>
                 <span className="home-eyebrow">Sample Evaluation Output</span>
                 <div className="home-report-card">
@@ -550,12 +710,12 @@ export default function Home() {
                     <div className="home-report-section-label">Dimensional Scores</div>
                     <div className="home-score-list">
                       {[
-                        ["Escalation Stability",       "70%", "Conditional — minor drift",    "70%",  "var(--home-purple-light)"],
-                        ["Multi-Turn Trajectory",      "90%", "Stable",                       "90%",  "var(--home-green)"],
-                        ["Vulnerable User Response",   "60%", "Needs mitigation",             "60%",  "var(--home-gold)"],
-                        ["Repair Capacity",            "90%", "Strong",                       "90%",  "var(--home-green)"],
-                        ["Dependency Reinforcement",   "78%", "Low risk",                     "78%",  "var(--home-purple-light)"],
-                        ["Manipulation Susceptibility","55%", "Safeguards needed",            "55%",  "var(--home-gold)"],
+                        ["Escalation Stability",        "70%", "Conditional — minor drift",  "70%",  "var(--home-gold)"],
+                        ["Multi-Turn Trajectory",       "90%", "Stable",                     "90%",  "var(--home-green)"],
+                        ["Vulnerable User Response",    "60%", "Needs mitigation",           "60%",  "var(--home-red)"],
+                        ["Repair Capacity",             "90%", "Strong",                     "90%",  "var(--home-green)"],
+                        ["Dependency Reinforcement",    "78%", "Low risk",                   "78%",  "var(--home-purple-light)"],
+                        ["Manipulation Susceptibility", "55%", "Safeguards needed",          "55%",  "var(--home-red)"],
                       ].map(([label, value, status, width, color]) => (
                         <div key={label} className="home-score-row">
                           <div className="home-score-label">{label}</div>
@@ -606,8 +766,14 @@ export default function Home() {
               <div>
                 <div className="home-column-label">Designed For</div>
                 <div className="home-who-items">
-                  {audienceItems.map((item) => (
-                    <div key={item} className="home-who-item">› {item}</div>
+                  {audienceItems.map(({ icon, label, sub }) => (
+                    <div key={label} className="home-who-item">
+                      <span className="home-who-icon">{icon}</span>
+                      <div className="home-who-item-text">
+                        <span className="home-who-item-label">{label}</span>
+                        <span className="home-who-item-sub">{sub}</span>
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -657,6 +823,10 @@ export default function Home() {
                     ))}
                   </ul>
                   <div className="home-engagement-result">{level.result}</div>
+                  <div className="home-phase-timeline" style={{ marginTop: "1rem", alignSelf: "flex-start" }}>
+                    <span className="home-phase-timeline-dot" />
+                    {level.timeline}
+                  </div>
                 </div>
               ))}
             </div>
