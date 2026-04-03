@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://ikwe.ai/pitch">
+<meta name="theme-color" content="#141218">
+<title>Ikwe.ai Pitch — Behavioral Safety Infrastructure for Human-Facing AI</title>
+<meta name="description" content="Ikwe.ai is building the behavioral safety standard and trust infrastructure for emotionally intelligent, human-facing AI systems.">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<style>
+:root {
+  --bg: #0d0f14;
+  --surface: #141720;
+  --surface2: #1b1f2e;
+  --surface3: #21263a;
+  --border: #232840;
+  --text: #e8eaf4;
+  --dim: #68708c;
+  --accent: #5b8af5;
+  --purple: #a56cf5;
+  --client-purple: #8b5cf6;
+  --green: #3dd68c;
+  --yellow: #f5c842;
+  --red: #f55a5a;
+  --orange: #f5933a;
+  --teal: #3dd6c8;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: radial-gradient(circle at top, #171a23 0%, #0d0f14 55%, #05060a 100%);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Avenir Next', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── Top bar ── */
+.top-bar {
+  background: rgba(10,11,18,0.96); border-bottom: 1px solid rgba(45,55,88,.9);
+  backdrop-filter: blur(16px);
+  padding: 10px 28px; display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100;
+}
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand-mark {
+  width: 26px; height: 26px; border-radius: 8px;
+  background: radial-gradient(circle at 30% 15%, #f4e8ff 0, #8b5cf6 32%, #2dd4bf 70%, transparent 72%);
+  box-shadow: 0 0 24px rgba(139,92,246,.55);
+}
+.brand-name { font-size: 13px; font-weight: 700; color: var(--text); letter-spacing: .02em; }
+.brand-badge {
+  background: rgba(139,92,246,.15); color: var(--client-purple);
+  border: 1px solid rgba(139,92,246,.35); border-radius: 999px;
+  padding: 2px 9px; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+}
+.top-nav { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.nav-link {
+  color: #b8c8e8; font-size: 12px; font-weight: 600; text-decoration: none;
+  padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(91,138,245,.25);
+  background: rgba(91,138,245,.08); transition: opacity .15s, background .15s, border-color .15s;
+}
+.nav-link.active { color: #e2d4ff; border-color: rgba(139,92,246,.5); background: rgba(139,92,246,.2); }
+.nav-link.cta { background: linear-gradient(135deg, #8b5cf6, #5b8af5); color: #fff; border-color: rgba(148,163,253,.5); }
+.nav-link:hover { opacity: .84; }
+.nav-sep { display:inline-block; width:1px; height:14px; background:rgba(255,255,255,.12); vertical-align:middle; }
+
+.page { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
+
+/* ── Hero / overview ── */
+.hero {
+  background: radial-gradient(circle at top left, rgba(139,92,246,.35), transparent 55%),
+              linear-gradient(145deg, rgba(10,12,24,.98), rgba(15,19,40,.96));
+  border-radius: 18px;
+  border: 1px solid rgba(92,107,192,.65);
+  box-shadow: 0 24px 80px rgba(15,23,42,.75);
+  padding: 26px 30px 26px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 20% 0, rgba(248,250,252,.16) 0, transparent 55%),
+    radial-gradient(circle at 86% 6%, rgba(45,212,191,.18) 0, transparent 55%);
+  opacity: .75; pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 22px; align-items: flex-start; }
+.hero-main { flex: 2; min-width: 260px; }
+.hero-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(203,213,255,.9); margin-bottom: 10px;
+}
+.hero-title {
+  font-family: 'Fraunces', 'Georgia', serif;
+  font-size: 1.9rem; line-height: 1.2; letter-spacing: .01em;
+  margin-bottom: 10px;
+}
+.hero-title span.highlight {
+  color: #e5deff;
+  text-shadow: 0 0 34px rgba(129,140,248,.9);
+}
+.hero-subtitle { font-size: 14px; color: #c7cfff; max-width: 560px; }
+.hero-tagline {
+  margin-top: 14px; font-size: 12px; color: #9ca3c5;
+}
+.hero-metrics { flex: 1.2; min-width: 220px; display: flex; flex-direction: column; gap: 10px; }
+.hero-chip-row { display:flex; flex-wrap:wrap; gap:8px; }
+.hero-chip {
+  font-size: 11px; padding: 4px 9px; border-radius: 999px;
+  border: 1px solid rgba(148,163,253,.4);
+  background: rgba(30,64,175,.55);
+  color: #e0e7ff; font-weight: 600; letter-spacing:.06em; text-transform:uppercase;
+}
+.hero-chip.alt {
+  border-color: rgba(45,212,191,.5);
+  background: rgba(15,118,110,.65);
+  color: #ccfbf1;
+}
+.hero-metric-card {
+  background: rgba(15,23,42,.9);
+  border-radius: 12px;
+  border: 1px solid rgba(51,65,85,.95);
+  padding: 10px 12px;
+}
+.metric-label { font-size: 11px; color: #9ca3c5; text-transform: uppercase; letter-spacing: .09em; }
+.metric-main { font-size: 1.4rem; font-weight: 800; margin-top: 3px; }
+.metric-main span { font-size: 13px; font-weight: 600; color: #9ca3c5; margin-left: 6px; }
+.metric-note { font-size: 11px; color: #a5b4fc; margin-top: 3px; }
+
+/* ── Section labels & layout ── */
+.section {
+  background: rgba(13,15,24,.98);
+  border-radius: 16px;
+  border: 1px solid rgba(31,41,79,.9);
+  padding: 22px 24px 22px;
+  margin-bottom: 22px;
+}
+.section-header {
+  display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px;
+}
+.section-label {
+  font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--dim);
+}
+.section-kicker {
+  font-size: 11px; color: #a5b4fc;
+}
+.section h2 {
+  font-size: 1.1rem; font-weight: 700; margin-bottom: 6px;
+}
+.section p { font-size: 13px; color: #c7cfff; margin-bottom: 9px; }
+.section p:last-child { margin-bottom: 0; }
+
+.two-col { display:grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1.2fr); gap:18px; align-items:flex-start; }
+
+/* ── Problem / Why now ── */
+.badge {
+  display:inline-block; padding:2px 7px; border-radius:999px;
+  font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+}
+.badge.red { background: rgba(245,90,90,.12); color: var(--red); border: 1px solid rgba(245,90,90,.45); }
+.badge.green { background: rgba(61,214,140,.15); color: var(--green); border: 1px solid rgba(61,214,140,.45); }
+.badge.purple { background: rgba(139,92,246,.16); color: var(--client-purple); border: 1px solid rgba(139,92,246,.45); }
+
+.bullet-list { list-style:none; display:flex; flex-direction:column; gap:7px; margin-top:4px; }
+.bullet-list li { font-size:13px; color:#cbd5ff; padding-left:16px; position:relative; }
+.bullet-list li::before {
+  content:"•"; position:absolute; left:0; color:rgba(148,163,253,.9);
+}
+
+/* ── Product & offer cards ── */
+.card-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:6px; }
+.card {
+  background: linear-gradient(145deg, rgba(15,23,42,0.98), rgba(15,23,42,0.96));
+  border-radius: 12px; border: 1px solid rgba(51,65,85,.85);
+  padding: 12px 13px 12px;
+}
+.card h3 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.card p { font-size: 12px; color: #9ca3c5; margin-bottom: 4px; }
+.card span.kicker { font-size:11px; color:#a5b4fc; text-transform:uppercase; letter-spacing:.08em; }
+
+/* ── Competitive grid ── */
+.comp-grid { display:grid; grid-template-columns: minmax(0,1.4fr) minmax(0,1.4fr) minmax(0,1.4fr); gap:12px; }
+.comp-col h3 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: #a5b4fc; margin-bottom: 6px; }
+.comp-col p { font-size: 12px; color:#9ca3c5; }
+.comp-tag {
+  display:inline-block; font-size:10px; padding:2px 7px; border-radius:999px;
+  border:1px solid rgba(148,163,253,.4); color:#c7d2fe; margin-top:4px;
+}
+
+.comp-table { width:100%; border-collapse:collapse; margin-top:10px; }
+.comp-table th, .comp-table td { padding:6px 8px; font-size:11px; border-bottom:1px solid rgba(31,41,79,.9); }
+.comp-table th { text-align:left; text-transform:uppercase; letter-spacing:.06em; color:#9ca3c5; }
+.comp-table tr:last-child td { border-bottom:none; }
+.comp-table .you-row { background:rgba(37,99,235,.18); }
+.comp-pill {
+  display:inline-block; padding:2px 7px; border-radius:999px; font-size:10px; font-weight:600;
+}
+.comp-pill.edge { background:rgba(61,214,140,.18); color:var(--green); }
+.comp-pill.gap { background:rgba(245,193,66,.15); color:var(--yellow); }
+
+/* ── Benchmarks / proof ── */
+.fact-list { list-style:none; display:flex; flex-direction:column; gap:6px; margin-top:4px; }
+.fact-list li { font-size:12px; color:#cbd5ff; padding-left:18px; position:relative; }
+.fact-list li::before { content:"✶"; position:absolute; left:0; color:#facc15; }
+
+/* ── Ask & next steps ── */
+.ask-grid { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1.3fr); gap:16px; align-items:flex-start; }
+.ask-callout {
+  background: radial-gradient(circle at top, rgba(139,92,246,.22), transparent 55%);
+  border-radius: 14px; border:1px solid rgba(139,92,246,.4);
+  padding: 16px 18px;
+}
+.ask-callout h3 { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+.ask-callout p { font-size:12px; color:#e5e7ff; }
+
+.cta-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+.cta-link {
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:9px 20px; border-radius:999px; font-size:12px; font-weight:700; text-decoration:none;
+}
+.cta-link.primary {
+  background:linear-gradient(135deg,#8b5cf6,#5b8af5);
+  color:#fff; border:1px solid rgba(129,140,248,.7);
+}
+.cta-link.secondary {
+  background:rgba(15,23,42,.98); color:#cbd5ff;
+  border:1px solid rgba(148,163,253,.48);
+}
+
+.footer { text-align:center; padding-top:18px; margin-top:16px; border-top:1px solid rgba(31,41,79,.9); }
+.footer p { font-size:11px; color:#8186a8; }
+.footer a { color:#a5b4fc; text-decoration:none; }
+.footer a:hover { color:#c4b5fd; }
+
+@media (max-width: 768px) {
+  .hero-inner { flex-direction:column; }
+  .two-col { grid-template-columns: minmax(0,1fr); }
+  .comp-grid { grid-template-columns:minmax(0,1fr); }
+  .ask-grid { grid-template-columns:minmax(0,1fr); }
+}
+
+@media print {
+  .top-bar { display:none !important; }
+  body { background:#ffffff !important; color:#111827 !important; }
+  .page { max-width:980px; padding:24px 18px 24px; }
+  .hero, .section, .ask-callout {
+    background:#ffffff !important; border-color:rgba(17,24,39,.18) !important; box-shadow:none !important;
+  }
+  .section-label, .section p, .bullet-list li, .fact-list li { color:#374151 !important; }
+  a { color:#111827 !important; text-decoration:none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a class="brand" href="/">
+    <span class="brand-mark"></span>
+    <div>
+      <div class="brand-name">Ikwe.ai</div>
+      <div class="brand-badge">Behavioral Safety</div>
+    </div>
+  </a>
+  <nav class="top-nav">
+    <a class="nav-link" href="/">Home</a>
+    <span class="nav-sep"></span>
+    <a class="nav-link" href="/research-access-terms.html">Research Access</a>
+    <a class="nav-link" href="/ikwe-sample-report-public.html">Sample Report</a>
+    <a class="nav-link active" href="/pitch">Pitch</a>
+  </nav>
+</div>
+
+<div class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-main">
+        <div class="hero-eyebrow">Ikwe.ai · Behavioral Safety Infrastructure</div>
+        <h1 class="hero-title">The <span class="highlight">behavioral safety standard</span> for human-facing, emotionally intelligent AI.</h1>
+        <p class="hero-subtitle">Ikwe builds the trust and behavioral safety layer for conversational and emotionally intelligent AI — benchmarking how systems behave with real humans, before harm, liability, or headlines.</p>
+        <p class="hero-tagline">Independent EQ safety benchmarks · Live behavioral monitoring · Human‑aligned trust signals for regulators, customers, and the public.</p>
+      </div>
+      <aside class="hero-metrics">
+        <div class="hero-chip-row">
+          <span class="hero-chip">EQ Safety Benchmark (EQSB)</span>
+          <span class="hero-chip alt">Behavioral Safety Infrastructure</span>
+        </div>
+        <div class="hero-metric-card">
+          <div class="metric-label">Where we sit in the stack</div>
+          <div class="metric-main">Behavioral Safety Layer<span>between model and humans</span></div>
+          <div class="metric-note">Ikwe plugs into existing LLM deployments to evaluate and continuously monitor emotional safety, escalation behavior, and harm‑reduction patterns.</div>
+        </div>
+        <div class="hero-metric-card">
+          <div class="metric-label">Core value</div>
+          <div class="metric-main">Trust proven in advance</div>
+          <div class="metric-note">An independent safety record that makes "We can be trusted with humans" legible to boards, regulators, and customers.</div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- PROBLEM & WHY NOW -->
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <div class="section-label">1 · Problem & Market Shift</div>
+        <h2>AI is already in human‑sensitive conversations. The behavioral safety stack is missing.</h2>
+      </div>
+      <div><span class="badge red">Why this matters now</span></div>
+    </div>
+    <div class="two-col">
+      <div>
+        <p>Frontier models are quickly being deployed into support, care, coaching, and education — all domains where emotional harm, escalation failures, or boundary violations are unacceptable.</p>
+        <ul class="bullet-list">
+          <li><strong>Technical safety ≠ behavioral safety.</strong> Red‑teaming, jailbreak filters, and content safety APIs catch obvious violations, not subtle relational harm.</li>
+          <li><strong>Regulators and boards lack behavioral evidence.</strong> They see model cards and latency charts, not how a system actually treats a distressed user at 2 AM.</li>
+          <li><strong>Incidents are discovered via headlines.</strong> Most behavioral failures surface after users are already harmed and screenshots are circulating on social media.</li>
+        </ul>
+      </div>
+      <div>
+        <p><span class="badge purple">Convergence of pressure</span></p>
+        <ul class="bullet-list">
+          <li><strong>Policy:</strong> EU AI Act, emerging US frameworks, and sector regulators are all starting to require <em>context‑specific</em> evidence of safety, not just technical attestations.</li>
+          <li><strong>Market:</strong> Enterprises are under pressure to deploy AI now — but their lawyers, ethics teams, and PR leads want proof they are not creating headline risk.</li>
+          <li><strong>Behavioral frontier:</strong> Models are becoming emotionally expressive by default. Without a dedicated behavioral safety layer, "emotional intelligence" can amplify harm.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- IKWE SOLUTION / PRODUCT -->
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <div class="section-label">2 · Ikwe Solution</div>
+        <h2>A dedicated behavioral safety layer for emotionally intelligent, conversational AI.</h2>
+      </div>
+      <div><span class="badge green">What we actually ship</span></div>
+    </div>
+    <div class="card-grid">
+      <article class="card">
+        <span class="kicker">EQ Safety Benchmark (EQSB)</span>
+        <h3>Benchmark the way your system behaves with humans.</h3>
+        <p>Scenario‑based evaluations that simulate real human conversations across distress, escalation, boundary‑testing, and cultural sensitivity — with domain‑specific scoring rubrics.</p>
+        <p>Output: a defensible EQ Safety score, domain breakdowns, and prioritized risk findings that can be shared with leadership, regulators, and major customers.</p>
+      </article>
+      <article class="card">
+        <span class="kicker">Live Behavioral Monitoring</span>
+        <h3>Ongoing monitoring for relational safety drift.</h3>
+        <p>Lightweight hooks into production interactions that surface behavioral anomalies: empathy drop‑offs, escalation failures, scope creep, or emergent tone issues.</p>
+        <p>Output: dashboards and alerts that show when real‑world behavior deviates from benchmarked safety baselines.</p>
+      </article>
+      <article class="card">
+        <span class="kicker">Trust Infrastructure & Evidence</span>
+        <h3>Artifacts that make "safe with humans" legible.</h3>
+        <p>Regulator‑ready documentation, EQSB reports, and audit‑friendly evidence packages that map behavioral safety to policy, risk, and governance frameworks.</p>
+        <p>Output: materials your GC, CISO, and Chief Risk Officer can actually sign off on.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- COMPETITIVE LANDSCAPE -->
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <div class="section-label">3 · Competitive Landscape</div>
+        <h2>Who else is here — and the white space Ikwe owns.</h2>
+      </div>
+      <div><span class="badge purple">Behavioral safety is the missing layer</span></div>
+    </div>
+
+    <div class="comp-grid" style="margin-bottom:14px;">
+      <div class="comp-col">
+        <h3>Model providers & infra</h3>
+        <p>Frontier labs (OpenAI, Anthropic, Google, Meta) and infra platforms focus on model alignment, red‑teaming, and content safety APIs — mostly technical and policy layers.</p>
+        <span class="comp-tag">Strength: model access · Gap: independent behavioral proof</span>
+      </div>
+      <div class="comp-col">
+        <h3>AI governance & observability</h3>
+        <p>Players like Credo AI, Holistic AI, Fiddler, Arize, and Mindgard focus on risk registers, governance controls, or model performance monitoring — not emotional or relational safety.</p>
+        <span class="comp-tag">Strength: governance workflows · Gap: EQ & relational metrics</span>
+      </div>
+      <div class="comp-col">
+        <h3>Vertical or mental health tools</h3>
+        <p>Some startups explore mental‑health benchmarking or "trust & safety" for chatbots, but they typically focus on a single domain or narrowly defined content filters.</p>
+        <span class="comp-tag">Strength: niche depth · Gap: horizontal behavioral standard</span>
+      </div>
+    </div>
+
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Representative</th>
+          <th>Behavioral / EQ focus</th>
+          <th>Live conversational focus</th>
+          <th>Independent safety record</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Frontier lab evals</td>
+          <td>Model eval suites, red teams</td>
+          <td>Low — mostly content rules</td>
+          <td>Medium — limited scenario coverage</td>
+          <td>No — internal, not third‑party</td>
+        </tr>
+        <tr>
+          <td>Governance platforms</td>
+          <td>Risk & compliance tooling</td>
+          <td>Low — metrics & checklists</td>
+          <td>Low — few talk to actual conversations</td>
+          <td>Partial — governance, not behavior</td>
+        </tr>
+        <tr>
+          <td>Vertical safety tools</td>
+          <td>Mental health / youth safety</td>
+          <td>Medium — narrow domain</td>
+          <td>Medium — specific use‑cases</td>
+          <td>Limited — not widely legible as a standard</td>
+        </tr>
+        <tr class="you-row">
+          <td><strong>Ikwe.ai</strong></td>
+          <td><strong>Behavioral safety infrastructure</strong></td>
+          <td><span class="comp-pill edge">High — EQ & relational safety</span></td>
+          <td><span class="comp-pill edge">High — real conversational behavior</span></td>
+          <td><span class="comp-pill gap">Independent, reusable safety record</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- PROOF & BENCHMARKS -->
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <div class="section-label">4 · Proof & Benchmarks</div>
+        <h2>We turn vague "trust" claims into legible, benchmarked behavioral evidence.</h2>
+      </div>
+      <div><span class="badge green">Evidence instead of vibes</span></div>
+    </div>
+    <div class="two-col">
+      <div>
+        <p>Ikwe's EQ Safety Benchmark (EQSB) runs multi‑scenario, multi‑domain evaluations that look at how conversational systems actually behave across:</p>
+        <ul class="fact-list">
+          <li><strong>Emotional recognition & empathy:</strong> whether the system detects distress, validates emotion, and maintains supportive tone over time.</li>
+          <li><strong>Crisis escalation protocols:</strong> whether the system safely hands off to humans or resources when conversations cross critical thresholds.</li>
+          <li><strong>Scope boundaries:</strong> whether the system respects deployment scope instead of offering unqualified medical, financial, or legal advice.</li>
+          <li><strong>Cultural and contextual sensitivity:</strong> whether responses adapt appropriately across identity, culture, and power dynamics.</li>
+        </ul>
+      </div>
+      <div>
+        <p>Output is not just a score — it's a safety record:</p>
+        <ul class="fact-list">
+          <li><strong>Headline EQSB score & tier</strong> plus domain‑level breakdowns that boards and regulators can read.</li>
+          <li><strong>Human‑readable risk findings</strong> that describe failure modes in plain language, with examples and impact framing.</li>
+          <li><strong>Targeted recommendations</strong> for system‑prompt, data, and deployment changes tied to predicted safety gains.</li>
+          <li><strong>Artifacts you can share</strong> with customers, partners, and regulators as proof of due diligence and ongoing monitoring.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS MODEL & MOTION -->
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <div class="section-label">5 · Model & Go‑To‑Market</div>
+        <h2>Start with benchmarks, land as ongoing safety infrastructure.</h2>
+      </div>
+      <div><span class="badge purple">Motion: benchmark → monitor → trust layer</span></div>
+    </div>
+    <div class="card-grid">
+      <article class="card">
+        <h3>Phase 1 — Benchmark Engagements</h3>
+        <p>High‑trust, scoped engagements with teams already deploying human‑facing AI (support, care, education, fintech, gov). Output: EQSB report, risk findings, and roadmap.</p>
+        <p>These initial benchmarks establish the standard, build reference customers, and define the evaluation corpus for each vertical.</p>
+      </article>
+      <article class="card">
+        <h3>Phase 2 — Live Monitoring Retainers</h3>
+        <p>Embed Ikwe as the behavioral safety layer for critical deployments. Light integration, ongoing scenario refresh, and anomaly monitoring tied to real conversations.</p>
+        <p>Revenue becomes recurring and tied to conversation volume, number of deployments, and regulatory / governance scope.</p>
+      </article>
+      <article class="card">
+        <h3>Phase 3 — Trust Infrastructure & Network Effects</h3>
+        <p>Standardized EQSB scores and artifacts can become a de facto trust mark — analogous to security certifications or credit ratings, but for behavioral safety.</p>
+        <p>Over time, platforms, regulators, and buyers can start to require or prefer deployments with verifiable EQSB‑style safety records.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ASK & NEXT STEPS -->
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <div class="section-label">6 · How to Work With Ikwe</div>
+        <h2>Ikwe is early — intentionally focused, and building the behavioral safety standard with the right partners.</h2>
+      </div>
+      <div><span class="badge green">Right now</span></div>
+    </div>
+    <div class="ask-grid">
+      <div>
+        <div class="ask-callout">
+          <h3>Looking for: design partners who take behavioral safety seriously.</h3>
+          <p>If you are deploying emotionally intelligent or conversational AI in high‑stakes or high‑sensitivity environments, Ikwe can help you understand how your system behaves with real humans — and build a safety record you can stand behind.</p>
+        </div>
+        <ul class="bullet-list" style="margin-top:10px;">
+          <li><strong>Ideal partners:</strong> health, fintech, education, youth‑facing platforms, and any company running AI with distressed, vulnerable, or high‑risk populations.</li>
+          <li><strong>What you get:</strong> an EQSB benchmark, prioritized findings, and a clear roadmap to move from "we think it's fine" to "we have proof it's behaving safely."</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:12px;color:#9ca3c5;margin-bottom:6px;">If you’re reading this, you’re likely early enough that what we do together will shape the standard.</p>
+        <div class="cta-row">
+          <a class="cta-link primary" href="/intake">Share your deployment context →</a>
+          <a class="cta-link secondary" href="mailto:stephanie@ikwe.ai">Email Stephanie directly</a>
+        </div>
+        <p style="font-size:11px;color:#8186a8;margin-top:10px;">This page is intentionally public‑facing but written for people who care about behavioral safety and trust infrastructure as first‑class features of AI systems.</p>
+      </div>
+    </div>
+    <div class="footer">
+      <p>Ikwe.ai · Behavioral safety infrastructure for emotionally intelligent AI · <a href="https://ikwe.ai">ikwe.ai</a></p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
