@@ -32,6 +32,7 @@ import RecognitionIsNotSafety from "./pages/writings/RecognitionIsNotSafety";
 import AIGovernanceCompliance from "./pages/writings/AIGovernanceCompliance";
 import ChooseYourPath from "./pages/writings/ChooseYourPath";
 import EmotionalAiHighTrustEnvironments from "./pages/writings/EmotionalAiHighTrustEnvironments";
+import EqSafetyBenchmarkFoundation from "./pages/writings/EqSafetyBenchmarkFoundation";
 import CaseStudyDetail from "./pages/cases/CaseStudyDetail";
 import GetStarted from "./pages/GetStarted";
 
@@ -126,6 +127,10 @@ const App = () => (
           <Route
             path="/archive/research/writings/emotional-ai-high-trust-environments"
             element={<EmotionalAiHighTrustEnvironments />}
+          />
+          <Route
+            path="/archive/research/writings/eq-safety-benchmark-foundation"
+            element={<EqSafetyBenchmarkFoundation />}
           />
           <Route path="/archive/research/case-studies" element={<CaseStudies />} />
           <Route path="/archive/research/case-studies/:slug" element={<CaseStudyDetail />} />
