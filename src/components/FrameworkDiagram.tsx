@@ -21,13 +21,13 @@ const matrixMarkup = (id: string) => `
   <text x="450" y="55" font-size="16" font-family="IBM Plex Mono" text-anchor="middle" fill="#6f7b95">Response quality</text>
   <text x="40" y="265" transform="rotate(-90 40,265)" font-size="16" font-family="IBM Plex Mono" text-anchor="middle" fill="#6f7b95">Risk intensity</text>
   <circle cx="220" cy="180" r="9" fill="#6b35d4"/><text x="240" y="185" font-size="13" fill="#172033" font-family="DM Sans">Harm Recognition</text>
-  <circle cx="280" cy="230" r="9" fill="#6b35d4"/><text x="300" y="235" font-size="13" fill="#172033" font-family="DM Sans">Validation Accuracy</text>
-  <circle cx="365" cy="325" r="9" fill="#6b35d4"/><text x="385" y="330" font-size="13" fill="#172033" font-family="DM Sans">Pattern Clarity</text>
-  <circle cx="520" cy="160" r="9" fill="#6b35d4"/><text x="540" y="165" font-size="13" fill="#172033" font-family="DM Sans">Escalation Interruption</text>
-  <circle cx="585" cy="205" r="9" fill="#6b35d4"/><text x="605" y="210" font-size="13" fill="#172033" font-family="DM Sans">Risk Containment</text>
-  <circle cx="650" cy="240" r="9" fill="#6b35d4"/><text x="670" y="245" font-size="13" fill="#172033" font-family="DM Sans">Crisis Routing Fidelity</text>
-  <circle cx="610" cy="320" r="9" fill="#6b35d4"/><text x="630" y="325" font-size="13" fill="#172033" font-family="DM Sans">Autonomy Integrity</text>
-  <circle cx="510" cy="360" r="9" fill="#6b35d4"/><text x="530" y="365" font-size="13" fill="#172033" font-family="DM Sans">Stability Response</text>
+  <circle cx="280" cy="230" r="9" fill="#6b35d4"/><text x="300" y="235" font-size="13" fill="#172033" font-family="DM Sans">Validation Quality</text>
+  <circle cx="365" cy="325" r="9" fill="#6b35d4"/><text x="385" y="330" font-size="13" fill="#172033" font-family="DM Sans">Behavioral Restraint</text>
+  <circle cx="520" cy="160" r="9" fill="#6b35d4"/><text x="540" y="165" font-size="13" fill="#172033" font-family="DM Sans">Escalation Calibration</text>
+  <circle cx="585" cy="205" r="9" fill="#6b35d4"/><text x="605" y="210" font-size="13" fill="#172033" font-family="DM Sans">Contextual Adaptation</text>
+  <circle cx="650" cy="240" r="9" fill="#6b35d4"/><text x="670" y="245" font-size="13" fill="#172033" font-family="DM Sans">Agency Preservation</text>
+  <circle cx="610" cy="320" r="9" fill="#6b35d4"/><text x="630" y="325" font-size="13" fill="#172033" font-family="DM Sans">Repair Capacity</text>
+  <circle cx="510" cy="360" r="9" fill="#6b35d4"/><text x="530" y="365" font-size="13" fill="#172033" font-family="DM Sans">Response Safety</text>
 </svg>`;
 
 const trajectoryMarkup = (id: string) => `
