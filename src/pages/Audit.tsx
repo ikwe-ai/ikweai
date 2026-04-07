@@ -395,11 +395,7 @@ export default function Audit() {
 
                     {(stage.paragraphs.length > 1 || stage.receives.length > 0) ? (
                       <details className="progressive-details mt-4">
-                        <summary
-                          aria-label="Toggle stage details"
-                          data-label="Stage details and deliverables"
-                          data-open-label="Hide stage details"
-                        />
+                        <summary aria-label="Toggle stage details" className="flex items-center gap-2 cursor-pointer list-none select-none py-2 [&::-webkit-details-marker]:hidden"><span className="text-foreground-subtle text-xs group-open:rotate-180 transition-transform duration-200">▶</span><span className="text-sm text-foreground">Stage details and deliverables</span></summary>
                         <div className="progressive-details-body">
                           {stage.paragraphs.slice(1).map((paragraph) => (
                             <p key={paragraph} className="text-sm text-foreground-muted leading-relaxed text-pretty measure">
@@ -449,12 +445,8 @@ export default function Audit() {
 
               <article className="card-surface p-6">
                 <h2 className="font-display text-2xl text-foreground mb-3">What the evaluation measures</h2>
-                <details className="progressive-details">
-                  <summary
-                    aria-label="Toggle measures"
-                    data-label="Open measurement detail"
-                    data-open-label="Hide measurement detail"
-                  />
+                <details className="progressive-details group">
+                  <summary aria-label="Toggle measures" className="flex items-center gap-2 cursor-pointer list-none select-none py-2 [&::-webkit-details-marker]:hidden"><span className="text-foreground-subtle text-xs group-open:rotate-180 transition-transform duration-200">▶</span><span className="text-sm text-foreground">Open measurement detail</span></summary>
                   <div className="progressive-details-body">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {measures.map((item, idx) => (
@@ -470,12 +462,8 @@ export default function Audit() {
 
               <article className="card-surface p-6">
                 <h2 className="font-display text-2xl text-foreground mb-3">CTO / CFO stage matrix</h2>
-                <details className="progressive-details">
-                  <summary
-                    aria-label="Toggle matrix"
-                    data-label="Open stage matrix"
-                    data-open-label="Hide stage matrix"
-                  />
+                <details className="progressive-details group">
+                  <summary aria-label="Toggle matrix" className="flex items-center gap-2 cursor-pointer list-none select-none py-2 [&::-webkit-details-marker]:hidden"><span className="text-foreground-subtle text-xs group-open:rotate-180 transition-transform duration-200">▶</span><span className="text-sm text-foreground">Open stage matrix</span></summary>
                   <div className="progressive-details-body">
                     <div className="lg:hidden grid grid-cols-1 gap-3">
                       {stageMatrix.map((row) => (
@@ -526,12 +514,8 @@ export default function Audit() {
 
               <article className="card-surface p-6">
                 <h2 className="font-display text-2xl text-foreground mb-1">Engagement fit</h2>
-                <details className="progressive-details">
-                  <summary
-                    aria-label="Toggle fit guidance"
-                    data-label="Open fit guidance"
-                    data-open-label="Hide fit guidance"
-                  />
+                <details className="progressive-details group">
+                  <summary aria-label="Toggle fit guidance" className="flex items-center gap-2 cursor-pointer list-none select-none py-2 [&::-webkit-details-marker]:hidden"><span className="text-foreground-subtle text-xs group-open:rotate-180 transition-transform duration-200">▶</span><span className="text-sm text-foreground">Open fit guidance</span></summary>
                   <div className="progressive-details-body">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                       <article className="card-surface p-6">
