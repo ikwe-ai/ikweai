@@ -262,25 +262,43 @@ export default function Audit() {
         </div>
       </section>
 
-      {/* ── Stage Selector ── */}
-      <section className="site-section py-8 border-b border-border">
-        <p className="text-xs text-foreground-subtle mb-5">Jump to the right stage for your situation.</p>
-        <div className="audit-decision-grid">
-          <article className="audit-decision-card">
-            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-1">Start</p>
-            <p className="text-sm text-foreground">Need a risk baseline and board-ready evidence.</p>
-            <a href="#stage-01" className="summary-jump mt-3">Ikwe EQ Safety Evaluation</a>
-          </article>
-          <article className="audit-decision-card">
-            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-1">Remediate</p>
-            <p className="text-sm text-foreground">Need support implementing and validating fixes.</p>
-            <a href="#stage-02" className="summary-jump mt-3">Implementation support</a>
-          </article>
-          <article className="audit-decision-card">
-            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-lilac mb-1">Operate</p>
-            <p className="text-sm text-foreground">Need continuity and drift detection after launch.</p>
-            <a href="#stage-03" className="summary-jump mt-3">Ikwe Behavioral Monitoring</a>
-          </article>
+      {/* ── Stage Selector (flow) ── */}
+      <section className="site-section py-10 border-b border-border">
+        <p className="section-kicker mb-6">Your Path</p>
+        <p className="text-sm text-foreground-muted mb-6">Jump to the right stage for your situation.</p>
+        <div className="flex flex-col md:flex-row items-stretch gap-0 max-w-5xl">
+          {[
+            { num: "01", label: "Start", desc: "Need a risk baseline and board-ready evidence.", link: "#stage-01", cta: "Ikwe EQ Safety Evaluation", color: "hsl(var(--lilac))" },
+            { num: "02", label: "Remediate", desc: "Need support implementing and validating fixes.", link: "#stage-02", cta: "Implementation support", color: "hsl(var(--coral))" },
+            { num: "03", label: "Operate", desc: "Need continuity and drift detection after launch.", link: "#stage-03", cta: "Ikwe Behavioral Monitoring", color: "hsl(var(--gold))" },
+          ].map((item, idx) => (
+            <div key={item.num} className="flex items-stretch flex-1">
+              <article
+                className="flex-1 rounded-lg border border-border bg-background-card p-5 relative"
+                style={{ borderTopWidth: "2px", borderTopColor: item.color }}
+              >
+                <span
+                  className="inline-flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold mb-3"
+                  style={{ backgroundColor: `${item.color}18`, color: item.color, fontFamily: "var(--font-mono)" }}
+                >
+                  {item.num}
+                </span>
+                <p className="font-mono text-[10px] uppercase tracking-[0.12em] mb-1" style={{ color: item.color }}>{item.label}</p>
+                <p className="text-sm text-foreground mb-3">{item.desc}</p>
+                <a href={item.link} className="summary-jump">{item.cta}</a>
+              </article>
+              {idx < 2 && (
+                <div className="hidden md:flex items-center px-3" aria-hidden="true">
+                  <span className="text-foreground-subtle text-lg">→</span>
+                </div>
+              )}
+              {idx < 2 && (
+                <div className="md:hidden flex justify-center py-2" aria-hidden="true">
+                  <span className="text-foreground-subtle text-lg">↓</span>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </section>
 
@@ -295,18 +313,43 @@ export default function Audit() {
         <ScenarioDomainMatrix className="max-w-6xl" />
       </section>
 
-      {/* ── Engagement Levels ── */}
+      {/* ── Engagement Levels (flow) ── */}
       <section id="engagement-levels" className="site-section py-10 border-b border-border">
         <p className="section-kicker mb-6">Engagement Levels</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
-          {engagementLevels.map((item) => (
-            <article key={item.level} className="card-surface p-5">
-              <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">{item.level}</p>
-              <h3 className="font-display text-xl text-foreground mb-2">{item.title}</h3>
-              <p className="text-sm text-foreground-muted mb-3">{item.note}</p>
-              <a href={item.link} className="summary-jump">Open stage</a>
-            </article>
-          ))}
+        <div className="flex flex-col md:flex-row items-stretch gap-0 max-w-6xl">
+          {engagementLevels.map((item, idx) => {
+            const colors = ["hsl(var(--lilac))", "hsl(var(--coral))", "hsl(var(--gold))"];
+            const color = colors[idx % colors.length];
+            return (
+              <div key={item.level} className="flex items-stretch flex-1">
+                <article
+                  className="flex-1 rounded-lg border border-border bg-background-card p-5"
+                  style={{ borderTopWidth: "2px", borderTopColor: color }}
+                >
+                  <span
+                    className="inline-flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold mb-3"
+                    style={{ backgroundColor: `${color}18`, color: color, fontFamily: "var(--font-mono)" }}
+                  >
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.12em] mb-2" style={{ color }}>{item.level}</p>
+                  <h3 className="font-display text-xl text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-foreground-muted mb-3">{item.note}</p>
+                  <a href={item.link} className="summary-jump">Open stage</a>
+                </article>
+                {idx < engagementLevels.length - 1 && (
+                  <div className="hidden md:flex items-center px-3" aria-hidden="true">
+                    <span className="text-foreground-subtle text-lg">→</span>
+                  </div>
+                )}
+                {idx < engagementLevels.length - 1 && (
+                  <div className="md:hidden flex justify-center py-2" aria-hidden="true">
+                    <span className="text-foreground-subtle text-lg">↓</span>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
 
