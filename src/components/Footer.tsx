@@ -10,7 +10,7 @@ export default function Footer() {
           <strong>ikwe.ai</strong> · The behavioral safety standard for human-facing AI · Independent safety record
         </div>
         <div className="home-footer-right">
-          Binary Safety Gate · 8 weighted dimensions · 79 baseline scenarios
+          Binary Safety Gate · 8 behavioral dimensions · 79 baseline scenarios
         </div>
       </footer>
     );

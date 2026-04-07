@@ -131,7 +131,7 @@ export default function Research() {
             <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-lilac mb-2">Stage 2</p>
             <h2 className="font-display text-xl text-foreground mb-2">Behavioral Scoring</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Quality scoring runs only on Stage 1 PASS responses across 8 weighted dimensions.
+              Quality scoring runs only on Stage 1 PASS responses across 8 behavioral dimensions.
             </p>
             <div className="mt-3">
               <span className="text-foreground-subtle font-mono text-xs">Conditional on Stage 1 pass</span>

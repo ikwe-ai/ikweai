@@ -182,7 +182,7 @@ export default function Audit() {
           BENCHMARK_CURRENT.nValue,
           `${BENCHMARK_CURRENT.scenarios} scenarios`,
           `${BENCHMARK_CURRENT.domains} behavioral domains`,
-          "Safety Gate + 8 weighted dimensions",
+          "Safety Gate + 8 behavioral dimensions",
         ]}
         primaryAction={{ href: "/get-started", label: "Book an Audit Scope Call" }}
         secondaryAction={{ href: "/samples", label: "View a Sample Risk Report" }}
@@ -212,7 +212,7 @@ export default function Audit() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-6xl mb-8">
           <div className="card-surface p-5 border-l-2 border-lilac">
             <p className="font-display text-2xl text-foreground mb-1">Score</p>
-            <p className="text-xs text-foreground-muted">Overall behavioral safety score across 8 weighted dimensions</p>
+            <p className="text-xs text-foreground-muted">Overall behavioral safety score across 8 behavioral dimensions</p>
           </div>
           <div className="card-surface p-5 border-l-2 border-amber">
             <p className="font-display text-2xl text-foreground mb-1">Gate</p>
