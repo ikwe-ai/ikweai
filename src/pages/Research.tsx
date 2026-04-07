@@ -190,6 +190,41 @@ export default function Research() {
         <DomainsTagWall className="max-w-6xl" />
       </section>
 
+      {/* ── Scientific Foundation ── */}
+      <section id="scientific-foundation" className="site-section py-14 border-b border-border">
+        <p className="section-kicker mb-6">Scientific Foundation</p>
+        <div className="max-w-4xl">
+          <p className="text-foreground lede mb-6">
+            The eight dimensions of the EQ Safety Benchmark were not invented. They were <strong>derived</strong> from
+            professional disciplines that have spent decades establishing what makes human interaction safe, harmful,
+            healing, or damaging.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+            {[
+              { field: "Trauma-informed care", source: "SAMHSA framework", desc: "Standards for non-retraumatizing interaction" },
+              { field: "Motivational interviewing", source: "Miller & Rollnick", desc: "Standards for non-coercive, autonomy-preserving language" },
+              { field: "Crisis intervention theory", source: "Roberts, CPI", desc: "Standards for proportionate escalation and de-escalation" },
+              { field: "Attachment theory", source: "Bowlby, relational therapy", desc: "Framework for rupture and repair in helping relationships" },
+              { field: "CBT / DBT", source: "Beck, Linehan", desc: "Validation as a measurable clinical skill; distress tolerance standards" },
+              { field: "Social psychology", source: "Cialdini, Milgram", desc: "Power dynamics in helping relationships and AI influence leverage" },
+            ].map((item) => (
+              <article key={item.field} className="card-surface p-4">
+                <p className="font-display text-sm text-foreground font-medium mb-1">{item.field}</p>
+                <p className="font-mono text-[10px] uppercase tracking-[0.1em] text-lilac mb-1">{item.source}</p>
+                <p className="text-xs text-foreground-muted leading-relaxed">{item.desc}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="text-sm text-foreground-muted leading-relaxed">
+            These fields did not need us to invent the criteria. The work was synthesis: identify the behavioral markers each
+            discipline had already validated, then build an evaluation infrastructure that makes those markers measurable in
+            AI output at scale.
+          </p>
+        </div>
+      </section>
+
       {/* ── Findings Snapshot ── */}
       <section id="findings-snapshot" className="site-section py-14 border-b border-border">
         <p className="section-kicker mb-7">Findings Snapshot</p>
@@ -211,6 +246,21 @@ export default function Research() {
             <p className="text-xs text-foreground-muted">Scenarios across {BENCHMARK_CURRENT.domains} behavioral domains</p>
           </article>
         </div>
+        {/* Failure mode findings */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-4 max-w-5xl">
+          {[
+            { pct: "61%", desc: "of harmful responses showed immediate advice-giving without emotional acknowledgment", color: "hsl(var(--coral))" },
+            { pct: "47%", desc: "used coercive or directive language in emotionally sensitive contexts", color: "hsl(var(--coral))" },
+            { pct: "38%", desc: "failed to escalate appropriately in scenarios with clear crisis indicators", color: "hsl(var(--gold))" },
+            { pct: "43%", desc: "of responses that caused conversational harm showed zero repair behavior", color: "hsl(var(--coral))" },
+          ].map((item) => (
+            <article key={item.pct} className="card-surface p-4">
+              <p className="font-display text-2xl mb-1" style={{ color: item.color }}>{item.pct}</p>
+              <p className="text-xs text-foreground-muted leading-relaxed">{item.desc}</p>
+            </article>
+          ))}
+        </div>
+
         <BaselineLiveLegend className="mb-4 max-w-5xl" />
 
         <article className="card-surface p-5 max-w-5xl">

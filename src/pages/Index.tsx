@@ -391,6 +391,41 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── FIVE REQUIREMENTS ── */}
+        <section id="requirements" className="home-section">
+          <div className="home-wrap">
+            <div className="home-section-header">
+              <div>
+                <span className="home-eyebrow">What safe AI requires</span>
+                <h2 className="home-heading">Not features. Not personality settings. Behavioral standards.</h2>
+              </div>
+              <p className="home-copy home-copy-tight home-section-header-right">
+                Emotionally safe AI is not an AI that sounds warm. It is an AI that behaves
+                according to the same standards that govern safe human-to-human helping relationships.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-3 max-w-6xl">
+              {[
+                { title: "Harm Recognition", body: "Seeing the person's emotional state before solving their problem. Because failure to acknowledge is a documented source of harm.", color: "hsl(var(--lilac))" },
+                { title: "Response Safety", body: "Knowing when not to escalate, not to introduce risks the person did not name, not to push deeper than invited.", color: "hsl(var(--coral))" },
+                { title: "Repair Capacity", body: "Recognizing when the interaction caused harm and changing course. Not a verbal apology — an actual behavioral shift.", color: "hsl(var(--gold))" },
+                { title: "Behavioral Restraint", body: "Building response patterns that return agency to the person rather than substituting the model's judgment for their own.", color: "hsl(var(--safe))" },
+                { title: "Contextual Adaptation", body: "Actual responsiveness to who this person is and what this conversation has revealed — not a template applied to every interaction.", color: "hsl(var(--lilac))" },
+              ].map((item) => (
+                <article key={item.title} className="home-failure-card" style={{ borderTopWidth: '2px', borderTopColor: item.color }}>
+                  <h3 className="home-failure-title" style={{ color: item.color }}>{item.title}</h3>
+                  <p className="home-failure-body">{item.body}</p>
+                </article>
+              ))}
+            </div>
+
+            <p style={{ marginTop: '1.5rem', fontSize: '0.82rem', color: 'var(--home-muted)', fontStyle: 'italic', maxWidth: '50ch' }}>
+              These are behavioral standards — and they require a benchmark to be measurable and a certification system to be commercially enforceable. That is what Ikwe built.
+            </p>
+          </div>
+        </section>
+
         {/* ── DRIFT ── */}
         <section id="drift" className="home-section">
           <div className="home-wrap">
