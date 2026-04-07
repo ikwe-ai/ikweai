@@ -4,28 +4,28 @@
 
 @layer base {
   :root {
-    /* Core palette */
-    --background: 261 54% 8%;
-    --background-card: 260 37% 12%;
-    --background-surface: 258 31% 15%;
-    --foreground: 220 33% 94%;
-    --foreground-muted: 223 16% 74%;
-    --foreground-subtle: 223 14% 62%;
+    /* Core palette — aligned with home page tones */
+    --background: 277 29% 9%;
+    --background-card: 279 23% 12%;
+    --background-surface: 279 20% 14%;
+    --foreground: 287 40% 91%;
+    --foreground-muted: 283 13% 79%;
+    --foreground-subtle: 277 6% 58%;
 
-    /* Shadcn semantic aliases */
-    --card: 256 28% 14%;
-    --card-foreground: 220 33% 94%;
-    --popover: 256 28% 14%;
-    --popover-foreground: 220 33% 94%;
+    /* Shadcn semantic aliases — matched to home depth layers */
+    --card: 279 20% 14%;
+    --card-foreground: 287 40% 91%;
+    --popover: 279 20% 14%;
+    --popover-foreground: 287 40% 91%;
 
-    --primary: 260 64% 52%;
+    --primary: 270 80% 75%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 258 31% 15%;
-    --secondary-foreground: 220 33% 94%;
+    --secondary: 279 20% 14%;
+    --secondary-foreground: 287 40% 91%;
 
-    --muted: 258 31% 15%;
-    --muted-foreground: 223 14% 62%;
+    --muted: 279 20% 14%;
+    --muted-foreground: 277 6% 58%;
 
     --accent: 216 74% 62%;
     --accent-foreground: 0 0% 100%;
@@ -33,19 +33,19 @@
     --destructive: 0 68% 64%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 258 24% 27%;
-    --border-2: 258 24% 33%;
-    --input: 258 31% 15%;
-    --ring: 260 64% 52%;
+    --border: 279 18% 22%;
+    --border-2: 279 18% 28%;
+    --input: 279 20% 14%;
+    --ring: 270 100% 86%;
 
     --radius: 0.55rem;
 
-    /* Brand tokens */
-    --lilac: 262 67% 58%;
-    --lilac-bright: 262 75% 64%;
-    --lilac-soft: 262 56% 70%;
-    --lilac-dim: 258 32% 20%;
-    --lilac-glow: 262 78% 68%;
+    /* Brand tokens — aligned with home-purple family */
+    --lilac: 270 100% 86%;
+    --lilac-bright: 270 100% 90%;
+    --lilac-soft: 269 47% 66%;
+    --lilac-dim: 275 25% 18%;
+    --lilac-glow: 270 80% 75%;
     --signal: 216 74% 62%;
     --signal-soft: 216 52% 67%;
     --aurora-blue: 216 74% 62%;
