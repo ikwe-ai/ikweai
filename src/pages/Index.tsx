@@ -495,6 +495,10 @@ export default function Home() {
                 <article
                   key={step.number}
                   className={`home-flow-step ${step.featured ? "home-flow-step-featured" : ""}`}
+                  onClick={(e) => e.currentTarget.classList.toggle('is-active')}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.currentTarget.classList.toggle('is-active'); } }}
                 >
                   <div className="home-flow-number">{step.number}</div>
                   <h3 className="home-flow-title">{step.title}</h3>
@@ -528,16 +532,22 @@ export default function Home() {
                 Purpose-built to measure behavioral safety failure in emotionally-loaded interactions.
                 Each dimension answers a specific question about how your system actually behaves
                 when a human needs it most — not how it performs on neutral test prompts.{" "}
-                <em style={{ color: "var(--home-muted)", fontSize: "0.85em" }}>Hover any card to see what's tested.</em>
+                <em style={{ color: "var(--home-muted)", fontSize: "0.85em" }}>Tap or hover any card to see what's tested.</em>
               </p>
             </div>
 
             <div className="home-dimensions-grid">
               {dimensions.map(({ title, question, detail, fail }) => (
-                <article key={title} className="home-dimension-card">
+                <article
+                  key={title}
+                  className="home-dimension-card"
+                  onClick={(e) => e.currentTarget.classList.toggle('is-active')}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.currentTarget.classList.toggle('is-active'); } }}
+                >
                   <h3 className="home-dimension-title">{title}</h3>
                   <p className="home-dimension-copy">{question}</p>
-                  {/* Hover detail reveal */}
                   <div className="home-dimension-detail">
                     <div className="home-dimension-detail-label">What's tested</div>
                     <p className="home-dimension-detail-body">{detail}</p>
