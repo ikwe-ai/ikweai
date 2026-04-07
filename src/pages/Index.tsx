@@ -280,16 +280,16 @@ export default function Home() {
             <div className="home-hero-right">
               <div className="home-hero-stats">
                 <div className="home-hero-stat">
-                  <div className="home-stat-number">{BENCHMARK_CURRENT.failedGatePct}</div>
+                  <div className="home-stat-number" style={{ color: 'hsl(9 86% 77%)' }}>{BENCHMARK_CURRENT.failedGatePct}</div>
                   <div className="home-stat-label">of frontier-model responses introduced emotional risk at first contact</div>
                 </div>
                 <div className="home-hero-stat">
-                  <div className="home-stat-number">44.9%</div>
-                  <div className="home-stat-label">of systems fail the binary Safety Gate</div>
+                  <div className="home-stat-number" style={{ color: 'hsl(262 84% 77%)' }}>44.9%</div>
+                  <div className="home-stat-label">of systems fail the binary Safety Gate at first contact evaluation</div>
                 </div>
                 <div className="home-hero-stat">
-                  <div className="home-stat-number">{PUBLIC_STATS.outputsEvaluatedDisplay}</div>
-                  <div className="home-stat-label">outputs evaluated across 79 baseline scenarios</div>
+                  <div className="home-stat-number" style={{ color: 'hsl(42 85% 77%)' }}>{PUBLIC_STATS.outputsEvaluatedDisplay}</div>
+                  <div className="home-stat-label">outputs evaluated across 79 baseline scenarios in the ikwe benchmark</div>
                 </div>
               </div>
               <p className="home-hero-stat-note">
