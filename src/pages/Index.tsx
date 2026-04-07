@@ -1,9 +1,17 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import PageMeta from "@/components/PageMeta";
 import { PUBLIC_STATS } from "@/content/stats";
 import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 import { trackEvent } from "@/hooks/useAnalytics";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 const governanceRows = [
   ["Data security", "Multi-turn emotional trajectory"],
@@ -228,6 +236,9 @@ const phaseIncludes = [
 ] as const;
 
 export default function Home() {
+  const [activeDimension, setActiveDimension] = useState<number | null>(null);
+  const [activeFlowStep, setActiveFlowStep] = useState<number | null>(null);
+
   return (
     <>
       <PageMeta
@@ -491,23 +502,52 @@ export default function Home() {
             </div>
 
             <div className="home-flow-grid">
-              {flowSteps.map((step) => (
+              {flowSteps.map((step, idx) => (
                 <article
                   key={step.number}
                   className={`home-flow-step ${step.featured ? "home-flow-step-featured" : ""}`}
-                  onClick={(e) => e.currentTarget.classList.toggle('is-active')}
+                  onClick={() => setActiveFlowStep(idx)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.currentTarget.classList.toggle('is-active'); } }}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActiveFlowStep(idx); } }}
                 >
                   <div className="home-flow-number">{step.number}</div>
                   <h3 className="home-flow-title">{step.title}</h3>
                   <p className="home-flow-subtitle">{step.subtitle}</p>
-                  <p className="home-flow-detail">{step.detail}</p>
+                  <span style={{ marginTop: 'auto', paddingTop: '0.5rem', fontSize: '0.68rem', color: 'var(--home-purple-dim)', fontFamily: 'var(--font-label-home)', letterSpacing: '0.06em' }}>Learn more →</span>
                   {step.featured && <div className="home-flow-badge">ikwe.ai</div>}
                 </article>
               ))}
             </div>
+
+            {/* Flow step detail modal */}
+            <Dialog open={activeFlowStep !== null} onOpenChange={() => setActiveFlowStep(null)}>
+              <DialogContent className="sm:max-w-md" style={{ background: 'hsl(var(--background))', border: '1px solid hsl(var(--border))' }}>
+                {activeFlowStep !== null && (
+                  <>
+                    <DialogHeader>
+                      <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'hsl(var(--lilac))', marginBottom: '0.5rem' }}>
+                        Step {flowSteps[activeFlowStep].number}
+                      </p>
+                      <DialogTitle className="font-display text-xl">{flowSteps[activeFlowStep].title}</DialogTitle>
+                      <DialogDescription className="text-sm mt-1" style={{ color: 'hsl(var(--lilac-soft))' }}>
+                        {flowSteps[activeFlowStep].subtitle}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <p className="text-sm text-foreground-muted leading-relaxed mt-4">{flowSteps[activeFlowStep].detail}</p>
+                    <div className="flex gap-2 mt-6">
+                      {activeFlowStep > 0 && (
+                        <button onClick={() => setActiveFlowStep(activeFlowStep - 1)} className="text-xs text-foreground-muted hover:text-foreground transition-colors" style={{ fontFamily: 'var(--font-mono)' }}>← Previous</button>
+                      )}
+                      <div className="flex-1" />
+                      {activeFlowStep < flowSteps.length - 1 && (
+                        <button onClick={() => setActiveFlowStep(activeFlowStep + 1)} className="text-xs text-foreground-muted hover:text-foreground transition-colors" style={{ fontFamily: 'var(--font-mono)' }}>Next →</button>
+                      )}
+                    </div>
+                  </>
+                )}
+              </DialogContent>
+            </Dialog>
 
             <p className="home-beforeline">Before it becomes harm. Before it becomes headlines.</p>
             <div className="home-pill-group">
@@ -537,27 +577,72 @@ export default function Home() {
             </div>
 
             <div className="home-dimensions-grid">
-              {dimensions.map(({ title, question, detail, fail }) => (
+              {dimensions.map(({ title, question }, idx) => (
                 <article
                   key={title}
                   className="home-dimension-card"
-                  onClick={(e) => e.currentTarget.classList.toggle('is-active')}
+                  onClick={() => setActiveDimension(idx)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.currentTarget.classList.toggle('is-active'); } }}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActiveDimension(idx); } }}
                 >
+                  <span className="home-dimension-number" style={{ color: 'var(--home-purple-dim)', fontFamily: 'var(--font-label-home)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.1em' }}>{String(idx + 1).padStart(2, '0')}</span>
                   <h3 className="home-dimension-title">{title}</h3>
                   <p className="home-dimension-copy">{question}</p>
-                  <div className="home-dimension-detail">
-                    <div className="home-dimension-detail-label">What's tested</div>
-                    <p className="home-dimension-detail-body">{detail}</p>
-                    <p className="home-dimension-detail-fail">
-                      <strong>Fail pattern:</strong> {fail}
-                    </p>
-                  </div>
+                  <span style={{ marginTop: 'auto', paddingTop: '0.75rem', fontSize: '0.7rem', color: 'var(--home-purple-dim)', fontFamily: 'var(--font-label-home)', letterSpacing: '0.06em' }}>View detail →</span>
                 </article>
               ))}
             </div>
+
+            {/* Dimension detail modal */}
+            <Dialog open={activeDimension !== null} onOpenChange={() => setActiveDimension(null)}>
+              <DialogContent className="sm:max-w-lg" style={{ background: 'hsl(var(--background))', border: '1px solid hsl(var(--border))' }}>
+                {activeDimension !== null && (
+                  <>
+                    <DialogHeader>
+                      <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'hsl(var(--lilac))', marginBottom: '0.5rem' }}>
+                        Dimension {String(activeDimension + 1).padStart(2, '0')} of 08
+                      </p>
+                      <DialogTitle className="font-display text-xl">{dimensions[activeDimension].title}</DialogTitle>
+                      <DialogDescription className="text-foreground-muted text-sm mt-1">
+                        {dimensions[activeDimension].question}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="mt-4 space-y-4">
+                      <div>
+                        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'hsl(var(--lilac-soft))', marginBottom: '0.5rem' }}>What's tested</p>
+                        <p className="text-sm text-foreground-muted leading-relaxed">{dimensions[activeDimension].detail}</p>
+                      </div>
+                      <div style={{ paddingTop: '0.75rem', borderTop: '1px solid hsl(var(--border))' }}>
+                        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'hsl(var(--coral))', marginBottom: '0.5rem' }}>Fail pattern</p>
+                        <p className="text-sm leading-relaxed" style={{ color: 'hsl(var(--coral))' }}>{dimensions[activeDimension].fail}</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-2 mt-6">
+                      {activeDimension > 0 && (
+                        <button
+                          onClick={() => setActiveDimension(activeDimension - 1)}
+                          className="text-xs text-foreground-muted hover:text-foreground transition-colors"
+                          style={{ fontFamily: 'var(--font-mono)' }}
+                        >
+                          ← Previous
+                        </button>
+                      )}
+                      <div className="flex-1" />
+                      {activeDimension < dimensions.length - 1 && (
+                        <button
+                          onClick={() => setActiveDimension(activeDimension + 1)}
+                          className="text-xs text-foreground-muted hover:text-foreground transition-colors"
+                          style={{ fontFamily: 'var(--font-mono)' }}
+                        >
+                          Next →
+                        </button>
+                      )}
+                    </div>
+                  </>
+                )}
+              </DialogContent>
+            </Dialog>
 
             <div className="home-benchmark-callout">
               <div className="home-benchmark-highlight">Empathy ≠ Safety</div>
