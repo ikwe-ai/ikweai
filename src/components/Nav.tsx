@@ -116,10 +116,10 @@ export default function Nav() {
               onMouseEnter={() => setResearchOpen(true)}
               onMouseLeave={() => setResearchOpen(false)}
             >
-              <button
-                onClick={() => setResearchOpen((v) => !v)}
-                aria-expanded={researchOpen}
+              <Link
+                to="/research"
                 aria-haspopup="true"
+                aria-expanded={researchOpen}
                 className={`nav-link-pill rounded-full px-3 py-1.5 text-sm transition-colors whitespace-nowrap flex items-center gap-1 ${
                   isResearchActive ? "bg-lilac-dim text-lilac-bright" : "text-foreground-muted hover:text-foreground"
                 }`}
@@ -132,7 +132,7 @@ export default function Nav() {
                 >
                   ▾
                 </span>
-              </button>
+              </Link>
 
               {researchOpen && (
                 <div className="mega-panel" role="menu" aria-label="Research pages">
@@ -224,18 +224,29 @@ export default function Nav() {
               Home
             </Link>
 
-            {/* Research accordion */}
-            <button
-              onClick={() => setMobileResearchOpen((v) => !v)}
-              className={`text-left rounded border px-3 py-2 text-sm flex items-center justify-between ${
-                isResearchActive
-                  ? "border-lilac text-lilac-bright bg-lilac-dim"
-                  : "border-border text-foreground-muted"
-              }`}
-            >
-              <span>Research</span>
-              <span className="font-mono text-[10px] opacity-50">{mobileResearchOpen ? "▲" : "▼"}</span>
-            </button>
+            {/* Research — link + expandable sub-pages */}
+            <div className={`rounded border flex items-center justify-between ${
+              isResearchActive
+                ? "border-lilac bg-lilac-dim"
+                : "border-border"
+            }`}>
+              <Link
+                to="/research"
+                className={`flex-1 px-3 py-2 text-sm ${
+                  isResearchActive ? "text-lilac-bright" : "text-foreground-muted"
+                }`}
+                onClick={closeMobileMenu}
+              >
+                Research
+              </Link>
+              <button
+                onClick={() => setMobileResearchOpen((v) => !v)}
+                className="px-3 py-2 text-foreground-muted hover:text-foreground"
+                aria-label="Toggle research sub-pages"
+              >
+                <span className="font-mono text-[10px] opacity-50">{mobileResearchOpen ? "▲" : "▼"}</span>
+              </button>
+            </div>
 
             {mobileResearchOpen && (
               <div className="pl-3 flex flex-col gap-1.5 pb-1">
