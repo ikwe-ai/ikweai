@@ -367,11 +367,7 @@ export default function Contact() {
                 </p>
 
                 <details className="progressive-details mt-4">
-                  <summary
-                    aria-label="Toggle why we ask this"
-                    data-label="Why we ask this"
-                    data-open-label="Hide why we ask this"
-                  />
+                  <summary aria-label="Toggle why we ask this" className="flex items-center gap-2 cursor-pointer list-none select-none py-2 [&::-webkit-details-marker]:hidden"><span className="text-foreground-subtle text-xs group-open:rotate-180 transition-transform duration-200">▶</span><span className="text-sm text-foreground">Why we ask this</span></summary>
                   <div className="progressive-details-body">
                     <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle">Why we ask this</p>
                     <ul className="space-y-2 text-sm text-foreground-muted leading-relaxed">
@@ -383,11 +379,7 @@ export default function Contact() {
                 </details>
 
                 <details id="next-steps" className="progressive-details mt-3">
-                  <summary
-                    aria-label="Toggle what happens next"
-                    data-label="What happens next"
-                    data-open-label="Hide what happens next"
-                  />
+                  <summary aria-label="Toggle what happens next" className="flex items-center gap-2 cursor-pointer list-none select-none py-2 [&::-webkit-details-marker]:hidden"><span className="text-foreground-subtle text-xs group-open:rotate-180 transition-transform duration-200">▶</span><span className="text-sm text-foreground">What happens next</span></summary>
                   <div className="progressive-details-body">
                     <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-foreground-subtle">What happens next</p>
                     <ol className="space-y-2 text-sm text-foreground-muted leading-relaxed">

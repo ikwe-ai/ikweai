@@ -171,11 +171,7 @@ export default function Reports() {
       <section id="output-previews" className="site-section py-14 border-b border-border">
         <p className="section-kicker mb-8">Deliverables Previews</p>
         <details className="progressive-details mb-5 max-w-4xl">
-          <summary
-            aria-label="Toggle sample report note"
-            data-label="Sample access notes"
-            data-open-label="Hide sample access notes"
-          />
+          <summary aria-label="Toggle sample report note" className="flex items-center gap-2 cursor-pointer list-none select-none py-2 [&::-webkit-details-marker]:hidden"><span className="text-foreground-subtle text-xs group-open:rotate-180 transition-transform duration-200">▶</span><span className="text-sm text-foreground">Sample access notes</span></summary>
           <div className="progressive-details-body">
             <p className="text-xs text-foreground-subtle">
               Need a format example before engagement? Open the public sample report in-site modal (public, redacted, no
@@ -197,7 +193,7 @@ export default function Reports() {
         <article className="card-surface p-5 max-w-5xl">
           <div className="space-y-2">
             {outputPreviews.map((item) => (
-              <details key={item.id} id={item.id} className="progressive-details">
+              <details key={item.id} id={item.id} className="progressive-details group">
               <summary
                 aria-label={`Toggle ${item.title} details`}
                 data-label={`${item.title} · ${item.summary}`}

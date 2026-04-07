@@ -148,12 +148,8 @@ export default function Research() {
           <p className="text-sm text-foreground-muted leading-relaxed mb-4">
             Plan for them before deployment decisions.
           </p>
-          <details className="progressive-details">
-            <summary
-              aria-label="Toggle summary details"
-              data-label="How to interpret these rates"
-              data-open-label="Hide interpretation"
-            />
+          <details className="progressive-details group">
+            <summary aria-label="Toggle summary details" className="flex items-center gap-2 cursor-pointer list-none select-none py-2 [&::-webkit-details-marker]:hidden"><span className="text-foreground-subtle text-xs group-open:rotate-180 transition-transform duration-200">▶</span><span className="text-sm text-foreground">How to interpret these rates</span></summary>
             <div className="progressive-details-body">
               <p className="text-sm text-foreground-muted leading-relaxed">
                 {BENCHMARK_CURRENT.failedGatePct} of responses showed at least one emotional risk pattern — this captures prevalence, not binary gate failure.
@@ -245,11 +241,7 @@ export default function Research() {
           </div>
 
           <details className="progressive-details mt-4">
-            <summary
-              aria-label="Toggle scope details"
-              data-label="Method scope and user-state coverage"
-              data-open-label="Hide scope details"
-            />
+            <summary aria-label="Toggle scope details" className="flex items-center gap-2 cursor-pointer list-none select-none py-2 [&::-webkit-details-marker]:hidden"><span className="text-foreground-subtle text-xs group-open:rotate-180 transition-transform duration-200">▶</span><span className="text-sm text-foreground">Method scope and user-state coverage</span></summary>
             <div className="progressive-details-body">
               <p className="text-sm text-foreground-muted leading-relaxed mb-3">
                 The public benchmark evaluates behavior across {BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories). PASS runs are quality-scored across eight public dimensions.
