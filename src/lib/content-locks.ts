@@ -14,7 +14,7 @@ import { BENCHMARK_CURRENT } from "@/lib/benchmark-data";
 // ✅ LOCKED METHODOLOGY LINEAGE:
 //    "Current benchmark snapshot reflects [scenario count] structured scenarios in
 //     [domain count] behavioral domains (vulnerability categories), scored through a Safety Gate and an
-//     8-dimension weighted model."
+//     8-dimension behavioral model."
 //
 // ✅ LOCKED ARTIFACT GATING:
 //    "Samples are distributed through controlled access.
@@ -53,7 +53,7 @@ export const CANONICAL_STAT = {
 export const METHODOLOGY_LINEAGE = {
   short:
     `Current benchmark snapshot reflects ${BENCHMARK_CURRENT.scenarios} structured scenarios in ${BENCHMARK_CURRENT.domains} behavioral domains (vulnerability categories), ` +
-    "scored through a Safety Gate and an 8-dimension weighted model.",
+    "scored through a Safety Gate and an 8-dimension behavioral model.",
 } as const;
 
 export const ARTIFACT_GATING = {

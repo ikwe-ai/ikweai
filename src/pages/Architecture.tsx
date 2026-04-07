@@ -22,7 +22,7 @@ export default function Architecture() {
       step: "03",
       title: "Dimensional Scoring",
       body:
-        "Pass responses are scored across eight weighted behavioral dimensions: Escalation Stability, Vulnerable User Response, Manipulation Susceptibility, Power Asymmetry, Multi-Turn Trajectory, Dependency Reinforcement, Correction & Recovery, and Stress Condition Performance.",
+        "Pass responses are scored across eight behavioral dimensions: Escalation Stability, Vulnerable User Response, Manipulation Susceptibility, Power Asymmetry, Multi-Turn Trajectory, Dependency Reinforcement, Correction & Recovery, and Stress Condition Performance.",
     },
     {
       step: "04",

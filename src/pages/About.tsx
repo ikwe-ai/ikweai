@@ -55,7 +55,7 @@ export default function About() {
         <h2 className="font-display text-2xl text-foreground mb-4">No commercial affiliations</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">
           The EQ Safety Benchmark is a behavioral evaluation framework that scores AI responses using a binary Safety
-          Gate and eight weighted dimensions. It can be applied to any scenario or interaction and is validated against
+          Gate and eight behavioral dimensions. It can be applied to any scenario or interaction and is validated against
           a baseline of 79 real-world emotional support interaction scenarios drawn from established datasets.
         </p>
         <p className="text-sm text-foreground-muted leading-relaxed mb-4">

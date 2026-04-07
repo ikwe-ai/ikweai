@@ -33,9 +33,9 @@ const TONE_COLORS: Record<ScoreTone, string> = {
 const WHAT_THIS_MEASURES = [
   {
     label: "The Framework",
-    title: "Binary Safety Gate. Eight weighted dimensions.",
+    title: "Binary Safety Gate. Eight behavioral dimensions.",
     description:
-      "A binary Safety Gate determines whether harmful behavioral patterns appear at all. Eight weighted dimensions then score how the system behaves across the full scenario set.",
+      "A binary Safety Gate determines whether harmful behavioral patterns appear at all. Eight behavioral dimensions then score how the system behaves across the full scenario set.",
   },
   {
     label: "The Baseline",
@@ -237,7 +237,7 @@ const METHOD_TRANSPARENCY = [
     label: "Judge Methodology",
     value: "Fixed",
     description:
-      "A consistent judge methodology applied across all evaluations using the v2.1 rubric: Safety Gate binary plus 8 weighted dimensions.",
+      "A consistent judge methodology applied across all evaluations using the v2.1 rubric: Safety Gate binary plus 8 behavioral dimensions.",
   },
 ] as const;
 
@@ -381,11 +381,11 @@ export default function EqSafetyBenchmark() {
       <SummaryHero
         kicker="EQ Safety Benchmark — Public Leaderboard"
         title="Frontier AI Behavioral Safety Index."
-        summary="The EQ Safety Benchmark is a behavioral evaluation framework that scores AI responses using a binary Safety Gate and eight weighted dimensions. Validated against a baseline of 79 real-world emotional support interaction scenarios drawn from established datasets, it can be applied to any AI system operating in emotionally sensitive contexts. Frontier model scores are public. Client evaluations are private and compared against the same baseline."
+        summary="The EQ Safety Benchmark is a behavioral evaluation framework that scores AI responses using a binary Safety Gate and eight behavioral dimensions. Validated against a baseline of 79 real-world emotional support interaction scenarios drawn from established datasets, it can be applied to any AI system operating in emotionally sensitive contexts. Frontier model scores are public. Client evaluations are private and compared against the same baseline."
         highlights={[
           `${BENCHMARK_CURRENT.scenarios} baseline scenarios`,
           `${BENCHMARK_CURRENT.nValue}`,
-          "Safety Gate + 8 weighted dimensions",
+          "Safety Gate + 8 behavioral dimensions",
         ]}
         primaryAction={{ href: "/get-started", label: "Request Ikwe EQ Safety Evaluation" }}
         secondaryAction={{ href: "#methodology", label: "View Methodology" }}
@@ -619,7 +619,7 @@ export default function EqSafetyBenchmark() {
                 A framework that evaluates any response. A baseline that establishes the <em>public record.</em>
               </h2>
               <p className="bm-body-muted max-w-2xl">
-                The EQ Safety Benchmark scores AI responses using a binary Safety Gate and eight weighted dimensions. The
+                The EQ Safety Benchmark scores AI responses using a binary Safety Gate and eight behavioral dimensions. The
                 79-scenario baseline set validates the framework against real-world emotional support interaction data and
                 establishes the public frontier model record.
               </p>
@@ -972,7 +972,7 @@ export default function EqSafetyBenchmark() {
 
           <p className="bm-label-xs text-foreground-subtle text-center">
             Scenarios sourced from established emotional support interaction datasets · Rubric developed for behavioral
-            safety evaluation in emotional contexts · v2.1 scoring with Safety Gate binary plus 8 weighted dimensions ·
+            safety evaluation in emotional contexts · v2.1 scoring with Safety Gate binary plus 8 behavioral dimensions ·
             Consistent judge methodology across all evaluations
           </p>
         </div>
