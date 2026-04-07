@@ -43,11 +43,7 @@ export default function SummaryHero({
   const inferredVisualPoints = (
     visual?.points?.length
       ? visual.points
-      : hasHeadlineStrip
-        ? highlights
-        : hasJumpLinks
-          ? jumpLinks.map((item) => item.label)
-          : []
+      : []
   ).slice(0, 4);
   const contextText = `${kicker} ${title}`.toLowerCase();
   const inferredTone =

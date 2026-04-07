@@ -272,33 +272,23 @@
   padding: 2.5rem 0;
 }
 
-/* Stage header */
+/* Stage header (label sidebar within audit-section-layout) */
 .audit-section-head {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .audit-section-head {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 2rem;
-  }
 }
 
 /* Stage body text area */
 .audit-section-body {
-  max-width: 68ch;
+  max-width: none;
 }
 
 .audit-section-body p + p {
   margin-top: 0.9rem;
 }
 
-/* Stage layout grid (content + receives list) */
+/* Stage layout grid (label sidebar + main content) */
 .audit-section-layout {
   display: grid;
   grid-template-columns: 1fr;
@@ -308,8 +298,8 @@
 
 @media (min-width: 768px) {
   .audit-section-layout {
-    grid-template-columns: minmax(0, 1fr) 280px;
-    gap: 3rem;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 2.5rem;
   }
 }
 
