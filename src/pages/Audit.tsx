@@ -437,15 +437,15 @@ export default function Audit() {
 
       {/* ── Optional Detail ── */}
       <section id="deep-dive" className="site-section py-14 border-b border-border audit-section-block">
-        <div className="audit-section-layout">
-          <div className="audit-section-head">
-            <p className="section-kicker mb-6">Optional Detail</p>
+        <div>
+          <div className="mb-8">
+            <p className="section-kicker mb-3">Optional Detail</p>
             <p className="text-sm text-foreground-muted leading-relaxed measure text-pretty">
               Decision-critical flow is above. Use these only when your team needs deeper review.
             </p>
           </div>
-          <div className="audit-section-body">
-            <div className="space-y-4 max-w-6xl">
+          <div>
+            <div className="space-y-4">
 
               <article className="card-surface p-6">
                 <h2 className="font-display text-2xl text-foreground mb-3">What the evaluation measures</h2>
