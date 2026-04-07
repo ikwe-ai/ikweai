@@ -1512,19 +1512,20 @@
    ENHANCED INTERACTIVITY & VISUAL CLARITY
 ═══════════════════════════════════════════════ */
 
-/* ── Dimension card hover detail reveal ── */
+/* ── Dimension card hover/tap detail reveal ── */
 .home-dimension-card {
   position: relative;
   overflow: hidden;
-  cursor: default;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .home-dimension-detail {
   position: absolute;
   inset: 0;
-  padding: 1.2rem 1.4rem;
-  background: rgba(219, 184, 255, 0.13);
-  backdrop-filter: blur(2px);
+  padding: 1.4rem 1.6rem;
+  background: rgba(24, 16, 29, 0.95);
+  backdrop-filter: blur(8px);
   border-radius: 10px;
   opacity: 0;
   transform: translateY(6px);
@@ -1533,9 +1534,11 @@
   flex-direction: column;
   gap: 0.5rem;
   pointer-events: none;
+  overflow-y: auto;
 }
 
-.home-dimension-card:hover .home-dimension-detail {
+.home-dimension-card:hover .home-dimension-detail,
+.home-dimension-card.is-active .home-dimension-detail {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
@@ -1571,20 +1574,21 @@
   font-style: normal;
 }
 
-/* ── Flow step hover detail ── */
+/* ── Flow step hover/tap detail ── */
 .home-flow-detail {
-  font-size: 0.74rem;
+  font-size: 0.78rem;
   color: var(--home-muted);
   line-height: 1.6;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.3s ease, opacity 0.25s ease, margin-top 0.25s ease;
+  transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.25s ease;
   margin-top: 0;
 }
 
-.home-flow-step:hover .home-flow-detail {
-  max-height: 80px;
+.home-flow-step:hover .home-flow-detail,
+.home-flow-step.is-active .home-flow-detail {
+  max-height: 200px;
   opacity: 1;
   margin-top: 0.65rem;
 }
