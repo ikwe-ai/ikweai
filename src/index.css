@@ -54,6 +54,12 @@
     --safe: 158 69% 58%;
     --danger: 0 68% 64%;
 
+    /* Brand quadrant colors (from logo) */
+    --coral: 9 86% 77%;
+    --coral-dim: 9 40% 20%;
+    --gold: 42 85% 77%;
+    --gold-dim: 42 40% 20%;
+
     /* Typography */
     --font-display: 'Fraunces', Georgia, serif;
     --font-body: 'DM Sans', system-ui, sans-serif;
@@ -106,7 +112,7 @@
 
   --home-red:          #ffb4ab;
   --home-green:        #4ade80;
-  --home-blush:        #E8A898;
+  --home-blush:        #f7a192;
 
   /* ── Type ── */
   --font-label-home: 'Space Grotesk', system-ui, sans-serif;

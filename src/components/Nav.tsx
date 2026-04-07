@@ -86,8 +86,8 @@ export default function Nav() {
               width: '30px',
               height: '30px',
               borderRadius: '50%',
-              background: 'conic-gradient(#1c1922 0deg 90deg, #E8A898 90deg 180deg, #9b72e8 180deg 270deg, #E8C97A 270deg 360deg)',
-              border: '1.5px solid rgba(155,114,232,0.35)',
+              background: 'conic-gradient(#191a2e 0deg 90deg, #f7a192 90deg 180deg, #b894f6 180deg 270deg, #f6d993 270deg 360deg)',
+              border: '1.5px solid rgba(184,148,246,0.35)',
               flexShrink: 0,
             }} />
             <span className="font-display text-lg font-medium tracking-tight text-foreground">

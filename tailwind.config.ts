@@ -65,6 +65,14 @@ export default {
         },
         safe: "hsl(var(--safe))",
         danger: "hsl(var(--danger))",
+        coral: {
+          DEFAULT: "hsl(var(--coral))",
+          dim: "hsl(var(--coral-dim))",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          dim: "hsl(var(--gold-dim))",
+        },
         "border-2": "hsl(var(--border-2))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
