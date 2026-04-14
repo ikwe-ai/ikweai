@@ -41,7 +41,12 @@ const queryClient = new QueryClient();
 
 const LegacyCaseStudyRedirect = () => {
   const { slug } = useParams();
-  return <Navigate to={slug ? `/archive/research/case-studies/${slug}` : "/archive/research/case-studies"} replace />;
+  return <Navigate to={slug ? `/research/case-studies/${slug}` : "/research/case-studies"} replace />;
+};
+
+const ArchiveCaseStudyRedirect = () => {
+  const { slug } = useParams();
+  return <Navigate to={slug ? `/research/case-studies/${slug}` : "/research/case-studies"} replace />;
 };
 
 const AnalyticsManager = () => {
@@ -94,7 +99,6 @@ const App = () => (
           <Route path="/request-evaluation" element={<Navigate to="/intake" replace />} />
           <Route path="/request-evaluation-intake" element={<Navigate to="/intake" replace />} />
           <Route path="/evaluation-request" element={<Navigate to="/intake" replace />} />
-          <Route path="/archive" element={<Archive />} />
 
           <Route path="/outputs" element={<Navigate to="/audit#deliverables-previews" replace />} />
           <Route path="/reports" element={<Navigate to="/audit#deliverables-previews" replace />} />
@@ -109,38 +113,69 @@ const App = () => (
           <Route path="/terms" element={<Navigate to="/terms.html" replace />} />
           <Route path="/research-access-terms" element={<Navigate to="/research-access-terms.html" replace />} />
 
-          <Route path="/archive/about" element={<About />} />
+          {/* ── Primary pages ── */}
+          <Route path="/about" element={<About />} />
+          <Route path="/founder" element={<Founder />} />
+          <Route path="/press" element={<Press />} />
+
+          {/* ── Research content ── */}
+          <Route path="/research/writings" element={<WritingLibrary />} />
+          <Route path="/research/writings/before-the-violation" element={<BeforeTheViolation />} />
+          <Route
+            path="/research/writings/ai-governance-is-becoming-a-compliance-issue"
+            element={<AIGovernanceCompliance />}
+          />
+          <Route path="/research/writings/choose-your-path" element={<ChooseYourPath />} />
+          <Route
+            path="/research/writings/recognition-is-not-safety"
+            element={<RecognitionIsNotSafety />}
+          />
+          <Route
+            path="/research/writings/emotional-ai-high-trust-environments"
+            element={<EmotionalAiHighTrustEnvironments />}
+          />
+          <Route
+            path="/research/writings/eq-safety-benchmark-foundation"
+            element={<EqSafetyBenchmarkFoundation />}
+          />
+          <Route path="/research/case-studies" element={<CaseStudies />} />
+          <Route path="/research/case-studies/:slug" element={<CaseStudyDetail />} />
+
+          {/* ── Archive (reference-only pages) ── */}
+          <Route path="/archive" element={<Archive />} />
           <Route path="/archive/architecture" element={<Architecture />} />
           <Route path="/archive/consult" element={<Consultation />} />
           <Route path="/archive/ip-notice" element={<IpNotice />} />
           <Route path="/archive/eq-safety-benchmark" element={<Navigate to="/benchmark" replace />} />
-          <Route path="/archive/research/writings" element={<WritingLibrary />} />
-          <Route path="/archive/research/writings/before-the-violation" element={<BeforeTheViolation />} />
+
+          {/* ── Legacy redirects: archive paths that moved to primary ── */}
+          <Route path="/archive/about" element={<Navigate to="/about" replace />} />
+          <Route path="/archive/research/writings" element={<Navigate to="/research/writings" replace />} />
+          <Route path="/archive/research/writings/before-the-violation" element={<Navigate to="/research/writings/before-the-violation" replace />} />
           <Route
             path="/archive/research/writings/ai-governance-is-becoming-a-compliance-issue"
-            element={<AIGovernanceCompliance />}
+            element={<Navigate to="/research/writings/ai-governance-is-becoming-a-compliance-issue" replace />}
           />
-          <Route path="/archive/research/writings/choose-your-path" element={<ChooseYourPath />} />
+          <Route path="/archive/research/writings/choose-your-path" element={<Navigate to="/research/writings/choose-your-path" replace />} />
           <Route
             path="/archive/research/writings/recognition-is-not-safety"
-            element={<RecognitionIsNotSafety />}
+            element={<Navigate to="/research/writings/recognition-is-not-safety" replace />}
           />
           <Route
             path="/archive/research/writings/emotional-ai-high-trust-environments"
-            element={<EmotionalAiHighTrustEnvironments />}
+            element={<Navigate to="/research/writings/emotional-ai-high-trust-environments" replace />}
           />
           <Route
             path="/archive/research/writings/eq-safety-benchmark-foundation"
-            element={<EqSafetyBenchmarkFoundation />}
+            element={<Navigate to="/research/writings/eq-safety-benchmark-foundation" replace />}
           />
-          <Route path="/archive/research/case-studies" element={<CaseStudies />} />
-          <Route path="/archive/research/case-studies/:slug" element={<CaseStudyDetail />} />
-          <Route path="/archive/research/press" element={<Press />} />
+          <Route path="/archive/research/case-studies" element={<Navigate to="/research/case-studies" replace />} />
+          <Route path="/archive/research/case-studies/:slug" element={<ArchiveCaseStudyRedirect />} />
+          <Route path="/archive/research/press" element={<Navigate to="/press" replace />} />
 
-          <Route path="/about" element={<Navigate to="/archive/about" replace />} />
-          <Route path="/about.html" element={<Navigate to="/archive/about" replace />} />
-          <Route path="/why-independent" element={<Navigate to="/archive/about" replace />} />
-          <Route path="/founder" element={<Founder />} />
+          {/* ── Legacy redirects: old paths ── */}
+          <Route path="/about.html" element={<Navigate to="/about" replace />} />
+          <Route path="/why-independent" element={<Navigate to="/about" replace />} />
           <Route path="/technology/architecture" element={<Navigate to="/archive/architecture" replace />} />
           <Route path="/consult" element={<Navigate to="/archive/consult" replace />} />
           <Route path="/consultation" element={<Navigate to="/archive/consult" replace />} />
@@ -150,52 +185,28 @@ const App = () => (
           <Route path="/intellectual-property" element={<Navigate to="/archive/ip-notice" replace />} />
           <Route path="/eq-safety-benchmark" element={<Navigate to="/benchmark" replace />} />
           <Route path="/eqsb" element={<Navigate to="/benchmark" replace />} />
-          <Route path="/research/writings" element={<Navigate to="/archive/research/writings" replace />} />
-          <Route
-            path="/research/writings/before-the-violation"
-            element={<Navigate to="/archive/research/writings/before-the-violation" replace />}
-          />
-          <Route
-            path="/research/writings/ai-governance-is-becoming-a-compliance-issue"
-            element={<Navigate to="/archive/research/writings/ai-governance-is-becoming-a-compliance-issue" replace />}
-          />
-          <Route
-            path="/research/writings/choose-your-path"
-            element={<Navigate to="/archive/research/writings/choose-your-path" replace />}
-          />
-          <Route
-            path="/research/writings/recognition-is-not-safety"
-            element={<Navigate to="/archive/research/writings/recognition-is-not-safety" replace />}
-          />
-          <Route
-            path="/research/writings/emotional-ai-high-trust-environments"
-            element={<Navigate to="/archive/research/writings/emotional-ai-high-trust-environments" replace />}
-          />
+
           <Route
             path="/research/before-the-violation/*"
-            element={<Navigate to="/archive/research/writings/before-the-violation" replace />}
+            element={<Navigate to="/research/writings/before-the-violation" replace />}
           />
           <Route
             path="/research/canon/ai-governance-compliance/*"
-            element={<Navigate to="/archive/research/writings/ai-governance-is-becoming-a-compliance-issue" replace />}
+            element={<Navigate to="/research/writings/ai-governance-is-becoming-a-compliance-issue" replace />}
           />
           <Route
             path="/choose-your-path/*"
-            element={<Navigate to="/archive/research/writings/choose-your-path" replace />}
+            element={<Navigate to="/research/writings/choose-your-path" replace />}
           />
           <Route
             path="/research/recognition-is-not-safety/*"
-            element={<Navigate to="/archive/research/writings/recognition-is-not-safety" replace />}
+            element={<Navigate to="/research/writings/recognition-is-not-safety" replace />}
           />
-          <Route path="/research/case-studies" element={<Navigate to="/archive/research/case-studies" replace />} />
-          <Route path="/research/case-studies/:slug" element={<LegacyCaseStudyRedirect />} />
-          <Route path="/research/press" element={<Navigate to="/archive/research/press" replace />} />
-          <Route path="/press" element={<Navigate to="/archive/research/press" replace />} />
-
-          <Route path="/proof" element={<Navigate to="/archive/research/case-studies" replace />} />
-          <Route path="/case-studies" element={<Navigate to="/archive/research/case-studies" replace />} />
-          <Route path="/writings" element={<Navigate to="/archive/research/writings" replace />} />
-          <Route path="/writing-library" element={<Navigate to="/archive/research/writings" replace />} />
+          <Route path="/case-studies" element={<Navigate to="/research/case-studies" replace />} />
+          <Route path="/case-studies/:slug" element={<LegacyCaseStudyRedirect />} />
+          <Route path="/proof" element={<Navigate to="/research/case-studies" replace />} />
+          <Route path="/writings" element={<Navigate to="/research/writings" replace />} />
+          <Route path="/writing-library" element={<Navigate to="/research/writings" replace />} />
           <Route path="/enterprise" element={<Navigate to="/" replace />} />
           <Route path="/explorer" element={<Navigate to="/research" replace />} />
           <Route path="/research-summary" element={<Navigate to="/research" replace />} />

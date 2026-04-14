@@ -8,7 +8,7 @@ export default function EqSafetyBenchmarkFoundation() {
       <PageMeta
         title="The EQ Safety Benchmark: What's Actually Behind It | Ikwe.ai"
         description="The year of research, the clinical disciplines, and the empirical findings that built the framework nobody else built. By Stephanie Stranko."
-        path="/archive/research/writings/eq-safety-benchmark-foundation"
+        path="/research/writings/eq-safety-benchmark-foundation"
       />
       <SummaryHero
         kicker="Founder Writing"

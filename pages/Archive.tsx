@@ -2,12 +2,8 @@ import PageMeta from "@/components/PageMeta";
 import PageShell from "@/components/PageShell";
 
 const archivedPages = [
-  { label: "About", href: "/archive/about" },
   { label: "Architecture", href: "/archive/architecture" },
   { label: "Consultation", href: "/archive/consult" },
-  { label: "Writing Library", href: "/archive/research/writings" },
-  { label: "Case Studies", href: "/archive/research/case-studies" },
-  { label: "Press & Updates", href: "/archive/research/press" },
   { label: "IP Notice", href: "/archive/ip-notice" },
 ] as const;
 

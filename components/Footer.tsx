@@ -29,7 +29,7 @@ export default function Footer() {
               <Link to="/" className="text-foreground-muted hover:text-foreground transition-colors">Home</Link>
               <Link to="/research" className="text-foreground-muted hover:text-foreground transition-colors">Research</Link>
               <Link to="/benchmark" className="text-foreground-muted hover:text-foreground transition-colors">Benchmark</Link>
-              <Link to="/archive/research/writings" className="text-foreground-muted hover:text-foreground transition-colors">Writing Library</Link>
+              <Link to="/research/writings" className="text-foreground-muted hover:text-foreground transition-colors">Writing Library</Link>
               <Link to="/audit" className="text-foreground-muted hover:text-foreground transition-colors">Audit &amp; Validation</Link>
               <Link to="/about" className="text-foreground-muted hover:text-foreground transition-colors">About</Link>
               <Link to="/founder" className="text-foreground-muted hover:text-foreground transition-colors">Founder</Link>
@@ -72,7 +72,7 @@ export default function Footer() {
               <Link to="/benchmark" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Benchmark Framework
               </Link>
-              <Link to="/archive/research/writings" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+              <Link to="/research/writings" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Writing Library
               </Link>
               <Link to="/audit#deliverables-previews" className="text-sm text-foreground-muted hover:text-foreground transition-colors">

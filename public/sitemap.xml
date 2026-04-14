@@ -11,34 +11,36 @@
   <url><loc>https://ikwe.ai/sample-report</loc></url>
   <url><loc>https://ikwe.ai/intake</loc></url>
 
+  <!-- About -->
+  <url><loc>https://ikwe.ai/about</loc></url>
+  <url><loc>https://ikwe.ai/founder</loc></url>
+  <url><loc>https://ikwe.ai/press</loc></url>
+
   <!-- Legal / static -->
   <url><loc>https://ikwe.ai/privacy.html</loc></url>
   <url><loc>https://ikwe.ai/terms.html</loc></url>
   <url><loc>https://ikwe.ai/research-access-terms.html</loc></url>
 
-  <!-- Archive: company / reference -->
-  <url><loc>https://ikwe.ai/archive/about</loc></url>
+  <!-- Writings -->
+  <url><loc>https://ikwe.ai/research/writings</loc></url>
+  <url><loc>https://ikwe.ai/research/writings/before-the-violation</loc></url>
+  <url><loc>https://ikwe.ai/research/writings/ai-governance-is-becoming-a-compliance-issue</loc></url>
+  <url><loc>https://ikwe.ai/research/writings/choose-your-path</loc></url>
+  <url><loc>https://ikwe.ai/research/writings/recognition-is-not-safety</loc></url>
+  <url><loc>https://ikwe.ai/research/writings/emotional-ai-high-trust-environments</loc></url>
+  <url><loc>https://ikwe.ai/research/writings/eq-safety-benchmark-foundation</loc></url>
+
+  <!-- Case studies -->
+  <url><loc>https://ikwe.ai/research/case-studies</loc></url>
+  <url><loc>https://ikwe.ai/research/case-studies/authority-drift</loc></url>
+  <url><loc>https://ikwe.ai/research/case-studies/emotional-escalation</loc></url>
+  <url><loc>https://ikwe.ai/research/case-studies/founder-as-safety-mechanism</loc></url>
+  <url><loc>https://ikwe.ai/research/case-studies/scale-amplification</loc></url>
+  <url><loc>https://ikwe.ai/research/case-studies/handoff-friction</loc></url>
+
+  <!-- Archive: reference-only -->
   <url><loc>https://ikwe.ai/archive/architecture</loc></url>
   <url><loc>https://ikwe.ai/archive/consult</loc></url>
   <url><loc>https://ikwe.ai/archive/ip-notice</loc></url>
-
-  <!-- Archive: writings -->
-  <url><loc>https://ikwe.ai/archive/research/writings</loc></url>
-  <url><loc>https://ikwe.ai/archive/research/writings/before-the-violation</loc></url>
-  <url><loc>https://ikwe.ai/archive/research/writings/ai-governance-is-becoming-a-compliance-issue</loc></url>
-  <url><loc>https://ikwe.ai/archive/research/writings/choose-your-path</loc></url>
-  <url><loc>https://ikwe.ai/archive/research/writings/recognition-is-not-safety</loc></url>
-  <url><loc>https://ikwe.ai/archive/research/writings/emotional-ai-high-trust-environments</loc></url>
-
-  <!-- Archive: case studies -->
-  <url><loc>https://ikwe.ai/archive/research/case-studies</loc></url>
-  <url><loc>https://ikwe.ai/archive/research/case-studies/authority-drift</loc></url>
-  <url><loc>https://ikwe.ai/archive/research/case-studies/emotional-escalation</loc></url>
-  <url><loc>https://ikwe.ai/archive/research/case-studies/founder-as-safety-mechanism</loc></url>
-  <url><loc>https://ikwe.ai/archive/research/case-studies/scale-amplification</loc></url>
-  <url><loc>https://ikwe.ai/archive/research/case-studies/handoff-friction</loc></url>
-
-  <!-- Archive: press -->
-  <url><loc>https://ikwe.ai/archive/research/press</loc></url>
 
 </urlset>
