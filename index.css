@@ -1457,6 +1457,18 @@
 
 .home-footer-left strong { color: var(--home-soft); }
 
+@media (max-width: 900px) {
+  .home-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .home-footer-right {
+    text-align: left;
+  }
+}
+
 /* ── Responsive ── */
 @media (max-width: 1100px) {
   .home-hero-grid        { grid-template-columns: 1fr; gap: 3rem; }
