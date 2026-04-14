@@ -26,6 +26,7 @@ import Consultation from "./pages/Consultation";
 import WritingLibrary from "./pages/WritingLibrary";
 import CaseStudies from "./pages/CaseStudies";
 import Press from "./pages/Press";
+import Founder from "./pages/Founder";
 import IpNotice from "./pages/IpNotice";
 import BeforeTheViolation from "./pages/writings/BeforeTheViolation";
 import RecognitionIsNotSafety from "./pages/writings/RecognitionIsNotSafety";
@@ -139,7 +140,7 @@ const App = () => (
           <Route path="/about" element={<Navigate to="/archive/about" replace />} />
           <Route path="/about.html" element={<Navigate to="/archive/about" replace />} />
           <Route path="/why-independent" element={<Navigate to="/archive/about" replace />} />
-          <Route path="/founder" element={<Navigate to="/archive/about" replace />} />
+          <Route path="/founder" element={<Founder />} />
           <Route path="/technology/architecture" element={<Navigate to="/archive/architecture" replace />} />
           <Route path="/consult" element={<Navigate to="/archive/consult" replace />} />
           <Route path="/consultation" element={<Navigate to="/archive/consult" replace />} />
