@@ -19,6 +19,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-border mt-20 bg-background-card">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 py-12">
+        {/* ── Sitemap bar ── */}
         <div className="card-surface p-4 mb-10">
           <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
             <p className="font-mono text-[10px] uppercase tracking-widest text-foreground-subtle">Public Site Map</p>
@@ -27,15 +28,16 @@ export default function Footer() {
               <Link to="/research" className="text-foreground-muted hover:text-foreground transition-colors">Research</Link>
               <Link to="/benchmark" className="text-foreground-muted hover:text-foreground transition-colors">Benchmark</Link>
               <Link to="/archive/research/writings" className="text-foreground-muted hover:text-foreground transition-colors">Writing Library</Link>
-              <Link to="/audit#deliverables-previews" className="text-foreground-muted hover:text-foreground transition-colors">Sample Outputs</Link>
               <Link to="/audit" className="text-foreground-muted hover:text-foreground transition-colors">Audit &amp; Validation</Link>
-              <Link to="/trust" className="text-foreground-muted hover:text-foreground transition-colors">Trust</Link>
+              <Link to="/about" className="text-foreground-muted hover:text-foreground transition-colors">About</Link>
+              <Link to="/founder" className="text-foreground-muted hover:text-foreground transition-colors">Founder</Link>
               <Link to="/get-started" className="text-foreground-muted hover:text-foreground transition-colors">Get Started</Link>
             </div>
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+          {/* ── Brand + legal ── */}
           <div className="sm:col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-3">
               <img
@@ -54,11 +56,11 @@ export default function Footer() {
             </p>
             <p className="text-xs text-foreground-subtle mt-4">© {new Date().getFullYear()} Visible Healing Inc. (dba Ikwe.ai)</p>
             <p className="text-xs text-foreground-subtle mt-2 leading-relaxed">
-              Ikwe.ai, EQ Safety Benchmark, and Ikwe Certified are proprietary names of Visible Healing Inc. Use by
-              written permission only.
+              Ikwe.ai, EQ Safety Benchmark, and Ikwe Certified are proprietary names of Visible Healing Inc. Use by written permission only.
             </p>
           </div>
 
+          {/* ── Core Pages ── */}
           <div>
             <p className="text-xs font-mono text-foreground-subtle uppercase tracking-widest mb-3">Core Pages</p>
             <nav className="flex flex-col gap-2.5">
@@ -72,7 +74,7 @@ export default function Footer() {
                 Writing Library
               </Link>
               <Link to="/audit#deliverables-previews" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
-                Sample Outputs &amp; Transparency
+                Sample Outputs
               </Link>
               <Link to="/audit" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Audit &amp; Validation
@@ -80,15 +82,19 @@ export default function Footer() {
               <Link to="/get-started" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Get Started
               </Link>
-              <Link to="/trust" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
-                Trust &amp; Confidentiality
-              </Link>
             </nav>
           </div>
 
+          {/* ── About ── */}
           <div>
-            <p className="text-xs font-mono text-foreground-subtle uppercase tracking-widest mb-3">Reference</p>
+            <p className="text-xs font-mono text-foreground-subtle uppercase tracking-widest mb-3">About</p>
             <nav className="flex flex-col gap-2.5">
+              <Link to="/about" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                About Ikwe.ai
+              </Link>
+              <Link to="/founder" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                Founder
+              </Link>
               <Link to="/archive" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Archived Pages
               </Link>
@@ -101,17 +107,23 @@ export default function Footer() {
               <a href="/research-access-terms.html" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
                 Research Access Terms
               </a>
-              <a href="mailto:research@ikwe.ai" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
-                research@ikwe.ai
-              </a>
             </nav>
           </div>
 
+          {/* ── Contact + Standards ── */}
           <div>
-            <p className="text-xs font-mono text-foreground-subtle uppercase tracking-widest mb-3">Standards</p>
+            <p className="text-xs font-mono text-foreground-subtle uppercase tracking-widest mb-3">Contact</p>
+            <nav className="flex flex-col gap-2.5 mb-6">
+              <a href="mailto:research@ikwe.ai" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                research@ikwe.ai
+              </a>
+              <Link to="/intake" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                Submit an Inquiry →
+              </Link>
+            </nav>
+            <p className="text-xs font-mono text-foreground-subtle uppercase tracking-widest mb-2">Standards</p>
             <p className="text-xs text-foreground-subtle leading-relaxed">
-              No commercial affiliations with AI developers evaluated. Reports distributed through controlled,
-              versioned documentation. Results are not shared with evaluated parties before publication.
+              No commercial affiliations with AI developers evaluated. Reports distributed through controlled, versioned documentation. Results are not shared with evaluated parties before publication.
             </p>
           </div>
         </div>
