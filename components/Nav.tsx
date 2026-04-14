@@ -35,6 +35,11 @@ const aboutLinks = [
     desc: "Stephanie Stranko — credentials, background, and work",
     path: "/founder",
   },
+  {
+    title: "Press",
+    desc: "Research publications, media coverage, and public writing",
+    path: "/press",
+  },
 ] as const;
 
 export default function Nav() {
@@ -94,7 +99,9 @@ export default function Nav() {
   const isAboutActive =
     isActive("/about") ||
     isActive("/archive/about") ||
-    isActive("/founder");
+    isActive("/founder") ||
+    isActive("/press") ||
+    isActive("/archive/research/press");
 
   const closeMobileMenu = () => {
     setMobileOpen(false);
