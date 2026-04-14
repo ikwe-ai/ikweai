@@ -1,21 +1,6 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
-  const location = useLocation();
-
-  if (location.pathname === "/") {
-    return (
-      <footer className="home-footer">
-        <div className="home-footer-left">
-          <strong>ikwe.ai</strong> · The behavioral safety standard for human-facing AI · Independent safety record
-        </div>
-        <div className="home-footer-right">
-          Binary Safety Gate · 8 behavioral dimensions · 79 baseline scenarios
-        </div>
-      </footer>
-    );
-  }
-
   return (
     <footer className="border-t border-border mt-20 bg-background-card">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 py-12">
