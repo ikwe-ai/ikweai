@@ -1440,19 +1440,21 @@
 
 /* ── Footer ── */
 .home-footer {
-  padding: 1.5rem 2rem;
-  background: var(--home-bg);
-  border-top: 1px solid rgba(75,68,80,0.15);
+  padding: 2rem 2rem;
+  background: var(--home-bg-2);
+  border-top: 1px solid rgba(219,184,255,0.14);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .home-footer-left,
 .home-footer-right {
   font-family: var(--font-label-home);
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   color: var(--home-muted);
+  line-height: 1.55;
 }
 
 .home-footer-left strong { color: var(--home-soft); }
