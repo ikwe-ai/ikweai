@@ -2,7 +2,6 @@ import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 import { CASE_STUDIES_INDEX } from "@/lib/content-index";
-import ArchiveBanner from "@/components/ArchiveBanner";
 
 export default function CaseStudies() {
   return (
@@ -10,9 +9,8 @@ export default function CaseStudies() {
       <PageMeta
         title="Case Studies | Ikwe.ai"
         description="Applied behavioral safety case studies — real scenarios, real drift patterns, real governance outcomes from the Ikwe EQ Safety framework."
-        path="/archive/research/case-studies"
+        path="/research/case-studies"
       />
-      <ArchiveBanner type="library" />
       <SummaryHero
         kicker="Case Analysis"
         title="Case Studies"

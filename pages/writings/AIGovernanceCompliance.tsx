@@ -1,7 +1,6 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
-import ArchiveBanner from "@/components/ArchiveBanner";
 
 export default function AIGovernanceCompliance() {
   return (
@@ -9,10 +8,9 @@ export default function AIGovernanceCompliance() {
       <PageMeta
         title="AI Governance Is Becoming a Compliance Issue | Ikwe.ai"
         description="Trust-layer thesis on why AI governance is now an evidence and compliance discipline."
-        path="/archive/research/writings/ai-governance-is-becoming-a-compliance-issue"
+        path="/research/writings/ai-governance-is-becoming-a-compliance-issue"
         ogImagePath="/og/governance-gap.png"
       />
-      <ArchiveBanner type="library" />
       <SummaryHero
         kicker="Published Essay"
         title="AI Governance Is Becoming a Compliance Issue"

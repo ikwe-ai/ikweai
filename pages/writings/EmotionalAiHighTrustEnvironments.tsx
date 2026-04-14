@@ -1,7 +1,6 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
-import ArchiveBanner from "@/components/ArchiveBanner";
 
 export default function EmotionalAiHighTrustEnvironments() {
   return (
@@ -11,7 +10,6 @@ export default function EmotionalAiHighTrustEnvironments() {
         description="Recent national data shows 12% of U.S. teens use AI chatbots for emotional support — without any standardized behavioral safety validation. Ikwe.ai founder Stephanie Stranko examines the gap."
         path="/research/writings/emotional-ai-high-trust-environments"
       />
-      <ArchiveBanner type="library" />
       <SummaryHero
         kicker="Ikwe.ai Research · February 2026"
         title="Emotional AI Is Already Active in High-Trust Environments"
