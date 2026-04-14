@@ -264,7 +264,7 @@ export default function Home() {
               </div>
               <h1 className="home-hero-title">
                 Behavioral Safety<br />
-                Infrastructure for AI
+                AI Infrastructure
               </h1>
               <p className="home-hero-mission">
                 The independent benchmark and audit system for AI that interacts with humans in emotionally vulnerable moments.
