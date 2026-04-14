@@ -1,7 +1,6 @@
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
-import ArchiveBanner from "@/components/ArchiveBanner";
 
 export default function BeforeTheViolation() {
   return (
@@ -9,9 +8,8 @@ export default function BeforeTheViolation() {
       <PageMeta
         title="Before the Violation | Ikwe.ai"
         description="Why AI safety needs harm floors, not perfection: full founder writing from Ikwe.ai research."
-        path="/archive/research/writings/before-the-violation"
+        path="/research/writings/before-the-violation"
       />
-      <ArchiveBanner type="library" />
       <SummaryHero
         kicker="Founder Writing"
         title="Before the Violation"
