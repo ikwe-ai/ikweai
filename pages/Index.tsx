@@ -263,27 +263,24 @@ export default function Home() {
                 Behavioral Safety Layer · Human-Facing AI
               </div>
               <h1 className="home-hero-title">
-                Building AI<br />
-                that humans<br />
-                can actually <em>trust.</em>
+                Behavioral Safety<br />
+                Infrastructure for AI
               </h1>
               <p className="home-hero-mission">
-                ikwe audits ensure safety remains a <em>constant</em>, not a coincidence.
+                The independent benchmark and audit system for AI that interacts with humans in emotionally vulnerable moments.
               </p>
               <p className="home-hero-sub">
-                If your human-facing AI has never had an independent behavioral audit, you don't know whether it
-                protects users in <strong>vulnerable moments</strong> — or quietly makes things worse.
+                We built the EQ Safety Benchmark — 79 real-world behavioral risk scenarios sourced from established datasets across 8 weighted behavioral dimensions — and the audit infrastructure that produces documented safety evidence your board, legal, and compliance teams can stand behind.
               </p>
               <p className="home-hero-subtle">
-                We run independent behavioral safety audits and produce documented evidence your board, legal team,
-                and compliance advisors can stand behind.
+                Independent. Quantified. Purpose-built to measure what no existing AI safety framework covers — behavioral safety in human-facing systems.
               </p>
               <div className="home-hero-actions">
                 <Link to="/audit" className="home-btn home-btn-primary" onClick={() => trackEvent("audit_cta_hero")}>
                   Request a Behavioral Safety Audit
                 </Link>
-                <Link to="/samples" className="home-btn home-btn-ghost" onClick={() => trackEvent("cta_sample_report", { source: "hero" })}>
-                  See a Sample Risk Report
+                <Link to="/benchmark" className="home-btn home-btn-ghost" onClick={() => trackEvent("cta_benchmark_hero", { source: "hero" })}>
+                  Explore the Benchmark
                 </Link>
               </div>
             </div>
