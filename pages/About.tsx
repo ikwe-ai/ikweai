@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
@@ -174,6 +175,14 @@ export default function About() {
           No external investment from AI developers evaluated. No sponsorship. No affiliate arrangements
           with evaluated systems.
         </p>
+        <div className="mt-6">
+          <Link
+            to="/founder"
+            className="inline-flex items-center gap-1.5 font-mono text-xs text-lilac hover:text-lilac-bright transition-colors uppercase tracking-widest"
+          >
+            Full founder bio ↗
+          </Link>
+        </div>
       </section>
 
       {/* Contact nudge */}

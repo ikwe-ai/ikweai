@@ -24,13 +24,29 @@ const researchLinks = [
   },
 ] as const;
 
+const aboutLinks = [
+  {
+    title: "About Ikwe.ai",
+    desc: "Independence standards, COI policy, and evidence governance",
+    path: "/about",
+  },
+  {
+    title: "Founder",
+    desc: "Stephanie Stranko — credentials, background, and work",
+    path: "/founder",
+  },
+] as const;
+
 export default function Nav() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileResearchOpen, setMobileResearchOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [researchOpen, setResearchOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const researchRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -41,7 +57,9 @@ export default function Nav() {
   useEffect(() => {
     setMobileOpen(false);
     setMobileResearchOpen(false);
+    setMobileAboutOpen(false);
     setResearchOpen(false);
+    setAboutOpen(false);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -55,6 +73,17 @@ export default function Nav() {
     return () => document.removeEventListener("mousedown", handler);
   }, [researchOpen]);
 
+  useEffect(() => {
+    if (!aboutOpen) return;
+    const handler = (e: MouseEvent) => {
+      if (aboutRef.current && !aboutRef.current.contains(e.target as Node)) {
+        setAboutOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [aboutOpen]);
+
   const isActive = (path: string) =>
     path === "/" ? location.pathname === "/" : location.pathname === path || location.pathname.startsWith(`${path}/`);
 
@@ -62,9 +91,15 @@ export default function Nav() {
     isActive("/research") ||
     isActive("/archive/research");
 
+  const isAboutActive =
+    isActive("/about") ||
+    isActive("/archive/about") ||
+    isActive("/founder");
+
   const closeMobileMenu = () => {
     setMobileOpen(false);
     setMobileResearchOpen(false);
+    setMobileAboutOpen(false);
   };
 
   return (
@@ -172,14 +207,50 @@ export default function Nav() {
               Audit
             </Link>
 
-            <Link
-              to="/about"
-              className={`nav-link-pill rounded-full px-3 py-1.5 text-sm transition-colors whitespace-nowrap ${
-                isActive("/about") ? "bg-lilac-dim text-lilac-bright" : "text-foreground-muted hover:text-foreground"
-              }`}
+            {/* ── About dropdown ── */}
+            <div
+              ref={aboutRef}
+              className="relative"
+              onMouseEnter={() => setAboutOpen(true)}
+              onMouseLeave={() => setAboutOpen(false)}
             >
-              About
-            </Link>
+              <Link
+                to="/about"
+                aria-haspopup="true"
+                aria-expanded={aboutOpen}
+                className={`nav-link-pill rounded-full px-3 py-1.5 text-sm transition-colors whitespace-nowrap flex items-center gap-1 ${
+                  isAboutActive ? "bg-lilac-dim text-lilac-bright" : "text-foreground-muted hover:text-foreground"
+                }`}
+              >
+                About
+                <span
+                  aria-hidden="true"
+                  className="text-[9px] opacity-50 transition-transform duration-200 inline-block"
+                  style={{ transform: aboutOpen ? "rotate(180deg)" : "none" }}
+                >
+                  ▾
+                </span>
+              </Link>
+
+              {aboutOpen && (
+                <div className="mega-panel" role="menu" aria-label="About pages">
+                  <div className="flex flex-col gap-2">
+                    {aboutLinks.map((item) => (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className="mega-link"
+                        role="menuitem"
+                        onClick={() => setAboutOpen(false)}
+                      >
+                        <span className="mega-link-title">{item.title}</span>
+                        <span className="mega-link-desc">{item.desc}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* ── CTA ── */}
@@ -287,17 +358,44 @@ export default function Nav() {
               Audit
             </Link>
 
-            <Link
-              to="/about"
-              className={`rounded border px-3 py-2 text-sm ${
-                isActive("/about")
-                  ? "border-lilac text-lilac-bright bg-lilac-dim"
-                  : "border-border text-foreground-muted"
-              }`}
-              onClick={closeMobileMenu}
-            >
-              About
-            </Link>
+            {/* About — link + expandable sub-pages */}
+            <div className={`rounded border flex items-center justify-between ${
+              isAboutActive
+                ? "border-lilac bg-lilac-dim"
+                : "border-border"
+            }`}>
+              <Link
+                to="/about"
+                className={`flex-1 px-3 py-2 text-sm ${
+                  isAboutActive ? "text-lilac-bright" : "text-foreground-muted"
+                }`}
+                onClick={closeMobileMenu}
+              >
+                About
+              </Link>
+              <button
+                onClick={() => setMobileAboutOpen((v) => !v)}
+                className="px-3 py-2 text-foreground-muted hover:text-foreground"
+                aria-label="Toggle about sub-pages"
+              >
+                <span className="font-mono text-[10px] opacity-50">{mobileAboutOpen ? "▲" : "▼"}</span>
+              </button>
+            </div>
+
+            {mobileAboutOpen && (
+              <div className="pl-3 flex flex-col gap-1.5 pb-1">
+                {aboutLinks.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className="rounded border border-border/50 px-3 py-2 text-sm text-foreground-subtle hover:text-foreground hover:border-border transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
+            )}
 
             <Link
               to="/get-started"
