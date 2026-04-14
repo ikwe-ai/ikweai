@@ -180,7 +180,7 @@ export default function About() {
             to="/founder"
             className="inline-flex items-center gap-1.5 font-mono text-xs text-lilac hover:text-lilac-bright transition-colors uppercase tracking-widest"
           >
-            Full founder bio ↗
+            Read full bio →
           </Link>
         </div>
       </section>
