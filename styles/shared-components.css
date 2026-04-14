@@ -79,7 +79,7 @@
 .mega-link-desc {
   font-family: var(--font-body), sans-serif;
   font-size: 0.75rem;
-  color: hsl(var(--foreground-subtle));
+  color: hsl(var(--foreground-muted));
   line-height: 1.45;
 }
 
@@ -651,6 +651,17 @@
     min-width: 90vw;
     left: 0;
     transform: none;
+  }
+
+  .summary-headline-item,
+  .summary-jump {
+    white-space: normal;
+    line-height: 1.4;
+  }
+
+  .summary-headline-item {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .audit-section-layout {

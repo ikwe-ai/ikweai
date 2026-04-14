@@ -325,7 +325,7 @@ export default function Nav() {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className="rounded border border-border/50 px-3 py-2 text-sm text-foreground-subtle hover:text-foreground hover:border-border transition-colors"
+                    className="rounded border border-border/50 px-3 py-2 text-sm text-foreground-muted hover:text-foreground hover:border-border transition-colors"
                     onClick={closeMobileMenu}
                   >
                     {item.title}
@@ -388,7 +388,7 @@ export default function Nav() {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className="rounded border border-border/50 px-3 py-2 text-sm text-foreground-subtle hover:text-foreground hover:border-border transition-colors"
+                    className="rounded border border-border/50 px-3 py-2 text-sm text-foreground-muted hover:text-foreground hover:border-border transition-colors"
                     onClick={closeMobileMenu}
                   >
                     {item.title}
