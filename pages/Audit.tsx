@@ -185,7 +185,7 @@ export default function Audit() {
           "Safety Gate + 8 behavioral dimensions",
         ]}
         primaryAction={{ href: "/get-started", label: "Book an Audit Scope Call" }}
-        secondaryAction={{ href: "/samples", label: "View a Sample Risk Report" }}
+        secondaryAction={{ href: "/audit#deliverables-previews", label: "View Sample Outputs" }}
         jumpLinks={[
           { href: "#what-you-get", label: "What you get" },
           { href: "#how-it-works", label: "How it works" },

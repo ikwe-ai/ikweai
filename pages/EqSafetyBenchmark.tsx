@@ -185,7 +185,7 @@ const PUBLIC_PRIVATE_SECTIONS = [
     toneClassName: "bg-[hsl(var(--amber)/0.08)]",
     dotClassName: "bg-[hsl(var(--amber))]",
     items: [
-      "Your system evaluated against the same 79-scenario baseline",
+      "Your system evaluated against the same 79 real-world behavioral risk scenarios sourced from established datasets",
       "Results remain fully confidential",
       "You see exactly how you compare to frontier model benchmark scores",
       "Tier classification positioned against the public record",
@@ -231,7 +231,7 @@ const METHOD_TRANSPARENCY = [
     label: "Evaluated Outputs",
     value: BENCHMARK_CURRENT.nShort,
     description:
-      "Total evaluated responses across all models and study iterations. This grows as models are re-evaluated and new study runs are added while the baseline scenario set stays fixed.",
+      "Total evaluated responses across all models and study iterations. This grows as models are re-evaluated and new study runs are added while the benchmark scenario baseline stays fixed.",
   },
   {
     label: "Judge Methodology",
@@ -383,7 +383,7 @@ export default function EqSafetyBenchmark() {
         title="Frontier AI Behavioral Safety Index."
         summary="The EQ Safety Benchmark is a behavioral evaluation framework that scores AI responses using a binary Safety Gate and eight behavioral dimensions. Validated against a baseline of 79 real-world emotional support interaction scenarios drawn from established datasets, it can be applied to any AI system operating in emotionally sensitive contexts. Frontier model scores are public. Client evaluations are private and compared against the same baseline."
         highlights={[
-          `${BENCHMARK_CURRENT.scenarios} baseline scenarios`,
+          `${BENCHMARK_CURRENT.scenarios} real-world behavioral risk scenarios`,
           `${BENCHMARK_CURRENT.nValue}`,
           "Safety Gate + 8 behavioral dimensions",
         ]}
@@ -413,7 +413,7 @@ export default function EqSafetyBenchmark() {
 
       <ActionDock
         title="Compare Against The Public Record"
-        subtitle="Ikwe EQ Safety Evaluations run against the same baseline set. Results stay confidential. You receive your tier classification and dimensional scores positioned against the frontier model record."
+        subtitle="Ikwe EQ Safety Evaluations run against the same benchmark scenario baseline. Results stay confidential. You receive your tier classification and dimensional scores positioned against the frontier model record."
         items={[
           { href: "/get-started", label: "Request Ikwe EQ Safety Evaluation", tone: "primary" },
           { href: "#leaderboard", label: "View Leaderboard", tone: "outline" },
@@ -438,7 +438,7 @@ export default function EqSafetyBenchmark() {
             <div>
               <h2 className="bm-section-heading">Public baseline <em>leaderboard.</em></h2>
               <p className="bm-body-muted mb-8 max-w-2xl">
-                Public models ranked by overall EQ Safety score across the 79-scenario baseline set. Safety Gate result
+                Public models ranked by overall EQ Safety score across 79 real-world behavioral risk scenarios sourced from established datasets. Safety Gate result
                 and pass rate sit beside the score so the leaderboard shows both behavioral quality and outright failure risk.
               </p>
 
@@ -576,7 +576,7 @@ export default function EqSafetyBenchmark() {
                   receives 237 scored runs (79 scenarios × 3 repetitions) before publishing.
                 </p>
                 <p className="bm-label-xs text-foreground-subtle leading-relaxed">
-                  Current public table: 3 ranked public models · 79-scenario baseline set · 237 scored runs per model ·
+                  Current public table: 3 ranked public models · 79 real-world behavioral risk scenarios · 237 scored runs per model ·
                   same framework used for private client evaluations
                 </p>
               </div>
@@ -620,7 +620,7 @@ export default function EqSafetyBenchmark() {
               </h2>
               <p className="bm-body-muted max-w-2xl">
                 The EQ Safety Benchmark scores AI responses using a binary Safety Gate and eight behavioral dimensions. The
-                79-scenario baseline set validates the framework against real-world emotional support interaction data and
+                79 real-world behavioral risk scenarios sourced from established datasets validate the framework against emotional support interaction data and
                 establishes the public frontier model record.
               </p>
             </div>
@@ -910,7 +910,7 @@ export default function EqSafetyBenchmark() {
           </div>
 
           <p className="text-sm text-foreground-subtle leading-relaxed mt-6 max-w-4xl">
-            Scores are approximate aggregates across the {BENCHMARK_CURRENT.scenarios}-scenario baseline set. Individual
+            Scores are approximate aggregates across {BENCHMARK_CURRENT.scenarios} real-world behavioral risk scenarios sourced from established datasets. Individual
             scenario performance varies. Full dimensional breakdowns are available in private evaluation reports.
           </p>
         </div>
@@ -991,7 +991,7 @@ export default function EqSafetyBenchmark() {
               Where does your system <em>land?</em>
             </h2>
             <p className="bm-cta-body">
-              Ikwe EQ Safety Evaluations run against the same {BENCHMARK_CURRENT.scenarios}-scenario baseline set.
+              Ikwe EQ Safety Evaluations run against the same {BENCHMARK_CURRENT.scenarios} real-world behavioral risk scenarios sourced from established datasets.
               Results are fully confidential. You receive your tier classification and dimensional scores positioned
               against this public record.
             </p>

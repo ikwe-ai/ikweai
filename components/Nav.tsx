@@ -47,6 +47,8 @@ export default function Nav() {
   const [aboutOpen, setAboutOpen] = useState(false);
   const researchRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
+  const researchCloseTimer = useRef<number | null>(null);
+  const aboutCloseTimer = useRef<number | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -84,6 +86,17 @@ export default function Nav() {
     return () => document.removeEventListener("mousedown", handler);
   }, [aboutOpen]);
 
+  useEffect(() => {
+    return () => {
+      if (researchCloseTimer.current !== null) {
+        window.clearTimeout(researchCloseTimer.current);
+      }
+      if (aboutCloseTimer.current !== null) {
+        window.clearTimeout(aboutCloseTimer.current);
+      }
+    };
+  }, []);
+
   const isActive = (path: string) =>
     path === "/" ? location.pathname === "/" : location.pathname === path || location.pathname.startsWith(`${path}/`);
 
@@ -100,6 +113,42 @@ export default function Nav() {
     setMobileOpen(false);
     setMobileResearchOpen(false);
     setMobileAboutOpen(false);
+  };
+
+  const openResearchMenu = () => {
+    if (researchCloseTimer.current !== null) {
+      window.clearTimeout(researchCloseTimer.current);
+      researchCloseTimer.current = null;
+    }
+    setResearchOpen(true);
+  };
+
+  const closeResearchMenuWithDelay = () => {
+    if (researchCloseTimer.current !== null) {
+      window.clearTimeout(researchCloseTimer.current);
+    }
+    researchCloseTimer.current = window.setTimeout(() => {
+      setResearchOpen(false);
+      researchCloseTimer.current = null;
+    }, 180);
+  };
+
+  const openAboutMenu = () => {
+    if (aboutCloseTimer.current !== null) {
+      window.clearTimeout(aboutCloseTimer.current);
+      aboutCloseTimer.current = null;
+    }
+    setAboutOpen(true);
+  };
+
+  const closeAboutMenuWithDelay = () => {
+    if (aboutCloseTimer.current !== null) {
+      window.clearTimeout(aboutCloseTimer.current);
+    }
+    aboutCloseTimer.current = window.setTimeout(() => {
+      setAboutOpen(false);
+      aboutCloseTimer.current = null;
+    }, 180);
   };
 
   return (
@@ -148,13 +197,14 @@ export default function Nav() {
             <div
               ref={researchRef}
               className="relative"
-              onMouseEnter={() => setResearchOpen(true)}
-              onMouseLeave={() => setResearchOpen(false)}
+              onMouseEnter={openResearchMenu}
+              onMouseLeave={closeResearchMenuWithDelay}
             >
               <Link
                 to="/research"
                 aria-haspopup="true"
                 aria-expanded={researchOpen}
+                onFocus={openResearchMenu}
                 className={`nav-link-pill rounded-full px-3 py-1.5 text-sm transition-colors whitespace-nowrap flex items-center gap-1 ${
                   isResearchActive ? "bg-lilac-dim text-lilac-bright" : "text-foreground-muted hover:text-foreground"
                 }`}
@@ -211,13 +261,14 @@ export default function Nav() {
             <div
               ref={aboutRef}
               className="relative"
-              onMouseEnter={() => setAboutOpen(true)}
-              onMouseLeave={() => setAboutOpen(false)}
+              onMouseEnter={openAboutMenu}
+              onMouseLeave={closeAboutMenuWithDelay}
             >
               <Link
                 to="/about"
                 aria-haspopup="true"
                 aria-expanded={aboutOpen}
+                onFocus={openAboutMenu}
                 className={`nav-link-pill rounded-full px-3 py-1.5 text-sm transition-colors whitespace-nowrap flex items-center gap-1 ${
                   isAboutActive ? "bg-lilac-dim text-lilac-bright" : "text-foreground-muted hover:text-foreground"
                 }`}
@@ -325,7 +376,7 @@ export default function Nav() {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className="rounded border border-border/50 px-3 py-2 text-sm text-foreground-subtle hover:text-foreground hover:border-border transition-colors"
+                    className="rounded border border-border/50 px-3 py-2 text-sm text-foreground-muted hover:text-foreground hover:border-border transition-colors"
                     onClick={closeMobileMenu}
                   >
                     {item.title}
@@ -388,7 +439,7 @@ export default function Nav() {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className="rounded border border-border/50 px-3 py-2 text-sm text-foreground-subtle hover:text-foreground hover:border-border transition-colors"
+                    className="rounded border border-border/50 px-3 py-2 text-sm text-foreground-muted hover:text-foreground hover:border-border transition-colors"
                     onClick={closeMobileMenu}
                   >
                     {item.title}
