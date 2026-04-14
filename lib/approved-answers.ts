@@ -266,7 +266,7 @@ const PUBLIC_KNOWLEDGE_DOCS: KnowledgeDoc[] = [
   {
     id: "about",
     title: "About & Independence",
-    href: "/archive/about",
+    href: "/about",
     summary:
       "About page covers independence standards, governance commitments, and public institutional positioning of Ikwe.ai.",
     tags: ["about", "independence", "company", "governance"],

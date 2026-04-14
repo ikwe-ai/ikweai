@@ -15,12 +15,12 @@ const researchLinks = [
   {
     title: "Writing Library",
     desc: "Analysis and commentary on AI behavioral safety",
-    path: "/archive/research/writings",
+    path: "/research/writings",
   },
   {
     title: "Case Studies",
     desc: "Applied evaluation examples across deployment contexts",
-    path: "/archive/research/case-studies",
+    path: "/research/case-studies",
   },
 ] as const;
 
@@ -106,15 +106,12 @@ export default function Nav() {
     path === "/" ? location.pathname === "/" : location.pathname === path || location.pathname.startsWith(`${path}/`);
 
   const isResearchActive =
-    isActive("/research") ||
-    isActive("/archive/research");
+    isActive("/research");
 
   const isAboutActive =
     isActive("/about") ||
-    isActive("/archive/about") ||
     isActive("/founder") ||
-    isActive("/press") ||
-    isActive("/archive/research/press");
+    isActive("/press");
 
   const closeMobileMenu = () => {
     setMobileOpen(false);

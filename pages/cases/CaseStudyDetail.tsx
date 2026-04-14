@@ -4,7 +4,6 @@ import PageShell from "@/components/PageShell";
 import PageMeta from "@/components/PageMeta";
 import SummaryHero from "@/components/SummaryHero";
 import { CASE_STUDIES_INDEX } from "@/lib/content-index";
-import ArchiveBanner from "@/components/ArchiveBanner";
 
 export default function CaseStudyDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -18,7 +17,6 @@ export default function CaseStudyDetail() {
     return (
       <PageShell>
         <PageMeta title="Case Study Not Found | Ikwe.ai" description="Case study route not found." path="/research/case-studies" />
-      <ArchiveBanner type="library" />
         <section className="py-24 max-w-2xl">
           <h1 className="font-display text-3xl text-foreground mb-3">Case study not found</h1>
           <a href="/research/case-studies" className="text-sm link-lilac">
