@@ -6,11 +6,13 @@ export default function Footer() {
   if (location.pathname === "/") {
     return (
       <footer className="home-footer">
-        <div className="home-footer-left">
-          <strong>ikwe.ai</strong> · The behavioral safety standard for human-facing AI · Independent safety record
-        </div>
-        <div className="home-footer-right">
-          Binary Safety Gate · 8 behavioral dimensions · 79 real-world behavioral risk scenarios
+        <div className="home-footer-inner">
+          <div className="home-footer-left">
+            <strong>ikwe.ai</strong> · The behavioral safety standard for human-facing AI · Independent safety record
+          </div>
+          <div className="home-footer-right">
+            Binary Safety Gate · 8 behavioral dimensions · 79 real-world behavioral risk scenarios
+          </div>
         </div>
       </footer>
     );
