@@ -297,7 +297,7 @@ export default function Home() {
                 </div>
                 <div className="home-hero-stat">
                   <div className="home-stat-number" style={{ color: 'hsl(42 85% 77%)' }}>{PUBLIC_STATS.outputsEvaluatedDisplay}</div>
-                  <div className="home-stat-label">outputs evaluated across 79 baseline scenarios in the ikwe benchmark</div>
+                  <div className="home-stat-label">outputs evaluated across 79 real-world behavioral risk scenarios sourced from established datasets</div>
                 </div>
               </div>
               <p className="home-hero-stat-note">
