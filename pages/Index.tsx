@@ -261,8 +261,8 @@ export default function Home() {
                 Behavioral Safety Layer · Human-Facing AI
               </div>
               <h1 className="home-hero-title">
-                Recognition is not safety.<br />
-                <em>Measurement is.</em>
+                AI is inside our most vulnerable moments.<br />
+                <em>No safety standard exists.</em>
               </h1>
               <p className="home-hero-mission">
                 The first independent, third-party behavioral safety benchmark for human-facing AI — a safety record that proves your system can be trusted with vulnerable users, before harm happens.
@@ -317,8 +317,8 @@ export default function Home() {
 
             <div className="home-section-center" style={{ marginBottom: "2.5rem" }}>
               <h2 className="home-section-title">
-                AI is inside our most vulnerable moments.<br />
-                <em>No safety standard exists.</em>
+                Recognition is not safety.<br />
+                <em>Measurement is.</em>
               </h2>
               <p className="home-section-subtext">
                 AI systems now sit inside therapy chats, crisis support, HR complaints, student counseling, and intimate relationships — exactly where humans are most emotionally exposed. Yet there is still no behavioral safety standard that tells you whether those AI systems leave people in a better or worse emotional state than before the conversation began.
