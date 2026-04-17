@@ -123,12 +123,10 @@ const deliverables = [
 ] as const;
 
 const audienceItems = [
-  { icon: "💬", label: "Companion AI platforms",              sub: "Long-form emotional engagement, always-on support" },
-  { icon: "🧠", label: "AI mental health systems",            sub: "Crisis exposure, therapeutic framing, vulnerable users" },
-  { icon: "📚", label: "Education AI products",               sub: "Minors, stress contexts, dependency risk" },
-  { icon: "📱", label: "Consumer-facing AI systems",          sub: "High volume, diverse vulnerability profiles" },
-  { icon: "🏢", label: "Enterprise AI with human consequence",sub: "HR, performance, benefits decisions" },
-  { icon: "🏥", label: "Fintech and healthcare AI",           sub: "Regulated exposure, high-stakes advice" },
+  { icon: "🩺", label: "Health & wellness",    sub: "Mental health support, coaching, care navigation, peer-support platforms" },
+  { icon: "📚", label: "Education",            sub: "Tutoring, guidance, student support, academic advising" },
+  { icon: "🏢", label: "Enterprise",           sub: "HR, whistleblowing and ethics channels, DEI and employee-relations, customer support in sensitive domains" },
+  { icon: "💬", label: "Companionship",        sub: "Social AI, relationship tools, and AI companions where users form attachment over time" },
 ] as const;
 
 const urgencyItems = [
@@ -242,8 +240,8 @@ export default function Home() {
   return (
     <>
       <PageMeta
-        title="Ikwe.ai — The Behavioral Safety Standard for Human-Facing AI"
-        description="The behavioral safety standard for human-facing AI. An independent safety record that proves your system can be trusted with humans — before harm, liability, or headlines."
+        title="Ikwe.ai — Recognition is not safety. Measurement is."
+        description="The first independent, third-party behavioral safety benchmark for human-facing AI — a safety record that proves your system can be trusted with vulnerable users, before harm happens."
         path="/"
         ogImagePath="/og/home.png"
       />
@@ -263,24 +261,24 @@ export default function Home() {
                 Behavioral Safety Layer · Human-Facing AI
               </div>
               <h1 className="home-hero-title">
-                Behavioral Safety<br />
-                AI Infrastructure
+                Recognition is not safety.<br />
+                <em>Measurement is.</em>
               </h1>
               <p className="home-hero-mission">
-                The independent benchmark and audit system for AI that interacts with humans in emotionally vulnerable moments.
+                The first independent, third-party behavioral safety benchmark for human-facing AI — a safety record that proves your system can be trusted with vulnerable users, before harm happens.
               </p>
               <p className="home-hero-sub">
-                We built the EQ Safety Benchmark — 79 real-world behavioral risk scenarios sourced from established datasets across 8 weighted behavioral dimensions — and the audit infrastructure that produces documented safety evidence your board, legal, and compliance teams can stand behind.
+                AI can recognize emotions perfectly and still make things worse. Ikwe measures what happens to the human after every interaction — not just model intent, labels, or accuracy claims.
               </p>
               <p className="home-hero-subtle">
-                Independent. Quantified. Purpose-built to measure what no existing AI safety framework covers — behavioral safety in human-facing systems.
+                Independent. Third-party. Operational. Purpose-built to measure what no existing AI safety framework covers — behavioral safety in human-facing systems.
               </p>
               <div className="home-hero-actions">
                 <Link to="/audit" className="home-btn home-btn-primary" onClick={() => trackEvent("audit_cta_hero")}>
-                  Request a Behavioral Safety Audit
+                  Request an EQ Safety Audit
                 </Link>
                 <Link to="/benchmark" className="home-btn home-btn-ghost" onClick={() => trackEvent("cta_benchmark_hero", { source: "hero" })}>
-                  Explore the Benchmark
+                  See the EQ Safety Benchmark
                 </Link>
               </div>
             </div>
@@ -311,10 +309,20 @@ export default function Home() {
         <section id="thesis" className="home-section home-section-alt">
           <div className="home-wrap">
             <div className="home-section-header">
-              <span className="home-eyebrow">Section 01 // Conflict</span>
+              <span className="home-eyebrow">Section 01 // The Gap</span>
               <div className="home-section-header-right">
-                <span className="home-section-aside">A polite AI is not necessarily a safe AI.</span>
+                <span className="home-section-aside">Sounding empathetic is not the same as being safe.</span>
               </div>
+            </div>
+
+            <div className="home-section-center" style={{ marginBottom: "2.5rem" }}>
+              <h2 className="home-section-title">
+                AI is inside our most vulnerable moments.<br />
+                <em>No safety standard exists.</em>
+              </h2>
+              <p className="home-section-subtext">
+                AI systems now sit inside therapy chats, crisis support, HR complaints, student counseling, and intimate relationships — exactly where humans are most emotionally exposed. Yet there is still no behavioral safety standard that tells you whether those AI systems leave people in a better or worse emotional state than before the conversation began.
+              </p>
             </div>
 
             <div className="home-grid-two home-thesis-grid">
@@ -333,8 +341,7 @@ export default function Home() {
                   where current governance stops measuring.
                 </p>
                 <div className="home-pullquote">
-                  "When behavioral failure surfaces publicly, decisions are made under pressure.
-                  Independent evaluation prevents that from being your only defense."
+                  "Does this AI interaction leave the human in a better or worse emotional state than before it began?"
                 </div>
 
                 <div className="home-failure-cards" style={{ marginTop: "2.5rem" }}>
@@ -385,12 +392,51 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            <p className="home-beforeline" style={{ marginTop: "3rem" }}>
+              Recognition is not safety. Sounding empathetic is not the same as being safe.
+            </p>
           </div>
         </section>
 
         {/* ── FIVE REQUIREMENTS ── */}
         <section id="requirements" className="home-section">
           <div className="home-wrap">
+            <div className="home-section-header">
+              <div>
+                <span className="home-eyebrow">The EQ Safety Benchmark</span>
+                <h2 className="home-heading">Independent, third-party, operational.</h2>
+              </div>
+              <p className="home-copy home-copy-tight home-section-header-right">
+                Ikwe.ai provides the EQ Safety Benchmark — an independent, third-party, operational behavioral safety benchmark for human-facing AI. We measure what happens to humans, not just how models score on technical benchmarks.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-6xl" style={{ marginBottom: "3rem" }}>
+              {[
+                {
+                  title: "Independent",
+                  body: "No financial relationship with the systems we evaluate. The moment a lab evaluates itself, the enterprise cannot fully trust the result.",
+                  color: "hsl(var(--lilac))",
+                },
+                {
+                  title: "Third-Party",
+                  body: "External auditor model — the same trust layer enterprises already expect from SOC 2, UL certification, and financial audits.",
+                  color: "hsl(var(--coral))",
+                },
+                {
+                  title: "Operational",
+                  body: "Not an academic toy benchmark. A purchasable audit and certification service with real clients and real reports.",
+                  color: "hsl(var(--gold))",
+                },
+              ].map((item) => (
+                <article key={item.title} className="home-failure-card" style={{ borderTopWidth: '2px', borderTopColor: item.color }}>
+                  <h3 className="home-failure-title" style={{ color: item.color }}>{item.title}</h3>
+                  <p className="home-failure-body">{item.body}</p>
+                </article>
+              ))}
+            </div>
+
             <div className="home-section-header">
               <div>
                 <span className="home-eyebrow">What safe AI requires</span>
@@ -419,6 +465,10 @@ export default function Home() {
 
             <p style={{ marginTop: '1.5rem', fontSize: '0.82rem', color: 'var(--home-muted)', fontStyle: 'italic', maxWidth: '50ch' }}>
               These are behavioral standards — and they require a benchmark to be measurable and a certification system to be commercially enforceable. That is what Ikwe built.
+            </p>
+
+            <p className="home-beforeline" style={{ marginTop: "2.5rem" }}>
+              Safety without proof is not trust. Trust requires measurement. Ikwe measures it.
             </p>
           </div>
         </section>
@@ -884,8 +934,12 @@ export default function Home() {
             <div className="home-section-center" style={{ marginBottom: "3rem" }}>
               <span className="home-eyebrow">Section 07 // Audience</span>
               <h2 className="home-section-title">
-                Any system that touches<br />human vulnerability.
+                Teams deploying AI in high-trust,<br />
+                emotionally sensitive contexts.
               </h2>
+              <p className="home-section-subtext">
+                We work with teams who know that technical performance is not enough — every deployment that touches mental health, safety, trust, or identity needs behavioral safety evidence before launch.
+              </p>
             </div>
 
             <div className="home-grid-two">
@@ -918,6 +972,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            <p className="home-beforeline" style={{ marginTop: "3rem", fontStyle: "italic" }}>
+              You cannot claim emotional safety; you have to prove it, measure it, and monitor it over time.
+            </p>
           </div>
         </section>
 
@@ -972,11 +1030,66 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── POSITIONING / COMPETITION ── */}
+        <section id="positioning" className="home-section home-section-alt">
+          <div className="home-wrap">
+            <div className="home-section-center" style={{ marginBottom: "3rem" }}>
+              <span className="home-eyebrow">Section 09 // Positioning</span>
+              <h2 className="home-section-title">
+                No one else is independent,<br />
+                third-party, operational, and behavioral.
+              </h2>
+              <p className="home-section-subtext">
+                Existing AI governance platforms, emotion-detection tools, and academic benchmarks each solve part of the problem — but none combine independent, third-party audits with operational, behavioral safety infrastructure focused on human impact.
+              </p>
+            </div>
+
+            <div className="home-gap-table" style={{ maxWidth: "1040px", margin: "0 auto" }}>
+              <div className="home-gap-header" style={{ gridTemplateColumns: "1.2fr 1.4fr 1.4fr 1.6fr" }}>
+                <div className="home-gap-heading">Category</div>
+                <div className="home-gap-heading home-gap-heading-muted">Examples</div>
+                <div className="home-gap-heading home-gap-heading-muted">What they focus on</div>
+                <div className="home-gap-heading">What Ikwe adds</div>
+              </div>
+              {[
+                [
+                  "AI governance & compliance",
+                  "Credo AI, Holistic AI, IBM watsonx.governance",
+                  "Policies, controls, documentation",
+                  "Behavioral audits anchored in human emotional impact.",
+                ],
+                [
+                  "Emotion AI & detection",
+                  "Hume, Affectiva",
+                  "Detecting feelings in voice and text",
+                  "Measuring whether emotionally aware systems actually behave safely.",
+                ],
+                [
+                  "Academic safety benchmarks",
+                  "HealthBench, MindBench",
+                  "Research-grade benchmarks and papers",
+                  "Operational audits, reports, and certifications enterprises can buy and rely on.",
+                ],
+              ].map(([category, examples, focus, adds]) => (
+                <div key={category} className="home-gap-row" style={{ gridTemplateColumns: "1.2fr 1.4fr 1.4fr 1.6fr" }}>
+                  <div className="home-gap-cell">{category}</div>
+                  <div className="home-gap-cell home-gap-cell-muted">{examples}</div>
+                  <div className="home-gap-cell home-gap-cell-muted">{focus}</div>
+                  <div className="home-gap-cell">{adds}</div>
+                </div>
+              ))}
+              <div className="home-gap-foot">
+                Ikwe EQSB is the only player designed as behavioral safety infrastructure from day one.
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── CLOSE ── */}
         <section id="close" className="home-close-section">
           <div aria-hidden="true" className="home-close-glow" />
           <div className="home-close-inner">
-            <span className="home-eyebrow">Section 09 // Mission</span>
+            <span className="home-eyebrow">Section 10 // Mission</span>
             <h2 className="home-close-title">
               Secure your<br />
               <strong>model's integrity.</strong>
@@ -993,12 +1106,20 @@ export default function Home() {
                   className="home-btn home-btn-gradient"
                   onClick={() => trackEvent("audit_cta_close")}
                 >
-                  Request Evaluation
+                  Request an EQ Safety Audit
                 </Link>
               </div>
               <Link to="/benchmark" className="home-btn home-btn-ghost">
-                View the Benchmark
+                See the EQ Safety Benchmark
               </Link>
+            </div>
+            <div className="home-close-taglines">
+              <div className="home-close-tagline">The SOC 2 of behavioral safety.</div>
+              <div className="home-close-tagline">The UL of conversational AI.</div>
+              <div className="home-close-tagline">The standard the market will require.</div>
+              <div className="home-close-tagline home-close-tagline-strong">
+                Recognition is not safety. Safety without proof is not trust. Trust requires measurement. Ikwe measures it.
+              </div>
             </div>
             <div className="home-close-props">
               {closingProps.map(([value, label]) => (
