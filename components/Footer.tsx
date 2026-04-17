@@ -8,10 +8,10 @@ export default function Footer() {
       <footer className="home-footer">
         <div className="home-footer-inner">
           <div className="home-footer-left">
-            <strong>ikwe.ai</strong> · The behavioral safety standard for human-facing AI · Independent safety record
+            <strong>ikwe.ai</strong> · The behavioral safety standard for human-facing AI · Independent · Third-party · Operational
           </div>
           <div className="home-footer-right">
-            Binary Safety Gate · 8 behavioral dimensions · 79 real-world behavioral risk scenarios
+            The SOC 2 of behavioral safety · The UL of conversational AI · The standard the market will require
           </div>
         </div>
       </footer>
