@@ -13,22 +13,6 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-const governanceRows = [
-  ["Data security", "Multi-turn emotional trajectory"],
-  ["Model documentation", "Escalation stability under stress"],
-  ["Bias detection", "Vulnerable-user handling patterns"],
-  ["Compliance workflows", "Dependency reinforcement risk"],
-  ["Accuracy benchmarks", "Repair capacity after failure"],
-] as const;
-
-const exposurePills = [
-  "Governance exposure",
-  "Legal vulnerability",
-  "Delayed procurement",
-  "Remediation costs",
-  "Reputational damage",
-] as const;
-
 const dimensions = [
   {
     title: "Harm Recognition",
@@ -137,40 +121,6 @@ const urgencyItems = [
   "One trust failure can halt deployment for 18+ months",
 ] as const;
 
-const engagementLevels = [
-  {
-    level: "LEVEL I",
-    title: "Baseline Gate",
-    description: "Determine if your system passes or fails under controlled emotional stress scenarios.",
-    forItems: ["Early-stage systems", "Pre-deployment validation", "Internal confidence check"],
-    result: "Your system has been externally stress-tested. A safety gate result is on record.",
-    timeline: "5–7 business days",
-  },
-  {
-    level: "LEVEL II",
-    title: "Ikwe EQ Safety Evaluation",
-    description: "Evaluation across all 8 dimensions with Tier I–IV classification, failure mapping, and a remediation plan.",
-    forItems: ["Board-level governance", "Regulated deployment", "Enterprise procurement"],
-    result: "Your board, legal, and compliance teams have documented third-party behavioral evidence.",
-    featured: true,
-    timeline: "3–4 weeks",
-  },
-  {
-    level: "LEVEL III",
-    title: "Ongoing Governance Monitoring",
-    description: "Continuous behavioral drift monitoring after each deployment change. Quarterly re-evaluation to catch degradation before it reaches incident scale.",
-    forItems: ["Live systems at scale", "High-consequence AI deployment", "Sustained regulatory posture"],
-    result: "Your system has an independent behavioral safety record — versioned and defensible over time.",
-    timeline: "Ongoing · Quarterly",
-  },
-] as const;
-
-const closingProps = [
-  ["Independent",  "No conflict of interest"],
-  ["Quantified",   "Scored, not subjective"],
-  ["Longitudinal", "Tracks drift over time"],
-] as const;
-
 const flowSteps = [
   {
     number: "01",
@@ -240,8 +190,8 @@ export default function Home() {
   return (
     <>
       <PageMeta
-        title="Ikwe.ai — Recognition is not safety. Measurement is."
-        description="The first independent, third-party behavioral safety benchmark for human-facing AI — a safety record that proves your system can be trusted with vulnerable users, before harm happens."
+        title="Ikwe.ai — The Behavioral Safety Standard for Human-Facing AI"
+        description="Independent EQ Safety Audits and monitoring for AI systems that interact with vulnerable users — before harm, not after."
         path="/"
         ogImagePath="/og/home.png"
       />
@@ -261,24 +211,20 @@ export default function Home() {
                 Behavioral Safety Layer · Human-Facing AI
               </div>
               <h1 className="home-hero-title">
-                Recognition is not safety.<br />
-                <em>Measurement is.</em>
+                The behavioral safety standard for human-facing AI
               </h1>
-              <p className="home-hero-mission">
-                The first independent, third-party behavioral safety benchmark for human-facing AI — a safety record that proves your system can be trusted with vulnerable users, before harm happens.
+              <p className="home-hero-subtitle">
+                Independent EQ Safety Audits and monitoring for AI systems that interact with vulnerable users — before harm, not after.
               </p>
               <p className="home-hero-sub">
-                AI can recognize emotions perfectly and still make things worse. Ikwe measures what happens to the human after every interaction — not just model intent, labels, or accuracy claims.
-              </p>
-              <p className="home-hero-subtle">
-                Independent. Third-party. Operational. Purpose-built to measure what no existing AI safety framework covers — behavioral safety in human-facing systems.
+                We evaluate emotional safety across frontier AI systems by measuring observable behavior when users are vulnerable, not just accuracy, intent, or alignment claims.
               </p>
               <div className="home-hero-actions">
-                <Link to="/audit" className="home-btn home-btn-primary" onClick={() => trackEvent("audit_cta_hero")}>
-                  Request an EQ Safety Audit
+                <Link to="/contact" className="home-btn home-btn-primary" onClick={() => trackEvent("audit_cta_hero")}>
+                  Get an EQ Safety Audit
                 </Link>
-                <Link to="/benchmark" className="home-btn home-btn-ghost" onClick={() => trackEvent("cta_benchmark_hero", { source: "hero" })}>
-                  See the EQ Safety Benchmark
+                <Link to="/contact" className="home-btn home-btn-ghost" onClick={() => trackEvent("cta_safety_team_hero", { source: "hero" })}>
+                  Talk with our safety team
                 </Link>
               </div>
             </div>
@@ -305,96 +251,74 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── THESIS ── */}
-        <section id="thesis" className="home-section home-section-alt">
+        {/* ── WHAT WE DO ── */}
+        <section id="what-we-do" className="home-section">
           <div className="home-wrap">
-            <div className="home-section-header">
-              <span className="home-eyebrow">Section 01 // The Gap</span>
-              <div className="home-section-header-right">
-                <span className="home-section-aside">Sounding empathetic is not the same as being safe.</span>
+            <h2 className="home-section-title">What Ikwe.ai does</h2>
+            <div className="home-why-items" style={{ marginTop: "2rem" }}>
+              <div className="home-why-item">
+                EQ Safety Audits for conversational and human-facing AI systems in high-trust domains like health, education, and support.
+              </div>
+              <div className="home-why-item">
+                Ongoing Monitoring to track behavioral drift as models update and flag changes in emotional behavior over time.
+              </div>
+              <div className="home-why-item">
+                Evidence for governance and compliance teams so you can prove your AI acts responsibly toward humans, not just claim it.
               </div>
             </div>
+          </div>
+        </section>
 
-            <div className="home-section-center" style={{ marginBottom: "2.5rem" }}>
+        {/* ── EXPLAINER: CORRECT ≠ SAFE ── */}
+        <section id="explainer" className="home-section home-section-alt">
+          <div className="home-wrap">
+            <div className="home-section-center">
               <h2 className="home-section-title">
-                AI is inside our most vulnerable moments.<br />
-                <em>No safety standard exists.</em>
+                Correct <em>≠</em> safe
               </h2>
+              <p className="home-section-subtext" style={{ marginBottom: "1.5rem" }}>
+                AI systems can correctly identify emotion while still responding in ways that increase harm. We measure what happens when humans trust AI systems under emotional load, not just how often they get facts right.
+              </p>
               <p className="home-section-subtext">
-                AI systems now sit inside therapy chats, crisis support, HR complaints, student counseling, and intimate relationships — exactly where humans are most emotionally exposed. Yet there is still no behavioral safety standard that tells you whether those AI systems leave people in a better or worse emotional state than before the conversation began.
+                Most safety tools focus on prompts and policies. Ikwe.ai focuses on observable behavior when users are distressed, vulnerable, or relying on AI for support.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── BENCHMARK STATS ── */}
+        <section id="benchmark-stats" className="home-section">
+          <div className="home-wrap">
+            <div className="home-section-center" style={{ marginBottom: "2.5rem" }}>
+              <h2 className="home-section-title">What we found across frontier models</h2>
+              <p className="home-section-subtext">
+                We ran 79 emotionally vulnerable scenarios through 4 frontier models using a two-stage behavioral evaluation.
               </p>
             </div>
 
-            <div className="home-grid-two home-thesis-grid">
-              <div>
-                <h2 className="home-thesis-title">
-                  The Paradox:<br /><em>Empathy ≠ Safety.</em>
-                </h2>
-                <p className="home-copy">
-                  An AI system can acknowledge distress and still respond in a way that <strong>escalates harm</strong>.
-                  It can sound warm while reinforcing dependency. It can appear helpful while suppressing autonomy.
-                  It can seem to handle a crisis while mishandling it entirely.
-                </p>
-                <p className="home-copy">
-                  This is a <strong>behavioral pattern</strong> that does not appear in standard evaluations, accuracy
-                  benchmarks, or compliance audits. It surfaces when humans are vulnerable — exactly
-                  where current governance stops measuring.
-                </p>
-                <div className="home-pullquote">
-                  "Does this AI interaction leave the human in a better or worse emotional state than before it began?"
-                </div>
-
-                <div className="home-failure-cards" style={{ marginTop: "2.5rem" }}>
-                  <article className="home-failure-card home-failure-card-warn">
-                    <div className="home-failure-card-icon home-failure-icon-warn">⚠</div>
-                    <div className="home-failure-card-title">Supportive escalation</div>
-                    <p className="home-failure-card-body">
-                      Looks caring on the surface, but never actually interrupts risky trajectories like self-harm
-                      spirals or giving up on care.
-                    </p>
-                  </article>
-                  <article className="home-failure-card home-failure-card-secondary">
-                    <div className="home-failure-card-icon home-failure-icon-secondary">◎</div>
-                    <div className="home-failure-card-title">Polite neglect</div>
-                    <p className="home-failure-card-body">
-                      Answers the literal question and ignores obvious distress. Everything seems normal — except the
-                      person doesn't get help.
-                    </p>
-                  </article>
+            <div className="home-hero-stats" style={{ maxWidth: "1040px", margin: "0 auto" }}>
+              <div className="home-hero-stat">
+                <div className="home-stat-number" style={{ color: 'hsl(262 84% 77%)' }}>54.7%</div>
+                <div className="home-stat-label">
+                  passed our initial emotional Safety Gate. 45.3% introduced risk at first contact.
                 </div>
               </div>
-
-              <div>
-                <span className="home-eyebrow" style={{ marginBottom: "1rem" }}>What Existing Governance Misses</span>
-                <div className="home-gap-table">
-                  <div className="home-gap-header">
-                    <div className="home-gap-heading home-gap-heading-muted">Current Governance Covers</div>
-                    <div className="home-gap-heading">Behavioral Safety (Ikwe)</div>
-                  </div>
-                  {governanceRows.map(([left, right]) => (
-                    <div key={left} className="home-gap-row">
-                      <div className="home-gap-cell home-gap-cell-muted">{left}</div>
-                      <div className="home-gap-cell">{right}</div>
-                    </div>
-                  ))}
-                  <div className="home-gap-foot">
-                    Behavioral safety is the missing operational layer in current governance frameworks.
-                  </div>
+              <div className="home-hero-stat">
+                <div className="home-stat-number" style={{ color: 'hsl(9 86% 77%)' }}>0%</div>
+                <div className="home-stat-label">
+                  of failed responses showed meaningful corrective behavior. No repair, no stabilization, no attempt to de-escalate.
                 </div>
-
-                <div className="home-pill-group-wrap">
-                  <span className="home-eyebrow">This Creates</span>
-                  <div className="home-pill-group">
-                    {exposurePills.map((pill) => (
-                      <span key={pill} className="home-pill">{pill}</span>
-                    ))}
-                  </div>
+              </div>
+              <div className="home-hero-stat">
+                <div className="home-stat-number" style={{ color: 'hsl(42 85% 77%)' }}>84.6% vs ~56–59%</div>
+                <div className="home-stat-label">
+                  On Stage 2 conditional performance (regulation quality after a safe first response), the Ikwe EI Prototype scores 84.6%, while baseline frontier models cluster around 56–59%.
                 </div>
               </div>
             </div>
 
-            <p className="home-beforeline" style={{ marginTop: "3rem" }}>
-              Recognition is not safety. Sounding empathetic is not the same as being safe.
+            <p className="home-section-subtext" style={{ marginTop: "2.5rem", textAlign: "center" }}>
+              Safety failures did not look hostile or obviously harmful. They looked supportive while reinforcing distress, accelerating rumination, missing escalation signals, or amplifying emotional intensity.
             </p>
           </div>
         </section>
@@ -979,53 +903,64 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── ENGAGEMENT LEVELS ── */}
-        <section id="engage" className="home-section">
+        {/* ── SERVICES ── */}
+        <section id="services" className="home-section">
           <div className="home-wrap">
             <div className="home-section-center">
-              <span className="home-eyebrow">Section 08 // Engagement</span>
-              <h2 className="home-section-title">Three levels of independent validation.</h2>
-              <p className="home-section-subtext">
-                Choose the level of external trust signal your system requires. Each level is cumulative —
-                deeper evaluation builds on what came before.
-              </p>
+              <h2 className="home-section-title">How we work with your team</h2>
             </div>
 
-            <div className="home-engagement-grid">
-              {engagementLevels.map((level) => (
-                <div
-                  key={level.level}
-                  className={`home-engagement-card ${level.featured ? "home-engagement-card-featured" : ""}`}
-                >
-                  <div className="home-engagement-level">{level.level}</div>
-                  <h3 className="home-engagement-title">{level.title}</h3>
-                  <p className="home-engagement-description">{level.description}</p>
-                  <div className="home-engagement-for-label">Designed For</div>
-                  <ul className="home-engagement-for-list">
-                    {level.forItems.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                  <div className="home-engagement-result">{level.result}</div>
-                  <div className="home-phase-timeline" style={{ marginTop: "1rem", alignSelf: "flex-start" }}>
-                    <span className="home-phase-timeline-dot" />
-                    {level.timeline}
-                  </div>
+            <div className="home-engagement-grid" style={{ gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }}>
+              <div className="home-engagement-card">
+                <h3 className="home-engagement-title">EQ Safety Audits</h3>
+                <p className="home-engagement-description" style={{ fontStyle: "italic" }}>
+                  Scenario-based evaluation of emotional and behavioral risk
+                </p>
+                <ul className="home-engagement-for-list" style={{ marginTop: "1rem" }}>
+                  <li>Tests your AI with 79+ emotionally vulnerable scenarios and 900+ responses.</li>
+                  <li>Measures Safety Gate pass rates, failure modes, and repair gaps.</li>
+                  <li>Produces evidence for regulators, buyers, and internal risk teams.</li>
+                </ul>
+                <div style={{ marginTop: "1.5rem" }}>
+                  <Link to="/contact" className="home-btn home-btn-primary" onClick={() => trackEvent("audit_cta_services")}>
+                    Request an audit
+                  </Link>
                 </div>
-              ))}
+              </div>
+              <div className="home-engagement-card">
+                <h3 className="home-engagement-title">Ongoing Monitoring</h3>
+                <p className="home-engagement-description" style={{ fontStyle: "italic" }}>
+                  Drift tracking for emotional safety over time
+                </p>
+                <ul className="home-engagement-for-list" style={{ marginTop: "1rem" }}>
+                  <li>Monitors emotional behavior as models and prompts change.</li>
+                  <li>Flags shifts in risk before they show up as visible harm.</li>
+                  <li>Supports governance, compliance, and incident response workflows.</li>
+                </ul>
+                <div style={{ marginTop: "1.5rem" }}>
+                  <Link to="/contact" className="home-btn home-btn-ghost" onClick={() => trackEvent("monitoring_cta_services")}>
+                    Set up monitoring
+                  </Link>
+                </div>
+              </div>
             </div>
+          </div>
+        </section>
 
-            <div className="home-engage-cta">
-              <Link
-                to="/audit"
-                className="home-btn home-btn-primary home-btn-large"
-                onClick={() => trackEvent("audit_cta_engage")}
-              >
-                Request Evaluation →
-              </Link>
-              <p className="home-engage-cta-note">
-                Get a third-party baseline before launch risk becomes board risk.
+        {/* ── WHO THIS IS FOR ── */}
+        <section id="who-for" className="home-section home-section-alt">
+          <div className="home-wrap">
+            <div className="home-section-center" style={{ marginBottom: "2rem" }}>
+              <h2 className="home-section-title">Built for high‑trust AI</h2>
+              <p className="home-section-subtext">
+                We work with teams deploying AI where emotional risk and trust really matter.
               </p>
+            </div>
+            <div className="home-why-items">
+              <div className="home-why-item">Health &amp; wellness: mental health support, coaching, care navigation.</div>
+              <div className="home-why-item">Education: tutoring, guidance, student support.</div>
+              <div className="home-why-item">Enterprise: HR, customer support, internal assistants.</div>
+              <div className="home-why-item">Companionship: social AI, relationship tools, assistants.</div>
             </div>
           </div>
         </section>
@@ -1085,50 +1020,48 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── CLOSE ── */}
+        {/* ── WHY IKWE ── */}
+        <section id="why-ikwe" className="home-section">
+          <div className="home-wrap">
+            <div className="home-section-center" style={{ marginBottom: "2rem" }}>
+              <h2 className="home-section-title">Why teams choose Ikwe.ai</h2>
+            </div>
+            <div className="home-why-items">
+              <div className="home-why-item">
+                Independent behavioral safety record for human-facing AI, not vendor-provided safety theater.
+              </div>
+              <div className="home-why-item">
+                Focused on conversational and relational AI, where emotional drift and misplaced trust create real-world harm.
+              </div>
+              <div className="home-why-item">
+                Built for founders, research leads, and safety teams who need defensible evidence, not just policies and intentions.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── CLOSING CTA ── */}
         <section id="close" className="home-close-section">
           <div aria-hidden="true" className="home-close-glow" />
           <div className="home-close-inner">
-            <span className="home-eyebrow">Section 10 // Mission</span>
             <h2 className="home-close-title">
-              Secure your<br />
-              <strong>model's integrity.</strong>
+              Close the emotional safety gap<br />
+              <strong>before it becomes a headline.</strong>
             </h2>
-            <p className="home-close-copy">
-              Technical capability is not the only measure of readiness.
-              Behavioral stability under emotional pressure determines long-term viability.
-              The systems shaping human lives deserve something underneath them we can trust.
-            </p>
             <div className="home-close-actions">
               <div className="home-btn-gradient-wrap">
                 <Link
-                  to="/audit"
+                  to="/contact"
                   className="home-btn home-btn-gradient"
                   onClick={() => trackEvent("audit_cta_close")}
                 >
-                  Request an EQ Safety Audit
+                  Book a 30‑minute intro call
                 </Link>
               </div>
-              <Link to="/benchmark" className="home-btn home-btn-ghost">
-                See the EQ Safety Benchmark
-              </Link>
             </div>
-            <div className="home-close-taglines">
-              <div className="home-close-tagline">The SOC 2 of behavioral safety.</div>
-              <div className="home-close-tagline">The UL of conversational AI.</div>
-              <div className="home-close-tagline">The standard the market will require.</div>
-              <div className="home-close-tagline home-close-tagline-strong">
-                Recognition is not safety. Safety without proof is not trust. Trust requires measurement. Ikwe measures it.
-              </div>
-            </div>
-            <div className="home-close-props">
-              {closingProps.map(([value, label]) => (
-                <div key={value} className="home-close-prop">
-                  <div className="home-close-prop-value">{value}</div>
-                  <div className="home-close-prop-label">{label}</div>
-                </div>
-              ))}
-            </div>
+            <p className="home-close-copy" style={{ marginTop: "2rem" }}>
+              Share what you’re building, and we’ll show you how EQ Safety Audits and Monitoring can fit into your roadmap.
+            </p>
           </div>
         </section>
 
