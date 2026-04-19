@@ -357,65 +357,60 @@
 
 
 /* ───────────────────────────────────────────────────────────────────
-   ARTIFACT PREVIEW — thumbnail cards with hover overlay
+   REPORT CARDS — descriptive properties lists for sample artifacts
 ─────────────────────────────────────────────────────────────────── */
 
-.artifact-preview-btn {
-  display: block;
-  width: 100%;
+.report-description {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: hsl(var(--foreground-muted));
+  margin-bottom: 0.75rem;
+}
+
+.report-properties {
+  list-style: none;
   padding: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
+  margin: 0 0 1rem;
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: hsl(var(--foreground-muted));
 }
 
-.artifact-preview-wrap {
+.report-properties li {
   position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: hsl(var(--background-surface));
+  padding-left: 1rem;
 }
 
-.artifact-preview-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  display: block;
-  transition: transform 0.25s ease;
-}
-
-.artifact-preview-btn:hover .artifact-preview-img {
-  transform: scale(1.02);
-}
-
-.artifact-preview-overlay {
+.report-properties li::before {
+  content: "";
   position: absolute;
-  inset: 0;
-  display: flex;
+  left: 0;
+  top: 0.55em;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: hsl(var(--lilac));
+}
+
+.report-link {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  background: hsla(var(--background) / 0.55);
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.artifact-preview-btn:hover .artifact-preview-overlay {
-  opacity: 1;
-}
-
-.artifact-preview-hint {
   font-family: var(--font-mono), monospace;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: hsl(var(--foreground));
-  background: hsl(var(--background-card));
-  border: 1px solid hsl(var(--border));
-  border-radius: 4px;
-  padding: 0.3em 0.75em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: hsl(var(--lilac));
+  text-decoration: none;
+  border-bottom: 1px solid hsl(var(--lilac) / 0.4);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.report-link:hover {
+  color: hsl(var(--lilac-glow));
+  border-bottom-color: hsl(var(--lilac-glow));
 }
 
 
