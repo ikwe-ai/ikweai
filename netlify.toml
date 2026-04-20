@@ -1,6 +1,7 @@
-# Netlify configuration for ikwe.ai (static HTML)
+# Netlify configuration for ikwe.ai (static HTML — no build step)
 
 [build]
+  command = ""
   publish = "."
 
 [build.processing]
