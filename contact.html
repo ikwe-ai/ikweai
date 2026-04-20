@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Get in Touch — Ikwe.ai</title>
+<meta name="description" content="Contact Ikwe.ai to request a behavioral safety audit or learn more about the EQ Safety Benchmark for human-facing AI."/>
+<meta name="robots" content="index,follow"/>
+<meta name="theme-color" content="#191A2E"/>
+<link rel="canonical" href="https://ikwe.ai/contact"/>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LV7G292YD8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LV7G292YD8', { send_page_view: true });
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+
+<style>
+/* ── DESIGN TOKENS ── */
+:root {
+  --navy:       #191A2E;
+  --navy2:      #1D1F35;
+  --navy3:      #22243C;
+  --navy4:      #272944;
+  --coral:      #F7A192;
+  --coral-d:    #e8897a;
+  --coral-pale: rgba(247,161,146,0.10);
+  --coral-08:   rgba(247,161,146,0.08);
+  --coral-20:   rgba(247,161,146,0.20);
+  --lavender:   #B894F6;
+  --lav-pale:   rgba(184,148,246,0.12);
+  --cream:      #F6D993;
+  --warm-white: #F5F0E8;
+  --soft:       #A8A4C0;
+  --muted:      #5C5A78;
+  --border:     rgba(247,161,146,0.15);
+  --border-l:   rgba(247,161,146,0.07);
+  --green:      #4ade80;
+  --red:        #f87171;
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0 }
+html { scroll-behavior:smooth }
+body {
+  background: var(--navy);
+  color: var(--warm-white);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+h1,h2,h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: normal;
+  line-height: 1.15;
+  letter-spacing: -.015em;
+  text-wrap: balance;
+}
+strong { font-weight: 600; }
+em { font-style: italic; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1rem 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(25,26,46,0.93);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
+.nav-logo {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: conic-gradient(var(--navy3) 0deg 90deg, var(--coral) 90deg 180deg, var(--lavender) 180deg 270deg, var(--cream) 270deg 360deg);
+  border: 1.5px solid rgba(247,161,146,0.35);
+  flex-shrink: 0;
+}
+.nav-brand-name { font-family: Georgia, serif; font-size: 1rem; color: var(--warm-white); letter-spacing: .03em; }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a {
+  color: var(--soft); text-decoration: none;
+  font-size: .74rem; font-weight: 400; letter-spacing: .08em; text-transform: uppercase;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--warm-white); }
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  padding: .88rem 2rem;
+  border-radius: 3px;
+  font-family: 'Inter', sans-serif;
+  font-size: .875rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  transition: all .2s;
+  text-align: center;
+}
+.btn-coral { background: var(--coral); color: #0f0f1a; }
+.btn-coral:hover { background: var(--coral-d); transform: translateY(-1px); }
+.btn-outline {
+  background: transparent;
+  color: var(--warm-white);
+  border: 1px solid rgba(247,161,146,0.4);
+}
+.btn-outline:hover { border-color: var(--coral); background: var(--coral-08); }
+
+/* ── PAGE LAYOUT ── */
+.page-wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 9rem 2rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.page-wrap::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(184,148,246,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 10% 75%, rgba(247,161,146,0.05) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+/* ── CARD ── */
+.contact-card {
+  width: 100%;
+  max-width: 520px;
+  background: var(--navy2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2.8rem 2.5rem 3rem;
+  position: relative;
+}
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--coral);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.contact-card h1 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  margin-bottom: .6rem;
+}
+.contact-card .sub {
+  color: var(--soft);
+  font-size: .875rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* ── FORM ── */
+.field { margin-bottom: 1.25rem; }
+.field label {
+  display: block;
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: var(--soft);
+  margin-bottom: .4rem;
+}
+.field label .req { color: var(--coral); margin-left: 2px; }
+
+.field input,
+.field textarea {
+  width: 100%;
+  background: var(--navy3);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: .75rem 1rem;
+  color: var(--warm-white);
+  font-family: 'Inter', sans-serif;
+  font-size: .9rem;
+  font-weight: 300;
+  outline: none;
+  transition: border-color .2s;
+  resize: none;
+}
+.field input:focus,
+.field textarea:focus {
+  border-color: rgba(247,161,146,0.5);
+}
+.field input::placeholder,
+.field textarea::placeholder { color: var(--muted); }
+
+/* opt-in checkbox row */
+.opt-in-row {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  margin: 1.5rem 0 1.75rem;
+}
+.opt-in-row input[type="checkbox"] {
+  width: 18px; height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--coral);
+  margin-top: 2px;
+  cursor: pointer;
+}
+.opt-in-row label {
+  font-size: .82rem;
+  color: var(--soft);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+/* submit button */
+.submit-btn {
+  width: 100%;
+  padding: .95rem 2rem;
+  background: var(--coral);
+  color: #0f0f1a;
+  border: none;
+  border-radius: 3px;
+  font-family: 'Inter', sans-serif;
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  cursor: pointer;
+  transition: all .2s;
+}
+.submit-btn:hover:not(:disabled) { background: var(--coral-d); transform: translateY(-1px); }
+.submit-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+/* error message */
+.form-error {
+  display: none;
+  color: var(--red);
+  font-size: .8rem;
+  margin-top: .5rem;
+}
+
+/* ── SUCCESS STATE ── */
+#success-state {
+  display: none;
+  text-align: center;
+}
+#success-state .check-icon {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: rgba(74,222,128,0.12);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+#success-state .check-icon svg { color: var(--green); }
+#success-state h2 {
+  font-size: 1.6rem;
+  margin-bottom: .6rem;
+}
+#success-state .success-sub {
+  color: var(--soft);
+  font-size: .9rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+.divider-or {
+  display: flex; align-items: center; gap: 1rem;
+  color: var(--muted); font-size: .75rem; margin: 1.5rem 0;
+}
+.divider-or::before, .divider-or::after {
+  content: ''; flex: 1;
+  height: 1px; background: var(--border);
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 2rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: .72rem;
+  border-top: 1px solid var(--border-l);
+}
+footer a { color: var(--soft); text-decoration: none; }
+footer a:hover { color: var(--coral); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  .contact-card { padding: 2rem 1.5rem 2.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-brand">
+    <div class="nav-logo"></div>
+    <span class="nav-brand-name">ikwe.ai</span>
+  </a>
+  <div class="nav-links">
+    <a href="/#gap">The Problem</a>
+    <a href="/#benchmark">The Benchmark</a>
+    <a href="/#services">Services</a>
+    <a href="/#team">Team</a>
+  </div>
+</nav>
+
+<!-- PAGE BODY -->
+<div class="page-wrap">
+  <div class="contact-card">
+
+    <!-- FORM STATE -->
+    <div id="form-state">
+      <span class="eyebrow">Get in Touch</span>
+      <h1>Request a Pilot Audit</h1>
+      <p class="sub">
+        Tell us a little about your project — we'll follow up with next steps
+        and a link to book a scoping call.
+      </p>
+
+      <form id="contact-form" novalidate>
+
+        <div class="field">
+          <label for="cf-name">Name <span class="req">*</span></label>
+          <input type="text" id="cf-name" name="name" placeholder="Your name" autocomplete="name" required/>
+        </div>
+
+        <div class="field">
+          <label for="cf-email">Work email <span class="req">*</span></label>
+          <input type="email" id="cf-email" name="email" placeholder="you@company.com" autocomplete="email" required/>
+        </div>
+
+        <div class="field">
+          <label for="cf-company">Company <span style="color:var(--muted);font-weight:300">(optional)</span></label>
+          <input type="text" id="cf-company" name="company" placeholder="Company or project name" autocomplete="organization"/>
+        </div>
+
+        <div class="field">
+          <label for="cf-message">What are you working on? <span style="color:var(--muted);font-weight:300">(optional)</span></label>
+          <textarea id="cf-message" name="message" rows="3" placeholder="Tell us briefly about your AI system or what you'd like evaluated…"></textarea>
+        </div>
+
+        <div class="opt-in-row">
+          <input type="checkbox" id="cf-optin" name="opt_in" checked/>
+          <label for="cf-optin">
+            Send me Ikwe's research, benchmark updates, and findings on behavioral safety in AI.
+          </label>
+        </div>
+
+        <div class="form-error" id="form-error">Something went wrong — please try again or email us directly.</div>
+
+        <button type="submit" class="submit-btn" id="submit-btn">Send &rarr;</button>
+
+      </form>
+    </div>
+
+    <!-- SUCCESS STATE -->
+    <div id="success-state">
+      <div class="check-icon">
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <h2>You're in.</h2>
+      <p class="success-sub">
+        We received your message and will be in touch shortly.<br>
+        Check your inbox — we'll send you our contact details and next steps.
+      </p>
+
+      <a href="/" class="btn btn-coral" style="width:100%;display:block;">Back to ikwe.ai</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Ikwe.ai</strong> &middot; Visible Healing Inc. &middot; Des Moines, Iowa &middot; &copy; 2026
+  &nbsp;&middot;&nbsp;
+  <a href="/privacy.html">Privacy</a>
+  &nbsp;&middot;&nbsp;
+  <a href="/terms.html">Terms</a>
+</footer>
+
+<script>
+(function () {
+  const form      = document.getElementById('contact-form');
+  const btn       = document.getElementById('submit-btn');
+  const errBox    = document.getElementById('form-error');
+  const formState = document.getElementById('form-state');
+  const successState = document.getElementById('success-state');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errBox.style.display = 'none';
+
+    const name  = document.getElementById('cf-name').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+
+    if (!name || !email) {
+      errBox.textContent = 'Please fill in your name and email.';
+      errBox.style.display = 'block';
+      return;
+    }
+
+    btn.disabled    = true;
+    btn.textContent = 'Sending…';
+
+    const payload = {
+      name,
+      email,
+      company: document.getElementById('cf-company').value.trim(),
+      message: document.getElementById('cf-message').value.trim(),
+      opt_in:  document.getElementById('cf-optin').checked,
+    };
+
+    try {
+      const res = await fetch('/.netlify/functions/contact', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(payload),
+      });
+
+      if (!res.ok) throw new Error('Server error ' + res.status);
+
+      // Show success
+      formState.style.display   = 'none';
+      successState.style.display = 'block';
+
+      // GA4 event
+      if (window.gtag) {
+        gtag('event', 'contact_form_submitted', {
+          event_category: 'engagement',
+          opt_in: payload.opt_in,
+        });
+      }
+
+    } catch (err) {
+      console.error(err);
+      errBox.textContent = 'Something went wrong — please try again or email stephanie@ikwe.ai directly.';
+      errBox.style.display = 'block';
+      btn.disabled    = false;
+      btn.textContent = 'Send →';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
