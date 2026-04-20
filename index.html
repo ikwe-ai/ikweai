@@ -229,29 +229,56 @@ nav {
 }
 .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-/* Right column — stats */
-.hero-stats-col {
-  display: flex; flex-direction: column; gap: 0;
+/* Right column — finding + benchmark */
+.hero-right-col { display: flex; flex-direction: column; gap: 1rem; }
+
+.hero-finding {
+  padding: 1.6rem 1.8rem;
+  background: var(--coral-08); border: 1px solid var(--border); border-radius: 8px;
+  border-left: 3px solid var(--coral);
+}
+.hero-finding-label {
+  font-family: 'JetBrains Mono', monospace; font-size: .55rem;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--coral);
+  margin-bottom: .7rem;
+}
+.hero-finding-text {
+  font-family: Georgia, serif; font-size: clamp(1.2rem, 2vw, 1.55rem);
+  color: var(--warm-white); line-height: 1.25; margin-bottom: .65rem;
+  text-wrap: balance;
+}
+.hero-finding-text span { color: var(--coral); font-style: italic; }
+.hero-finding-sub {
+  font-size: .8rem; color: var(--muted); line-height: 1.6;
+}
+
+.hero-benchmark {
   border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
 }
-.hstat {
-  padding: 1.6rem 1.8rem;
-  background: var(--coral-08);
+.hero-bm-header {
+  padding: .7rem 1.4rem; background: var(--navy3);
+  font-family: 'JetBrains Mono', monospace; font-size: .55rem;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--muted);
   border-bottom: 1px solid var(--border);
 }
-.hstat:last-child { border-bottom: none; }
-.hstat-n {
-  font-family: Georgia, serif;
-  font-size: 2.6rem; line-height: 1; margin-bottom: .35rem;
+.hero-bm-item {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1rem 1.4rem; background: var(--navy3);
+  border-bottom: 1px solid var(--border);
+  transition: background .18s;
 }
-.hstat-n.coral { color: var(--coral); }
-.hstat-n.lav { color: var(--lavender); }
-.hstat-n.cream { color: var(--cream); }
-.hstat-l { font-size: .78rem; color: var(--muted); line-height: 1.45; }
-.hero-stat-note {
-  margin-top: 1.2rem;
-  font-size: .8rem; color: var(--muted); font-style: italic; line-height: 1.55;
+.hero-bm-item:last-child { border-bottom: none; }
+.hero-bm-item:hover { background: var(--coral-08); }
+.hero-bm-num {
+  font-family: 'JetBrains Mono', monospace; font-size: .58rem;
+  color: var(--coral); flex-shrink: 0; margin-top: .18rem;
+  letter-spacing: .1em;
 }
+.hero-bm-name {
+  font-family: Georgia, serif; font-size: .95rem; color: var(--warm-white);
+  margin-bottom: .18rem;
+}
+.hero-bm-desc { font-size: .76rem; color: var(--muted); line-height: 1.5; }
 
 /* ═══════════════════════════════════
    THE GAP
@@ -738,7 +765,7 @@ footer {
 @media(max-width:500px){
   .stat-block { grid-template-columns: 1fr; }
   .hero-h1 { font-size: 2.6rem; }
-  .hstat-n { font-size: 2rem; }
+  .hero-finding-text { font-size: 1.2rem; }
 }
 </style>
 </head>
@@ -789,35 +816,51 @@ footer {
           An independent safety record that proves your system can be trusted with humans —
           <strong>before harm, liability, or headlines.</strong>
         </p>
-        <p class="hero-sub">
-          Not what it says. How it behaves. That distinction is what Ikwe was built to measure.
-        </p>
         <p class="hero-subtle">
-          Independent. Third-party. Operational. Behavioral.
+          Independent · Third-party · Operational · Behavioral
         </p>
         <div class="hero-btns">
           <a href="mailto:stephanie@ikwe.ai" class="btn btn-coral">Request an EQ Safety Audit</a>
           <a href="#benchmark" class="btn btn-outline">See the EQ Safety Benchmark →</a>
         </div>
       </div>
-      <div>
-        <div class="hero-stats-col">
-          <div class="hstat">
-            <div class="hstat-n coral">54.7%</div>
-            <div class="hstat-l">of frontier-model responses introduced behavioral risk at first contact</div>
+      <div class="hero-right-col">
+        <div class="hero-finding">
+          <div class="hero-finding-label">The core finding</div>
+          <div class="hero-finding-text">
+            Recognition is not safety.<br><span>Proof is.</span>
           </div>
-          <div class="hstat">
-            <div class="hstat-n lav">44.9%</div>
-            <div class="hstat-l">of systems fail the binary Safety Gate at first contact evaluation</div>
-          </div>
-          <div class="hstat">
-            <div class="hstat-n cream">21K+</div>
-            <div class="hstat-l">outputs evaluated across 79 real-world behavioral risk scenarios</div>
+          <div class="hero-finding-sub">
+            AI can sound empathetic and still leave someone worse off.
+            Measuring what a model <em>says</em> is not the same as measuring
+            what it <em>does to the person</em>. That gap is where harm forms —
+            and it's what Ikwe was built to close.
           </div>
         </div>
-        <p class="hero-stat-note">
-          Not what it says. How it behaves.<br>That distinction is what Ikwe was built to measure.
-        </p>
+        <div class="hero-benchmark">
+          <div class="hero-bm-header">How the EQ Safety Benchmark works</div>
+          <div class="hero-bm-item">
+            <div class="hero-bm-num">01</div>
+            <div>
+              <div class="hero-bm-name">Binary Safety Gate</div>
+              <div class="hero-bm-desc">Pass / fail across 79 vulnerable scenarios. Does this system pose launch risk?</div>
+            </div>
+          </div>
+          <div class="hero-bm-item">
+            <div class="hero-bm-num">02</div>
+            <div>
+              <div class="hero-bm-name">8-Dimensional Scoring</div>
+              <div class="hero-bm-desc">Behavioral depth — exactly where it fails, how badly, and what to fix.</div>
+            </div>
+          </div>
+          <div class="hero-bm-item">
+            <div class="hero-bm-num">03</div>
+            <div>
+              <div class="hero-bm-name">Continuous Monitoring</div>
+              <div class="hero-bm-desc">Both tests run live as the model evolves — catching drift before it becomes consequence.</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
