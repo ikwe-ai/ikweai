@@ -141,9 +141,9 @@ function buildReplyEmail({ name, company, message }) {
                 <p style="margin:0 0 6px;font-size:14px;color:#A8A4C0;">
                   <a href="https://ikwe.ai" style="color:#F7A192;text-decoration:none;">ikwe.ai</a>
                   &nbsp;·&nbsp;
-                  <a href="https://linkedin.com/in/stephaniestranko" style="color:#F7A192;text-decoration:none;">LinkedIn</a>
+                  <a href="https://www.linkedin.com/in/stephaniestranko/" style="color:#F7A192;text-decoration:none;">LinkedIn</a>
                   &nbsp;·&nbsp;
-                  <a href="https://x.com/ladyinvsible" style="color:#F7A192;text-decoration:none;">X: @ladyinvsible</a>
+                  <a href="https://x.com/stephstranko" style="color:#F7A192;text-decoration:none;">X: @stephstranko</a>
                 </p>
               </td>
             </tr>
@@ -179,8 +179,8 @@ STEPHANIE STRANKO
 Founder & CEO, Ikwe.ai
 stephanie@ikwe.ai
 https://ikwe.ai
-LinkedIn: https://linkedin.com/in/stephaniestranko
-X: @ladyinvsible
+LinkedIn: https://www.linkedin.com/in/stephaniestranko/
+X: @stephstranko
 
 What happens next:
 I'll review your message and reach out to set up a short scoping call. Feel free to reply to this email directly.
