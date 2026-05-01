@@ -446,15 +446,15 @@ footer a:hover { color: var(--coral); }
     };
 
     try {
-      const res = await fetch('https://script.google.com/macros/s/AKfycbxd9Widq9Y7ig9Mv-yvoThlWE9q4cpHmaBI9pkWqd_IZ_dHB-UTKIpOSreIzyOop8kilQ/exec', {
+      // Submit to Google Sheets (no-cors — success shown immediately)
+      fetch('https://script.google.com/macros/s/AKfycbxd9Widq9Y7ig9Mv-yvoThlWE9q4cpHmaBI9pkWqd_IZ_dHB-UTKIpOSreIzyOop8kilQ/exec', {
         method:  'POST',
+        mode:    'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify(payload),
       });
 
-      if (!res.ok) throw new Error('Server error ' + res.status);
-
-      // Show success
+      // Show success immediately
       formState.style.display   = 'none';
       successState.style.display = 'block';
 
