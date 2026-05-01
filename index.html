@@ -133,6 +133,9 @@
     .nav-cta:hover { opacity: .88; }
 
     /* ── MOBILE NAV ── */
+    .nav-mobile-menu {
+      display: none; /* hidden by default on ALL screen sizes */
+    }
     .nav-hamburger {
       display: none;
       flex-direction: column;
@@ -159,9 +162,8 @@
       .nav-links { display: none; }
       .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
-
-      .nav-mobile-menu {
-        display: none;
+      .nav-mobile-menu.open {
+        display: flex;
         position: fixed;
         top: 60px;
         left: 0;
@@ -174,7 +176,6 @@
         border-top: 1px solid rgba(255,255,255,.1);
         box-shadow: 0 20px 40px rgba(0,0,0,.5);
       }
-      .nav-mobile-menu.open { display: flex; }
       .nav-mobile-menu a {
         color: rgba(255,255,255,.75);
         text-decoration: none;
