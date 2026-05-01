@@ -79,7 +79,7 @@
     nav {
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
       background: var(--navy);
       padding: 0 2rem;
       display: flex;
@@ -155,7 +155,7 @@
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       .nav-links { display: none; }
       .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
@@ -170,9 +170,9 @@
         padding: 1.5rem 2rem 2rem;
         flex-direction: column;
         gap: 0;
-        z-index: 150;
+        z-index: 999;
         border-top: 1px solid rgba(255,255,255,.1);
-        box-shadow: 0 20px 40px rgba(0,0,0,.4);
+        box-shadow: 0 20px 40px rgba(0,0,0,.5);
       }
       .nav-mobile-menu.open { display: flex; }
       .nav-mobile-menu a {
@@ -319,9 +319,12 @@
 
     /* ── DIVIDER ── */
     .divider {
+      display: block;
       border: none;
       border-top: 1px solid #eeeef2;
+      background: transparent;
       margin: 0;
+      height: 0;
     }
 
     /* ─────────────────────────────────────────
@@ -880,19 +883,6 @@
 </head>
 <body>
 
-<!-- Netlify forms (hidden — required for Netlify form detection) -->
-<form name="get-started-scope-call" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
-  <input type="text" name="form-name" value="get-started-scope-call"/>
-  <input type="text" name="name"/><input type="email" name="email"/>
-  <input type="text" name="company"/><input type="text" name="note"/>
-  <input type="text" name="submitted_at"/><input type="text" name="bot-field"/>
-</form>
-<form name="get-started-newsletter" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
-  <input type="text" name="form-name" value="get-started-newsletter"/>
-  <input type="email" name="email"/><input type="text" name="submitted_at"/>
-  <input type="text" name="bot-field"/>
-</form>
-
 <!-- ── NAV ── -->
 <nav>
   <a href="/" class="nav-brand">
@@ -1096,7 +1086,7 @@
   </div>
 </section>
 
-<hr class="divider" style="border-color: rgba(255,255,255,.08); background: var(--navy);" />
+<hr class="divider" style="border-color: rgba(255,255,255,.08);" />
 
 
 <!-- ── SECTION 6: PROOF ── -->
