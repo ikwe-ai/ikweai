@@ -670,6 +670,83 @@
     }
 
     /* ─────────────────────────────────────────
+       CLOSE SECTION FORM
+    ───────────────────────────────────────── */
+    .close-form {
+      margin-top: 3rem;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: left;
+    }
+    .close-form-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.4);
+      margin-bottom: 1.25rem;
+    }
+    .close-form .cf-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+      margin-bottom: .75rem;
+    }
+    @media (max-width: 540px) { .close-form .cf-row { grid-template-columns: 1fr; } }
+    .close-form input,
+    .close-form textarea {
+      width: 100%;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 6px;
+      padding: .7rem 1rem;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .9rem;
+      font-weight: 300;
+      outline: none;
+      transition: border-color .2s;
+      resize: none;
+    }
+    .close-form input::placeholder,
+    .close-form textarea::placeholder { color: rgba(255,255,255,.3); }
+    .close-form input:focus,
+    .close-form textarea:focus { border-color: rgba(247,161,146,.5); }
+    .close-form textarea { margin-bottom: .75rem; }
+    .close-form .cf-submit {
+      width: 100%;
+      padding: .8rem 2rem;
+      background: var(--coral);
+      color: var(--navy);
+      border: none;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: opacity .2s, transform .15s;
+    }
+    .close-form .cf-submit:hover:not(:disabled) { opacity: .88; transform: translateY(-1px); }
+    .close-form .cf-submit:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+    .close-form-success {
+      display: none;
+      text-align: center;
+      padding: 1rem 0 .5rem;
+    }
+    .close-form-success p {
+      font-size: 1rem;
+      color: var(--teal-mid);
+      margin-bottom: .4rem;
+    }
+    .close-form-success small {
+      font-size: .82rem;
+      color: rgba(255,255,255,.4);
+    }
+
+    /* ─────────────────────────────────────────
        SCROLL REVEAL
     ───────────────────────────────────────── */
     .reveal {
@@ -1060,11 +1137,32 @@
     <p class="lead">Ikwe is that system. Before the lawsuit. Before the headline. Before someone finds out the hard way that their AI went off the rails when no one was looking.</p>
     <div class="cta-group">
       <a href="/contact" class="btn btn-primary">Request an audit</a>
-      <a href="mailto:hello@ikwe.ai" class="btn btn-secondary">Talk to Stephanie</a>
+      <a href="/contact" class="btn btn-secondary">Contact us</a>
     </div>
     <p style="margin-top:2rem; font-size:.82rem; color:rgba(255,255,255,.35);">
       Independent · Third-party · Operational · Behavioral
     </p>
+
+    <div class="close-form">
+      <div id="close-form-fields">
+        <div class="close-form-title">Send us a message</div>
+        <div class="cf-row">
+          <input type="text"  id="cf-name"    placeholder="Your name"         autocomplete="name"         />
+          <input type="email" id="cf-email"   placeholder="Work email"        autocomplete="email"        />
+        </div>
+        <div class="cf-row">
+          <input type="text"  id="cf-company" placeholder="Company / project" autocomplete="organization" />
+          <input type="text"  id="cf-role"    placeholder="Your role"                                     />
+        </div>
+        <textarea id="cf-message" rows="3" placeholder="Tell us briefly about your AI system or what you'd like evaluated…"></textarea>
+        <div id="cf-error" style="display:none; font-size:.8rem; color:#f87171; margin-bottom:.75rem;"></div>
+        <button class="cf-submit" id="cf-submit">Send message →</button>
+      </div>
+      <div class="close-form-success" id="close-form-success">
+        <p>✓ Message received</p>
+        <small>We'll be in touch shortly. You can also reach us directly at <a href="mailto:hello@ikwe.ai" style="color:var(--coral);">hello@ikwe.ai</a></small>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1089,10 +1187,58 @@
 
 
 <script>
+  // Scroll reveal
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Homepage contact form → Google Sheets
+  (function () {
+    const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxd9Widq9Y7ig9Mv-yvoThlWE9q4cpHmaBI9pkWqd_IZ_dHB-UTKIpOSreIzyOop8kilQ/exec';
+
+    const submitBtn  = document.getElementById('cf-submit');
+    const errBox     = document.getElementById('cf-error');
+    const formFields = document.getElementById('close-form-fields');
+    const successDiv = document.getElementById('close-form-success');
+
+    submitBtn.addEventListener('click', async function () {
+      errBox.style.display = 'none';
+      const name    = (document.getElementById('cf-name').value    || '').trim();
+      const email   = (document.getElementById('cf-email').value   || '').trim();
+      const company = (document.getElementById('cf-company').value || '').trim();
+      const role    = (document.getElementById('cf-role').value    || '').trim();
+      const message = (document.getElementById('cf-message').value || '').trim();
+
+      if (!name || !email) {
+        errBox.textContent   = 'Please enter your name and email.';
+        errBox.style.display = 'block';
+        return;
+      }
+
+      submitBtn.disabled    = true;
+      submitBtn.textContent = 'Sending…';
+
+      const payload = { name, email, company, role, message, source: 'homepage' };
+
+      // Submit to Google Sheets (no-cors — success shown immediately)
+      fetch(SHEETS_URL, {
+        method:  'POST',
+        mode:    'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(payload),
+      });
+
+      // GA4 event
+      if (window.gtag) {
+        gtag('event', 'contact_form_submitted', { event_category: 'engagement', page: 'homepage' });
+      }
+
+      // Show success immediately
+      formFields.style.display = 'none';
+      successDiv.style.display = 'block';
+    });
+  })();
 </script>
 
 </body>
