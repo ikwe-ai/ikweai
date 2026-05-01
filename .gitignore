@@ -7,6 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
 dist
 dist-ssr
@@ -23,3 +24,19 @@ dist-ssr
 *.sln
 *.sw?
 vite.config.ts.timestamp-*.mjs
+
+# Netlify (not needed — on GitHub Pages now)
+.netlify/
+nETLify/
+nEtlify.toml
+netlify.toml
+
+# Internal docs — never commit to public repo
+*.xlsx
+*.pptx
+*.docx
+archive/
+dist/
+
+# Deploy artifacts
+deploy-*.zip
