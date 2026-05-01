@@ -3,650 +3,514 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://ikwe.ai/reports/ikwe-sample-report-public.html">
-<meta name="theme-color" content="#141218">
-<title>Sample Benchmark Report — EQSB · Ikwe Research</title>
-<meta name="description" content="A sample EQ Safety Benchmark report — see what you'd receive from an Ikwe Research engagement.">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-
+<title>Sample Behavioral Safety Report — EQSB v2.1 | Ikwe.ai</title>
+<meta name="description" content="See exactly what an Ikwe.ai EQ Safety Benchmark report delivers — real methodology, real scoring, real findings.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #0d0f14;
-  --surface: #141720;
-  --surface2: #1b1f2e;
-  --surface3: #21263a;
-  --border: #232840;
-  --text: #e8eaf4;
-  --dim: #68708c;
-  --accent: #5b8af5;
-  --purple: #a56cf5;
-  --client-purple: #8b5cf6;
-  --green: #3dd68c;
-  --yellow: #f5c842;
-  --red: #f55a5a;
-  --orange: #f5933a;
-  --teal: #3dd6c8;
+  --navy: #191A2E;
+  --coral: #F7A192;
+  --teal: #0F6E56;
+  --teal-mid: #5DCAA5;
+  --teal-light: #E1F5EE;
+  --cream: #F6F4EF;
+  --white: #FFFFFF;
+  --text: #1A1A2E;
+  --muted: #5a5a6e;
+  --border: #E5E5EA;
+  --red: #E24B4A;
+  --red-soft: #FCEBEB;
+  --amber: #B86A00;
+  --amber-soft: #FFF3DC;
+  --green: #0F6E56;
+  --green-soft: #EAF3DE;
+  --gray: #F7F6F2;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Avenir Next', sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-  min-height: 100vh;
-}
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); font-size: 15px; line-height: 1.7; }
 
-/* ── Top bar ── */
-.top-bar {
-  background: var(--surface); border-bottom: 1px solid var(--border);
-  padding: 10px 28px; display: flex; align-items: center; justify-content: space-between;
-  gap: 12px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100;
-}
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.brand-name { font-size: 13px; font-weight: 700; color: var(--text); }
-.brand-badge {
-  background: rgba(139,92,246,.15); color: var(--client-purple);
-  border: 1px solid rgba(139,92,246,.3); border-radius: 4px;
-  padding: 2px 7px; font-size: 10px; font-weight: 700; letter-spacing: .05em;
-}
-.top-nav { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-.nav-link {
-  color: #b8c8e8; font-size: 12px; font-weight: 600; text-decoration: none;
-  padding: 4px 10px; border-radius: 5px; border: 1px solid rgba(91,138,245,.25);
-  background: rgba(91,138,245,.08); transition: opacity .15s;
-}
-.nav-link.active { color: #e2d4ff; border-color: rgba(139,92,246,.45); background: rgba(139,92,246,.15); }
-.nav-link.cta { background: rgba(139,92,246,.15); color: #c4a9ff; border-color: rgba(139,92,246,.35); }
-.nav-link:hover { opacity: .82; }
-.nav-sep { display:inline-block; width:1px; height:14px; background:rgba(255,255,255,.12); vertical-align:middle; }
+/* NAV */
+nav { background: var(--navy); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--white); text-decoration: none; }
+.nav-badge { font-size: 11px; background: rgba(247,161,146,.15); color: var(--coral); border: 1px solid rgba(247,161,146,.3); border-radius: 20px; padding: 3px 12px; font-weight: 500; }
+.nav-cta { background: var(--coral); color: var(--navy); font-size: 13px; font-weight: 500; padding: 7px 18px; border-radius: 8px; text-decoration: none; }
 
-/* ── Sample watermark banner ── */
-.sample-banner {
-  background: rgba(245,193,66,.08); border-bottom: 1px solid rgba(245,193,66,.2);
-  padding: 8px 28px; text-align: center; font-size: 12px; color: var(--yellow);
-  font-weight: 600; letter-spacing: .04em;
-}
-.sample-banner span { opacity: .7; font-weight: 400; margin-left: 6px; }
+/* LAYOUT */
+.container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+.section { margin-bottom: 2.5rem; }
 
-/* ── Page ── */
-.page { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; }
+/* COVER */
+.cover { background: var(--navy); border-radius: 16px; padding: 3rem; margin-bottom: 2rem; }
+.cover-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--coral); margin-bottom: 1rem; }
+.cover-title { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--white); line-height: 1.2; margin-bottom: .75rem; }
+.cover-sub { font-size: 14px; color: rgba(255,255,255,.55); margin-bottom: 2rem; }
+.cover-meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+@media (max-width: 600px) { .cover-meta { grid-template-columns: 1fr 1fr; } }
+.meta-item { background: rgba(255,255,255,.06); border-radius: 10px; padding: 1rem; }
+.meta-label { font-size: 10px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: .35rem; }
+.meta-value { font-size: 1.4rem; font-weight: 500; color: var(--white); font-family: 'DM Serif Display', serif; }
+.meta-sub { font-size: 11px; color: rgba(255,255,255,.35); margin-top: .2rem; }
 
-/* ── Report header ── */
-.report-header {
-  background: linear-gradient(135deg, rgba(91,138,245,.1), rgba(139,92,246,.08));
-  border: 1px solid var(--border); border-radius: 14px;
-  padding: 28px 32px; margin-bottom: 28px;
-  display: flex; justify-content: space-between; align-items: flex-start;
-  gap: 20px; flex-wrap: wrap;
-}
-.report-meta { flex: 1; min-width: 200px; }
-.report-eyebrow {
-  font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
-  color: var(--client-purple); margin-bottom: 6px;
-}
-.report-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 4px; }
-.report-subtitle { font-size: 13px; color: var(--dim); }
-.report-meta-table { margin-top: 16px; }
-.report-meta-table tr td { padding: 3px 0; font-size: 12px; }
-.report-meta-table tr td:first-child { color: var(--dim); width: 100px; }
-.redact {
-  display: inline-block; background: var(--surface3); border-radius: 3px;
-  color: transparent; font-size: 12px; user-select: none;
-  border: 1px solid var(--border);
-}
+/* TIER BANNER */
+.tier-banner { border-radius: 12px; padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
+.tier-ii { background: var(--amber-soft); border: 2px solid #E08C00; }
+.tier-label { font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); margin-bottom: .3rem; }
+.tier-name { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); }
+.tier-desc { font-size: 13px; color: var(--muted); margin-top: .25rem; }
+.tier-action { text-align: right; }
+.tier-action-label { font-size: 11px; color: var(--muted); margin-bottom: .3rem; }
+.tier-action-val { font-size: 13px; font-weight: 500; color: var(--navy); background: rgba(184,106,0,.12); border-radius: 8px; padding: 6px 14px; display: inline-block; }
 
-.overall-score-box {
-  text-align: center; min-width: 140px;
-}
-.score-circle {
-  width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 10px;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  background: conic-gradient(#3dd68c 0% 73%, var(--surface3) 73% 100%);
-  position: relative;
-}
-.score-circle::before {
-  content: ''; position: absolute;
-  width: 76px; height: 76px; border-radius: 50%; background: var(--surface);
-}
-.score-inner { position: relative; z-index: 1; text-align: center; }
-.score-number { font-size: 1.5rem; font-weight: 900; color: var(--green); line-height: 1; }
-.score-pct { font-size: 11px; color: var(--green); font-weight: 700; }
-.score-label { font-size: 11px; color: var(--dim); font-weight: 600; }
-.score-tier {
-  display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700;
-  background: rgba(245,193,66,.12); color: var(--yellow); border: 1px solid rgba(245,193,66,.3);
-}
+/* SECTION HEADERS */
+.sec-header { display: flex; align-items: baseline; gap: .75rem; margin-bottom: 1.25rem; }
+.sec-num { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--teal-mid); font-weight: 500; }
+.sec-title { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--navy); }
 
-/* ── Section headers ── */
-.section-title {
-  font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--dim); padding-bottom: 10px;
-  border-bottom: 1px solid var(--border); margin-bottom: 16px;
-}
+/* CARDS */
+.card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; }
+.card-label { font-size: 10px; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin-bottom: .75rem; }
 
-/* ── KPI row ── */
-.kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px; }
-.kpi-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px;
-}
-.kpi-value { font-size: 1.6rem; font-weight: 900; margin-bottom: 2px; }
-.kpi-label { font-size: 11px; color: var(--dim); font-weight: 600; }
-.kpi-sub { font-size: 11px; margin-top: 5px; }
+/* SAFETY GATE */
+.gate-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 600px) { .gate-row { grid-template-columns: 1fr; } }
+.gate-card { border-radius: 10px; padding: 1.25rem; }
+.gate-fail { background: var(--red-soft); border: 1.5px solid var(--red); }
+.gate-pass { background: var(--green-soft); border: 1.5px solid var(--teal-mid); }
+.gate-tag { font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .5rem; }
+.gate-fail .gate-tag { color: var(--red); }
+.gate-pass .gate-tag { color: var(--teal); }
+.gate-title { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: .35rem; }
+.gate-desc { font-size: 12px; color: var(--muted); line-height: 1.55; }
+.violation-list { list-style: none; margin-top: .6rem; display: flex; flex-direction: column; gap: .3rem; }
+.violation-list li { font-size: 12px; display: flex; align-items: flex-start; gap: .4rem; color: #791F1F; }
+.violation-list li::before { content: '↳'; flex-shrink: 0; margin-top: .05rem; }
 
-/* ── Executive summary ── */
-.exec-summary {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-  padding: 24px 28px; margin-bottom: 28px;
-}
-.exec-summary p { font-size: 14px; color: #c4cde6; margin-bottom: 12px; }
-.exec-summary p:last-child { margin-bottom: 0; }
+/* DIMENSION SCORES */
+.dims-grid { display: flex; flex-direction: column; gap: .6rem; }
+.dim-row { display: grid; grid-template-columns: 180px 1fr 60px; align-items: center; gap: 1rem; }
+@media (max-width: 600px) { .dim-row { grid-template-columns: 1fr 80px; } .dim-label-col { display: none; } }
+.dim-name { font-size: 13px; color: var(--navy); font-weight: 400; }
+.dim-weight { font-size: 11px; color: var(--muted); }
+.dim-bar-wrap { background: var(--gray); border-radius: 20px; height: 8px; overflow: hidden; }
+.dim-bar { height: 8px; border-radius: 20px; transition: width .6s; }
+.dim-bar-strong { background: var(--teal-mid); }
+.dim-bar-ok { background: #9DD4C8; }
+.dim-bar-warn { background: #E08C00; }
+.dim-bar-fail { background: var(--red); }
+.dim-score { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; text-align: right; }
+.dim-score-strong { color: var(--teal); }
+.dim-score-ok { color: #2E7D68; }
+.dim-score-warn { color: var(--amber); }
+.dim-score-fail { color: var(--red); }
+.dim-sector-tag { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 500; margin-left: .5rem; }
+.tag-diag { background: var(--red-soft); color: var(--red); }
+.tag-qual { background: var(--green-soft); color: var(--teal); }
 
-/* ── Domain score table ── */
-.domain-section {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-  padding: 24px 28px; margin-bottom: 28px;
-}
-.domain-grid { display: flex; flex-direction: column; gap: 14px; }
-.domain-row {
-  display: grid; grid-template-columns: 180px 1fr 56px 56px 56px;
-  align-items: center; gap: 12px;
-}
-.domain-row.header {
-  font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-  color: var(--dim); padding-bottom: 10px; border-bottom: 1px solid var(--border);
-}
-.domain-name { font-size: 13px; font-weight: 600; }
-.domain-desc { font-size: 11px; color: var(--dim); font-weight: 400; }
-.bar-wrap { background: var(--surface3); border-radius: 4px; height: 7px; overflow: hidden; }
-.bar-fill { height: 100%; border-radius: 4px; }
-.domain-score { font-size: 13px; font-weight: 800; text-align: right; }
-.domain-baseline { font-size: 12px; color: var(--dim); text-align: right; }
-.domain-delta { font-size: 12px; font-weight: 700; text-align: right; }
-.delta-pos { color: var(--green); }
-.delta-neg { color: var(--red); }
-.delta-neu { color: var(--dim); }
+/* COMPOSITE SCORE */
+.score-display { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+.score-big { font-family: 'DM Serif Display', serif; font-size: 4rem; color: var(--amber); line-height: 1; }
+.score-context { flex: 1; min-width: 200px; }
+.score-label { font-size: 13px; color: var(--muted); margin-bottom: .5rem; }
+.score-compare { display: flex; flex-direction: column; gap: .4rem; }
+.sc-row { display: flex; align-items: center; justify-content: space-between; font-size: 12px; }
+.sc-name { color: var(--muted); }
+.sc-val { font-family: 'DM Mono', monospace; font-weight: 500; color: var(--navy); }
+.sc-bar-wrap { flex: 1; margin: 0 .75rem; background: var(--gray); border-radius: 10px; height: 5px; }
+.sc-bar { height: 5px; border-radius: 10px; background: var(--teal-mid); }
 
-/* ── Risk flags ── */
-.risk-section {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-  padding: 24px 28px; margin-bottom: 28px;
-}
-.risk-list { display: flex; flex-direction: column; gap: 12px; }
-.risk-item {
-  display: flex; gap: 14px; align-items: flex-start;
-  padding: 14px 16px; border-radius: 9px; border: 1px solid;
-}
-.risk-item.high { border-color: rgba(245,90,90,.25); background: rgba(245,90,90,.05); }
-.risk-item.medium { border-color: rgba(245,147,58,.2); background: rgba(245,147,58,.04); }
-.risk-item.low { border-color: rgba(61,214,140,.2); background: rgba(61,214,140,.04); }
-.risk-severity {
-  font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
-  padding: 2px 8px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; margin-top: 1px;
-}
-.risk-item.high .risk-severity { background: rgba(245,90,90,.15); color: var(--red); }
-.risk-item.medium .risk-severity { background: rgba(245,147,58,.15); color: var(--orange); }
-.risk-item.low .risk-severity { background: rgba(61,214,140,.12); color: var(--green); }
-.risk-content {}
-.risk-title { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
-.risk-desc { font-size: 12px; color: var(--dim); }
+/* PATTERN TABLE */
+.pattern-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.pattern-table th { text-align: left; padding: .5rem .75rem; font-size: 11px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--border); }
+.pattern-table td { padding: .65rem .75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+.pattern-table tr:last-child td { border-bottom: none; }
+.pattern-table tr:nth-child(even) td { background: var(--gray); }
+.pct-high { color: var(--red); font-weight: 500; font-family: 'DM Mono', monospace; }
+.pct-mid { color: var(--amber); font-weight: 500; font-family: 'DM Mono', monospace; }
+.pct-ok { color: var(--teal); font-weight: 500; font-family: 'DM Mono', monospace; }
+.severity-tag { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 500; white-space: nowrap; }
+.sev-high { background: var(--red-soft); color: var(--red); }
+.sev-mid { background: var(--amber-soft); color: var(--amber); }
+.sev-low { background: var(--green-soft); color: var(--teal); }
 
-/* ── Comparison table ── */
-.comparison-section {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-  padding: 24px 28px; margin-bottom: 28px;
-}
-.comp-table { width: 100%; border-collapse: collapse; }
-.comp-table th, .comp-table td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--border); font-size: 13px; }
-.comp-table th { font-size: 11px; font-weight: 700; color: var(--dim); text-transform: uppercase; letter-spacing: .06em; }
-.comp-table tr:last-child td { border-bottom: none; }
-.comp-table .highlight td { background: rgba(91,138,245,.06); }
-.comp-table .you-badge {
-  display: inline-block; font-size: 9px; font-weight: 700; padding: 1px 6px;
-  border-radius: 3px; background: rgba(91,138,245,.15); color: var(--accent);
-  margin-left: 6px; letter-spacing: .04em;
-}
-.tier-badge {
-  display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700;
-}
-.tier-leader { background: rgba(61,214,140,.12); color: var(--green); }
-.tier-proficient { background: rgba(91,138,245,.12); color: var(--accent); }
-.tier-developing { background: rgba(245,193,66,.12); color: var(--yellow); }
-.tier-at-risk { background: rgba(245,90,90,.12); color: var(--red); }
+/* REMEDIATION */
+.remed-list { display: flex; flex-direction: column; gap: .75rem; }
+.remed-item { display: flex; gap: 1rem; align-items: flex-start; padding: .85rem 1rem; background: var(--gray); border-radius: 10px; border-left: 3px solid var(--teal-mid); }
+.remed-num { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--teal-mid); font-weight: 500; flex-shrink: 0; padding-top: .1rem; }
+.remed-text { font-size: 13px; color: var(--navy); line-height: 1.6; }
+.remed-dim { font-size: 11px; color: var(--muted); margin-top: .2rem; }
 
-/* ── Recommendations ── */
-.rec-section {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-  padding: 24px 28px; margin-bottom: 28px;
-}
-.rec-list { display: flex; flex-direction: column; gap: 14px; }
-.rec-item { display: flex; gap: 14px; align-items: flex-start; }
-.rec-num {
-  flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
-  background: rgba(139,92,246,.15); color: var(--client-purple);
-  font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center;
-  border: 1px solid rgba(139,92,246,.3);
-}
-.rec-body {}
-.rec-title { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
-.rec-desc { font-size: 12px; color: var(--dim); }
+/* WHAT YOU GET */
+.deliverables { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+@media (max-width: 600px) { .deliverables { grid-template-columns: 1fr; } }
+.deliv-item { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; }
+.deliv-icon { font-size: 1.2rem; margin-bottom: .4rem; }
+.deliv-title { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: .25rem; }
+.deliv-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
-/* ── What's not included box ── */
-.not-included {
-  background: rgba(245,193,66,.05); border: 1px solid rgba(245,193,66,.2);
-  border-radius: 10px; padding: 18px 20px; margin-bottom: 28px;
-}
-.not-included h4 { font-size: 12px; font-weight: 700; color: var(--yellow); margin-bottom: 10px; letter-spacing: .04em; }
-.not-included ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-.not-included ul li { font-size: 12px; color: var(--dim); padding-left: 16px; position: relative; }
-.not-included ul li::before { content: '—'; position: absolute; left: 0; color: rgba(245,193,66,.5); }
+/* CTA */
+.cta-block { background: var(--navy); border-radius: 16px; padding: 2.5rem; text-align: center; margin-top: 2rem; }
+.cta-title { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--white); margin-bottom: .75rem; }
+.cta-sub { font-size: 14px; color: rgba(255,255,255,.55); margin-bottom: 1.5rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+.cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-primary { background: var(--coral); color: var(--navy); font-weight: 500; font-size: 14px; padding: .75rem 1.75rem; border-radius: 8px; text-decoration: none; }
+.btn-secondary { background: transparent; color: var(--white); font-size: 14px; padding: .75rem 1.75rem; border-radius: 8px; text-decoration: none; border: 1.5px solid rgba(255,255,255,.25); }
 
-/* ── CTA footer ── */
-.cta-block {
-  background: linear-gradient(135deg, rgba(91,138,245,.1), rgba(139,92,246,.1));
-  border: 1px solid rgba(139,92,246,.3); border-radius: 14px;
-  padding: 32px; text-align: center; margin-bottom: 32px;
-}
-.cta-block h2 { font-size: 1.25rem; font-weight: 800; margin-bottom: 8px; }
-.cta-block p { font-size: 14px; color: var(--dim); margin-bottom: 20px; max-width: 480px; margin-left: auto; margin-right: auto; }
-.cta-block a {
-  display: inline-block; background: linear-gradient(135deg, var(--client-purple), #5b4fd6);
-  color: #fff; text-decoration: none; padding: 12px 32px;
-  border-radius: 9px; font-size: 14px; font-weight: 700;
-}
-.cta-block a:hover { opacity: .88; }
+/* WATERMARK */
+.watermark { text-align: center; font-size: 11px; color: var(--muted); padding: 1.5rem 0 .5rem; }
+.watermark strong { color: var(--navy); }
 
-.footer { text-align: center; padding-top: 24px; border-top: 1px solid var(--border); }
-.footer p { font-size: 12px; color: var(--dim); }
-.footer a { color: var(--dim); text-decoration: none; }
-.footer a:hover { color: var(--accent); }
-
-@media (max-width: 640px) {
-  .report-header { flex-direction: column; }
-  .kpi-row { grid-template-columns: repeat(2, 1fr); }
-  .domain-row { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .domain-row .bar-wrap, .domain-row.header .bar-col { display: none; }
-  .comp-table { font-size: 12px; }
-}
-
-/* ── Print / PDF export ── */
-@media print {
-  .top-bar, .sample-banner, .nav-link, .nav-sep, .no-print { display: none !important; }
-  body { background: #ffffff !important; color: #111827 !important; }
-  .page { max-width: 980px; padding: 24px 18px 24px; }
-  .report-header, .kpi-card, .exec-summary, .domain-section, .risk-section, .comparison-section, .rec-section, .not-included, .cta-block {
-    background: #ffffff !important;
-    border-color: rgba(17,24,39,.18) !important;
-    box-shadow: none !important;
-  }
-  .section-title { color: #374151 !important; border-bottom-color: rgba(17,24,39,.18) !important; }
-  .report-subtitle, .domain-desc, .risk-desc, .rec-desc, .footer p, .comp-table th { color: #4b5563 !important; }
-  .brand-name { color: #111827 !important; }
-  a { color: #111827 !important; text-decoration: none !important; }
-}
-
+/* DIVIDER */
+hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 </style>
 </head>
 <body>
 
-<div id="app-content">
+<nav>
+  <a href="https://ikwe.ai" class="nav-logo">ikwe.ai</a>
+  <span class="nav-badge">Sample Report</span>
+  <a href="https://ikwe.ai/#close" class="nav-cta">Request an audit</a>
+</nav>
 
-<!-- Top bar -->
-<div class="top-bar">
-  <a class="brand" href="/">
-    <span class="brand-name">Ikwe Research</span>
-    <span class="brand-badge">EQSB</span>
-  </a>
-  <nav class="top-nav" id="main-nav">
-    <a class="nav-link" href="/portal">Portal</a>
-    <a class="nav-link" href="/intake">Intake Form</a>
-    <a class="nav-link active" href="/sample-report">Sample Report</a>
-    <a class="nav-link cta no-print" href="#" onclick="window.print();return false">Download PDF</a>
-    <!-- internal + sign-out injected by JS -->
-  </nav>
-</div>
+<div class="container">
 
-<!-- Sample watermark -->
-<div class="sample-banner">
-  📋 SAMPLE REPORT — ILLUSTRATIVE ONLY
-  <span>Organization name, scores, and findings are fictional. Actual scenario content is not disclosed.</span>
-</div>
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-eyebrow">EQ Safety Benchmark v2.1 · Behavioral Safety Audit</div>
+    <div class="cover-title">Sample Evaluation Report</div>
+    <div class="cover-sub">This report shows exactly what you receive from a full Ikwe.ai benchmark audit. Data is representative of real frontier model performance from Study I &amp; II. System name anonymized.</div>
+    <div class="cover-meta">
+      <div class="meta-item">
+        <div class="meta-label">System evaluated</div>
+        <div class="meta-value">AI-CX-01</div>
+        <div class="meta-sub">Customer service AI</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Scenarios tested</div>
+        <div class="meta-value">79</div>
+        <div class="meta-sub">Emotionally vulnerable</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Responses evaluated</div>
+        <div class="meta-value">237</div>
+        <div class="meta-sub">3 runs per scenario</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Rubric version</div>
+        <div class="meta-value">v2.1</div>
+        <div class="meta-sub">8 dimensions · 6 clinical disciplines</div>
+      </div>
+    </div>
+  </div>
 
-<div class="page">
+  <!-- TIER CLASSIFICATION -->
+  <div class="tier-banner tier-ii">
+    <div>
+      <div class="tier-label">Tier Classification</div>
+      <div class="tier-name">TIER II — Moderate Behavioral Risk</div>
+      <div class="tier-desc">Specific failure modes identified and mapped. Launch with mitigations in place.</div>
+    </div>
+    <div class="tier-action">
+      <div class="tier-action-label">Recommended action</div>
+      <div class="tier-action-val">Implement safeguards · Quarterly re-evaluation</div>
+    </div>
+  </div>
 
-  <!-- Report header -->
-  <div class="report-header">
-    <div class="report-meta">
-      <div class="report-eyebrow">EQ Safety Benchmark · Confidential Deliverable</div>
-      <div class="report-title">Meridian Health Systems</div>
-      <div class="report-subtitle">AI Safety Assessment — Customer Support Deployment</div>
-      <table class="report-meta-table">
-        <tr>
-          <td>Report date</td>
-          <td>Q1 2025</td>
-        </tr>
-        <tr>
-          <td>Model tested</td>
-          <td>GPT-4o (custom system prompt)</td>
-        </tr>
-        <tr>
-          <td>Scenario set</td>
-          <td>EQSB-v1 Standard · <span class="redact" style="width:70px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> scenarios</td>
-        </tr>
-        <tr>
-          <td>Analyst</td>
-          <td>Ikwe Research · <span class="redact" style="width:90px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-        </tr>
+  <!-- SECTION 1: COMPOSITE SCORE -->
+  <div class="section">
+    <div class="sec-header">
+      <span class="sec-num">01</span>
+      <span class="sec-title">Composite Safety Score</span>
+    </div>
+    <div class="card">
+      <div class="score-display">
+        <div class="score-big">51.6</div>
+        <div class="score-context">
+          <div class="score-label">Score out of 100 · EQSB v2.1 weighted composite</div>
+          <div class="score-compare">
+            <div class="sc-row">
+              <span class="sc-name">This system</span>
+              <div class="sc-bar-wrap"><div class="sc-bar" style="width:51.6%;background:#E08C00"></div></div>
+              <span class="sc-val" style="color:var(--amber)">51.6</span>
+            </div>
+            <div class="sc-row">
+              <span class="sc-name">Ikwe.ai EQSB baseline</span>
+              <div class="sc-bar-wrap"><div class="sc-bar" style="width:74%"></div></div>
+              <span class="sc-val" style="color:var(--teal)">74.0</span>
+            </div>
+            <div class="sc-row">
+              <span class="sc-name">Study I frontier avg</span>
+              <div class="sc-bar-wrap"><div class="sc-bar" style="width:48%;background:#9b9baa"></div></div>
+              <span class="sc-val" style="color:var(--muted)">48.1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: SAFETY GATE -->
+  <div class="section">
+    <div class="sec-header">
+      <span class="sec-num">02</span>
+      <span class="sec-title">Safety Gate Results</span>
+    </div>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:1rem;">The safety gate evaluates each response for critical behavioral violations. Any single violation = FAIL. Results shown for the two highest-risk scenario categories.</p>
+    <div class="gate-row">
+      <div class="gate-card gate-fail">
+        <div class="gate-tag">⚠ Gate Fail — Distress Category</div>
+        <div class="gate-title">Crisis escalation + missed routing</div>
+        <div class="gate-desc">System defaulted to cognitive analysis during acute dysregulation in 48% of distress scenarios. Crisis routing absent in 38% of cases.</div>
+        <ul class="violation-list">
+          <li>Cognitive analysis during acute dysregulation</li>
+          <li>Missed crisis routing — no human referral</li>
+          <li>Encouraging rumination instead of interrupting</li>
+        </ul>
+      </div>
+      <div class="gate-card gate-pass">
+        <div class="gate-tag">✓ Gate Pass — Information Category</div>
+        <div class="gate-title">Standard queries handled safely</div>
+        <div class="gate-desc">Low-vulnerability, information-seeking interactions performed within safe parameters. No critical violations detected across 31 scenarios in this category.</div>
+        <ul class="violation-list" style="color:var(--teal)">
+          <li style="color:var(--teal)">No safety gate violations detected</li>
+          <li style="color:var(--teal)">Appropriate tone and scope maintained</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: 8 DIMENSIONS -->
+  <div class="section">
+    <div class="sec-header">
+      <span class="sec-num">03</span>
+      <span class="sec-title">8-Dimension Behavioral Scoring</span>
+    </div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem;">
+        <div class="card-label" style="margin:0;">All dimensions scored 0–5 · Weighted composite</div>
+        <div style="display:flex;gap:.5rem;">
+          <span class="dim-sector-tag tag-diag">FAIL_DIAGNOSTIC</span>
+          <span class="dim-sector-tag tag-qual">PASS_QUALITY</span>
+        </div>
+      </div>
+      <div class="dims-grid">
+        <!-- D1 -->
+        <div class="dim-row">
+          <div>
+            <div class="dim-name">A · Emotional Detection <span style="font-size:11px;color:var(--muted)">(15%)</span></div>
+          </div>
+          <div class="dim-bar-wrap"><div class="dim-bar dim-bar-ok" style="width:58%"></div></div>
+          <div class="dim-score dim-score-ok">2.9<span style="font-size:10px;color:var(--muted)">/5</span></div>
+        </div>
+        <!-- D2 -->
+        <div class="dim-row">
+          <div>
+            <div class="dim-name">B · Regulation Before Reasoning <span style="font-size:11px;color:var(--muted)">(20%)</span></div>
+          </div>
+          <div class="dim-bar-wrap"><div class="dim-bar dim-bar-fail" style="width:34%"></div></div>
+          <div class="dim-score dim-score-fail">1.7<span style="font-size:10px;color:var(--muted)">/5</span></div>
+        </div>
+        <!-- D3 -->
+        <div class="dim-row">
+          <div>
+            <div class="dim-name">C · Validation Without Distortion <span style="font-size:11px;color:var(--muted)">(15%)</span></div>
+          </div>
+          <div class="dim-bar-wrap"><div class="dim-bar dim-bar-ok" style="width:60%"></div></div>
+          <div class="dim-score dim-score-ok">3.0<span style="font-size:10px;color:var(--muted)">/5</span></div>
+        </div>
+        <!-- D4 -->
+        <div class="dim-row">
+          <div>
+            <div class="dim-name">D · Agency Preservation <span style="font-size:11px;color:var(--muted)">(10%)</span></div>
+          </div>
+          <div class="dim-bar-wrap"><div class="dim-bar dim-bar-ok" style="width:69%"></div></div>
+          <div class="dim-score dim-score-ok">3.5<span style="font-size:10px;color:var(--muted)">/5</span></div>
+        </div>
+        <!-- D5 -->
+        <div class="dim-row">
+          <div>
+            <div class="dim-name">E · Loop Interruption <span style="font-size:11px;color:var(--muted)">(10%)</span></div>
+          </div>
+          <div class="dim-bar-wrap"><div class="dim-bar dim-bar-warn" style="width:45%"></div></div>
+          <div class="dim-score dim-score-warn">2.3<span style="font-size:10px;color:var(--muted)">/5</span></div>
+        </div>
+        <!-- D6 -->
+        <div class="dim-row">
+          <div>
+            <div class="dim-name">F · Pattern Externalization <span style="font-size:11px;color:var(--muted)">(10%)</span></div>
+          </div>
+          <div class="dim-bar-wrap"><div class="dim-bar dim-bar-ok" style="width:63%"></div></div>
+          <div class="dim-score dim-score-ok">3.2<span style="font-size:10px;color:var(--muted)">/5</span></div>
+        </div>
+        <!-- D7 -->
+        <div class="dim-row">
+          <div>
+            <div class="dim-name">G · Practical Containment <span style="font-size:11px;color:var(--muted)">(10%)</span></div>
+          </div>
+          <div class="dim-bar-wrap"><div class="dim-bar dim-bar-ok" style="width:64%"></div></div>
+          <div class="dim-score dim-score-ok">3.2<span style="font-size:10px;color:var(--muted)">/5</span></div>
+        </div>
+        <!-- D8 -->
+        <div class="dim-row">
+          <div>
+            <div class="dim-name">H · Safety Routing <span style="font-size:11px;color:var(--muted)">(10%)</span></div>
+          </div>
+          <div class="dim-bar-wrap"><div class="dim-bar dim-bar-warn" style="width:56%"></div></div>
+          <div class="dim-score dim-score-warn">2.8<span style="font-size:10px;color:var(--muted)">/5</span></div>
+        </div>
+      </div>
+      <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:12px;color:var(--muted);">
+        Dimensions B (Regulation Before Reasoning) and H (Safety Routing) are primary failure drivers. B carries the highest weight (20%) and shows the lowest score (1.7/5) — this is the most urgent remediation target.
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: DANGEROUS PATTERNS -->
+  <div class="section">
+    <div class="sec-header">
+      <span class="sec-num">04</span>
+      <span class="sec-title">Dangerous Behavior Patterns Detected</span>
+    </div>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <table class="pattern-table">
+        <thead>
+          <tr>
+            <th>Pattern</th>
+            <th>Prevalence</th>
+            <th>Severity</th>
+            <th>Primary dimension</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Cognitive analysis during dysregulation</strong><br><span style="font-size:11px;color:var(--muted)">System attempts reasoning/advice while user is in acute distress</span></td>
+            <td><span class="pct-high">48%</span></td>
+            <td><span class="severity-tag sev-high">Critical</span></td>
+            <td style="font-size:12px;color:var(--muted);">B · Regulation</td>
+          </tr>
+          <tr>
+            <td><strong>Missed crisis routing</strong><br><span style="font-size:11px;color:var(--muted)">No referral to human support when signals warrant it</span></td>
+            <td><span class="pct-high">38%</span></td>
+            <td><span class="severity-tag sev-high">Critical</span></td>
+            <td style="font-size:12px;color:var(--muted);">H · Safety routing</td>
+          </tr>
+          <tr>
+            <td><strong>Encouraging rumination</strong><br><span style="font-size:11px;color:var(--muted)">Extends negative cognitive loops instead of interrupting</span></td>
+            <td><span class="pct-mid">32%</span></td>
+            <td><span class="severity-tag sev-mid">Significant</span></td>
+            <td style="font-size:12px;color:var(--muted);">E · Loop interruption</td>
+          </tr>
+          <tr>
+            <td><strong>Demanding questions during distress</strong><br><span style="font-size:11px;color:var(--muted)">Asks analytical questions when working memory is unavailable</span></td>
+            <td><span class="pct-mid">25%</span></td>
+            <td><span class="severity-tag sev-mid">Significant</span></td>
+            <td style="font-size:12px;color:var(--muted);">B · Regulation</td>
+          </tr>
+          <tr>
+            <td><strong>Validation without containment</strong><br><span style="font-size:11px;color:var(--muted)">Mirrors distress without providing grounding or stability</span></td>
+            <td><span class="pct-ok">18%</span></td>
+            <td><span class="severity-tag sev-low">Moderate</span></td>
+            <td style="font-size:12px;color:var(--muted);">C · Validation</td>
+          </tr>
+        </tbody>
       </table>
     </div>
-    <div class="overall-score-box">
-      <div class="score-circle">
-        <div class="score-inner">
-          <div class="score-number">73</div>
-          <div class="score-pct">%</div>
-        </div>
-      </div>
-      <div class="score-label">Overall EQ Safety Score</div>
-      <div style="margin-top:8px"><span class="score-tier">Proficient</span></div>
-    </div>
   </div>
 
-  <!-- KPI row -->
-  <div class="kpi-row" style="margin-bottom:28px">
-    <div class="kpi-card">
-      <div class="kpi-value" style="color:var(--green)">73%</div>
-      <div class="kpi-label">Overall Score</div>
-      <div class="kpi-sub" style="color:var(--accent)">+14pp vs Study I avg</div>
+  <!-- SECTION 5: REMEDIATION -->
+  <div class="section">
+    <div class="sec-header">
+      <span class="sec-num">05</span>
+      <span class="sec-title">Remediation Roadmap</span>
     </div>
-    <div class="kpi-card">
-      <div class="kpi-value" style="color:var(--yellow)"><span class="redact" style="width:32px">&nbsp;</span></div>
-      <div class="kpi-label">Scenarios Evaluated</div>
-      <div class="kpi-sub" style="color:var(--dim)">Standard set</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-value" style="color:var(--red)">2</div>
-      <div class="kpi-label">High-Risk Domains</div>
-      <div class="kpi-sub" style="color:var(--dim)">Requiring attention</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-value" style="color:var(--teal)">5</div>
-      <div class="kpi-label">Recommendations</div>
-      <div class="kpi-sub" style="color:var(--dim)">Prioritized by impact</div>
-    </div>
-  </div>
-
-  <!-- Executive summary -->
-  <div class="exec-summary">
-    <div class="section-title">Executive Summary</div>
-    <p>Meridian Health Systems' GPT-4o deployment achieved an overall EQ Safety Score of <strong>73%</strong>, placing it in the <strong>Proficient</strong> tier and 14 percentage points above the Study I cross-model average. The system demonstrates strong performance in recognizing emotional distress signals and maintaining appropriate professional tone across most interaction types.</p>
-    <p>Two domains present elevated risk: <strong>Crisis Escalation Protocols</strong> and <strong>Scope Boundary Management</strong>. In crisis-adjacent scenarios, the model occasionally de-escalated prematurely without confirming resource acknowledgment, and in a subset of out-of-scope requests, it provided substantive guidance beyond its designated support role. Both patterns carry compliance and liability implications in a healthcare support context.</p>
-    <p>Five prioritized recommendations are included in Section 5. The highest-impact intervention is a targeted system-prompt revision addressing crisis response sequencing, estimated to recover 8–12 points on the Crisis Escalation domain.</p>
-  </div>
-
-  <!-- Domain scores -->
-  <div class="domain-section">
-    <div class="section-title">Domain Performance</div>
-    <div class="domain-grid">
-      <div class="domain-row header">
-        <div>Domain</div>
-        <div class="bar-col">Score distribution</div>
-        <div style="text-align:right">Score</div>
-        <div style="text-align:right">Baseline</div>
-        <div style="text-align:right">Δ</div>
-      </div>
-
-      <!-- Domain rows -->
-      <div class="domain-row">
+    <p style="font-size:13px;color:var(--muted);margin-bottom:1rem;">Prioritized by impact on composite score. Each action targets a specific failure mode with a measurable expected improvement.</p>
+    <div class="remed-list">
+      <div class="remed-item">
+        <div class="remed-num">P1</div>
         <div>
-          <div class="domain-name">Emotional Recognition</div>
-          <div class="domain-desc">Identifying affect &amp; distress cues</div>
+          <div class="remed-text">Implement emotional state detection before any reasoning or advice pathway. System prompt must include explicit instruction to stabilize and ground before offering analysis.</div>
+          <div class="remed-dim">Targets: B · Regulation Before Reasoning — highest weight, lowest score. Expected +8–12 composite points.</div>
         </div>
-        <div class="bar-wrap"><div class="bar-fill" style="width:88%;background:var(--green)"></div></div>
-        <div class="domain-score" style="color:var(--green)">88%</div>
-        <div class="domain-baseline">59%</div>
-        <div class="domain-delta delta-pos">+29</div>
       </div>
-
-      <div class="domain-row">
+      <div class="remed-item">
+        <div class="remed-num">P2</div>
         <div>
-          <div class="domain-name">Empathetic Engagement</div>
-          <div class="domain-desc">Tone, validation &amp; rapport</div>
+          <div class="remed-text">Add escalation calibration logic: define explicit trigger conditions for human referral (crisis language, three consecutive distress signals, explicit request for professional help) and build routing into system architecture — not just system prompt.</div>
+          <div class="remed-dim">Targets: H · Safety Routing. Reduces missed crisis routing from 38% prevalence. Expected +4–6 composite points.</div>
         </div>
-        <div class="bar-wrap"><div class="bar-fill" style="width:82%;background:var(--green)"></div></div>
-        <div class="domain-score" style="color:var(--green)">82%</div>
-        <div class="domain-baseline">61%</div>
-        <div class="domain-delta delta-pos">+21</div>
       </div>
-
-      <div class="domain-row">
+      <div class="remed-item">
+        <div class="remed-num">P3</div>
         <div>
-          <div class="domain-name">Crisis Escalation Protocol</div>
-          <div class="domain-desc">Safe handoff &amp; resource delivery</div>
+          <div class="remed-text">Introduce loop interruption patterns: when a user repeats distress content across two or more turns, redirect to grounding rather than elaboration. Train against open-ended reflection prompts in high-vulnerability contexts.</div>
+          <div class="remed-dim">Targets: E · Loop Interruption. Reduces rumination encouragement from 32%. Expected +3–5 composite points.</div>
         </div>
-        <div class="bar-wrap"><div class="bar-fill" style="width:51%;background:var(--red)"></div></div>
-        <div class="domain-score" style="color:var(--red)">51%</div>
-        <div class="domain-baseline">48%</div>
-        <div class="domain-delta delta-neu">+3</div>
       </div>
-
-      <div class="domain-row">
+      <div class="remed-item">
+        <div class="remed-num">P4</div>
         <div>
-          <div class="domain-name">Scope Boundary Mgmt</div>
-          <div class="domain-desc">Staying within deployment role</div>
-        </div>
-        <div class="bar-wrap"><div class="bar-fill" style="width:58%;background:var(--orange)"></div></div>
-        <div class="domain-score" style="color:var(--orange)">58%</div>
-        <div class="domain-baseline">54%</div>
-        <div class="domain-delta delta-neu">+4</div>
-      </div>
-
-      <div class="domain-row">
-        <div>
-          <div class="domain-name">Harm Avoidance</div>
-          <div class="domain-desc">Withholding harmful information</div>
-        </div>
-        <div class="bar-wrap"><div class="bar-fill" style="width:91%;background:var(--green)"></div></div>
-        <div class="domain-score" style="color:var(--green)">91%</div>
-        <div class="domain-baseline">72%</div>
-        <div class="domain-delta delta-pos">+19</div>
-      </div>
-
-      <div class="domain-row">
-        <div>
-          <div class="domain-name">Cultural Sensitivity</div>
-          <div class="domain-desc">Appropriate cross-cultural responses</div>
-        </div>
-        <div class="bar-wrap"><div class="bar-fill" style="width:79%;background:var(--accent)"></div></div>
-        <div class="domain-score" style="color:var(--accent)">79%</div>
-        <div class="domain-baseline">55%</div>
-        <div class="domain-delta delta-pos">+24</div>
-      </div>
-
-      <div class="domain-row">
-        <div>
-          <div class="domain-name">Consistency Under Pressure</div>
-          <div class="domain-desc">Stable responses to adversarial inputs</div>
-        </div>
-        <div class="bar-wrap"><div class="bar-fill" style="width:74%;background:var(--accent)"></div></div>
-        <div class="domain-score" style="color:var(--accent)">74%</div>
-        <div class="domain-baseline">52%</div>
-        <div class="domain-delta delta-pos">+22</div>
-      </div>
-
-      <div class="domain-row">
-        <div>
-          <div class="domain-name">Transparency &amp; Disclosure</div>
-          <div class="domain-desc">Honest capability &amp; AI identity cues</div>
-        </div>
-        <div class="bar-wrap"><div class="bar-fill" style="width:68%;background:var(--yellow)"></div></div>
-        <div class="domain-score" style="color:var(--yellow)">68%</div>
-        <div class="domain-baseline">58%</div>
-        <div class="domain-delta delta-pos">+10</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Risk flags -->
-  <div class="risk-section">
-    <div class="section-title">Risk Findings</div>
-    <div class="risk-list">
-      <div class="risk-item high">
-        <span class="risk-severity">High</span>
-        <div class="risk-content">
-          <div class="risk-title">Premature De-escalation in Crisis Scenarios</div>
-          <div class="risk-desc">In a subset of crisis-adjacent interactions, the model closed the loop without confirming that the user acknowledged or accepted the provided resource. This pattern creates gaps in duty-of-care and may conflict with healthcare-adjacent compliance obligations.</div>
-        </div>
-      </div>
-      <div class="risk-item high">
-        <span class="risk-severity">High</span>
-        <div class="risk-content">
-          <div class="risk-title">Out-of-Scope Substantive Guidance</div>
-          <div class="risk-desc">When users pushed beyond the designated support scope (e.g., clinical or benefits interpretation questions), the model provided substantive guidance in a meaningful portion of cases rather than redirecting. This expands liability exposure and undermines scope boundaries defined in the system prompt.</div>
-        </div>
-      </div>
-      <div class="risk-item medium">
-        <span class="risk-severity">Medium</span>
-        <div class="risk-content">
-          <div class="risk-title">Inconsistent AI Identity Disclosure</div>
-          <div class="risk-desc">When directly asked whether it is a human or AI, the model's responses varied across phrasings. A portion of direct identity queries received evasive or ambiguous answers, which may conflict with emerging disclosure regulations and erodes user trust.</div>
-        </div>
-      </div>
-      <div class="risk-item low">
-        <span class="risk-severity">Low</span>
-        <div class="risk-content">
-          <div class="risk-title">Mild Tone Variability Under Adversarial Framing</div>
-          <div class="risk-desc">Under persistent pressure or adversarial user framing, a small subset of responses became measurably less empathetic without sufficient justification. The pattern is minor in frequency but worth monitoring as usage volume scales.</div>
+          <div class="remed-text">Quarterly re-evaluation required. Model updates shift behavioral patterns independent of system prompt changes. Schedule next EQSB evaluation within 90 days of any model version change.</div>
+          <div class="remed-dim">Ongoing: maintains Tier II → Tier I trajectory. Builds versioned safety record for compliance and legal purposes.</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Comparison -->
-  <div class="comparison-section">
-    <div class="section-title">EQSB Study I Baseline Comparison</div>
-    <p style="font-size:12px;color:var(--dim);margin-bottom:16px">Comparison against published Study I baselines across four frontier models. Your engagement result is illustrative.</p>
-    <table class="comp-table">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Overall Score</th>
-          <th>Avg Points/Scenario</th>
-          <th>Tier</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>EI Specialist Model</strong></td>
-          <td style="color:var(--green);font-weight:700">84.6%</td>
-          <td>74.0</td>
-          <td><span class="tier-badge tier-leader">Leader</span></td>
-        </tr>
-        <tr class="highlight">
-          <td><strong>Meridian GPT-4o</strong> <span class="you-badge">YOU</span></td>
-          <td style="color:var(--green);font-weight:700">73%</td>
-          <td>~63.5</td>
-          <td><span class="tier-badge tier-proficient">Proficient</span></td>
-        </tr>
-        <tr>
-          <td>GPT-4o (Study I)</td>
-          <td style="color:var(--yellow);font-weight:700">59.0%</td>
-          <td>51.2</td>
-          <td><span class="tier-badge tier-developing">Developing</span></td>
-        </tr>
-        <tr>
-          <td>Claude (Study I)</td>
-          <td style="color:var(--yellow);font-weight:700">56.4%</td>
-          <td>52.4</td>
-          <td><span class="tier-badge tier-developing">Developing</span></td>
-        </tr>
-        <tr>
-          <td>Grok (Study I)</td>
-          <td style="color:var(--red);font-weight:700">20.5%</td>
-          <td>40.6</td>
-          <td><span class="tier-badge tier-at-risk">At Risk</span></td>
-        </tr>
-      </tbody>
-    </table>
-    <p style="font-size:11px;color:var(--dim);margin-top:12px">
-      Study I baselines use a standardized zero-shot system prompt. Client engagements include your custom system prompt and deployment configuration — scores are not directly comparable but provide useful orientation.
-    </p>
-  </div>
-
-  <!-- Recommendations -->
-  <div class="rec-section">
-    <div class="section-title">Prioritized Recommendations</div>
-    <div class="rec-list">
-      <div class="rec-item">
-        <div class="rec-num">1</div>
-        <div class="rec-body">
-          <div class="rec-title">Revise crisis response sequencing in system prompt</div>
-          <div class="rec-desc">Add explicit instructions requiring resource confirmation before closing a crisis-adjacent exchange. Estimated recovery: +8–12pp on Crisis Escalation domain. Ikwe can provide a tested prompt template.</div>
-        </div>
+  <!-- SECTION 6: WHAT YOU RECEIVE -->
+  <div class="section">
+    <div class="sec-header">
+      <span class="sec-num">06</span>
+      <span class="sec-title">What a Full Audit Delivers</span>
+    </div>
+    <div class="deliverables">
+      <div class="deliv-item">
+        <div class="deliv-icon">📊</div>
+        <div class="deliv-title">Full dimensional report</div>
+        <div class="deliv-desc">Complete 8-dimension scoring across all scenarios with per-category breakdowns and failure maps.</div>
       </div>
-      <div class="rec-item">
-        <div class="rec-num">2</div>
-        <div class="rec-body">
-          <div class="rec-title">Harden scope-boundary instructions with example-based framing</div>
-          <div class="rec-desc">Add 3–5 worked examples of out-of-scope redirects directly in the system prompt. Few-shot boundary examples consistently outperform rule-only instructions in scope maintenance.</div>
-        </div>
+      <div class="deliv-item">
+        <div class="deliv-icon">🎯</div>
+        <div class="deliv-title">Tier classification</div>
+        <div class="deliv-desc">Tier I–IV result your board, legal, and compliance teams can act on and document.</div>
       </div>
-      <div class="rec-item">
-        <div class="rec-num">3</div>
-        <div class="rec-body">
-          <div class="rec-title">Add a canonical AI identity disclosure statement</div>
-          <div class="rec-desc">Provide one clear, unambiguous statement the model is instructed to use when directly asked about its nature. Eliminates identity inconsistency with a single prompt addition.</div>
-        </div>
+      <div class="deliv-item">
+        <div class="deliv-icon">🗺</div>
+        <div class="deliv-title">Failure map + remediation plan</div>
+        <div class="deliv-desc">Specific failure modes, prevalence rates, and a prioritized roadmap your engineering team can execute.</div>
       </div>
-      <div class="rec-item">
-        <div class="rec-num">4</div>
-        <div class="rec-body">
-          <div class="rec-title">Monitor adversarial tone degradation at scale</div>
-          <div class="rec-desc">Implement a lightweight evaluation loop that flags responses with below-threshold empathy scores in production. EQSB can define the monitoring rubric as part of a retainer engagement.</div>
-        </div>
+      <div class="deliv-item">
+        <div class="deliv-icon">📋</div>
+        <div class="deliv-title">Validation documentation</div>
+        <div class="deliv-desc">Reproducible, timestamped evidence package for due diligence, procurement, and regulatory review.</div>
       </div>
-      <div class="rec-item">
-        <div class="rec-num">5</div>
-        <div class="rec-body">
-          <div class="rec-title">Re-benchmark after system prompt revisions</div>
-          <div class="rec-desc">Schedule a targeted re-run on the Crisis and Scope domains 30–60 days after implementing prompt changes to confirm recovery and identify any regression in other domains.</div>
-        </div>
+      <div class="deliv-item">
+        <div class="deliv-icon">📡</div>
+        <div class="deliv-title">Live monitoring (optional)</div>
+        <div class="deliv-desc">Continuous behavioral scoring as your model evolves. Catches drift before it becomes a liability.</div>
+      </div>
+      <div class="deliv-item">
+        <div class="deliv-icon">🔬</div>
+        <div class="deliv-title">Expert witness support</div>
+        <div class="deliv-desc">Litigation support, regulatory testimony, and incident analysis from the standard-setter.</div>
       </div>
     </div>
-  </div>
-
-  <!-- What's NOT included -->
-  <div class="not-included">
-    <h4>⚠ What's Not Shown in This Sample</h4>
-    <ul>
-      <li>Actual scenario text, prompts, or user messages used in evaluation</li>
-      <li>Scoring rubric criteria and point allocation methodology</li>
-      <li>Raw response-level data or per-item scores</li>
-      <li>Proprietary annotation guidelines used by Ikwe analysts</li>
-      <li>The scenario count and scenario set composition</li>
-    </ul>
   </div>
 
   <!-- CTA -->
   <div class="cta-block">
-    <h2>Ready to benchmark your system?</h2>
-    <p>Engagements are scoped to your deployment context, model, and sector. Start with an intake form — no commitment required.</p>
-    <a href='/intake'>Submit Intake Form →</a>
+    <div class="cta-title">Ready to see your system's score?</div>
+    <div class="cta-sub">Every organization deploying AI in human-facing contexts needs to know where it stands. This is what that answer looks like.</div>
+    <div class="cta-btns">
+      <a href="https://ikwe.ai/#close" class="btn-primary">Request an audit</a>
+      <a href="https://ikwe.ai" class="btn-secondary">Learn more</a>
+    </div>
   </div>
 
-  <footer class="footer">
-    <p>Ikwe Research · <a href="/">research.ikwe.ai</a> · EQ Safety Benchmark · This report is illustrative. All data is fictional.</p>
-  </footer>
+  <div class="watermark">
+    <strong>Ikwe.ai</strong> · EQ Safety Benchmark v2.1 · Visible Healing Inc. · Des Moines, Iowa<br>
+    Independent · Third-party · Behavioral · Longitudinal
+  </div>
 
 </div>
 
-</div><!-- /#app-content -->
-
-<script>
-// Public sample: no auth gate. Use browser Print to save as PDF.
-</script>
-
-
+</body>
 </html>

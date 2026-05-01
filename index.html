@@ -132,6 +132,124 @@
     }
     .nav-cta:hover { opacity: .88; }
 
+    /* ── MOBILE NAV ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: .4rem;
+      background: transparent;
+      border: none;
+      z-index: 200;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all .25s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .nav-mobile-menu {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--navy);
+        padding: 1.5rem 2rem 2rem;
+        flex-direction: column;
+        gap: 0;
+        z-index: 150;
+        border-top: 1px solid rgba(255,255,255,.1);
+        box-shadow: 0 20px 40px rgba(0,0,0,.4);
+      }
+      .nav-mobile-menu.open { display: flex; }
+      .nav-mobile-menu a {
+        color: rgba(255,255,255,.75);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 400;
+        padding: .9rem 0;
+        border-bottom: 1px solid rgba(255,255,255,.07);
+        transition: color .2s;
+      }
+      .nav-mobile-menu a:last-child { border-bottom: none; }
+      .nav-mobile-menu a:hover { color: var(--coral); }
+      .nav-mobile-menu .mob-cta {
+        margin-top: 1.25rem;
+        background: var(--coral);
+        color: var(--navy);
+        font-weight: 500;
+        padding: .75rem 1.5rem;
+        border-radius: 8px;
+        text-align: center;
+        border-bottom: none !important;
+      }
+    }
+
+    /* ── SAMPLE REPORT SECTION ── */
+    #sample {
+      background: var(--navy);
+      padding: 5rem 2rem;
+    }
+    .sample-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (max-width: 680px) { .sample-inner { grid-template-columns: 1fr; gap: 2rem; } }
+    .sample-text .eyebrow { color: var(--coral); }
+    .sample-text h2 { color: var(--white); margin-bottom: .75rem; }
+    .sample-text p { color: rgba(255,255,255,.6); font-size: .95rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .sample-preview {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 14px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+    .sample-preview-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .6rem .85rem;
+      border-radius: 8px;
+      background: rgba(255,255,255,.05);
+      font-size: .82rem;
+    }
+    .sample-preview-row .spr-label { color: rgba(255,255,255,.5); }
+    .sample-preview-row .spr-val { font-weight: 500; }
+    .spr-amber { color: #E08C00; }
+    .spr-red { color: #E24B4A; }
+    .spr-green { color: var(--teal-mid); }
+    .tier-chip {
+      display: inline-block;
+      background: rgba(184,106,0,.2);
+      color: #E08C00;
+      border: 1px solid rgba(184,106,0,.35);
+      border-radius: 20px;
+      padding: .25rem .85rem;
+      font-size: .78rem;
+      font-weight: 500;
+      margin-bottom: .75rem;
+    }
+
     /* ── LAYOUT ── */
     section { padding: 6rem 2rem; }
     .container { max-width: 960px; margin: 0 auto; }
@@ -787,9 +905,24 @@
     <li><a href="#benchmark">The Benchmark</a></li>
     <li><a href="#proof">Research</a></li>
     <li><a href="#audience">Who It's For</a></li>
+    <li><a href="/ikwe-sample-report-public.html" style="color:var(--coral)">Sample Report</a></li>
   </ul>
   <a href="/contact" class="nav-cta">Get in touch</a>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile menu -->
+<div class="nav-mobile-menu" id="nav-mobile-menu">
+  <a href="#moment" onclick="closeMobileMenu()">The Problem</a>
+  <a href="#how" onclick="closeMobileMenu()">How It Works</a>
+  <a href="#benchmark" onclick="closeMobileMenu()">The Benchmark</a>
+  <a href="#proof" onclick="closeMobileMenu()">Research</a>
+  <a href="#audience" onclick="closeMobileMenu()">Who It's For</a>
+  <a href="/ikwe-sample-report-public.html" onclick="closeMobileMenu()">Sample Report</a>
+  <a href="/contact" class="mob-cta" onclick="closeMobileMenu()">Get in touch</a>
+</div>
 
 
 <!-- ── SECTION 1: HERO ── -->
@@ -1129,6 +1262,49 @@
 <hr class="divider" />
 
 
+<!-- ── SAMPLE REPORT SECTION ── -->
+<section id="sample">
+  <div class="sample-inner reveal">
+    <div class="sample-text">
+      <span class="eyebrow">See what you get</span>
+      <h2>A real report.<br>Not a brochure.</h2>
+      <p>This is exactly what an Ikwe.ai behavioral safety audit delivers — tier classification, 8-dimension scoring, failure map, remediation roadmap, and the data behind every finding. No fluff. Actionable from page one.</p>
+      <a href="/ikwe-sample-report-public.html" class="btn btn-primary" style="background:var(--coral);color:var(--navy);">View sample report →</a>
+    </div>
+    <div class="sample-preview">
+      <div class="tier-chip">TIER II — Moderate Behavioral Risk</div>
+      <div class="sample-preview-row">
+        <span class="spr-label">Composite score</span>
+        <span class="spr-val spr-amber">51.6 / 100</span>
+      </div>
+      <div class="sample-preview-row">
+        <span class="spr-label">Safety gate</span>
+        <span class="spr-val spr-red">⚠ FAIL — 2 categories</span>
+      </div>
+      <div class="sample-preview-row">
+        <span class="spr-label">Crisis routing failure</span>
+        <span class="spr-val spr-red">38% of cases</span>
+      </div>
+      <div class="sample-preview-row">
+        <span class="spr-label">Cognitive analysis during distress</span>
+        <span class="spr-val spr-red">48% prevalence</span>
+      </div>
+      <div class="sample-preview-row">
+        <span class="spr-label">Highest-risk dimension</span>
+        <span class="spr-val spr-amber">B · Regulation (1.7/5)</span>
+      </div>
+      <div class="sample-preview-row">
+        <span class="spr-label">Ikwe.ai EQSB baseline</span>
+        <span class="spr-val spr-green">74.0 / 100</span>
+      </div>
+      <div style="padding:.5rem .85rem;font-size:.78rem;color:rgba(255,255,255,.3);text-align:center;">Representative data · System anonymized</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+
 <!-- ── SECTION 9: CLOSE ── -->
 <section id="close">
   <div class="container-narrow reveal">
@@ -1187,6 +1363,32 @@
 
 
 <script>
+  // Mobile nav hamburger
+  (function() {
+    const btn = document.getElementById('nav-hamburger');
+    const menu = document.getElementById('nav-mobile-menu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function() {
+      const open = menu.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    // Close on outside click
+    document.addEventListener('click', function(e) {
+      if (!btn.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  })();
+
+  function closeMobileMenu() {
+    document.getElementById('nav-mobile-menu').classList.remove('open');
+    document.getElementById('nav-hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
   // Scroll reveal
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
