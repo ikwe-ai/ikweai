@@ -446,7 +446,7 @@ footer a:hover { color: var(--coral); }
     };
 
     try {
-      const res = await fetch('/.netlify/functions/contact', {
+      const res = await fetch('https://script.google.com/macros/s/AKfycbxd9Widq9Y7ig9Mv-yvoThlWE9q4cpHmaBI9pkWqd_IZ_dHB-UTKIpOSreIzyOop8kilQ/exec', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify(payload),
