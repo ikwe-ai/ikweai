@@ -461,9 +461,11 @@ footer a:hover { color: var(--coral); }
     const payload = {
       name,
       email,
-      company: document.getElementById('cf-company').value.trim(),
-      message: document.getElementById('cf-message').value.trim(),
-      opt_in:  document.getElementById('cf-optin').checked,
+      company:      document.getElementById('cf-company').value.trim(),
+      message:      document.getElementById('cf-message').value.trim(),
+      opt_in:       document.getElementById('cf-optin').checked,
+      source:       'contact',
+      submitted_at: new Date().toISOString(),
     };
 
     try {

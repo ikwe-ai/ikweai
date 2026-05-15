@@ -1416,7 +1416,7 @@
       submitBtn.disabled    = true;
       submitBtn.textContent = 'Sending…';
 
-      const payload = { name, email, company, role, message, source: 'homepage' };
+      const payload = { name, email, company, role, message, source: 'homepage', submitted_at: new Date().toISOString() };
 
       // Submit to Google Sheets (no-cors — success shown immediately)
       fetch(SHEETS_URL, {
