@@ -1,0 +1,61 @@
+# ikwe.ai — Apache redirect rules (GoDaddy hosting)
+# Replaces Netlify _redirects. Updated May 2026.
+
+Options -Indexes
+ErrorDocument 404 /404.html
+
+# Force HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Security headers
+Header set X-Content-Type-Options "nosniff"
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+Header set X-Frame-Options "SAMEORIGIN"
+
+# Cache control
+<FilesMatch "\.(html)$">
+  Header set Cache-Control "no-cache, no-store, must-revalidate"
+</FilesMatch>
+<FilesMatch "\.(png|jpg|jpeg|gif|svg|ico|webp)$">
+  Header set Cache-Control "public, max-age=86400"
+</FilesMatch>
+<FilesMatch "\.(css|js)$">
+  Header set Cache-Control "public, max-age=31536000"
+</FilesMatch>
+
+# ── ORDER / INTAKE redirects ──────────────────────────────────
+# All old contact/intake/audit-request paths → /order
+RewriteRule ^contact/?$ /order [R=301,L]
+RewriteRule ^contact\.html$ /order [R=301,L]
+RewriteRule ^intake/?$ /order [R=301,L]
+RewriteRule ^intake\.html$ /order [R=301,L]
+RewriteRule ^request-audit/?$ /order [R=301,L]
+RewriteRule ^request-evaluation/?$ /order [R=301,L]
+RewriteRule ^request-evaluation-intake/?$ /order [R=301,L]
+RewriteRule ^evaluation-request/?$ /order [R=301,L]
+RewriteRule ^request-audit-intake/?$ /order [R=301,L]
+RewriteRule ^audit-request/?$ /order [R=301,L]
+RewriteRule ^inquiry/?$ /order [R=301,L]
+RewriteRule ^support/?$ /order [R=301,L]
+RewriteRule ^get-started/?$ /order [R=301,L]
+
+# ── BENCHMARK aliases ─────────────────────────────────────────
+RewriteRule ^eq-safety-benchmark/?$ /benchmark [R=301,L]
+RewriteRule ^eqsb/?$ /benchmark [R=301,L]
+
+# ── RESEARCH aliases ──────────────────────────────────────────
+RewriteRule ^research\.html$ /research [R=301,L]
+RewriteRule ^research-summary/?$ /research [R=301,L]
+RewriteRule ^explorer/?$ /research [R=301,L]
+
+# ── AUDIT aliases ─────────────────────────────────────────────
+RewriteRule ^audit\.html$ /audit [R=301,L]
+RewriteRule ^audit-and-validation/?$ /audit [R=301,L]
+RewriteRule ^audit-validation/?$ /audit [R=301,L]
+
+# ── LEGAL pages (serve as-is) ─────────────────────────────────
+RewriteRule ^privacy/?$ /privacy.html [L]
+RewriteRule ^terms/?$ /terms.html [L]
+RewriteRule ^research-access-terms/?$ /research-access-terms.html [L]

@@ -3,13 +3,12 @@
 
   <!-- Core pages -->
   <url><loc>https://ikwe.ai/</loc></url>
+  <url><loc>https://ikwe.ai/order</loc></url>
   <url><loc>https://ikwe.ai/research</loc></url>
   <url><loc>https://ikwe.ai/benchmark</loc></url>
   <url><loc>https://ikwe.ai/audit</loc></url>
   <url><loc>https://ikwe.ai/trust</loc></url>
-  <url><loc>https://ikwe.ai/get-started</loc></url>
   <url><loc>https://ikwe.ai/sample-report</loc></url>
-  <url><loc>https://ikwe.ai/intake</loc></url>
 
   <!-- About -->
   <url><loc>https://ikwe.ai/about</loc></url>

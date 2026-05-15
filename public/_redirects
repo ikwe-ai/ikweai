@@ -1,26 +1,40 @@
-# Netlify SPA redirect — static files in /public are served first,
-# so /consult and legal static pages are served as-is before this fires.
+# Netlify redirects — updated May 2026
+# Static files in /public are served first before these rules fire.
+
+# Legal / static pages
 /privacy /privacy.html 200
 /terms /terms.html 200
 /research-access-terms /research-access-terms.html 200
+
+# Benchmark aliases
 /eq-safety-benchmark /benchmark 301
 /eqsb /benchmark 301
+
+# Research aliases
 /research.html /research 301
 /research-summary /research 301
 /explorer /research 301
+
+# Audit aliases
 /audit.html /audit 301
 /audit-and-validation /audit 301
 /audit-validation /audit 301
 /sample-outputs /audit#deliverables-previews 301
-/request-audit /intake 301
-/request-evaluation /intake 301
-/request-evaluation-intake /intake 301
-/evaluation-request /intake 301
-/request-audit-intake /intake 301
-/audit-request /intake 301
-/intake.html /intake 301
-/contact /intake 301
-/contact.html /intake 301
-/inquiry /intake 301
-/support /intake 301
+
+# Order / intake — all paths route to /order
+/request-audit /order 301
+/request-evaluation /order 301
+/request-evaluation-intake /order 301
+/evaluation-request /order 301
+/request-audit-intake /order 301
+/audit-request /order 301
+/intake.html /order 301
+/intake /order 301
+/contact /order 301
+/contact.html /order 301
+/inquiry /order 301
+/support /order 301
+/get-started /order 301
+
+# SPA fallback
 /* /index.html 200
