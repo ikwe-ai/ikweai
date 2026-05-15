@@ -2,7 +2,7 @@
   "name": "Ikwe.ai",
   "short_name": "Ikwe.ai",
   "start_url": "/",
-  "display": "standalone",
+  "display": "browser",
   "background_color": "#141218",
   "theme_color": "#141218",
   "icons": [
