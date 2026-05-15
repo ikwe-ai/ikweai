@@ -12,24 +12,44 @@
 <meta property="og:site_name" content="Ikwe.ai">
 <meta name="theme-color" content="#191A2E">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
 :root{
   --ink:#0D0F1E;--navy:#131A35;--teal:#0B5E46;--teal2:#13967A;--teal3:#1BB894;
   --gold:#C49814;--gold2:#E6B01A;--cream:#F2EDE2;--light:#A8B4C4;--muted:#636E82;
   --border:rgba(255,255,255,.1);--card:rgba(255,255,255,.04);
+  --nav-navy:#191A2E;--coral:#F7A192;--lav:#B894F6;--nav-cream:#F6D993;--white:#FFFFFF;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--ink);color:var(--cream);font-family:'Inter',system-ui,sans-serif;font-size:15px;line-height:1.6;min-height:100vh}
 
-/* NAV */
-nav{position:sticky;top:0;z-index:100;background:rgba(13,15,30,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.3rem;font-weight:600;color:var(--cream);text-decoration:none;letter-spacing:.02em}
-.nav-links{display:flex;gap:1.5rem;align-items:center}
-.nav-links a{font-size:.82rem;color:var(--light);text-decoration:none;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;transition:color .15s}
-.nav-links a:hover{color:var(--cream)}
-.nav-cta{background:var(--teal2);color:var(--cream)!important;padding:.32rem .85rem;border-radius:.3rem}
-.nav-cta:hover{background:var(--teal3)!important}
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:1000;background:var(--nav-navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;}
+.nav-logo-circle{width:26px;height:26px;border-radius:50%;background:conic-gradient(#1D1F35 0deg 90deg,var(--coral) 90deg 180deg,var(--lav) 180deg 270deg,var(--nav-cream) 270deg 360deg);border:1.5px solid rgba(247,161,146,0.35);flex-shrink:0;}
+.nav-brand-name{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--white);letter-spacing:.02em;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:.875rem;font-weight:400;transition:color .2s;}
+.nav-links a:hover{color:var(--coral);}
+.nav-cta{background:var(--coral);color:var(--nav-navy);font-weight:500;font-size:.875rem;padding:.5rem 1.25rem;border-radius:6px;text-decoration:none;transition:opacity .2s;}
+.nav-cta:hover{opacity:.88;}
+.nav-mobile-menu{display:none;}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem;background:transparent;border:none;z-index:200;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .25s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+@media(max-width:900px){
+  .nav-links{display:none;} .nav-cta{display:none;} .nav-hamburger{display:flex;}
+  .nav-mobile-menu.open{display:flex;position:fixed;top:60px;left:0;right:0;background:var(--nav-navy);padding:1.5rem 2rem 2rem;flex-direction:column;gap:0;z-index:999;border-top:1px solid rgba(255,255,255,.1);box-shadow:0 20px 40px rgba(0,0,0,.5);}
+  .nav-mobile-menu a{color:rgba(255,255,255,.75);text-decoration:none;font-size:1rem;font-weight:400;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .2s;}
+  .nav-mobile-menu a:last-child{border-bottom:none;}
+  .nav-mobile-menu a:hover{color:var(--coral);}
+  .nav-mobile-menu .mob-cta{margin-top:1.25rem;background:var(--coral);color:var(--nav-navy);font-weight:500;padding:.75rem 1.5rem;border-radius:8px;text-align:center;border-bottom:none!important;}
+}
 
 /* HERO */
 .hero{max-width:720px;margin:0 auto;padding:4rem 2rem 2.5rem;text-align:center}
@@ -146,15 +166,35 @@ footer a:hover{color:var(--light)}
 </head>
 <body>
 
+<!-- ── NAV ── -->
 <nav>
-  <a href="https://ikwe.ai" class="nav-logo">ikwe.ai</a>
-  <div class="nav-links">
-    <a href="https://ikwe.ai#benchmark">The Benchmark</a>
-    <a href="https://ikwe.ai/ikwe-sample-report-public.html">Sample Report</a>
-    <a href="https://research.ikwe.ai" target="_blank" rel="noopener">Research</a>
-    <a href="https://ikwe.ai/contact" class="nav-cta">Contact</a>
-  </div>
+  <a href="/" class="nav-brand">
+    <div class="nav-logo-circle"></div>
+    <span class="nav-brand-name">ikwe.ai</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#moment">The Problem</a></li>
+    <li><a href="/#how">How It Works</a></li>
+    <li><a href="/#benchmark">The Benchmark</a></li>
+    <li><a href="/#proof">Research</a></li>
+    <li><a href="/#audience">Who It's For</a></li>
+    <li><a href="/ikwe-sample-report-public.html" style="color:var(--coral)">Sample Report</a></li>
+  </ul>
+  <a href="/contact" class="nav-cta">Get in touch</a>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<!-- Mobile menu -->
+<div class="nav-mobile-menu" id="nav-mobile-menu">
+  <a href="/#moment" onclick="closeMobileMenu()">The Problem</a>
+  <a href="/#how" onclick="closeMobileMenu()">How It Works</a>
+  <a href="/#benchmark" onclick="closeMobileMenu()">The Benchmark</a>
+  <a href="/#proof" onclick="closeMobileMenu()">Research</a>
+  <a href="/#audience" onclick="closeMobileMenu()">Who It's For</a>
+  <a href="/ikwe-sample-report-public.html" onclick="closeMobileMenu()">Sample Report</a>
+  <a href="/contact" class="mob-cta" onclick="closeMobileMenu()">Get in touch</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -337,8 +377,8 @@ footer a:hover{color:var(--light)}
       <div class="next-steps">
         <h4>What happens after you submit</h4>
         <div class="step-list">
-          <div class="step-item"><span class="step-num">01</span><span class="step-text"><strong>Confirmation within 24 hours.</strong> We'll confirm your order by email and send a secure intake form for system access details.</span></div>
-          <div class="step-item"><span class="step-num">02</span><span class="step-text"><strong>Invoice sent before work begins.</strong> You pay before we run the evaluation. Signal: $500 · Pilot: $1,500 · Full: $5,000.</span></div>
+          <div class="step-item"><span class="step-num">01</span><span class="step-text"><strong>Complete payment via Stripe.</strong> After submitting your details you'll go directly to secure checkout. Payment is processed before we begin.</span></div>
+          <div class="step-item"><span class="step-num">02</span><span class="step-text"><strong>Intake form sent within 24 hours.</strong> We'll email a secure intake form for system access details so we can start the evaluation.</span></div>
           <div class="step-item"><span class="step-num">03</span><span class="step-text"><strong>Evaluation runs.</strong> We test your system against the EQSB scenario library. You don't need to do anything.</span></div>
           <div class="step-item"><span class="step-num">04</span><span class="step-text"><strong>Report delivered.</strong> Tier classification, score, violation map, and next steps — in the timeframe for your tier.</span></div>
         </div>
@@ -355,8 +395,8 @@ footer a:hover{color:var(--light)}
       </div>
       <span class="error-msg" id="terms-error" style="display:none;margin-bottom:.8rem">You must agree to the terms to proceed.</span>
 
-      <button type="button" class="submit-btn" id="submit-btn" onclick="handleSubmit()">Submit order request →</button>
-      <p class="submit-note">No card required now. An invoice will be emailed before the evaluation begins.<br>Questions? Email <a href="mailto:stephanie@ikwe.ai" style="color:var(--teal2)">stephanie@ikwe.ai</a></p>
+      <button type="button" class="submit-btn" id="submit-btn" onclick="handleSubmit()">Continue to payment →</button>
+      <p class="submit-note">You'll be taken to secure Stripe checkout to complete payment.<br>Questions? Email <a href="mailto:stephanie@ikwe.ai" style="color:var(--teal2)">stephanie@ikwe.ai</a></p>
 
     </form>
   </div>
@@ -469,6 +509,13 @@ function validate() {
   return ok;
 }
 
+// ── STRIPE PAYMENT LINKS ───────────────────────────────────────
+const STRIPE_LINKS = {
+  signal: 'https://buy.stripe.com/eVq3cwfrubhv8Fo8eJ9sk09',
+  pilot:  'https://buy.stripe.com/aFa00kenq5Xb7Bk66B9sk0a',
+  full:   'https://buy.stripe.com/fZu9AUenqgBP7Bk66B9sk0b',
+};
+
 // ── SUBMIT ─────────────────────────────────────────────────────
 async function handleSubmit() {
   document.getElementById('form-error').style.display = 'none';
@@ -476,17 +523,18 @@ async function handleSubmit() {
 
   const btn = document.getElementById('submit-btn');
   btn.disabled = true;
-  btn.textContent = 'Sending…';
+  btn.textContent = 'Saving details…';
 
   const tierVal = document.getElementById('tier-select').value || selectedTier;
   const tierName = TIERS[tierVal]?.name || tierVal;
   const tierPrice = TIERS[tierVal]?.price || '';
+  const email = document.getElementById('email').value.trim();
 
   const payload = {
     tier: tierName,
     price: tierPrice,
     name: document.getElementById('name').value.trim(),
-    email: document.getElementById('email').value.trim(),
+    email: email,
     company: document.getElementById('company').value.trim() || '—',
     role: document.getElementById('role').value.trim() || '—',
     ai_type: document.getElementById('ai-type').value,
@@ -500,7 +548,7 @@ async function handleSubmit() {
 
   const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxd9Widq9Y7ig9Mv-yvoThlWE9q4cpHmaBI9pkWqd_IZ_dHB-UTKIpOSreIzyOop8kilQ/exec';
 
-  // Submit to Google Sheets (same endpoint as homepage form)
+  // Save intake details to Google Sheets first
   fetch(SHEETS_URL, {
     method: 'POST',
     mode: 'no-cors',
@@ -517,8 +565,14 @@ async function handleSubmit() {
     });
   }
 
-  // Show success immediately (no-cors means we can't read the response)
-  showSuccess();
+  // Redirect to Stripe Checkout with email pre-filled
+  const stripeUrl = STRIPE_LINKS[tierVal];
+  if (stripeUrl) {
+    const checkoutUrl = stripeUrl + '?prefilled_email=' + encodeURIComponent(email);
+    setTimeout(() => { window.location.href = checkoutUrl; }, 400);
+  } else {
+    showSuccess();
+  }
 }
 
 function showSuccess() {
@@ -536,6 +590,20 @@ nf.setAttribute('netlify', '');
 nf.setAttribute('hidden', '');
 nf.innerHTML = '<input name="tier"><input name="price"><input name="name"><input name="email"><input name="company"><input name="role"><input name="ai_type"><input name="system_desc"><input name="api_access"><input name="concerns"><input name="research_opt_in"><input name="submitted_at"><input name="source">';
 document.body.appendChild(nf);
+</script>
+<script>
+// Mobile nav
+(function(){
+  var btn=document.getElementById('nav-hamburger');
+  var menu=document.getElementById('nav-mobile-menu');
+  if(btn&&menu){btn.addEventListener('click',function(){btn.classList.toggle('open');menu.classList.toggle('open');});}
+})();
+function closeMobileMenu(){
+  var m=document.getElementById('nav-mobile-menu');
+  var b=document.getElementById('nav-hamburger');
+  if(m)m.classList.remove('open');
+  if(b)b.classList.remove('open');
+}
 </script>
 </body>
 </html>

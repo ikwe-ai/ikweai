@@ -16,6 +16,9 @@
 <meta property="og:type" content="article" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
 :root {
   --ink: #0E0818;
@@ -29,6 +32,11 @@
   --text-body: #2A1F3D;
   --text-muted: rgba(42,31,61,0.5);
   --text-caption: rgba(42,31,61,0.4);
+  --nav-navy: #191A2E;
+  --nav-coral: #F7A192;
+  --nav-lav: #B894F6;
+  --nav-cream: #F6D993;
+  --nav-white: #FFFFFF;
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -44,23 +52,29 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* -- NAV -- */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 18px 48px;
-  display: flex; justify-content: space-between; align-items: center;
-  background: rgba(250,250,248,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--rule);
-}
-.nav-logo {
-  font-size: 13px; font-weight: 600; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--purple);
-  text-decoration: none;
-}
-.nav-label {
-  font-size: 11px; color: var(--text-caption); letter-spacing: 0.12em;
-  text-transform: uppercase;
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:1000;background:var(--nav-navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;}
+.nav-logo-circle{width:26px;height:26px;border-radius:50%;background:conic-gradient(#1D1F35 0deg 90deg,var(--nav-coral) 90deg 180deg,var(--nav-lav) 180deg 270deg,var(--nav-cream) 270deg 360deg);border:1.5px solid rgba(247,161,146,0.35);flex-shrink:0;}
+.nav-brand-name{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--nav-white);letter-spacing:.02em;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:.875rem;font-weight:400;transition:color .2s;}
+.nav-links a:hover{color:var(--nav-coral);}
+.nav-cta{background:var(--nav-coral);color:var(--nav-navy);font-weight:500;font-size:.875rem;padding:.5rem 1.25rem;border-radius:6px;text-decoration:none;transition:opacity .2s;}
+.nav-cta:hover{opacity:.88;}
+.nav-mobile-menu{display:none;}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem;background:transparent;border:none;z-index:200;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--nav-white);border-radius:2px;transition:all .25s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+@media(max-width:900px){
+  .nav-links{display:none;} .nav-cta{display:none;} .nav-hamburger{display:flex;}
+  .nav-mobile-menu.open{display:flex;position:fixed;top:60px;left:0;right:0;background:var(--nav-navy);padding:1.5rem 2rem 2rem;flex-direction:column;gap:0;z-index:999;border-top:1px solid rgba(255,255,255,.1);box-shadow:0 20px 40px rgba(0,0,0,.5);}
+  .nav-mobile-menu a{color:rgba(255,255,255,.75);text-decoration:none;font-size:1rem;font-weight:400;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .2s;}
+  .nav-mobile-menu a:last-child{border-bottom:none;}
+  .nav-mobile-menu a:hover{color:var(--nav-coral);}
+  .nav-mobile-menu .mob-cta{margin-top:1.25rem;background:var(--nav-coral);color:var(--nav-navy);font-weight:500;padding:.75rem 1.5rem;border-radius:8px;text-align:center;border-bottom:none!important;}
 }
 
 /* -- HERO -- */
@@ -323,8 +337,7 @@ sup {
 
 /* Responsive */
 @media (max-width: 720px) {
-  nav { padding: 16px 24px; }
-  .hero { padding: 120px 24px 60px; }
+  .hero { padding: 80px 24px 60px; }
   article { padding: 20px 24px 80px; }
   .lead-stat { padding: 28px 24px; }
   .pull-quote { padding: 20px 24px; }
@@ -345,10 +358,35 @@ h1.headline   { animation: fadeUp 0.7s 0.1s ease both; }
 </head>
 <body>
 
+<!-- ── NAV ── -->
 <nav>
-  <a class="nav-logo" href="/">Ikwe.ai</a>
-  <span class="nav-label">Research &amp; Positioning</span>
+  <a href="/" class="nav-brand">
+    <div class="nav-logo-circle"></div>
+    <span class="nav-brand-name">ikwe.ai</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#moment">The Problem</a></li>
+    <li><a href="/#how">How It Works</a></li>
+    <li><a href="/#benchmark">The Benchmark</a></li>
+    <li><a href="/#proof">Research</a></li>
+    <li><a href="/#audience">Who It's For</a></li>
+    <li><a href="/ikwe-sample-report-public.html" style="color:var(--nav-coral)">Sample Report</a></li>
+  </ul>
+  <a href="/contact" class="nav-cta">Get in touch</a>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<!-- Mobile menu -->
+<div class="nav-mobile-menu" id="nav-mobile-menu">
+  <a href="/#moment" onclick="closeMobileMenu()">The Problem</a>
+  <a href="/#how" onclick="closeMobileMenu()">How It Works</a>
+  <a href="/#benchmark" onclick="closeMobileMenu()">The Benchmark</a>
+  <a href="/#proof" onclick="closeMobileMenu()">Research</a>
+  <a href="/#audience" onclick="closeMobileMenu()">Who It's For</a>
+  <a href="/ikwe-sample-report-public.html" onclick="closeMobileMenu()">Sample Report</a>
+  <a href="/contact" class="mob-cta" onclick="closeMobileMenu()">Get in touch</a>
+</div>
 
 <div class="hero">
   <div class="hero-eyebrow">Ikwe.ai Research — February 2026</div>
@@ -562,5 +600,19 @@ h1.headline   { animation: fadeUp 0.7s 0.1s ease both; }
   </div>
 
 </article>
+<script>
+// Mobile nav
+(function(){
+  var btn=document.getElementById('nav-hamburger');
+  var menu=document.getElementById('nav-mobile-menu');
+  if(btn&&menu){btn.addEventListener('click',function(){btn.classList.toggle('open');menu.classList.toggle('open');});}
+})();
+function closeMobileMenu(){
+  var m=document.getElementById('nav-mobile-menu');
+  var b=document.getElementById('nav-hamburger');
+  if(m)m.classList.remove('open');
+  if(b)b.classList.remove('open');
+}
+</script>
 </body>
 </html>
