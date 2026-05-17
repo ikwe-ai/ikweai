@@ -703,7 +703,7 @@
     #audience { background: var(--white); }
     .audience-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1rem;
       margin: 2.5rem 0;
     }
@@ -924,16 +924,16 @@
   <div class="container-narrow">
     <span class="eyebrow">EQ Safety Benchmark · Ikwe.ai</span>
     <h1>Your AI is having conversations<br>you're not watching.<br><em>Is it making things better — or worse?</em></h1>
-    <p class="lead">Ikwe is the behavioral safety layer for AI. We watch how your system behaves in real conversations — whether it's staying safe, going off the rails, or quietly making things worse over time — and we catch it before it becomes a lawsuit, a headline, or a crisis you can't undo.</p>
+    <p class="lead">Ikwe is the behavioral safety layer for AI. We measure how your system behaves in real conversations — and we catch what's going wrong before it becomes a lawsuit, a headline, or a crisis you can't undo.</p>
     <div class="cta-group">
       <a href="/order" class="btn btn-primary">Order a Report →</a>
       <a href="#how" class="btn btn-secondary">See how it works</a>
     </div>
     <div class="hero-badges">
-      <span class="hero-badge">Independent</span>
-      <span class="hero-badge">Third-party</span>
-      <span class="hero-badge">Behavioral</span>
-      <span class="hero-badge">Longitudinal</span>
+      <span class="hero-badge">2,600+ scored runs</span>
+      <span class="hero-badge">12–15 frontier models benchmarked</span>
+      <span class="hero-badge">8 canonical dimensions</span>
+      <span class="hero-badge">54.7% baseline AI harm rate</span>
     </div>
   </div>
 </section>
@@ -1055,9 +1055,9 @@
     </div>
 
     <p style="font-size:.88rem;color:var(--text-muted);margin-top:1.75rem;text-align:center;line-height:2;">
-      Signal scan <strong style="color:var(--navy)">$500</strong> &nbsp;·&nbsp;
-      Pilot audit <strong style="color:var(--navy)">$1,500</strong> &nbsp;·&nbsp;
-      Full report <strong style="color:var(--navy)">$5,000</strong> &nbsp;·&nbsp;
+      Signal Scan <strong style="color:var(--navy)">$500</strong> same week &nbsp;·&nbsp;
+      Pilot Audit <strong style="color:var(--navy)">$1,500</strong> one-week sprint &nbsp;·&nbsp;
+      Full Report <strong style="color:var(--navy)">$5,000</strong> board-ready in two weeks &nbsp;·&nbsp;
       Institutional license <strong style="color:var(--navy)">from $18,000/yr</strong>
       &nbsp;&nbsp;<a href="/order" style="color:var(--teal);font-weight:500;">Order directly →</a>
     </p>
@@ -1218,37 +1218,40 @@
 <section id="audience">
   <div class="container reveal">
     <span class="eyebrow">Who it's for</span>
-    <h2>Teams deploying AI where the stakes<br>are actually human.</h2>
-    <p class="lead">If your AI touches mental health, crisis support, HR, education, healthcare, or anything where a person is emotionally exposed — behavioral safety is not optional. It's the thing you need evidence of before someone asks for it in a deposition.</p>
+    <h2>If you build, deploy, or insure AI —<br><em>this is for you.</em></h2>
+    <p class="lead">The behavioral safety of AI isn't something anyone can claim. It's something that has to be proved — by the team that built it, the platform that deployed it, and the carrier that priced the risk on it. Wherever AI shows up in front of a person, Ikwe measures what's actually happening. You bring us the system; we bring you the evidence.</p>
 
     <div class="audience-grid">
       <div class="aud-card">
-        <h3>Health &amp; wellness</h3>
-        <p>Mental health support, coaching, care navigation, peer-support platforms — anywhere a person brings their real situation to an AI.</p>
+        <h3>Insurance &amp; Underwriters</h3>
+        <p>You underwrite AI behavioral risk every day — without an independent signal to price it against. Ikwe gives you that signal. Score insureds at bind, flag risk before claims, defend your book with measurement.</p>
       </div>
       <div class="aud-card">
         <h3>Enterprise</h3>
-        <p>HR systems, whistleblowing channels, DEI tools, customer support in sensitive domains — where the person on the other end is already stressed.</p>
+        <p>Your AI is deployed in HR, customer service, employee channels — places where the person on the other end is already stressed. Ikwe gives you the behavioral safety record procurement, counsel, and your board will ask for.</p>
+      </div>
+      <div class="aud-card">
+        <h3>Health &amp; Wellness</h3>
+        <p>Your users come to your AI in their hardest moments. Ikwe measures what happens in those moments — whether your system is making them better or worse — and gives you the record to prove what it's doing right.</p>
       </div>
       <div class="aud-card">
         <h3>Education</h3>
-        <p>Tutoring, guidance, student support, academic advising — where AI is increasingly present in moments that shape people's futures.</p>
+        <p>Your AI is in front of students at moments that shape their futures. Ikwe measures whether it's supporting them or steering them — and gives you the evidence your institution, your accreditors, and your families expect.</p>
       </div>
       <div class="aud-card">
-        <h3>Companionship &amp; consumer AI</h3>
-        <p>Social AI, relationship tools, AI companions — where users form attachment over time and the behavioral trajectory matters most.</p>
+        <h3>Companionship &amp; Consumer AI</h3>
+        <p>Your users form real attachment to your AI over time. That's your product — and your liability. Ikwe measures the behavioral trajectory across the relationship, not just the safety of any single response.</p>
       </div>
     </div>
 
     <div class="why-now">
       <h3>Why this matters right now</h3>
       <ul>
-        <li>AI liability exposure is moving from edge case to legal precedent</li>
-        <li>Board-level governance now requires documented behavioral safety evidence</li>
-        <li>Procurement teams are beginning to require independent safety records</li>
-        <li>Regulatory expectations are expanding past bias and accuracy into behavioral safety</li>
-        <li>One trust failure can halt deployment for 18 months or more</li>
-        <li>Every regulated industry eventually needs an auditor — AI is here now</li>
+        <li>Your insurance carriers are pricing AI behavioral risk today — and they have no independent signal to base it on (we're fixing that)</li>
+        <li>Your enterprise customers are starting to require independent safety records, not vendor self-attestation</li>
+        <li>Your board's governance obligations now include documented behavioral safety evidence</li>
+        <li>Your regulators (EU AI Act, state-level AI laws) are expanding past bias and accuracy into behavioral safety</li>
+        <li>Your trust failures don't stay quiet — one viral incident halts deployment for 18 months</li>
       </ul>
     </div>
 
@@ -1308,6 +1311,7 @@
     <span class="eyebrow" style="color: var(--coral);">Get in touch</span>
     <h2>AI safety isn't a one-time checkbox.<br><em>It's a system that watches — and keeps watching.</em></h2>
     <p class="lead">Ikwe is that system. Before the lawsuit. Before the headline. Before someone finds out the hard way that their AI went off the rails when no one was looking.</p>
+    <p class="lead" style="margin-top:1rem;">Most clients start with a $500 Signal Scan. Some carriers and enterprise buyers go straight to institutional licensing. Either way — the conversation begins with evidence, not a sales pitch.</p>
     <div class="cta-group">
       <a href="/order" class="btn btn-primary">Order a Report →</a>
       <a href="mailto:stephanie@ikwe.ai" class="btn btn-secondary">Contact directly</a>
