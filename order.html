@@ -448,7 +448,7 @@ footer {
 <!-- ── HERO (dark navy — action entry point) ── -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="eyebrow">EQSB Behavioral Safety Audit · Order Directly</div>
+    <div class="eyebrow">EQ Safety Benchmark · Independent Behavioral Safety Audit · Order Directly</div>
     <h1>Independent behavioral safety —<br>on your timeline. <em>Not theirs.</em></h1>
     <p>No sales call. No procurement gauntlet. Choose a tier, tell us about your AI system, pay through Stripe. We do the work. You get a defensible behavioral safety record your board, your underwriter, and your customers can trust.</p>
     <div class="trust-row">
@@ -457,6 +457,7 @@ footer {
       <span>research.ikwe.ai verifiable</span>
       <span>Board, underwriter, and counsel-ready</span>
     </div>
+    <p style="margin-top:1.75rem;font-size:.78rem;color:rgba(255,255,255,.3);">First time here? <a href="/" style="color:rgba(255,255,255,.45);text-decoration:underline;text-underline-offset:3px;">Learn how it works →</a></p>
   </div>
 </section>
 
@@ -742,6 +743,8 @@ function selectTier(key) {
   document.getElementById('ts-price').textContent = t.price;
   document.getElementById('ts-note').textContent = t.note;
   document.getElementById('tier-summary').classList.add('show');
+  // Hide the fallback dropdown once a card has been selected — avoids duplicate UI
+  document.getElementById('tier-select-field').style.display = 'none';
   setTimeout(() => {
     document.getElementById('order-form-section').scrollIntoView({ behavior:'smooth', block:'start' });
   }, 180);
