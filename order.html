@@ -226,6 +226,89 @@ nav {
 .tier-card.selected .selected-check { display: flex; }
 .tier-card.featured.selected .selected-check { background: var(--coral); color: var(--ink); }
 
+/* ── REMEDIATION SECTION (navy-tinted — premium enterprise tier) ── */
+.remediation-section {
+  background: #1a1c32;
+  padding: 2.5rem 2rem;
+  border-top: 1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.remediation-inner { max-width: 1040px; margin: 0 auto; }
+.remediation-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: .62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--lav); margin-bottom: 1.25rem;
+}
+.remediation-card {
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 2.5rem; align-items: center;
+  background: rgba(255,255,255,.04); border: 1px solid rgba(184,148,246,.2);
+  border-radius: 8px; padding: 2rem 2rem 2rem 2.25rem;
+  position: relative; cursor: pointer;
+  transition: border-color .2s, background .2s;
+  border-left: 3px solid var(--lav);
+}
+.remediation-card:hover { border-color: rgba(184,148,246,.5); background: rgba(184,148,246,.05); }
+.remediation-card.selected { border-color: var(--lav); background: rgba(184,148,246,.08); }
+.remediation-card .selected-check {
+  position: absolute; top: 1rem; right: 1rem;
+  background: var(--lav); color: var(--navy);
+}
+.rem-eyebrow {
+  font-family: 'Manrope', sans-serif;
+  font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--lav); margin-bottom: .4rem;
+}
+.rem-title {
+  font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 500;
+  color: var(--white); letter-spacing: -0.01em; margin-bottom: .4rem;
+}
+.rem-sub { font-size: .88rem; color: rgba(255,255,255,.5); margin-bottom: 1rem; line-height: 1.6; }
+.rem-features {
+  list-style: none; display: flex; flex-wrap: wrap; gap: .3rem .9rem;
+  margin-bottom: .85rem;
+}
+.rem-features li {
+  font-size: .8rem; color: rgba(255,255,255,.45);
+  display: flex; align-items: center; gap: .35rem;
+}
+.rem-features li::before { content: '—'; color: var(--lav); flex-shrink: 0; }
+.rem-best-for {
+  font-size: .78rem; color: rgba(255,255,255,.28); line-height: 1.55;
+  padding-top: .75rem; border-top: 1px solid rgba(255,255,255,.07);
+}
+.rem-best-for strong { color: rgba(255,255,255,.45); font-weight: 700; }
+.rem-right {
+  display: flex; flex-direction: column; align-items: center;
+  gap: .3rem; text-align: center; min-width: 160px; flex-shrink: 0;
+}
+.rem-price-label {
+  font-family: 'Manrope', sans-serif; font-size: .6rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.3);
+}
+.rem-price {
+  font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 400;
+  color: var(--lav); letter-spacing: -0.02em; line-height: 1;
+}
+.rem-turnaround {
+  font-size: .73rem; color: rgba(255,255,255,.35); font-weight: 500;
+  text-align: center; line-height: 1.45; margin-bottom: .4rem;
+}
+.rem-btn {
+  padding: .6rem 1.4rem; border-radius: 100px;
+  border: 1px solid var(--lav); background: transparent; color: var(--lav);
+  font-size: .84rem; font-weight: 700; font-family: 'Manrope', sans-serif;
+  cursor: pointer; transition: all .15s; white-space: nowrap;
+}
+.rem-btn:hover, .remediation-card.selected .rem-btn {
+  background: var(--lav); color: var(--navy);
+}
+@media(max-width:720px){
+  .remediation-card { grid-template-columns: 1fr; }
+  .rem-right { align-items: flex-start; text-align: left; border-top: 1px solid rgba(255,255,255,.08); padding-top: 1.25rem; }
+  .rem-features { flex-direction: column; }
+}
+
 /* ── INSTITUTIONAL CALLOUT (warm paper — intermediate zone) ── */
 .institutional {
   background: var(--paper-warm);
@@ -526,24 +609,36 @@ footer {
         <button class="select-btn" onclick="selectTier('full');event.stopPropagation()">Select Full Report</button>
       </div>
 
-      <!-- Report + Remediation -->
-      <div class="tier-card" id="tier-remediation" onclick="selectTier('remediation')">
-        <div class="selected-check">✓</div>
-        <div class="tier-eyebrow">Report + Remediation</div>
-        <div class="tier-name">Scope priced</div>
-        <div class="tier-price" style="font-size:1.4rem">Custom</div>
-        <div class="tier-turnaround">Scoped to your system and timeline</div>
-        <ul class="tier-features">
+    </div><!-- /.tiers-grid -->
+  </div><!-- /.tiers-inner -->
+</section><!-- /.tiers-section -->
+
+
+<!-- ── REPORT + REMEDIATION (dark navy — premium enterprise tier) ── -->
+<section class="remediation-section">
+  <div class="remediation-inner">
+    <div class="remediation-label">Going deeper</div>
+    <div class="remediation-card" id="tier-remediation" onclick="selectTier('remediation')">
+      <div class="selected-check">✓</div>
+      <div class="rem-left">
+        <div class="rem-eyebrow">Report + Remediation</div>
+        <div class="rem-title">Need us to fix it, not just find it?</div>
+        <div class="rem-sub">Everything in the Full Report — plus we work with your team to address what we find. Re-scored after remediation so you have evidence of improvement.</div>
+        <ul class="rem-features">
           <li>Everything in Full Report</li>
-          <li>Hands-on remediation — we work with your team to fix what we find</li>
-          <li>Complete remediation roadmap (prioritized, timelined, ownership-assigned)</li>
+          <li>Hands-on remediation with your team</li>
+          <li>Prioritized remediation roadmap (timelined, ownership-assigned)</li>
           <li>Re-score after remediation to confirm improvement</li>
           <li>Ongoing monitoring option available</li>
         </ul>
-        <div class="tier-best-for"><strong>Best for:</strong> Systems with active violations that need remediation support, enterprise teams without internal AI safety capacity, regulatory remediation requirements</div>
-        <button class="select-btn" onclick="selectTier('remediation');event.stopPropagation()">Request Scope</button>
+        <div class="rem-best-for"><strong>Best for:</strong> Systems with active violations, enterprise teams without internal AI safety capacity, regulatory remediation requirements, and boards that need a closed loop.</div>
       </div>
-
+      <div class="rem-right">
+        <div class="rem-price-label">Scope priced</div>
+        <div class="rem-price">Custom</div>
+        <div class="rem-turnaround">Scoped to your system<br>and timeline</div>
+        <button class="rem-btn" onclick="selectTier('remediation');event.stopPropagation()">Request Scope →</button>
+      </div>
     </div>
   </div>
 </section>
