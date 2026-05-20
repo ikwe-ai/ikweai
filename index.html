@@ -382,36 +382,79 @@
     ───────────────────────────────────────── */
     #hero {
       background: var(--navy);
-      padding: 3rem 2rem 2.5rem;
+      padding: 2.5rem 2rem;
     }
-    #hero .container-narrow { text-align: center; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 2.5rem;
+      align-items: center;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    @media (max-width: 820px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-preview-col { display: none; }
+    }
     #hero h1 {
       color: var(--white);
-      margin-bottom: 1rem;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      margin-bottom: .85rem;
     }
-    #hero h1 em {
-      font-style: italic;
-      color: var(--coral);
-    }
-    #hero .lead { color: rgba(255,255,255,.7); margin: 0 auto; max-width: 600px; }
-    #hero .cta-group { justify-content: center; }
+    #hero h1 em { font-style: italic; color: var(--coral); }
+    #hero .lead { color: rgba(255,255,255,.65); max-width: 460px; font-size: .97rem; }
+    #hero .cta-group { justify-content: flex-start; margin-top: 1.25rem; }
     .hero-badges {
       display: flex;
-      justify-content: center;
-      gap: .6rem;
+      gap: .5rem;
       flex-wrap: wrap;
-      margin-top: 1.25rem;
+      margin-top: 1.1rem;
     }
     .hero-badge {
-      font-size: .78rem;
+      font-size: .72rem;
       font-weight: 500;
-      letter-spacing: .06em;
+      letter-spacing: .05em;
       text-transform: uppercase;
-      color: rgba(255,255,255,.45);
-      border: 1px solid rgba(255,255,255,.15);
+      color: rgba(255,255,255,.38);
+      border: 1px solid rgba(255,255,255,.12);
       border-radius: 20px;
-      padding: .3rem .85rem;
+      padding: .25rem .75rem;
     }
+    /* Mini report preview in hero */
+    .hero-preview-col {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 14px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .hero-preview-col .tier-chip { margin-bottom: .25rem; }
+    .hero-preview-col .spr-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .5rem .75rem;
+      border-radius: 7px;
+      background: rgba(255,255,255,.05);
+      font-size: .78rem;
+    }
+    .hero-preview-col .spr-label { color: rgba(255,255,255,.45); }
+    .hero-preview-col .spr-val { font-weight: 500; }
+    .hero-preview-col .spr-amber { color: #E08C00; }
+    .hero-preview-col .spr-red { color: #E24B4A; }
+    .hero-preview-col .spr-green { color: var(--teal-mid); }
+    .hero-preview-col .preview-note {
+      font-size: .68rem; color: rgba(255,255,255,.22);
+      text-align: center; padding-top: .25rem;
+    }
+    .hero-preview-col .preview-link {
+      display: block; text-align: center; font-size: .78rem;
+      color: var(--coral); text-decoration: none; padding-top: .1rem;
+      font-weight: 500;
+    }
+    .hero-preview-col .preview-link:hover { opacity: .8; }
 
     /* ─────────────────────────────────────────
        SECTION 2 — THE MOMENT
