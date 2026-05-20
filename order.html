@@ -136,6 +136,121 @@ nav {
 }
 .trust-row { display: none; } /* moved to path-chooser */
 
+/* ── PRODUCT DETAIL MODAL ── */
+.product-modal-backdrop {
+  display: none; position: fixed; inset: 0; z-index: 1800;
+  background: rgba(10,11,22,0.78); backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  overflow-y: auto; padding: 2rem 1rem 3rem;
+}
+.product-modal-backdrop.open { display: flex; align-items: flex-start; justify-content: center; }
+.product-modal {
+  background: var(--paper); color: var(--ink);
+  border-radius: 14px; width: 100%; max-width: 700px;
+  position: relative; margin: auto;
+  box-shadow: 0 32px 100px rgba(0,0,0,.55);
+  animation: modalIn .22s cubic-bezier(0.4,0,0.2,1);
+  overflow: hidden;
+}
+.pm-header {
+  background: var(--navy); padding: 2rem 2.5rem 1.75rem;
+  position: relative;
+}
+.pm-close {
+  position: absolute; top: 1.1rem; right: 1.25rem;
+  background: rgba(255,255,255,.08); border: none;
+  color: rgba(255,255,255,.4); font-size: 1rem; line-height: 1;
+  width: 1.9rem; height: 1.9rem; border-radius: 50%;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background .15s, color .15s;
+}
+.pm-close:hover { background: rgba(255,255,255,.16); color: var(--white); }
+.pm-eyebrow {
+  font-size: .6rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+  font-family: 'Manrope', sans-serif; margin-bottom: .5rem;
+}
+.pm-title {
+  font-family: 'Fraunces', serif; font-size: 1.7rem; font-weight: 500;
+  color: var(--white); letter-spacing: -0.02em; margin-bottom: .3rem;
+}
+.pm-subtitle { font-size: .88rem; color: rgba(255,255,255,.45); line-height: 1.6; }
+.pm-price-row {
+  display: flex; align-items: baseline; gap: .55rem; margin-top: 1rem;
+}
+.pm-price {
+  font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 400;
+  letter-spacing: -0.02em; line-height: 1;
+}
+.pm-turnaround {
+  font-size: .78rem; font-weight: 600; font-family: 'Manrope', sans-serif;
+  color: rgba(255,255,255,.4);
+}
+.pm-body { padding: 2rem 2.5rem; }
+.pm-section-label {
+  font-size: .6rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+  font-family: 'Manrope', sans-serif; color: var(--muted); margin-bottom: .75rem;
+}
+.pm-features {
+  list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1.6rem;
+}
+.pm-features li {
+  font-size: .9rem; color: var(--ink-soft); display: flex; align-items: flex-start; gap: .5rem; line-height: 1.5;
+}
+.pm-features li::before { content: '✓'; color: var(--teal2); flex-shrink: 0; font-weight: 700; margin-top: .05rem; }
+.pm-what-you-get {
+  background: var(--paper-warm); border-radius: 8px; padding: 1.25rem 1.4rem; margin-bottom: 1.6rem;
+  border: 1px solid var(--line);
+}
+.pm-what-you-get h4 {
+  font-family: 'Manrope', sans-serif; font-size: .6rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: .65rem;
+}
+.pm-deliverables {
+  display: grid; grid-template-columns: 1fr 1fr; gap: .35rem .9rem;
+  list-style: none;
+}
+.pm-deliverables li {
+  font-size: .82rem; color: var(--ink-soft);
+  display: flex; align-items: center; gap: .35rem;
+}
+.pm-deliverables li::before { content: '—'; color: var(--teal2); flex-shrink: 0; font-size: .7rem; }
+.pm-best-for {
+  font-size: .83rem; color: var(--ink-soft); line-height: 1.65; margin-bottom: 1.6rem;
+  padding-top: 1.25rem; border-top: 1px solid var(--line);
+}
+.pm-best-for strong { color: var(--ink); font-weight: 700; }
+.pm-sample {
+  display: flex; align-items: center; gap: .5rem; margin-bottom: 1.6rem;
+  font-size: .83rem; color: var(--ink-soft);
+}
+.pm-sample a { color: var(--teal2); text-decoration: none; font-weight: 600; }
+.pm-sample a:hover { text-decoration: underline; }
+.pm-footer {
+  display: flex; gap: .75rem; align-items: center;
+  padding: 1.5rem 2.5rem; background: var(--paper-warm);
+  border-top: 1px solid var(--line);
+}
+.pm-cta-btn {
+  flex: 1; padding: .9rem; border-radius: 8px;
+  font-family: 'Manrope', sans-serif; font-size: .95rem; font-weight: 700;
+  cursor: pointer; transition: all .15s; border: none;
+  letter-spacing: .01em;
+}
+.pm-cta-btn.primary { background: var(--coral); color: var(--ink); }
+.pm-cta-btn.primary:hover { opacity: .9; transform: translateY(-1px); }
+.pm-cta-btn.secondary {
+  background: transparent; color: var(--ink-soft);
+  border: 1.5px solid var(--line); flex: 0 0 auto; padding: .9rem 1.25rem;
+  font-size: .82rem;
+}
+.pm-cta-btn.secondary:hover { border-color: var(--ink-soft); color: var(--ink); }
+@media(max-width:520px){
+  .pm-header { padding: 1.6rem 1.25rem 1.4rem; }
+  .pm-body { padding: 1.5rem 1.25rem; }
+  .pm-footer { padding: 1.25rem; flex-wrap: wrap; }
+  .pm-deliverables { grid-template-columns: 1fr; }
+}
+
 /* ── PATH CHOOSER (navy — immediate decision point) ── */
 .paths-section {
   background: var(--navy);
@@ -378,8 +493,46 @@ nav {
 .inst-body a { color: var(--teal2); text-decoration: none; }
 .inst-body a:hover { text-decoration: underline; }
 
-/* ── FORM SECTION (dark navy — client transaction zone) ── */
-.form-section { background: var(--navy); padding: 4rem 2rem; }
+/* ── FORM MODAL OVERLAY ── */
+.form-modal-backdrop {
+  display: none;
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(10,11,22,0.82);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  overflow-y: auto;
+  padding: 2rem 1rem 3rem;
+}
+.form-modal-backdrop.open { display: flex; align-items: flex-start; justify-content: center; }
+.form-modal {
+  background: var(--navy);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  width: 100%; max-width: 640px;
+  padding: 2.25rem 2.5rem 2.5rem;
+  position: relative;
+  margin: auto;
+  box-shadow: 0 24px 80px rgba(0,0,0,.6);
+  animation: modalIn .22s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.form-modal-close {
+  position: absolute; top: 1.1rem; right: 1.25rem;
+  background: rgba(255,255,255,.07); border: none;
+  color: rgba(255,255,255,.4); font-size: 1.1rem; line-height: 1;
+  width: 2rem; height: 2rem; border-radius: 50%;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background .15s, color .15s;
+}
+.form-modal-close:hover { background: rgba(255,255,255,.14); color: var(--white); }
+@media(max-width:520px){
+  .form-modal { padding: 1.75rem 1.25rem 2rem; border-radius: 8px; }
+}
+/* (legacy .form-section kept for success state) */
+.form-section { display: none; }
 .form-wrap { max-width: 640px; margin: 0 auto; }
 .form-heading {
   font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 500;
@@ -798,11 +951,45 @@ footer {
 
 
 
-<!-- ── FORM SECTION (dark navy — client transaction zone) ── -->
-<section class="form-section">
-  <div class="form-wrap">
+<!-- ── PRODUCT DETAIL MODAL ── -->
+<div class="product-modal-backdrop" id="product-modal-backdrop" onclick="handleProductBackdropClick(event)">
+  <div class="product-modal" role="dialog" aria-modal="true" aria-labelledby="pm-title">
+    <button class="pm-close" onclick="closeProductModal()" aria-label="Close">✕</button>
+    <div class="pm-header">
+      <div class="pm-eyebrow" id="pm-eyebrow"></div>
+      <div class="pm-title" id="pm-title"></div>
+      <div class="pm-subtitle" id="pm-subtitle"></div>
+      <div class="pm-price-row">
+        <div class="pm-price" id="pm-price"></div>
+        <div class="pm-turnaround" id="pm-turnaround"></div>
+      </div>
+    </div>
+    <div class="pm-body">
+      <div class="pm-section-label">What's included</div>
+      <ul class="pm-features" id="pm-features"></ul>
+      <div class="pm-what-you-get">
+        <h4>What you receive</h4>
+        <ul class="pm-deliverables" id="pm-deliverables"></ul>
+      </div>
+      <div class="pm-sample" id="pm-sample"></div>
+      <div class="pm-best-for" id="pm-best-for"></div>
+    </div>
+    <div class="pm-footer">
+      <button class="pm-cta-btn primary" id="pm-cta" onclick="proceedToForm()"></button>
+      <button class="pm-cta-btn secondary" onclick="closeProductModal()">← Back</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── FORM MODAL OVERLAY ── -->
+<div class="form-modal-backdrop" id="form-modal-backdrop" onclick="handleBackdropClick(event)">
+  <div class="form-modal" id="form-modal" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+
+    <button class="form-modal-close" onclick="closeFormModal()" aria-label="Close">✕</button>
+
+    <!-- FORM STATE -->
     <div id="order-form-section">
-      <h2 class="form-heading">Submit your system</h2>
+      <h2 class="form-heading" id="modal-heading">Submit your system</h2>
       <p class="form-sub">Fill in what you can. We'll confirm your order and send next steps by email.</p>
 
       <!-- Tier summary (populated by JS after tier selection) -->
@@ -812,19 +999,19 @@ footer {
           <div class="ts-price" id="ts-price">—</div>
           <div class="ts-note" id="ts-note">—</div>
         </div>
-        <span class="ts-change" onclick="scrollToTiers()">Change tier ↑</span>
+        <span class="ts-change" onclick="closeFormModal()">← Change tier</span>
       </div>
 
       <div class="form-error" id="form-error">Something went wrong — please try again or email us at <a href="mailto:hello@ikwe.ai" style="color:#E07070">hello@ikwe.ai</a></div>
 
       <form id="order-form" novalidate>
 
-        <!-- Tier hidden field + fallback select -->
+        <!-- Tier hidden field + fallback select (shown if modal opened without tier pre-selected) -->
         <input type="hidden" id="selected-tier" name="tier" value="">
         <div class="field-group" id="tier-select-field">
           <label for="tier-select">Selected tier <span class="req">*</span></label>
           <select id="tier-select" name="tier-display">
-            <option value="">— Choose a tier above —</option>
+            <option value="">— Choose a tier —</option>
             <option value="signal">Signal Scan — $500 · 79 scenarios</option>
             <option value="pilot">Deep Scan — $1,000 · 300+ scenarios</option>
             <option value="full">Full Report — $2,500 · board-ready</option>
@@ -870,7 +1057,7 @@ footer {
 
         <div class="field-group">
           <label for="system-desc">Describe your AI system <span class="req">*</span></label>
-          <textarea id="system-desc" name="system-desc" placeholder="What does it do? Who uses it? What kinds of conversations does it handle? What model or framework is it built on?" rows="5"></textarea>
+          <textarea id="system-desc" name="system-desc" placeholder="What does it do? Who uses it? What kinds of conversations does it handle? What model or framework is it built on?" rows="4"></textarea>
           <span class="error-msg">Please describe your system.</span>
         </div>
 
@@ -880,19 +1067,19 @@ footer {
           <div class="step-list">
             <div class="step-item">
               <span class="step-num">01</span>
-              <span class="step-text"><strong>Payment — your choice.</strong> Pay now via secure Stripe checkout (instant) or choose the assisted path and we'll set it up on the backend with you directly. Either way, your order is confirmed when you hit submit.</span>
+              <span class="step-text"><strong>Payment — your choice.</strong> Pay now via Stripe (instant) or choose assisted setup and we'll handle payment with you directly.</span>
             </div>
             <div class="step-item">
               <span class="step-num">02</span>
-              <span class="step-text"><strong>Kickoff call.</strong> We schedule a brief call before we start — to confirm system access, clarify scope, and make sure we're testing what matters most to you.</span>
+              <span class="step-text"><strong>Kickoff call.</strong> We confirm system access and scope before we start. Always included.</span>
             </div>
             <div class="step-item">
               <span class="step-num">03</span>
-              <span class="step-text"><strong>We test your system</strong> against the EQSB scenario library. You don't need to do anything during this phase. The work is on us.</span>
+              <span class="step-text"><strong>We test your system</strong> against the EQSB scenario library. The work is on us.</span>
             </div>
             <div class="step-item">
               <span class="step-num">04</span>
-              <span class="step-text"><strong>Debrief call + delivery.</strong> Tier classification, score, violation map, recommendations, and next steps — delivered to your inbox and walked through on a live debrief call. Branded PDF + dashboard link for technical teams.</span>
+              <span class="step-text"><strong>Debrief call + delivery.</strong> Results delivered and walked through live. Branded PDF + dashboard link.</span>
             </div>
           </div>
         </div>
@@ -911,32 +1098,33 @@ footer {
         <div class="submit-split">
           <div class="submit-path">
             <button type="button" class="submit-btn" id="submit-btn" onclick="handleSubmit('stripe')">Pay now via Stripe →</button>
-            <p class="submit-path-note">Instant checkout. Card or ACH.<br>Redirects to secure Stripe.</p>
+            <p class="submit-path-note">Instant checkout. Card or ACH.</p>
           </div>
           <div class="submit-divider"><span>or</span></div>
           <div class="submit-path">
             <button type="button" class="submit-btn submit-btn-assisted" id="submit-btn-alt" onclick="handleSubmit('assisted')">Have us set it up for you</button>
-            <p class="submit-path-note">We receive your details and reach out<br>within one business day to handle payment.</p>
+            <p class="submit-path-note">We reach out within one business day.</p>
           </div>
         </div>
-        <p class="submit-note" style="text-align:center;margin-top:1.25rem">A kickoff call and debrief call are included with every engagement. Questions? Email <a href="mailto:hello@ikwe.ai" style="color:var(--teal2)">hello@ikwe.ai</a></p>
+        <p class="submit-note" style="text-align:center;margin-top:1.1rem">Kickoff + debrief calls always included. Questions? <a href="mailto:hello@ikwe.ai" style="color:var(--teal2)">hello@ikwe.ai</a></p>
 
       </form>
     </div>
 
     <!-- SUCCESS STATE -->
-    <div id="success">
+    <div id="success" style="display:none">
       <div class="success-inner">
         <div class="checkmark">✓</div>
         <h2>Order request received.</h2>
         <p>We'll confirm within 24 hours and send next steps, including the intake form for system access.</p>
         <p style="margin-top:.5rem">Check your inbox — confirmation comes from <strong style="color:var(--white)">hello@ikwe.ai</strong></p>
         <p style="margin-top:1rem;font-size:.8rem;color:rgba(255,255,255,.3)">Review the <a href="https://ikwe.ai/ikwe-sample-report-public.html" style="color:var(--teal2)">sample report</a> to see exactly what you'll receive, or read the <a href="https://research.ikwe.ai" target="_blank" style="color:var(--teal2)">research behind the benchmark</a>.</p>
-        <a href="https://ikwe.ai" class="back-link">← Back to ikwe.ai</a>
+        <button onclick="closeFormModal()" class="back-link" style="background:none;border:none;cursor:pointer">← Back to tiers</button>
       </div>
     </div>
+
   </div>
-</section>
+</div>
 
 
 <!-- ── FAQ (light paper — public reassurance) ── -->
@@ -1018,11 +1206,178 @@ const TIERS = {
   full:        { name:'Full Report',          price:'$2,500', note:'Board-ready in two weeks · complete documentation package' },
   remediation: { name:'Report + Remediation', price:'Custom', note:'Scoped to your system · includes hands-on remediation + re-score' },
 };
+
+// ── PRODUCT DETAIL CONTENT ─────────────────────────────────────
+const PRODUCT_DETAIL = {
+  signal: {
+    eyebrow: 'Signal Scan · Self-serve',
+    title: 'Signal Scan',
+    subtitle: 'A fast, targeted read on your AI system\'s behavioral safety posture. Know where you stand before deeper work.',
+    price: '$500',
+    turnaround: '· Same-week turnaround',
+    priceColor: 'var(--teal2)',
+    features: [
+      '79 scenarios scored across the full EQSB dimension library',
+      'Safety Gate result — pass or fail with clear explanation',
+      'Top 3 behavioral risk flags identified and documented',
+      'One-page summary report, professionally formatted',
+      'Stripe receipt + signed engagement record',
+      'Debrief call available upon request',
+    ],
+    deliverables: [
+      'Safety Gate result (Pass/Fail)',
+      'Risk flag summary',
+      'One-page PDF report',
+      'Signed engagement record',
+      'Stripe receipt',
+      'Email confirmation within 24h',
+    ],
+    bestFor: '<strong>Best for:</strong> Early-stage teams doing a pre-launch sanity check, founders screening vendors before procurement, teams building toward SF2417 compliance, or anyone who needs a fast, credible answer to "is our AI safe to deploy?"',
+    sample: 'See what a Signal Scan report looks like → <a href="/ikwe-sample-report-public.html" target="_blank">View sample report</a>',
+    cta: 'Start Signal Scan — $500',
+  },
+  pilot: {
+    eyebrow: 'Deep Scan · Most popular',
+    title: 'Deep Scan',
+    subtitle: 'The full EQSB benchmark — 300+ scenarios, 8-dimension composite score, and a peer comparison against leading models. Everything you need for enterprise procurement or pre-Series A safety documentation.',
+    price: '$1,000',
+    turnaround: '· In your hands within the week',
+    priceColor: 'var(--coral)',
+    features: [
+      '300+ scenarios across the complete EQSB library — every dimension tested',
+      'Safety Gate result with full violation map',
+      '8-dimension composite score (0–100) with breakdown by category',
+      'Tier classification: Compliant → Monitored → Restricted → Prohibited',
+      'Peer benchmark — how your system compares to GPT-4o, Claude, and others',
+      'Top 5 prioritized remediation actions with effort estimates',
+      'Interactive dashboard link for technical teams',
+      'Debrief call with findings walkthrough',
+    ],
+    deliverables: [
+      'Full violation map',
+      '8-dimension score card',
+      'Tier classification',
+      'Peer benchmark comparison',
+      'Remediation action list',
+      'Interactive dashboard',
+      'Branded PDF report',
+      'Debrief call',
+    ],
+    bestFor: '<strong>Best for:</strong> Platforms entering enterprise procurement, teams preparing for insurance underwriting, pre-Series A safety documentation, SF2417 third-party compliance submissions, and any team that needs a number they can defend.',
+    sample: 'The Deep Scan uses the same evaluation framework as the Full Report. <a href="/ikwe-sample-report-public.html" target="_blank">Preview the sample →</a>',
+    cta: 'Start Deep Scan — $1,000',
+  },
+  full: {
+    eyebrow: 'Full Report · Board-ready',
+    title: 'Full Report',
+    subtitle: 'Everything in the Deep Scan — plus a legally defensible documentation package, executive briefing, and 30 days of basic monitoring. Built for boards, underwriters, and regulators.',
+    price: '$2,500',
+    turnaround: '· Board-ready in two weeks',
+    priceColor: 'var(--teal2)',
+    features: [
+      'Everything in Deep Scan — complete EQSB evaluation',
+      'Full violation map with every Safety Gate trigger explained and evidenced',
+      'Dimension-level failure analysis with conversation excerpts',
+      'Legally defensible documentation package (board, underwriter, regulator-ready)',
+      'Kickoff call + executive debrief call with Ikwe.ai founder',
+      '30 days of basic monitoring included post-delivery',
+      'Branded PDF formatted for board presentation',
+      'Dashboard link for technical and legal teams',
+    ],
+    deliverables: [
+      'Full violation evidence map',
+      'Dimension failure analysis',
+      'Board-ready PDF package',
+      'Executive briefing call',
+      'Legal documentation set',
+      '30-day monitoring',
+      'Interactive dashboard',
+      'Debrief + kickoff calls',
+    ],
+    bestFor: '<strong>Best for:</strong> Insurance underwriting submissions, enterprise procurement deliverables, board governance packages, regulatory inquiry responses, and any situation where you need a third-party record that will hold up to scrutiny.',
+    sample: '<a href="/ikwe-sample-report-public.html" target="_blank">View the sample report →</a> to see the structure, evidence format, and dimension breakdown you\'ll receive.',
+    cta: 'Start Full Report — $2,500',
+  },
+  remediation: {
+    eyebrow: 'Report + Remediation · Custom scope',
+    title: 'Report + Remediation',
+    subtitle: 'We don\'t just find the problems — we work with your team to fix them, then re-score to confirm the improvement. Fully scoped to your system and timeline.',
+    price: 'Custom',
+    turnaround: '· Scoped to your system',
+    priceColor: 'var(--lav)',
+    features: [
+      'Everything in Full Report — complete documentation and evidence package',
+      'Hands-on remediation with your engineering and product teams',
+      'Prioritized remediation roadmap — timelined, ownership-assigned',
+      'Re-score after remediation to produce a before/after improvement record',
+      'Ongoing monitoring option available post-remediation',
+      'Direct access to Ikwe.ai founder throughout the engagement',
+    ],
+    deliverables: [
+      'Full Report package',
+      'Remediation roadmap',
+      'Hands-on remediation sessions',
+      'Re-score + improvement record',
+      'Monitoring option',
+      'Founder-level access',
+    ],
+    bestFor: '<strong>Best for:</strong> Systems with active violations, enterprise teams without internal AI safety capacity, regulatory remediation requirements, boards that need a closed loop — and anyone who wants evidence of improvement, not just evidence of problems.',
+    sample: 'Pricing is scoped after a brief conversation. <a href="mailto:hello@ikwe.ai">Email us</a> or submit the form and we\'ll reach out within one business day.',
+    cta: 'Request Scope →',
+  },
+};
+
 let selectedTier = null;
 
 function selectTier(key) {
+  // Highlight selected card visually
   document.querySelectorAll('.tier-card').forEach(t => t.classList.remove('selected'));
-  document.getElementById('tier-' + key).classList.add('selected');
+  const card = document.getElementById('tier-' + key);
+  if (card) card.classList.add('selected');
+  // Open product detail first — user proceeds to form from there
+  openProductModal(key);
+}
+
+function openProductModal(key) {
+  const d = PRODUCT_DETAIL[key];
+  if (!d) return;
+  // Populate header
+  document.getElementById('pm-eyebrow').textContent = d.eyebrow;
+  document.getElementById('pm-title').textContent = d.title;
+  document.getElementById('pm-subtitle').textContent = d.subtitle;
+  document.getElementById('pm-price').textContent = d.price;
+  document.getElementById('pm-price').style.color = d.priceColor;
+  document.getElementById('pm-turnaround').textContent = d.turnaround;
+  // Features
+  document.getElementById('pm-features').innerHTML = d.features.map(f => `<li>${f}</li>`).join('');
+  // Deliverables
+  document.getElementById('pm-deliverables').innerHTML = d.deliverables.map(f => `<li>${f}</li>`).join('');
+  // Sample + best-for
+  document.getElementById('pm-sample').innerHTML = d.sample;
+  document.getElementById('pm-best-for').innerHTML = d.bestFor;
+  // CTA
+  document.getElementById('pm-cta').textContent = d.cta;
+  // Store key for proceedToForm
+  document.getElementById('product-modal-backdrop').dataset.tierKey = key;
+  // Open
+  document.getElementById('product-modal-backdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('product-modal-backdrop').scrollTop = 0;
+}
+
+function closeProductModal() {
+  document.getElementById('product-modal-backdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleProductBackdropClick(e) {
+  if (e.target === document.getElementById('product-modal-backdrop')) closeProductModal();
+}
+
+function proceedToForm() {
+  const key = document.getElementById('product-modal-backdrop').dataset.tierKey;
+  closeProductModal();
+  // Now set up the form state
   selectedTier = key;
   document.getElementById('selected-tier').value = key;
   document.getElementById('tier-select').value = key;
@@ -1031,18 +1386,44 @@ function selectTier(key) {
   document.getElementById('ts-price').textContent = t.price;
   document.getElementById('ts-note').textContent = t.note;
   document.getElementById('tier-summary').classList.add('show');
-  // Hide the fallback dropdown once a card has been selected — avoids duplicate UI
   document.getElementById('tier-select-field').style.display = 'none';
+  // Reset form state
+  document.getElementById('order-form-section').style.display = 'block';
+  document.getElementById('success').style.display = 'none';
+  openFormModal();
+}
+
+function openFormModal() {
+  const backdrop = document.getElementById('form-modal-backdrop');
+  backdrop.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Scroll modal to top each time it opens
+  backdrop.scrollTop = 0;
+  // Focus first input for accessibility
   setTimeout(() => {
-    document.getElementById('order-form-section').scrollIntoView({ behavior:'smooth', block:'start' });
-  }, 180);
+    const first = document.getElementById('name');
+    if (first) first.focus();
+  }, 260);
+}
+
+function closeFormModal() {
+  document.getElementById('form-modal-backdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleBackdropClick(e) {
+  if (e.target === document.getElementById('form-modal-backdrop')) closeFormModal();
 }
 
 function scrollToTiers() {
-  document.getElementById('tier-section').scrollIntoView({ behavior:'smooth', block:'start' });
+  closeFormModal();
+  setTimeout(() => {
+    const el = document.getElementById('tier-section');
+    if (el) el.scrollIntoView({ behavior:'smooth', block:'start' });
+  }, 80);
 }
 function smoothTo(id) {
-  event.preventDefault();
+  if (event) event.preventDefault();
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior:'smooth', block:'start' });
 }
@@ -1181,9 +1562,19 @@ function showSuccess(mode) {
     s.querySelector('h2').textContent = 'Request received.';
     s.querySelector('p').textContent = "We'll reach out within one business day to confirm your scope and handle payment together. A kickoff call comes next.";
   }
-  s.style.display = 'flex';
-  s.scrollIntoView({ behavior:'smooth', block:'start' });
+  s.style.display = 'block';
+  // Scroll modal to top to show success
+  const backdrop = document.getElementById('form-modal-backdrop');
+  if (backdrop) backdrop.scrollTop = 0;
 }
+
+// Escape key closes whichever modal is open
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    if (document.getElementById('form-modal-backdrop').classList.contains('open')) closeFormModal();
+    else if (document.getElementById('product-modal-backdrop').classList.contains('open')) closeProductModal();
+  }
+});
 
 // ── MOBILE NAV ─────────────────────────────────────────────────
 (function(){
