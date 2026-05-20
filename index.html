@@ -202,6 +202,51 @@
       }
     }
 
+    /* ── PAGE CALLOUT BANNERS ── */
+    .page-callout {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1.5rem; flex-wrap: wrap;
+      background: var(--navy);
+      border-radius: 14px; padding: 1.75rem 2rem;
+      margin-top: 2.5rem;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .page-callout.callout-teal {
+      background: var(--teal-light);
+      border: 1px solid rgba(15,110,86,.15);
+    }
+    .page-callout.callout-lav {
+      background: #EEEDFE;
+      border: 1px solid rgba(91,47,176,.15);
+    }
+    .pc-text { flex: 1; min-width: 200px; }
+    .pc-text .pc-eyebrow {
+      font-size: .7rem; font-weight: 500; letter-spacing: .1em;
+      text-transform: uppercase; margin-bottom: .4rem;
+    }
+    .page-callout .pc-eyebrow { color: rgba(255,255,255,.45); }
+    .page-callout.callout-teal .pc-eyebrow { color: var(--teal); }
+    .page-callout.callout-lav .pc-eyebrow { color: #5B2FB0; }
+    .pc-text strong {
+      display: block; font-size: 1rem; font-weight: 500; line-height: 1.4; margin-bottom: .2rem;
+    }
+    .page-callout strong { color: var(--white); }
+    .page-callout.callout-teal strong { color: var(--navy); }
+    .page-callout.callout-lav strong { color: var(--navy); }
+    .pc-text span { font-size: .85rem; }
+    .page-callout span { color: rgba(255,255,255,.5); }
+    .page-callout.callout-teal span { color: var(--text-muted); }
+    .page-callout.callout-lav span { color: var(--text-muted); }
+    .pc-link {
+      white-space: nowrap; font-size: .875rem; font-weight: 500;
+      padding: .65rem 1.25rem; border-radius: 8px;
+      text-decoration: none; transition: opacity .2s;
+    }
+    .pc-link:hover { opacity: .82; }
+    .page-callout .pc-link { background: rgba(255,255,255,.1); color: var(--white); border: 1px solid rgba(255,255,255,.2); }
+    .page-callout.callout-teal .pc-link { background: var(--teal); color: var(--white); border: none; }
+    .page-callout.callout-lav .pc-link { background: #5B2FB0; color: var(--white); border: none; }
+
     /* ── SAMPLE REPORT SECTION ── */
     #sample {
       background: var(--navy);
@@ -535,6 +580,23 @@
     .step-tag.pre { background: var(--amber-soft); color: var(--amber-dark); }
     .step-tag.deep { background: var(--teal-light); color: var(--teal); }
     .step-tag.live { background: #EEEDFE; color: #3C3489; }
+
+    /* Pricing chips */
+    .pricing-chips {
+      display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center;
+      margin-top: 2rem;
+    }
+    .pricing-chip {
+      background: var(--white); border: 1px solid #dddde2; border-radius: 10px;
+      padding: .85rem 1.25rem; display: flex; flex-direction: column;
+      align-items: center; gap: .2rem; min-width: 120px; text-align: center;
+    }
+    .pricing-chip-ghost {
+      background: var(--gray-soft); border-style: dashed;
+    }
+    .pc-name { font-size: .72rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); }
+    .pc-price { font-family: 'DM Serif Display', serif; font-size: 1.35rem; color: var(--navy); line-height: 1; }
+    .pc-detail { font-size: .72rem; color: var(--text-muted); }
 
     /* ─────────────────────────────────────────
        SECTION 5 — DRIFT / URGENCY
@@ -1000,7 +1062,7 @@
   <div class="container reveal">
     <span class="eyebrow">How it works</span>
     <h2>Three checkpoints.<br>One answer: is this system safe right now?</h2>
-    <p class="lead">Ikwe tests your system before launch, scores it in depth, and watches how it behaves over time. Each phase builds a documented safety record you can stand behind.</p>
+    <p class="lead">Ikwe tests your system, scores it in depth, and watches it over time — building the documented record you can stand behind.</p>
 
     <div class="steps-stack">
       <div class="step-row">
@@ -1008,7 +1070,7 @@
         <div class="step-content">
           <span class="step-tag pre">Before launch</span>
           <h3>The safety gate</h3>
-          <p>Pass or fail across 79 real vulnerable scenarios. Does this system introduce harm? The first and most critical question before anything goes live.</p>
+          <p>79 real scenarios. A clear pass or fail. The first and most important question before anything goes live.</p>
         </div>
       </div>
       <div class="step-row">
@@ -1016,7 +1078,7 @@
         <div class="step-content">
           <span class="step-tag deep">Deep evaluation</span>
           <h3>The behavioral score</h3>
-          <p>Exactly where it fails, how badly, and what to fix. Eight behavioral dimensions scored across the full arc of a conversation — not just whether it said something bad, but whether it's handling people the right way when they need it most.</p>
+          <p>Where exactly it fails, how badly, and what to fix. Eight dimensions scored across the full arc of a conversation — not just whether it said something wrong, but how it handled the person.</p>
         </div>
       </div>
       <div class="step-row">
@@ -1024,18 +1086,45 @@
         <div class="step-content">
           <span class="step-tag live">Continuous</span>
           <h3>Live monitoring</h3>
-          <p>AI changes constantly. Every model update shifts how it behaves with people. Ikwe watches in real time — catching drift before it compounds into something you can't take back. A versioned, defensible safety record that builds over time.</p>
+          <p>AI changes constantly. Every update shifts behavior. Ikwe watches in real time, catching drift before it compounds — and builds a versioned safety record over time.</p>
         </div>
       </div>
     </div>
 
-    <p style="font-size:.88rem;color:var(--text-muted);margin-top:1.75rem;text-align:center;line-height:2;">
-      Signal Scan <strong style="color:var(--navy)">$500</strong> · 79 scenarios &nbsp;·&nbsp;
-      Deep Scan <strong style="color:var(--navy)">$1,000</strong> · 300+ scenarios &nbsp;·&nbsp;
-      Full Report <strong style="color:var(--navy)">$2,500</strong> board-ready &nbsp;·&nbsp;
-      Report + Remediation <strong style="color:var(--navy)">scope priced</strong>
-      &nbsp;&nbsp;<a href="/report" style="color:var(--teal);font-weight:500;">Request a Report →</a>
+    <div class="pricing-chips">
+      <div class="pricing-chip">
+        <span class="pc-name">Signal Scan</span>
+        <span class="pc-price">$500</span>
+        <span class="pc-detail">79 scenarios</span>
+      </div>
+      <div class="pricing-chip">
+        <span class="pc-name">Deep Scan</span>
+        <span class="pc-price">$1,000</span>
+        <span class="pc-detail">300+ scenarios</span>
+      </div>
+      <div class="pricing-chip">
+        <span class="pc-name">Full Report</span>
+        <span class="pc-price">$2,500</span>
+        <span class="pc-detail">Board-ready</span>
+      </div>
+      <div class="pricing-chip pricing-chip-ghost">
+        <span class="pc-name">Remediation</span>
+        <span class="pc-price">Scoped</span>
+        <span class="pc-detail">Fix + verify</span>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:1rem;font-size:.85rem;">
+      <a href="/report" style="color:var(--teal);font-weight:500;">See all options and pricing →</a>
     </p>
+
+    <div class="page-callout callout-lav">
+      <div class="pc-text">
+        <div class="pc-eyebrow">How to Work With Us</div>
+        <strong>What actually happens at each stage — in plain terms.</strong>
+        <span>Process, timelines, what you get, and what to expect from first contact to certified safe.</span>
+      </div>
+      <a href="/how-it-works" class="pc-link">See the full process →</a>
+    </div>
   </div>
 </section><!-- / URGENCY ── -->
 <section id="drift">
@@ -1048,17 +1137,17 @@
       <div class="drift-zone dz-1">
         <div class="dz-icon">✓</div>
         <h3>You audited it</h3>
-        <p>Passed. Looked fine. Behavioral scores were within safe range at time of testing. You had documentation.</p>
+        <p>Passed. Looked fine. Behavioral scores were within range. You had the documentation.</p>
       </div>
       <div class="drift-zone dz-2">
         <div class="dz-icon">⚠</div>
         <h3>The model updated</h3>
-        <p>Then again. And again. Behavioral patterns shifted. Nobody re-tested. Drift accumulated silently against a system that no longer matched your last audit.</p>
+        <p>Then again. And again. Behavioral patterns shifted. No one re-tested. Your documentation no longer describes the system you actually have.</p>
       </div>
       <div class="drift-zone dz-3">
         <div class="dz-icon">!</div>
-        <h3>Someone got hurt</h3>
-        <p>The failure traces back to a system that passed its last audit. The audit was right. The model just changed. Now you're explaining that to a lawyer.</p>
+        <h3>The record is out of date</h3>
+        <p>The audit was accurate. The model changed. The safety record didn't. What you have on file no longer reflects what your system is doing.</p>
       </div>
     </div>
 
@@ -1076,7 +1165,7 @@
   <div class="container reveal">
     <span class="eyebrow">Research foundation</span>
     <h2>Built on data.<br>Not assumptions.</h2>
-    <p class="lead">Three published studies. Timestamped. Open. The benchmark predates the company — and the numbers don't let the industry off the hook.</p>
+    <p class="lead">Three published studies. Timestamped. Open. The benchmark predates the company — and the numbers are what they are.</p>
 
     <div class="stat-grid">
       <div class="stat-card">
@@ -1129,7 +1218,7 @@
   <div class="container reveal">
     <span class="eyebrow">The EQ Safety Benchmark</span>
     <h2>One benchmark.<br><em>Designed around how harm actually happens.</em></h2>
-    <p class="lead">Each dimension scores a specific behavior — not a model output, not a neutral test prompt. How your system handles a person in distress. Hover any card to see the failure pattern.</p>
+    <p class="lead">Each dimension scores a specific behavior — not a model output, not a neutral test prompt. How your system actually handles a person in a difficult moment.</p>
 
     <div class="dims-grid">
       <div class="dim-card">
@@ -1187,7 +1276,7 @@
       </div>
       <div class="aud-card">
         <h3>Enterprise</h3>
-        <p>Your AI is deployed in HR, customer service, employee channels — places where the person on the other end is already stressed. Ikwe gives you the behavioral safety record procurement, counsel, and your board will ask for.</p>
+        <p>Your AI is deployed in HR, customer service, and employee channels — places where people are already under pressure. Ikwe gives you the behavioral safety record your procurement team, counsel, and board will ask for.</p>
       </div>
       <div class="aud-card">
         <h3>Health &amp; Wellness</h3>
@@ -1199,12 +1288,21 @@
       </div>
       <div class="aud-card">
         <h3>Companionship &amp; Consumer AI</h3>
-        <p>Your users form real attachment to your AI over time. That's your product — and your liability. Ikwe measures the behavioral trajectory across the relationship, not just the safety of any single response.</p>
+        <p>Your users form real attachment over time. That's your product working. Ikwe measures the behavioral trajectory across the whole relationship — not just any single response.</p>
       </div>
     </div>
 
 
     <p class="lead" style="margin-top:1rem;font-size:.9rem;">You cannot claim behavioral safety. You have to prove it. <a href="/report" style="color:var(--teal);font-weight:500;">Start with a Signal Scan →</a></p>
+
+    <div class="page-callout callout-teal">
+      <div class="pc-text">
+        <div class="pc-eyebrow">Case Study</div>
+        <strong>See what the full sequence looks like in practice.</strong>
+        <span>A mental health AI platform — from 38% crisis routing failure to independent certification in 14 weeks.</span>
+      </div>
+      <a href="/case-study" class="pc-link">Read the case study →</a>
+    </div>
   </div>
 </section>
 
