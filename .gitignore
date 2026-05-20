@@ -31,12 +31,37 @@ nETLify/
 nEtlify.toml
 netlify.toml
 
-# Internal docs — never commit to public repo
+# ── INTERNAL DOCS — NEVER COMMIT TO PUBLIC REPO ──────────────
+# Strategy, pitch, and investor materials
 *.xlsx
 *.pptx
 *.docx
+*.key
 archive/
 dist/
 
+# Pitch decks — internal versions only
+ikwe_pitch_deck_v*.html
+ikwe_investor_pitch_v*.html
+ikwe_investor_deck*.html
+ikwe_pitch_A*.html
+ikwe_pitch_mentor*.html
+ikwe_pitch_investor*.html
+ikwe_deck_*.html
+CANONICAL_*.html
+CANONICAL_*.pptx
+CANONICAL_*.pdf
+CANONICAL_*.docx
+
+# Strategy and internal docs
+Ikwe_Strategic_Integration_Brief*.docx
+Ikwe_Strategy_Map*.html
+Ikwe_GTM_Brief*.docx
+Ikwe_IP_Brief*.docx
+Ikwe_Pitch_Critique*.docx
+
 # Deploy artifacts
 deploy-*.zip
+ikwedecks.zip
+v3pitcj.zip
+7.zip
