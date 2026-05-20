@@ -423,25 +423,70 @@ textarea { resize: vertical; min-height: 110px; line-height: 1.55; }
 /* ── FAQ SECTION (light paper — public reassurance) ── */
 .faq-section {
   background: var(--paper);
-  padding: 4.5rem 2rem;
+  padding: 4rem 2rem 3rem;
   border-bottom: 1px solid var(--line);
 }
 .faq-inner { max-width: 720px; margin: 0 auto; }
 .faq-heading {
   font-family: 'Fraunces', serif;
-  font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 400;
-  color: var(--ink); margin-bottom: 2.5rem; letter-spacing: -0.02em;
+  font-size: clamp(1.4rem, 3.5vw, 2rem); font-weight: 400;
+  color: var(--ink); margin-bottom: 2rem; letter-spacing: -0.02em;
 }
 .faq-item {
-  padding: 1.5rem 0;
   border-top: 1px solid var(--line);
 }
 .faq-item:last-child { border-bottom: 1px solid var(--line); }
 .faq-item h3 {
-  font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500;
-  color: var(--ink); margin-bottom: .55rem; letter-spacing: -0.01em;
+  font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 500;
+  color: var(--ink); letter-spacing: -0.01em;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 1rem; padding: 1.1rem 0; cursor: pointer; user-select: none;
+  transition: color .15s;
 }
-.faq-item p { font-size: .92rem; color: var(--ink-soft); line-height: 1.75; }
+.faq-item h3:hover { color: var(--teal2); }
+.faq-toggle {
+  flex-shrink: 0; width: 1.4rem; height: 1.4rem; border-radius: 50%;
+  border: 1px solid var(--line); background: transparent;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .85rem; color: var(--ink-faint); transition: all .2s;
+}
+.faq-item.open .faq-toggle { background: var(--teal2); border-color: var(--teal2); color: var(--white); transform: rotate(45deg); }
+.faq-item p {
+  font-size: .92rem; color: var(--ink-soft); line-height: 1.75;
+  max-height: 0; overflow: hidden; margin: 0;
+  transition: max-height .28s ease, padding .2s ease;
+}
+.faq-item.open p { max-height: 300px; padding-bottom: 1.1rem; }
+
+/* ── CONTACT CTA (dark navy — bottom of page) ── */
+.contact-cta {
+  background: var(--navy);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.contact-cta-inner { max-width: 580px; margin: 0 auto; }
+.contact-cta .eyebrow { color: var(--teal2); margin-bottom: 1rem; }
+.contact-cta h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 400;
+  color: var(--white); letter-spacing: -0.02em; margin-bottom: .75rem;
+}
+.contact-cta p { font-size: .93rem; color: rgba(255,255,255,.5); line-height: 1.75; margin-bottom: 1.75rem; }
+.contact-cta-actions { display: flex; flex-direction: column; align-items: center; gap: .65rem; }
+.contact-email-btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--coral); color: var(--navy);
+  font-family: 'Manrope', sans-serif; font-size: .9rem; font-weight: 700;
+  padding: .8rem 2rem; border-radius: 100px; text-decoration: none;
+  transition: opacity .15s, transform .15s;
+}
+.contact-email-btn:hover { opacity: .9; transform: translateY(-1px); }
+.contact-secondary {
+  font-size: .78rem; color: rgba(255,255,255,.3);
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: center;
+}
+.contact-secondary a { color: rgba(255,255,255,.45); text-decoration: none; transition: color .15s; }
+.contact-secondary a:hover { color: var(--coral); }
 
 /* ── FOOTER CTA (dark navy — final push) ── */
 .footer-cta {
@@ -644,13 +689,6 @@ footer {
 </section>
 
 
-<!-- ── INSTITUTIONAL CALLOUT (warm paper — between public and transaction) ── -->
-<div class="institutional">
-  <div class="institutional-inner">
-    <div class="inst-title">Auditing one system isn't enough?</div>
-    <div class="inst-body">The tiers above audit one AI system at a time. If you need to score a portfolio of insureds, evaluate multiple vendors across your health system, or license EQSB for internal procurement — <a href="https://ikwe.ai/contact">talk to us directly</a>. Institutional licenses start at $18,000/yr and include portfolio scanning, white-label reporting, and monitoring infrastructure.</div>
-  </div>
-</div>
 
 
 <!-- ── FORM SECTION (dark navy — client transaction zone) ── -->
@@ -789,38 +827,57 @@ footer {
   <div class="faq-inner">
     <h2 class="faq-heading">A few things you might be wondering.</h2>
 
-    <div class="faq-item">
-      <h3>Do you need access to my API?</h3>
+    <div class="faq-item open">
+      <h3 onclick="toggleFaq(this)">Do you need access to my API? <span class="faq-toggle">+</span></h3>
       <p>Not necessarily. We can audit from a staging URL, a system prompt export, or by testing as a regular user. You tell us what's easiest after order.</p>
     </div>
 
     <div class="faq-item">
-      <h3>Is this confidential?</h3>
+      <h3 onclick="toggleFaq(this)">Is this confidential? <span class="faq-toggle">+</span></h3>
       <p>Yes. Your data and your system details are confidential by default. The methodology is proprietary; your scores stay yours. We never use your audit content in marketing without explicit written permission.</p>
     </div>
 
     <div class="faq-item">
-      <h3>Can the report be shared with insurers or boards?</h3>
+      <h3 onclick="toggleFaq(this)">Can the report be shared with insurers or boards? <span class="faq-toggle">+</span></h3>
       <p>Yes. Every Full Report is structured for exactly that purpose — board governance, insurance underwriting, regulatory inquiry, procurement disclosure. Signal Scans and Deep Scans can be shared at your discretion.</p>
     </div>
 
     <div class="faq-item">
-      <h3>What if my score is low?</h3>
+      <h3 onclick="toggleFaq(this)">What if my score is low? <span class="faq-toggle">+</span></h3>
       <p>Then you have a roadmap. Low scores are useful — they tell you where to invest. We don't gatekeep based on results, and we don't publish your score without permission. Most clients improve significantly between audits.</p>
     </div>
 
     <div class="faq-item">
-      <h3>How does Ikwe stay independent?</h3>
+      <h3 onclick="toggleFaq(this)">How does Ikwe stay independent? <span class="faq-toggle">+</span></h3>
       <p>We don't build AI systems. We don't sell tooling or development services. We measure. That's the entire business. Independence is the product.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 onclick="toggleFaq(this)">What about portfolio scans or institutional licensing? <span class="faq-toggle">+</span></h3>
+      <p>The tiers above cover single-system audits. If you need to score a portfolio of insureds, evaluate multiple vendors across your health system, or license EQSB for internal procurement — <a href="https://ikwe.ai/contact" style="color:var(--teal2)">talk to us directly</a>. Institutional licenses start at $18,000/yr and include portfolio scanning, white-label reporting, and monitoring infrastructure.</p>
     </div>
   </div>
 </section>
 
 
-<!-- ── FOOTER CTA (dark navy) ── -->
-<div class="footer-cta">
-  <p>Most teams start with a $500 Signal Scan. Some carriers and enterprise buyers go straight to Full Report. Either way — start where you are. The standard begins the moment you submit.</p>
-</div>
+<!-- ── CONTACT CTA (dark navy — replaces old footer-cta) ── -->
+<section class="contact-cta">
+  <div class="contact-cta-inner">
+    <div class="eyebrow">Not sure where to start?</div>
+    <h2>Talk to us directly.</h2>
+    <p>Complex system, multi-product portfolio, or you just want to walk through your options before committing — we're happy to help. No sales deck. No call quota.</p>
+    <div class="contact-cta-actions">
+      <a href="mailto:stephanie@ikwe.ai" class="contact-email-btn">stephanie@ikwe.ai →</a>
+      <div class="contact-secondary">
+        <a href="/contact">Use the contact form</a>
+        <span>·</span>
+        <a href="/ikwe-sample-report-public.html">View a sample report</a>
+        <span>·</span>
+        <a href="https://research.ikwe.ai" target="_blank">research.ikwe.ai</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- ── FOOTER ── -->
@@ -868,6 +925,13 @@ function scrollToTiers() {
   document.getElementById('tier-section').scrollIntoView({ behavior:'smooth', block:'start' });
 }
 
+// ── FAQ ACCORDION ──────────────────────────────────────────────
+function toggleFaq(h3el) {
+  const item = h3el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  item.classList.toggle('open', !isOpen);
+}
+
 // ── VALIDATION ─────────────────────────────────────────────────
 function setError(id, show) {
   const fg = document.getElementById('fg-' + id) || document.getElementById(id)?.closest('.field-group');
@@ -909,10 +973,15 @@ function validate() {
 }
 
 // ── STRIPE PAYMENT LINKS ───────────────────────────────────────
+// NOTE: Update Stripe product names in dashboard to match:
+//   signal → "Signal Scan — 79 scenarios · $500"
+//   pilot  → "Deep Scan — 300+ scenarios · $1,000"
+//   full   → "Full Report — Board-ready · $2,500"
 const STRIPE_LINKS = {
   signal: 'https://buy.stripe.com/eVq3cwfrubhv8Fo8eJ9sk09',
   pilot:  'https://buy.stripe.com/aFa00kenq5Xb7Bk66B9sk0a',
   full:   'https://buy.stripe.com/fZu9AUenqgBP7Bk66B9sk0b',
+  // remediation → no Stripe link; routes to contact instead
 };
 
 // ── SUBMIT ─────────────────────────────────────────────────────
