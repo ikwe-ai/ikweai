@@ -6,6 +6,16 @@
 <title>Sample Behavioral Safety Report — EQSB v2.1 | Ikwe.ai</title>
 <meta name="description" content="See exactly what an Ikwe.ai EQ Safety Benchmark report delivers — real methodology, real scoring, real findings.">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LV7G292YD8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LV7G292YD8', { send_page_view: true });
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -284,8 +294,8 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
     <div class="cta-title">Ready to see your system's score?</div>
     <div class="cta-sub">Every organization deploying AI in human-facing contexts needs to know where it stands. This is what that answer looks like.</div>
     <div class="cta-btns">
-      <a href="https://ikwe.ai/#close" class="btn-primary">Request an audit</a>
-      <a href="https://ikwe.ai" class="btn-secondary">Learn more</a>
+      <a href="/report" class="btn-primary" onclick="gtag('event','sample_report_cta_click',{event_category:'CTA',event_label:'Request a Report'})">Request a Report →</a>
+      <a href="/" class="btn-secondary">Back to ikwe.ai</a>
     </div>
   </div>
 

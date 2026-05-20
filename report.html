@@ -871,7 +871,7 @@ footer {
       </div>
 
       <!-- Deep Scan -->
-      <div class="tier-card featured" id="tier-pilot" onclick="selectTier('pilot')">
+      <div class="tier-card featured" id="tier-deep" onclick="selectTier('deep')">
         <div class="featured-badge">Most popular</div>
         <div class="selected-check">✓</div>
         <div class="tier-eyebrow">Deep Scan</div>
@@ -889,7 +889,7 @@ footer {
           <li>Debrief conversation with findings walkthrough</li>
         </ul>
         <div class="tier-best-for"><strong>Best for:</strong> Platforms entering enterprise procurement, insurance portfolio scans, pre-Series-A safety records, SF2417 third-party compliance documentation</div>
-        <button class="select-btn" onclick="selectTier('pilot');event.stopPropagation()">View details →</button>
+        <button class="select-btn" onclick="selectTier('deep');event.stopPropagation()">View details →</button>
       </div>
 
       <!-- Full Report -->
@@ -1010,7 +1010,7 @@ footer {
           <select id="tier-select" name="tier-display">
             <option value="">— Choose a tier —</option>
             <option value="signal">Signal Scan — $500 · 79 scenarios</option>
-            <option value="pilot">Deep Scan — $1,000 · 300+ scenarios</option>
+            <option value="deep">Deep Scan — $1,000 · 300+ scenarios</option>
             <option value="full">Full Report — $2,500 · board-ready</option>
             <option value="remediation">Report + Remediation — Custom scope</option>
           </select>
@@ -1199,7 +1199,7 @@ footer {
 // ── STATE ──────────────────────────────────────────────────────
 const TIERS = {
   signal:      { name:'Signal Scan',          price:'$500',   note:'Same-week turnaround · 79 scenarios scored' },
-  pilot:       { name:'Deep Scan',            price:'$1,000', note:'In your hands within the week · 300+ scenarios · full benchmark' },
+  deep:        { name:'Deep Scan',            price:'$1,000', note:'In your hands within the week · 300+ scenarios · full benchmark' },
   full:        { name:'Full Report',          price:'$2,500', note:'Board-ready in two weeks · complete documentation package' },
   remediation: { name:'Report + Remediation', price:'Custom', note:'Scoped to your system · includes hands-on remediation + re-score' },
 };
@@ -1233,7 +1233,7 @@ const PRODUCT_DETAIL = {
     sample: 'See what a Signal Scan report looks like → <a href="/ikwe-sample-report-public.html" target="_blank">View sample report</a>',
     cta: 'Start Signal Scan — $500',
   },
-  pilot: {
+  deep: {
     eyebrow: 'Deep Scan · Most popular',
     title: 'Deep Scan',
     subtitle: 'The full EQSB benchmark — 300+ scenarios, 8-dimension composite score, and a peer comparison against leading models. Everything you need for enterprise procurement or pre-Series A safety documentation.',
@@ -1475,11 +1475,11 @@ function validate() {
 // ── PAYMENT LINKS ──────────────────────────────────────────────
 // NOTE: Update payment product names in dashboard to match:
 //   signal → "Signal Scan — 79 scenarios · $500"
-//   pilot  → "Deep Scan — 300+ scenarios · $1,000"
+//   deep   → "Deep Scan — 300+ scenarios · $1,000"
 //   full   → "Full Report — Board-ready · $2,500"
 const STRIPE_LINKS = {
   signal: 'https://buy.stripe.com/eVq3cwfrubhv8Fo8eJ9sk09',
-  pilot:  'https://buy.stripe.com/aFa00kenq5Xb7Bk66B9sk0a',
+  deep:   'https://buy.stripe.com/aFa00kenq5Xb7Bk66B9sk0a',
   full:   'https://buy.stripe.com/fZu9AUenqgBP7Bk66B9sk0b',
   // remediation → no Stripe link; routes to contact instead
 };
