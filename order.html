@@ -7,7 +7,7 @@
 <meta name="description" content="Independent behavioral safety audits for AI systems. No sales call. No procurement gauntlet. Choose a tier, submit your system, pay through Stripe.">
 <meta name="robots" content="index,follow">
 <meta property="og:title" content="Order a Behavioral Safety Audit — Ikwe.ai">
-<meta property="og:description" content="Submit your AI system for an EQSB behavioral safety audit. Signal Scan $500 · Pilot Audit $1,500 · Full Report $5,000.">
+<meta property="og:description" content="Submit your AI system for an EQSB behavioral safety audit. Signal Scan $500 · 79 scenarios · Deep Scan $1,000 · 300+ scenarios · Full Report $2,500.">
 <meta property="og:url" content="https://ikwe.ai/order">
 <meta property="og:site_name" content="Ikwe.ai">
 <meta name="theme-color" content="#191A2E">
@@ -476,35 +476,35 @@ footer {
         <div class="tier-price">$500</div>
         <div class="tier-turnaround">Same-week turnaround</div>
         <ul class="tier-features">
-          <li>15 targeted scenarios run against your system</li>
+          <li>79 scenarios scored across the EQSB library</li>
           <li>Safety Gate result — pass or fail</li>
           <li>Top 3 behavioral risk flags identified</li>
           <li>One-page summary report</li>
           <li>Stripe receipt + signed engagement record</li>
         </ul>
-        <div class="tier-best-for"><strong>Best for:</strong> Early-stage teams, pre-launch sanity checks, vendor screening, podcast-driven inbound</div>
+        <div class="tier-best-for"><strong>Best for:</strong> Early-stage teams, pre-launch sanity checks, vendor screening, SF2417 compliance baseline</div>
         <button class="select-btn" onclick="selectTier('signal');event.stopPropagation()">Select Signal Scan</button>
       </div>
 
-      <!-- Pilot Audit -->
+      <!-- Deep Scan -->
       <div class="tier-card featured" id="tier-pilot" onclick="selectTier('pilot')">
         <div class="featured-badge">Most popular</div>
         <div class="selected-check">✓</div>
-        <div class="tier-eyebrow">Pilot Audit</div>
+        <div class="tier-eyebrow">Deep Scan</div>
         <div class="tier-name">Full benchmark</div>
-        <div class="tier-price">$1,500</div>
+        <div class="tier-price">$1,000</div>
         <div class="tier-turnaround">In your hands within the week</div>
         <ul class="tier-features">
-          <li>79 canonical EQSB scenarios — complete library</li>
-          <li>Safety Gate result with violation map</li>
+          <li>300+ scenarios across the complete EQSB library</li>
+          <li>Safety Gate result with full violation map</li>
           <li>8-dimension composite score (0–100)</li>
           <li>Tier classification: Compliant through Prohibited</li>
           <li>Peer benchmark — how you compare to GPT-4o, Claude, others</li>
           <li>Top 5 prioritized remediation actions</li>
           <li>Interactive dashboard for technical teams</li>
         </ul>
-        <div class="tier-best-for"><strong>Best for:</strong> Platforms entering enterprise procurement, insurance portfolio scans, pre-Series-A safety records, research partnership validation</div>
-        <button class="select-btn" onclick="selectTier('pilot');event.stopPropagation()">Select Pilot Audit</button>
+        <div class="tier-best-for"><strong>Best for:</strong> Platforms entering enterprise procurement, insurance portfolio scans, pre-Series-A safety records, SF2417 third-party compliance documentation</div>
+        <button class="select-btn" onclick="selectTier('pilot');event.stopPropagation()">Select Deep Scan</button>
       </div>
 
       <!-- Full Report -->
@@ -512,19 +512,36 @@ footer {
         <div class="selected-check">✓</div>
         <div class="tier-eyebrow">Full Report</div>
         <div class="tier-name">Board-ready</div>
-        <div class="tier-price">$5,000</div>
+        <div class="tier-price">$2,500</div>
         <div class="tier-turnaround">Board-ready in two weeks</div>
         <ul class="tier-features">
-          <li>Everything in Pilot Audit</li>
+          <li>Everything in Deep Scan</li>
           <li>Full violation map — every Safety Gate trigger explained with evidence</li>
           <li>Dimension-level failure analysis with conversation excerpts</li>
-          <li>Complete remediation roadmap (prioritized, timelined, ownership-assigned)</li>
-          <li>Legally defensible documentation</li>
+          <li>Legally defensible documentation package</li>
           <li>Executive briefing call with Ikwe.ai founder</li>
           <li>30 days of basic monitoring included</li>
         </ul>
         <div class="tier-best-for"><strong>Best for:</strong> Insurance underwriting submissions, enterprise procurement deliverables, board governance documentation, regulatory inquiry response</div>
         <button class="select-btn" onclick="selectTier('full');event.stopPropagation()">Select Full Report</button>
+      </div>
+
+      <!-- Report + Remediation -->
+      <div class="tier-card" id="tier-remediation" onclick="selectTier('remediation')">
+        <div class="selected-check">✓</div>
+        <div class="tier-eyebrow">Report + Remediation</div>
+        <div class="tier-name">Scope priced</div>
+        <div class="tier-price" style="font-size:1.4rem">Custom</div>
+        <div class="tier-turnaround">Scoped to your system and timeline</div>
+        <ul class="tier-features">
+          <li>Everything in Full Report</li>
+          <li>Hands-on remediation — we work with your team to fix what we find</li>
+          <li>Complete remediation roadmap (prioritized, timelined, ownership-assigned)</li>
+          <li>Re-score after remediation to confirm improvement</li>
+          <li>Ongoing monitoring option available</li>
+        </ul>
+        <div class="tier-best-for"><strong>Best for:</strong> Systems with active violations that need remediation support, enterprise teams without internal AI safety capacity, regulatory remediation requirements</div>
+        <button class="select-btn" onclick="selectTier('remediation');event.stopPropagation()">Request Scope</button>
       </div>
 
     </div>
@@ -568,9 +585,10 @@ footer {
           <label for="tier-select">Selected tier <span class="req">*</span></label>
           <select id="tier-select" name="tier-display">
             <option value="">— Choose a tier above —</option>
-            <option value="signal">Signal Scan — $500</option>
-            <option value="pilot">Pilot Audit — $1,500</option>
-            <option value="full">Full Behavior Report — $5,000</option>
+            <option value="signal">Signal Scan — $500 · 79 scenarios</option>
+            <option value="pilot">Deep Scan — $1,000 · 300+ scenarios</option>
+            <option value="full">Full Report — $2,500 · board-ready</option>
+            <option value="remediation">Report + Remediation — Custom scope</option>
           </select>
           <span class="error-msg">Please select a tier.</span>
         </div>
@@ -688,7 +706,7 @@ footer {
 
     <div class="faq-item">
       <h3>Can the report be shared with insurers or boards?</h3>
-      <p>Yes. Every Full Report is structured for exactly that purpose — board governance, insurance underwriting, regulatory inquiry, procurement disclosure. Signal Scans and Pilot Audits can be shared at your discretion.</p>
+      <p>Yes. Every Full Report is structured for exactly that purpose — board governance, insurance underwriting, regulatory inquiry, procurement disclosure. Signal Scans and Deep Scans can be shared at your discretion.</p>
     </div>
 
     <div class="faq-item">
@@ -726,9 +744,10 @@ footer {
 <script>
 // ── STATE ──────────────────────────────────────────────────────
 const TIERS = {
-  signal: { name:'Signal Scan', price:'$500', note:'Same-week turnaround · 15 scenarios' },
-  pilot:  { name:'Pilot Audit', price:'$1,500', note:'In your hands within the week · 79 scenarios · full benchmark' },
-  full:   { name:'Full Report', price:'$5,000', note:'Board-ready in two weeks · complete report + remediation roadmap' },
+  signal:      { name:'Signal Scan',          price:'$500',   note:'Same-week turnaround · 79 scenarios scored' },
+  pilot:       { name:'Deep Scan',            price:'$1,000', note:'In your hands within the week · 300+ scenarios · full benchmark' },
+  full:        { name:'Full Report',          price:'$2,500', note:'Board-ready in two weeks · complete documentation package' },
+  remediation: { name:'Report + Remediation', price:'Custom', note:'Scoped to your system · includes hands-on remediation + re-score' },
 };
 let selectedTier = null;
 
