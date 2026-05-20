@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Work With Us — Ikwe.ai</title>
+  <meta name="description" content="How Ikwe.ai works: from your first conversation to a certified behavioral safety record. Signal Scan, Deep Scan, Full Report, and Remediation — what each stage delivers and what to expect." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#191A2E" />
+  <link rel="canonical" href="https://ikwe.ai/how-it-works" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="How to Work With Us — Ikwe.ai" />
+  <meta property="og:description" content="From first contact to certified safe. What each stage of the Ikwe.ai audit process delivers and what to expect." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ikwe.ai" />
+  <meta property="og:url" content="https://ikwe.ai/how-it-works" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LV7G292YD8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LV7G292YD8', { send_page_view: true });
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy:   #191A2E;
+      --coral:  #F7A192;
+      --lav:    #B894F6;
+      --cream:  #F6D993;
+      --teal:   #0F6E56;
+      --teal-light: #E1F5EE;
+      --teal-mid:   #5DCAA5;
+      --red-soft:   #FCEBEB;
+      --red-mid:    #E24B4A;
+      --amber-soft: #FAEEDA;
+      --amber-dark: #633806;
+      --green-soft: #EAF3DE;
+      --green-dark: #27500A;
+      --gray-soft:  #F7F6F2;
+      --gray-mid:   #888780;
+      --white: #FFFFFF;
+      --text:  #1A1A2E;
+      --text-muted: #5a5a6e;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px; line-height: 1.7;
+      color: var(--text); background: var(--white);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: var(--navy); padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    .nav-brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
+    .nav-logo-circle {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: conic-gradient(#1D1F35 0deg 90deg, var(--coral) 90deg 180deg, var(--lav) 180deg 270deg, var(--cream) 270deg 360deg);
+      border: 1.5px solid rgba(247,161,146,0.35); flex-shrink: 0;
+    }
+    .nav-brand-name { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--white); letter-spacing: .02em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: .875rem; transition: color .2s; }
+    .nav-links a:hover { color: var(--coral); }
+    .nav-cta { background: var(--coral); color: var(--navy); font-weight: 500; font-size: .875rem; padding: .5rem 1.25rem; border-radius: 6px; text-decoration: none; transition: opacity .2s; }
+    .nav-cta:hover { opacity: .88; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; background: transparent; border: none; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: all .25s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile-menu { display: none; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; } .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-mobile-menu.open {
+        display: flex; position: fixed; top: 60px; left: 0; right: 0;
+        background: var(--navy); padding: 1.5rem 2rem 2rem;
+        flex-direction: column; z-index: 999;
+        border-top: 1px solid rgba(255,255,255,.1); box-shadow: 0 20px 40px rgba(0,0,0,.5);
+      }
+      .nav-mobile-menu a { color: rgba(255,255,255,.75); text-decoration: none; font-size: 1rem; padding: .9rem 0; border-bottom: 1px solid rgba(255,255,255,.07); transition: color .2s; }
+      .nav-mobile-menu a:last-child { border-bottom: none; }
+      .nav-mobile-menu a:hover { color: var(--coral); }
+      .nav-mobile-menu .mob-cta { margin-top: 1.25rem; background: var(--coral); color: var(--navy); font-weight: 500; padding: .75rem 1.5rem; border-radius: 8px; text-align: center; border-bottom: none !important; }
+    }
+
+    /* ── LAYOUT ── */
+    section { padding: 4rem 2rem; }
+    .container { max-width: 960px; margin: 0 auto; }
+    .container-narrow { max-width: 720px; margin: 0 auto; }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3 { font-family: 'DM Serif Display', serif; line-height: 1.2; }
+    h1 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); }
+    h3 { font-size: 1.15rem; }
+    .eyebrow { display: inline-block; font-size: .75rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 1rem; color: var(--teal-mid); }
+    .lead { font-size: 1.05rem; color: var(--text-muted); line-height: 1.75; margin-top: .75rem; }
+
+    /* ── BUTTONS ── */
+    .btn { display: inline-block; padding: .75rem 1.75rem; border-radius: 8px; font-weight: 500; font-size: .95rem; text-decoration: none; cursor: pointer; border: none; transition: opacity .2s, transform .15s; }
+    .btn:hover { opacity: .88; transform: translateY(-1px); }
+    .btn-primary { background: var(--coral); color: var(--navy); }
+    .btn-secondary { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.4); }
+    .btn-secondary:hover { border-color: var(--coral); color: var(--coral); }
+    .btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+    .cta-group { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+
+    /* ── DIVIDER ── */
+    .divider { display: block; border: none; border-top: 1px solid #eeeef2; background: transparent; margin: 0; }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb { font-size: .82rem; color: rgba(255,255,255,.4); margin-bottom: 1.25rem; }
+    .breadcrumb a { color: rgba(255,255,255,.4); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--coral); }
+    .breadcrumb span { margin: 0 .4rem; }
+
+    /* ── HERO ── */
+    #hiw-hero {
+      background: var(--navy);
+      padding: 5rem 2rem 4.5rem;
+    }
+    #hiw-hero .container-narrow { text-align: center; }
+    #hiw-hero h1 { color: var(--white); margin-bottom: 1rem; }
+    #hiw-hero h1 em { font-style: italic; color: var(--coral); }
+    #hiw-hero .lead { color: rgba(255,255,255,.7); max-width: 580px; margin: 0 auto; }
+    #hiw-hero .cta-group { justify-content: center; }
+
+    .promise-bar {
+      display: flex; gap: 2.5rem; justify-content: center; flex-wrap: wrap;
+      margin-top: 3rem; padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .promise-item {
+      display: flex; align-items: center; gap: .6rem;
+      font-size: .82rem; color: rgba(255,255,255,.5);
+    }
+    .promise-icon { font-size: 1rem; }
+
+    /* ── PRINCIPLES ── */
+    #hiw-principles { background: var(--gray-soft); }
+    .principles-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem;
+    }
+    @media (max-width: 680px) { .principles-grid { grid-template-columns: 1fr; } }
+    .principle-card {
+      background: var(--white); border-radius: 12px; padding: 1.75rem 1.5rem;
+      border-top: 3px solid var(--teal-mid);
+    }
+    .principle-num {
+      font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--coral);
+      line-height: 1; margin-bottom: .5rem;
+    }
+    .principle-card h3 { margin-bottom: .5rem; }
+    .principle-card p { font-size: .9rem; color: var(--text-muted); line-height: 1.65; }
+
+    /* ── PROCESS STEPS ── */
+    #hiw-process { background: var(--white); }
+    .process-steps { margin-top: 3rem; }
+
+    .process-step {
+      display: grid; grid-template-columns: 320px 1fr; gap: 3rem; align-items: start;
+      margin-bottom: 4rem; padding-bottom: 4rem;
+      border-bottom: 1px solid #eeeef2;
+    }
+    .process-step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    @media (max-width: 760px) {
+      .process-step { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+
+    .ps-left { position: relative; }
+    .ps-card {
+      border-radius: 16px; padding: 2rem;
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    .ps-card.signal { background: var(--amber-soft); }
+    .ps-card.deep   { background: #EEE8FC; }
+    .ps-card.full   { background: var(--teal-light); }
+    .ps-card.remed  { background: var(--green-soft); }
+    .ps-stage {
+      font-size: .7rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+      border-radius: 20px; padding: .2rem .75rem; display: inline-block; width: fit-content;
+    }
+    .ps-card.signal .ps-stage { background: rgba(99,56,6,.12); color: var(--amber-dark); }
+    .ps-card.deep   .ps-stage { background: rgba(91,47,176,.12); color: #5B2FB0; }
+    .ps-card.full   .ps-stage { background: rgba(15,110,86,.12); color: var(--teal); }
+    .ps-card.remed  .ps-stage { background: rgba(39,80,10,.12); color: var(--green-dark); }
+    .ps-name {
+      font-family: 'DM Serif Display', serif; font-size: 1.75rem; line-height: 1.1;
+    }
+    .ps-card.signal .ps-name { color: var(--amber-dark); }
+    .ps-card.deep   .ps-name { color: #5B2FB0; }
+    .ps-card.full   .ps-name { color: var(--teal); }
+    .ps-card.remed  .ps-name { color: var(--green-dark); }
+    .ps-price {
+      font-size: 1.5rem; font-weight: 500; line-height: 1;
+    }
+    .ps-card.signal .ps-price { color: var(--amber-dark); }
+    .ps-card.deep   .ps-price { color: #5B2FB0; }
+    .ps-card.full   .ps-price { color: var(--teal); }
+    .ps-card.remed  .ps-price { color: var(--green-dark); }
+    .ps-price-note { font-size: .78rem; opacity: .65; margin-top: .15rem; }
+    .ps-delivery {
+      font-size: .8rem; display: flex; align-items: center; gap: .4rem;
+    }
+    .ps-card.signal .ps-delivery { color: var(--amber-dark); }
+    .ps-card.deep   .ps-delivery { color: #5B2FB0; }
+    .ps-card.full   .ps-delivery { color: var(--teal); }
+    .ps-card.remed  .ps-delivery { color: var(--green-dark); }
+
+    .ps-right h3 { margin-bottom: .75rem; }
+    .ps-right p { font-size: .95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; }
+    .ps-right p:last-child { margin-bottom: 0; }
+
+    .ps-delivers {
+      margin-top: 1.25rem; background: var(--gray-soft); border-radius: 10px; padding: 1.25rem 1.5rem;
+    }
+    .ps-delivers-label {
+      font-size: .72rem; font-weight: 500; letter-spacing: .09em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: .65rem;
+    }
+    .ps-delivers ul { padding-left: 1.1rem; }
+    .ps-delivers li { font-size: .875rem; color: var(--text); line-height: 1.65; margin-bottom: .2rem; }
+
+    .ps-ideal {
+      margin-top: 1rem; display: flex; align-items: flex-start; gap: .6rem;
+      font-size: .82rem; color: var(--teal); background: var(--teal-light);
+      border-radius: 8px; padding: .85rem 1rem;
+    }
+    .ps-ideal-icon { flex-shrink: 0; margin-top: .1rem; }
+
+    /* ── WHAT TO EXPECT ── */
+    #hiw-expect { background: var(--gray-soft); }
+    .expect-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2.5rem;
+    }
+    @media (max-width: 640px) { .expect-grid { grid-template-columns: 1fr; } }
+    .expect-card {
+      background: var(--white); border-radius: 12px; padding: 1.75rem;
+    }
+    .expect-card .ec-icon { font-size: 1.75rem; margin-bottom: .75rem; }
+    .expect-card h3 { margin-bottom: .5rem; font-size: 1rem; }
+    .expect-card p { font-size: .88rem; color: var(--text-muted); line-height: 1.65; }
+
+    /* ── WHO IT'S FOR ── */
+    #hiw-who { background: var(--white); }
+    .who-list {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 2rem;
+    }
+    @media (max-width: 640px) { .who-list { grid-template-columns: 1fr; } }
+    .who-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: var(--gray-soft); border-radius: 10px; padding: 1.25rem 1.5rem;
+    }
+    .who-check {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--teal-light); color: var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem; flex-shrink: 0; margin-top: .15rem; font-weight: 700;
+    }
+    .who-item p { font-size: .9rem; color: var(--text); line-height: 1.6; }
+    .who-item strong { display: block; font-size: .95rem; margin-bottom: .2rem; }
+
+    /* ── FAQ ── */
+    #hiw-faq { background: var(--gray-soft); }
+    .faq-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 0; }
+    .faq-item {
+      border-bottom: 1px solid #e8e8ec; padding: 1.25rem 0;
+    }
+    .faq-item:first-child { border-top: 1px solid #e8e8ec; }
+    .faq-q {
+      font-weight: 500; font-size: .95rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      user-select: none;
+    }
+    .faq-q .faq-arrow { font-size: .7rem; color: var(--teal-mid); transition: transform .2s; flex-shrink: 0; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a { display: none; font-size: .9rem; color: var(--text-muted); line-height: 1.7; padding-top: .75rem; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ── CTA ── */
+    #hiw-cta { background: var(--navy); padding: 5rem 2rem; text-align: center; }
+    #hiw-cta h2 { color: var(--white); margin-bottom: .75rem; }
+    #hiw-cta h2 em { font-style: italic; color: var(--coral); }
+    #hiw-cta .lead { color: rgba(255,255,255,.65); max-width: 520px; margin: 0 auto; }
+    #hiw-cta .cta-group { justify-content: center; }
+    .always-included {
+      margin-top: 1.5rem; font-size: .82rem; color: rgba(255,255,255,.35);
+      display: flex; align-items: center; justify-content: center; gap: .5rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,.4);
+      padding: 1.5rem 2rem; display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: .8rem;
+    }
+    footer a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--coral); }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="/" class="nav-brand">
+    <div class="nav-logo-circle"></div>
+    <span class="nav-brand-name">ikwe.ai</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#moment">The Problem</a></li>
+    <li><a href="/#how">How It Works</a></li>
+    <li><a href="/how-it-works" style="color:var(--coral)">Work With Us</a></li>
+    <li><a href="/case-study">Case Study</a></li>
+    <li><a href="/ikwe-sample-report-public.html">Sample Report</a></li>
+  </ul>
+  <a href="/report" class="nav-cta">Request a Report</a>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile-menu" id="nav-mobile-menu">
+  <a href="/" onclick="closeMobileMenu()">Home</a>
+  <a href="/how-it-works" onclick="closeMobileMenu()">Work With Us</a>
+  <a href="/case-study" onclick="closeMobileMenu()">Case Study</a>
+  <a href="/ikwe-sample-report-public.html" onclick="closeMobileMenu()">Sample Report</a>
+  <a href="mailto:hello@ikwe.ai" onclick="closeMobileMenu()">Get in touch</a>
+  <a href="/report" class="mob-cta" onclick="closeMobileMenu()">Request a Report →</a>
+</div>
+
+
+<!-- ── HERO ── -->
+<section id="hiw-hero">
+  <div class="container-narrow">
+    <div class="breadcrumb"><a href="/">Home</a><span>›</span> How to Work With Us</div>
+    <span class="eyebrow">Process · Pricing · Timelines</span>
+    <h1>From first call to<br><em>certified safe.</em></h1>
+    <p class="lead">Independent behavioral safety testing for AI that works with people in sensitive and high-stakes situations. Here's exactly what happens at each stage, what you get, and what to expect.</p>
+    <div class="cta-group">
+      <a href="/report" class="btn btn-primary">Request a Report →</a>
+      <a href="/case-study" class="btn btn-secondary">See a case study</a>
+    </div>
+    <div class="promise-bar">
+      <div class="promise-item"><span class="promise-icon">📞</span> A call before we run anything</div>
+      <div class="promise-item"><span class="promise-icon">📋</span> Results delivered in writing</div>
+      <div class="promise-item"><span class="promise-icon">🔁</span> A call after results come in</div>
+      <div class="promise-item"><span class="promise-icon">🔒</span> Your system stays private</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+
+<!-- ── PRINCIPLES ── -->
+<section id="hiw-principles">
+  <div class="container">
+    <span class="eyebrow">How we work</span>
+    <h2>Three things that don't change,<br>no matter the engagement.</h2>
+
+    <div class="principles-grid">
+      <div class="principle-card">
+        <div class="principle-num">01</div>
+        <h3>Independent by design.</h3>
+        <p>Ikwe is a third-party. We don't build AI systems, sell software, or have any interest in what your system does beyond measuring it accurately. That independence is the point.</p>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">02</div>
+        <h3>Behavioral, not documented.</h3>
+        <p>We test what your system actually does — not what your system prompt says it should do. Most behavioral failures are invisible in documentation. They show up under pressure in real conversations.</p>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">03</div>
+        <h3>Calls are always included.</h3>
+        <p>Every engagement includes a call before we start — so we understand your system, your context, and your concerns — and a call after results come in, so you're not reading findings alone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+
+<!-- ── PROCESS STEPS ── -->
+<section id="hiw-process">
+  <div class="container">
+    <span class="eyebrow">The products</span>
+    <h2>Four stages.<br>Start wherever makes sense.</h2>
+    <p class="lead" style="max-width:560px;">Most teams start with a Signal Scan. You don't need to do all four — but each stage builds on the last, and the sequence is designed to take you from first findings to fully certified.</p>
+
+    <div class="process-steps">
+
+      <!-- SIGNAL SCAN -->
+      <div class="process-step">
+        <div class="ps-left">
+          <div class="ps-card signal">
+            <span class="ps-stage">Stage 1</span>
+            <div class="ps-name">Signal Scan</div>
+            <div>
+              <div class="ps-price">$500</div>
+              <div class="ps-price-note">One-time · No subscription</div>
+            </div>
+            <div class="ps-delivery">⏱ Results in the same week</div>
+            <div class="ps-delivery">📋 79 scored scenarios</div>
+            <div class="ps-delivery">📞 Call before + call after</div>
+          </div>
+        </div>
+        <div class="ps-right">
+          <h3>The fastest way to know if you have a problem.</h3>
+          <p>The Signal Scan runs 79 scenarios across all 8 EQ Safety Benchmark dimensions. It's designed to surface whether behavioral safety failures are present — and how serious they are — without requiring a large time investment on either side.</p>
+          <p>This is where almost everyone starts. It gives you an honest picture of your system's behavioral health in days, not weeks.</p>
+          <div class="ps-delivers">
+            <div class="ps-delivers-label">What you get</div>
+            <ul>
+              <li>Safety Gate result — pass or fail, with specific categories</li>
+              <li>Tier classification (I through IV) with composite score</li>
+              <li>Dimension-level scores across all 8 EQ Safety dimensions</li>
+              <li>Top failure patterns — the specific behaviors that are failing</li>
+              <li>Comparison against the EQ Safety Benchmark baseline</li>
+              <li>Written report delivered within 5 business days</li>
+            </ul>
+          </div>
+          <div class="ps-ideal">
+            <span class="ps-ideal-icon">→</span>
+            <span><strong>Best for:</strong> Teams who want to know where they stand before committing to more. The right first step whether you're pre-launch or already deployed.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEEP SCAN -->
+      <div class="process-step">
+        <div class="ps-left">
+          <div class="ps-card deep">
+            <span class="ps-stage">Stage 2</span>
+            <div class="ps-name">Deep Scan</div>
+            <div>
+              <div class="ps-price">$1,000</div>
+              <div class="ps-price-note">One-time · No subscription</div>
+            </div>
+            <div class="ps-delivery">⏱ Results in 10 business days</div>
+            <div class="ps-delivery">📋 300+ scored scenarios</div>
+            <div class="ps-delivery">📞 Call before + call after</div>
+          </div>
+        </div>
+        <div class="ps-right">
+          <h3>Where exactly the failures are — and why.</h3>
+          <p>The Signal Scan tells you whether something is wrong. The Deep Scan tells you precisely what and where. We expand to 300+ scenarios, apply adversarial pressure across all 8 dimensions at higher resolution, and map your failure distribution with enough specificity that your team can act on it directly.</p>
+          <p>The Deep Scan is designed to give your engineers and product team what they need to fix things — not just a warning, but a precise failure map.</p>
+          <div class="ps-delivers">
+            <div class="ps-delivers-label">What you get</div>
+            <ul>
+              <li>Everything in Signal Scan, at 4× the resolution</li>
+              <li>Dimension-by-dimension failure distribution map</li>
+              <li>Specific scenario patterns that trigger failures</li>
+              <li>Adversarial pressure testing — how the system holds under realistic edge cases</li>
+              <li>Prioritized remediation guidance — what to fix first, and why</li>
+              <li>Comparison against peer system categories where applicable</li>
+            </ul>
+          </div>
+          <div class="ps-ideal" style="background:#EEE8FC; color:#5B2FB0;">
+            <span class="ps-ideal-icon">→</span>
+            <span><strong>Best for:</strong> Teams who've seen a Signal Scan result and need to understand the root cause before starting a fix cycle. Also used standalone for pre-launch due diligence.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FULL REPORT -->
+      <div class="process-step">
+        <div class="ps-left">
+          <div class="ps-card full">
+            <span class="ps-stage">Stage 3</span>
+            <div class="ps-name">Full Report</div>
+            <div>
+              <div class="ps-price">$2,500</div>
+              <div class="ps-price-note">One-time · No subscription</div>
+            </div>
+            <div class="ps-delivery">⏱ Results in 14 business days</div>
+            <div class="ps-delivery">📋 Complete audit record</div>
+            <div class="ps-delivery">📞 Call before + call after</div>
+          </div>
+        </div>
+        <div class="ps-right">
+          <h3>A complete documented record — ready to share.</h3>
+          <p>The Full Report is the version you hand to a client, a board, a partner, or a regulator. It compiles the full audit: methodology, all findings, complete dimension scoring, failure analysis, baseline comparison, and a prioritized remediation roadmap.</p>
+          <p>It's the first independent behavioral safety record your system will have ever had — written to be read by people who weren't in the room when you built the thing.</p>
+          <div class="ps-delivers">
+            <div class="ps-delivers-label">What you get</div>
+            <ul>
+              <li>Everything in Signal Scan + Deep Scan, formatted as a complete report</li>
+              <li>Full methodology section explaining how we tested and why</li>
+              <li>Shareable executive summary for non-technical stakeholders</li>
+              <li>Complete 8-dimension scoring with narrative context for each dimension</li>
+              <li>Tier classification with EQ Safety Benchmark comparison</li>
+              <li>Remediation roadmap — prioritized, actionable, ready to hand to engineering</li>
+            </ul>
+          </div>
+          <div class="ps-ideal" style="background:var(--teal-light); color:var(--teal);">
+            <span class="ps-ideal-icon">→</span>
+            <span><strong>Best for:</strong> Teams who need to share evidence with enterprise clients, investors, regulators, or internal legal/compliance. Also used as a pre-certification baseline before Remediation.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- REMEDIATION -->
+      <div class="process-step">
+        <div class="ps-left">
+          <div class="ps-card remed">
+            <span class="ps-stage">Stage 4</span>
+            <div class="ps-name">Remediation</div>
+            <div>
+              <div class="ps-price">Custom</div>
+              <div class="ps-price-note">Scoped per engagement</div>
+            </div>
+            <div class="ps-delivery">⏱ Timeline varies by scope</div>
+            <div class="ps-delivery">🔁 Fix cycle + re-test included</div>
+            <div class="ps-delivery">📞 Calls throughout</div>
+          </div>
+        </div>
+        <div class="ps-right">
+          <h3>Fix it, verify it, document that it's fixed.</h3>
+          <p>Remediation is a structured engagement: we work directly with your team to implement the changes from the Full Report roadmap, then re-run the benchmark to confirm the improvements hold under actual test conditions — not just in your staging environment.</p>
+          <p>The output is a verified improvement record and a Tier I certification if your system crosses the safety threshold. That's the document that says, independently, that your system is safe to deploy.</p>
+          <div class="ps-delivers">
+            <div class="ps-delivers-label">What you get</div>
+            <ul>
+              <li>Guided fix cycle — working directly with your team through each priority item</li>
+              <li>Re-test after changes — same scenario sets, new baseline established</li>
+              <li>Verified improvement record — before and after scores, documented and signed</li>
+              <li>Tier I certification if system clears the safety threshold</li>
+              <li>Ongoing monitoring options available after certification</li>
+            </ul>
+          </div>
+          <div class="ps-ideal" style="background:var(--green-soft); color:var(--green-dark);">
+            <span class="ps-ideal-icon">→</span>
+            <span><strong>Best for:</strong> Teams who have a Full Report and want to fix what it found — and then be able to prove they fixed it. The path to independent certification.</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /process-steps -->
+  </div>
+</section>
+
+<hr class="divider" />
+
+
+<!-- ── WHAT TO EXPECT ── -->
+<section id="hiw-expect">
+  <div class="container">
+    <span class="eyebrow">What to expect</span>
+    <h2>From first contact to results.</h2>
+    <p class="lead" style="max-width:540px;">What actually happens when you request an engagement — in plain terms, without jargon.</p>
+
+    <div class="expect-grid">
+      <div class="expect-card">
+        <div class="ec-icon">📬</div>
+        <h3>You fill out the intake form.</h3>
+        <p>We ask for your system name, the type of AI (conversational support, companion, health, education, etc.), a brief description of what it does, and how you'd like to engage. That's it at this stage.</p>
+      </div>
+      <div class="expect-card">
+        <div class="ec-icon">📞</div>
+        <h3>We schedule a call before we run anything.</h3>
+        <p>A real conversation. We want to understand your system, your context, who your users are, and what concerns you. This is also when you tell us anything you don't want included in a shareable report. Always included at no extra charge.</p>
+      </div>
+      <div class="expect-card">
+        <div class="ec-icon">🧪</div>
+        <h3>We run the scenarios.</h3>
+        <p>We access your system the way a user would — through your live environment or a test deployment you specify. We don't need your codebase, your system prompt, or any internal documentation. We test behavior, not architecture.</p>
+      </div>
+      <div class="expect-card">
+        <div class="ec-icon">📄</div>
+        <h3>We send you the written report.</h3>
+        <p>Delivered within the timeframe we agreed on — same week for Signal Scan, up to 14 days for Full Report. Formatted so a technical lead and a non-technical executive can both read it and understand the findings.</p>
+      </div>
+      <div class="expect-card">
+        <div class="ec-icon">📞</div>
+        <h3>We walk through results together.</h3>
+        <p>A debrief call after every engagement — not optional. We go through what we found, answer questions, and help you understand what the findings mean in the context of your actual product and users.</p>
+      </div>
+      <div class="expect-card">
+        <div class="ec-icon">🗂️</div>
+        <h3>You own everything we produce.</h3>
+        <p>The report is yours. You can share it, redact it, use it in client conversations, or keep it internal. We don't publish findings, reference client names publicly, or retain any data about your system after the engagement closes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+
+<!-- ── WHO IT'S FOR ── -->
+<section id="hiw-who">
+  <div class="container">
+    <span class="eyebrow">Who works with us</span>
+    <h2>Built for teams building AI<br>in sensitive contexts.</h2>
+    <p class="lead" style="max-width:540px;">Ikwe works with product teams, founders, compliance leads, and enterprise partners across a range of use cases. Here's who tends to find this most useful.</p>
+
+    <div class="who-list">
+      <div class="who-item">
+        <div class="who-check">✓</div>
+        <p><strong>Mental health & wellness platforms</strong> AI that works with users in distress, anxiety, depression, or crisis — where behavioral failure has direct human consequences.</p>
+      </div>
+      <div class="who-item">
+        <div class="who-check">✓</div>
+        <p><strong>Healthcare adjacent AI</strong> Triage systems, patient support tools, chronic condition companions — where clinical-adjacent behavior requires documentation enterprise clients can trust.</p>
+      </div>
+      <div class="who-item">
+        <div class="who-check">✓</div>
+        <p><strong>Education & student support</strong> AI in front of students — tutoring systems, academic counselors, career guidance tools — where behavioral trajectory shapes real outcomes.</p>
+      </div>
+      <div class="who-item">
+        <div class="who-check">✓</div>
+        <p><strong>Companion & consumer AI</strong> Systems where users form long-term emotional attachment — where behavioral safety over time matters as much as safety in any single session.</p>
+      </div>
+      <div class="who-item">
+        <div class="who-check">✓</div>
+        <p><strong>Enterprise AI deployments</strong> Internal tools deployed at scale — HR systems, employee support, manager coaching — where the company needs third-party evidence for legal and compliance teams.</p>
+      </div>
+      <div class="who-item">
+        <div class="who-check">✓</div>
+        <p><strong>Teams preparing for procurement</strong> Early-stage or pre-launch teams who know enterprise buyers will ask about behavioral safety and want the documentation ready before the question gets asked.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+
+<!-- ── FAQ ── -->
+<section id="hiw-faq">
+  <div class="container-narrow">
+    <span class="eyebrow">Common questions</span>
+    <h2>Things people usually ask.</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Do you need access to our system prompt or codebase? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">No. We test your system the way a real user would — through your live or staging environment. We don't need internal documentation, source code, or architecture details. We measure behavior, not implementation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if our system fails the Signal Scan? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">That's useful information — and it's what the scan is for. A Safety Gate fail doesn't mean your system is broken, it means something needs to be fixed. We'll walk you through the findings, help you understand exactly what's failing and where, and give you a clear path forward — whether that's a Deep Scan, a Full Report, or going straight to Remediation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is the report confidential? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Yes. We don't publish findings, name clients publicly, or retain data about your system after the engagement closes. You own everything we produce. You decide what you share and with whom.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do we have to do all four stages? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">No. Most teams start with a Signal Scan and decide from there. You can stop after any stage. Remediation and the full sequence is for teams who need certified verification — but plenty of teams use a Signal Scan or Deep Scan for internal use without going further.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What does "behavioral safety" actually mean? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Behavioral safety is distinct from content safety. Content safety looks at whether a system produces harmful outputs. Behavioral safety looks at how the system behaves across a conversation — whether it appropriately handles distress, escalation, and ambiguity; whether it maintains appropriate relational boundaries; whether it's honest about what it doesn't know. These are the failures that don't show up in a safety filter, but show up for users.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long does it take to get started? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Submit the intake form and we'll schedule an intake call within 2 business days. Most Signal Scans begin within the same week as the intake call. The total timeline depends on your environment's accessibility and the engagement scope.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+
+<!-- ── CTA ── -->
+<section id="hiw-cta">
+  <div class="container-narrow">
+    <span class="eyebrow" style="color:var(--teal-mid);">Get started</span>
+    <h2>Most teams start with<br><em>a Signal Scan.</em></h2>
+    <p class="lead">79 scenarios. Same-week results. A clear picture of where your system stands — before you commit to anything else.</p>
+    <div class="cta-group">
+      <a href="/report" class="btn btn-primary">Request a Signal Scan →</a>
+      <a href="/ikwe-sample-report-public.html" class="btn btn-secondary">View sample report</a>
+    </div>
+    <div class="always-included">
+      <span>📞</span> Calls before and after are always included at every stage.
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div>
+    <strong>Ikwe.ai</strong> · Visible Healing Inc. · Des Moines, Iowa · © 2026
+  </div>
+  <div>
+    <a href="/contact">Get in touch</a>
+    &nbsp;·&nbsp;
+    <a href="https://research.ikwe.ai" target="_blank">research.ikwe.ai</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:hello@ikwe.ai">hello@ikwe.ai</a>
+  </div>
+</footer>
+
+<script>
+  const btn = document.getElementById('nav-hamburger');
+  const menu = document.getElementById('nav-mobile-menu');
+  function closeMobileMenu() {
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  if (btn && menu) {
+    btn.addEventListener('click', function() {
+      const open = menu.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    document.addEventListener('click', function(e) {
+      if (!btn.contains(e.target) && !menu.contains(e.target)) closeMobileMenu();
+    });
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(function(item) {
+    item.querySelector('.faq-q').addEventListener('click', function() {
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
