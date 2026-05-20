@@ -16,11 +16,18 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); font-size: 15px; line-height: 1.7; }
-nav { background: var(--navy); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
-.nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--white); text-decoration: none; }
-.nav-badge { font-size: 11px; background: rgba(247,161,146,.15); color: var(--coral); border: 1px solid rgba(247,161,146,.3); border-radius: 20px; padding: 3px 12px; font-weight: 500; }
-.nav-cta { background: var(--coral); color: var(--navy); font-size: 13px; font-weight: 500; padding: 7px 18px; border-radius: 8px; text-decoration: none; }
-@media (max-width: 480px) { .nav-badge { display: none; } .nav-cta { font-size: 12px; padding: 6px 12px; } }
+nav { background: var(--navy); padding: 0 2rem; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
+.nav-logo-circle { width: 26px; height: 26px; border-radius: 50%; background: conic-gradient(#1D1F35 0deg 90deg, #F7A192 90deg 180deg, #B894F6 180deg 270deg, #F6D993 270deg 360deg); border: 1.5px solid rgba(247,161,146,0.35); flex-shrink: 0; }
+.nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--white); text-decoration: none; }
+.nav-links { display: flex; gap: 1.75rem; list-style: none; }
+.nav-links a { color: rgba(255,255,255,.6); text-decoration: none; font-size: .875rem; transition: color .2s; }
+.nav-links a:hover { color: var(--coral); }
+.nav-links .nav-highlight { color: var(--coral); }
+.nav-cta { background: var(--coral); color: var(--navy); font-size: .875rem; font-weight: 500; padding: .5rem 1.25rem; border-radius: 6px; text-decoration: none; transition: opacity .2s; white-space: nowrap; }
+.nav-cta:hover { opacity: .88; }
+@media (max-width: 700px) { .nav-links { display: none; } }
+@media (max-width: 480px) { .nav-cta { font-size: .8rem; padding: .45rem .9rem; } }
 .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
 @media (max-width: 600px) { .container { padding: 2rem 1.25rem; } }
 .section { margin-bottom: 2.5rem; }
@@ -128,9 +135,17 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 <body>
 
 <nav>
-  <a href="https://ikwe.ai" class="nav-logo">ikwe.ai</a>
-  <span class="nav-badge">Sample Report</span>
-  <a href="https://ikwe.ai/#close" class="nav-cta">Request an audit</a>
+  <a href="/" class="nav-brand">
+    <div class="nav-logo-circle"></div>
+    <span class="nav-logo">ikwe.ai</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/how-it-works">How It Works</a></li>
+    <li><a href="/case-study">Case Study</a></li>
+    <li><a href="/how-it-works" class="nav-highlight">Work With Us</a></li>
+  </ul>
+  <a href="/report" class="nav-cta">Request a Report →</a>
 </nav>
 
 <div class="container">
