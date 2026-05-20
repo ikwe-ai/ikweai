@@ -51,7 +51,10 @@ h3 { font-size: 1.25rem; }
 | Context | h1 size | Notes |
 |---|---|---|
 | Homepage hero | `clamp(1.75rem, 3vw, 2.5rem)` | Two-column layout; must stay compact |
-| Sub-page heroes (how-it-works, case-study, report, etc.) | `clamp(1.8rem, 3.5vw, 2.4rem)` | Compact title band — see Section 4 |
+| Sub-page heroes (how-it-works, case-study) | `clamp(1.6rem, 3vw, 2.1rem)` | Compact title band, `padding: 1.5rem 2rem 1.25rem` |
+| Report page hero | `clamp(1.55rem, 3.5vw, 2.2rem)` | Fraunces font, `padding: 2.25rem 2rem 2rem` |
+| Terms / Privacy | `clamp(1.8rem, 3.5vw, 2.4rem)` | `padding: 2rem 0 1.75rem` |
+| Contact | No h1 in hero — card layout, `padding: 2.5rem 2rem 3rem` |
 
 ---
 
