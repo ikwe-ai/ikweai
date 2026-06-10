@@ -7,7 +7,7 @@
 <meta name="description" content="Independent behavioral safety audits for AI systems. No sales pitch. No procurement gauntlet. Choose a tier, submit your system, pay by card or invoice.">
 <meta name="robots" content="index,follow">
 <meta property="og:title" content="Request a Behavioral Safety Report — Ikwe.ai">
-<meta property="og:description" content="Submit your AI system for an EQSB behavioral safety evaluation. Signal Scan $500 · 79 scenarios · Deep Scan $1,000 · 300+ scenarios · Full Report $2,500.">
+<meta property="og:description" content="Submit your AI system for an EQSB behavioral safety evaluation. Signal Scan · the first read · Deep Scan · the failure map · Full Report · the record. Scope and pricing follow a short intake.">
 <meta property="og:url" content="https://ikwe.ai/report">
 <meta property="og:site_name" content="Ikwe.ai">
 <meta name="theme-color" content="#191A2E">
@@ -824,8 +824,8 @@ footer {
         <div class="path-title">Run a scan yourself</div>
         <div class="path-desc">Pick a tier, submit your system, pay by card or invoice. We run the evaluation and deliver results. No back-and-forth required.</div>
         <div class="path-tiers">
-          <span class="path-tier-pill">Signal Scan — $500</span>
-          <span class="path-tier-pill">Deep Scan — $1,000</span>
+          <span class="path-tier-pill">Signal Scan · the first read</span>
+          <span class="path-tier-pill">Deep Scan · the failure map</span>
         </div>
         <div class="path-cta">Browse scan tiers ↓</div>
       </a>
@@ -835,7 +835,7 @@ footer {
         <div class="path-title">Work with us directly</div>
         <div class="path-desc">Full report, board-ready documentation, and optional hands-on remediation. We scope it together and handle payment on the backend.</div>
         <div class="path-tiers">
-          <span class="path-tier-pill">Full Report — $2,500</span>
+          <span class="path-tier-pill">Full Report · board-ready</span>
           <span class="path-tier-pill">Report + Remediation — Custom</span>
         </div>
         <div class="path-cta">See full engagement options ↓</div>
@@ -857,10 +857,10 @@ footer {
         <div class="selected-check">✓</div>
         <div class="tier-eyebrow">Signal Scan</div>
         <div class="tier-name">Quick read</div>
-        <div class="tier-price">$500</div>
+        <div class="tier-price" style="font-size:1.2rem;letter-spacing:.04em;">Measure</div>
         <div class="tier-turnaround">Same-week turnaround</div>
         <ul class="tier-features">
-          <li>79 scenarios scored across the EQSB library</li>
+          <li>Scored across the 12 crisis categories and all 8 dimensions</li>
           <li>Safety Gate result — pass or fail</li>
           <li>Top 3 behavioral risk flags identified</li>
           <li>One-page summary report</li>
@@ -876,10 +876,10 @@ footer {
         <div class="selected-check">✓</div>
         <div class="tier-eyebrow">Deep Scan</div>
         <div class="tier-name">Full benchmark</div>
-        <div class="tier-price">$1,000</div>
+        <div class="tier-price" style="font-size:1.2rem;letter-spacing:.04em;">Measure</div>
         <div class="tier-turnaround">In your hands within the week</div>
         <ul class="tier-features">
-          <li>300+ scenarios across the complete EQSB library</li>
+          <li>Every crisis category at full depth — the complete EQSB benchmark</li>
           <li>Safety Gate result with full violation map</li>
           <li>8-dimension composite score (0–100)</li>
           <li>Tier classification: Compliant through Prohibited</li>
@@ -897,7 +897,7 @@ footer {
         <div class="selected-check">✓</div>
         <div class="tier-eyebrow">Full Report</div>
         <div class="tier-name">Board-ready</div>
-        <div class="tier-price">$2,500</div>
+        <div class="tier-price" style="font-size:1.2rem;letter-spacing:.04em;">Measure + Attest</div>
         <div class="tier-turnaround">Board-ready in two weeks</div>
         <ul class="tier-features">
           <li>Everything in Deep Scan</li>
@@ -1009,9 +1009,9 @@ footer {
           <label for="tier-select">Selected tier <span class="req">*</span></label>
           <select id="tier-select" name="tier-display">
             <option value="">— Choose a tier —</option>
-            <option value="signal">Signal Scan — $500 · 79 scenarios</option>
-            <option value="deep">Deep Scan — $1,000 · 300+ scenarios</option>
-            <option value="full">Full Report — $2,500 · board-ready</option>
+            <option value="signal">Signal Scan · the first read</option>
+            <option value="deep">Deep Scan · the failure map</option>
+            <option value="full">Full Report · board-ready</option>
             <option value="remediation">Report + Remediation — Custom scope</option>
           </select>
           <span class="error-msg">Please select a tier.</span>
@@ -1156,7 +1156,7 @@ footer {
 
     <div class="faq-item">
       <h3 onclick="toggleFaq(this)">What about portfolio scans or institutional licensing? <span class="faq-toggle">+</span></h3>
-      <p>The tiers above cover single-system audits. If you need to score a portfolio of insureds, evaluate multiple vendors across your health system, or license EQSB for internal procurement — <a href="https://ikwe.ai/contact" style="color:var(--teal2)">talk to us directly</a>. Institutional licenses start at $18,000/yr and include portfolio scanning, white-label reporting, and monitoring infrastructure.</p>
+      <p>The tiers above cover single-system audits. If you need to score a portfolio of insureds, evaluate multiple vendors across your health system, or license EQSB for internal procurement — <a href="https://ikwe.ai/contact" style="color:var(--teal2)">talk to us directly</a>. Institutional licenses include portfolio scanning, white-label reporting, and monitoring infrastructure.</p>
     </div>
   </div>
 </section>
@@ -1198,9 +1198,9 @@ footer {
 <script>
 // ── STATE ──────────────────────────────────────────────────────
 const TIERS = {
-  signal:      { name:'Signal Scan',          price:'$500',   note:'Same-week turnaround · 79 scenarios scored' },
-  deep:        { name:'Deep Scan',            price:'$1,000', note:'In your hands within the week · 300+ scenarios · full benchmark' },
-  full:        { name:'Full Report',          price:'$2,500', note:'Board-ready in two weeks · complete documentation package' },
+  signal:      { name:'Signal Scan',          price:'Scoped at intake', note:'Measure · the first read across the 12 crisis categories' },
+  deep:        { name:'Deep Scan',            price:'Scoped at intake', note:'Measure · every crisis category at full depth' },
+  full:        { name:'Full Report',          price:'Scoped at intake', note:'Board-ready in two weeks · complete documentation package' },
   remediation: { name:'Report + Remediation', price:'Custom', note:'Scoped to your system · includes hands-on remediation + re-score' },
 };
 
@@ -1210,11 +1210,11 @@ const PRODUCT_DETAIL = {
     eyebrow: 'Signal Scan · Self-serve',
     title: 'Signal Scan',
     subtitle: 'A fast, targeted read on your AI system\'s behavioral safety posture. Know where you stand before deeper work.',
-    price: '$500',
+    price: 'Scoped at intake',
     turnaround: '· Same-week turnaround',
     priceColor: 'var(--teal2)',
     features: [
-      '79 scenarios scored across the full EQSB dimension library',
+      'Scored across the 12 crisis categories and the full EQSB dimension library',
       'Safety Gate result — pass or fail with clear explanation',
       'Top 3 behavioral risk flags identified and documented',
       'One-page summary report, professionally formatted',
@@ -1231,17 +1231,17 @@ const PRODUCT_DETAIL = {
     ],
     bestFor: '<strong>Best for:</strong> Early-stage teams doing a pre-launch sanity check, founders screening vendors before procurement, teams building toward SF2417 compliance, or anyone who needs a fast, credible answer to "is our AI safe to deploy?"',
     sample: 'See what a Signal Scan report looks like → <a href="/ikwe-sample-report-public.html" target="_blank">View sample report</a>',
-    cta: 'Start Signal Scan — $500',
+    cta: 'Schedule a Signal Scan →',
   },
   deep: {
     eyebrow: 'Deep Scan · Most popular',
     title: 'Deep Scan',
-    subtitle: 'The full EQSB benchmark — 300+ scenarios, 8-dimension composite score, and a peer comparison against leading models. Everything you need for enterprise procurement or pre-Series A safety documentation.',
-    price: '$1,000',
+    subtitle: 'The full EQSB benchmark — every crisis category at full depth, an 8-dimension composite score, and a peer comparison against leading models. Everything you need for enterprise procurement or pre-Series A safety documentation.',
+    price: 'Scoped at intake',
     turnaround: '· In your hands within the week',
     priceColor: 'var(--coral)',
     features: [
-      '300+ scenarios across the complete EQSB library — every dimension tested',
+      'Every crisis category at full depth — the complete EQSB library, every dimension tested',
       'Safety Gate result with full violation map',
       '8-dimension composite score (0–100) with breakdown by category',
       'Tier classification: Compliant → Monitored → Restricted → Prohibited',
@@ -1262,13 +1262,13 @@ const PRODUCT_DETAIL = {
     ],
     bestFor: '<strong>Best for:</strong> Platforms entering enterprise procurement, teams preparing for insurance underwriting, pre-Series A safety documentation, SF2417 third-party compliance submissions, and any team that needs a number they can defend.',
     sample: 'The Deep Scan uses the same evaluation framework as the Full Report. <a href="/ikwe-sample-report-public.html" target="_blank">Preview the sample →</a>',
-    cta: 'Start Deep Scan — $1,000',
+    cta: 'Schedule a Deep Scan →',
   },
   full: {
     eyebrow: 'Full Report · Board-ready',
     title: 'Full Report',
     subtitle: 'Everything in the Deep Scan — plus a legally defensible documentation package, executive briefing, and 30 days of basic monitoring. Built for boards, underwriters, and regulators.',
-    price: '$2,500',
+    price: 'Scoped at intake',
     turnaround: '· Board-ready in two weeks',
     priceColor: 'var(--teal2)',
     features: [
@@ -1293,7 +1293,7 @@ const PRODUCT_DETAIL = {
     ],
     bestFor: '<strong>Best for:</strong> Insurance underwriting submissions, enterprise procurement deliverables, board governance packages, regulatory inquiry responses, and any situation where you need a third-party record that will hold up to scrutiny.',
     sample: '<a href="/ikwe-sample-report-public.html" target="_blank">View the sample report →</a> to see the structure, evidence format, and dimension breakdown you\'ll receive.',
-    cta: 'Start Full Report — $2,500',
+    cta: 'Schedule a Full Report →',
   },
   remediation: {
     eyebrow: 'Report + Remediation · Custom scope',
@@ -1474,9 +1474,9 @@ function validate() {
 
 // ── PAYMENT LINKS ──────────────────────────────────────────────
 // NOTE: Update payment product names in dashboard to match:
-//   signal → "Signal Scan — 79 scenarios · $500"
-//   deep   → "Deep Scan — 300+ scenarios · $1,000"
-//   full   → "Full Report — Board-ready · $2,500"
+//   signal → "Signal Scan — the first read"
+//   deep   → "Deep Scan — the failure map"
+//   full   → "Full Report — Board-ready"
 const STRIPE_LINKS = {
   signal: 'https://buy.stripe.com/eVq3cwfrubhv8Fo8eJ9sk09',
   deep:   'https://buy.stripe.com/aFa00kenq5Xb7Bk66B9sk0a',
