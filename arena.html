@@ -328,16 +328,24 @@
     const btn = document.getElementById('submit-btn');
     btn.disabled = true; btn.textContent = 'Sending…';
 
+    const aiType      = document.getElementById('ai-type').value;
+    const whatScanned = val('what-scanned') || '—';
+
     const payload = {
       name:          val('name'),
       email:         val('email'),
       company:       val('company'),
       role:          val('role'),
-      ai_type:       document.getElementById('ai-type').value,
-      what_scanned:  val('what-scanned') || '—',
+      ai_type:       aiType,
+      what_scanned:  whatScanned,
       submitted_at:  new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }),
       source:        'ikwe.ai/arena',
-      request_type:  'Signal Scan — First 100 request'
+      request_type:  'Signal Scan — First 100 request',
+      // The live Apps Script maps fields to columns by name and has no arena route yet.
+      // Mirror the arena-only data into columns it already writes (Tier + Notes) so the
+      // request is fully captured and clearly labeled even without editing the script.
+      tier:          'Signal Scan — Arena (FREE, first 100)',
+      notes:         'ARENA REQUEST · source: ikwe.ai/arena · wants scanned: ' + whatScanned
     };
 
     // Primary: Google Apps Script (no-cors, fire-and-forget). Works regardless of host.
@@ -364,7 +372,7 @@
   nf.setAttribute('name', 'arena-request');
   nf.setAttribute('netlify', '');
   nf.setAttribute('hidden', '');
-  nf.innerHTML = '<input name="name"><input name="email"><input name="company"><input name="role"><input name="ai_type"><input name="what_scanned"><input name="submitted_at"><input name="source"><input name="request_type">';
+  nf.innerHTML = '<input name="name"><input name="email"><input name="company"><input name="role"><input name="ai_type"><input name="what_scanned"><input name="submitted_at"><input name="source"><input name="request_type"><input name="tier"><input name="notes">';
   document.body.appendChild(nf);
 </script>
 
