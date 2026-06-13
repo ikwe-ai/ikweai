@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<!--
+  IKWE.AI — "Step Into the Arena" offer landing page
+  Route: ikwe.ai/arena
+
+  MODEL: gated request (NOT a public coupon).
+  Visitors REQUEST a free Signal Scan. Stephanie verifies them, then grants access.
+  No code is shown on this page. Capture happens client-side via the same Google
+  Apps Script endpoint /report already uses, so it works whether the site is served
+  by Netlify OR GitHub Pages. A hidden Netlify form ("arena-request") is the fallback.
+
+  BEFORE / AROUND GO-LIVE (Stephanie's checklist):
+  1. Requests land in the SAME Google Sheet as /report (source = "ikwe.ai/arena",
+     request_type = "Signal Scan — First 100 request"). Add columns if needed:
+     name, email, company, role, what_scanned, notes, submitted_at, source, request_type.
+     Apps Script URL is below (SHEETS_URL) — already live for /report.
+  2. Grant mechanism is PRIVATE: after you verify a requester, comp their Signal Scan
+     (e.g. a single-use 100%-off Stripe code you send them, or run it manually).
+     The cap of 100 is yours to track from the sheet. No code is exposed here.
+  3. Brand tokens match the live site (navy #191A2E, coral #F7A192, teal accent #5DCAA5,
+     DM Serif Display + DM Sans). "The line" motif uses your teal, not the old mint guess.
+  4. The "first 100" badge is static. Wire a live remaining-count later if you want one.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Step Into the Arena — Ikwe.ai</title>
+<meta name="description" content="Stop claiming safety. Start proving it. The first 100 Signal Scans are free. Request yours, we verify, you're in. An independent, scored read of how your AI actually behaves with a person in a hard moment." />
+<meta name="theme-color" content="#191A2E" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0E0F1C;
+    --navy:#191A2E;
+    --panel:#20223A;
+    --coral:#F7A192;
+    --lav:#B894F6;
+    --cream:#F6D993;
+    --line:#5DCAA5;              /* teal accent (real site token), the "safety line" */
+    --line-soft:rgba(93,202,165,.16);
+    --line-glow:rgba(93,202,165,.45);
+    --text:#EDECF4;
+    --muted:#9A9CB8;
+    --warn:#E8B45A;
+    --hair:rgba(255,255,255,.10);
+    --display:'DM Serif Display',Georgia,serif;
+    --body:'DM Sans',system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--ink);color:var(--text);
+    font-family:var(--body);line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(120% 80% at 50% -10%, #1c1e36 0%, var(--ink) 60%);
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px}
+  a{color:inherit}
+
+  /* ---- nav (mirrors live site) ---- */
+  nav{position:sticky;top:0;z-index:1000;background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;border-bottom:1px solid var(--hair)}
+  .nav-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+  .nav-logo-circle{width:26px;height:26px;border-radius:50%;background:conic-gradient(#1D1F35 0deg 90deg,var(--coral) 90deg 180deg,var(--lav) 180deg 270deg,var(--cream) 270deg 360deg);border:1.5px solid rgba(247,161,146,.35);flex-shrink:0}
+  .nav-brand-name{font-family:var(--display);font-size:1.15rem;color:#fff;letter-spacing:.02em}
+  .nav-cta{background:var(--coral);color:var(--navy);font-weight:500;font-size:.875rem;padding:.5rem 1.25rem;border-radius:6px;text-decoration:none;transition:opacity .2s}
+  .nav-cta:hover{opacity:.88}
+
+  .eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--line);margin:0 0 22px}
+
+  /* ---- hero ---- */
+  header.hero{padding:84px 0 40px;text-align:center}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,7vw,4.4rem);line-height:1.04;letter-spacing:-.01em;margin:0 0 22px}
+  h1 .safe{font-style:italic;color:var(--line)}
+  .lede{font-size:clamp(1.05rem,2.2vw,1.28rem);color:#d6d5e6;max-width:640px;margin:0 auto 36px}
+
+  /* ---- the line (signature) ---- */
+  .theline{position:relative;height:2px;margin:8px auto 0;max-width:760px;background:var(--hair)}
+  .theline .fill{position:absolute;inset:0;background:linear-gradient(90deg,transparent,var(--line),transparent);box-shadow:0 0 18px 1px var(--line-glow);transform:scaleX(0);transform-origin:center;animation:draw 1.4s cubic-bezier(.2,.7,.2,1) .15s forwards}
+  .theline .dot{position:absolute;top:50%;left:50%;width:9px;height:9px;border-radius:50%;background:var(--line);box-shadow:0 0 14px 3px var(--line-glow);transform:translate(-50%,-50%);opacity:0;animation:show .6s ease 1.3s forwards}
+  .theline .dot::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid var(--line);opacity:.5;animation:pulse 2.6s ease-in-out 1.6s infinite}
+  @keyframes draw{to{transform:scaleX(1)}}
+  @keyframes show{to{opacity:1}}
+  @keyframes pulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.9);opacity:0}}
+
+  /* ---- offer block ---- */
+  .offer{margin:54px auto;max-width:680px;background:var(--panel);border:1px solid var(--hair);border-radius:18px;padding:38px 34px;text-align:center;position:relative;overflow:hidden}
+  .offer::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--line),transparent);opacity:.8}
+  .badge{display:inline-block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--line);border:1px solid var(--line-soft);background:var(--line-soft);border-radius:999px;padding:7px 14px;margin-bottom:22px}
+  .offer h2{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,4vw,2.3rem);line-height:1.12;margin:0 0 10px}
+  .offer p{color:var(--muted);margin:0 auto 26px;max-width:480px}
+  .free{color:var(--text);font-weight:500}
+  .cta{display:inline-block;background:var(--line);color:#06251D;font-weight:500;font-size:1.02rem;text-decoration:none;padding:15px 30px;border-radius:12px;border:none;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;box-shadow:0 0 0 0 var(--line-glow);font-family:var(--body)}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px -10px var(--line-glow)}
+  .cta:focus-visible{outline:3px solid #fff;outline-offset:3px}
+  .ghost{display:inline-block;margin-top:14px;color:var(--muted);text-decoration:none;font-size:.92rem;border-bottom:1px solid var(--hair);padding-bottom:2px}
+  .ghost:hover{color:var(--text)}
+
+  /* ---- section scaffold ---- */
+  section{padding:30px 0}
+  .kicker{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+  h3{font-family:var(--display);font-weight:400;font-size:clamp(1.5rem,3.4vw,2rem);line-height:1.14;margin:0 0 18px}
+  .body-copy{color:#cfcee0;max-width:640px}
+  .body-copy strong{color:var(--text);font-weight:500}
+
+  /* ---- stats ---- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:14px;overflow:hidden;margin-top:8px}
+  .stat{background:var(--navy);padding:22px 16px;text-align:center}
+  .stat .n{font-family:var(--display);font-size:clamp(1.5rem,4vw,2.1rem);font-weight:400;line-height:1}
+  .stat .n.warn{color:var(--warn)}
+  .stat .l{font-size:.78rem;color:var(--muted);margin-top:8px;line-height:1.35}
+  @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  /* ---- steps ---- */
+  ol.steps{list-style:none;counter-reset:s;margin:6px 0 0;padding:0;display:grid;gap:14px}
+  ol.steps li{counter-increment:s;position:relative;padding:18px 18px 18px 60px;background:var(--navy);border:1px solid var(--hair);border-radius:12px}
+  ol.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:18px;top:18px;font-size:.85rem;color:var(--line);border:1px solid var(--line-soft);border-radius:7px;width:28px;height:28px;display:grid;place-items:center}
+  ol.steps b{display:block;color:var(--text);font-weight:500;margin-bottom:2px}
+  ol.steps span{color:var(--muted);font-size:.93rem}
+
+  /* ---- request form ---- */
+  .request{margin:54px auto 10px;max-width:680px;background:var(--panel);border:1px solid var(--hair);border-radius:18px;padding:38px 34px;position:relative;overflow:hidden}
+  .request::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--line),transparent);opacity:.8}
+  .request h3{margin:0 0 6px;text-align:center}
+  .request .sub{color:var(--muted);text-align:center;max-width:480px;margin:0 auto 28px;font-size:.95rem}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-size:.82rem;color:var(--text);margin-bottom:7px;letter-spacing:.01em}
+  .field label .req{color:var(--line)}
+  .field input,.field select,.field textarea{width:100%;background:var(--ink);border:1px solid var(--hair);border-radius:10px;color:var(--text);font-family:var(--body);font-size:.98rem;padding:12px 14px;transition:border-color .15s}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--line)}
+  .field textarea{resize:vertical;min-height:84px}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:560px){.field-row{grid-template-columns:1fr}}
+  .form-actions{text-align:center;margin-top:26px}
+  .form-error{display:none;color:#F7A192;font-size:.88rem;text-align:center;margin-bottom:14px}
+  .fineprint{color:var(--muted);font-size:.78rem;text-align:center;margin-top:16px;line-height:1.5}
+  .success{display:none;text-align:center;padding:14px 0}
+  .success h3{color:var(--line)}
+  .success p{color:#cfcee0;max-width:480px;margin:0 auto}
+
+  /* ---- closing ---- */
+  .close{text-align:center;padding:56px 0 30px}
+  .close blockquote{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(1.3rem,3.4vw,1.9rem);line-height:1.3;color:var(--text);max-width:600px;margin:0 auto 30px}
+  footer{border-top:1px solid var(--hair);margin-top:30px;padding:30px 0 56px;text-align:center;color:var(--muted);font-size:.85rem}
+  footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--hair)}
+  footer a:hover{color:var(--text)}
+  footer .org{color:var(--text);font-weight:500}
+  .sep{opacity:.4;margin:0 8px}
+
+  @media(prefers-reduced-motion:reduce){
+    .theline .fill{animation:none;transform:scaleX(1)}
+    .theline .dot{animation:none;opacity:1}
+    .theline .dot::after{animation:none;opacity:.4}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">
+    <span class="nav-logo-circle"></span>
+    <span class="nav-brand-name">ikwe.ai</span>
+  </a>
+  <a href="#request" class="nav-cta">Request a Signal Scan</a>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">EQ Safety Benchmark · Ikwe.ai</p>
+    <h1>Step into the arena.<br><span class="safe">Choose safe.</span></h1>
+    <p class="lede">We found out this week exactly how fast safety can move when something is called an emergency. This is your move. Prove your AI is safe with people, before harm, before headlines, before the law makes you.</p>
+    <div class="theline"><span class="fill"></span><span class="dot"></span></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="offer">
+    <span class="badge">The first 100 are free</span>
+    <h2>A free Signal Scan, on us.</h2>
+    <p>An independent, scored read of how your system actually behaves with a person in a hard moment. For the first 100 who step in and choose safe, it costs <span class="free">nothing</span>. You request it, we verify you, you're in.</p>
+    <button class="cta" onclick="document.getElementById('request').scrollIntoView();document.getElementById('name').focus();">Request your free Signal Scan ↓</button>
+    <br><a class="ghost" href="https://ikwe.ai/ikwe-sample-report-public.html">See what the report looks like first</a>
+  </div>
+
+  <section>
+    <p class="kicker">What you're claiming</p>
+    <h3>Not a claim of safety. A measurement of it.</h3>
+    <p class="body-copy">A Signal Scan runs your AI through the EQ Safety Benchmark and scores how it holds a person across a whole conversation, not one tidy response. You get a <strong>pass or fail</strong> across 12 crisis categories, scored against the frontier models, the same week. A clear answer to the only question that matters: is this system safe with people right now.</p>
+  </section>
+
+  <section>
+    <p class="kicker">Why it's worth knowing</p>
+    <div class="stats">
+      <div class="stat"><div class="n warn">54.7%</div><div class="l">of AI responses introduced risk to vulnerable users</div></div>
+      <div class="stat"><div class="n">43%</div><div class="l">of harmful responses made zero attempt to repair</div></div>
+      <div class="stat"><div class="n">1,509</div><div class="l">scored runs across three published studies</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">states already enforcing chatbot safety laws</div></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="kicker">How it works</p>
+    <ol class="steps">
+      <li><b>Request your scan</b><span>Tell us who you are and what you want scanned, below. It takes two minutes.</span></li>
+      <li><b>We verify you</b><span>We confirm you and your system, then reserve one of the first 100 free scans for you.</span></li>
+      <li><b>You get your answer the same week</b><span>A scored record of how your AI behaves, with the failure map and what to fix.</span></li>
+    </ol>
+  </section>
+
+  <!-- ===== REQUEST FORM (gated) ===== -->
+  <div class="request" id="request">
+    <div id="request-form-wrap">
+      <h3>Request your free Signal Scan</h3>
+      <p class="sub">The first 100 verified systems get a Signal Scan free. Tell us where to look, and we'll be in touch to confirm and start.</p>
+
+      <div class="form-error" id="form-error">Please complete the required fields marked with a dot.</div>
+
+      <form id="arena-form" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="name">Your name <span class="req">●</span></label>
+            <input id="name" name="name" type="text" autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="email">Work email <span class="req">●</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" />
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="company">Company <span class="req">●</span></label>
+            <input id="company" name="company" type="text" autocomplete="organization" />
+          </div>
+          <div class="field">
+            <label for="role">Your role <span class="req">●</span></label>
+            <input id="role" name="role" type="text" autocomplete="organization-title" placeholder="Founder, Head of Product, etc." />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="ai-type">What do you want scanned? <span class="req">●</span></label>
+          <select id="ai-type" name="ai_type">
+            <option value="">— Select the closest match —</option>
+            <option value="mental-health">Mental health / emotional support app</option>
+            <option value="hr">HR platform / employee-facing tool</option>
+            <option value="education">Education / tutoring / student support</option>
+            <option value="healthcare">Healthcare / clinical / care navigation</option>
+            <option value="companion">Companion AI / social AI / consumer app</option>
+            <option value="customer-support">Customer support in sensitive domains</option>
+            <option value="crisis">Crisis support / crisis line</option>
+            <option value="insurance-portfolio">Insurance carrier portfolio scan</option>
+            <option value="general">General-purpose conversational AI</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="what-scanned">In a sentence, what is the system and who uses it?</label>
+          <textarea id="what-scanned" name="what_scanned" placeholder="e.g. A companion chat app for teens; about 40k monthly users."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="cta" id="submit-btn">Request my Signal Scan →</button>
+          <p class="fineprint">No payment, no code to enter. We review every request by hand and reach out to verified applicants. First 100 only.</p>
+        </div>
+      </form>
+    </div>
+
+    <div class="success" id="success">
+      <h3>Request received.</h3>
+      <p>You've stepped in. We review every request by hand. If you're among the first 100 verified, we'll reach out to confirm your system and start your free Signal Scan, usually within one business day. Hold the line.</p>
+    </div>
+  </div>
+
+  <div class="close">
+    <blockquote>"AI that helps, not harms. That's the line we hold."</blockquote>
+    <button class="cta" onclick="document.getElementById('request').scrollIntoView();document.getElementById('name').focus();">Step into the arena ↓</button>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <span class="org">Ikwe.ai</span><span class="sep">·</span>Visible Healing Inc.<span class="sep">·</span>Des Moines, Iowa<span class="sep">·</span>© 2026
+    <div style="margin-top:12px">
+      <a href="https://research.ikwe.ai">research.ikwe.ai</a><span class="sep">·</span>
+      <a href="mailto:hello@ikwe.ai">hello@ikwe.ai</a><span class="sep">·</span>
+      <a href="https://ikwe.ai/how-it-works">How it works</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Same Apps Script endpoint /report already uses — hosting-independent (works on
+  // GitHub Pages or Netlify). Requests land in your existing Google Sheet, tagged by source.
+  const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxvapngacSM4xZ4wMzm15AMz0Pit1tA3J9RzfscupDh9KAcAFcs6bzR0ihLBcAzSH22/exec';
+
+  function val(id){ return (document.getElementById(id).value || '').trim(); }
+
+  function validate(){
+    const required = ['name','email','company','role'];
+    let ok = true;
+    required.forEach(function(id){
+      const el = document.getElementById(id);
+      if(!el.value.trim()){ el.style.borderColor = '#F7A192'; ok = false; }
+      else { el.style.borderColor = ''; }
+    });
+    const aiType = document.getElementById('ai-type');
+    if(!aiType.value){ aiType.style.borderColor = '#F7A192'; ok = false; } else { aiType.style.borderColor = ''; }
+    const email = val('email');
+    if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ document.getElementById('email').style.borderColor = '#F7A192'; ok = false; }
+    return ok;
+  }
+
+  document.getElementById('arena-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('form-error').style.display = 'none';
+    if(!validate()){ document.getElementById('form-error').style.display = 'block'; return; }
+
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true; btn.textContent = 'Sending…';
+
+    const payload = {
+      name:          val('name'),
+      email:         val('email'),
+      company:       val('company'),
+      role:          val('role'),
+      ai_type:       document.getElementById('ai-type').value,
+      what_scanned:  val('what-scanned') || '—',
+      submitted_at:  new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }),
+      source:        'ikwe.ai/arena',
+      request_type:  'Signal Scan — First 100 request'
+    };
+
+    // Primary: Google Apps Script (no-cors, fire-and-forget). Works regardless of host.
+    fetch(SHEETS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(function(){ /* no-cors: success is opaque; we proceed optimistically */ });
+
+    if (window.gtag) {
+      gtag('event', 'arena_request_submitted', { event_category: 'conversion', event_label: payload.ai_type });
+    }
+
+    setTimeout(function(){
+      document.getElementById('request-form-wrap').style.display = 'none';
+      document.getElementById('success').style.display = 'block';
+      document.getElementById('request').scrollIntoView();
+    }, 450);
+  });
+
+  // ── NETLIFY FORM fallback (pre-detected at build time when Netlify is on) ──
+  const nf = document.createElement('form');
+  nf.setAttribute('name', 'arena-request');
+  nf.setAttribute('netlify', '');
+  nf.setAttribute('hidden', '');
+  nf.innerHTML = '<input name="name"><input name="email"><input name="company"><input name="role"><input name="ai_type"><input name="what_scanned"><input name="submitted_at"><input name="source"><input name="request_type">';
+  document.body.appendChild(nf);
+</script>
+
+</body>
+</html>
