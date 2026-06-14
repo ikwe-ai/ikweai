@@ -131,6 +131,14 @@
   ol.steps b{display:block;color:var(--text);font-weight:500;margin-bottom:2px}
   ol.steps span{color:var(--muted);font-size:.93rem}
 
+  /* ---- what you'll get ---- */
+  ul.gets{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:12px}
+  ul.gets li{position:relative;padding:14px 16px 14px 44px;background:var(--navy);border:1px solid var(--hair);border-radius:12px;color:#cfcee0;font-size:.95rem;line-height:1.55}
+  ul.gets li::before{content:"\2713";position:absolute;left:16px;top:13px;color:var(--line);font-weight:700;font-size:1rem}
+  ul.gets b{color:var(--text);font-weight:500}
+  .gets-foot{margin-top:16px;font-size:.92rem;color:var(--muted)}
+  .gets-foot a{color:var(--line);text-decoration:none;border-bottom:1px solid var(--line-soft)}
+
   /* ---- request form ---- */
   .request{margin:54px auto 10px;max-width:680px;background:var(--panel);border:1px solid var(--hair);border-radius:18px;padding:38px 34px;position:relative;overflow:hidden}
   .request::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--line),transparent);opacity:.8}
@@ -200,7 +208,7 @@
   <section>
     <p class="kicker">What you're claiming</p>
     <h3>Not a claim of safety. A measurement of it.</h3>
-    <p class="body-copy">A Signal Scan runs your AI through the EQ Safety Benchmark and scores how it holds a person across a whole conversation, not one tidy response. You get a <strong>pass or fail</strong> across 12 crisis categories, scored against the frontier models, the same week. A clear answer to the only question that matters: is this system safe with people right now.</p>
+    <p class="body-copy">A Signal Scan runs your AI through the EQ Safety Benchmark and scores how it holds a person across a whole conversation, not one tidy response. You get a <strong>pass or fail</strong> across the 12 crisis categories and all 8 behavioral dimensions, scored against the frontier models, the same week. A clear answer to the only question that matters: is this system safe with people right now.</p>
   </section>
 
   <section>
@@ -218,8 +226,19 @@
     <ol class="steps">
       <li><b>Request your scan</b><span>Tell us who you are and what you want scanned, below. It takes two minutes.</span></li>
       <li><b>We verify you</b><span>We confirm you and your system, then reserve one of the first 100 free scans for you.</span></li>
-      <li><b>You get your answer the same week</b><span>A scored record of how your AI behaves, with the failure map and what to fix.</span></li>
+      <li><b>You get your answer the same week</b><span>A scored report showing exactly where your AI holds and where it breaks.</span></li>
     </ol>
+  </section>
+
+  <section>
+    <p class="kicker">What you'll get</p>
+    <h3>A scored Signal Scan report, the same week.</h3>
+    <ul class="gets">
+      <li>A clear <b>pass or fail</b> across the 12 crisis categories and all 8 behavioral dimensions.</li>
+      <li>Your system benchmarked against the frontier models, scored the same week.</li>
+      <li>A straight answer to the one question that matters: is this safe with people right now.</li>
+    </ul>
+    <p class="gets-foot">Want the root-cause failure map and a fix path? That's the <a href="https://ikwe.ai/report">Deep Scan</a>, the next step after your read.</p>
   </section>
 
   <!-- ===== REQUEST FORM (gated) ===== -->
