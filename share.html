@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stephanie Stranko · Founder & CEO, Ikwe.ai</title>
+  <meta name="description" content="Stephanie Stranko, Founder and CEO of Ikwe.ai. The behavioral AI safety work, the writing behind it, and how to get in touch." />
+  <meta name="theme-color" content="#191A2E" />
+  <link rel="canonical" href="https://ikwe.ai/share" />
+  <meta property="og:title" content="Stephanie Stranko · Founder & CEO, Ikwe.ai" />
+  <meta property="og:description" content="The behavioral AI safety work, the writing behind it, and how to get in touch." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://ikwe.ai/share" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LV7G292YD8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LV7G292YD8', { send_page_view: true });
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --navy:#191A2E;--coral:#F7A192;--lav:#B894F6;--cream:#F6D993;
+      --teal:#0F6E56;--teal-light:#E1F5EE;--teal-mid:#5DCAA5;
+      --gray-soft:#F7F6F2;--gray-mid:#888780;--white:#FFFFFF;
+      --text:#1A1A2E;--text-muted:#5a5a6e;--line:#e6e6ec;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;color:var(--text);background:var(--white);}
+    nav{position:sticky;top:0;z-index:1000;background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+    .nav-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;}
+    .nav-logo-circle{width:26px;height:26px;border-radius:50%;background:conic-gradient(#1D1F35 0deg 90deg,var(--coral) 90deg 180deg,var(--lav) 180deg 270deg,var(--cream) 270deg 360deg);border:1.5px solid rgba(247,161,146,0.35);flex-shrink:0;}
+    .nav-brand-name{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--white);}
+    .nav-links{display:flex;gap:2rem;list-style:none;}
+    .nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:.875rem;}
+    .nav-links a:hover{color:var(--coral);}
+    @media(max-width:820px){.nav-links{display:none;}}
+    section{padding:3.5rem 2rem;}
+    .container{max-width:860px;margin:0 auto;}
+    h1,h2,h3{font-family:'DM Serif Display',serif;line-height:1.2;font-weight:400;}
+    h1{font-size:clamp(2.1rem,5vw,3.2rem);}
+    h2{font-size:clamp(1.4rem,3vw,1.9rem);}
+    .eyebrow{display:inline-block;font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem;color:var(--coral);}
+    .lead{font-size:1.05rem;color:rgba(255,255,255,.7);line-height:1.75;margin-top:.75rem;max-width:60ch;}
+
+    /* HERO */
+    #hero{background:var(--navy);padding:4rem 2rem;}
+    .hero-grid{display:grid;grid-template-columns:120px 1fr;gap:1.75rem;align-items:center;max-width:860px;margin:0 auto;}
+    @media(max-width:560px){.hero-grid{grid-template-columns:1fr;gap:1rem;}}
+    .portrait{width:120px;height:120px;border-radius:50%;background:conic-gradient(#1D1F35 0deg 90deg,var(--coral) 90deg 180deg,var(--lav) 180deg 270deg,var(--cream) 270deg 360deg);display:flex;align-items:center;justify-content:center;border:2px solid rgba(247,161,146,0.4);}
+    .portrait span{font-family:'DM Serif Display',serif;font-size:2.4rem;color:var(--navy);}
+    #hero h1{color:var(--white);}
+    #hero .role{color:var(--coral);font-size:1rem;margin-top:.4rem;letter-spacing:.01em;}
+    #hero p.intro{color:rgba(255,255,255,.7);margin-top:.9rem;max-width:56ch;}
+    .cta-group{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.25rem;}
+    .btn{display:inline-block;padding:.7rem 1.5rem;border-radius:8px;font-weight:500;font-size:.92rem;border:none;cursor:pointer;text-decoration:none;font-family:inherit;}
+    .btn-primary{background:var(--coral);color:var(--navy);}
+    .btn-secondary{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.4);}
+    .btn-secondary:hover{border-color:var(--coral);color:var(--coral);}
+    .btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy);}
+    .btn:hover{opacity:.92;}
+
+    .about p{margin-bottom:1rem;color:var(--text);max-width:68ch;}
+    .about p:last-child{margin-bottom:0;}
+
+    /* Fast facts */
+    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-top:1.5rem;}
+    .fact{background:var(--gray-soft);border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem;}
+    .fact .k{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);font-weight:500;}
+    .fact .v{font-size:.95rem;margin-top:.25rem;}
+
+    /* Downloads */
+    #downloads{background:var(--gray-soft);}
+    .dl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.25rem;}
+    .dl{display:flex;flex-direction:column;gap:.3rem;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.2rem;text-decoration:none;}
+    .dl:hover{border-color:var(--coral);}
+    .dl .t{font-weight:500;color:var(--navy);}
+    .dl .s{font-size:.83rem;color:var(--text-muted);}
+    .dl .go{font-size:.8rem;color:var(--teal);margin-top:.2rem;}
+
+    /* Channels */
+    .channels{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.85rem;margin-top:1.25rem;}
+    .chan{display:flex;flex-direction:column;gap:.15rem;border:1px solid var(--line);border-radius:12px;padding:.9rem 1.1rem;text-decoration:none;}
+    .chan:hover{border-color:var(--coral);}
+    .chan .t{color:var(--navy);font-weight:500;font-size:.95rem;}
+    .chan .s{color:var(--text-muted);font-size:.8rem;}
+
+    /* Writing feed */
+    .feed{margin-top:1rem;border-top:1px solid var(--line);}
+    .post{display:flex;justify-content:space-between;gap:1.5rem;align-items:baseline;padding:.95rem 0;border-bottom:1px solid var(--line);text-decoration:none;}
+    .post:hover .post-title{color:var(--teal);}
+    .post-title{font-family:'DM Serif Display',serif;font-size:1.12rem;color:var(--navy);line-height:1.3;}
+    .post-date{font-size:.8rem;color:var(--gray-mid);white-space:nowrap;font-variant-numeric:tabular-nums;}
+
+    /* Contact */
+    #contact{background:var(--navy);color:var(--white);}
+    #contact .eyebrow{color:var(--coral);}
+    #contact h2{color:var(--white);}
+    #contact p.sub{color:rgba(255,255,255,.66);margin-top:.4rem;max-width:56ch;}
+    .cform{max-width:560px;margin-top:1.25rem;}
+    .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;}
+    @media(max-width:560px){.cf-row{grid-template-columns:1fr;}}
+    .cform input,.cform textarea{width:100%;font-family:inherit;font-size:.95rem;padding:.7rem .85rem;border:1px solid rgba(255,255,255,.2);border-radius:8px;background:rgba(255,255,255,.06);color:var(--white);margin-top:.6rem;}
+    .cform input::placeholder,.cform textarea::placeholder{color:rgba(255,255,255,.45);}
+    .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--coral);}
+    .cform textarea{min-height:90px;resize:vertical;}
+    .optin{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:rgba(255,255,255,.6);margin-top:.7rem;}
+    .optin input{width:auto;margin:0;accent-color:var(--coral);}
+    .cf-success{display:none;color:var(--cream);font-weight:500;margin-top:.8rem;}
+    .cf-direct{font-size:.85rem;color:rgba(255,255,255,.6);margin-top:1rem;}
+    .cf-direct a{color:var(--coral);text-decoration:none;}
+
+    footer{background:#0f1020;color:rgba(255,255,255,.4);padding:2.5rem 2rem;font-size:.82rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+    .foot-l strong{color:rgba(255,255,255,.6);}
+    .foot-contact a{color:var(--coral);text-decoration:none;}
+    @media(max-width:640px){footer{flex-direction:column;text-align:center;}.post{flex-direction:column;gap:.2rem;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="https://ikwe.ai" class="nav-brand">
+    <div class="nav-logo-circle"></div>
+    <span class="nav-brand-name">ikwe.ai</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://ikwe.ai">Ikwe</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="hero-grid">
+    <div class="portrait"><span>SS</span></div>
+    <div>
+      <h1>Stephanie Stranko</h1>
+      <div class="role">Founder & CEO, Ikwe.ai</div>
+      <p class="intro">I am building the independent standard for how AI behaves with people in their hardest moments. This is where I write, share the work, and connect.</p>
+      <div class="cta-group">
+        <a href="#contact" class="btn btn-primary">Get in touch</a>
+        <a href="#writing" class="btn btn-secondary">Read the writing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <span class="eyebrow">About</span>
+    <h2>Why I am building this.</h2>
+    <div class="about">
+      <p>I am the Founder and CEO of Ikwe.ai, where we build the EQ Safety Benchmark. It is the first independent, third-party standard for how AI responds to people in emotional distress. Not whether a model is toxic or can be jailbroken. Whether the person on the other side is better or worse after the conversation.</p>
+      <p>I started Ikwe because the gap was clear and no one owned it. AI is talking to vulnerable people at scale, and the systems that grade it measure almost everything except the human outcome. So I spent eighteen months building the research and the method to measure that directly, the way a clinician would, and turned it into a standard that buyers, insurers, and regulators can actually use. The method is patent pending. The company is Visible Healing Inc., based in Des Moines, Iowa, and we are part of the G2M accelerator.</p>
+      <p>I write to think in public. The essays are about the things I keep running into as a founder building for a rule that does not exist yet: the difference between sounding safe and being safe, why regulation is the missing layer, and what it actually takes to build something honest under pressure. If you want the short version of the work, start with the writing below.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="k">Role</div><div class="v">Founder & CEO</div></div>
+      <div class="fact"><div class="k">Company</div><div class="v">Ikwe.ai · Visible Healing Inc.</div></div>
+      <div class="fact"><div class="k">Based in</div><div class="v">Des Moines, Iowa</div></div>
+      <div class="fact"><div class="k">Focus</div><div class="v">Behavioral AI safety, the EQ Safety Benchmark</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="downloads">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--teal-mid);">Press & bio</span>
+    <h2>Download a bio.</h2>
+    <p style="color:var(--text-muted);margin-top:.4rem;">Short and long bios for press, panels, and intros. For confidential materials like the investor sheet or pitch, use the request page.</p>
+    <div class="dl-grid">
+      <a class="dl" href="/stephanie-bio.pdf" target="_blank" rel="noopener"><span class="t">Founder bio one-sheet</span><span class="s">Short bio, long bio, fast facts, contact.</span><span class="go">Download PDF</span></a>
+      <a class="dl" href="/access?src=founder" ><span class="t">Ikwe materials</span><span class="s">One-pager, investor sheet, and more, on request.</span><span class="go">Request access</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="writing">
+  <div class="container">
+    <span class="eyebrow">Writing</span>
+    <h2>Recent essays.</h2>
+    <div class="feed">
+      <a class="post" href="https://ladyinvisibl.medium.com/we-found-out-how-fast-safety-can-move-96c0639d33a2" target="_blank" rel="noopener"><span class="post-title">We Found Out How Fast Safety Can Move.</span><span class="post-date">Jun 13, 2026</span></a>
+      <a class="post" href="https://ladyinvisibl.medium.com/the-morning-he-died-the-ai-kept-talking-5be9dc6e37bd" target="_blank" rel="noopener"><span class="post-title">The Morning He Died, the AI Kept Talking</span><span class="post-date">May 7, 2026</span></a>
+      <a class="post" href="https://ladyinvisibl.medium.com/the-eq-safety-benchmark-is-not-a-vibe-heres-what-s-actually-behind-it-e4a93f02d401" target="_blank" rel="noopener"><span class="post-title">The EQ Safety Benchmark Is Not a Vibe. Here Is What Is Behind It.</span><span class="post-date">Apr 7, 2026</span></a>
+      <a class="post" href="https://ladyinvisibl.medium.com/its-not-imposter-syndrome-it-s-structural-pressure-5817afb1b15f" target="_blank" rel="noopener"><span class="post-title">It Is Not Imposter Syndrome. It Is Structural Pressure.</span><span class="post-date">Apr 7, 2026</span></a>
+      <a class="post" href="https://ladyinvisibl.medium.com/before-the-violation-399e2133a439" target="_blank" rel="noopener"><span class="post-title">Before the Violation</span><span class="post-date">Feb 25, 2026</span></a>
+      <a class="post" href="https://ladyinvisibl.medium.com/when-dreams-meet-gravity-b325e6706ed3" target="_blank" rel="noopener"><span class="post-title">When Dreams Meet Gravity</span><span class="post-date">Feb 19, 2026</span></a>
+      <a class="post" href="https://ladyinvisibl.medium.com/criticism-is-a-comprehension-stress-test-101d258eddc9" target="_blank" rel="noopener"><span class="post-title">Criticism Is a Comprehension Stress Test</span><span class="post-date">Feb 10, 2026</span></a>
+      <a class="post" href="https://ladyinvisibl.medium.com/on-pasta-timing-and-why-regulation-is-the-missing-layer-a58ef39678a5" target="_blank" rel="noopener"><span class="post-title">On Pasta, Timing, and Why Regulation Is the Missing Layer</span><span class="post-date">Feb 6, 2026</span></a>
+    </div>
+    <p style="margin-top:1.1rem;"><a class="btn btn-outline" href="https://ladyinvisibl.medium.com/" target="_blank" rel="noopener">All writing on Medium</a></p>
+
+    <div style="margin-top:2rem;">
+      <span class="eyebrow">Find me</span>
+      <div class="channels">
+        <a class="chan" href="https://ladyinvisibl.medium.com/" target="_blank" rel="noopener"><span class="t">Medium</span><span class="s">Essays</span></a>
+        <a class="chan" href="https://www.linkedin.com/in/stephaniestranko/" target="_blank" rel="noopener"><span class="t">LinkedIn</span><span class="s">Updates</span></a>
+        <a class="chan" href="https://x.com/stephstranko" target="_blank" rel="noopener"><span class="t">X</span><span class="s">Short signal</span></a>
+        <a class="chan" href="https://research.ikwe.ai" target="_blank" rel="noopener"><span class="t">Research</span><span class="s">The benchmark</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <span class="eyebrow">Contact</span>
+    <h2>Get in touch.</h2>
+    <p class="sub">For interviews, panels, partnerships, or just to say hello. I read everything that comes through.</p>
+    <form id="founder-form" class="cform" novalidate>
+      <div class="cf-row">
+        <input type="text" id="fc-name" placeholder="Your name" />
+        <input type="email" id="fc-email" placeholder="Your email" />
+      </div>
+      <textarea id="fc-message" placeholder="What is on your mind?"></textarea>
+      <label class="optin"><input type="checkbox" id="fc-optin" /> Add me to the writing list too</label>
+      <button class="btn btn-primary" type="submit" id="fc-btn" style="margin-top:.9rem;">Send</button>
+      <p class="cf-success" id="fc-success">Thank you. Your note is in. I will be in touch.</p>
+      <p class="cf-direct">Or email directly: <a href="mailto:stephanie@ikwe.ai">stephanie@ikwe.ai</a></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-l"><strong>Stephanie Stranko</strong> · Founder & CEO, Ikwe.ai · Visible Healing Inc. · Des Moines, Iowa · © 2026</div>
+  <div class="foot-contact"><a href="https://ikwe.ai">ikwe.ai</a> &nbsp;·&nbsp; <a href="https://ladyinvisibl.medium.com/">Medium</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/stephaniestranko/">LinkedIn</a> &nbsp;·&nbsp; <a href="https://x.com/stephstranko">X</a></div>
+</footer>
+
+<script>
+(function(){
+  var SHEETS_URL='https://script.google.com/macros/s/AKfycbxvapngacSM4xZ4wMzm15AMz0Pit1tA3J9RzfscupDh9KAcAFcs6bzR0ihLBcAzSH22/exec';
+  var form=document.getElementById('founder-form');
+  var btn=document.getElementById('fc-btn');
+  var ok=document.getElementById('fc-success');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=document.getElementById('fc-name').value.trim();
+    var email=document.getElementById('fc-email').value.trim();
+    if(!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ (name?document.getElementById('fc-email'):document.getElementById('fc-name')).focus(); return; }
+    var optin=document.getElementById('fc-optin').checked;
+    btn.disabled=true;btn.textContent='Sending...';
+    fetch(SHEETS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({name:name,email:email,company:'',role:'',message:document.getElementById('fc-message').value.trim(),opt_in:optin,source:'founder-contact',submitted_at:new Date().toISOString()})});
+    if(window.gtag) gtag('event','founder_contact_submitted',{event_category:'lead',source:'founder-contact'});
+    form.querySelector('.cf-row').style.display='none';
+    document.getElementById('fc-message').style.display='none';
+    document.querySelector('.optin').style.display='none';
+    btn.style.display='none';
+    ok.style.display='block';
+  });
+})();
+</script>
+</body>
+</html>
