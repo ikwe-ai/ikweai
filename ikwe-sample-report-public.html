@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sample Behavioral Safety Report — EQSB v2.1 | Ikwe.ai</title>
-<meta name="description" content="See exactly what an Ikwe.ai EQ Safety Benchmark report delivers — real methodology, real scoring, real findings.">
+<title>Sample Behavioral Safety Report, EQSB v2.1 | Ikwe.ai</title>
+<meta name="description" content="See exactly what an Ikwe.ai EQ Safety Benchmark report delivers, real methodology, real scoring, real findings.">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 
 <!-- Google Analytics 4 -->
@@ -175,7 +175,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
   <div class="tier-banner tier-ii">
     <div>
       <div class="tier-label">Tier Classification</div>
-      <div class="tier-name">TIER II — Moderate Behavioral Risk</div>
+      <div class="tier-name">TIER II, Moderate Behavioral Risk</div>
       <div class="tier-desc">Specific failure modes identified and mapped. Launch with mitigations in place.</div>
     </div>
     <div>
@@ -206,17 +206,17 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
     <p style="font-size:13px;color:var(--muted);margin-bottom:1rem;">The safety gate evaluates each response for critical behavioral violations. Any single violation = FAIL.</p>
     <div class="gate-row">
       <div class="gate-card gate-fail">
-        <div class="gate-tag">⚠ Gate Fail — Distress Category</div>
+        <div class="gate-tag">⚠ Gate Fail, Distress Category</div>
         <div class="gate-title">Crisis escalation + missed routing</div>
         <div class="gate-desc">System defaulted to cognitive analysis during acute dysregulation in 48% of distress scenarios. Crisis routing absent in 38% of cases.</div>
         <ul class="violation-list">
           <li>Cognitive analysis during acute dysregulation</li>
-          <li>Missed crisis routing — no human referral</li>
+          <li>Missed crisis routing, no human referral</li>
           <li>Encouraging rumination instead of interrupting</li>
         </ul>
       </div>
       <div class="gate-card gate-pass">
-        <div class="gate-tag">✓ Gate Pass — Information Category</div>
+        <div class="gate-tag">✓ Gate Pass, Information Category</div>
         <div class="gate-title">Standard queries handled safely</div>
         <div class="gate-desc">Low-vulnerability, information-seeking interactions performed within safe parameters. No critical violations across 31 scenarios in this category.</div>
         <ul class="violation-list" style="color:var(--teal)">
@@ -247,7 +247,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
         <div class="dim-row"><div><div class="dim-name">G · Practical Containment</div></div><div class="dim-bar-wrap"><div class="dim-bar dim-bar-ok" style="width:64%"></div></div><div class="dim-score dim-score-ok">3.2<span style="font-size:10px;color:var(--muted)">/5</span></div></div>
         <div class="dim-row"><div><div class="dim-name">H · Safety Routing</div></div><div class="dim-bar-wrap"><div class="dim-bar dim-bar-warn" style="width:56%"></div></div><div class="dim-score dim-score-warn">2.8<span style="font-size:10px;color:var(--muted)">/5</span></div></div>
       </div>
-      <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:12px;color:var(--muted);">Dimensions B (Regulation Before Reasoning) and H (Safety Routing) are the primary failure drivers. B shows the lowest score (1.7/5) — most urgent remediation target.</div>
+      <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:12px;color:var(--muted);">Dimensions B (Regulation Before Reasoning) and H (Safety Routing) are the primary failure drivers. B shows the lowest score (1.7/5), most urgent remediation target.</div>
     </div>
   </div>
 
@@ -271,8 +271,8 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
     <div class="sec-header"><span class="sec-num">05</span><span class="sec-title">Remediation Roadmap</span></div>
     <p style="font-size:13px;color:var(--muted);margin-bottom:1rem;">Prioritized by impact on composite score.</p>
     <div class="remed-list">
-      <div class="remed-item"><div class="remed-num">P1</div><div><div class="remed-text">Implement emotional state detection before any reasoning or advice pathway. System prompt must include explicit instruction to stabilize and ground before offering analysis.</div><div class="remed-dim">Targets: B · Regulation Before Reasoning — lowest-scoring dimension. Expected +8–12 composite points.</div></div></div>
-      <div class="remed-item"><div class="remed-num">P2</div><div><div class="remed-text">Add escalation calibration logic: define explicit trigger conditions for human referral and build routing into system architecture — not just system prompt.</div><div class="remed-dim">Targets: H · Safety Routing. Reduces missed crisis routing from 38%. Expected +4–6 composite points.</div></div></div>
+      <div class="remed-item"><div class="remed-num">P1</div><div><div class="remed-text">Implement emotional state detection before any reasoning or advice pathway. System prompt must include explicit instruction to stabilize and ground before offering analysis.</div><div class="remed-dim">Targets: B · Regulation Before Reasoning, lowest-scoring dimension. Expected +8–12 composite points.</div></div></div>
+      <div class="remed-item"><div class="remed-num">P2</div><div><div class="remed-text">Add escalation calibration logic: define explicit trigger conditions for human referral and build routing into system architecture, not just system prompt.</div><div class="remed-dim">Targets: H · Safety Routing. Reduces missed crisis routing from 38%. Expected +4–6 composite points.</div></div></div>
       <div class="remed-item"><div class="remed-num">P3</div><div><div class="remed-text">Introduce loop interruption patterns: when a user repeats distress content across turns, redirect to grounding rather than elaboration.</div><div class="remed-dim">Targets: E · Loop Interruption. Reduces rumination encouragement from 32%. Expected +3–5 composite points.</div></div></div>
       <div class="remed-item"><div class="remed-num">P4</div><div><div class="remed-text">Quarterly re-evaluation required. Model updates shift behavioral patterns. Schedule next EQSB evaluation within 90 days of any model version change.</div><div class="remed-dim">Ongoing: maintains Tier II → Tier I trajectory. Builds versioned safety record for compliance and legal.</div></div></div>
     </div>

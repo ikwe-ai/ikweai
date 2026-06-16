@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  IKWE.AI — "Step Into the Arena" offer landing page
+  IKWE.AI, "Step Into the Arena" offer landing page
   Route: ikwe.ai/arena
 
   MODEL: gated request (NOT a public coupon).
@@ -11,9 +11,9 @@
 
   BEFORE / AROUND GO-LIVE (Stephanie's checklist):
   1. Requests land in the SAME Google Sheet as /report (source = "ikwe.ai/arena",
-     request_type = "Signal Scan — First 100 request"). Add columns if needed:
+     request_type = "Signal Scan, First 100 request"). Add columns if needed:
      name, email, company, role, what_scanned, notes, submitted_at, source, request_type.
-     Apps Script URL is below (SHEETS_URL) — already live for /report.
+     Apps Script URL is below (SHEETS_URL), already live for /report.
   2. Grant mechanism is PRIVATE: after you verify a requester, comp their Signal Scan
      (e.g. a single-use 100%-off Stripe code you send them, or run it manually).
      The cap of 100 is yours to track from the sheet. No code is exposed here.
@@ -25,7 +25,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Step Into the Arena — Ikwe.ai</title>
+<title>Step Into the Arena, Ikwe.ai</title>
 <meta name="description" content="Stop claiming safety. Start proving it. The first 100 Signal Scans are free. Request yours, we verify, you're in. An independent, scored read of how your AI actually behaves with a person in a hard moment." />
 <meta name="theme-color" content="#191A2E" />
 <!-- Google Analytics 4 (matches the rest of ikwe.ai) -->
@@ -275,7 +275,7 @@
         <div class="field">
           <label for="ai-type">What do you want scanned? <span class="req">●</span></label>
           <select id="ai-type" name="ai_type">
-            <option value="">— Select the closest match —</option>
+            <option value="">, Select the closest match, </option>
             <option value="mental-health">Mental health / emotional support app</option>
             <option value="hr">HR platform / employee-facing tool</option>
             <option value="education">Education / tutoring / student support</option>
@@ -326,7 +326,7 @@
 </footer>
 
 <script>
-  // Same Apps Script endpoint /report already uses — hosting-independent (works on
+  // Same Apps Script endpoint /report already uses, hosting-independent (works on
   // GitHub Pages or Netlify). Requests land in your existing Google Sheet, tagged by source.
   const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxvapngacSM4xZ4wMzm15AMz0Pit1tA3J9RzfscupDh9KAcAFcs6bzR0ihLBcAzSH22/exec';
 
@@ -356,7 +356,7 @@
     btn.disabled = true; btn.textContent = 'Sending…';
 
     const aiType      = document.getElementById('ai-type').value;
-    const whatScanned = val('what-scanned') || '—';
+    const whatScanned = val('what-scanned') || ', ';
 
     const payload = {
       name:          val('name'),
@@ -367,11 +367,11 @@
       what_scanned:  whatScanned,
       submitted_at:  new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }),
       source:        'ikwe.ai/arena',
-      request_type:  'Signal Scan — First 100 request',
+      request_type:  'Signal Scan, First 100 request',
       // The live Apps Script maps fields to columns by name and has no arena route yet.
       // Mirror the arena-only data into columns it already writes (Tier + Notes) so the
       // request is fully captured and clearly labeled even without editing the script.
-      tier:          'Signal Scan — Arena (FREE, first 100)',
+      tier:          'Signal Scan, Arena (FREE, first 100)',
       notes:         'ARENA REQUEST · source: ikwe.ai/arena · wants scanned: ' + whatScanned
     };
 
