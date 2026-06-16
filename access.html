@@ -8,6 +8,14 @@
   <meta name="theme-color" content="#191A2E" />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LV7G292YD8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LV7G292YD8', { send_page_view: true });
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -38,16 +46,13 @@
     #hero{background:var(--navy);padding:4rem 2rem;}
     #hero h1{color:var(--white);}
     #hero h1 em{font-style:italic;color:var(--coral);}
-
     .materials{list-style:none;margin-top:1rem;}
     .mat{display:flex;align-items:flex-start;gap:.85rem;border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem;margin-bottom:.85rem;}
     .mat input{margin-top:.35rem;width:18px;height:18px;accent-color:var(--teal);}
     .mat .t{font-weight:500;color:var(--navy);}
     .mat .d{font-size:.88rem;color:var(--text-muted);}
-
     .lock{background:var(--teal-light);border:1px solid rgba(15,110,86,.18);border-radius:12px;padding:1rem 1.2rem;font-size:.9rem;color:var(--text);margin-top:1.25rem;}
     .lock strong{color:var(--teal);}
-
     form{margin-top:1.5rem;}
     .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
     @media(max-width:560px){.row{grid-template-columns:1fr;}}
@@ -57,8 +62,12 @@
     textarea{min-height:90px;resize:vertical;}
     .hp{position:absolute;left:-9999px;}
     .btn{display:inline-block;margin-top:1.25rem;padding:.8rem 1.9rem;border-radius:8px;font-weight:500;font-size:.95rem;border:none;cursor:pointer;background:var(--coral);color:var(--navy);font-family:inherit;}
-    .btn:hover{opacity:.9;}
+    .btn:hover{opacity:.9;} .btn:disabled{opacity:.55;cursor:not-allowed;}
     .fineprint{font-size:.8rem;color:var(--gray-mid);margin-top:1rem;}
+    .err{display:none;color:#c0392b;font-size:.85rem;margin-top:.75rem;}
+    .success{display:none;background:var(--teal-light);border:1px solid rgba(15,110,86,.2);border-radius:14px;padding:1.5rem;margin-top:1rem;}
+    .success h3{color:var(--teal);margin-bottom:.4rem;}
+    .success p{font-size:.92rem;color:var(--text-muted);}
     footer{background:#0f1020;color:rgba(255,255,255,.4);padding:2.5rem 2rem;font-size:.82rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
     .foot-l strong{color:rgba(255,255,255,.6);}
     .foot-contact a{color:var(--coral);text-decoration:none;}
@@ -88,9 +97,9 @@
 <section>
   <div class="container">
     <h2>What you can request</h2>
-    <form name="materials-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="materials-request" />
-      <p class="hp"><label>Do not fill this out: <input name="bot-field" /></label></p>
+
+    <form id="access-form" novalidate>
+      <p class="hp"><label>Do not fill this out: <input name="bot-field" id="bot-field" /></label></p>
 
       <ul class="materials">
         <li class="mat"><input type="checkbox" name="materials" value="One-pager" id="m1" /><label for="m1" style="margin:0;"><span class="t">One-pager</span><br><span class="d">What Ikwe does, the proof, who it is for, in a single page.</span></label></li>
@@ -104,15 +113,15 @@
       <div class="lock"><strong>How this works.</strong> You request access here. We review who you are, then send the materials or a private link directly. Files are never posted with public download links.</div>
 
       <div class="row">
-        <div><label for="name">Full name *</label><input type="text" id="name" name="name" required /></div>
-        <div><label for="email">Work email *</label><input type="email" id="email" name="email" required /></div>
+        <div><label for="rq-name">Full name *</label><input type="text" id="rq-name" name="name" required /></div>
+        <div><label for="rq-email">Work email *</label><input type="email" id="rq-email" name="email" required /></div>
       </div>
       <div class="row">
-        <div><label for="org">Organization *</label><input type="text" id="org" name="organization" required /></div>
-        <div><label for="role">Role / title</label><input type="text" id="role" name="role" /></div>
+        <div><label for="rq-org">Organization *</label><input type="text" id="rq-org" name="organization" required /></div>
+        <div><label for="rq-role">Role / title</label><input type="text" id="rq-role" name="role" /></div>
       </div>
-      <label for="type">I am a *</label>
-      <select id="type" name="requester_type" required>
+      <label for="rq-type">I am a *</label>
+      <select id="rq-type" name="requester_type" required>
         <option value="">Select one</option>
         <option>Investor</option>
         <option>Potential customer / AI deployer</option>
@@ -123,12 +132,18 @@
         <option>Press</option>
         <option>Other</option>
       </select>
-      <label for="purpose">What are you looking to do? *</label>
-      <textarea id="purpose" name="purpose" required placeholder="A sentence or two on why you are requesting and what you are evaluating."></textarea>
+      <label for="rq-purpose">What are you looking to do? *</label>
+      <textarea id="rq-purpose" name="purpose" required placeholder="A sentence or two on why you are requesting and what you are evaluating."></textarea>
 
-      <button class="btn" type="submit">Request access</button>
+      <button class="btn" type="submit" id="rq-submit">Request access</button>
+      <div class="err" id="rq-err">Please add your name and a valid work email.</div>
       <p class="fineprint">By requesting, you agree these materials are confidential and not to be redistributed. We will only use your details to review and respond to this request.</p>
     </form>
+
+    <div class="success" id="rq-success">
+      <h3>Request received.</h3>
+      <p>Thanks. We review every request personally and will be in touch at the email you gave. You can also reach us directly at <a href="mailto:stephanie@ikwe.ai" style="color:var(--teal);">stephanie@ikwe.ai</a>.</p>
+    </div>
   </div>
 </section>
 
@@ -136,5 +151,46 @@
   <div class="foot-l"><strong>Ikwe.ai</strong> · Visible Healing Inc. · Des Moines, Iowa · © 2026 · Patent pending</div>
   <div class="foot-contact"><a href="https://ikwe.ai">ikwe.ai</a> &nbsp;·&nbsp; <a href="mailto:stephanie@ikwe.ai">stephanie@ikwe.ai</a></div>
 </footer>
+
+<script>
+(function(){
+  var SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxvapngacSM4xZ4wMzm15AMz0Pit1tA3J9RzfscupDh9KAcAFcs6bzR0ihLBcAzSH22/exec';
+  // Source + optional pre-selection from ?src= (e.g. /access?src=pitch)
+  var params = new URLSearchParams(location.search);
+  var src = (params.get('src') || 'request-access').toLowerCase();
+  var preselect = { pitch:'m6', research:'m3', investor:'m2', onepager:'m1', roles:'m4', scan:'m5' };
+  if (preselect[src]) { var cb=document.getElementById(preselect[src]); if(cb) cb.checked=true; }
+
+  var form=document.getElementById('access-form');
+  var btn=document.getElementById('rq-submit');
+  var err=document.getElementById('rq-err');
+  var success=document.getElementById('rq-success');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    err.style.display='none';
+    if (document.getElementById('bot-field').value) return; // honeypot
+    var name=document.getElementById('rq-name').value.trim();
+    var email=document.getElementById('rq-email').value.trim();
+    if(!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.style.display='block'; return; }
+    var mats=Array.prototype.map.call(document.querySelectorAll('input[name=materials]:checked'),function(c){return c.value;}).join(', ');
+    var payload={
+      name:name, email:email,
+      company:document.getElementById('rq-org').value.trim(),
+      role:document.getElementById('rq-role').value.trim(),
+      requester_type:document.getElementById('rq-type').value,
+      materials:mats,
+      message:document.getElementById('rq-purpose').value.trim(),
+      source:'request-access'+(src!=='request-access'?(':'+src):''),
+      submitted_at:new Date().toISOString()
+    };
+    btn.disabled=true; btn.textContent='Sending…';
+    fetch(SHEETS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    if(window.gtag) gtag('event','access_request_submitted',{event_category:'lead',source:payload.source});
+    form.style.display='none';
+    success.style.display='block';
+  });
+})();
+</script>
 </body>
 </html>
