@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /og/
 Disallow: /public/
 
 Sitemap: https://ikwe.ai/sitemap.xml
