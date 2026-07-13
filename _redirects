@@ -1,0 +1,21 @@
+# ikwe.ai — root redirects (publish dir = repo root; this file is what Netlify reads)
+# Security: internal/dev files must never be served raw. "!" forces the rule
+# even though the file exists in the deploy.
+/DESIGN.md            /404.html  404!
+/README.md            /404.html  404!
+/htaccess             /404.html  404!
+/favicons.zip         /404.html  404!
+/CNAME                /404.html  404!
+/site.webmanifest.bak /404.html  404!
+
+# Research: public research landing lives at /research (research.ikwe.ai
+# redirects here — owner decision Jul 13, 2026)
+/research.html        /research  301
+/research-summary     /research  301
+/explorer             /research  301
+
+# Legacy aliases
+/eq-safety-benchmark  /research  301
+/eqsb                 /research  301
+/intake               /order     301
+/get-started          /order     301

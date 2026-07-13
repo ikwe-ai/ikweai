@@ -20,6 +20,11 @@
 
   <!-- Research -->
   <url>
+    <loc>https://ikwe.ai/research</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ikwe.ai/emotional-ai-high-trust-environments</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
