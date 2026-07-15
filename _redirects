@@ -19,3 +19,9 @@
 /eqsb                 /research  301
 /intake               /order     301
 /get-started          /order     301
+
+# Orphaned /public build copies must not be served or indexed (owner decision Jul 15, 2026)
+/public/privacy.html                /privacy                301
+/public/terms.html                  /terms                  301
+/public/research-access-terms.html  /research-access-terms  301
+/public/reports/*                   /404.html               404!
