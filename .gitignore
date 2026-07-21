@@ -69,3 +69,4 @@ _local-archive/
 
 # Orphaned build-copy folder removed from the deploy (Jul 15, 2026) — publish dir is repo root
 public/
+_to_delete/

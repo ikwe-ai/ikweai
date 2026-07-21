@@ -1,521 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Get in Touch, Ikwe.ai</title>
-<meta name="description" content="Contact Ikwe.ai to request a behavioral safety audit or learn more about the EQ Safety Benchmark for human-facing AI."/>
-<meta name="robots" content="index,follow"/>
-<meta name="theme-color" content="#191A2E"/>
-<link rel="canonical" href="https://ikwe.ai/contact"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | ikwe.ai</title>
+  <meta name="description" content="Get in touch with Ikwe. Start a conversation, request a Signal Scan, or request access to our materials.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --fs-display: clamp(2.2rem, 4.5vw, 3.2rem);
+      --fs-h2: clamp(1.6rem, 3vw, 2.3rem);
+      --fs-h3: 1.2rem;
+      --fs-lead: 1.05rem;
+      --fs-body: .95rem;
+      --fs-small: .85rem;
+      --fs-label: .75rem;
+      --ls-label: .1em;
+      --lav-deep: #3C3489;
+      --rule: #EEEEF2;
+      --navy:   #191A2E;
+      --coral:  #F7A192;
+      --lav:    #B894F6;
+      --cream:  #F6D993;
+      --teal:   #0F6E56;
+      --teal-light: #E1F5EE;
+      --teal-mid:   #5DCAA5;
+      --gray-soft:  #F7F6F2;
+      --white: #FFFFFF;
+      --text:  #1A1A2E;
+      --text-muted: #5a5a6e;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.7; color: var(--text); background: var(--white); }
 
-<!-- Open Graph -->
-<meta property="og:title" content="Get in Touch, Ikwe.ai"/>
-<meta property="og:description" content="Request a behavioral safety audit or ask about the EQ Safety Benchmark for human-facing AI systems."/>
-<meta property="og:image" content="https://ikwe.ai/og/contact.png"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
-<meta property="og:type" content="website"/>
-<meta property="og:site_name" content="Ikwe.ai"/>
-<meta property="og:url" content="https://ikwe.ai/contact"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Get in Touch, Ikwe.ai"/>
-<meta name="twitter:description" content="Request a behavioral safety audit or ask about the EQ Safety Benchmark for human-facing AI systems."/>
-<meta name="twitter:image" content="https://ikwe.ai/og/contact.png"/>
+    nav { position: sticky; top: 0; z-index: 1000; background: var(--navy); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
+    .nav-logo-circle { width: 26px; height: 26px; border-radius: 50%; background: conic-gradient(#1D1F35 0deg 90deg, var(--coral) 90deg 180deg, var(--lav) 180deg 270deg, var(--cream) 270deg 360deg); flex-shrink: 0; }
+    .nav-brand-name { font-family: 'DM Serif Display', serif; font-size: var(--fs-h3); color: var(--white); letter-spacing: .02em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: var(--fs-small); font-weight: 400; transition: color .2s; }
+    .nav-links a:hover { color: var(--coral); }
+    .nav-links a.active { color: var(--white); }
+    .nav-cta { background: var(--coral); color: var(--navy); font-weight: 500; font-size: var(--fs-small); padding: .5rem 1.25rem; border-radius: 6px; text-decoration: none; transition: opacity .2s; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; background: transparent; border: none; z-index: 200; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: all .25s; }
+    .nav-mobile-menu { display: none; }
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-mobile-menu.open { display: flex; position: fixed; top: 60px; left: 0; right: 0; background: var(--navy); padding: 1.5rem 2rem 2rem; flex-direction: column; z-index: 999; border-top: 1px solid rgba(255,255,255,.1); }
+      .nav-mobile-menu a { color: rgba(255,255,255,.75); text-decoration: none; font-size: 1rem; padding: .9rem 0; border-bottom: 1px solid rgba(255,255,255,.07); }
+      .nav-mobile-menu a:last-child { border-bottom: none; }
+    }
 
-<!-- Favicon -->
-<link rel="icon" href="/favicon.ico" sizes="any" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
+    section { padding: 4rem 2rem; }
+    .container-narrow { max-width: 680px; margin: 0 auto; }
+    h1, h2, h3 { font-family: 'DM Serif Display', serif; line-height: 1.2; }
+    h1 { font-size: clamp(2rem, 4.5vw, 2.9rem); }
+    .eyebrow { display: inline-block; font-size: var(--fs-label); font-weight: 500; letter-spacing: var(--ls-label); text-transform: uppercase; margin-bottom: 1rem; color: var(--teal-mid); }
+    .lead { font-size: var(--fs-lead); color: var(--text-muted); line-height: 1.75; margin-top: .75rem; }
 
-<!-- Google Analytics 4 -->
+    .page-head { background: var(--navy); color: var(--white); padding: 4.5rem 2rem 4rem; }
+    .page-head h1 { color: var(--white); }
+    .page-head .lead { color: rgba(255,255,255,.72); max-width: 560px; }
+
+    /* form */
+    form { margin-top: 1rem; }
+    .f-row { margin-bottom: 1.4rem; }
+    .f-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    @media (max-width: 640px) { .f-2col { grid-template-columns: 1fr; } }
+    label { display: block; font-size: var(--fs-small); font-weight: 600; color: var(--navy); margin-bottom: .4rem; }
+    label .opt { font-weight: 400; color: var(--text-muted); }
+    input[type="text"], input[type="email"], textarea, select {
+      width: 100%; padding: .7rem .9rem; font-family: 'DM Sans', sans-serif; font-size: var(--fs-body);
+      color: var(--text); background: var(--white); border: 1.5px solid #D8D8E2; border-radius: 8px; transition: border-color .2s;
+    }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: var(--teal-mid); }
+    textarea { min-height: 130px; resize: vertical; }
+
+    /* interest cards */
+    .interest-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .75rem; }
+    @media (max-width: 640px) { .interest-grid { grid-template-columns: 1fr; } }
+    .interest-grid input[type="radio"] { position: absolute; opacity: 0; }
+    .interest-card { display: block; border: 1.5px solid #D8D8E2; border-radius: 10px; padding: .9rem 1rem; cursor: pointer; transition: border-color .2s, background .2s; }
+    .interest-card strong { display: block; font-size: var(--fs-body); font-weight: 600; color: var(--navy); margin-bottom: .15rem; }
+    .interest-card span { font-size: var(--fs-label); color: var(--text-muted); line-height: 1.45; display: block; }
+    .interest-grid input[type="radio"]:checked + .interest-card { border-color: var(--teal); background: var(--teal-light); }
+    .interest-grid input[type="radio"]:focus-visible + .interest-card { outline: 2px solid var(--teal-mid); outline-offset: 2px; }
+
+    .btn { display: inline-block; padding: .8rem 2rem; border-radius: 8px; font-weight: 500; font-size: var(--fs-body); text-decoration: none; cursor: pointer; border: none; transition: opacity .2s, transform .15s; font-family: 'DM Sans', sans-serif; }
+    .btn:hover { opacity: .88; transform: translateY(-1px); }
+    .btn-dark { background: var(--navy); color: var(--white); }
+    .form-note { font-size: var(--fs-small); color: var(--text-muted); margin-top: 1rem; }
+    .form-status { display: none; margin-top: 1.25rem; padding: 1rem 1.25rem; border-radius: 10px; font-size: var(--fs-body); }
+    .form-status.ok { display: block; background: var(--teal-light); color: var(--teal); border: 1px solid rgba(15,110,86,.2); }
+    .form-status.err { display: block; background: #FCEBEB; color: #791F1F; border: 1px solid rgba(226,75,74,.25); }
+
+    footer { background: #0f1020; color: rgba(255,255,255,.4); padding: 2.5rem 2rem; font-size: var(--fs-small); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .foot-l strong { color: rgba(255,255,255,.6); }
+    .foot-r { font-size: var(--fs-label); line-height: 1.6; text-align: right; }
+    .foot-r a { color: var(--coral); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">
+    <span class="nav-logo-circle"></span>
+    <span class="nav-brand-name">ikwe.ai</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="how-it-works.html">How it works</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="contact.html">Get in touch</a>
+  <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open');this.classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="how-it-works.html">How it works</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="container-narrow">
+    <span class="eyebrow">Contact</span>
+    <h1>Start the conversation.</h1>
+    <p class="lead">Tell us who you are and what you are working on. We reply within two business days.</p>
+  </div>
+</header>
+
+<section>
+  <div class="container-narrow">
+    <form id="contact-form">
+      <div class="f-row">
+        <label>I am interested in</label>
+        <div class="interest-grid">
+          <input type="radio" name="interest" id="int-conv" value="A conversation" checked>
+          <label class="interest-card" for="int-conv"><strong>A conversation</strong><span>Tell us what you are building or carrying, and we will talk it through.</span></label>
+          <input type="radio" name="interest" id="int-scan" value="A Signal Scan">
+          <label class="interest-card" for="int-scan"><strong>A Signal Scan</strong><span>A first look at how your system behaves on our standard scenario set.</span></label>
+          <input type="radio" name="interest" id="int-materials" value="Access to materials">
+          <label class="interest-card" for="int-materials"><strong>Access to materials</strong><span>Our overview, methodology summary, and research materials, on request.</span></label>
+        </div>
+      </div>
+      <div class="f-2col">
+        <div class="f-row">
+          <label for="f-name">Name</label>
+          <input type="text" id="f-name" name="name" required>
+        </div>
+        <div class="f-row">
+          <label for="f-email">Email</label>
+          <input type="email" id="f-email" name="email" required>
+        </div>
+      </div>
+      <div class="f-2col">
+        <div class="f-row">
+          <label for="f-company">Organization <span class="opt">(optional)</span></label>
+          <input type="text" id="f-company" name="company">
+        </div>
+        <div class="f-row">
+          <label for="f-role">Role <span class="opt">(optional)</span></label>
+          <input type="text" id="f-role" name="role">
+        </div>
+      </div>
+      <div class="f-row">
+        <label for="f-message">What are you working on?</label>
+        <textarea id="f-message" name="message" placeholder="A sentence or two is plenty."></textarea>
+      </div>
+      <button type="submit" class="btn btn-dark">Send</button>
+      <p class="form-note">Prefer email? Write to <a href="mailto:hello@ikwe.ai" style="color: var(--teal)">hello@ikwe.ai</a>.</p>
+      <div class="form-status" id="form-status"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-l"><strong>ikwe.ai</strong> · Des Moines, Iowa · To help, not to harm</div>
+  <div class="foot-r"><a href="index.html">Home</a> · <a href="privacy.html">Privacy</a></div>
+</footer>
+
+<script>
+  const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxvapngacSM4xZ4wMzm15AMz0Pit1tA3J9RzfscupDh9KAcAFcs6bzR0ihLBcAzSH22/exec';
+  document.getElementById('contact-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const statusEl = document.getElementById('form-status');
+    const btn = this.querySelector('button[type="submit"]');
+    const name = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const company = document.getElementById('f-company').value.trim();
+    const role = document.getElementById('f-role').value.trim();
+    const message = document.getElementById('f-message').value.trim();
+    const interest = (document.querySelector('input[name="interest"]:checked') || {}).value || '';
+    btn.disabled = true; btn.textContent = 'Sending…';
+    try {
+      const payload = { name, email, company, role, message: '[' + interest + '] ' + message, source: 'contact', submitted_at: new Date().toISOString() };
+      await fetch(SHEETS_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) });
+      statusEl.className = 'form-status ok';
+      statusEl.textContent = 'Thank you. We received your note and will reply within two business days.';
+      this.reset();
+    } catch (err) {
+      statusEl.className = 'form-status err';
+      statusEl.textContent = 'Something went wrong sending the form. Please email hello@ikwe.ai directly.';
+    }
+    btn.disabled = false; btn.textContent = 'Send';
+  });
+</script>
+
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LV7G292YD8"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-LV7G292YD8', { send_page_view: true });
-</script>
-
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-<!-- DM Sans + DM Serif Display -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-
-<style>
-/* ── DESIGN TOKENS ── */
-:root {
-  --navy:       #191A2E;
-  --navy2:      #1D1F35;
-  --navy3:      #22243C;
-  --navy4:      #272944;
-  --coral:      #F7A192;
-  --coral-d:    #e8897a;
-  --coral-pale: rgba(247,161,146,0.10);
-  --coral-08:   rgba(247,161,146,0.08);
-  --coral-20:   rgba(247,161,146,0.20);
-  --lavender:   #B894F6;
-  --lav-pale:   rgba(184,148,246,0.12);
-  --cream:      #F6D993;
-  --warm-white: #F5F0E8;
-  --soft:       #A8A4C0;
-  --muted:      #5C5A78;
-  --border:     rgba(247,161,146,0.15);
-  --border-l:   rgba(247,161,146,0.07);
-  --green:      #4ade80;
-  --red:        #f87171;
-  --lav:        #B894F6;
-  --white:      #FFFFFF;
-}
-
-*,*::before,*::after { box-sizing:border-box; margin:0; padding:0 }
-html { scroll-behavior:smooth }
-body {
-  background: var(--navy);
-  color: var(--warm-white);
-  font-family: 'Inter', system-ui, sans-serif;
-  font-weight: 300;
-  line-height: 1.7;
-  overflow-x: hidden;
-  min-height: 100vh;
-}
-h1,h2,h3 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-weight: normal;
-  line-height: 1.15;
-  letter-spacing: -.015em;
-  text-wrap: balance;
-}
-strong { font-weight: 600; }
-em { font-style: italic; }
-
-.wrap { max-width: 1120px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
-
-/* ── NAV ── */
-nav{position:sticky;top:0;z-index:1000;background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
-.nav-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;}
-.nav-logo-circle{width:26px;height:26px;border-radius:50%;background:conic-gradient(#1D1F35 0deg 90deg,var(--coral) 90deg 180deg,var(--lav) 180deg 270deg,var(--cream) 270deg 360deg);border:1.5px solid rgba(247,161,146,0.35);flex-shrink:0;}
-.nav-brand-name{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--white);letter-spacing:.02em;}
-.nav-links{display:flex;gap:2rem;list-style:none;}
-.nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:.875rem;font-weight:400;transition:color .2s;}
-.nav-links a:hover{color:var(--coral);}
-.nav-cta{background:var(--coral);color:var(--navy);font-weight:500;font-size:.875rem;padding:.5rem 1.25rem;border-radius:6px;text-decoration:none;transition:opacity .2s;}
-.nav-cta:hover{opacity:.88;}
-.nav-mobile-menu{display:none;}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem;background:transparent;border:none;z-index:200;}
-.nav-hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .25s;}
-.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.nav-hamburger.open span:nth-child(2){opacity:0;}
-.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-@media(max-width:900px){
-  .nav-links{display:none;} .nav-cta{display:none;} .nav-hamburger{display:flex;}
-  .nav-mobile-menu.open{display:flex;position:fixed;top:60px;left:0;right:0;background:var(--navy);padding:1.5rem 2rem 2rem;flex-direction:column;gap:0;z-index:999;border-top:1px solid rgba(255,255,255,.1);box-shadow:0 20px 40px rgba(0,0,0,.5);}
-  .nav-mobile-menu a{color:rgba(255,255,255,.75);text-decoration:none;font-size:1rem;font-weight:400;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .2s;}
-  .nav-mobile-menu a:last-child{border-bottom:none;}
-  .nav-mobile-menu a:hover{color:var(--coral);}
-  .nav-mobile-menu .mob-cta{margin-top:1.25rem;background:var(--coral);color:var(--navy);font-weight:500;padding:.75rem 1.5rem;border-radius:8px;text-align:center;border-bottom:none!important;}
-}
-
-/* ── BUTTONS ── */
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  padding: .88rem 2rem;
-  border-radius: 3px;
-  font-family: 'Inter', sans-serif;
-  font-size: .875rem;
-  font-weight: 600;
-  letter-spacing: .03em;
-  transition: all .2s;
-  text-align: center;
-}
-.btn-coral { background: var(--coral); color: #0f0f1a; }
-.btn-coral:hover { background: var(--coral-d); transform: translateY(-1px); }
-.btn-outline {
-  background: transparent;
-  color: var(--warm-white);
-  border: 1px solid rgba(247,161,146,0.4);
-}
-.btn-outline:hover { border-color: var(--coral); background: var(--coral-08); }
-
-/* ── PAGE LAYOUT ── */
-.page-wrap {
-  min-height: calc(100vh - 60px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2.5rem 2rem 3rem;
-  position: relative;
-  overflow: hidden;
-}
-.page-wrap::before {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(184,148,246,0.07) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 10% 75%, rgba(247,161,146,0.05) 0%, transparent 55%);
-  pointer-events: none;
-}
-
-/* ── CARD ── */
-.contact-card {
-  width: 100%;
-  max-width: 520px;
-  background: var(--navy2);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 2.8rem 2.5rem 3rem;
-  position: relative;
-}
-
-.eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--coral);
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.contact-card h1 {
-  font-size: clamp(1.5rem, 3.5vw, 2rem);
-  margin-bottom: .6rem;
-}
-.contact-card .sub {
-  color: var(--soft);
-  font-size: .875rem;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-/* ── FORM ── */
-.field { margin-bottom: 1.25rem; }
-.field label {
-  display: block;
-  font-size: .78rem;
-  font-weight: 500;
-  letter-spacing: .04em;
-  color: var(--soft);
-  margin-bottom: .4rem;
-}
-.field label .req { color: var(--coral); margin-left: 2px; }
-
-.field input,
-.field textarea {
-  width: 100%;
-  background: var(--navy3);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  padding: .75rem 1rem;
-  color: var(--warm-white);
-  font-family: 'Inter', sans-serif;
-  font-size: .9rem;
-  font-weight: 300;
-  outline: none;
-  transition: border-color .2s;
-  resize: none;
-}
-.field input:focus,
-.field textarea:focus {
-  border-color: rgba(247,161,146,0.5);
-}
-.field input::placeholder,
-.field textarea::placeholder { color: var(--muted); }
-
-/* opt-in checkbox row */
-.opt-in-row {
-  display: flex;
-  align-items: flex-start;
-  gap: .75rem;
-  margin: 1.5rem 0 1.75rem;
-}
-.opt-in-row input[type="checkbox"] {
-  width: 18px; height: 18px;
-  flex-shrink: 0;
-  accent-color: var(--coral);
-  margin-top: 2px;
-  cursor: pointer;
-}
-.opt-in-row label {
-  font-size: .82rem;
-  color: var(--soft);
-  line-height: 1.5;
-  cursor: pointer;
-}
-
-/* submit button */
-.submit-btn {
-  width: 100%;
-  padding: .95rem 2rem;
-  background: var(--coral);
-  color: #0f0f1a;
-  border: none;
-  border-radius: 3px;
-  font-family: 'Inter', sans-serif;
-  font-size: .95rem;
-  font-weight: 600;
-  letter-spacing: .03em;
-  cursor: pointer;
-  transition: all .2s;
-}
-.submit-btn:hover:not(:disabled) { background: var(--coral-d); transform: translateY(-1px); }
-.submit-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
-
-/* error message */
-.form-error {
-  display: none;
-  color: var(--red);
-  font-size: .8rem;
-  margin-top: .5rem;
-}
-
-/* ── SUCCESS STATE ── */
-#success-state {
-  display: none;
-  text-align: center;
-}
-#success-state .check-icon {
-  width: 52px; height: 52px;
-  border-radius: 50%;
-  background: rgba(74,222,128,0.12);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 1.5rem;
-}
-#success-state .check-icon svg { color: var(--green); }
-#success-state h2 {
-  font-size: 1.6rem;
-  margin-bottom: .6rem;
-}
-#success-state .success-sub {
-  color: var(--soft);
-  font-size: .9rem;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-.divider-or {
-  display: flex; align-items: center; gap: 1rem;
-  color: var(--muted); font-size: .75rem; margin: 1.5rem 0;
-}
-.divider-or::before, .divider-or::after {
-  content: ''; flex: 1;
-  height: 1px; background: var(--border);
-}
-
-/* ── FOOTER ── */
-footer {
-  padding: 2rem;
-  text-align: center;
-  color: var(--muted);
-  font-size: .72rem;
-  border-top: 1px solid var(--border-l);
-}
-footer a { color: var(--soft); text-decoration: none; }
-footer a:hover { color: var(--coral); }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 600px) {
-  .contact-card { padding: 2rem 1.5rem 2.5rem; }
-}
-</style>
-</head>
-<body>
-
-<!-- ── NAV ── -->
-<nav>
-  <a href="/" class="nav-brand">
-    <div class="nav-logo-circle"></div>
-    <span class="nav-brand-name">ikwe.ai</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="/#moment">The Problem</a></li>
-    <li><a href="/#how">How It Works</a></li>
-    <li><a href="/#benchmark">The Benchmark</a></li>
-    <li><a href="/#proof">Research</a></li>
-    <li><a href="/#audience">Who It's For</a></li>
-    <li><a href="/ikwe-sample-report-public.html" style="color:var(--coral)">Sample Report</a></li>
-  </ul>
-  <a href="/contact" class="nav-cta">Get in touch</a>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<!-- Mobile menu -->
-<div class="nav-mobile-menu" id="nav-mobile-menu">
-  <a href="/#moment" onclick="closeMobileMenu()">The Problem</a>
-  <a href="/#how" onclick="closeMobileMenu()">How It Works</a>
-  <a href="/#benchmark" onclick="closeMobileMenu()">The Benchmark</a>
-  <a href="/#proof" onclick="closeMobileMenu()">Research</a>
-  <a href="/#audience" onclick="closeMobileMenu()">Who It's For</a>
-  <a href="/ikwe-sample-report-public.html" onclick="closeMobileMenu()">Sample Report</a>
-  <a href="/contact" class="mob-cta" onclick="closeMobileMenu()">Get in touch</a>
-</div>
-
-<!-- PAGE BODY -->
-<div class="page-wrap">
-  <div class="contact-card">
-
-    <!-- FORM STATE -->
-    <div id="form-state">
-      <span class="eyebrow">Get in Touch</span>
-      <h1>Request an Audit</h1>
-      <p class="sub">
-        Tell us a little about your project, we'll follow up with next steps
-        and a link to book a scoping call.
-      </p>
-
-      <form id="contact-form" novalidate>
-
-        <div class="field">
-          <label for="cf-name">Name <span class="req">*</span></label>
-          <input type="text" id="cf-name" name="name" placeholder="Your name" autocomplete="name" required/>
-        </div>
-
-        <div class="field">
-          <label for="cf-email">Work email <span class="req">*</span></label>
-          <input type="email" id="cf-email" name="email" placeholder="you@company.com" autocomplete="email" required/>
-        </div>
-
-        <div class="field">
-          <label for="cf-company">Company <span style="color:var(--muted);font-weight:300">(optional)</span></label>
-          <input type="text" id="cf-company" name="company" placeholder="Company or project name" autocomplete="organization"/>
-        </div>
-
-        <div class="field">
-          <label for="cf-message">What are you working on? <span style="color:var(--muted);font-weight:300">(optional)</span></label>
-          <textarea id="cf-message" name="message" rows="3" placeholder="Tell us briefly about your AI system or what you'd like evaluated…"></textarea>
-        </div>
-
-        <div class="opt-in-row">
-          <input type="checkbox" id="cf-optin" name="opt_in" checked/>
-          <label for="cf-optin">
-            Send me Ikwe's research, benchmark updates, and findings on behavioral safety in AI.
-          </label>
-        </div>
-
-        <div class="form-error" id="form-error">Something went wrong, please try again or email us directly.</div>
-
-        <button type="submit" class="submit-btn" id="submit-btn">Send &rarr;</button>
-
-      </form>
-    </div>
-
-    <!-- SUCCESS STATE -->
-    <div id="success-state">
-      <div class="check-icon">
-        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-        </svg>
-      </div>
-      <h2>You're in.</h2>
-      <p class="success-sub">
-        We received your message and will be in touch shortly.<br>
-        Check your inbox, we'll send you our contact details and next steps.
-      </p>
-
-      <a href="/" class="btn btn-coral" style="width:100%;display:block;">Back to ikwe.ai</a>
-    </div>
-
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <strong>Ikwe.ai</strong> &middot; &copy; 2026 &middot; Patent pending
-  &nbsp;&middot;&nbsp;
-  <a href="/privacy.html">Privacy</a>
-  &nbsp;&middot;&nbsp;
-  <a href="/terms.html">Terms</a>
-</footer>
-
-<script>
-(function () {
-  const form      = document.getElementById('contact-form');
-  const btn       = document.getElementById('submit-btn');
-  const errBox    = document.getElementById('form-error');
-  const formState = document.getElementById('form-state');
-  const successState = document.getElementById('success-state');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    errBox.style.display = 'none';
-
-    const name  = document.getElementById('cf-name').value.trim();
-    const email = document.getElementById('cf-email').value.trim();
-
-    if (!name || !email) {
-      errBox.textContent = 'Please fill in your name and email.';
-      errBox.style.display = 'block';
-      return;
-    }
-
-    btn.disabled    = true;
-    btn.textContent = 'Sending…';
-
-    const payload = {
-      name,
-      email,
-      company:      document.getElementById('cf-company').value.trim(),
-      message:      document.getElementById('cf-message').value.trim(),
-      opt_in:       document.getElementById('cf-optin').checked,
-      source:       'contact',
-      submitted_at: new Date().toISOString(),
-    };
-
-    try {
-      // Submit to Google Sheets (no-cors, success shown immediately)
-      fetch('https://script.google.com/macros/s/AKfycbxvapngacSM4xZ4wMzm15AMz0Pit1tA3J9RzfscupDh9KAcAFcs6bzR0ihLBcAzSH22/exec', {
-        method:  'POST',
-        mode:    'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(payload),
-      });
-
-      // Show success immediately
-      formState.style.display   = 'none';
-      successState.style.display = 'block';
-
-      // GA4 event
-      if (window.gtag) {
-        gtag('event', 'contact_form_submitted', {
-          event_category: 'engagement',
-          opt_in: payload.opt_in,
-        });
-      }
-
-    } catch (err) {
-      console.error(err);
-      errBox.textContent = 'Something went wrong, please try again or email hello@ikwe.ai directly.';
-      errBox.style.display = 'block';
-      btn.disabled    = false;
-      btn.textContent = 'Send →';
-    }
-  });
-})();
-</script>
-
-<script>
-// Mobile nav
-(function(){
-  var btn=document.getElementById('nav-hamburger');
-  var menu=document.getElementById('nav-mobile-menu');
-  if(btn&&menu){btn.addEventListener('click',function(){btn.classList.toggle('open');menu.classList.toggle('open');});}
-})();
-function closeMobileMenu(){
-  var m=document.getElementById('nav-mobile-menu');
-  var b=document.getElementById('nav-hamburger');
-  if(m)m.classList.remove('open');
-  if(b)b.classList.remove('open');
-}
+  gtag('config', 'G-LV7G292YD8');
 </script>
 
 </body>
