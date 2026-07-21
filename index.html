@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ikwe.ai | An independent safety certification for AI that people trust</title>
-  <meta name="description" content="Ikwe is the behavioral safety layer for AI. We watch how your system behaves in real conversations, whether it's staying safe, going off the rails, or quietly making things worse over time." />
+  <title>ikwe.ai | Behavioral safety for conversational AI, held to the human standard</title>
+  <meta name="description" content="Human-grade behavioral safety for conversational AI. Ikwe measures how your system behaves across whole conversations and puts the result on the record. Human standards, translated to AI standards." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#191A2E" />
   <link rel="canonical" href="https://ikwe.ai/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="ikwe.ai | An independent safety certification for AI that people trust" />
-  <meta property="og:description" content="The EQ Safety Benchmark is the only commercial, independent, operational standard for how AI behaves with people across a whole conversation. Audits, monitoring, and certification for AI systems deployed in emotionally sensitive contexts." />
+  <meta property="og:title" content="ikwe.ai | Behavioral safety for conversational AI, held to the human standard" />
+  <meta property="og:description" content="The EQ Safety Benchmark: human-grade behavioral safety for conversational AI. Independent, operational, on the record." />
   <meta property="og:image" content="https://ikwe.ai/og/home.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -19,8 +19,8 @@
   <meta property="og:site_name" content="Ikwe.ai" />
   <meta property="og:url" content="https://ikwe.ai/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ikwe.ai | An independent safety certification for AI that people trust" />
-  <meta name="twitter:description" content="The EQ Safety Benchmark is the only commercial, independent, operational standard for how AI behaves with people across a whole conversation. Audits, monitoring, and certification for AI systems deployed in emotionally sensitive contexts." />
+  <meta name="twitter:title" content="ikwe.ai | Behavioral safety for conversational AI, held to the human standard" />
+  <meta name="twitter:description" content="The EQ Safety Benchmark: human-grade behavioral safety for conversational AI. Independent, operational, on the record." />
   <meta name="twitter:image" content="https://ikwe.ai/og/home.png" />
 
   <!-- Favicon -->
@@ -45,6 +45,18 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
+  /* type tokens (consolidated July 2026) */
+  --fs-display: clamp(2.2rem, 4.5vw, 3.2rem);
+  --fs-h2: clamp(1.6rem, 3vw, 2.3rem);
+  --fs-h3: 1.2rem;
+  --fs-lead: 1.05rem;
+  --fs-body: .95rem;
+  --fs-small: .85rem;
+  --fs-label: .75rem;
+  --ls-label: .1em;
+  --lav-deep: #3C3489;
+  --rule: #EEEEF2;
+
       --navy:   #191A2E;
       --coral:  #F7A192;
       --lav:    #B894F6;
@@ -106,7 +118,7 @@
     }
     .nav-brand-name {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.15rem;
+      font-size:var(--fs-h3);
       color: var(--white);
       letter-spacing: .02em;
     }
@@ -118,7 +130,7 @@
     .nav-links a {
       color: rgba(255,255,255,0.65);
       text-decoration: none;
-      font-size: .875rem;
+      font-size:var(--fs-small);
       font-weight: 400;
       transition: color .2s;
     }
@@ -127,7 +139,7 @@
       background: var(--coral);
       color: var(--navy);
       font-weight: 500;
-      font-size: .875rem;
+      font-size:var(--fs-small);
       padding: .5rem 1.25rem;
       border-radius: 6px;
       text-decoration: none;
@@ -221,24 +233,24 @@
     }
     .pc-text { flex: 1; min-width: 200px; }
     .pc-text .pc-eyebrow {
-      font-size: .7rem; font-weight: 500; letter-spacing: .1em;
+      font-size:var(--fs-label); font-weight: 500; letter-spacing:var(--ls-label);
       text-transform: uppercase; margin-bottom: .4rem;
     }
     .page-callout .pc-eyebrow { color: rgba(255,255,255,.45); }
     .page-callout.callout-teal .pc-eyebrow { color: var(--teal); }
-    .page-callout.callout-lav .pc-eyebrow { color: #5B2FB0; }
+    .page-callout.callout-lav .pc-eyebrow { color:var(--lav-deep); }
     .pc-text strong {
       display: block; font-size: 1rem; font-weight: 500; line-height: 1.4; margin-bottom: .2rem;
     }
     .page-callout strong { color: var(--white); }
     .page-callout.callout-teal strong { color: var(--navy); }
     .page-callout.callout-lav strong { color: var(--navy); }
-    .pc-text span { font-size: .85rem; }
+    .pc-text span { font-size:var(--fs-small); }
     .page-callout span { color: rgba(255,255,255,.5); }
     .page-callout.callout-teal span { color: var(--text-muted); }
     .page-callout.callout-lav span { color: var(--text-muted); }
     .pc-link {
-      white-space: nowrap; font-size: .875rem; font-weight: 500;
+      white-space: nowrap; font-size:var(--fs-small); font-weight: 500;
       padding: .65rem 1.25rem; border-radius: 8px;
       text-decoration: none; transition: opacity .2s;
     }
@@ -263,7 +275,7 @@
     @media (max-width: 680px) { .sample-inner { grid-template-columns: 1fr; gap: 2rem; } }
     .sample-text .eyebrow { color: var(--coral); }
     .sample-text h2 { color: var(--white); margin-bottom: .75rem; }
-    .sample-text p { color: rgba(255,255,255,.6); font-size: .95rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .sample-text p { color: rgba(255,255,255,.6); font-size:var(--fs-body); line-height: 1.7; margin-bottom: 1.5rem; }
     .sample-preview {
       background: rgba(255,255,255,.04);
       border: 1px solid rgba(255,255,255,.1);
@@ -280,7 +292,7 @@
       padding: .6rem .85rem;
       border-radius: 8px;
       background: rgba(255,255,255,.05);
-      font-size: .82rem;
+      font-size:var(--fs-small);
     }
     .sample-preview-row .spr-label { color: rgba(255,255,255,.5); }
     .sample-preview-row .spr-val { font-weight: 500; }
@@ -294,7 +306,7 @@
       border: 1px solid rgba(184,106,0,.35);
       border-radius: 20px;
       padding: .25rem .85rem;
-      font-size: .78rem;
+      font-size:var(--fs-label);
       font-weight: 500;
       margin-bottom: .75rem;
     }
@@ -309,18 +321,18 @@
     h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
     h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); }
     h2.h2-sm { font-size: clamp(1.3rem, 2.5vw, 1.75rem); }
-    h3 { font-size: 1.25rem; }
+    h3 { font-size:var(--fs-h3); }
     .eyebrow {
       display: inline-block;
-      font-size: .75rem;
+      font-size:var(--fs-label);
       font-weight: 500;
-      letter-spacing: .1em;
+      letter-spacing:var(--ls-label);
       text-transform: uppercase;
       margin-bottom: 1rem;
       color: var(--teal-mid);
     }
     .lead {
-      font-size: 1.05rem;
+      font-size:var(--fs-lead);
       color: var(--text-muted);
       line-height: 1.75;
       margin-top: .75rem;
@@ -342,7 +354,7 @@
       padding: .75rem 1.75rem;
       border-radius: 8px;
       font-weight: 500;
-      font-size: .95rem;
+      font-size:var(--fs-body);
       text-decoration: none;
       cursor: pointer;
       border: none;
@@ -371,7 +383,7 @@
     .divider {
       display: block;
       border: none;
-      border-top: 1px solid #eeeef2;
+      border-top: 1px solid var(--rule);
       background: transparent;
       margin: 0;
       height: 0;
@@ -402,7 +414,7 @@
       margin-bottom: .85rem;
     }
     #hero h1 em { font-style: italic; color: var(--coral); }
-    #hero .lead { color: rgba(255,255,255,.65); max-width: 460px; font-size: .97rem; }
+    #hero .lead { color: rgba(255,255,255,.65); max-width: 460px; font-size:var(--fs-body); }
     #hero .cta-group { justify-content: flex-start; margin-top: 1.25rem; }
     .hero-badges {
       display: flex;
@@ -411,7 +423,7 @@
       margin-top: 1.1rem;
     }
     .hero-badge {
-      font-size: .72rem;
+      font-size:var(--fs-label);
       font-weight: 500;
       letter-spacing: .05em;
       text-transform: uppercase;
@@ -438,7 +450,7 @@
       padding: .5rem .75rem;
       border-radius: 7px;
       background: rgba(255,255,255,.05);
-      font-size: .78rem;
+      font-size:var(--fs-label);
     }
     .hero-preview-col .spr-label { color: rgba(255,255,255,.45); }
     .hero-preview-col .spr-val { font-weight: 500; }
@@ -446,11 +458,11 @@
     .hero-preview-col .spr-red { color: #E24B4A; }
     .hero-preview-col .spr-green { color: var(--teal-mid); }
     .hero-preview-col .preview-note {
-      font-size: .68rem; color: rgba(255,255,255,.22);
+      font-size:var(--fs-label); color: rgba(255,255,255,.22);
       text-align: center; padding-top: .25rem;
     }
     .hero-preview-col .preview-link {
-      display: block; text-align: center; font-size: .78rem;
+      display: block; text-align: center; font-size:var(--fs-label);
       color: var(--coral); text-decoration: none; padding-top: .1rem;
       font-weight: 500;
     }
@@ -481,7 +493,7 @@
       border-left: 4px solid var(--teal-mid);
     }
     .scenario-label {
-      font-size: .72rem;
+      font-size:var(--fs-label);
       font-weight: 500;
       letter-spacing: .09em;
       text-transform: uppercase;
@@ -489,7 +501,7 @@
     }
     .scenario-card.fail .scenario-label { color: var(--red-dark); }
     .scenario-card.safe .scenario-label { color: var(--teal); }
-    .scenario-card p { font-size: .95rem; line-height: 1.75; }
+    .scenario-card p { font-size:var(--fs-body); line-height: 1.75; }
     .scenario-card.fail p { color: var(--red-dark); }
     .scenario-card.safe p { color: var(--teal); }
 
@@ -517,7 +529,7 @@
       margin-bottom: .75rem;
     }
     .q-card p {
-      font-size: .95rem;
+      font-size:var(--fs-body);
       color: rgba(255,255,255,.8);
       line-height: 1.65;
     }
@@ -525,7 +537,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1px;
-      background: #eeeef2;
+      background: var(--rule);
       border-radius: 12px;
       overflow: hidden;
       margin: 2.5rem 0;
@@ -537,7 +549,7 @@
     }
     .gap-col h4 {
       font-family: 'DM Sans', sans-serif;
-      font-size: .78rem;
+      font-size:var(--fs-label);
       font-weight: 500;
       letter-spacing: .09em;
       text-transform: uppercase;
@@ -552,7 +564,7 @@
       gap: .6rem;
     }
     .gap-col li {
-      font-size: .9rem;
+      font-size:var(--fs-body);
       display: flex;
       align-items: flex-start;
       gap: .5rem;
@@ -604,17 +616,17 @@
     .step-content { padding: 1.75rem 2rem; }
     .step-content h3 {
       font-family: 'DM Sans', sans-serif;
-      font-size: 1.05rem;
+      font-size:var(--fs-lead);
       font-weight: 500;
       margin-bottom: .4rem;
       color: var(--navy);
     }
-    .step-content p { font-size: .93rem; color: var(--text-muted); line-height: 1.7; }
+    .step-content p { font-size:var(--fs-body); color: var(--text-muted); line-height: 1.7; }
     .step-content .step-tag {
       display: inline-block;
-      font-size: .72rem;
+      font-size:var(--fs-label);
       font-weight: 500;
-      letter-spacing: .06em;
+      letter-spacing:var(--ls-label);
       text-transform: uppercase;
       padding: .2rem .65rem;
       border-radius: 20px;
@@ -622,7 +634,7 @@
     }
     .step-tag.pre { background: var(--amber-soft); color: var(--amber-dark); }
     .step-tag.deep { background: var(--teal-light); color: var(--teal); }
-    .step-tag.live { background: #EEEDFE; color: #3C3489; }
+    .step-tag.live { background: #EEEDFE; color:var(--lav-deep); }
 
     /* Pricing chips */
     .pricing-chips {
@@ -637,9 +649,9 @@
     .pricing-chip-ghost {
       background: var(--gray-soft); border-style: dashed;
     }
-    .pc-name { font-size: .72rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); }
+    .pc-name { font-size:var(--fs-label); font-weight: 500; letter-spacing:var(--ls-label); text-transform: uppercase; color: var(--text-muted); }
     .pc-price { font-family: 'DM Serif Display', serif; font-size: 1.35rem; color: var(--navy); line-height: 1; }
-    .pc-detail { font-size: .72rem; color: var(--text-muted); }
+    .pc-detail { font-size:var(--fs-label); color: var(--text-muted); }
 
     /* ─────────────────────────────────────────
        SECTION 5, DRIFT / URGENCY
@@ -688,12 +700,12 @@
       font-weight: 500;
       color: var(--white);
     }
-    .drift-zone p { font-size: .88rem; color: rgba(255,255,255,.55); line-height: 1.65; }
+    .drift-zone p { font-size:var(--fs-small); color: rgba(255,255,255,.55); line-height: 1.65; }
     .drift-arrow {
       text-align: center;
       color: rgba(255,255,255,.25);
-      font-size: .85rem;
-      letter-spacing: .1em;
+      font-size:var(--fs-small);
+      letter-spacing:var(--ls-label);
       text-transform: uppercase;
       margin: 1.5rem 0 0;
     }
@@ -723,7 +735,7 @@
       margin-bottom: .5rem;
     }
     .stat-card .stat-label {
-      font-size: .82rem;
+      font-size:var(--fs-small);
       color: var(--text-muted);
       line-height: 1.5;
     }
@@ -735,14 +747,14 @@
     }
     @media (max-width: 640px) { .studies-row { grid-template-columns: 1fr; } }
     .study-card {
-      border: 1px solid #eeeef2;
+      border: 1px solid var(--rule);
       border-radius: 12px;
       padding: 1.5rem;
     }
     .study-card .study-status {
-      font-size: .72rem;
+      font-size:var(--fs-label);
       font-weight: 500;
-      letter-spacing: .08em;
+      letter-spacing:var(--ls-label);
       text-transform: uppercase;
       color: var(--teal);
       margin-bottom: .5rem;
@@ -754,7 +766,7 @@
       color: var(--navy);
       margin-bottom: .4rem;
     }
-    .study-card p { font-size: .85rem; color: var(--text-muted); line-height: 1.6; }
+    .study-card p { font-size:var(--fs-small); color: var(--text-muted); line-height: 1.6; }
 
     /* ─────────────────────────────────────────
        SECTION 7, THE 8 DIMENSIONS
@@ -785,11 +797,11 @@
       .dl-desc { display: none; }
     }
     .dl-num {
-      font-size: .65rem; font-weight: 700; letter-spacing: .08em;
+      font-size:var(--fs-label); font-weight: 700; letter-spacing:var(--ls-label);
       text-transform: uppercase; color: var(--teal-mid);
     }
     .dl-name {
-      font-size: .9rem; font-weight: 600; color: var(--navy);
+      font-size:var(--fs-body); font-weight: 600; color: var(--navy);
     }
     .dl-desc {
       font-size: .8rem; color: var(--text-muted); line-height: 1.4;
@@ -807,7 +819,7 @@
     }
     @media (max-width: 580px) { .audience-grid { grid-template-columns: 1fr; } }
     .aud-card {
-      border: 1px solid #eeeef2;
+      border: 1px solid var(--rule);
       border-radius: 12px;
       padding: 1.5rem;
     }
@@ -818,7 +830,7 @@
       color: var(--navy);
       margin-bottom: .4rem;
     }
-    .aud-card p { font-size: .88rem; color: var(--text-muted); line-height: 1.6; }
+    .aud-card p { font-size:var(--fs-small); color: var(--text-muted); line-height: 1.6; }
 
     /* ─────────────────────────────────────────
        SECTION 9, CLOSE CTA
@@ -839,7 +851,7 @@
       background: #0f1020;
       color: rgba(255,255,255,.4);
       padding: 2.5rem 2rem;
-      font-size: .82rem;
+      font-size:var(--fs-small);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -848,7 +860,7 @@
     }
     .foot-l { color: rgba(255,255,255,.4); }
     .foot-l strong { color: rgba(255,255,255,.6); }
-    .foot-contact { font-size: .73rem; color: rgba(255,255,255,.4); line-height: 1.6; }
+    .foot-contact { font-size:var(--fs-label); color: rgba(255,255,255,.4); line-height: 1.6; }
     .foot-contact a { color: var(--coral); text-decoration: none; }
     .foot-contact a:hover { text-decoration: underline; }
     @media (max-width: 640px) {
@@ -869,9 +881,9 @@
     }
     .close-form-title {
       font-family: 'DM Sans', sans-serif;
-      font-size: .78rem;
+      font-size:var(--fs-label);
       font-weight: 500;
-      letter-spacing: .1em;
+      letter-spacing:var(--ls-label);
       text-transform: uppercase;
       color: rgba(255,255,255,.4);
       margin-bottom: 1.25rem;
@@ -892,7 +904,7 @@
       padding: .7rem 1rem;
       color: var(--white);
       font-family: 'DM Sans', sans-serif;
-      font-size: .9rem;
+      font-size:var(--fs-body);
       font-weight: 300;
       outline: none;
       transition: border-color .2s;
@@ -911,7 +923,7 @@
       border: none;
       border-radius: 8px;
       font-family: 'DM Sans', sans-serif;
-      font-size: .95rem;
+      font-size:var(--fs-body);
       font-weight: 500;
       cursor: pointer;
       transition: opacity .2s, transform .15s;
@@ -929,7 +941,7 @@
       margin-bottom: .4rem;
     }
     .close-form-success small {
-      font-size: .82rem;
+      font-size:var(--fs-small);
       color: rgba(255,255,255,.4);
     }
 
@@ -954,7 +966,7 @@
   "legalName": "ikwe.ai",
   "url": "https://ikwe.ai",
   "logo": "https://ikwe.ai/ikwe-logo.png",
-  "description": "ikwe.ai is an independent safety certification for AI that people trust, and the behavioral safety standard the market will require. The EQ Safety Benchmark measures how AI systems behave across whole conversations with the humans they serve.",
+  "description": "ikwe.ai holds conversational AI to human-grade behavioral safety standards: human standards translated to AI standards, measured and put on the record. The EQ Safety Benchmark measures how AI systems behave across whole conversations with the humans they serve.",
   "address": {"@type": "PostalAddress", "addressCountry": "US"},
   "sameAs": ["https://www.linkedin.com/in/stephaniestranko/", "https://x.com/stephstranko", "https://ladyinvisibl.medium.com/"],
   "contactPoint": {"@type": "ContactPoint", "email": "hello@ikwe.ai", "contactType": "sales"}
@@ -973,7 +985,6 @@
     <li><a href="#moment">The Problem</a></li>
     <li><a href="#how">How It Works</a></li>
     <li><a href="/how-it-works">Work With Us</a></li>
-    <li><a href="/case-study">Case Study</a></li>
     <li><a href="/ikwe-sample-report-public.html" style="color:var(--coral)">Sample Report</a></li>
   </ul>
   <a href="/report" class="nav-cta">Request a Report</a>
@@ -987,7 +998,6 @@
   <a href="#moment" onclick="closeMobileMenu()">The Problem</a>
   <a href="#how" onclick="closeMobileMenu()">How It Works</a>
   <a href="/how-it-works" onclick="closeMobileMenu()">Work With Us</a>
-  <a href="/case-study" onclick="closeMobileMenu()">Case Study</a>
   <a href="/ikwe-sample-report-public.html" onclick="closeMobileMenu()">Sample Report</a>
   <a href="/contact" onclick="closeMobileMenu()">Get in touch</a>
   <a href="/report" class="mob-cta" onclick="closeMobileMenu()">Request a Report →</a>
@@ -1000,9 +1010,10 @@
 
     <!-- Left: headline + CTAs -->
     <div class="hero-text-col">
-      <span class="eyebrow">An independent safety certification for AI that people trust</span>
+      <span class="eyebrow">We translate human standards to AI standards</span>
+      <p style="font-family:'DM Serif Display',serif;font-style:italic;font-size:var(--fs-lead);color:var(--cream);margin:0 0 .4rem;">Ikwe means woman. A woman protects.</p>
       <h1>AI that helps humans,<br><em>not steers them toward harm.</em></h1>
-      <p class="lead">Ikwe measures how your AI actually behaves across the whole conversation, whether it keeps people on a safe trajectory or quietly drifts toward harm, and gives you a documented record you can stand behind.</p>
+      <p class="lead">We protect people by holding AI to human-grade behavioral safety standards. If a human doing this job would be held to a standard, the AI should be too. We measure the whole conversation against that bar, and we put the result on the record.</p>
       <div class="cta-group">
         <a href="/report" class="btn btn-primary">Request a Report →</a>
         <a href="/ikwe-sample-report-public.html" class="btn btn-secondary">View sample report</a>
@@ -1011,13 +1022,13 @@
         <span class="hero-badge">3 studies conducted · 1,509-run pilot corpus</span>
         <span class="hero-badge">12 crisis categories</span>
         <span class="hero-badge">8 behavioral dimensions</span>
-        <span class="hero-badge">54.7% first-contact harm rate in formative studies</span>
+        <span class="hero-badge">54.7% of first responses introduced a safety risk · formative studies, 1,509 scored runs</span>
       </div>
     </div>
 
     <!-- Right: mini report score preview -->
     <div class="hero-preview-col">
-      <span class="tier-chip">⚠ Tier 3 · Needs Remediation</span>
+      <span class="tier-chip">⚠ TIER III · Elevated Behavioral Risk</span>
       <div class="spr-row">
         <span class="spr-label">Composite Score</span>
         <span class="spr-val spr-amber">58 / 100</span>
@@ -1065,7 +1076,7 @@
   <div class="container reveal">
     <span class="eyebrow">The problem</span>
     <h2>What it looks like<br><em>when AI gets it wrong.</em></h2>
-    <p class="lead">Not a single bad response. A conversation that goes the wrong direction, quietly, across many turns, while everything looks fine from the outside.</p>
+    <p class="lead">The failure is rarely a single bad response. It is a conversation that goes the wrong direction across many turns, while each reply, read alone, looks fine.</p>
 
     <div class="scenario-grid">
       <div class="scenario-card fail">
@@ -1078,7 +1089,26 @@
       </div>
     </div>
 
-    <div class="pull-quote">The difference between those two outcomes isn't the words the AI used. It's the trajectory of the conversation.</div>
+    <div class="pull-quote">Turn by turn, both versions sound caring. They differ in where the conversation ends up.</div>
+
+    <p class="lead" style="margin-top:1.5rem;">The pattern is not specific to one app. Engagement pressure sits in the underlying models, so every product built on them inherits it. And most safety reviews run once, before launch, and never again.</p>
+  </div>
+</section>
+
+
+<hr class="divider" />
+
+<!-- ── SECTION: THE EMPTY SEAT ── -->
+<section id="empty-seat">
+  <div class="container reveal">
+    <span class="eyebrow">The empty seat</span>
+    <h2>Every human in a position of trust<br><em>is held to a standard.</em></h2>
+    <div style="max-width:720px;margin:1.75rem 0;">
+      <div style="display:flex;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--gray-mid,#ddd);flex-wrap:wrap;"><div style="flex:1;min-width:260px;"><strong>The therapist:</strong> licensing board, duty of care.</div><div style="flex:1;min-width:260px;color:var(--red-dark,#B3261E);"><strong>Its AI equivalent, the therapy chatbot:</strong> nothing.</div></div>
+      <div style="display:flex;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--gray-mid,#ddd);flex-wrap:wrap;"><div style="flex:1;min-width:260px;"><strong>The nurse:</strong> the clinical standard of care.</div><div style="flex:1;min-width:260px;color:var(--red-dark,#B3261E);"><strong>The symptom checker:</strong> nothing.</div></div>
+      <div style="display:flex;gap:1rem;padding:.85rem 0;flex-wrap:wrap;"><div style="flex:1;min-width:260px;"><strong>The crisis counselor:</strong> training, protocols, supervision.</div><div style="flex:1;min-width:260px;color:var(--red-dark,#B3261E);"><strong>The 2 a.m. companion:</strong> nothing.</div></div>
+    </div>
+    <div class="pull-quote">We bridge the gap between human safety standards and AI safety standards. The bar already exists. Ikwe holds AI to it.</div>
   </div>
 </section>
 
@@ -1119,14 +1149,14 @@
   <div class="container reveal">
     <span class="eyebrow">The EQSB System</span>
     <h2>Four layers.<br>One answer: is this system safe right now?</h2>
-    <p class="lead">The full EQSB suite, not just a scan. <strong>Measure</strong> tells you where you stand. <strong>Attest</strong> puts it on the record. <strong>Monitor</strong> keeps it true as your AI changes. <strong>Protect</strong> acts in the moment.</p>
+    <p class="lead"><strong>Measure</strong> establishes where your system stands. <strong>Attest</strong> documents it. <strong>Monitor</strong> tracks it as the system changes, and <strong>Protect</strong> will intervene when behavior crosses a threshold.</p>
 
     <div class="steps-stack">
       <div class="step-row">
         <div class="step-num-col">01</div>
         <div class="step-content">
           <span class="step-tag pre">Before it ships</span>
-          <h3>Measure <span style="font-size:.62em;font-weight:600;letter-spacing:.08em;color:var(--teal);vertical-align:middle;margin-left:.5rem;">● LIVE NOW</span></h3>
+          <h3>Measure <span style="font-size:var(--fs-label);font-weight:600;letter-spacing:var(--ls-label);color:var(--teal);vertical-align:middle;margin-left:.5rem;">● LIVE NOW</span></h3>
           <p>Your checkpoint. Scored pass/fail across the benchmark's 12 crisis categories, a clear answer before anything goes live.</p>
         </div>
       </div>
@@ -1134,34 +1164,36 @@
         <div class="step-num-col">02</div>
         <div class="step-content">
           <span class="step-tag deep">On the record</span>
-          <h3>Attest <span style="font-size:.62em;font-weight:600;letter-spacing:.08em;color:var(--teal);vertical-align:middle;margin-left:.5rem;">● LIVE NOW</span></h3>
-          <p>The on-the-record version of your safety, tier classification, 8-dimension scores, failure map, and remediation roadmap in a versioned record you can hand to procurement, counsel, and regulators.</p>
+          <h3>Attest <span style="font-size:var(--fs-label);font-weight:600;letter-spacing:var(--ls-label);color:var(--teal);vertical-align:middle;margin-left:.5rem;">● LIVE NOW</span></h3>
+          <p>Your safety, on the record: tier classification, 8-dimension scores, failure map, and a remediation roadmap in a versioned record you can hand to procurement, counsel, and regulators.</p>
         </div>
       </div>
       <div class="step-row">
         <div class="step-num-col">03</div>
         <div class="step-content">
           <span class="step-tag live">As it runs</span>
-          <h3>Monitor <span style="font-size:.62em;font-weight:600;letter-spacing:.08em;color:#3C3489;vertical-align:middle;margin-left:.5rem;">● IN PILOT</span></h3>
-          <p>AI changes constantly. Every update shifts behavior. Monitor watches live conversations in real time, catching drift before it compounds.</p>
+          <h3>Monitor <span style="font-size:var(--fs-label);font-weight:600;letter-spacing:var(--ls-label);color:var(--lav-deep);vertical-align:middle;margin-left:.5rem;">● IN PILOT</span></h3>
+          <p>Every model update shifts behavior. Monitor watches live conversations in real time and flags drift as it appears.</p>
         </div>
       </div>
       <div class="step-row">
         <div class="step-num-col">04</div>
         <div class="step-content">
           <span class="step-tag pre" style="background:var(--red-soft);color:var(--red-dark);">In the moment</span>
-          <h3>Protect <span style="font-size:.62em;font-weight:600;letter-spacing:.08em;color:var(--red-dark);vertical-align:middle;margin-left:.5rem;">● COMING SOON</span></h3>
+          <h3>Protect <span style="font-size:var(--fs-label);font-weight:600;letter-spacing:var(--ls-label);color:var(--red-dark);vertical-align:middle;margin-left:.5rem;">● COMING SOON</span></h3>
           <p>Real-time intervention in the conversation itself, acting before harm compounds. The last line of defense.</p>
         </div>
       </div>
     </div>
 
-    <p style="text-align:center;margin:2rem 0 .75rem;font-size:.82rem;letter-spacing:.14em;font-weight:600;color:var(--text-muted);">START TODAY WITH MEASURE → ATTEST</p>
+    <div class="pull-quote" style="margin-top:2rem;">Behavioral drift shows up in measurement before it shows up as harm. We call that interval the preventable window. Measurement establishes it, Monitor watches it, and Protect is being built to act inside it.</div>
+
+    <p style="text-align:center;margin:2rem 0 .75rem;font-size:var(--fs-small);letter-spacing:var(--ls-label);font-weight:600;color:var(--text-muted);">START TODAY WITH MEASURE → ATTEST</p>
     <div class="cta-group" style="justify-content:center;">
       <a href="/report" class="btn btn-primary" style="background:var(--teal);color:var(--white);">Schedule a scan →</a>
       <a href="/contact" class="btn btn-secondary" style="border-color:var(--navy);color:var(--navy);">Join the Monitor pilot →</a>
     </div>
-    <p style="text-align:center;margin-top:1rem;font-size:.85rem;color:var(--text-muted);">
+    <p style="text-align:center;margin-top:1rem;font-size:var(--fs-small);color:var(--text-muted);">
       Scans run the same week. Scope and pricing follow a short intake, <a href="/how-it-works" style="color:var(--teal);font-weight:500;">see how it works →</a>
     </p>
 
@@ -1169,7 +1201,7 @@
       <div class="pc-text">
         <div class="pc-eyebrow">How to Work With Us</div>
         <strong>What actually happens at each stage, in plain terms.</strong>
-        <span>Process, timelines, what you get, and what to expect from first contact to certified safe.</span>
+        <span>Process, timelines, what you get, and what to expect from first conversation to an on-the-record behavioral safety report.</span>
       </div>
       <a href="/how-it-works" class="pc-link">See the full process →</a>
     </div>
@@ -1183,7 +1215,7 @@
 <section id="whynow">
   <div class="container reveal">
     <span class="eyebrow">Why now</span>
-    <h2>The law isn't coming.<br><em>It's already here.</em></h2>
+    <h2>Chatbot safety law is already in force<br><em>in six states.</em></h2>
     <p class="lead">Driven by lawsuits and headlines, behavioral safety is becoming law, state by state. And not one of those laws defines how to <strong>prove</strong> "safe."</p>
 
     <div class="stat-grid">
@@ -1205,8 +1237,8 @@
       </div>
     </div>
 
-    <p style="font-size:.88rem; color: var(--text-muted); margin-top:1.75rem;">
-      When the law says "be safe," the EQ Safety Benchmark is how you prove it. &nbsp;<a href="/how-it-works" style="color:var(--teal);font-weight:500;">See how it maps to the new laws →</a>
+    <p style="font-size:var(--fs-small); color: var(--text-muted); margin-top:1.75rem;">
+      Every one of those laws says "be safe." None of them says how to show it. The EQ Safety Benchmark was built to be that documentation. &nbsp;<a href="/how-it-works#faq-law" style="color:var(--teal);font-weight:500;">See how it maps to the new laws →</a>
     </p>
   </div>
 </section>
@@ -1218,8 +1250,10 @@
 <section id="proof">
   <div class="container reveal">
     <span class="eyebrow">Research foundation</span>
-    <h2>Built on data.<br>Not assumptions.</h2>
+    <h2>Three studies.<br>1,509 scored runs.</h2>
     <p class="lead">Three studies conducted. Timestamped. Peer review underway. The benchmark predates the company, and the pilot numbers are what they are.</p>
+
+    <p style="max-width:760px;font-size:var(--fs-lead);color:var(--text-muted);margin:1rem 0 1.5rem;">We did not invent the bar. We translated it. The human standard, made observable across eight dimensions and 12 crisis categories, scored by consensus AI judges calibrated against 312 human-scored runs, and validated independently: pre-registered flagship study, peer review underway, inter-rater reliability testing.</p>
 
     <div class="stat-grid">
       <div class="stat-card">
@@ -1240,7 +1274,7 @@
       </div>
     </div>
 
-    <p style="font-size:.88rem; color: var(--text-muted); margin-top:1.75rem;">
+    <p style="font-size:var(--fs-small); color: var(--text-muted); margin-top:1.75rem;">
       Three studies conducted and timestamped across 2025–2026 · a pre-registered flagship study is now in progress. &nbsp;<a href="/research" style="color:var(--teal);font-weight:500;">Read the research →</a>
     </p>
   </div>
@@ -1258,18 +1292,19 @@
 
     <div style="display:flex;gap:1.25rem;align-items:stretch;flex-wrap:wrap;margin:2rem 0 2.25rem;">
       <div style="flex:1;min-width:280px;background:var(--red-soft);border:1.5px solid rgba(226,75,74,.35);border-radius:14px;padding:1.5rem 1.75rem;">
-        <div style="font-size:.72rem;font-weight:700;letter-spacing:.14em;color:var(--red-dark);margin-bottom:.5rem;">LAYER 1 · THE SAFETY GATE</div>
-        <strong style="font-family:'DM Serif Display',serif;font-size:1.25rem;">Pass / fail, first, always.</strong>
-        <p style="font-size:.9rem;color:var(--text-muted);margin-top:.4rem;">Certain behaviors fail a system automatically, inducing harm, amplifying distress, treating fear as fact. No score can buy them back.</p>
+        <div style="font-size:var(--fs-label);font-weight:700;letter-spacing:var(--ls-label);color:var(--red-dark);margin-bottom:.5rem;">LAYER 1 · THE SAFETY GATE</div>
+        <strong style="font-family:'DM Serif Display',serif;font-size:var(--fs-h3);">Pass / fail, first, always.</strong>
+        <p style="font-size:var(--fs-body);color:var(--text-muted);margin-top:.4rem;">Certain behaviors fail a system automatically, inducing harm, amplifying distress, treating fear as fact. No score can buy them back.</p>
       </div>
       <div style="align-self:center;font-size:1.5rem;color:var(--gray-mid);">→</div>
       <div style="flex:1;min-width:280px;background:var(--teal-light);border:1.5px solid rgba(15,110,86,.3);border-radius:14px;padding:1.5rem 1.75rem;">
-        <div style="font-size:.72rem;font-weight:700;letter-spacing:.14em;color:var(--teal);margin-bottom:.5rem;">LAYER 2 · THE BEHAVIORAL SCORE</div>
-        <strong style="font-family:'DM Serif Display',serif;font-size:1.25rem;">0–100, across 8 dimensions.</strong>
-        <p style="font-size:.9rem;color:var(--text-muted);margin-top:.4rem;">Every system is scored either way, but a gate failure flags the entire record as higher risk, no matter how the dimensions land.</p>
+        <div style="font-size:var(--fs-label);font-weight:700;letter-spacing:var(--ls-label);color:var(--teal);margin-bottom:.5rem;">LAYER 2 · THE BEHAVIORAL SCORE</div>
+        <strong style="font-family:'DM Serif Display',serif;font-size:var(--fs-h3);">0–100, across 8 dimensions.</strong>
+        <p style="font-size:var(--fs-body);color:var(--text-muted);margin-top:.4rem;">Every system is scored either way, but a gate failure flags the entire record as higher risk, no matter how the dimensions land.</p>
+      <p style="font-size:var(--fs-small);color:var(--text-muted);margin-top:.5rem;">Systems classify from Tier I, standard met, to Tier IV, unsafe.</p>
       </div>
     </div>
-    <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:1.5rem;">Built on the methodology documented at <a href="/research" style="color:var(--teal);">ikwe.ai/research</a>, the full scoring rubric stays proprietary and patent pending.</p>
+    <p style="font-size:var(--fs-small);color:var(--text-muted);margin-bottom:1.5rem;">Built on the methodology documented at <a href="/research" style="color:var(--teal);">ikwe.ai/research</a>, the full scoring rubric stays proprietary and patent pending.</p>
 
     <div class="dims-list">
       <div class="dl-item"><span class="dl-num">A</span><span class="dl-name">Detection &amp; Triage</span><span class="dl-desc">Noticing distress, even when it's never said directly</span></div>
@@ -1279,8 +1314,9 @@
       <div class="dl-item"><span class="dl-num">E</span><span class="dl-name">Loop Interruption</span><span class="dl-desc">Breaking spirals instead of feeding them</span></div>
       <div class="dl-item"><span class="dl-num">F</span><span class="dl-name">Pattern Externalization</span><span class="dl-desc">Helping the person see the pattern, instead of becoming it</span></div>
       <div class="dl-item"><span class="dl-num">G</span><span class="dl-name">Practical Containment</span><span class="dl-desc">Keeping the moment grounded, concrete, and survivable</span></div>
-      <div class="dl-item"><span class="dl-num">H</span><span class="dl-name">Safety Routing</span><span class="dl-desc">Getting the person to real help at the right moment</span></div>
+      <div class="dl-item"><span class="dl-num">H</span><span class="dl-name">Safety Routing</span><span class="dl-desc">Routing to human help when the moment calls for it</span></div>
     </div>
+    <p style="font-size:var(--fs-body);color:var(--text-muted);margin-top:1.25rem;">Every one a behavior licensed humans are already trained and required to perform.</p>
   </div>
 </section>
 
@@ -1292,12 +1328,12 @@
   <div class="container reveal">
     <span class="eyebrow">Who it's for</span>
     <h2>If you build, deploy, or insure AI,<br><em>this is for you.</em></h2>
-    <p class="lead">The behavioral safety of AI has to be proved, not claimed. Wherever AI shows up in front of a person, Ikwe measures what's actually happening.</p>
+    <p class="lead">Wherever an AI system works directly with people, its behavior can be measured. That is what Ikwe does.</p>
 
     <div class="audience-grid">
       <div class="aud-card">
         <h3>Insurance &amp; Underwriters</h3>
-        <p>An independent behavioral signal to price AI risk at bind, before the claim exists.</p>
+        <p>An independent risk-quality signal for underwriting AI exposure, before the claim exists.</p>
       </div>
       <div class="aud-card">
         <h3>Enterprise</h3>
@@ -1305,7 +1341,7 @@
       </div>
       <div class="aud-card">
         <h3>Health &amp; Wellness</h3>
-        <p>Proof of what your system actually does in the moments that matter most to your users.</p>
+        <p>A documented record of how your system handles users in distress.</p>
       </div>
       <div class="aud-card">
         <h3>Education</h3>
@@ -1318,15 +1354,8 @@
     </div>
 
 
-    <p class="lead" style="margin-top:1rem;font-size:.9rem;">You cannot claim behavioral safety. You have to prove it. <a href="/report" style="color:var(--teal);font-weight:500;">Start with a Signal Scan →</a></p>
-
-    <div class="page-callout callout-teal">
-      <div class="pc-text">
-        <div class="pc-eyebrow">Case Study</div>
-        <strong>See what the full sequence looks like in practice.</strong>
-        <span>A mental health AI platform, from 38% crisis routing failure to independent certification in 14 weeks.</span>
-      </div>
-      <a href="/case-study" class="pc-link">Read the case study →</a>
+    <p class="lead" style="margin-top:1rem;font-size:var(--fs-body);">You cannot claim behavioral safety. You have to prove it. <a href="/report" style="color:var(--teal);font-weight:500;">Start with a Signal Scan →</a></p>
+    <a href="/ikwe-sample-report-public.html" class="pc-link">Explore the sample report →</a>
     </div>
   </div>
 </section>
@@ -1339,8 +1368,8 @@
   <div class="sample-inner reveal">
     <div class="sample-text">
       <span class="eyebrow">See what you get</span>
-      <h2>A real report.<br>Not a brochure.</h2>
-      <p>This is exactly what an Ikwe.ai behavioral safety audit delivers, tier classification, 8-dimension scoring, failure map, remediation roadmap, and the data behind every finding. Actionable from page one.</p>
+      <h2>What the report contains.</h2>
+      <p>This is exactly what an Ikwe.ai behavioral safety audit delivers: tier classification, 8-dimension scoring, failure map, remediation roadmap, and the data behind every finding. Actionable from page one.</p>
       <a href="/ikwe-sample-report-public.html" class="btn btn-primary" style="background:var(--coral);color:var(--navy);">View sample report →</a>
     </div>
     <div class="sample-preview">
@@ -1366,10 +1395,10 @@
         <span class="spr-val spr-amber">B · Regulation (1.7/5)</span>
       </div>
       <div class="sample-preview-row">
-        <span class="spr-label">Ikwe.ai EQSB baseline</span>
+        <span class="spr-label">EQSB pilot baseline, cross-model avg</span>
         <span class="spr-val spr-green">74.0 / 100</span>
       </div>
-      <div style="padding:.35rem .85rem;font-size:.7rem;color:rgba(255,255,255,.2);text-align:center;letter-spacing:.04em;">Representative data · System anonymized</div>
+      <div style="padding:.35rem .85rem;font-size:var(--fs-label);color:rgba(255,255,255,.2);text-align:center;letter-spacing:var(--ls-label);">Representative data · System anonymized</div>
     </div>
   </div>
 </section>
@@ -1378,19 +1407,29 @@
 
 
 <!-- ── SECTION 9: CLOSE ── -->
+<section id="who">
+  <div class="container reveal">
+    <span class="eyebrow">Who we are</span>
+    <h2>Independent by design.</h2>
+    <p class="lead" style="max-width:760px;">Ikwe.ai is an independent measurement organization. We do not build AI systems, and we do not operate under the control of the labs we measure. Founded by Stephanie Stranko, with a research team across the United States, Canada, and New Zealand. Methodology independently reviewed; peer review underway. <a href="/research" style="color:var(--teal);font-weight:500;">About the methodology →</a></p>
+  </div>
+</section>
+
+<hr class="divider" />
+
 <section id="close">
   <div class="container-narrow reveal">
     <span class="eyebrow" style="color: var(--coral);">Get in touch</span>
     <h2>Ready to<br><em>prove it?</em></h2>
-    <p class="lead">Start with Measure, schedule a scan and get your first documented record of how your AI actually behaves. Then keep it current as your AI changes.</p>
+    <p class="lead">Schedule a scan. It produces your first documented record of how your system behaves. Re-scoring keeps that record current as the system changes.</p>
     <div class="cta-group">
       <a href="/report" class="btn btn-primary">Request a Report →</a>
       <a href="mailto:hello@ikwe.ai" class="btn btn-secondary">Contact directly</a>
     </div>
-    <p style="margin-top:2rem; font-size:.82rem; color:rgba(255,255,255,.35);">
+    <p style="margin-top:2rem; font-size:var(--fs-small); color:rgba(255,255,255,.35);">
       Independent · Third-party · Operational · Behavioral
     </p>
-    <p style="margin-top:1rem; font-size:.85rem; color:rgba(255,255,255,.5);">
+    <p style="margin-top:1rem; font-size:var(--fs-small); color:rgba(255,255,255,.5);">
       Investors, partners, and press: <a href="/access" style="color:var(--coral);font-weight:500;">request our materials →</a>
     </p>
 
@@ -1430,9 +1469,9 @@
     &nbsp;·&nbsp;
     <a href="/research">Research</a>
     &nbsp;·&nbsp;
-    <a href="https://ladyinvisibl.medium.com/" target="_blank">Medium</a>
+    <a href="/research">Research</a>
     &nbsp;·&nbsp;
-    <a href="https://x.com/stephstranko" target="_blank">X</a>
+    <a href="https://www.linkedin.com/in/stephaniestranko/" target="_blank">LinkedIn</a>
     &nbsp;·&nbsp;
     <a href="https://www.linkedin.com/in/stephaniestranko/" target="_blank">LinkedIn</a>
   </div>

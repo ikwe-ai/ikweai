@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>How to Work With Us, Ikwe.ai</title>
-  <meta name="description" content="How Ikwe.ai works: from your first conversation to a certified behavioral safety record. Signal Scan, Deep Scan, Full Report, and Remediation, what each stage delivers and what to expect." />
+  <meta name="description" content="How Ikwe.ai works: from your first conversation to an on-the-record behavioral safety report. Signal Scan, Deep Scan, Full Report, and Remediation, what each stage delivers and what to expect." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#191A2E" />
   <link rel="canonical" href="https://ikwe.ai/how-it-works" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="How to Work With Us, Ikwe.ai" />
-  <meta property="og:description" content="From first contact to certified safe. What each stage of the Ikwe.ai audit process delivers and what to expect." />
+  <meta property="og:description" content="From first conversation to an on-the-record behavioral safety report. What each stage of the Ikwe.ai audit process delivers and what to expect." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Ikwe.ai" />
   <meta property="og:url" content="https://ikwe.ai/how-it-works" />
@@ -38,6 +38,18 @@
 
   <style>
     :root {
+  /* type tokens (consolidated July 2026) */
+  --fs-display: clamp(2.2rem, 4.5vw, 3.2rem);
+  --fs-h2: clamp(1.6rem, 3vw, 2.3rem);
+  --fs-h3: 1.2rem;
+  --fs-lead: 1.05rem;
+  --fs-body: .95rem;
+  --fs-small: .85rem;
+  --fs-label: .75rem;
+  --ls-label: .1em;
+  --lav-deep: #3C3489;
+  --rule: #EEEEF2;
+
       --navy:   #191A2E;
       --coral:  #F7A192;
       --lav:    #B894F6;
@@ -78,11 +90,11 @@
       background: conic-gradient(#1D1F35 0deg 90deg, var(--coral) 90deg 180deg, var(--lav) 180deg 270deg, var(--cream) 270deg 360deg);
       border: 1.5px solid rgba(247,161,146,0.35); flex-shrink: 0;
     }
-    .nav-brand-name { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--white); letter-spacing: .02em; }
+    .nav-brand-name { font-family: 'DM Serif Display', serif; font-size:var(--fs-h3); color: var(--white); letter-spacing: .02em; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: .875rem; transition: color .2s; }
+    .nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size:var(--fs-small); transition: color .2s; }
     .nav-links a:hover { color: var(--coral); }
-    .nav-cta { background: var(--coral); color: var(--navy); font-weight: 500; font-size: .875rem; padding: .5rem 1.25rem; border-radius: 6px; text-decoration: none; transition: opacity .2s; }
+    .nav-cta { background: var(--coral); color: var(--navy); font-weight: 500; font-size:var(--fs-small); padding: .5rem 1.25rem; border-radius: 6px; text-decoration: none; transition: opacity .2s; }
     .nav-cta:hover { opacity: .88; }
     .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; background: transparent; border: none; }
     .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: all .25s; }
@@ -115,12 +127,12 @@
     h1, h2, h3 { font-family: 'DM Serif Display', serif; line-height: 1.2; }
     h1 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); }
     h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); }
-    h3 { font-size: 1.15rem; }
-    .eyebrow { display: inline-block; font-size: .75rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 1rem; color: var(--teal-mid); }
-    .lead { font-size: 1.05rem; color: var(--text-muted); line-height: 1.75; margin-top: .75rem; }
+    h3 { font-size:var(--fs-h3); }
+    .eyebrow { display: inline-block; font-size:var(--fs-label); font-weight: 500; letter-spacing:var(--ls-label); text-transform: uppercase; margin-bottom: 1rem; color: var(--teal-mid); }
+    .lead { font-size:var(--fs-lead); color: var(--text-muted); line-height: 1.75; margin-top: .75rem; }
 
     /* ── BUTTONS ── */
-    .btn { display: inline-block; padding: .75rem 1.75rem; border-radius: 8px; font-weight: 500; font-size: .95rem; text-decoration: none; cursor: pointer; border: none; transition: opacity .2s, transform .15s; }
+    .btn { display: inline-block; padding: .75rem 1.75rem; border-radius: 8px; font-weight: 500; font-size:var(--fs-body); text-decoration: none; cursor: pointer; border: none; transition: opacity .2s, transform .15s; }
     .btn:hover { opacity: .88; transform: translateY(-1px); }
     .btn-primary { background: var(--coral); color: var(--navy); }
     .btn-secondary { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.4); }
@@ -129,10 +141,10 @@
     .cta-group { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
 
     /* ── DIVIDER ── */
-    .divider { display: block; border: none; border-top: 1px solid #eeeef2; background: transparent; margin: 0; }
+    .divider { display: block; border: none; border-top: 1px solid var(--rule); background: transparent; margin: 0; }
 
     /* ── BREADCRUMB ── */
-    .breadcrumb { font-size: .82rem; color: rgba(255,255,255,.4); margin-bottom: 1.25rem; }
+    .breadcrumb { font-size:var(--fs-small); color: rgba(255,255,255,.4); margin-bottom: 1.25rem; }
     .breadcrumb a { color: rgba(255,255,255,.4); text-decoration: none; }
     .breadcrumb a:hover { color: var(--coral); }
     .breadcrumb span { margin: 0 .4rem; }
@@ -145,7 +157,7 @@
     #hiw-hero .container-narrow { text-align: center; }
     #hiw-hero h1 { color: var(--white); margin-bottom: .5rem; font-size: clamp(1.6rem, 3vw, 2.1rem); }
     #hiw-hero h1 em { font-style: italic; color: var(--coral); }
-    #hiw-hero .lead { color: rgba(255,255,255,.55); max-width: 480px; margin: 0 auto; font-size: .88rem; line-height: 1.6; }
+    #hiw-hero .lead { color: rgba(255,255,255,.55); max-width: 480px; margin: 0 auto; font-size:var(--fs-small); line-height: 1.6; }
 
     .promise-bar {
       display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
@@ -154,9 +166,9 @@
     }
     .promise-item {
       display: flex; align-items: center; gap: .4rem;
-      font-size: .78rem; color: rgba(255,255,255,.4);
+      font-size:var(--fs-label); color: rgba(255,255,255,.4);
     }
-    .promise-icon { font-size: .88rem; }
+    .promise-icon { font-size:var(--fs-small); }
 
     /* ── PRINCIPLES ── */
     #hiw-principles { background: var(--gray-soft); }
@@ -173,7 +185,7 @@
       line-height: 1; margin-bottom: .5rem;
     }
     .principle-card h3 { margin-bottom: .5rem; }
-    .principle-card p { font-size: .9rem; color: var(--text-muted); line-height: 1.65; }
+    .principle-card p { font-size:var(--fs-body); color: var(--text-muted); line-height: 1.65; }
 
     /* ── PROCESS STEPS ── */
     #hiw-process { background: var(--white); }
@@ -182,7 +194,7 @@
     .process-step {
       display: grid; grid-template-columns: 320px 1fr; gap: 3rem; align-items: start;
       margin-bottom: 4rem; padding-bottom: 4rem;
-      border-bottom: 1px solid #eeeef2;
+      border-bottom: 1px solid var(--rule);
     }
     .process-step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
     @media (max-width: 760px) {
@@ -199,53 +211,53 @@
     .ps-card.full   { background: var(--teal-light); }
     .ps-card.remed  { background: var(--green-soft); }
     .ps-stage {
-      font-size: .7rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+      font-size:var(--fs-label); font-weight: 500; letter-spacing:var(--ls-label); text-transform: uppercase;
       border-radius: 20px; padding: .2rem .75rem; display: inline-block; width: fit-content;
     }
     .ps-card.signal .ps-stage { background: rgba(99,56,6,.12); color: var(--amber-dark); }
-    .ps-card.deep   .ps-stage { background: rgba(91,47,176,.12); color: #5B2FB0; }
+    .ps-card.deep   .ps-stage { background: rgba(91,47,176,.12); color:var(--lav-deep); }
     .ps-card.full   .ps-stage { background: rgba(15,110,86,.12); color: var(--teal); }
     .ps-card.remed  .ps-stage { background: rgba(39,80,10,.12); color: var(--green-dark); }
     .ps-name {
       font-family: 'DM Serif Display', serif; font-size: 1.75rem; line-height: 1.1;
     }
     .ps-card.signal .ps-name { color: var(--amber-dark); }
-    .ps-card.deep   .ps-name { color: #5B2FB0; }
+    .ps-card.deep   .ps-name { color:var(--lav-deep); }
     .ps-card.full   .ps-name { color: var(--teal); }
     .ps-card.remed  .ps-name { color: var(--green-dark); }
     .ps-price {
       font-size: 1.5rem; font-weight: 500; line-height: 1;
     }
     .ps-card.signal .ps-price { color: var(--amber-dark); }
-    .ps-card.deep   .ps-price { color: #5B2FB0; }
+    .ps-card.deep   .ps-price { color:var(--lav-deep); }
     .ps-card.full   .ps-price { color: var(--teal); }
     .ps-card.remed  .ps-price { color: var(--green-dark); }
-    .ps-price-note { font-size: .78rem; opacity: .65; margin-top: .15rem; }
+    .ps-price-note { font-size:var(--fs-label); opacity: .65; margin-top: .15rem; }
     .ps-delivery {
       font-size: .8rem; display: flex; align-items: center; gap: .4rem;
     }
     .ps-card.signal .ps-delivery { color: var(--amber-dark); }
-    .ps-card.deep   .ps-delivery { color: #5B2FB0; }
+    .ps-card.deep   .ps-delivery { color:var(--lav-deep); }
     .ps-card.full   .ps-delivery { color: var(--teal); }
     .ps-card.remed  .ps-delivery { color: var(--green-dark); }
 
     .ps-right h3 { margin-bottom: .75rem; }
-    .ps-right p { font-size: .95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; }
+    .ps-right p { font-size:var(--fs-body); color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; }
     .ps-right p:last-child { margin-bottom: 0; }
 
     .ps-delivers {
       margin-top: 1.25rem; background: var(--gray-soft); border-radius: 10px; padding: 1.25rem 1.5rem;
     }
     .ps-delivers-label {
-      font-size: .72rem; font-weight: 500; letter-spacing: .09em; text-transform: uppercase;
+      font-size:var(--fs-label); font-weight: 500; letter-spacing: .09em; text-transform: uppercase;
       color: var(--text-muted); margin-bottom: .65rem;
     }
     .ps-delivers ul { padding-left: 1.1rem; }
-    .ps-delivers li { font-size: .875rem; color: var(--text); line-height: 1.65; margin-bottom: .2rem; }
+    .ps-delivers li { font-size:var(--fs-small); color: var(--text); line-height: 1.65; margin-bottom: .2rem; }
 
     .ps-ideal {
       margin-top: 1rem; display: flex; align-items: flex-start; gap: .6rem;
-      font-size: .82rem; color: var(--teal); background: var(--teal-light);
+      font-size:var(--fs-small); color: var(--teal); background: var(--teal-light);
       border-radius: 8px; padding: .85rem 1rem;
     }
     .ps-ideal-icon { flex-shrink: 0; margin-top: .1rem; }
@@ -261,7 +273,7 @@
     }
     .expect-card .ec-icon { font-size: 1.75rem; margin-bottom: .75rem; }
     .expect-card h3 { margin-bottom: .5rem; font-size: 1rem; }
-    .expect-card p { font-size: .88rem; color: var(--text-muted); line-height: 1.65; }
+    .expect-card p { font-size:var(--fs-small); color: var(--text-muted); line-height: 1.65; }
 
     /* ── WHO IT'S FOR ── */
     #hiw-who { background: var(--white); }
@@ -277,26 +289,26 @@
       width: 22px; height: 22px; border-radius: 50%;
       background: var(--teal-light); color: var(--teal);
       display: flex; align-items: center; justify-content: center;
-      font-size: .75rem; flex-shrink: 0; margin-top: .15rem; font-weight: 700;
+      font-size:var(--fs-label); flex-shrink: 0; margin-top: .15rem; font-weight: 700;
     }
-    .who-item p { font-size: .9rem; color: var(--text); line-height: 1.6; }
-    .who-item strong { display: block; font-size: .95rem; margin-bottom: .2rem; }
+    .who-item p { font-size:var(--fs-body); color: var(--text); line-height: 1.6; }
+    .who-item strong { display: block; font-size:var(--fs-body); margin-bottom: .2rem; }
 
     /* ── FAQ ── */
     #hiw-faq { background: var(--gray-soft); }
     .faq-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 0; }
     .faq-item {
-      border-bottom: 1px solid #e8e8ec; padding: 1.25rem 0;
+      border-bottom: 1px solid var(--rule); padding: 1.25rem 0;
     }
-    .faq-item:first-child { border-top: 1px solid #e8e8ec; }
+    .faq-item:first-child { border-top: 1px solid var(--rule); }
     .faq-q {
-      font-weight: 500; font-size: .95rem; cursor: pointer;
+      font-weight: 500; font-size:var(--fs-body); cursor: pointer;
       display: flex; align-items: center; justify-content: space-between; gap: 1rem;
       user-select: none;
     }
-    .faq-q .faq-arrow { font-size: .7rem; color: var(--teal-mid); transition: transform .2s; flex-shrink: 0; }
+    .faq-q .faq-arrow { font-size:var(--fs-label); color: var(--teal-mid); transition: transform .2s; flex-shrink: 0; }
     .faq-item.open .faq-arrow { transform: rotate(180deg); }
-    .faq-a { display: none; font-size: .9rem; color: var(--text-muted); line-height: 1.7; padding-top: .75rem; }
+    .faq-a { display: none; font-size:var(--fs-body); color: var(--text-muted); line-height: 1.7; padding-top: .75rem; }
     .faq-item.open .faq-a { display: block; }
 
     /* ── CTA ── */
@@ -306,7 +318,7 @@
     #hiw-cta .lead { color: rgba(255,255,255,.65); max-width: 520px; margin: 0 auto; }
     #hiw-cta .cta-group { justify-content: center; }
     .always-included {
-      margin-top: 1.5rem; font-size: .82rem; color: rgba(255,255,255,.35);
+      margin-top: 1.5rem; font-size:var(--fs-small); color: rgba(255,255,255,.35);
       display: flex; align-items: center; justify-content: center; gap: .5rem;
     }
 
@@ -338,7 +350,6 @@
     <li><a href="/#moment">The Problem</a></li>
     <li><a href="/#how">How It Works</a></li>
     <li><a href="/how-it-works" style="color:var(--coral)">Work With Us</a></li>
-    <li><a href="/case-study">Case Study</a></li>
     <li><a href="/ikwe-sample-report-public.html">Sample Report</a></li>
   </ul>
   <a href="/report" class="nav-cta">Request a Report</a>
@@ -350,7 +361,6 @@
 <div class="nav-mobile-menu" id="nav-mobile-menu">
   <a href="/" onclick="closeMobileMenu()">Home</a>
   <a href="/how-it-works" onclick="closeMobileMenu()">Work With Us</a>
-  <a href="/case-study" onclick="closeMobileMenu()">Case Study</a>
   <a href="/ikwe-sample-report-public.html" onclick="closeMobileMenu()">Sample Report</a>
   <a href="mailto:hello@ikwe.ai" onclick="closeMobileMenu()">Get in touch</a>
   <a href="/report" class="mob-cta" onclick="closeMobileMenu()">Request a Report →</a>
@@ -360,14 +370,14 @@
 <!-- ── HERO ── -->
 <section id="hiw-hero">
   <div class="container-narrow">
-    <span class="eyebrow">Process · Pricing · Timelines</span>
-    <h1>Start with a scan.<br><em>End with proof.</em></h1>
-    <p class="lead">What happens at each stage, what you get, and what to expect.</p>
+    <span class="eyebrow">Process · Timelines · Deliverables</span>
+    <h1>How an engagement works,<br><em>from first scan to documented record.</em></h1>
+    <p class="lead">What happens at each stage, what you get, and what to expect. Pricing is scoped at intake and confirmed in writing before anything runs.</p>
     <div class="promise-bar">
-      <div class="promise-item"><span class="promise-icon">💬</span> Conversation before we run anything</div>
-      <div class="promise-item"><span class="promise-icon">📋</span> Results delivered in writing</div>
-      <div class="promise-item"><span class="promise-icon">🔁</span> Conversation after results come in</div>
-      <div class="promise-item"><span class="promise-icon">🔒</span> Your system stays private</div>
+      <div class="promise-item"><span class="promise-icon"></span> Conversation before we run anything</div>
+      <div class="promise-item"><span class="promise-icon"></span> Results delivered in writing</div>
+      <div class="promise-item"><span class="promise-icon"></span> Conversation after results come in</div>
+      <div class="promise-item"><span class="promise-icon"></span> Your system stays private</div>
     </div>
   </div>
 </section>
@@ -433,7 +443,7 @@
         <g>
           <rect x="520" y="20" width="220" height="110" rx="14" fill="#EEEDFE" stroke="#3C3489" stroke-width="1.5"/>
           <text x="540" y="52" font-size="13" font-weight="700" letter-spacing="2" fill="#3C3489">03 · MONITOR</text>
-          <text x="540" y="78" font-size="17" font-weight="700" fill="#262052">The watchtower</text>
+          <text x="540" y="78" font-size="17" font-weight="700" fill="#262052">As it runs</text>
           <text x="540" y="100" font-size="12.5" fill="#54508a">As it runs</text>
           <circle cx="540" cy="116" r="4" fill="#3C3489"/><text x="551" y="120" font-size="11" font-weight="700" fill="#3C3489">IN PILOT</text>
         </g>
@@ -441,7 +451,7 @@
         <g>
           <rect x="780" y="20" width="220" height="110" rx="14" fill="#FCEBEB" stroke="#A04434" stroke-width="1.5"/>
           <text x="800" y="52" font-size="13" font-weight="700" letter-spacing="2" fill="#791F1F">04 · PROTECT</text>
-          <text x="800" y="78" font-size="17" font-weight="700" fill="#4a1a14">The last line</text>
+          <text x="800" y="78" font-size="17" font-weight="700" fill="#4a1a14">In the moment</text>
           <text x="800" y="100" font-size="12.5" fill="#8a5650">In the moment</text>
           <circle cx="800" cy="116" r="4" fill="#791F1F"/><text x="811" y="120" font-size="11" font-weight="700" fill="#791F1F">COMING SOON</text>
         </g>
@@ -453,31 +463,31 @@
     <!-- four-layer descriptions (expanded to match the home page depth) -->
     <div style="max-width:980px;margin:2.25rem auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1rem;">
       <div style="background:#E1F5EE;border:1.5px solid #0F6E56;border-radius:14px;padding:1.15rem 1.2rem;">
-        <div style="font-size:.72rem;font-weight:700;letter-spacing:2px;color:#0F6E56;">01 · MEASURE</div>
-        <div style="font-family:'DM Serif Display',serif;font-size:1.12rem;color:#14281F;margin:.35rem 0 .15rem;">The checkpoint</div>
-        <div style="font-size:.74rem;font-weight:700;color:#0F6E56;letter-spacing:.5px;margin-bottom:.55rem;">● LIVE NOW · Before it ships</div>
-        <p style="font-size:.9rem;line-height:1.55;color:#2f473c;margin:0 0 .65rem;">Your checkpoint before anything goes live. We score your AI pass or fail across the benchmark's 12 crisis categories, so you get a clear answer, not a maybe, before it reaches a person.</p>
+        <div style="font-size:var(--fs-label);font-weight:700;letter-spacing:var(--ls-label);color:#0F6E56;">01 · MEASURE</div>
+        <div style="font-family:'DM Serif Display',serif;font-size:var(--fs-h3);color:#14281F;margin:.35rem 0 .15rem;">The checkpoint</div>
+        <div style="font-size:var(--fs-label);font-weight:700;color:#0F6E56;letter-spacing:var(--ls-label);margin-bottom:.55rem;">● LIVE NOW · Before it ships</div>
+        <p style="font-size:var(--fs-body);line-height:1.55;color:#2f473c;margin:0 0 .65rem;">Your checkpoint before anything goes live. We score your AI pass or fail across the benchmark's 12 crisis categories, so you have a documented answer before it reaches a person.</p>
         <div style="font-size:.8rem;color:#0F6E56;font-weight:700;">Product: Signal Scan</div>
       </div>
       <div style="background:#FAEEDA;border:1.5px solid #B98A3A;border-radius:14px;padding:1.15rem 1.2rem;">
-        <div style="font-size:.72rem;font-weight:700;letter-spacing:2px;color:#633806;">02 · ATTEST</div>
-        <div style="font-family:'DM Serif Display',serif;font-size:1.12rem;color:#3A2F10;margin:.35rem 0 .15rem;">The record</div>
-        <div style="font-size:.74rem;font-weight:700;color:#0F6E56;letter-spacing:.5px;margin-bottom:.55rem;">● LIVE NOW · On the record</div>
-        <p style="font-size:.9rem;line-height:1.55;color:#4a3f22;margin:0 0 .65rem;">Your safety on the record. A tier classification, the 8 behavioral-dimension scores, a failure map, and a remediation roadmap in a versioned report you can hand to procurement, counsel, and regulators.</p>
-        <div style="font-size:.8rem;color:#633806;font-weight:700;">Product: Full Report and Certification</div>
+        <div style="font-size:var(--fs-label);font-weight:700;letter-spacing:var(--ls-label);color:#633806;">02 · ATTEST</div>
+        <div style="font-family:'DM Serif Display',serif;font-size:var(--fs-h3);color:#3A2F10;margin:.35rem 0 .15rem;">The record</div>
+        <div style="font-size:var(--fs-label);font-weight:700;color:#0F6E56;letter-spacing:var(--ls-label);margin-bottom:.55rem;">● LIVE NOW · On the record</div>
+        <p style="font-size:var(--fs-body);line-height:1.55;color:#4a3f22;margin:0 0 .65rem;">Your safety on the record. A tier classification, the 8 behavioral-dimension scores, a failure map, and a remediation roadmap in a versioned report you can hand to procurement, counsel, and regulators.</p>
+        <div style="font-size:.8rem;color:#633806;font-weight:700;">Product: Full Report</div>
       </div>
       <div style="background:#EEEDFE;border:1.5px solid #3C3489;border-radius:14px;padding:1.15rem 1.2rem;">
-        <div style="font-size:.72rem;font-weight:700;letter-spacing:2px;color:#3C3489;">03 · MONITOR</div>
-        <div style="font-family:'DM Serif Display',serif;font-size:1.12rem;color:#262052;margin:.35rem 0 .15rem;">The watchtower</div>
-        <div style="font-size:.74rem;font-weight:700;color:#3C3489;letter-spacing:.5px;margin-bottom:.55rem;">● IN PILOT · As it runs</div>
-        <p style="font-size:.9rem;line-height:1.55;color:#413c6b;margin:0 0 .65rem;">AI changes constantly, and every update shifts behavior. Monitor watches live conversations as they happen and catches drift before it compounds.</p>
-        <div style="font-size:.8rem;color:#3C3489;font-weight:700;">Product: Ongoing Monitoring</div>
+        <div style="font-size:var(--fs-label);font-weight:700;letter-spacing:var(--ls-label);color:var(--lav-deep);">03 · MONITOR</div>
+        <div style="font-family:'DM Serif Display',serif;font-size:var(--fs-h3);color:#262052;margin:.35rem 0 .15rem;">As it runs</div>
+        <div style="font-size:var(--fs-label);font-weight:700;color:var(--lav-deep);letter-spacing:var(--ls-label);margin-bottom:.55rem;">● IN PILOT · As it runs</div>
+        <p style="font-size:var(--fs-body);line-height:1.55;color:#413c6b;margin:0 0 .65rem;">Every model update shifts behavior. Monitor scores live conversations as they happen and flags drift early.</p>
+        <div style="font-size:.8rem;color:var(--lav-deep);font-weight:700;">Product: Ongoing Monitoring</div>
       </div>
       <div style="background:#FCEBEB;border:1.5px solid #A04434;border-radius:14px;padding:1.15rem 1.2rem;">
-        <div style="font-size:.72rem;font-weight:700;letter-spacing:2px;color:#791F1F;">04 · PROTECT</div>
-        <div style="font-family:'DM Serif Display',serif;font-size:1.12rem;color:#4a1a14;margin:.35rem 0 .15rem;">The last line</div>
-        <div style="font-size:.74rem;font-weight:700;color:#791F1F;letter-spacing:.5px;margin-bottom:.55rem;">● COMING SOON · In the moment</div>
-        <p style="font-size:.9rem;line-height:1.55;color:#6a352c;margin:0 0 .65rem;">The last line of defense, inside the conversation itself. Real-time intervention that acts in the moment, before harm compounds.</p>
+        <div style="font-size:var(--fs-label);font-weight:700;letter-spacing:var(--ls-label);color:#791F1F;">04 · PROTECT</div>
+        <div style="font-family:'DM Serif Display',serif;font-size:var(--fs-h3);color:#4a1a14;margin:.35rem 0 .15rem;">In the moment</div>
+        <div style="font-size:var(--fs-label);font-weight:700;color:#791F1F;letter-spacing:var(--ls-label);margin-bottom:.55rem;">● COMING SOON · In the moment</div>
+        <p style="font-size:var(--fs-body);line-height:1.55;color:#6a352c;margin:0 0 .65rem;">In the moment of defense, inside the conversation itself. Real-time intervention that acts in the moment, before harm compounds.</p>
         <div style="font-size:.8rem;color:#791F1F;font-weight:700;">In development</div>
       </div>
     </div>
@@ -491,7 +501,7 @@
             <span class="ps-stage">Measure</span>
             <div class="ps-name">Signal Scan</div>
             <div>
-              <div class="ps-price" style="font-size:1.05rem;letter-spacing:.06em;">The first read</div>
+              <div class="ps-price" style="font-size:var(--fs-lead);letter-spacing:var(--ls-label);">The first read</div>
               <div class="ps-price-note">One-time · scoped at intake</div>
             </div>
             <div class="ps-delivery">✓ Scored across the 12 crisis categories</div>
@@ -528,7 +538,7 @@
             <span class="ps-stage">Measure</span>
             <div class="ps-name">Deep Scan</div>
             <div>
-              <div class="ps-price" style="font-size:1.05rem;letter-spacing:.06em;">The failure map</div>
+              <div class="ps-price" style="font-size:var(--fs-lead);letter-spacing:var(--ls-label);">The failure map</div>
               <div class="ps-price-note">One-time · scoped at intake</div>
             </div>
             <div class="ps-delivery">✓ Every crisis category, at full depth</div>
@@ -539,7 +549,7 @@
         <div class="ps-right">
           <h3>Where exactly the failures are, and why.</h3>
           <p>The Signal Scan tells you whether something is wrong. The Deep Scan tells you precisely what and where. We test every crisis category at full depth, apply adversarial pressure across all 8 dimensions, and map your failure distribution with enough specificity that your team can act on it directly.</p>
-          <p>The Deep Scan is designed to give your engineers and product team what they need to fix things, not just a warning, but a precise failure map.</p>
+          <p>The Deep Scan gives your engineering and product teams a failure map specific enough to act on directly.</p>
           <div class="ps-delivers">
             <div class="ps-delivers-label">What you get</div>
             <ul>
@@ -551,7 +561,7 @@
               <li>Comparison against peer system categories where applicable</li>
             </ul>
           </div>
-          <div class="ps-ideal" style="background:#EEE8FC; color:#5B2FB0;">
+          <div class="ps-ideal" style="background:#EEE8FC; color:var(--lav-deep);">
             <span class="ps-ideal-icon">→</span>
             <span><strong>Best for:</strong> Teams who've seen a Signal Scan result and need to understand the root cause before starting a fix cycle. Also used standalone for pre-launch due diligence.</span>
           </div>
@@ -565,7 +575,7 @@
             <span class="ps-stage">Attest</span>
             <div class="ps-name">Full Report</div>
             <div>
-              <div class="ps-price" style="font-size:1.05rem;letter-spacing:.06em;">The record</div>
+              <div class="ps-price" style="font-size:var(--fs-lead);letter-spacing:var(--ls-label);">The record</div>
               <div class="ps-price-note">One-time · scoped at intake</div>
             </div>
             <div class="ps-delivery">✓ Complete audit record</div>
@@ -602,26 +612,27 @@
             <span class="ps-stage">Attest · the certified path</span>
             <div class="ps-name">Remediation</div>
             <div>
-              <div class="ps-price" style="font-size:1.05rem;letter-spacing:.06em;">Fix + verify</div>
+              <div class="ps-price" style="font-size:var(--fs-lead);letter-spacing:var(--ls-label);">Fix + verify</div>
               <div class="ps-price-note">Scoped per engagement</div>
             </div>
             <div class="ps-delivery">✓ Fix cycle + re-test included</div>
-            <div class="ps-delivery">✓ Tier I certification path</div>
+            <div class="ps-delivery">✓ Path to Tier I, on the record</div>
             <div class="ps-delivery">✓ Conversations throughout</div>
           </div>
         </div>
         <div class="ps-right">
           <h3>Fix it, verify it, document that it's fixed.</h3>
-          <p>Remediation is a structured engagement: we work directly with your team to implement the changes from the Full Report roadmap, then re-run the benchmark to confirm the improvements hold under actual test conditions, not just in your staging environment.</p>
-          <p>The output is a verified improvement record and a Tier I certification if your system crosses the safety threshold. That's the document that says, independently, that your system is safe to deploy.</p>
+          <p>Remediation is a structured re-scoring engagement. Your Full Report includes the recommendations; your team implements them on your side, and we re-run the benchmark to confirm the improvements hold under actual test conditions, not just in your staging environment. We never fix what we audit, so the re-score means something.</p>
+          <p>We score anonymized inputs and outputs over a simple API. No codebase, no system prompt, no user identities. You own every record we produce, and nothing is published or shared without you.</p>
+          <p>The output is a verified improvement record and a Tier I classification, on the record, if your system crosses the safety threshold. That's the document that says, independently, where your system stands. Certification is where this path leads as the certification tier comes online.</p>
           <div class="ps-delivers">
             <div class="ps-delivers-label">What you get</div>
             <ul>
-              <li>Guided fix cycle, working directly with your team through each priority item</li>
+              <li>Prioritized recommendations roadmap, item by item; your team implements on your side</li>
               <li>Re-test after changes, same scenario sets, new baseline established</li>
               <li>Verified improvement record, before and after scores, documented and signed</li>
-              <li>Tier I certification if system clears the safety threshold</li>
-              <li>Ongoing monitoring options available after certification</li>
+              <li>Tier I classification on the record if the system clears the safety threshold</li>
+              <li>Ongoing monitoring options available after re-scoring</li>
             </ul>
           </div>
           <div class="ps-ideal" style="background:var(--green-soft); color:var(--green-dark);">
@@ -635,11 +646,11 @@
 
     <div style="margin-top:2.5rem;background:#EEEDFE;border-radius:14px;padding:1.75rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
       <div style="max-width:640px;">
-        <div style="font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#3C3489;margin-bottom:.35rem;">Coming up the stack · Monitor, now in pilot</div>
-        <strong style="font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--text);">The watchtower: live drift detection on your deployed system.</strong>
-        <div style="font-size:.9rem;color:var(--text-muted);margin-top:.3rem;">AI changes constantly. Monitor watches real conversations as they happen and catches drift before it compounds, building your versioned safety record over time. A small number of pilot seats are open. Protect, real-time intervention, follows.</div>
+        <div style="font-size:var(--fs-label);font-weight:600;letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--lav-deep);margin-bottom:.35rem;">Coming up the stack · Monitor, now in pilot</div>
+        <strong style="font-family:'DM Serif Display',serif;font-size:var(--fs-h3);color:var(--text);">As it runs: live drift detection on your deployed system.</strong>
+        <div style="font-size:var(--fs-body);color:var(--text-muted);margin-top:.3rem;">Every model update shifts behavior. Monitor scores live conversations against the same benchmark and flags drift as it appears, building a versioned safety record over time. A small number of pilot seats are open. Protect, real-time intervention, follows.</div>
       </div>
-      <a href="/contact" style="background:#3C3489;color:#fff;padding:.7rem 1.4rem;border-radius:8px;font-weight:500;font-size:.9rem;text-decoration:none;white-space:nowrap;">Join the Monitor pilot →</a>
+      <a href="/contact" style="background:var(--lav-deep);color:#fff;padding:.7rem 1.4rem;border-radius:8px;font-weight:500;font-size:var(--fs-body);text-decoration:none;white-space:nowrap;">Join the Monitor pilot →</a>
     </div>
   </div>
 </section>
@@ -656,32 +667,32 @@
 
     <div class="expect-grid">
       <div class="expect-card">
-        <div class="ec-icon">📬</div>
+        <div class="ec-icon"></div>
         <h3>You fill out the intake form.</h3>
         <p>We ask for your system name, the type of AI (conversational support, companion, health, education, etc.), a brief description of what it does, and how you'd like to engage. That's it at this stage.</p>
       </div>
       <div class="expect-card">
-        <div class="ec-icon">📞</div>
+        <div class="ec-icon"></div>
         <h3>We have a conversation before we run anything.</h3>
         <p>A real conversation. We want to understand your system, your context, who your users are, and what concerns you. This is also when you tell us anything you don't want included in a shareable report. Always included at no extra charge.</p>
       </div>
       <div class="expect-card">
-        <div class="ec-icon">🧪</div>
+        <div class="ec-icon"></div>
         <h3>We run the scenarios.</h3>
         <p>We access your system the way a user would, through your live environment or a test deployment you specify. We don't need your codebase, your system prompt, or any internal documentation. We test behavior, not architecture.</p>
       </div>
       <div class="expect-card">
-        <div class="ec-icon">📄</div>
+        <div class="ec-icon"></div>
         <h3>We send you the written report.</h3>
         <p>Delivered within the timeframe we agreed on, same week for Signal Scan, up to 14 days for Full Report. Formatted so a technical lead and a non-technical executive can both read it and understand the findings.</p>
       </div>
       <div class="expect-card">
-        <div class="ec-icon">📞</div>
+        <div class="ec-icon"></div>
         <h3>We walk through results together.</h3>
         <p>A debrief conversation after every engagement, not optional. We go through what we found, answer questions, and help you understand what the findings mean in the context of your actual product and users.</p>
       </div>
       <div class="expect-card">
-        <div class="ec-icon">🗂️</div>
+        <div class="ec-icon">️</div>
         <h3>You own everything we produce.</h3>
         <p>The report is yours. You can share it, redact it, use it in client conversations, or keep it internal. We don't publish findings, reference client names publicly, or retain any data about your system after the engagement closes.</p>
       </div>
@@ -738,6 +749,10 @@
     <h2>Things people usually ask.</h2>
 
     <div class="faq-list">
+      <div class="faq-item" id="faq-law">
+        <h3>How does this map to the new state chatbot laws?</h3>
+        <p>Laws like Iowa's SF 2417 and California's SB 243 require conversational AI operators to protect users, especially minors, but none of them define how to demonstrate it. An Ikwe report is a documented, third-party record of how your system behaves in exactly the situations these laws are concerned with. It is evidence of diligence, not a legal certification, and we say so in the report.</p>
+      </div>
       <div class="faq-item">
         <div class="faq-q">Do you need access to our system prompt or codebase? <span class="faq-arrow">▼</span></div>
         <div class="faq-a">No. We test your system the way a real user would, through your live or staging environment. We don't need internal documentation, source code, or architecture details. We measure behavior, not implementation.</div>
@@ -752,7 +767,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-q">Do we have to do all four stages? <span class="faq-arrow">▼</span></div>
-        <div class="faq-a">No. Most teams start with a Signal Scan and decide from there. You can stop after any stage. Remediation and the full sequence is for teams who need certified verification, but plenty of teams use a Signal Scan or Deep Scan for internal use without going further.</div>
+        <div class="faq-a">No. Most teams start with a Signal Scan and decide from there. You can stop after any stage. Remediation and the full sequence is for teams who need an on-the-record verified result, but plenty of teams use a Signal Scan or Deep Scan for internal use without going further.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">What does "behavioral safety" actually mean? <span class="faq-arrow">▼</span></div>
@@ -780,7 +795,7 @@
       <a href="/ikwe-sample-report-public.html" class="btn btn-secondary">View sample report</a>
     </div>
     <div class="always-included">
-      <span>📞</span> Conversations before and after are always included at every stage.
+      <span></span> Conversations before and after are always included at every stage.
     </div>
   </div>
 </section>
