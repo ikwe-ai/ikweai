@@ -1,113 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ikwe.ai | Behavioral safety for conversational AI, held to the human standard</title>
-  <meta name="description" content="Ikwe measures how conversational AI behaves across whole conversations, against the standard humans in the same role are already held to, and puts the result on the record.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --fs-display: clamp(2.2rem, 4.5vw, 3.2rem);
-      --fs-h2: clamp(1.6rem, 3vw, 2.3rem);
-      --fs-h3: 1.2rem;
-      --fs-lead: 1.05rem;
-      --fs-body: .95rem;
-      --fs-small: .85rem;
-      --fs-label: .75rem;
-      --ls-label: .1em;
-      --lav-deep: #3C3489;
-      --rule: #EEEEF2;
-      --navy:   #191A2E;
-      --coral:  #F7A192;
-      --lav:    #B894F6;
-      --cream:  #F6D993;
-      --teal:   #0F6E56;
-      --teal-light: #E1F5EE;
-      --teal-mid:   #5DCAA5;
-      --gray-soft:  #F7F6F2;
-      --white: #FFFFFF;
-      --text:  #1A1A2E;
-      --text-muted: #5a5a6e;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.7; color: var(--text); background: var(--white); }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ikwe.ai · Behavioral safety measured across whole conversations, against a clinical standard</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..500&display=swap');
+:root{--ink:#191A2E;--off:#F8F5F0;--teal:#5DCAA5;--amber:#F0A44C;--coral:#F7A192;--cream:#F6D993;--lav:#B894F6;--mute:#6a6b80;--rule:rgba(25,26,46,.09);
+--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',sans-serif;--mono:'DM Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--off);color:var(--ink);font-family:var(--sans);line-height:1.65;font-size:17px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.narrow{max-width:880px;margin:0 auto;padding:0 28px}
+.kick{font-family:var(--mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;margin-bottom:16px}
+h2{font-family:var(--serif);font-weight:700;font-size:clamp(30px,4.2vw,42px);line-height:1.12;margin-bottom:20px}
+p{margin-bottom:16px;color:#3a3b50}
+p.lead{font-size:19px;color:var(--ink)}
+section{padding:72px 0;border-bottom:1px solid var(--rule)}
+.pull{font-family:var(--serif);font-style:italic;font-weight:600;font-size:23px;line-height:1.35;color:var(--ink);margin:24px 0 0}
+header.hero{background:var(--ink);color:#fff;padding:96px 0 80px;position:relative;overflow:hidden}
+header.hero::before{content:'';position:absolute;right:-140px;top:-180px;width:440px;height:440px;border-radius:50%;background:rgba(93,202,165,.12)}
+header.hero::after{content:'';position:absolute;left:-130px;bottom:-210px;width:380px;height:380px;border-radius:50%;background:rgba(240,164,76,.12)}
+header.hero .inner{position:relative;z-index:1}
+header.hero .kick{color:var(--teal)}
+header.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(40px,6vw,64px);line-height:1.06;margin-bottom:24px;max-width:900px}
+header.hero p.sub{max-width:700px;font-size:19px;color:#d8d9e4;margin-bottom:34px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 26px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none}
+.btn.primary{background:var(--teal);color:var(--ink)}
+.btn.ghost{border:1.5px solid #3a3b50;color:#d8d9e4}
+.cards{display:grid;gap:16px;margin:28px 0 0}
+.cards.three{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:#20223A;border:1px solid #2e3050;border-radius:14px;padding:26px 24px}
+.card h3{font-size:17px;margin-bottom:8px;color:#fff;font-family:var(--serif);font-size:21px}
+.card p{font-size:14.5px;margin:0;color:#d8d9e4}
+.stdtable{margin:30px 0 0;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(25,26,46,.08)}
+.stdrow{display:grid;grid-template-columns:1fr 1fr 1.25fr;background:#fff}
+.stdrow>div{padding:20px 22px;border-bottom:1px solid var(--rule);font-size:14.5px}
+.stdrow.head>div{background:var(--ink);color:#fff;font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;padding:16px 22px;border:0}
+.stdrow .role b{display:block;font-size:16px;margin-bottom:3px}
+.stdrow .role span{color:var(--mute);font-size:13px}
+.stdrow .ai{color:#3a3b50}
+.stdrow .bar{color:#2e6b57;background:rgba(93,202,165,.08)}
+.stdrow.hot>div{background:#fff6f4;border-bottom:0}
+.stdrow.hot .bar{background:rgba(247,161,146,.14);color:#c25a49;font-family:var(--serif);font-style:italic;font-weight:600;font-size:16px}
+@media(max-width:760px){.stdrow{grid-template-columns:1fr}.stdrow.head{display:none}}
+.dark{background:var(--ink);color:#fff}
+.dark h2{color:#fff}
+.dark p{color:#d8d9e4}
+.dark .kick{color:var(--cream)}
+.dark .pull{color:var(--cream)}
+.chartbox{margin:26px 0 0;background:#20223A;border:1px solid #2e3050;border-radius:16px;padding:28px}
+/* situation blocks */
+.situ{display:grid;gap:18px;margin:32px 0 0}
+.sblock{background:#fff;border-radius:16px;padding:28px 26px;box-shadow:0 3px 14px rgba(25,26,46,.07);border-left:5px solid var(--teal)}
+.sblock.b2{border-left-color:var(--amber)}
+.sblock.b3{border-left-color:var(--lav)}
+.sblock .pname{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+.sblock .q{font-family:var(--serif);font-style:italic;font-weight:600;font-size:24px;line-height:1.25;margin-bottom:16px;color:var(--ink)}
+.sblock ul{margin:0 0 18px 0;padding-left:20px}
+.sblock li{font-size:15px;color:#3a3b50;margin-bottom:8px}
+.sblock .what{font-size:14.5px;color:var(--mute);border-top:1px solid var(--rule);padding-top:14px;margin:0}
+.sblock .what b{color:var(--ink)}
+.notebar{background:#fff;border-radius:10px;padding:16px 20px;font-size:14.5px;color:#3a3b50;margin:24px 0 0;box-shadow:0 2px 10px rgba(25,26,46,.06)}
+.bigstat{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4vw,40px);line-height:1.18;color:#fff;margin-bottom:18px}
+footer{background:var(--ink);color:#9a9bae;padding:76px 0}
+footer .end{font-family:var(--serif);font-weight:700;font-size:clamp(30px,4.6vw,44px);color:#fff;line-height:1.12;margin-bottom:22px}
+footer p{color:#d8d9e4}
+footer .contact{margin-top:26px;font-size:14px}
+footer .contact b{color:#fff}
+footer .motif{margin-top:34px;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#6a6b80}
 
-    nav { position: sticky; top: 0; z-index: 1000; background: var(--navy); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
-    .nav-brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
-    .nav-logo-circle { width: 26px; height: 26px; border-radius: 50%; background: conic-gradient(#1D1F35 0deg 90deg, var(--coral) 90deg 180deg, var(--lav) 180deg 270deg, var(--cream) 270deg 360deg); flex-shrink: 0; }
-    .nav-brand-name { font-family: 'DM Serif Display', serif; font-size: var(--fs-h3); color: var(--white); letter-spacing: .02em; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: var(--fs-small); font-weight: 400; transition: color .2s; }
-    .nav-links a:hover { color: var(--coral); }
-    .nav-links a.active { color: var(--white); }
-    .nav-cta { background: var(--coral); color: var(--navy); font-weight: 500; font-size: var(--fs-small); padding: .5rem 1.25rem; border-radius: 6px; text-decoration: none; transition: opacity .2s; }
-    .nav-cta:hover { opacity: .88; }
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; background: transparent; border: none; z-index: 200; }
-    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: all .25s; }
-    .nav-mobile-menu { display: none; }
-    @media (max-width: 900px) {
-      .nav-links, .nav-cta { display: none; }
-      .nav-hamburger { display: flex; }
-      .nav-mobile-menu.open { display: flex; position: fixed; top: 60px; left: 0; right: 0; background: var(--navy); padding: 1.5rem 2rem 2rem; flex-direction: column; z-index: 999; border-top: 1px solid rgba(255,255,255,.1); }
-      .nav-mobile-menu a { color: rgba(255,255,255,.75); text-decoration: none; font-size: 1rem; padding: .9rem 0; border-bottom: 1px solid rgba(255,255,255,.07); }
-      .nav-mobile-menu a:last-child { border-bottom: none; }
-    }
-
-    section { padding: 4rem 2rem; }
-    .container { max-width: 960px; margin: 0 auto; }
-    .container-narrow { max-width: 720px; margin: 0 auto; }
-    h1, h2, h3 { font-family: 'DM Serif Display', serif; line-height: 1.2; }
-    h1 { font-size: clamp(2.2rem, 5vw, 3.3rem); }
-    h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); }
-    h3 { font-size: var(--fs-h3); }
-    .eyebrow { display: inline-block; font-size: var(--fs-label); font-weight: 500; letter-spacing: var(--ls-label); text-transform: uppercase; margin-bottom: 1rem; color: var(--teal-mid); }
-    .lead { font-size: var(--fs-lead); color: var(--text-muted); line-height: 1.75; margin-top: .75rem; }
-    .btn { display: inline-block; padding: .75rem 1.75rem; border-radius: 8px; font-weight: 500; font-size: var(--fs-body); text-decoration: none; cursor: pointer; border: none; transition: opacity .2s, transform .15s; }
-    .btn:hover { opacity: .88; transform: translateY(-1px); }
-    .btn-primary { background: var(--coral); color: var(--navy); }
-    .btn-secondary { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.4); }
-    .btn-secondary:hover { border-color: var(--coral); color: var(--coral); }
-    .btn-dark { background: var(--navy); color: var(--white); }
-    .cta-group { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.75rem; }
-
-    /* hero */
-    .hero { background: var(--navy); color: var(--white); padding: 6rem 2rem 5.5rem; }
-    .hero .kicker { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.1rem; color: var(--cream); margin-bottom: 1.25rem; }
-    .hero h1 { color: var(--white); max-width: 760px; }
-    .hero .lead { color: rgba(255,255,255,.72); max-width: 640px; }
-
-    /* what we do */
-    .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 2.5rem; }
-    @media (max-width: 800px) { .three-col { grid-template-columns: 1fr; } }
-    .three-col h3 { margin-bottom: .5rem; }
-    .three-col p { font-size: var(--fs-body); color: var(--text-muted); }
-    .col-rule { width: 34px; height: 3px; border-radius: 2px; margin-bottom: 1rem; }
-
-    /* standard section */
-    .standard { background: var(--gray-soft); }
-    .standard-quote { font-family: 'DM Serif Display', serif; font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-style: italic; color: var(--navy); line-height: 1.55; max-width: 680px; }
-
-    /* status */
-    .status-line { display: flex; gap: .75rem; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--rule); font-size: var(--fs-body); }
-    .status-line:last-of-type { border-bottom: none; }
-    .status-line .s-name { flex: 0 0 8.5rem; font-weight: 600; color: var(--navy); }
-    .status-line .s-desc { color: var(--text-muted); }
-
-    /* closing callout */
-    .closing { background: var(--navy); color: var(--white); text-align: center; padding: 5rem 2rem; }
-    .closing h2 { color: var(--white); }
-    .closing p { color: rgba(255,255,255,.65); max-width: 560px; margin: 1rem auto 0; font-size: var(--fs-lead); }
-
-    footer { background: #0f1020; color: rgba(255,255,255,.4); padding: 2.5rem 2rem; font-size: var(--fs-small); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    .foot-l strong { color: rgba(255,255,255,.6); }
-    .foot-r { font-size: var(--fs-label); line-height: 1.6; text-align: right; }
-    .foot-r a { color: var(--coral); text-decoration: none; }
-    .foot-r a:hover { text-decoration: underline; }
-  </style>
+/* site nav */
+nav{position:sticky;top:0;z-index:1000;background:var(--ink);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.nav-logo-circle{width:26px;height:26px;border-radius:50%;background:conic-gradient(#1D1F35 0deg 90deg,var(--coral) 90deg 180deg,var(--lav) 180deg 270deg,var(--cream) 270deg 360deg);flex-shrink:0}
+.nav-brand-name{font-family:var(--serif);font-size:1.2rem;color:#fff;letter-spacing:.02em}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.65);text-decoration:none;font-size:.85rem;transition:color .2s}
+.nav-links a:hover{color:var(--coral)}
+.nav-links a.active{color:#fff}
+.nav-cta{background:var(--coral);color:var(--ink);font-weight:500;font-size:.85rem;padding:.5rem 1.25rem;border-radius:6px;text-decoration:none}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem;background:transparent;border:none;z-index:200}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .25s}
+.nav-mobile-menu{display:none}
+@media(max-width:900px){
+ .nav-links,.nav-cta{display:none}
+ .nav-hamburger{display:flex}
+ .nav-mobile-menu.open{display:flex;position:fixed;top:60px;left:0;right:0;background:var(--ink);padding:1.5rem 28px 2rem;flex-direction:column;z-index:999;border-top:1px solid rgba(255,255,255,.1)}
+ .nav-mobile-menu a{color:rgba(255,255,255,.75);text-decoration:none;font-size:1rem;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
+ .nav-mobile-menu a:last-child{border-bottom:none}
+}
+header.hero{padding-top:64px}
+</style>
 </head>
 <body>
 
@@ -134,72 +119,195 @@
   </div>
 </nav>
 
+
 <header class="hero">
-  <div class="container">
-    <div class="kicker">Ikwe means woman. A woman protects.</div>
-    <h1>We translate human standards to measurable AI standards.</h1>
-    <p class="lead">Every human in a position of trust is held to a standard. The therapist. The nurse. The crisis counselor. AI now sits in those same conversations, and it is not. Ikwe measures how conversational AI behaves across the whole conversation, against the bar people in that role already meet, and puts the result on the record.</p>
-    <div class="cta-group">
-      <a class="btn btn-primary" href="/contact">Get in touch</a>
-      <a class="btn btn-secondary" href="/how-it-works">How it works</a>
+  <div class="wrap inner">
+    <div class="kick">Behavioral safety for conversational AI</div>
+    <h1>Ikwe measures behavioral safety across whole conversations, against a clinical standard.</h1>
+    <p class="sub">The judgment is clinical. Six disciplines settled what helps and what harms, over decades of practice. What did not exist was a way to check whether an AI does it, so we built one. The <b style="color:#fff">EQ Safety Benchmark (EQSB)</b> is an evidence-based method for measuring behavioral safety across a whole conversation. It catches the drift toward harm while it is still preventable, and puts the result on the record.</p>
+    <div class="btns">
+      <a class="btn primary" href="/contact">Start with an Assessment</a>
+      <a class="btn ghost" href="#where">See which one you need</a>
     </div>
   </div>
 </header>
 
+<section class="dark">
+  <div class="narrow">
+    <div class="kick">Why the seat is empty</div>
+    <h2>Two fields. Neither one can answer this alone.</h2>
+    <div class="cards three">
+      <div class="card">
+        <h3>Clinicians know what helps</h3>
+        <p>Six disciplines settled what good care looks like over decades, and they enforce it with licences, supervision and duty of care. What they cannot do is read a million conversations or inspect a model.</p>
+      </div>
+      <div class="card">
+        <h3>Engineers know how to check</h3>
+        <p>Benchmarks, evals, red teams, all running at scale. What they do not have is a criterion for what good care looks like in the sixth turn of a hard conversation.</p>
+      </div>
+      <div class="card">
+        <h3>The harm lives in between</h3>
+        <p>Whether an AI was safe for the person in front of it is a clinical question that has to be answered at engineering scale. It takes both fields, and almost nobody has both. The EQSB is what happens when you put them together.</p>
+      </div>
+    </div>
+    <p class="pull">We did not invent the ethics. Six clinical disciplines did, over decades of practice. The EQSB is the instrument that applies them, and Ikwe is the one running it, with nothing riding on the answer.</p>
+  </div>
+</section>
+
 <section>
-  <div class="container">
-    <span class="eyebrow" style="color: var(--teal)">What we do</span>
-    <h2>Behavioral safety, measured.</h2>
-    <div class="three-col">
-      <div>
-        <div class="col-rule" style="background: var(--coral)"></div>
-        <h3>We measure the whole conversation.</h3>
-        <p>Harm rarely happens in a single reply. It builds across the arc of a conversation. We score the arc, not the sentence.</p>
+  <div class="wrap">
+    <div class="kick" style="color:#b0812f">The bar</div>
+    <h2>The standard already exists. It was just never applied to the machine.</h2>
+    <p class="lead">Every one of the eight behavioral dimensions in the EQSB is a behavior a licensed human is already trained and required to perform.</p>
+    <div class="stdtable">
+      <div class="stdrow head"><div>The human</div><div>What holds them to it</div><div>The AI doing that job tonight</div></div>
+      <div class="stdrow">
+        <div class="role"><b>The therapist</b><span>Licensing board, duty of care</span></div>
+        <div class="ai">Therapy and wellness chatbots people talk to instead of booking</div>
+        <div class="bar">Holds the frame, does not confirm the fear, knows when to hand off</div>
       </div>
-      <div>
-        <div class="col-rule" style="background: var(--lav)"></div>
-        <h3>We hold AI to the human bar.</h3>
-        <p>The standard already exists, in licensing boards, duties of care, and clinical training. We made it observable and measurable in an AI's actual responses.</p>
+      <div class="stdrow">
+        <div class="role"><b>The nurse</b><span>The clinical standard of care</span></div>
+        <div class="ai">Symptom checkers and triage bots people consult before they call anyone</div>
+        <div class="bar">Steadies the person before problem-solving, acknowledges fear without treating it as fact</div>
       </div>
-      <div>
-        <div class="col-rule" style="background: var(--cream)"></div>
-        <h3>We put the result on the record.</h3>
-        <p>An independent, documented assessment you can act on. You own every record we produce, and nothing is shared without you.</p>
+      <div class="stdrow">
+        <div class="role"><b>The teacher and coach</b><span>Certification, mandatory reporting</span></div>
+        <div class="ai">Tutoring bots and AI coaches in daily conversation with kids and teens</div>
+        <div class="bar">Preserves agency instead of creating reliance, keeps the moment grounded and concrete</div>
+      </div>
+      <div class="stdrow">
+        <div class="role"><b>The crisis counselor</b><span>Training, protocols, supervision</span></div>
+        <div class="ai">The companion AI that answers at 2 a.m., every night, for hours</div>
+        <div class="bar">Breaks spirals instead of feeding them, helps the person see the pattern, gets a human in when it matters</div>
+      </div>
+      <div class="stdrow hot">
+        <div class="role"><b>Today, without Ikwe</b><span>The AI doing all four jobs right now</span></div>
+        <div class="ai">Deployed at mass scale, updated constantly, re-checked rarely</div>
+        <div class="bar">Held to no standard, and measured by no one. This seat is empty.</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="standard">
-  <div class="container">
-    <p class="standard-quote">We did not invent the bar. We translated it. If a human doing this job would be held to a standard, the AI should be too.</p>
+<section id="where">
+  <div class="narrow">
+    <div class="kick" style="color:#2e9c78">Where you are</div>
+    <h2>Three situations. Whichever one is yours, that is your answer.</h2>
+    <p class="lead">One method, the EQSB, applied three ways. These are not stages and there is no bottom rung. People arrive in different situations and some start at the deepest one. Monitoring contains Assessment points, so it does not sit above it.</p>
+
+    <div class="situ">
+      <div class="sblock">
+        <div class="pname">Assessment · one-time · about five business days</div>
+        <div class="q">"I have to prove something right now."</div>
+        <ul>
+          <li>A board, a carrier or a customer has asked what your AI does in a hard conversation, and you do not have an answer on paper.</li>
+          <li>A deal is sitting on a safety review.</li>
+          <li>A statutory deadline is in front of you and you have measured nothing.</li>
+          <li>You want to know where you stand before someone else tells you.</li>
+        </ul>
+        <p class="what"><b>What it is.</b> Your system against our standard scenario set, scored across whole conversations rather than single replies, documented and time-stamped. Every failure comes back with the transcript and the turn it happened on.</p>
+      </div>
+
+      <div class="sblock b2">
+        <div class="pname">Audit · one-time · scoped</div>
+        <div class="q">"A generic scenario set cannot answer my question."</div>
+        <ul>
+          <li>Your users are specific, and so are the ways a conversation with them goes wrong.</li>
+          <li>You have a named obligation and the assessment needs to be scoped to it.</li>
+          <li>You already know roughly where you are weak, and you need it evidenced rather than discovered.</li>
+          <li>You have made fixes and you need the re-score to mean something.</li>
+        </ul>
+        <p class="what"><b>What it is.</b> Scenarios built for your domain and your users, whole conversations scored across the arc, written up for a board, a carrier or a regulator. Includes recommendations and a re-score after you implement them. We never fix what we score.</p>
+      </div>
+
+      <div class="sblock b3">
+        <div class="pname">Monitoring · subscription · continuous</div>
+        <div class="q">"I do not know yet what I will be asked to prove."</div>
+        <ul>
+          <li>You know a question is coming and you cannot predict its shape.</li>
+          <li>Your model changes. A review from March does not describe what shipped in August.</li>
+          <li>You need to go backwards through the data, not just take a reading today.</li>
+          <li>Oregon will ask you for annual crisis-referral counts, and a count is a history.</li>
+        </ul>
+        <p class="what"><b>What it is.</b> Continuous scoring of your live, anonymized traffic, with Assessment points built into the subscription. The evidence stack, building while nothing is on fire.</p>
+      </div>
+    </div>
+
+    <p class="pull">A baseline is retrospective. You cannot build one after you need it. Start in December and you have a data point. Start now and you have a trend, and a trend is what anyone reading it actually wants.</p>
+
+    <div class="notebar"><b>How we work with your system.</b> We score anonymized inputs and outputs over a simple API. No codebase, no system prompt, no user identities. Nothing we run sits in your response path, so nothing we run can add latency or break in production. You own every record we produce, and nothing is published or shared without you.</div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="narrow">
+    <div class="kick">The preventable window</div>
+    <h2>Drift is visible before harm is.</h2>
+    <p class="lead" style="color:#fff">That gap is the whole reason to measure continuously rather than once.</p>
+    <div class="chartbox">
+      <svg viewBox="0 0 1560 360" style="width:100%;height:auto;display:block" font-family="DM Sans, sans-serif">
+        <rect x="90" y="270" width="1400" height="60" fill="rgba(247,161,146,.12)"></rect>
+        <line x1="90" y1="270" x2="1490" y2="270" stroke="#F7A192" stroke-opacity=".55" stroke-width="2" stroke-dasharray="8 8"></line>
+        <rect x="720" y="70" width="390" height="200" fill="rgba(93,202,165,.07)"></rect>
+        <line x1="1110" y1="70" x2="1110" y2="270" stroke="#5DCAA5" stroke-opacity=".25" stroke-width="2" stroke-dasharray="4 8"></line>
+        <text x="1480" y="262" text-anchor="end" fill="#c25a49" font-size="19" font-family="DM Mono, monospace" letter-spacing="1">HARM THRESHOLD</text>
+        <text x="90" y="55" fill="#9a9bae" font-size="19" font-family="DM Mono, monospace" letter-spacing="1">SAFE</text>
+        <line x1="720" y1="70" x2="720" y2="330" stroke="#B894F6" stroke-width="2" stroke-dasharray="6 7"></line>
+        <path d="M110,95 C 330,110 500,150 720,185" fill="none" stroke="#6a6b80" stroke-width="4" stroke-linecap="round"></path>
+        <path d="M720,185 C 950,225 1180,300 1470,338" fill="none" stroke="#F7A192" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 8"></path>
+        <path d="M720,185 C 880,205 980,150 1120,130 C 1270,108 1380,104 1470,100" fill="none" stroke="#5DCAA5" stroke-width="5" stroke-linecap="round"></path>
+        <circle cx="720" cy="185" r="10" fill="#B894F6"></circle>
+        <circle cx="1470" cy="338" r="9" fill="#F7A192"></circle>
+        <circle cx="1470" cy="100" r="9" fill="#5DCAA5"></circle>
+        <text x="720" y="60" text-anchor="middle" fill="#B894F6" font-size="19" font-weight="600" font-family="DM Mono, monospace">DRIFT DETECTED</text>
+        <text x="1465" y="322" text-anchor="end" fill="#F7A192" font-size="19">Unmeasured &#8594; harm</text>
+        <text x="1465" y="128" text-anchor="end" fill="#5DCAA5" font-size="19" font-weight="600">Measured &#8594; corrected in time</text>
+        <text x="915" y="98" text-anchor="middle" fill="#5DCAA5" font-size="17" font-weight="600" font-family="DM Mono, monospace" letter-spacing="2">THE PREVENTABLE WINDOW</text>
+      </svg>
+    </div>
+    <p style="margin-top:22px">Harm does not arrive in one reply. It builds across a conversation while every single message passes. Measurement is what makes the window visible. What you do inside it is yours, because you hold the response path and you decide what changes.</p>
   </div>
 </section>
 
 <section>
-  <div class="container-narrow">
-    <span class="eyebrow" style="color: var(--teal)">Where we are</span>
-    <h2 style="margin-bottom: 1.5rem">Live today, and building.</h2>
-    <div class="status-line"><span class="s-name">Assessment</span><span class="s-desc">the diagnostic. A first look at how a system behaves on our standard scenario set. Live now.</span></div>
-    <div class="status-line"><span class="s-name">Audit</span><span class="s-desc">whole conversations scored across the arc, scoped to your domain and documented on the record. Live now.</span></div>
-    <div class="status-line"><span class="s-name">Monitoring</span><span class="s-desc">continuous scoring of live, anonymized traffic, so behavior that drifts after launch gets seen. Live now.</span></div>
-    <p class="lead" style="margin-top: 2rem">The method behind all three is the EQ Safety Benchmark. <a href="/research">How it works, where the standard comes from, and what we publish</a>.</p>
+  <div class="narrow">
+    <div class="kick" style="color:#c25a49">The clock</div>
+    <h2>The law is here. It does not say how to prove anything.</h2>
+    <p class="lead">Fourteen states passed AI chatbot laws in 2026. California and New York are in force today. Washington, Oregon, Colorado, Georgia and Rhode Island go live on January 1, 2027, and Iowa, Nebraska and Idaho follow that July. Three of them let a user sue directly, without waiting for a regulator.</p>
+    <p>California requires operators to use <b>evidence-based methods for measuring suicidal ideation</b>. Oregon will require you to publish how many crisis referrals you issued. Those are measurement obligations. Measurement is an instrumentation problem, and your legal team cannot close it with a policy.</p>
+    <p>Not one of these laws defines the method. That means every operator in scope is choosing a method right now, by default, and will have to defend that choice later.</p>
+    <p class="pull">Every framework assumes a behavioral standard exists. Ikwe is building the one they will point to.</p>
   </div>
 </section>
 
-<section class="closing">
-  <div class="container">
-    <h2>Start the conversation.</h2>
-    <p>Whether you build conversational AI, insure it, or regulate it, we would like to hear what you are working on.</p>
-    <div class="cta-group" style="justify-content: center">
-      <a class="btn btn-primary" href="/contact">Get in touch</a>
-    </div>
+<section>
+  <div class="narrow">
+    <div class="kick" style="color:#2e9c78">The choice</div>
+    <h2>The alternative to measuring these tools is banning them.</h2>
+    <p class="lead">People are already going to conversational AI at two in the morning, and for a lot of them it is the only thing awake. Many of them are helped by it.</p>
+    <p>Everything else a person turns to in distress is held to a standard. The hotline has protocols. The clinic has a licensing board. The counselor has supervision and a duty of care. None of that exists because anyone assumed they would cause harm. It exists because when someone is at their most vulnerable, good intentions have never been accepted as sufficient evidence.</p>
+    <p>This is where people are going now. Holding it to the same bar is the condition for keeping it.</p>
+    <p>Behavioral health was never one-size-fits-all, and that is exactly why a checkbox cannot answer this. The same sentence can be right in the first exchange and harmful in the sixth, depending on what the system has already been told. That is a measurement problem. Measurement is what lets these tools stay available instead of being legislated away from the people who need them.</p>
+    <p class="pull">The tools help. Measurement is how we keep them.</p>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="narrow">
+    <div class="kick">What the EQSB found</div>
+    <div class="bigstat">In our studies, across 1,514 scored responses on current frontier models, more than four in ten of the human-judged set failed the safety rubric.</div>
+    <p class="lead" style="color:#d8d9e4">Not jailbreaks. Not edge cases. Scenarios a real person could walk into on a Tuesday. The EQ Safety Benchmark methodology, the scoring rubric and the current state of the research are on the <a href="/research" style="color:var(--teal)">research page</a>.</p>
   </div>
 </section>
 
 <footer>
-  <div class="foot-l"><strong>ikwe.ai</strong> · Des Moines, Iowa · Behavioral safety, on the record</div>
-  <div class="foot-r"><a href="/contact">Contact</a> · <a href="/privacy">Privacy</a></div>
+  <div class="narrow">
+    <div class="end">The tools help.<br>Measurement is how we keep them.</div>
+    <p style="max-width:700px">Ikwe.ai (Visible Healing Inc.) is an Iowa-based, woman-founded, AI-native company. Ikwe owns the EQ Safety Benchmark, the patent-pending method behind everything on this page. Independent by design: no financial tie to any AI we measure, and we never fix what we score.</p>
+    <div class="contact"><b>Stephanie Stranko</b> · Founder &amp; CEO &nbsp;·&nbsp; stephanie@ikwe.ai · ikwe.ai<br>ISU G2M Summer 2026 cohort · MWBE-qualified</div>
+    <div style="display:flex;align-items:center;gap:10px;margin-top:34px"><svg viewBox="0 0 100 100" style="width:26px;height:26px;display:block" aria-label="Ikwe logo"><path d="M50,50 L50,2 A48,48 0 0,0 2,50 Z" fill="#2E3050"/><path d="M50,50 L98,50 A48,48 0 0,0 50,2 Z" fill="#F7A192"/><path d="M50,50 L50,98 A48,48 0 0,0 98,50 Z" fill="#F6D993"/><path d="M50,50 L2,50 A48,48 0 0,0 50,98 Z" fill="#B894F6"/></svg><span class="motif" style="margin-top:0">ikwe.ai · behavioral safety, on the record &nbsp;·&nbsp; <a href="/privacy" style="color:#6a6b80">Privacy</a> &nbsp;·&nbsp; <a href="/terms" style="color:#6a6b80">Terms</a></span></div>
+  </div>
 </footer>
 
 <!-- Google Analytics -->
