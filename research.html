@@ -238,7 +238,7 @@
   <div class="container-narrow">
     <span class="eyebrow" style="color: var(--teal)">Scoring and validation</span>
     <h2>How a score is produced, and how we test it.</h2>
-    <p class="body">Systems are run against a standard scenario set of 79 scenarios, built to cover the situations where behavioral failure carries the most consequence. Scoring is performed by multiple independent language-model judges applying the rubric, with a consensus rule. Where judges diverge beyond a defined threshold, the response is escalated rather than averaged. Judges are calibrated against a human-scored gold standard before entering the pool.</p>
+    <p class="body">Systems are run against a standard scenario set, designed to cover the situations where behavioral failure carries the most consequence. Scoring is performed by multiple independent language-model judges applying the rubric, with a consensus rule. Where judges diverge beyond a defined threshold, the response is escalated for review rather than averaged. Judge calibration is validated against a human-scored gold standard.</p>
     <p class="body">The measure that matters for an instrument like this is inter-rater reliability: whether two competent raters applying the rubric to the same material reach the same result. That is the standard discipline for criterion-referenced measurement, which is the correct class of instrument for anything where context determines correctness. Medicine has used criterion-referenced scales for judgment-based assessment for seventy years, in the Apgar score, the PHQ-9 and clinical triage scales.</p>
     <p class="body"><strong style="color:var(--navy)">Where the research stands:</strong> three formative studies have been conducted and timestamped across 2025 and 2026, covering 1,514 scored responses on current-generation frontier models, of which 312 were human-judged. On the human-judged set, more than four in ten responses failed the safety rubric. These are formative findings. Independent peer review is underway and a pre-registered flagship study is in progress.</p>
     <div class="note"><strong>What an Ikwe report is.</strong> Supporting evidence: an independent, documented, time-stamped measurement produced by an assessor with no financial interest in the result. It is not a certificate of compliance, and no method available today is. Whether it satisfies a given obligation is a determination for counsel.</div>
@@ -259,15 +259,15 @@
         <tr><td>Sample scored report</td><td><span class="tagp req">On request</span> Anonymized, with representative data.</td></tr>
         <tr><td>Full rubric with scoring anchors</td><td><span class="tagp req">On request</span> Under agreement, for peer review and independent validation.</td></tr>
         <tr><td>Dimension weights and per-dimension criteria</td><td><span class="tagp prot">Protected</span> Proprietary.</td></tr>
-        <tr><td>The scenario set</td><td><span class="tagp prot">Protected</span> Publication would allow systems to be tuned to the test.</td></tr>
+        <tr><td>The scenario set and its design</td><td><span class="tagp prot">Protected</span> The selection, structure and clinical intent behind the set are the instrument. Publishing them would let systems be tuned to the test, which would void every score produced with it.</td></tr>
         <tr><td>Judge instructions and scoring implementation</td><td><span class="tagp prot">Protected</span> Patent pending.</td></tr>
       </tbody>
     </table>
     <p class="body" style="margin-top:1.5rem"><strong style="color:var(--navy)">Peer reviewers, academics and regulators:</strong> we grant access to the full methodology under agreement, and we would rather be examined than taken on faith. If you want to review the instrument, replicate a study, or assess whether it meets a regulatory requirement you are responsible for, write to us and say what you need.</p>
     <div class="cite">
       <strong style="color:#fff">Citation</strong><br>
-      Ikwe.ai (2026). <em>The EQ Safety Benchmark: behavioral safety measurement for conversational AI.</em> Visible Healing Inc. (dba Ikwe.ai). Patent pending.<br>
-      Materials are for informational and research purposes and do not constitute legal, medical or clinical advice. No reproduction, redistribution or derivative implementation without written permission.
+      Ikwe.ai (2026). <em>The EQ Safety Benchmark: behavioral safety measurement for conversational AI.</em> Public specification v1.0, July 2026. Visible Healing Inc. (dba Ikwe.ai). Patent pending.<br>
+      Materials are for informational and research purposes and do not constitute legal, medical or clinical advice. This specification may be cited with attribution. It may not be reproduced in full, redistributed, or used to build a derivative implementation without written permission.
     </div>
   </div>
 </section>
@@ -281,7 +281,7 @@
 </section>
 
 <footer>
-  <div class="foot-l"><strong>ikwe.ai</strong> · Des Moines, Iowa · To help, not to harm</div>
+  <div class="foot-l"><strong>ikwe.ai</strong> · Des Moines, Iowa · Behavioral safety, on the record</div>
   <div class="foot-r"><a href="/contact">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/research-access-terms">Research access terms</a></div>
 </footer>
 
