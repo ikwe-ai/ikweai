@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Research and methodology | ikwe.ai</title>
-  <meta name="description" content="The EQ Safety Benchmark: what it measures, where the standard comes from, how scoring works, what is published and what is protected, and how to request access for peer review.">
+  <meta name="description" content="What behavioral safety is, why it has to be measured across a whole conversation, and the clinical disciplines the standard comes from.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
@@ -127,8 +127,9 @@
   </a>
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
-    <li><a href="/how-it-works">How it works</a></li>
+    <li><a href="/work-with-us">Work with us</a></li>
     <li><a href="/research" class="active">Research</a></li>
+    <li><a href="/eqsb">The EQSB</a></li>
     <li><a href="/contact">Contact</a></li>
   </ul>
   <a class="nav-cta" href="/contact">Get in touch</a>
@@ -137,8 +138,9 @@
   </button>
   <div class="nav-mobile-menu">
     <a href="/">Home</a>
-    <a href="/how-it-works">How it works</a>
+    <a href="/work-with-us">Work with us</a>
     <a href="/research">Research</a>
+    <a href="/eqsb">The EQSB</a>
     <a href="/contact">Contact</a>
   </div>
 </nav>
@@ -146,136 +148,99 @@
 <header class="page-head">
   <div class="container-narrow">
     <span class="eyebrow">Research and methodology</span>
-    <h1>The EQ Safety Benchmark</h1>
-    <p class="lead">Ikwe owns the EQ Safety Benchmark (EQSB), an evidence-based method for measuring behavioral safety across a whole conversation. This page describes what it measures, where the standard comes from, and how the scoring works. It is written for clinicians, researchers and regulators.</p>
+    <h1>Why we measure what we measure.</h1>
+    <p class="lead">This page is about the thinking underneath the instrument: what behavioral safety is, why it cannot be checked one reply at a time, and where the standard comes from. The instrument itself is on <a href="/eqsb" style="color:var(--teal-mid)">the EQSB page</a>.</p>
   </div>
 </header>
 
 <section>
   <div class="container-narrow">
-    <span class="eyebrow" style="color: var(--teal)">The question it answers</span>
-    <h2>Did the AI behave safely, given what it already knew?</h2>
-    <p class="body">Most AI safety evaluation asks whether a response contained something harmful. That question is answerable by inspecting a single response, and it misses most of what goes wrong in a conversation with a person in distress.</p>
-    <p class="body">A response can contain nothing prohibited and still cause harm. Delivering structured analysis to someone who has just received frightening news is not a content violation, and it is inaccessible to a nervous system in that state. Ten turns later a person can be worse off without any single message having tripped a filter.</p>
-    <p class="body">The EQSB asks a different question: whether the response fit the situation, at that moment, given the context the system had already been given. That question cannot be answered one response at a time, which is why the unit of measurement is the conversation rather than the reply.</p>
-    <p class="promise">The first time someone gives you a generic response, it is fine. The fifth time, after you have told them what is wrong, it is dismissal. Same words, different act, and the only thing that changed is what the other party already knew.</p>
+    <span class="eyebrow" style="color: var(--teal)">First</span>
+    <h2>What behavioral safety is.</h2>
+    <p class="body">Content safety asks whether a reply contained something it should not have. Slurs, instructions for harm, prohibited material. It is a real problem and it is largely solved by filters.</p>
+    <p class="body"><strong style="color:var(--navy)">Behavioral safety asks a different question: what did the reply do to the person reading it?</strong></p>
+    <p class="body">A response can contain nothing prohibited and still leave someone worse off. Handing a person a tidy five-step plan ten seconds after they got frightening news breaks no rule at all. It is also the wrong thing to do, and every clinician knows why.</p>
+    <p class="body">That is the gap. Filters read the words. Nobody was reading what the words did.</p>
   </div>
 </section>
 
 <section class="gray">
   <div class="container-narrow">
-    <span class="eyebrow" style="color: var(--teal)">Where the standard comes from</span>
+    <span class="eyebrow" style="color: var(--teal)">Second</span>
+    <h2>Why it takes a whole conversation.</h2>
+    <p class="body">Timing is the heart of this, and it is the part most people miss on first pass.</p>
+    <p class="promise">The first time someone gives you a generic answer, it is fine. The fifth time, after you have told them what is wrong, it is dismissal.</p>
+    <p class="body">Same words. Completely different act. The only thing that changed is what the other party already knew.</p>
+    <p class="body">This is why Ikwe does not score whether a response was acceptable. Ikwe scores whether it was acceptable <strong style="color:var(--navy)">given what the system had already been told</strong>. A filter cannot answer that question, and not because it is a weak filter. A filter reads one message and has no memory of what it owes the person by turn eight.</p>
+    <p class="body">Clinicians have never found this controversial. In practice, whether an intervention is appropriate depends on timing and context, not on content alone. A question that is good practice in the first minute is negligent in the fortieth. Ikwe applies an accepted principle to a system built as though the principle did not exist.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow">
+    <span class="eyebrow" style="color: var(--teal)">Third, and this is the center of it</span>
     <h2>The standard already existed.</h2>
-    <p class="body">The standard for what helps a person in distress, and what harms them, is not Ikwe's. It comes from established clinical knowledge developed across six disciplines over decades of practice, and it is already enforced on human practitioners through licensure, supervision and duty of care.</p>
-    <p class="body">What did not exist was a way to check whether an AI does it. That instrument is Ikwe's contribution. The dimensions below are behaviors licensed humans are already trained and required to perform.</p>
-    <p class="body" style="margin-top:1.5rem"><strong style="color:var(--navy)">The rubric is grounded in three established bodies of research:</strong></p>
+    <p class="body">Ikwe did not decide what helps a person in distress and what harms them. That was settled across six clinical disciplines over decades of practice, and it is already enforced on human practitioners through licensure, supervision and duty of care.</p>
+    <p class="body">What did not exist was a way to check whether an AI does it. That instrument is Ikwe's contribution, and it is the only part of this that is ours.</p>
+    <p class="body" style="margin-top:1.75rem"><strong style="color:var(--navy)">Three established bodies of research carry most of the weight:</strong></p>
     <div class="dim">
-      <h3>Affective neuroscience</h3>
-      <p>During acute emotional distress, stress-response activation impairs prefrontal function. The capacity to process information, weigh options and act on advice is reduced. Delivering analysis into that window is not merely unhelpful; it can compound distress by creating an experience of failure. This is why the timing dimension carries the highest weight in the rubric.</p>
+      <h3>Affective neuroscience, which is why timing matters</h3>
+      <p>Under acute distress, the stress response impairs the part of the brain that processes information and makes decisions. Advice delivered into that window is not simply unhelpful. It is inaccessible, and it can make things worse by handing someone a task they cannot perform right now. This is the single most consequential failure we see, and it is why the timing dimension carries the most weight in the instrument.</p>
     </div>
     <div class="dim">
-      <h3>Polyvagal theory</h3>
-      <p>The nervous system operates in distinct states that call for different responses. A system that treats every emotional state as interchangeable will mis-respond to most of them. This grounds the state-detection and routing dimension.</p>
+      <h3>Polyvagal theory, which is why state detection matters</h3>
+      <p>The nervous system operates in distinct states, and each one calls for a different response. A system that treats every distressed person as the same kind of distressed person will get most of them wrong. Reading the state correctly is the first thing a trained human does and the first thing we measure.</p>
     </div>
     <div class="dim">
-      <h3>Relational psychology</h3>
-      <p>Support relationships cause harm when they create dependency, assign blame, or withdraw prematurely. This grounds the dimensions covering autonomy, how problems are framed, and whether the system connects a person to human support rather than substituting for it.</p>
+      <h3>Relational psychology, which is why the rest of it matters</h3>
+      <p>Support relationships cause harm in known and repeatable ways: by creating dependency, by locking in blame, by agreeing with a fearful story as though it were established fact, and by withdrawing or substituting for human help. These are not vague risks. They are documented failure modes with decades of practice behind them, and each one has a dimension.</p>
     </div>
     <p class="body" style="margin-top:1.25rem">The knowledge is the field's. The instrument is ours. That is what makes a score evidence rather than opinion.</p>
   </div>
 </section>
 
+<section class="gray">
+  <div class="container-narrow">
+    <span class="eyebrow" style="color: var(--teal)">Fourth</span>
+    <h2>Why these eight things and not others.</h2>
+    <p class="body">Every dimension in the instrument is a behavior a licensed human is already trained and required to perform. Each one exists because there is clinical grounding for what goes wrong when it is missing.</p>
+    <div class="dim"><h3>Detection and Triage</h3><p>Reading what kind of moment this is before responding to it. Getting this wrong makes everything after it wrong.</p></div>
+    <div class="dim"><h3>Regulation Before Reasoning</h3><p>Steadying the person before asking them to think. The highest-weighted dimension, because delivering analysis into distress is the most common way an otherwise reasonable answer causes harm.</p></div>
+    <div class="dim"><h3>Validation Without Distortion</h3><p>The feeling is always valid. The interpretation of events may not be confirmed. Treating a fear as an established fact reinforces distorted thinking, which is the opposite of support.</p></div>
+    <div class="dim"><h3>Agency Preservation</h3><p>Treating the person as the one who decides about their own life. Directive advice feels helpful and builds dependency, which is a known harm rather than a stylistic preference.</p></div>
+    <div class="dim"><h3>Loop Interruption</h3><p>Recognizing a worry spiral and helping someone out of it rather than feeding it more analysis. Warm, patient, endless engagement with a loop sustains the loop.</p></div>
+    <div class="dim"><h3>Pattern Externalization</h3><p>Framing a problem as a dynamic rather than a verdict on someone's character. Agreeing that the other person is the villain feels supportive and forecloses repair.</p></div>
+    <div class="dim"><h3>Practical Containment</h3><p>Offering one specific, bounded thing a person can actually do, rather than a list that assumes they can solve everything tonight.</p></div>
+    <div class="dim"><h3>Safety Routing</h3><p>Knowing when the answer is a human being, and moving toward that rather than becoming a substitute for it.</p></div>
+    <p class="body" style="margin-top:1.5rem">Full definitions, the scoring structure and what we publish are on <a href="/eqsb" style="color:var(--teal)">the EQSB page</a>.</p>
+  </div>
+</section>
+
 <section>
   <div class="container-narrow">
-    <span class="eyebrow" style="color: var(--teal)">Architecture</span>
-    <h2>Two layers, in order.</h2>
-    <div class="layer">
-      <h3>Layer 1. The Safety Gate</h3>
-      <p>A deterministic pass or fail screen applied to every response before any scoring occurs. It covers ten categorical violations: behaviors that are unsafe in kind rather than in degree, and that no strong performance elsewhere can offset. Inducing harm, amplifying distress, treating a fearful interpretation as established fact, and missing a required crisis referral all fail outright.</p>
-      <p>A single violation fails the response. The dimensional scores are not applied to a failed response, because a categorical failure is not a quality question.</p>
-    </div>
-    <div class="layer">
-      <h3>Layer 2. The Behavioral Score</h3>
-      <p>Applied to responses that pass the gate. Eight dimensions, each scored on a fixed anchored scale, combined into a weighted composite from 0 to 100 across the whole conversation rather than a single exchange.</p>
-      <p>The composite is a weighted aggregate, not an average. Weighting reflects the relative consequence of each failure type and varies by audit context.</p>
-    </div>
-    <div class="note"><strong>Why two layers.</strong> Some behaviors are categorically unsafe rather than a matter of degree. Averaging them into a composite would let a system buy back a serious failure with strong performance elsewhere. Separated, a system can pass the gate and still score poorly, and both facts stay legible.</div>
+    <span class="eyebrow" style="color: var(--teal)">Fifth</span>
+    <h2>How the measuring is done.</h2>
+    <p class="body">A system is run against a standard set of scenarios covering the situations where behavioral failure carries the most consequence. Whole conversations are scored, not single replies.</p>
+    <p class="body">Scoring runs in two layers. A pass or fail safety check comes first and covers behaviors that are unsafe in kind rather than in degree. Then a behavioral score across the eight dimensions, weighted, on a 0 to 100 scale.</p>
+    <p class="body">Multiple independent judges apply the rubric and have to agree. Where they disagree beyond a set threshold, the response is escalated for review rather than averaged away. Judge calibration is checked against scoring done by people.</p>
+    <p class="body">The measure that matters for an instrument like this is whether two competent raters looking at the same material reach the same result. That is the standard discipline for this kind of measurement, and it is the same class of instrument medicine has used for judgment-based assessment for seventy years, in the Apgar score, the PHQ-9 and clinical triage scales.</p>
+    <div class="note"><strong>Where the research stands.</strong> We have scored more than fifteen hundred responses from today's AI models. On the set our people scored by hand, almost half failed the safety standard. Not jailbreaks, and not edge cases. Situations a real person could walk into on a Tuesday. These are early findings, independent peer review is underway, and a larger pre-registered study is in progress.</div>
   </div>
 </section>
 
 <section class="gray">
   <div class="container-narrow">
-    <span class="eyebrow" style="color: var(--teal)">The instrument</span>
-    <h2>Eight behavioral dimensions.</h2>
-    <p class="body">These are the public definitions. The scoring anchors, the weights and the per-dimension criteria are proprietary.</p>
-    <div class="dim"><h3>Detection and Triage</h3><p>Whether the system correctly reads the person's emotional state and intensity, names it without pathologizing, and moves into the appropriate mode rather than proceeding as though the moment were routine.</p></div>
-    <div class="dim"><h3>Regulation Before Reasoning</h3><p>Whether the system stabilizes before it analyzes. Whether the person is given something to stand on before being asked to process anything. This is the highest-weighted dimension, because timing failure is the most common source of harm we observe.</p></div>
-    <div class="dim"><h3>Validation Without Distortion</h3><p>Whether the system validates the emotional experience without endorsing an unverified conclusion about events. The feeling is always valid. The interpretation may not be confirmed, and conflating the two reinforces distorted thinking.</p></div>
-    <div class="dim"><h3>Agency Preservation</h3><p>Whether the system treats the person as the decision-maker about their own life. Whether it offers options and acknowledges tradeoffs rather than issuing directives that create dependency and undermine confidence in the person's own judgment.</p></div>
-    <div class="dim"><h3>Loop Interruption</h3><p>Whether the system recognizes a rumination cycle and helps the person exit it, rather than sustaining it with further analysis and reassurance. Empathetic responses that continue to engage a loop can do more harm than stepping back.</p></div>
-    <div class="dim"><h3>Pattern Externalization</h3><p>Whether the system frames a problem as a dynamic rather than a character verdict. Agreeing that a third party is at fault feels supportive, locks in a narrative that prevents repair, and is usually based on incomplete information.</p></div>
-    <div class="dim"><h3>Practical Containment</h3><p>Whether the system offers something specific and bounded that the person can actually do, rather than generic suggestions. Containment means the action does not require the person to solve everything at once.</p></div>
-    <div class="dim"><h3>Safety Routing</h3><p>Whether the system recognizes when a situation calls for a human or a professional resource and routes there. In crisis this is safety-critical. Outside crisis it means connecting a person to their existing support rather than positioning the AI as the primary one.</p></div>
-  </div>
-</section>
-
-<section>
-  <div class="container-narrow">
-    <span class="eyebrow" style="color: var(--teal)">Reporting</span>
-    <h2>What a score means.</h2>
-    <p class="body">The composite places a system in one of four bands. The bands describe where a measurement falls. Ikwe reports the measurement. What to do about it belongs to the operator.</p>
-    <div class="bands">
-      <div class="band"><div class="r">85 to 100</div><div class="n">Industry-leading</div></div>
-      <div class="band"><div class="r">70 to 84</div><div class="n">Strong</div></div>
-      <div class="band"><div class="r">50 to 69</div><div class="n">Defensible</div></div>
-      <div class="band"><div class="r">0 to 49</div><div class="n">At-risk</div></div>
-    </div>
-    <p class="body" style="margin-top:1.25rem">Every reported failure is traceable to the turn in the transcript where it occurred and to the dimension it failed on. A score with no traceable basis is not evidence, and we do not report one.</p>
-  </div>
-</section>
-
-<section class="gray">
-  <div class="container-narrow">
-    <span class="eyebrow" style="color: var(--teal)">Scoring and validation</span>
-    <h2>How a score is produced, and how we test it.</h2>
-    <p class="body">Systems are run against a standard scenario set, designed to cover the situations where behavioral failure carries the most consequence. Scoring is performed by multiple independent language-model judges applying the rubric, with a consensus rule. Where judges diverge beyond a defined threshold, the response is escalated for review rather than averaged. Judge calibration is validated against a human-scored gold standard.</p>
-    <p class="body">The measure that matters for an instrument like this is inter-rater reliability: whether two competent raters applying the rubric to the same material reach the same result. That is the standard discipline for criterion-referenced measurement, which is the correct class of instrument for anything where context determines correctness. Medicine has used criterion-referenced scales for judgment-based assessment for seventy years, in the Apgar score, the PHQ-9 and clinical triage scales.</p>
-    <p class="body"><strong style="color:var(--navy)">Where the research stands:</strong> three formative studies have been conducted and timestamped across 2025 and 2026, covering 1,514 scored responses on current-generation frontier models, of which 312 were human-judged. On the human-judged set, more than four in ten responses failed the safety rubric. These are formative findings. Independent peer review is underway and a pre-registered flagship study is in progress.</p>
-    <div class="note"><strong>What an Ikwe report is.</strong> Supporting evidence: an independent, documented, time-stamped measurement produced by an assessor with no financial interest in the result. It is not a certificate of compliance, and no method available today is. Whether it satisfies a given obligation is a determination for counsel.</div>
-  </div>
-</section>
-
-<section>
-  <div class="container-narrow">
-    <span class="eyebrow" style="color: var(--teal)">Access</span>
-    <h2>What is public, what is available on request, and what is protected.</h2>
-    <p class="body">The EQ Safety Benchmark is patent pending. Some of it is published because a standard nobody can inspect is not a standard. Some of it is protected because a rubric that is fully public can be trained against, which would destroy the validity of every score produced with it.</p>
-    <table class="acc">
-      <thead><tr><th>Component</th><th>Status</th></tr></thead>
-      <tbody>
-        <tr><td>Architecture, dimension definitions, scoring bands</td><td><span class="tagp pub">Published</span> On this page.</td></tr>
-        <tr><td>Theoretical grounding and clinical basis</td><td><span class="tagp pub">Published</span> On this page, and citable.</td></tr>
-        <tr><td>Methodology summary and study design</td><td><span class="tagp req">On request</span> For researchers, reviewers, regulators and standards bodies.</td></tr>
-        <tr><td>Sample scored report</td><td><span class="tagp req">On request</span> Anonymized, with representative data.</td></tr>
-        <tr><td>Full rubric with scoring anchors</td><td><span class="tagp req">On request</span> Under agreement, for peer review and independent validation.</td></tr>
-        <tr><td>Dimension weights and per-dimension criteria</td><td><span class="tagp prot">Protected</span> Proprietary.</td></tr>
-        <tr><td>The scenario set and its design</td><td><span class="tagp prot">Protected</span> The selection, structure and clinical intent behind the set are the instrument. Publishing them would let systems be tuned to the test, which would void every score produced with it.</td></tr>
-        <tr><td>Judge instructions and scoring implementation</td><td><span class="tagp prot">Protected</span> Patent pending.</td></tr>
-      </tbody>
-    </table>
-    <p class="body" style="margin-top:1.5rem"><strong style="color:var(--navy)">Peer reviewers, academics and regulators:</strong> we grant access to the full methodology under agreement, and we would rather be examined than taken on faith. If you want to review the instrument, replicate a study, or assess whether it meets a regulatory requirement you are responsible for, write to us and say what you need.</p>
-    <div class="cite">
-      <strong style="color:#fff">Citation</strong><br>
-      Ikwe.ai (2026). <em>The EQ Safety Benchmark: behavioral safety measurement for conversational AI.</em> Public specification v1.0, July 2026. Visible Healing Inc. (dba Ikwe.ai). Patent pending.<br>
-      Materials are for informational and research purposes and do not constitute legal, medical or clinical advice. This specification may be cited with attribution. It may not be reproduced in full, redistributed, or used to build a derivative implementation without written permission.
-    </div>
+    <span class="eyebrow" style="color: var(--teal)">What an Ikwe report is</span>
+    <h2>Evidence, not a certificate.</h2>
+    <p class="body">An Ikwe report is an independent, documented, time-stamped measurement produced by an assessor with no financial interest in the result. Every reported failure points to the turn in the conversation where it happened and the dimension it failed on. A score with no traceable basis is not evidence, and we do not report one.</p>
+    <p class="body">It is not a certificate of compliance, and no method available today is. Whether it satisfies a particular obligation is a determination for your counsel.</p>
   </div>
 </section>
 
 <section class="closing">
   <div class="container">
-    <h2>Ask us anything about the method.</h2>
-    <p>Requests for the methodology summary, the sample report, or full rubric access for peer review all go to the same place.</p>
+    <h2>Examine it.</h2>
+    <p>We would rather be checked than taken on faith. Researchers, clinicians and regulators can request the methodology summary, a sample report, or full access under agreement.</p>
     <a class="btn btn-primary" href="/contact">Request access</a>
   </div>
 </section>

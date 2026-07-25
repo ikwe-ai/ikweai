@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work with us | ikwe.ai</title>
+  <meta name="description" content="The EQ Safety Benchmark: what it measures, where the standard comes from, how scoring works, what is published and what is protected, and how to request access for peer review.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --fs-display: clamp(2.2rem, 4.5vw, 3.2rem);
+      --fs-h2: clamp(1.6rem, 3vw, 2.3rem);
+      --fs-h3: 1.2rem;
+      --fs-lead: 1.05rem;
+      --fs-body: .95rem;
+      --fs-small: .85rem;
+      --fs-label: .75rem;
+      --ls-label: .1em;
+      --lav-deep: #3C3489;
+      --rule: #EEEEF2;
+      --navy:   #191A2E;
+      --coral:  #F7A192;
+      --lav:    #B894F6;
+      --cream:  #F6D993;
+      --teal:   #0F6E56;
+      --teal-light: #E1F5EE;
+      --teal-mid:   #5DCAA5;
+      --gray-soft:  #F7F6F2;
+      --white: #FFFFFF;
+      --text:  #1A1A2E;
+      --text-muted: #5a5a6e;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.7; color: var(--text); background: var(--white); }
+
+    nav { position: sticky; top: 0; z-index: 1000; background: var(--navy); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
+    .nav-logo-circle { width: 26px; height: 26px; border-radius: 50%; background: conic-gradient(#1D1F35 0deg 90deg, var(--coral) 90deg 180deg, var(--lav) 180deg 270deg, var(--cream) 270deg 360deg); flex-shrink: 0; }
+    .nav-brand-name { font-family: 'DM Serif Display', serif; font-size: var(--fs-h3); color: var(--white); letter-spacing: .02em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: var(--fs-small); font-weight: 400; transition: color .2s; }
+    .nav-links a:hover { color: var(--coral); }
+    .nav-links a.active { color: var(--white); }
+    .nav-cta { background: var(--coral); color: var(--navy); font-weight: 500; font-size: var(--fs-small); padding: .5rem 1.25rem; border-radius: 6px; text-decoration: none; transition: opacity .2s; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; background: transparent; border: none; z-index: 200; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: all .25s; }
+    .nav-mobile-menu { display: none; }
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-mobile-menu.open { display: flex; position: fixed; top: 60px; left: 0; right: 0; background: var(--navy); padding: 1.5rem 2rem 2rem; flex-direction: column; z-index: 999; border-top: 1px solid rgba(255,255,255,.1); }
+      .nav-mobile-menu a { color: rgba(255,255,255,.75); text-decoration: none; font-size: 1rem; padding: .9rem 0; border-bottom: 1px solid rgba(255,255,255,.07); }
+      .nav-mobile-menu a:last-child { border-bottom: none; }
+    }
+
+    section { padding: 4rem 2rem; }
+    .container-narrow { max-width: 720px; margin: 0 auto; }
+    h1, h2, h3 { font-family: 'DM Serif Display', serif; line-height: 1.2; }
+    h1 { font-size: clamp(2rem, 4.5vw, 2.9rem); }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+    h3 { font-size: var(--fs-h3); }
+    .eyebrow { display: inline-block; font-size: var(--fs-label); font-weight: 500; letter-spacing: var(--ls-label); text-transform: uppercase; margin-bottom: 1rem; color: var(--teal-mid); }
+    .lead { font-size: var(--fs-lead); color: var(--text-muted); line-height: 1.75; margin-top: .75rem; }
+    p.body { font-size: var(--fs-body); color: var(--text-muted); margin-top: .75rem; }
+
+    .page-head { background: var(--navy); color: var(--white); padding: 4.5rem 2rem 4rem; }
+    .page-head h1 { color: var(--white); }
+    .page-head .lead { color: rgba(255,255,255,.72); max-width: 620px; }
+
+    .gray { background: var(--gray-soft); }
+    .promise { font-family: 'DM Serif Display', serif; font-style: italic; font-size: clamp(1.1rem, 2.2vw, 1.35rem); color: var(--navy); line-height: 1.55; margin-top: 1.5rem; }
+
+    /* dimension list */
+    .dim { border-bottom: 1px solid var(--rule); padding: 1.25rem 0; }
+    .dim:last-of-type { border-bottom: none; }
+    .dim h3 { color: var(--navy); font-size: 1.1rem; }
+    .dim p { font-size: var(--fs-body); color: var(--text-muted); margin-top: .3rem; }
+
+    /* layers */
+    .layer { border-left: 3px solid var(--teal-mid); padding: .25rem 0 .25rem 1.25rem; margin-top: 1.75rem; }
+    .layer:nth-of-type(2) { border-left-color: var(--lav); }
+    .layer h3 { color: var(--navy); }
+    .layer p { font-size: var(--fs-body); color: var(--text-muted); margin-top: .35rem; }
+
+    /* bands */
+    .bands { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: .75rem; margin-top: 1.5rem; }
+    .band { background: var(--white); border: 1px solid var(--rule); border-radius: 8px; padding: .9rem 1rem; }
+    .band .r { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--navy); }
+    .band .n { font-size: var(--fs-label); letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); margin-top: .15rem; }
+
+    /* access table */
+    .acc { width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: var(--fs-body); }
+    .acc th { text-align: left; font-family: 'DM Sans', sans-serif; font-size: var(--fs-label); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 500; padding: .6rem .75rem; border-bottom: 2px solid var(--rule); }
+    .acc td { padding: .8rem .75rem; border-bottom: 1px solid var(--rule); color: var(--text-muted); vertical-align: top; }
+    .acc td:first-child { color: var(--navy); font-weight: 500; width: 34%; }
+    .tagp { display: inline-block; font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; padding: .18rem .5rem; border-radius: 20px; font-weight: 500; }
+    .tagp.pub { background: var(--teal-light); color: var(--teal); }
+    .tagp.req { background: #FFF4E0; color: #8a6d1f; }
+    .tagp.prot { background: #F3EDFB; color: var(--lav-deep); }
+
+    .note { background: var(--gray-soft); border-radius: 8px; padding: 1.1rem 1.25rem; margin-top: 1.5rem; font-size: var(--fs-body); color: var(--text-muted); }
+    .note strong { color: var(--navy); }
+    .cite { background: var(--navy); color: rgba(255,255,255,.8); border-radius: 8px; padding: 1.1rem 1.25rem; margin-top: 1.25rem; font-size: var(--fs-small); line-height: 1.6; }
+
+    .btn { display: inline-block; padding: .75rem 1.75rem; border-radius: 8px; font-weight: 500; font-size: var(--fs-body); text-decoration: none; cursor: pointer; border: none; transition: opacity .2s, transform .15s; }
+    .btn:hover { opacity: .88; transform: translateY(-1px); }
+    .btn-primary { background: var(--coral); color: var(--navy); }
+    .closing { background: var(--navy); color: var(--white); text-align: center; padding: 4.5rem 2rem; }
+    .closing h2 { color: var(--white); }
+    .closing p { color: rgba(255,255,255,.65); max-width: 560px; margin: 1rem auto 1.75rem; font-size: var(--fs-lead); }
+
+    footer { background: #0f1020; color: rgba(255,255,255,.4); padding: 2.5rem 2rem; font-size: var(--fs-small); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .foot-l strong { color: rgba(255,255,255,.6); }
+    .foot-r { font-size: var(--fs-label); line-height: 1.6; text-align: right; }
+    .foot-r a { color: var(--coral); text-decoration: none; }
+
+    .sblock { background: var(--white); border: 1px solid var(--rule); border-left: 5px solid var(--teal-mid); border-radius: 12px; padding: 1.6rem 1.5rem; margin-top: 1.1rem; }
+    .sblock.b2 { border-left-color: #F0A44C; }
+    .sblock.b3 { border-left-color: var(--lav); }
+    .sblock .pname { font-size: var(--fs-label); letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: .5rem; }
+    .sblock .q { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.3rem; line-height: 1.3; color: var(--navy); margin-bottom: .9rem; }
+    .sblock ul { margin: 0 0 1rem 0; padding-left: 1.2rem; }
+    .sblock li { font-size: var(--fs-body); color: var(--text-muted); margin-bottom: .45rem; }
+    .sblock .what { font-size: var(--fs-body); color: var(--text-muted); border-top: 1px solid var(--rule); padding-top: .8rem; margin: 0; }
+    .sblock .what b { color: var(--navy); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1rem; margin-top: 1.5rem; }
+    .stepc { background: var(--white); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .stepc .n { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--teal-mid); line-height: 1; margin-bottom: .4rem; }
+    .stepc p { font-size: var(--fs-body); color: var(--text-muted); margin: 0; }
+    .stepc b { color: var(--navy); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="/">
+    <span class="nav-logo-circle"></span>
+    <span class="nav-brand-name">ikwe.ai</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/work-with-us" class="active">Work with us</a></li>
+    <li><a href="/research">Research</a></li>
+    <li><a href="/eqsb">The EQSB</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="/contact">Get in touch</a>
+  <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open');this.classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile-menu">
+    <a href="/">Home</a>
+    <a href="/work-with-us">Work with us</a>
+    <a href="/research">Research</a>
+    <a href="/eqsb">The EQSB</a>
+    <a href="/contact">Contact</a>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="container-narrow">
+    <span class="eyebrow">Work with us</span>
+    <h1>Three situations. Whichever one is yours, that is your answer.</h1>
+    <p class="lead">One method, the EQ Safety Benchmark, applied three ways. These are not stages and there is no bottom rung. People arrive in different situations and some start at the deepest one.</p>
+  </div>
+</header>
+
+<section>
+  <div class="container-narrow">
+    <div class="sblock">
+      <div class="pname">Assessment · one-time · about five business days</div>
+      <div class="q">"I have to prove something right now."</div>
+      <ul>
+        <li>A board, a carrier or a customer has asked what your AI does in a hard conversation, and you do not have an answer on paper.</li>
+        <li>A deal is sitting on a safety review.</li>
+        <li>A deadline is in front of you and you have measured nothing.</li>
+        <li>You want to know where you stand before someone else tells you.</li>
+      </ul>
+      <p class="what"><b>What you get.</b> Your system against our standard scenario set, scored across whole conversations rather than single replies. Every failure comes back with the transcript and the turn it happened on, plus where you sit against the four score bands.</p>
+    </div>
+
+    <div class="sblock b2">
+      <div class="pname">Audit · one-time · scoped to you</div>
+      <div class="q">"A generic scenario set cannot answer my question."</div>
+      <ul>
+        <li>Your users are specific, and so are the ways a conversation with them goes wrong.</li>
+        <li>You have a named obligation and the assessment needs to be scoped to it.</li>
+        <li>You already know roughly where you are weak and need it evidenced rather than discovered.</li>
+        <li>You have made fixes and you need the re-score to mean something.</li>
+      </ul>
+      <p class="what"><b>What you get.</b> Scenarios built for your domain and your users on top of the standard set, whole conversations scored across the arc, and a written report you can put in front of a board, a carrier or a regulator. Includes recommendations and a re-score after you implement them. We never fix what we score.</p>
+    </div>
+
+    <div class="sblock b3">
+      <div class="pname">Monitoring · subscription · continuous</div>
+      <div class="q">"I do not know yet what I will be asked to prove."</div>
+      <ul>
+        <li>You know a question is coming and you cannot predict its shape.</li>
+        <li>Your model changes. A review from March does not describe what shipped in August.</li>
+        <li>You need to look backward through the data, not just take a reading today.</li>
+        <li>You will be asked for numbers over a period, and a number over a period is a history.</li>
+      </ul>
+      <p class="what"><b>What you get.</b> Continuous scoring of your live, anonymized traffic, with Assessment points built into the subscription, and reporting over time. The evidence stack, building while nothing is on fire.</p>
+    </div>
+
+    <p class="promise">A baseline is retrospective. You cannot build one after you need it. Start late and you have a data point. Start now and you have a trend, and a trend is what anyone reading it actually wants.</p>
+  </div>
+</section>
+
+<section class="gray">
+  <div class="container-narrow">
+    <span class="eyebrow" style="color: var(--teal)">How an engagement runs</span>
+    <h2>Four steps, no surprises.</h2>
+    <div class="steps">
+      <div class="stepc"><div class="n">01</div><p><b>A conversation.</b> What you are building, who talks to it, and what you are being asked to show. Scope comes out of this.</p></div>
+      <div class="stepc"><div class="n">02</div><p><b>Connection.</b> Anonymized inputs and outputs over a simple API. No codebase, no system prompt, no user identities.</p></div>
+      <div class="stepc"><div class="n">03</div><p><b>Scoring.</b> Whole conversations against the EQSB. Independent judges, consensus, disagreements escalated rather than averaged.</p></div>
+      <div class="stepc"><div class="n">04</div><p><b>The report.</b> Your score, every failure traced to its turn, and what to do about it. Time-stamped and unable to be edited after the fact.</p></div>
+    </div>
+    <div class="note"><strong>What we never do.</strong> Nothing we run sits in your response path, so nothing we run can add latency or break in production. We do not fix what we score, because an assessor who also does the remediation is not an independent assessor. You own every record we produce, and nothing is published or shared without you.</div>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow">
+    <span class="eyebrow" style="color: var(--teal)">Scope and pricing</span>
+    <h2>Set in a conversation, before anything starts.</h2>
+    <p class="body">Scope depends on how many scenarios, how much traffic and how specific the domain is. We work that out with you up front and put it in writing before an engagement begins. No surprises and no lock-in.</p>
+    <p class="body">If you are not sure which of the three you need, an Assessment is the fastest honest answer, and it tells you whether you need anything else.</p>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="container">
+    <h2>Tell us what you are working on.</h2>
+    <p>Whether you build conversational AI, insure it, or regulate it, we would like to hear about it.</p>
+    <a class="btn btn-primary" href="/contact">Get in touch</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-l"><strong>ikwe.ai</strong> · Des Moines, Iowa · Behavioral safety, on the record</div>
+  <div class="foot-r"><a href="/contact">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/research-access-terms">Research access terms</a></div>
+</footer>
+
+</body>
+</html>

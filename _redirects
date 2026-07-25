@@ -14,9 +14,15 @@
 /research-summary     /research  301
 /explorer             /research  301
 
+# How it works folded into Work with us (Jul 25, 2026)
+/how-it-works         /work-with-us  301
+/how-it-works.html    /work-with-us  301
+/work-with-us.html    /work-with-us  301
+/eqsb.html            /eqsb          301
+
 # Legacy aliases
-/eq-safety-benchmark  /research  301
-/eqsb                 /research  301
+/eq-safety-benchmark  /eqsb      301
+
 /intake               /order     301
 /get-started          /order     301
 

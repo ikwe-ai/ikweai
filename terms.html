@@ -56,6 +56,11 @@ nav{position:sticky;top:0;z-index:1000;background:#191A2E;padding:0 2rem;display
 .hero{padding:2rem 0 1.75rem;border-bottom:1px solid var(--border);}.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(1.8rem,3.5vw,2.4rem);line-height:1.2;letter-spacing:-.02em;margin-bottom:12px;}.hero-sub{font-size:.92rem;color:var(--text-3);}
 .legal{padding:48px 0 96px;}.legal h2{font-family:var(--serif);font-size:1.15rem;font-weight:600;margin:36px 0 12px;letter-spacing:-.01em;color:var(--text);}.legal h2:first-of-type{margin-top:0;}.legal p{font-size:.9rem;color:var(--text-2);line-height:1.75;margin-bottom:16px;}.legal a{color:var(--rose);border-bottom:1px solid rgba(196,166,154,.3);}.legal a:hover{border-color:var(--rose);}
 .footer{border-top:1px solid var(--border);padding:56px 0 48px;background:var(--bg-2);}.footer-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:32px;}.footer-brand{display:flex;align-items:center;gap:8px;font-family:var(--serif);font-weight:600;font-size:.95rem;margin-bottom:10px;}.footer-brand img{width:24px;height:24px;border-radius:50%;}.footer-tagline{font-size:.84rem;color:var(--text-3);max-width:28ch;line-height:1.6;}.footer-copy{font-size:.78rem;color:var(--text-3);margin-top:16px;}.footer-col-title{font-weight:700;font-size:.8rem;margin-bottom:12px;color:var(--text-2);letter-spacing:.02em;}.footer-col a{display:block;font-size:.84rem;color:var(--text-3);padding:3px 0;transition:color .2s;}.footer-col a:hover{color:var(--text);}.footer-cite{grid-column:1/-1;padding-top:24px;border-top:1px solid var(--border);font-size:.76rem;color:var(--text-3);font-style:italic;}@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;}}@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+
+    footer { background: #0f1020; color: rgba(255,255,255,.4); padding: 2.5rem 2rem; font-size: .85rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .foot-l strong { color: rgba(255,255,255,.6); }
+    .foot-r { font-size: .75rem; line-height: 1.6; text-align: right; }
+    .foot-r a { color: var(--coral, #F7A192); text-decoration: none; }
 </style>
 <!-- Favicon -->
 <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -82,12 +87,11 @@ nav{position:sticky;top:0;z-index:1000;background:#191A2E;padding:0 2rem;display
     <span class="nav-brand-name">ikwe.ai</span>
   </a>
   <ul class="nav-links">
-    <li><a href="/#moment">The Problem</a></li>
-    <li><a href="/#how">How It Works</a></li>
-    <li><a href="/#benchmark">The Benchmark</a></li>
-    <li><a href="/#proof">Research</a></li>
-    <li><a href="/#audience">Who It's For</a></li>
-    <li><a href="/ikwe-sample-report-public.html" style="color:#F7A192">Sample Report</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/work-with-us">Work with us</a></li>
+    <li><a href="/research">Research</a></li>
+    <li><a href="/eqsb">The EQSB</a></li>
+    <li><a href="/contact">Contact</a></li>
   </ul>
   <a href="/contact" class="nav-cta">Get in touch</a>
   <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
@@ -101,7 +105,7 @@ nav{position:sticky;top:0;z-index:1000;background:#191A2E;padding:0 2rem;display
   <a href="/#benchmark" onclick="closeMobileMenu()">The Benchmark</a>
   <a href="/#proof" onclick="closeMobileMenu()">Research</a>
   <a href="/#audience" onclick="closeMobileMenu()">Who It's For</a>
-  <a href="/ikwe-sample-report-public.html" onclick="closeMobileMenu()">Sample Report</a>
+  <a href="/eqsb" onclick="closeMobileMenu()">Sample Report</a>
   <a href="/contact" class="mob-cta" onclick="closeMobileMenu()">Get in touch</a>
 </div>
 
@@ -150,9 +154,10 @@ nav{position:sticky;top:0;z-index:1000;background:#191A2E;padding:0 2rem;display
   </div>
 </section>
 
-<footer class="footer"><div class="container"><div class="footer-grid"><div><div class="footer-brand"><img src="/ikwe_logo_dark.png" alt="ikwe.ai">ikwe.ai</div><p class="footer-tagline">Independent measurement of behavioral safety in conversational AI.</p><p class="footer-copy">© 2026 Visible Healing Inc. (dba Ikwe.ai)<br>US-based in Iowa · Operating worldwide</p></div><div class="footer-col"><div class="footer-col-title">Research</div><a href="https://ikwe.ai/research">Methodology</a><a href="https://ladyinvisibl.medium.com/">Writing Library</a><a href="https://ladyinvisibl.medium.com/before-the-violation-399e2133a439">Before the Violation</a><a href="/ikwe-sample-report-public.html">Deliverables</a><a href="/case-study">Case Studies</a></div><div class="footer-col"><div class="footer-col-title">Company</div><a href="/">About</a><a href="/how-it-works">Why Independent</a><a href="/how-it-works">Architecture</a>
-<a href="/report">Audit</a><a href="/ikwe-sample-report-public.html">Deliverables</a><a href="/access">Press &amp; Updates</a></div><div class="footer-col"><div class="footer-col-title">Connect</div><a href="/contact">Request Evaluation</a><a href="/report">Audit Pathway</a><a href="mailto:hello@ikwe.ai">hello@ikwe.ai</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a>
-        <a href="/research-access-terms">Research Access Terms</a></div><div class="footer-cite">Ikwe.ai (2026). <em>Behavioral Emotional Safety in Conversational AI: A Scenario-Based Evaluation.</em> Visible Healing Inc. (dba Ikwe.ai). <a href="https://ikwe.ai" style="color:var(--rose)">ikwe.ai</a><br><span style="display:inline-block;margin-top:6px;font-style:normal;">All rights reserved. No reproduction, redistribution, or derivative implementation without written permission. Materials are for informational research purposes and do not constitute legal, medical, or clinical advice. <a href="mailto:research@ikwe.ai?subject=Citation%20Guide%20Request">Citation Guide (request)</a> · <a href="/research-access-terms">Research Access Terms</a>.</span></div></div></div></footer>
+<footer>
+  <div class="foot-l"><strong>ikwe.ai</strong> · Des Moines, Iowa · Behavioral safety, on the record</div>
+  <div class="foot-r"><a href="/">Home</a> · <a href="/work-with-us">Work with us</a> · <a href="/research">Research</a> · <a href="/eqsb">The EQSB</a> · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/research-access-terms">Research access</a></div>
+</footer>
 <script>
 // Mobile nav
 (function(){
