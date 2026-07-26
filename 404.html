@@ -51,7 +51,7 @@ nav{position:sticky;top:0;z-index:1000;background:#191A2E;padding:0 2rem;display
   .nav-mobile-menu a:hover{color:#F7A192;}
   .nav-mobile-menu .mob-cta{margin-top:1.25rem;background:#F7A192;color:#191A2E;font-weight:500;padding:.75rem 1.5rem;border-radius:8px;text-align:center;border-bottom:none!important;}
 }
-.four-oh-four{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:48px 32px;position:relative;}.four-oh-four::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse at center,rgba(196,166,154,.06) 0%,transparent 60%);pointer-events:none;}
+.four-oh-four{flex:1;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:48px 32px;position:relative;}.four-oh-four::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse at center,rgba(196,166,154,.06) 0%,transparent 60%);pointer-events:none;}
 .four-content{position:relative;max-width:480px;}
 .four-code{font-family:var(--mono);font-size:5rem;font-weight:700;color:var(--rose);opacity:.3;margin-bottom:8px;letter-spacing:.05em;}
 .four-content h1{font-family:var(--serif);font-size:1.6rem;font-weight:600;margin-bottom:12px;letter-spacing:-.01em;}
@@ -79,12 +79,11 @@ nav{position:sticky;top:0;z-index:1000;background:#191A2E;padding:0 2rem;display
     <span class="nav-brand-name">ikwe.ai</span>
   </a>
   <ul class="nav-links">
-    <li><a href="/#moment">The Problem</a></li>
-    <li><a href="/#how">How It Works</a></li>
-    <li><a href="/#benchmark">The Benchmark</a></li>
-    <li><a href="/#proof">Research</a></li>
-    <li><a href="/#audience">Who It's For</a></li>
-    <li><a href="/ikwe-sample-report-public.html" style="color:#F7A192">Sample Report</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/work-with-us">Work with us</a></li>
+    <li><a href="/eqsb">The EQ Safety Benchmark</a></li>
+    <li><a href="/research">Research</a></li>
+    <li><a href="/contact">Contact</a></li>
   </ul>
   <a href="/contact" class="nav-cta">Get in touch</a>
   <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
@@ -93,12 +92,10 @@ nav{position:sticky;top:0;z-index:1000;background:#191A2E;padding:0 2rem;display
 </nav>
 <!-- Mobile menu -->
 <div class="nav-mobile-menu" id="nav-mobile-menu">
-  <a href="/#moment" onclick="closeMobileMenu()">The Problem</a>
-  <a href="/#how" onclick="closeMobileMenu()">How It Works</a>
-  <a href="/#benchmark" onclick="closeMobileMenu()">The Benchmark</a>
-  <a href="/#proof" onclick="closeMobileMenu()">Research</a>
-  <a href="/#audience" onclick="closeMobileMenu()">Who It's For</a>
-  <a href="/ikwe-sample-report-public.html" onclick="closeMobileMenu()">Sample Report</a>
+  <a href="/" onclick="closeMobileMenu()">Home</a>
+  <a href="/work-with-us" onclick="closeMobileMenu()">Work with us</a>
+  <a href="/eqsb" onclick="closeMobileMenu()">The EQ Safety Benchmark</a>
+  <a href="/research" onclick="closeMobileMenu()">Research</a>
   <a href="/contact" class="mob-cta" onclick="closeMobileMenu()">Get in touch</a>
 </div>
 
@@ -108,9 +105,9 @@ nav{position:sticky;top:0;z-index:1000;background:#191A2E;padding:0 2rem;display
     <h1>This page doesn't exist.</h1>
     <p>The page you're looking for may have moved or been removed. Here's where you probably want to go.</p>
     <div class="four-links">
-      <a class="primary" href="/">Go Home</a>
-      <a class="ghost" href="/audit">See Audit Options</a>
-      <a class="ghost" href="/intake">Apply for Evaluation</a>
+      <a class="primary" href="/">Go home</a>
+      <a class="ghost" href="/work-with-us">Work with us</a>
+      <a class="ghost" href="/contact">Get in touch</a>
     </div>
   </div>
 </main>
