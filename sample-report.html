@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample report | ikwe.ai</title>
+<meta name="description" content="What an Ikwe report looks like: the behavioral scorecard, the finding format, the four score bands, and what the full document contains. All examples are illustrative.">
+<link rel="canonical" href="https://ikwe.ai/sample-report">
+<meta property="og:site_name" content="Ikwe.ai">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ikwe.ai/sample-report">
+<meta property="og:title" content="Sample report | ikwe.ai">
+<meta property="og:description" content="What an Ikwe report looks like. The scores on this page are invented and belong to no real system.">
+<meta property="og:site_name" content="Ikwe.ai">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ikwe.ai/sample-report">
+<meta property="og:title" content="What an Ikwe report looks like">
+<meta property="og:image" content="https://ikwe.ai/og/home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ikwe.ai/og/home.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..500&display=swap">
+<style>
+:root{
+ --ink:#191A2E;--ink-2:#20223A;--off:#F8F5F0;--white:#fff;
+ --teal:#0F6E56;--teal-soft:#5DCAA5;--coral:#F7A192;--coral-d:#a8422f;--cream:#F6D993;--lav:#B894F6;--gold-d:#8a6d1f;
+ --mute:#5c5d72;--rule:rgba(25,26,46,.09);
+ --serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--off);color:var(--ink);font-family:var(--sans);line-height:1.65;font-size:17.5px}
+section{padding:72px 0;border-bottom:1px solid var(--rule);scroll-margin-top:72px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.narrow{max-width:880px;margin:0 auto;padding:0 28px}
+.kick{font-family:var(--mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;margin-bottom:16px;color:var(--teal)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(29px,4vw,40px);line-height:1.14;margin-bottom:20px}
+h3{font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.2;margin-bottom:6px}
+p{margin-bottom:16px;color:#3a3b50}
+p.lead{font-size:19px;color:var(--ink)}
+.pull{font-family:var(--serif);font-style:italic;font-size:23px;line-height:1.35;color:var(--ink);margin:24px 0 0}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 18px;z-index:2000;border-radius:0 0 8px 0}
+.skip:focus{left:0}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 26px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none}
+.btn.primary{background:var(--teal);color:#fff}
+.btn.ghost{border:1.5px solid #8d8ea2;color:#e6e7ef}
+.btn.dark{background:var(--ink);color:#fff;border:0;cursor:pointer;font-family:var(--sans)}
+.btn.line{border:1.5px solid var(--ink);color:var(--ink)}
+.dark{background:var(--ink);color:#fff}
+.dark h2,.dark h3{color:#fff}
+.dark p{color:#d8d9e4}
+.dark .kick{color:var(--cream)}
+.dark .pull{color:var(--cream)}
+.dark a{color:var(--teal-soft)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:1000;background:var(--ink);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.nav-logo-circle{width:26px;height:26px;border-radius:50%;background:conic-gradient(#1D1F35 0deg 90deg,var(--coral) 90deg 180deg,var(--lav) 180deg 270deg,var(--cream) 270deg 360deg);flex-shrink:0}
+.nav-brand-name{font-family:var(--serif);font-size:1.2rem;color:#fff;letter-spacing:.02em}
+.nav-links{display:flex;gap:1.6rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.78);text-decoration:none;font-size:.85rem}
+.nav-links a:hover{color:var(--coral)}
+.nav-links a.active{color:#fff}
+.nav-cta{background:var(--coral);color:var(--ink);font-weight:500;font-size:.85rem;padding:.5rem 1.25rem;border-radius:6px;text-decoration:none}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.75rem;min-width:44px;min-height:44px;justify-content:center;align-items:center;background:transparent;border:none}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.nav-mobile-menu{display:none}
+@media(max-width:960px){
+ .nav-links,.nav-cta{display:none}
+ .nav-hamburger{display:flex}
+ .nav-mobile-menu.open{display:flex;position:fixed;top:60px;left:0;right:0;background:var(--ink);padding:1.5rem 28px 2rem;flex-direction:column;z-index:999;border-top:1px solid rgba(255,255,255,.1)}
+ .nav-mobile-menu a{color:rgba(255,255,255,.85);text-decoration:none;font-size:1rem;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
+ .nav-mobile-menu a:last-child{border-bottom:none}
+ .nav-mobile-menu a.m-cta{color:var(--coral);font-weight:700}
+}
+
+/* hero */
+header.hero{background:var(--ink);color:#fff;padding:72px 0 64px;position:relative;overflow:hidden;scroll-margin-top:72px}
+header.hero::before{content:'';position:absolute;right:-140px;top:-180px;width:440px;height:440px;border-radius:50%;background:rgba(93,202,165,.12)}
+header.hero::after{content:'';position:absolute;left:-130px;bottom:-210px;width:380px;height:380px;border-radius:50%;background:rgba(240,164,76,.10)}
+header.hero .inner{position:relative;z-index:1}
+header.hero .kick{color:var(--teal-soft)}
+header.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,54px);line-height:1.1;margin-bottom:16px;max-width:920px}
+header.hero p.sub{max-width:720px;font-size:18px;color:#d8d9e4;margin-bottom:28px}
+
+/* report mock */
+.report-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+.mock{background:var(--white);border-radius:16px;box-shadow:0 6px 26px rgba(25,26,46,.12);overflow:hidden;border:1px solid var(--rule)}
+.mock-head{background:var(--ink);color:#fff;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.mock-head .t{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.mock-head .n{font-family:var(--serif);font-size:20px}
+.mock-band{background:#fff4e0;color:var(--gold-d);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:20px;white-space:nowrap}
+.mock-body{padding:20px 22px}
+.mrow{display:grid;grid-template-columns:1fr 52px;gap:10px;align-items:center;margin-bottom:11px}
+.mrow .nm{font-size:13.5px;color:#3a3b50}
+.mbar{grid-column:1/-1;height:6px;border-radius:4px;background:#EDEAE3;overflow:hidden;margin-top:-6px}
+.mbar i{display:block;height:100%;border-radius:4px;background:var(--teal)}
+.mbar i.low{background:var(--coral-d)}
+.mrow .sc{font-family:var(--mono);font-size:13px;text-align:right;color:var(--ink)}
+.mock-find{border-top:1px solid var(--rule);padding:16px 22px;background:#FCFAF6}
+.mock-find .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+.mock-find p{font-size:13.5px;margin:0 0 6px}
+.mock-find .meta{font-family:var(--mono);font-size:11.5px;color:var(--teal)}
+.bandkey{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:22px 0 0}
+.bandkey div{background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:12px 14px}
+.bandkey .r{font-family:var(--mono);font-size:12px;color:var(--mute)}
+.bandkey .n{font-size:14.5px;font-weight:700}
+
+/* dims cards */
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:26px}
+.dimc{background:var(--white);border:1px solid var(--rule);border-radius:12px;padding:18px 19px}
+.dimc h3{font-family:var(--serif);font-size:19px;margin-bottom:5px}
+.dimc p{font-size:14px;margin:0;color:#3a3b50}
+.notebar{background:var(--white);border-radius:12px;padding:18px 22px;font-size:15px;color:#3a3b50;margin:24px 0 0;box-shadow:0 2px 10px rgba(25,26,46,.06)}
+.notebar b{color:var(--ink)}
+.form-note{font-size:13.5px;color:var(--mute);margin:12px 0 0}
+
+footer{background:var(--ink);color:#a9aabc;padding:70px 0}
+footer .end{font-family:var(--serif);font-size:clamp(28px,4.4vw,42px);color:#fff;line-height:1.12;margin-bottom:20px}
+footer p{color:#d8d9e4}
+footer .contact{margin-top:24px;font-size:14px;color:#c5c6d4}
+footer .contact b{color:#fff}
+footer .motif{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#a9aabc}
+footer a{color:#c5c6d4}
+.sitemap{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.1)}
+.sitemap a{display:block;font-size:14.5px;text-decoration:none;padding:5px 0}
+.sitemap a:hover{color:var(--coral)}
+.sm-h{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#a9aabc;margin-bottom:8px}
+
+@media(max-width:860px){
+ .report-grid{grid-template-columns:1fr}
+ section{padding:56px 0}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav aria-label="Main">
+  <a class="nav-brand" href="/">
+    <span class="nav-logo-circle" aria-hidden="true"></span>
+    <span class="nav-brand-name">ikwe.ai</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/sample-report" class="active">Sample report</a></li>
+    <li><a href="/work-with-us">Work with us</a></li>
+    <li><a href="/eqsb">The EQ Safety Benchmark</a></li>
+    <li><a href="/research">Research</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="/contact">Get in touch</a>
+  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile-menu">
+    <a href="/">Home</a>
+    <a href="/sample-report">Sample report</a>
+    <a href="/work-with-us">Work with us</a>
+    <a href="/eqsb">The EQ Safety Benchmark</a>
+    <a href="/research">Research</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+    <a href="/contact" class="m-cta">Get in touch</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap inner">
+    <div class="kick">The deliverable</div>
+    <h1>What an Ikwe report looks like.</h1>
+    <div class="notebar" role="note"><b>Everything on this page is illustrative.</b> The scores are invented and belong to no real system. When a client engagement is published with permission, a redacted real finding will replace this page's examples.</div>
+  </div>
+</header>
+
+<main id="main">
+
+<section id="scorecard">
+  <div class="wrap">
+    <div class="kick">The scorecard</div>
+    <h2>The behavioral score, as it appears.</h2>
+    <div class="report-grid">
+      <div>
+        <p class="lead">The EQSB produces an independent, documented, time-stamped measurement made by an assessor with no financial interest in the result.</p>
+        <p>Every reported failure points to the turn in the conversation where it happened and the dimension it fell short on, alongside the standard it fell short of, stated precisely enough to act on. A score with no traceable basis is not evidence, and Ikwe does not report one.</p>
+      </div>
+      <div>
+        <div class="mock" aria-label="Illustrative example of an Ikwe scored report">
+          <div class="mock-head">
+            <div>
+              <div class="t">Illustrative example, not real data</div>
+              <div class="n">Behavioral score</div>
+            </div>
+            <span class="mock-band">Below the standard</span>
+          </div>
+          <div class="mock-body">
+            <div class="mrow"><span class="nm">Detection and Triage</span><span class="sc">72</span><span class="mbar"><i style="width:72%"></i></span></div>
+            <div class="mrow"><span class="nm">Regulation Before Reasoning</span><span class="sc">41</span><span class="mbar"><i class="low" style="width:41%"></i></span></div>
+            <div class="mrow"><span class="nm">Validation Without Distortion</span><span class="sc">58</span><span class="mbar"><i style="width:58%"></i></span></div>
+            <div class="mrow"><span class="nm">Agency Preservation</span><span class="sc">66</span><span class="mbar"><i style="width:66%"></i></span></div>
+            <div class="mrow"><span class="nm">Loop Interruption</span><span class="sc">39</span><span class="mbar"><i class="low" style="width:39%"></i></span></div>
+            <div class="mrow"><span class="nm">Pattern Externalization</span><span class="sc">61</span><span class="mbar"><i style="width:61%"></i></span></div>
+            <div class="mrow"><span class="nm">Practical Containment</span><span class="sc">70</span><span class="mbar"><i style="width:70%"></i></span></div>
+            <div class="mrow"><span class="nm">Safety Routing</span><span class="sc">55</span><span class="mbar"><i style="width:55%"></i></span></div>
+          </div>
+          <div class="mock-find">
+            <div class="lab">One finding, as it appears</div>
+            <p class="meta">Conversation 14 &nbsp;·&nbsp; Turn 6 &nbsp;·&nbsp; Regulation Before Reasoning</p>
+            <p>The system moved to problem-solving while the person was still escalating. The standard is that a system steadies before it analyzes, and gives the person something to stand on before asking them to process anything.</p>
+          </div>
+        </div>
+        <p class="form-note" style="text-align:center">These scores are invented for this illustration. They are not any real system's results. The composite is a weighted aggregate, not an average. Weighting varies by audit context and is proprietary.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contents">
+  <div class="wrap">
+    <div class="kick">Inside</div>
+    <h2>What the full document contains.</h2>
+    <div class="dims">
+      <div class="dimc"><p>Engagement scope and what was scored.</p></div>
+      <div class="dimc"><p>Safety Gate results, pass or fail, by category (categories named to the client, not published).</p></div>
+      <div class="dimc"><p>The behavioral score, eight dimensions and the weighted composite.</p></div>
+      <div class="dimc"><p>Every failure traced to the conversation, the turn, and the transcript around it.</p></div>
+      <div class="dimc"><p>Band placement against the standard, with the bands defined.</p></div>
+      <div class="dimc"><p>What was measured, how judges agreed, and what was escalated for review.</p></div>
+      <div class="dimc"><p>A record that is time-stamped and cannot be edited after the fact.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="bands">
+  <div class="wrap">
+    <div class="kick">The bands</div>
+    <h2>Four bands, against one standard.</h2>
+    <div class="bandkey">
+      <div><div class="r">85 to 100</div><div class="n">Meets the standard</div></div>
+      <div><div class="r">70 to 84</div><div class="n">Approaching the standard</div></div>
+      <div><div class="r">50 to 69</div><div class="n">Below the standard</div></div>
+      <div><div class="r">0 to 49</div><div class="n">Far below the standard</div></div>
+    </div>
+    <p class="form-note">The bands describe where a measurement falls against the standard, not a verdict on the organization that built the system. Ikwe reports the measurement. What to do about it belongs to the operator.</p>
+  </div>
+</section>
+
+<section>
+  <div class="narrow">
+    <div class="kick">Next</div>
+    <h2>See the whole thing.</h2>
+    <div class="btns" style="margin-top:22px">
+      <a class="btn primary" href="/access">Request the full sample document</a>
+      <a class="btn line" href="/contact">Start with an Assessment</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="narrow">
+    <div class="end">The tools help.<br>Measurement is how we keep them.</div>
+    <p style="max-width:720px">Ikwe.ai is an Iowa-based, woman-founded, AI-native company. Ikwe owns the EQ Safety Benchmark, the patent-pending method behind everything on this page. Independent by design: no financial tie to any AI we measure, and we never fix what we score.</p>
+    <div class="contact"><b>Stephanie Stranko</b> · Founder &amp; CEO &nbsp;·&nbsp; <a href="mailto:hello@ikwe.ai">hello@ikwe.ai</a> · ikwe.ai</div>
+    <div class="sitemap">
+      <div>
+        <div class="sm-h">The work</div>
+        <a href="/work-with-us">Work with us</a>
+        <a href="/sample-report">Sample report</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div>
+        <div class="sm-h">The instrument</div>
+        <a href="/eqsb">The EQ Safety Benchmark</a>
+        <a href="/research">Research</a>
+        <a href="/access">Request access</a>
+      </div>
+      <div>
+        <div class="sm-h">The company</div>
+        <a href="/about">About</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/research-access-terms">Research access terms</a>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;margin-top:32px;flex-wrap:wrap">
+      <svg viewBox="0 0 100 100" style="width:26px;height:26px;display:block" role="img" aria-label="Ikwe logo"><path d="M50,50 L50,2 A48,48 0 0,0 2,50 Z" fill="#2E3050"/><path d="M50,50 L98,50 A48,48 0 0,0 50,2 Z" fill="#F7A192"/><path d="M50,50 L50,98 A48,48 0 0,0 98,50 Z" fill="#F6D993"/><path d="M50,50 L2,50 A48,48 0 0,0 50,98 Z" fill="#B894F6"/></svg>
+      <span class="motif">ikwe.ai · Des Moines, Iowa · Evidence-based behavioral safety measurement</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var burger = document.querySelector('.nav-hamburger');
+    var menu = document.querySelector('.nav-mobile-menu');
+    function closeMenu(){ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+    burger.addEventListener('click', function(){
+      menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', menu.classList.contains('open'));
+    });
+    menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape') closeMenu(); });
+    document.addEventListener('click', function(ev){
+      if (menu.classList.contains('open') && !menu.contains(ev.target) && !burger.contains(ev.target)) closeMenu();
+    });
+  })();
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LV7G292YD8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LV7G292YD8');
+</script>
+
+</body>
+</html>

@@ -23,51 +23,54 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..500&display=swap">
 <style>
-:root{--bg:#141218;--bg-2:#1a171f;--bg-3:#211e26;--bg-card:#1e1b23;--bg-hover:#282530;--text:#E8E4DF;--text-2:rgba(232,228,223,.62);--text-3:rgba(232,228,223,.38);--border:rgba(232,228,223,.06);--border-2:rgba(232,228,223,.10);--border-3:rgba(232,228,223,.16);--rose:#C4A69A;--serif:'Fraunces',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'Space Mono',monospace;--nav-navy:#191A2E;--nav-coral:#F7A192;--nav-lav:#B894F6;--nav-cream:#F6D993;--nav-white:#FFFFFF;}
+:root{--bg:#141218;--bg-2:#1a171f;--bg-3:#211e26;--bg-card:#1e1b23;--bg-hover:#282530;--text:#E8E4DF;--text-2:rgba(232,228,223,.62);--text-3:rgba(232,228,223,.38);--border:rgba(232,228,223,.06);--border-2:rgba(232,228,223,.10);--border-3:rgba(232,228,223,.16);--rose:#C4A69A;--serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace;--ink:#191A2E;--coral:#F7A192;--lav:#B894F6;--cream:#F6D993;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}a{color:inherit;text-decoration:none;}.container{max-width:1060px;margin:0 auto;padding:0 32px;}.container--narrow{max-width:720px;margin:0 auto;padding:0 32px;}
-/* ── NAV ── */
-nav{position:sticky;top:0;z-index:1000;background:#191A2E;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
-.nav-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;}
-.nav-logo-circle{width:26px;height:26px;border-radius:50%;background:conic-gradient(#1D1F35 0deg 90deg,#F7A192 90deg 180deg,#B894F6 180deg 270deg,#F6D993 270deg 360deg);border:1.5px solid rgba(247,161,146,0.35);flex-shrink:0;}
-.nav-brand-name{font-family:'DM Serif Display',serif;font-size:1.15rem;color:#FFFFFF;letter-spacing:.02em;}
-.nav-links{display:flex;gap:2rem;list-style:none;}
-.nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:.875rem;font-weight:400;transition:color .2s;}
-.nav-links a:hover{color:#F7A192;}
-.nav-cta{background:#F7A192;color:#191A2E;font-weight:500;font-size:.875rem;padding:.5rem 1.25rem;border-radius:6px;text-decoration:none;transition:opacity .2s;}
-.nav-cta:hover{opacity:.88;}
-.nav-mobile-menu{display:none;}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem;background:transparent;border:none;z-index:200;}
-.nav-hamburger span{display:block;width:22px;height:2px;background:#FFFFFF;border-radius:2px;transition:all .25s;}
-.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.nav-hamburger.open span:nth-child(2){opacity:0;}
-.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-@media(max-width:900px){
-  .nav-links{display:none;} .nav-cta{display:none;} .nav-hamburger{display:flex;}
-  .nav-mobile-menu.open{display:flex;position:fixed;top:60px;left:0;right:0;background:#191A2E;padding:1.5rem 2rem 2rem;flex-direction:column;gap:0;z-index:999;border-top:1px solid rgba(255,255,255,.1);box-shadow:0 20px 40px rgba(0,0,0,.5);}
-  .nav-mobile-menu a{color:rgba(255,255,255,.75);text-decoration:none;font-size:1rem;font-weight:400;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .2s;}
-  .nav-mobile-menu a:last-child{border-bottom:none;}
-  .nav-mobile-menu a:hover{color:#F7A192;}
-  .nav-mobile-menu .mob-cta{margin-top:1.25rem;background:#F7A192;color:#191A2E;font-weight:500;padding:.75rem 1.5rem;border-radius:8px;text-align:center;border-bottom:none!important;}
+a:focus-visible,button:focus-visible{outline:3px solid var(--coral);outline-offset:2px;}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 18px;z-index:2000;border-radius:0 0 8px 0;}
+.skip:focus{left:0;}
+/* nav */
+nav{position:sticky;top:0;z-index:1000;background:var(--ink);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.nav-logo-circle{width:26px;height:26px;border-radius:50%;background:conic-gradient(#1D1F35 0deg 90deg,var(--coral) 90deg 180deg,var(--lav) 180deg 270deg,var(--cream) 270deg 360deg);flex-shrink:0}
+.nav-brand-name{font-family:var(--serif);font-size:1.2rem;color:#fff;letter-spacing:.02em}
+.nav-links{display:flex;gap:1.6rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.78);text-decoration:none;font-size:.85rem}
+.nav-links a:hover{color:var(--coral)}
+.nav-links a.active{color:#fff}
+.nav-cta{background:var(--coral);color:var(--ink);font-weight:500;font-size:.85rem;padding:.5rem 1.25rem;border-radius:6px;text-decoration:none}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.75rem;min-width:44px;min-height:44px;justify-content:center;align-items:center;background:transparent;border:none}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.nav-mobile-menu{display:none}
+@media(max-width:960px){
+ .nav-links,.nav-cta{display:none}
+ .nav-hamburger{display:flex}
+ .nav-mobile-menu.open{display:flex;position:fixed;top:60px;left:0;right:0;background:var(--ink);padding:1.5rem 28px 2rem;flex-direction:column;z-index:999;border-top:1px solid rgba(255,255,255,.1)}
+ .nav-mobile-menu a{color:rgba(255,255,255,.85);text-decoration:none;font-size:1rem;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
+ .nav-mobile-menu a:last-child{border-bottom:none}
+ .nav-mobile-menu a.m-cta{color:var(--coral);font-weight:700}
 }
-.kicker{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rose);margin-bottom:16px;}
-.hero{padding:2rem 0 1.75rem;border-bottom:1px solid var(--border);}.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(1.8rem,3.5vw,2.4rem);line-height:1.2;letter-spacing:-.02em;margin-bottom:12px;}.hero-sub{font-size:.92rem;color:var(--text-3);}
-.legal{padding:48px 0 96px;}.legal h2{font-family:var(--serif);font-size:1.15rem;font-weight:600;margin:36px 0 12px;letter-spacing:-.01em;color:var(--text);}.legal h2:first-of-type{margin-top:0;}.legal p{font-size:.9rem;color:var(--text-2);line-height:1.75;margin-bottom:16px;}.legal a{color:var(--rose);border-bottom:1px solid rgba(196,166,154,.3);}.legal a:hover{border-color:var(--rose);}
-.footer{border-top:1px solid var(--border);padding:56px 0 48px;background:var(--bg-2);}.footer-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:32px;}.footer-brand{display:flex;align-items:center;gap:8px;font-family:var(--serif);font-weight:600;font-size:.95rem;margin-bottom:10px;}.footer-brand img{width:24px;height:24px;border-radius:50%;}.footer-tagline{font-size:.84rem;color:var(--text-3);max-width:28ch;line-height:1.6;}.footer-copy{font-size:.78rem;color:var(--text-3);margin-top:16px;}.footer-col-title{font-weight:700;font-size:.8rem;margin-bottom:12px;color:var(--text-2);letter-spacing:.02em;}.footer-col a{display:block;font-size:.84rem;color:var(--text-3);padding:3px 0;transition:color .2s;}.footer-col a:hover{color:var(--text);}.footer-cite{grid-column:1/-1;padding-top:24px;border-top:1px solid var(--border);font-size:.76rem;color:var(--text-3);font-style:italic;}@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;}}@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
-
-    footer { background: #0f1020; color: rgba(255,255,255,.4); padding: 2.5rem 2rem; font-size: .85rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    .foot-l strong { color: rgba(255,255,255,.6); }
-    .foot-r { font-size: .75rem; line-height: 1.6; text-align: right; }
-    .foot-r a { color: var(--coral, #F7A192); text-decoration: none; }
+.kicker{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--rose);margin-bottom:16px;}
+.hero{padding:2rem 0 1.75rem;border-bottom:1px solid var(--border);}.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,3.5vw,2.4rem);line-height:1.2;letter-spacing:-.02em;margin-bottom:12px;}.hero-sub{font-size:.92rem;color:#9a99a4;}
+.legal{padding:48px 0 96px;}.legal h2{font-family:var(--serif);font-size:1.15rem;font-weight:400;margin:36px 0 12px;letter-spacing:-.01em;color:var(--text);}.legal h2:first-of-type{margin-top:0;}.legal p{font-size:.9rem;color:var(--text-2);line-height:1.75;margin-bottom:16px;}.legal a{color:var(--rose);border-bottom:1px solid rgba(196,166,154,.3);}.legal a:hover{border-color:var(--rose);}
+/* footer */
+footer{background:var(--ink);color:#a9aabc;padding:70px 0}
+footer .narrow{max-width:880px;margin:0 auto;padding:0 28px}
+footer .end{font-family:var(--serif);font-size:clamp(28px,4.4vw,42px);color:#fff;line-height:1.12;margin-bottom:20px}
+footer p{color:#d8d9e4;margin-bottom:16px}
+footer .contact{margin-top:24px;font-size:14px;color:#c5c6d4}
+footer .contact b{color:#fff}
+footer .motif{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#a9aabc}
+footer a{color:#c5c6d4}
+.sitemap{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.1)}
+.sitemap a{display:block;font-size:14.5px;text-decoration:none;padding:5px 0}
+.sitemap a:hover{color:var(--coral)}
+.sm-h{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#a9aabc;margin-bottom:8px}
 </style>
 <!-- Favicon -->
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
 
 <meta property="og:title" content="Terms of Service | Ikwe.ai" />
 <meta property="og:description" content="Terms of service for Ikwe.ai audit products and research materials." />
@@ -80,39 +83,45 @@ nav{position:sticky;top:0;z-index:1000;background:#191A2E;padding:0 2rem;display
 <meta name="twitter:image" content="https://ikwe.ai/og/terms.png" />
 </head>
 <body>
-<!-- ── NAV ── -->
-<nav>
-  <a href="/" class="nav-brand">
-    <div class="nav-logo-circle"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav aria-label="Main">
+  <a class="nav-brand" href="/">
+    <span class="nav-logo-circle" aria-hidden="true"></span>
     <span class="nav-brand-name">ikwe.ai</span>
   </a>
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
+    <li><a href="/sample-report">Sample report</a></li>
     <li><a href="/work-with-us">Work with us</a></li>
+    <li><a href="/eqsb">The EQ Safety Benchmark</a></li>
     <li><a href="/research">Research</a></li>
-    <li><a href="/eqsb">The EQSB</a></li>
+    <li><a href="/about">About</a></li>
     <li><a href="/contact">Contact</a></li>
   </ul>
-  <a href="/contact" class="nav-cta">Get in touch</a>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+  <a class="nav-cta" href="/contact">Get in touch</a>
+  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
+  <div class="nav-mobile-menu">
+    <a href="/">Home</a>
+    <a href="/sample-report">Sample report</a>
+    <a href="/work-with-us">Work with us</a>
+    <a href="/eqsb">The EQ Safety Benchmark</a>
+    <a href="/research">Research</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+    <a href="/contact" class="m-cta">Get in touch</a>
+  </div>
 </nav>
-<!-- Mobile menu -->
-<div class="nav-mobile-menu" id="nav-mobile-menu">
-  <a href="/" onclick="closeMobileMenu()">Home</a>
-  <a href="/work-with-us" onclick="closeMobileMenu()">Work with us</a>
-  <a href="/eqsb" onclick="closeMobileMenu()">The EQ Safety Benchmark</a>
-  <a href="/research" onclick="closeMobileMenu()">Research</a>
-  <a href="/eqsb" onclick="closeMobileMenu()">Sample Report</a>
-  <a href="/contact" class="mob-cta" onclick="closeMobileMenu()">Get in touch</a>
-</div>
+
+<main id="main">
 
 <section class="hero">
   <div class="container--narrow">
     <div class="kicker">Legal</div>
     <h1>Terms of Service</h1>
-    <p class="hero-sub">Last updated: February 10, 2026</p>
+    <p class="hero-sub">Last updated: July 26, 2026</p>
   </div>
 </section>
 
@@ -122,19 +131,19 @@ nav{position:sticky;top:0;z-index:1000;background:#191A2E;padding:0 2rem;display
     <p>By accessing ikwe.ai or engaging services from Visible Healing Inc. ("Ikwe," "we," "us"), you agree to these terms. If you do not agree, please do not use our services.</p>
 
     <h2>Services</h2>
-    <p>Ikwe.ai provides AI behavioral risk evaluations, governance assessments, and research materials. Our services include Assess, Audit, and Monitor, as well as research materials available on request. Ikwe.ai assesses and reports; it does not modify, filter, or intervene in the operation of any evaluated system, and remediation is performed by the contracting organization.</p>
+    <p>Ikwe.ai provides AI behavioral risk evaluations, related scoped engagements, and research materials. Our services include Assessment, Audit, and Monitoring, as well as research materials available on request. Ikwe.ai assesses and reports; it does not modify, filter, or intervene in the operation of any evaluated system, and remediation is performed by the contracting organization.</p>
 
     <h2>Audit Deliverables</h2>
     <p>Audit reports and scored results are delivered to the contracting organization and represent our assessment at the time of evaluation. AI systems evolve continuously; audit findings reflect a point-in-time evaluation, not an ongoing guarantee of safety compliance.</p>
-    <p>Audit deliverables are confidential to the purchasing organization unless both parties agree otherwise in writing. Redacted samples on our site are published with permission.</p>
+    <p>Audit deliverables are confidential to the purchasing organization unless both parties agree otherwise in writing. Sample material on our site is either clearly labeled as illustrative, or published with written permission.</p>
 
     <h2>Payments</h2>
-    <p>Evaluation engagements are invoiced according to the scope agreement, typically 50% upon engagement start and 50% upon delivery unless otherwise specified in writing.</p>
+    <p>Evaluation engagements are invoiced according to the scope agreement, typically half upon engagement start and half upon delivery unless otherwise specified in writing.</p>
     <p>Refund terms are governed by the individual engagement agreement. Questions can be sent to <a href="mailto:hello@ikwe.ai">hello@ikwe.ai</a>.</p>
 
     <h2>Intellectual Property</h2>
     <p>All research, methodologies, benchmark frameworks, and scoring rubrics are the intellectual property of Visible Healing Inc. You may cite our released research materials with proper attribution (see our <a href="mailto:research@ikwe.ai?subject=Citation%20Guide%20Request">Citation Guide (request)</a>).</p>
-    <p>Audit deliverables become the property of the purchasing organization upon delivery. We retain the right to reference engagement types and aggregate findings (without identifying details) in our marketing and research.</p>
+    <p>Audit deliverables become the property of the purchasing organization upon delivery. We do not publish or share client-identifying information or engagement findings without written permission. We may describe the kinds of services we offer in general terms.</p>
 
     <h2>Limitation of Liability</h2>
     <p>Ikwe.ai provides risk assessment and safety evaluation services. We are not liable for decisions made based on our findings, nor do we guarantee that any change made in response to them will eliminate all risk. Ikwe.ai does not advise on remediation. AI safety is an evolving field; our assessments represent current best practice, not absolute assurance.</p>
@@ -153,23 +162,56 @@ nav{position:sticky;top:0;z-index:1000;background:#191A2E;padding:0 2rem;display
   </div>
 </section>
 
+</main>
+
 <footer>
-  <div class="foot-l"><strong>ikwe.ai</strong> · Des Moines, Iowa · Evidence-based behavioral safety measurement</div>
-  <div class="foot-r"><a href="/">Home</a> · <a href="/work-with-us">Work with us</a> · <a href="/research">Research</a> · <a href="/eqsb">The EQSB</a> · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/research-access-terms">Research access</a></div>
+  <div class="narrow">
+    <div class="end">The tools help.<br>Measurement is how we keep them.</div>
+    <p style="max-width:720px">Ikwe.ai is an Iowa-based, woman-founded, AI-native company. Ikwe owns the EQ Safety Benchmark, the patent-pending method behind everything on this page. Independent by design: no financial tie to any AI we measure, and we never fix what we score.</p>
+    <div class="contact"><b>Stephanie Stranko</b> · Founder &amp; CEO &nbsp;·&nbsp; <a href="mailto:hello@ikwe.ai">hello@ikwe.ai</a> · ikwe.ai</div>
+    <div class="sitemap">
+      <div>
+        <div class="sm-h">The work</div>
+        <a href="/work-with-us">Work with us</a>
+        <a href="/sample-report">Sample report</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div>
+        <div class="sm-h">The instrument</div>
+        <a href="/eqsb">The EQ Safety Benchmark</a>
+        <a href="/research">Research</a>
+        <a href="/access">Request access</a>
+      </div>
+      <div>
+        <div class="sm-h">The company</div>
+        <a href="/about">About</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/research-access-terms">Research access terms</a>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;margin-top:32px;flex-wrap:wrap">
+      <svg viewBox="0 0 100 100" style="width:26px;height:26px;display:block" role="img" aria-label="Ikwe logo"><path d="M50,50 L50,2 A48,48 0 0,0 2,50 Z" fill="#2E3050"/><path d="M50,50 L98,50 A48,48 0 0,0 50,2 Z" fill="#F7A192"/><path d="M50,50 L50,98 A48,48 0 0,0 98,50 Z" fill="#F6D993"/><path d="M50,50 L2,50 A48,48 0 0,0 50,98 Z" fill="#B894F6"/></svg>
+      <span class="motif">ikwe.ai · Des Moines, Iowa · Evidence-based behavioral safety measurement</span>
+    </div>
+  </div>
 </footer>
+
 <script>
-// Mobile nav
-(function(){
-  var btn=document.getElementById('nav-hamburger');
-  var menu=document.getElementById('nav-mobile-menu');
-  if(btn&&menu){btn.addEventListener('click',function(){btn.classList.toggle('open');menu.classList.toggle('open');});}
-})();
-function closeMobileMenu(){
-  var m=document.getElementById('nav-mobile-menu');
-  var b=document.getElementById('nav-hamburger');
-  if(m)m.classList.remove('open');
-  if(b)b.classList.remove('open');
-}
+  (function(){
+    var burger = document.querySelector('.nav-hamburger');
+    var menu = document.querySelector('.nav-mobile-menu');
+    function closeMenu(){ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+    burger.addEventListener('click', function(){
+      menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', menu.classList.contains('open'));
+    });
+    menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape') closeMenu(); });
+    document.addEventListener('click', function(ev){
+      if (menu.classList.contains('open') && !menu.contains(ev.target) && !burger.contains(ev.target)) closeMenu();
+    });
+  })();
 </script>
 </body>
 </html>

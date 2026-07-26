@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | ikwe.ai</title>
+<meta name="description" content="Ikwe.ai is the company behind the EQ Safety Benchmark. Founder-led, independent by structure, and built to hold both the clinical and the engineering fields.">
+<link rel="canonical" href="https://ikwe.ai/about">
+<meta property="og:site_name" content="Ikwe.ai">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ikwe.ai/about">
+<meta property="og:title" content="About | ikwe.ai">
+<meta property="og:description" content="A person signs this work. Who Ikwe is, and how independence is structured.">
+<meta property="og:site_name" content="Ikwe.ai">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ikwe.ai/about">
+<meta property="og:title" content="About Ikwe.ai">
+<meta property="og:image" content="https://ikwe.ai/og/home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ikwe.ai/og/home.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..500&display=swap">
+<style>
+:root{
+ --ink:#191A2E;--ink-2:#20223A;--off:#F8F5F0;--white:#fff;
+ --teal:#0F6E56;--teal-soft:#5DCAA5;--coral:#F7A192;--coral-d:#a8422f;--cream:#F6D993;--lav:#B894F6;--gold-d:#8a6d1f;
+ --mute:#5c5d72;--rule:rgba(25,26,46,.09);
+ --serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--off);color:var(--ink);font-family:var(--sans);line-height:1.65;font-size:17.5px}
+section{padding:72px 0;border-bottom:1px solid var(--rule);scroll-margin-top:72px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.narrow{max-width:880px;margin:0 auto;padding:0 28px}
+.kick{font-family:var(--mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;margin-bottom:16px;color:var(--teal)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(29px,4vw,40px);line-height:1.14;margin-bottom:20px}
+h3{font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.2;margin-bottom:6px}
+p{margin-bottom:16px;color:#3a3b50}
+p.lead{font-size:19px;color:var(--ink)}
+.pull{font-family:var(--serif);font-style:italic;font-size:23px;line-height:1.35;color:var(--ink);margin:24px 0 0}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 18px;z-index:2000;border-radius:0 0 8px 0}
+.skip:focus{left:0}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 26px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none}
+.btn.primary{background:var(--teal);color:#fff}
+.btn.ghost{border:1.5px solid #8d8ea2;color:#e6e7ef}
+.btn.dark{background:var(--ink);color:#fff;border:0;cursor:pointer;font-family:var(--sans)}
+.btn.line{border:1.5px solid var(--ink);color:var(--ink)}
+.dark{background:var(--ink);color:#fff}
+.dark h2,.dark h3{color:#fff}
+.dark p{color:#d8d9e4}
+.dark .kick{color:var(--cream)}
+.dark .pull{color:var(--cream)}
+.dark a{color:var(--teal-soft)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:1000;background:var(--ink);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.nav-logo-circle{width:26px;height:26px;border-radius:50%;background:conic-gradient(#1D1F35 0deg 90deg,var(--coral) 90deg 180deg,var(--lav) 180deg 270deg,var(--cream) 270deg 360deg);flex-shrink:0}
+.nav-brand-name{font-family:var(--serif);font-size:1.2rem;color:#fff;letter-spacing:.02em}
+.nav-links{display:flex;gap:1.6rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.78);text-decoration:none;font-size:.85rem}
+.nav-links a:hover{color:var(--coral)}
+.nav-links a.active{color:#fff}
+.nav-cta{background:var(--coral);color:var(--ink);font-weight:500;font-size:.85rem;padding:.5rem 1.25rem;border-radius:6px;text-decoration:none}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.75rem;min-width:44px;min-height:44px;justify-content:center;align-items:center;background:transparent;border:none}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.nav-mobile-menu{display:none}
+@media(max-width:960px){
+ .nav-links,.nav-cta{display:none}
+ .nav-hamburger{display:flex}
+ .nav-mobile-menu.open{display:flex;position:fixed;top:60px;left:0;right:0;background:var(--ink);padding:1.5rem 28px 2rem;flex-direction:column;z-index:999;border-top:1px solid rgba(255,255,255,.1)}
+ .nav-mobile-menu a{color:rgba(255,255,255,.85);text-decoration:none;font-size:1rem;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
+ .nav-mobile-menu a:last-child{border-bottom:none}
+ .nav-mobile-menu a.m-cta{color:var(--coral);font-weight:700}
+}
+
+/* hero */
+header.hero{background:var(--ink);color:#fff;padding:72px 0 64px;position:relative;overflow:hidden;scroll-margin-top:72px}
+header.hero::before{content:'';position:absolute;right:-140px;top:-180px;width:440px;height:440px;border-radius:50%;background:rgba(93,202,165,.12)}
+header.hero::after{content:'';position:absolute;left:-130px;bottom:-210px;width:380px;height:380px;border-radius:50%;background:rgba(240,164,76,.10)}
+header.hero .inner{position:relative;z-index:1}
+header.hero .kick{color:var(--teal-soft)}
+header.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,54px);line-height:1.1;margin-bottom:16px;max-width:920px}
+header.hero p.sub{max-width:720px;font-size:18px;color:#d8d9e4;margin-bottom:28px}
+
+.notebar{background:var(--white);border-radius:12px;padding:18px 22px;font-size:15px;color:#3a3b50;margin:24px 0 0;box-shadow:0 2px 10px rgba(25,26,46,.06)}
+.notebar b{color:var(--ink)}
+
+footer{background:var(--ink);color:#a9aabc;padding:70px 0}
+footer .end{font-family:var(--serif);font-size:clamp(28px,4.4vw,42px);color:#fff;line-height:1.12;margin-bottom:20px}
+footer p{color:#d8d9e4}
+footer .contact{margin-top:24px;font-size:14px;color:#c5c6d4}
+footer .contact b{color:#fff}
+footer .motif{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#a9aabc}
+footer a{color:#c5c6d4}
+.sitemap{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.1)}
+.sitemap a{display:block;font-size:14.5px;text-decoration:none;padding:5px 0}
+.sitemap a:hover{color:var(--coral)}
+.sm-h{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#a9aabc;margin-bottom:8px}
+
+@media(max-width:860px){
+ section{padding:56px 0}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav aria-label="Main">
+  <a class="nav-brand" href="/">
+    <span class="nav-logo-circle" aria-hidden="true"></span>
+    <span class="nav-brand-name">ikwe.ai</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/sample-report">Sample report</a></li>
+    <li><a href="/work-with-us">Work with us</a></li>
+    <li><a href="/eqsb">The EQ Safety Benchmark</a></li>
+    <li><a href="/research">Research</a></li>
+    <li><a href="/about" class="active">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="/contact">Get in touch</a>
+  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile-menu">
+    <a href="/">Home</a>
+    <a href="/sample-report">Sample report</a>
+    <a href="/work-with-us">Work with us</a>
+    <a href="/eqsb">The EQ Safety Benchmark</a>
+    <a href="/research">Research</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+    <a href="/contact" class="m-cta">Get in touch</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap inner">
+    <div class="kick">About</div>
+    <h1>A person signs this work.</h1>
+    <p class="sub lead">Ikwe.ai is the company behind the EQ Safety Benchmark. It exists because whether an AI was safe for the person in front of it is a clinical question that has to be answered at engineering scale, and almost nobody holds both fields. Ikwe was built to hold both, independently.</p>
+  </div>
+</header>
+
+<main id="main">
+
+<section>
+  <div class="narrow">
+    <div class="kick">Who</div>
+    <h2>The founder</h2>
+    <p class="lead">Ikwe is founder-led by Stephanie Stranko, Founder and CEO. She built the EQSB by translating behaviors that clinical practice already requires of licensed humans into an instrument that can score them in a machine transcript at volume.</p>
+  </div>
+</section>
+
+<section>
+  <div class="narrow">
+    <div class="kick">Who else</div>
+    <h2>The team</h2>
+    <p class="lead">Ikwe is founder-led and co-founder-led, with a chief of staff and a small team of under ten, an independent research team based in the United States with research partners in New Zealand and Canada, and a bench of advisors across clinical practice, insurance and law. Ikwe names roles rather than people here; the people are named in the room, not on a webpage.</p>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="narrow">
+    <div class="kick">Independence</div>
+    <h2>How independence is structured</h2>
+    <p class="lead" style="color:#d8d9e4">Ikwe is third-party by structure, not by claim. We do not sit inside any lab we measure. We are not on their payroll, not in their governance, and not steered by their commercial pressure. We charge for measurement, and only for measurement: no remediation business, no equity in the systems we score, no financial tie to any AI we measure, and no financial interest in the result. We would rather be checked than taken on faith.</p>
+  </div>
+</section>
+
+<section>
+  <div class="narrow">
+    <div class="kick">Progress</div>
+    <h2>Milestones</h2>
+    <p class="lead">Selected for the Iowa Go-To-Market Accelerator, 2026 cohort. The EQSB public specification v1.0 published July 2026. Patent pending. Independent peer review of the methodology is underway, and a larger pre-registered study is in progress.</p>
+  </div>
+</section>
+
+<section>
+  <div class="narrow">
+    <div class="kick">Next</div>
+    <h2>Talk to the person who signs it.</h2>
+    <div class="btns" style="margin-top:22px">
+      <a class="btn primary" href="/contact">Start the conversation</a>
+      <a class="btn line" href="/research">Read why we measure what we measure</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="narrow">
+    <div class="end">The tools help.<br>Measurement is how we keep them.</div>
+    <p style="max-width:720px">Ikwe.ai is an Iowa-based, woman-founded, AI-native company. Ikwe owns the EQ Safety Benchmark, the patent-pending method behind everything on this page. Independent by design: no financial tie to any AI we measure, and we never fix what we score.</p>
+    <div class="contact"><b>Stephanie Stranko</b> · Founder &amp; CEO &nbsp;·&nbsp; <a href="mailto:hello@ikwe.ai">hello@ikwe.ai</a> · ikwe.ai</div>
+    <div class="sitemap">
+      <div>
+        <div class="sm-h">The work</div>
+        <a href="/work-with-us">Work with us</a>
+        <a href="/sample-report">Sample report</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div>
+        <div class="sm-h">The instrument</div>
+        <a href="/eqsb">The EQ Safety Benchmark</a>
+        <a href="/research">Research</a>
+        <a href="/access">Request access</a>
+      </div>
+      <div>
+        <div class="sm-h">The company</div>
+        <a href="/about">About</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/research-access-terms">Research access terms</a>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;margin-top:32px;flex-wrap:wrap">
+      <svg viewBox="0 0 100 100" style="width:26px;height:26px;display:block" role="img" aria-label="Ikwe logo"><path d="M50,50 L50,2 A48,48 0 0,0 2,50 Z" fill="#2E3050"/><path d="M50,50 L98,50 A48,48 0 0,0 50,2 Z" fill="#F7A192"/><path d="M50,50 L50,98 A48,48 0 0,0 98,50 Z" fill="#F6D993"/><path d="M50,50 L2,50 A48,48 0 0,0 50,98 Z" fill="#B894F6"/></svg>
+      <span class="motif">ikwe.ai · Des Moines, Iowa · Evidence-based behavioral safety measurement</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var burger = document.querySelector('.nav-hamburger');
+    var menu = document.querySelector('.nav-mobile-menu');
+    function closeMenu(){ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+    burger.addEventListener('click', function(){
+      menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', menu.classList.contains('open'));
+    });
+    menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape') closeMenu(); });
+    document.addEventListener('click', function(ev){
+      if (menu.classList.contains('open') && !menu.contains(ev.target) && !burger.contains(ev.target)) closeMenu();
+    });
+  })();
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LV7G292YD8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LV7G292YD8');
+</script>
+
+</body>
+</html>

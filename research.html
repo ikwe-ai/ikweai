@@ -40,7 +40,7 @@
       --teal-mid:   #5DCAA5;
       --gray-soft:  #F7F6F2;
       --white: #FFFFFF;
-      --text:  #1A1A2E;
+      --text:  #191A2E;
       --text-muted: #5a5a6e;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -56,7 +56,7 @@
     .nav-links a:hover { color: var(--coral); }
     .nav-links a.active { color: var(--white); }
     .nav-cta { background: var(--coral); color: var(--navy); font-weight: 500; font-size: var(--fs-small); padding: .5rem 1.25rem; border-radius: 6px; text-decoration: none; transition: opacity .2s; }
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; background: transparent; border: none; z-index: 200; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .75rem; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; background: transparent; border: none; z-index: 200; }
     .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: all .25s; }
     .nav-mobile-menu { display: none; }
     @media (max-width: 900px) {
@@ -65,6 +65,7 @@
       .nav-mobile-menu.open { display: flex; position: fixed; top: 60px; left: 0; right: 0; background: var(--navy); padding: 1.5rem 2rem 2rem; flex-direction: column; z-index: 999; border-top: 1px solid rgba(255,255,255,.1); }
       .nav-mobile-menu a { color: rgba(255,255,255,.75); text-decoration: none; font-size: 1rem; padding: .9rem 0; border-bottom: 1px solid rgba(255,255,255,.07); }
       .nav-mobile-menu a:last-child { border-bottom: none; }
+      .nav-mobile-menu a.m-cta { color: var(--coral); font-weight: 700; }
     }
 
     section { padding: 4rem 2rem; }
@@ -109,7 +110,7 @@
     .acc td:first-child { color: var(--navy); font-weight: 500; width: 34%; }
     .tagp { display: inline-block; font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; padding: .18rem .5rem; border-radius: 20px; font-weight: 500; }
     .tagp.pub { background: var(--teal-light); color: var(--teal); }
-    .tagp.req { background: #FFF4E0; color: #8a6d1f; }
+    .tagp.req { background: #FFF4E0; color: #6b540f; font-size: 12px; }
     .tagp.prot { background: #F3EDFB; color: var(--lav-deep); }
 
     .note { background: var(--gray-soft); border-radius: 8px; padding: 1.1rem 1.25rem; margin-top: 1.5rem; font-size: var(--fs-body); color: var(--text-muted); }
@@ -123,13 +124,21 @@
     .closing h2 { color: var(--white); }
     .closing p { color: rgba(255,255,255,.65); max-width: 560px; margin: 1rem auto 1.75rem; font-size: var(--fs-lead); }
 
-    footer { background: #0f1020; color: rgba(255,255,255,.4); padding: 2.5rem 2rem; font-size: var(--fs-small); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    .foot-l strong { color: rgba(255,255,255,.6); }
-    .foot-r { font-size: var(--fs-label); line-height: 1.6; text-align: right; }
-    .foot-r a { color: var(--coral); text-decoration: none; }
+    footer { background: #0f1020; color: #a9aabc; padding: 2.5rem 2rem; font-size: var(--fs-small); }
+    .foot-inner { max-width: 720px; margin: 0 auto; }
+    .foot-l strong { color: #c5c6d4; }
+    footer a { color: #c5c6d4; text-decoration: none; }
+    .sitemap { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap: 22px; margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.1); }
+    .sitemap a { display: block; font-size: .9rem; padding: 5px 0; }
+    .sitemap a:hover { color: var(--coral); }
+    .sm-h { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: #a9aabc; margin-bottom: .5rem; }
+    .skip { position: absolute; left: -9999px; top: 0; background: var(--navy); color: #fff; padding: 10px 18px; z-index: 2000; border-radius: 0 0 8px 0; }
+    .skip:focus { left: 0; }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
   </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <nav>
   <a class="nav-brand" href="/">
@@ -138,23 +147,30 @@
   </a>
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
+    <li><a href="/sample-report">Sample report</a></li>
     <li><a href="/work-with-us">Work with us</a></li>
+    <li><a href="/eqsb">The EQ Safety Benchmark</a></li>
     <li><a href="/research" class="active">Research</a></li>
-    <li><a href="/eqsb">The EQSB</a></li>
+    <li><a href="/about">About</a></li>
     <li><a href="/contact">Contact</a></li>
   </ul>
   <a class="nav-cta" href="/contact">Get in touch</a>
-  <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open');this.classList.toggle('open')">
+  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <div class="nav-mobile-menu">
     <a href="/">Home</a>
+    <a href="/sample-report">Sample report</a>
     <a href="/work-with-us">Work with us</a>
+    <a href="/eqsb">The EQ Safety Benchmark</a>
     <a href="/research">Research</a>
-    <a href="/eqsb">The EQSB</a>
+    <a href="/about">About</a>
     <a href="/contact">Contact</a>
+    <a href="/contact" class="m-cta">Get in touch</a>
   </div>
 </nav>
+
+<main id="main">
 
 <header class="page-head">
   <div class="container-narrow">
@@ -196,7 +212,7 @@
     <p class="body" style="margin-top:1.75rem"><strong style="color:var(--navy)">Three established bodies of research carry most of the weight:</strong></p>
     <div class="dim">
       <h3>Affective neuroscience, which is why timing matters</h3>
-      <p>Under acute distress, the stress response impairs the part of the brain that processes information and makes decisions. Advice delivered into that window is not simply unhelpful. It is inaccessible, and it can make things worse by handing someone a task they cannot perform right now. This is the single most consequential failure we see, and it is why timing sits at the center of the instrument.</p>
+      <p>Under acute distress, the stress response impairs the part of the brain that processes information and makes decisions. Advice delivered into that window is not simply unhelpful. It is inaccessible, and it can make things worse by handing someone a task they cannot perform right now. This is the failure we see most often.</p>
     </div>
     <div class="dim">
       <h3>Polyvagal theory, which is why state detection matters</h3>
@@ -214,9 +230,9 @@
   <div class="container-narrow">
     <span class="eyebrow" style="color: var(--teal)">Fourth</span>
     <h2>Why these eight things and not others.</h2>
-    <p class="body">Every dimension in the instrument is a behavior a licensed human is already trained and required to perform. Each one exists because there is clinical grounding for what goes wrong when it is missing.</p>
+    <p class="body">Every dimension in the instrument is a behavior a licensed human in a position of trust is already trained and required to perform. Each one exists because there is clinical grounding for what goes wrong when it is missing.</p>
     <div class="dim"><h3>Detection and Triage</h3><p>Reading what kind of moment this is before responding to it. Getting this wrong makes everything after it wrong.</p></div>
-    <div class="dim"><h3>Regulation Before Reasoning</h3><p>Steadying the person before asking them to think. The most consequential of the eight, because delivering analysis into distress is the most common way an otherwise reasonable answer causes harm.</p></div>
+    <div class="dim"><h3>Regulation Before Reasoning</h3><p>Steadying the person before asking them to think. Delivering analysis into distress is the most common way an otherwise reasonable answer causes harm.</p></div>
     <div class="dim"><h3>Validation Without Distortion</h3><p>The feeling is always valid. The interpretation of events may not be confirmed. Treating a fear as an established fact reinforces distorted thinking, which is the opposite of support.</p></div>
     <div class="dim"><h3>Agency Preservation</h3><p>Treating the person as the one who decides about their own life. Directive advice feels helpful and builds dependency, which is a known harm rather than a stylistic preference.</p></div>
     <div class="dim"><h3>Loop Interruption</h3><p>Recognizing a worry spiral and helping someone out of it rather than feeding it more analysis. Warm, patient, endless engagement with a loop sustains the loop.</p></div>
@@ -252,15 +268,59 @@
   <div class="container">
     <h2>Examine it.</h2>
     <p>We would rather be checked than taken on faith. Researchers, clinicians and regulators can request the methodology summary, a sample report, or full access under agreement.</p>
-    <a class="btn btn-primary" href="/access">Request access</a>
+    <div style="display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-primary" href="/access">Request access</a>
+      <a class="btn btn-primary" href="/work-with-us">See it run on your system</a>
+    </div>
   </div>
 </section>
 
+</main>
+
 <footer>
-  <div class="foot-l"><strong>ikwe.ai</strong> · Des Moines, Iowa · Evidence-based behavioral safety measurement</div>
-  <div class="foot-r"><a href="/contact">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/research-access-terms">Research access terms</a></div>
+  <div class="foot-inner">
+    <div class="foot-l"><strong>ikwe.ai</strong> · Des Moines, Iowa · Evidence-based behavioral safety measurement</div>
+    <div class="sitemap">
+      <div>
+        <div class="sm-h">The work</div>
+        <a href="/work-with-us">Work with us</a>
+        <a href="/sample-report">Sample report</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div>
+        <div class="sm-h">The instrument</div>
+        <a href="/eqsb">The EQ Safety Benchmark</a>
+        <a href="/research">Research</a>
+        <a href="/access">Request access</a>
+      </div>
+      <div>
+        <div class="sm-h">The company</div>
+        <a href="/about">About</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/research-access-terms">Research access terms</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
+
+<script>
+  (function(){
+    var burger = document.querySelector('.nav-hamburger');
+    var menu = document.querySelector('.nav-mobile-menu');
+    function closeMenu(){ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+    burger.addEventListener('click', function(){
+      menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', menu.classList.contains('open'));
+    });
+    menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape') closeMenu(); });
+    document.addEventListener('click', function(ev){
+      if (menu.classList.contains('open') && !menu.contains(ev.target) && !burger.contains(ev.target)) closeMenu();
+    });
+  })();
+</script>
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LV7G292YD8"></script>

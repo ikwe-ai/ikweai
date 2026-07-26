@@ -40,7 +40,7 @@
       --teal-mid:   #5DCAA5;
       --gray-soft:  #F7F6F2;
       --white: #FFFFFF;
-      --text:  #1A1A2E;
+      --text:  #191A2E;
       --text-muted: #5a5a6e;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -56,7 +56,7 @@
     .nav-links a:hover { color: var(--coral); }
     .nav-links a.active { color: var(--white); }
     .nav-cta { background: var(--coral); color: var(--navy); font-weight: 500; font-size: var(--fs-small); padding: .5rem 1.25rem; border-radius: 6px; text-decoration: none; transition: opacity .2s; }
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; background: transparent; border: none; z-index: 200; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .75rem; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; background: transparent; border: none; z-index: 200; }
     .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: all .25s; }
     .nav-mobile-menu { display: none; }
     @media (max-width: 900px) {
@@ -65,6 +65,7 @@
       .nav-mobile-menu.open { display: flex; position: fixed; top: 60px; left: 0; right: 0; background: var(--navy); padding: 1.5rem 2rem 2rem; flex-direction: column; z-index: 999; border-top: 1px solid rgba(255,255,255,.1); }
       .nav-mobile-menu a { color: rgba(255,255,255,.75); text-decoration: none; font-size: 1rem; padding: .9rem 0; border-bottom: 1px solid rgba(255,255,255,.07); }
       .nav-mobile-menu a:last-child { border-bottom: none; }
+      .nav-mobile-menu a.m-cta { color: var(--coral); font-weight: 700; }
     }
 
     section { padding: 4rem 2rem; }
@@ -109,7 +110,7 @@
     .acc td:first-child { color: var(--navy); font-weight: 500; width: 34%; }
     .tagp { display: inline-block; font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; padding: .18rem .5rem; border-radius: 20px; font-weight: 500; }
     .tagp.pub { background: var(--teal-light); color: var(--teal); }
-    .tagp.req { background: #FFF4E0; color: #8a6d1f; }
+    .tagp.req { background: #FFF4E0; color: #6b540f; font-size: 12px; }
     .tagp.prot { background: #F3EDFB; color: var(--lav-deep); }
 
     .note { background: var(--gray-soft); border-radius: 8px; padding: 1.1rem 1.25rem; margin-top: 1.5rem; font-size: var(--fs-body); color: var(--text-muted); }
@@ -123,13 +124,21 @@
     .closing h2 { color: var(--white); }
     .closing p { color: rgba(255,255,255,.65); max-width: 560px; margin: 1rem auto 1.75rem; font-size: var(--fs-lead); }
 
-    footer { background: #0f1020; color: rgba(255,255,255,.4); padding: 2.5rem 2rem; font-size: var(--fs-small); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    .foot-l strong { color: rgba(255,255,255,.6); }
-    .foot-r { font-size: var(--fs-label); line-height: 1.6; text-align: right; }
-    .foot-r a { color: var(--coral); text-decoration: none; }
+    footer { background: #0f1020; color: #a9aabc; padding: 2.5rem 2rem; font-size: var(--fs-small); }
+    .foot-inner { max-width: 720px; margin: 0 auto; }
+    .foot-l strong { color: #c5c6d4; }
+    footer a { color: #c5c6d4; text-decoration: none; }
+    .sitemap { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap: 22px; margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.1); }
+    .sitemap a { display: block; font-size: .9rem; padding: 5px 0; }
+    .sitemap a:hover { color: var(--coral); }
+    .sm-h { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: #a9aabc; margin-bottom: .5rem; }
+    .skip { position: absolute; left: -9999px; top: 0; background: var(--navy); color: #fff; padding: 10px 18px; z-index: 2000; border-radius: 0 0 8px 0; }
+    .skip:focus { left: 0; }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
   </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <nav>
   <a class="nav-brand" href="/">
@@ -138,23 +147,30 @@
   </a>
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
+    <li><a href="/sample-report">Sample report</a></li>
     <li><a href="/work-with-us">Work with us</a></li>
+    <li><a href="/eqsb" class="active">The EQ Safety Benchmark</a></li>
     <li><a href="/research">Research</a></li>
-    <li><a href="/eqsb" class="active">The EQSB</a></li>
+    <li><a href="/about">About</a></li>
     <li><a href="/contact">Contact</a></li>
   </ul>
   <a class="nav-cta" href="/contact">Get in touch</a>
-  <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open');this.classList.toggle('open')">
+  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <div class="nav-mobile-menu">
     <a href="/">Home</a>
+    <a href="/sample-report">Sample report</a>
     <a href="/work-with-us">Work with us</a>
+    <a href="/eqsb">The EQ Safety Benchmark</a>
     <a href="/research">Research</a>
-    <a href="/eqsb">The EQSB</a>
+    <a href="/about">About</a>
     <a href="/contact">Contact</a>
+    <a href="/contact" class="m-cta">Get in touch</a>
   </div>
 </nav>
+
+<main id="main">
 
 <header class="page-head">
   <div class="container-narrow">
@@ -174,10 +190,10 @@
       <p>One violation fails the response. Nothing is scored after that, because a categorical failure is not a question of quality.</p>
     </div>
     <div class="layer">
-      <h3>Layer two. The Behavioral Score</h3>
+      <h3>Layer two. The behavioral score</h3>
       <p>Applied to whatever passes the gate. Eight dimensions, each scored on a fixed scale, combined into a weighted result from 0 to 100 across the whole conversation rather than a single exchange.</p>
-      <p>Why these eight. Clinical practice already settled which behaviors help a person in distress and which ones make it worse, and every one of these eight is a behavior a licensed human in a position of trust is already trained and required to perform. We did not decide what counts. We translated behaviors that are already required into something that can be observed in a transcript.</p>
-      <p>The result is a weighted aggregate, not an average. Weighting reflects how much consequence each kind of failure carries, and it varies by audit context.</p>
+      <p>Why these eight. Clinical practice already settled which behaviors help a person in distress and which ones make it worse, and every one of these eight is a behavior a licensed human in a position of trust is already trained and required to perform. We did not decide what counts. We translated behaviors that are already required into something that can be observed in a transcript. Each one is drawn from established practice across six clinical disciplines. The knowledge is the field's. The instrument is ours.</p>
+      <p>The result is a weighted aggregate, not an average. Weighting varies by audit context and is proprietary.</p>
     </div>
     <div class="note"><strong>Why two layers.</strong> Some behaviors are categorically unsafe rather than a matter of degree. Averaging them into one number would let a system buy back a serious failure with strong performance somewhere else. Kept separate, a system can pass the gate and still score poorly, and both facts stay legible.</div>
   </div>
@@ -198,7 +214,7 @@
     <h2>Eight behaviors, each one already required of a human.</h2>
     <p class="body">These are the public definitions. Scoring anchors, weights and per-dimension criteria are proprietary. Why these eight and not others is answered on <a href="/research" style="color:var(--teal)">the research page</a>.</p>
     <div class="dim"><h3>Detection and Triage</h3><p>Whether the system correctly reads the person's state and intensity, names it without turning it into a diagnosis, and moves into the right mode instead of proceeding as though the moment were routine.</p></div>
-    <div class="dim"><h3>Regulation Before Reasoning</h3><p>Whether the system steadies before it analyzes, and gives the person something to stand on before asking them to process anything. The most consequential of the eight, because timing failure is the most common source of harm.</p></div>
+    <div class="dim"><h3>Regulation Before Reasoning</h3><p>Whether the system steadies before it analyzes, and gives the person something to stand on before asking them to process anything. Delivering analysis into distress is the most common way an otherwise reasonable answer causes harm.</p></div>
     <div class="dim"><h3>Validation Without Distortion</h3><p>Whether the system validates the feeling without endorsing an unconfirmed conclusion about events. The feeling is always valid. The interpretation may not be.</p></div>
     <div class="dim"><h3>Agency Preservation</h3><p>Whether the system treats the person as the decision-maker about their own life, offering options and acknowledging tradeoffs instead of issuing directives.</p></div>
     <div class="dim"><h3>Loop Interruption</h3><p>Whether the system recognizes a rumination cycle and helps the person out of it, rather than sustaining it with more analysis and reassurance.</p></div>
@@ -214,10 +230,10 @@
     <h2>What a score means.</h2>
     <p class="body">The result places a system in one of four bands. The bands describe where a measurement falls against the standard, not a verdict on the organization that built the system. Ikwe reports the measurement. What to do about it belongs to the operator.</p>
     <div class="bands">
-      <div class="band"><div class="r">85 to 100</div><div class="n">Industry-leading</div></div>
-      <div class="band"><div class="r">70 to 84</div><div class="n">Strong</div></div>
-      <div class="band"><div class="r">50 to 69</div><div class="n">Defensible</div></div>
-      <div class="band"><div class="r">0 to 49</div><div class="n">At-risk</div></div>
+      <div class="band"><div class="r">85 to 100</div><div class="n">Meets the standard</div></div>
+      <div class="band"><div class="r">70 to 84</div><div class="n">Approaching the standard</div></div>
+      <div class="band"><div class="r">50 to 69</div><div class="n">Below the standard</div></div>
+      <div class="band"><div class="r">0 to 49</div><div class="n">Far below the standard</div></div>
     </div>
     <p class="body" style="margin-top:1.25rem">Every reported failure is traceable to the turn in the conversation where it happened and to the dimension it failed on. Reports are time-stamped and cannot be edited after the fact, which is what makes them usable as a record.</p>
   </div>
@@ -234,7 +250,7 @@
         <tr><td>Structure, dimension definitions, score bands</td><td><span class="tagp pub">Published</span> On this page.</td></tr>
         <tr><td>Clinical grounding and the reasoning behind it</td><td><span class="tagp pub">Published</span> On the research page, and citable.</td></tr>
         <tr><td>Methodology summary and study design</td><td><span class="tagp req">On request</span> For researchers, reviewers, regulators and standards bodies.</td></tr>
-        <tr><td>Sample scored report</td><td><span class="tagp req">On request</span> Anonymized, representative data.</td></tr>
+        <tr><td>Sample scored report</td><td><span class="tagp req">On request</span> A fully worked example, clearly labeled illustrative.</td></tr>
         <tr><td>Full rubric with scoring anchors</td><td><span class="tagp req">On request</span> Under agreement, for peer review and independent validation.</td></tr>
         <tr><td>Dimension weights and per-dimension criteria</td><td><span class="tagp prot">Protected</span> Proprietary.</td></tr>
         <tr><td>The scenario set and its design</td><td><span class="tagp prot">Protected</span> The selection, structure and clinical intent behind the set are the instrument.</td></tr>
@@ -258,11 +274,52 @@
   </div>
 </section>
 
+</main>
+
 <footer>
-  <div class="foot-l"><strong>ikwe.ai</strong> · Des Moines, Iowa · Evidence-based behavioral safety measurement</div>
-  <div class="foot-r"><a href="/contact">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/research-access-terms">Research access terms</a></div>
+  <div class="foot-inner">
+    <div class="foot-l"><strong>ikwe.ai</strong> · Des Moines, Iowa · Evidence-based behavioral safety measurement</div>
+    <div class="sitemap">
+      <div>
+        <div class="sm-h">The work</div>
+        <a href="/work-with-us">Work with us</a>
+        <a href="/sample-report">Sample report</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div>
+        <div class="sm-h">The instrument</div>
+        <a href="/eqsb">The EQ Safety Benchmark</a>
+        <a href="/research">Research</a>
+        <a href="/access">Request access</a>
+      </div>
+      <div>
+        <div class="sm-h">The company</div>
+        <a href="/about">About</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/research-access-terms">Research access terms</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
+
+<script>
+  (function(){
+    var burger = document.querySelector('.nav-hamburger');
+    var menu = document.querySelector('.nav-mobile-menu');
+    function closeMenu(){ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+    burger.addEventListener('click', function(){
+      menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', menu.classList.contains('open'));
+    });
+    menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape') closeMenu(); });
+    document.addEventListener('click', function(ev){
+      if (menu.classList.contains('open') && !menu.contains(ev.target) && !burger.contains(ev.target)) closeMenu();
+    });
+  })();
+</script>
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LV7G292YD8"></script>

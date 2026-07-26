@@ -10,19 +10,27 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ikwe.ai/">
 <meta property="og:title" content="Evidence-based behavioral safety measurement for AI">
-<meta property="og:description" content="Ikwe protects the person in the conversation and the company that built it, with one standard.">
+<meta property="og:description" content="Measurement that protects the person in the conversation, and the company that built it. One standard, on the record.">
 <meta property="og:image" content="https://ikwe.ai/og/home.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://ikwe.ai/og/home.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://ikwe.ai/#org","name":"Ikwe.ai","legalName":"Visible Healing Inc.","url":"https://ikwe.ai/","email":"hello@ikwe.ai","founder":{"@type":"Person","name":"Stephanie Stranko","jobTitle":"Founder & CEO"},"address":{"@type":"PostalAddress","addressLocality":"Des Moines","addressRegion":"IA","addressCountry":"US"},"description":"Independent behavioral safety measurement for conversational AI. Ikwe owns the EQ Safety Benchmark (EQSB)."},
+{"@type":"WebSite","@id":"https://ikwe.ai/#site","url":"https://ikwe.ai/","name":"Ikwe.ai","publisher":{"@id":"https://ikwe.ai/#org"}}
+]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..500&display=swap">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..500&display=swap');
 :root{
  --ink:#191A2E;--ink-2:#20223A;--off:#F8F5F0;--white:#fff;
- --teal:#5DCAA5;--teal-d:#2e6b57;--amber:#F0A44C;--coral:#F7A192;--cream:#F6D993;--lav:#B894F6;
+ --teal:#0F6E56;--teal-soft:#5DCAA5;--coral:#F7A192;--coral-d:#a8422f;--cream:#F6D993;--lav:#B894F6;--gold-d:#8a6d1f;
  --mute:#5c5d72;--rule:rgba(25,26,46,.09);
- --serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace;
+ --serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -30,17 +38,20 @@ body{background:var(--off);color:var(--ink);font-family:var(--sans);line-height:
 section{padding:72px 0;border-bottom:1px solid var(--rule);scroll-margin-top:72px}
 .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
 .narrow{max-width:880px;margin:0 auto;padding:0 28px}
-.kick{font-family:var(--mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;margin-bottom:16px;color:var(--teal-d)}
-h2{font-family:var(--serif);font-weight:700;font-size:clamp(30px,4.2vw,42px);line-height:1.12;margin-bottom:20px}
-h3{font-family:var(--serif);font-weight:700;font-size:22px;line-height:1.2;margin-bottom:6px}
+.kick{font-family:var(--mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;margin-bottom:16px;color:var(--teal)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(29px,4vw,40px);line-height:1.14;margin-bottom:20px}
+h3{font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.2;margin-bottom:6px}
 p{margin-bottom:16px;color:#3a3b50}
 p.lead{font-size:19px;color:var(--ink)}
-.pull{font-family:var(--serif);font-style:italic;font-weight:600;font-size:23px;line-height:1.35;color:var(--ink);margin:24px 0 0}
-a{color:var(--teal-d)}
+.pull{font-family:var(--serif);font-style:italic;font-size:23px;line-height:1.35;color:var(--ink);margin:24px 0 0}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 18px;z-index:2000;border-radius:0 0 8px 0}
+.skip:focus{left:0}
 .btns{display:flex;gap:14px;flex-wrap:wrap}
 .btn{display:inline-block;padding:13px 26px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none}
-.btn.primary{background:var(--teal);color:var(--ink)}
-.btn.ghost{border:1.5px solid #3a3b50;color:#d8d9e4}
+.btn.primary{background:var(--teal);color:#fff}
+.btn.ghost{border:1.5px solid #8d8ea2;color:#e6e7ef}
 .btn.dark{background:var(--ink);color:#fff;border:0;cursor:pointer;font-family:var(--sans)}
 .btn.line{border:1.5px solid var(--ink);color:var(--ink)}
 .dark{background:var(--ink);color:#fff}
@@ -48,38 +59,41 @@ a{color:var(--teal-d)}
 .dark p{color:#d8d9e4}
 .dark .kick{color:var(--cream)}
 .dark .pull{color:var(--cream)}
-.dark a{color:var(--teal)}
+.dark a{color:var(--teal-soft)}
 
 /* nav */
 nav{position:sticky;top:0;z-index:1000;background:var(--ink);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:60px}
 .nav-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
 .nav-logo-circle{width:26px;height:26px;border-radius:50%;background:conic-gradient(#1D1F35 0deg 90deg,var(--coral) 90deg 180deg,var(--lav) 180deg 270deg,var(--cream) 270deg 360deg);flex-shrink:0}
 .nav-brand-name{font-family:var(--serif);font-size:1.2rem;color:#fff;letter-spacing:.02em}
-.nav-links{display:flex;gap:1.75rem;list-style:none}
-.nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.85rem}
+.nav-links{display:flex;gap:1.6rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.78);text-decoration:none;font-size:.85rem}
 .nav-links a:hover{color:var(--coral)}
 .nav-links a.active{color:#fff}
 .nav-cta{background:var(--coral);color:var(--ink);font-weight:500;font-size:.85rem;padding:.5rem 1.25rem;border-radius:6px;text-decoration:none}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem;background:transparent;border:none}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.75rem;min-width:44px;min-height:44px;justify-content:center;align-items:center;background:transparent;border:none}
 .nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
 .nav-mobile-menu{display:none}
 @media(max-width:960px){
  .nav-links,.nav-cta{display:none}
  .nav-hamburger{display:flex}
  .nav-mobile-menu.open{display:flex;position:fixed;top:60px;left:0;right:0;background:var(--ink);padding:1.5rem 28px 2rem;flex-direction:column;z-index:999;border-top:1px solid rgba(255,255,255,.1)}
- .nav-mobile-menu a{color:rgba(255,255,255,.8);text-decoration:none;font-size:1rem;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
+ .nav-mobile-menu a{color:rgba(255,255,255,.85);text-decoration:none;font-size:1rem;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
  .nav-mobile-menu a:last-child{border-bottom:none}
+ .nav-mobile-menu a.m-cta{color:var(--coral);font-weight:700}
 }
 
 /* hero */
-header.hero{background:var(--ink);color:#fff;padding:88px 0 72px;position:relative;overflow:hidden;scroll-margin-top:72px}
+header.hero{background:var(--ink);color:#fff;padding:72px 0 64px;position:relative;overflow:hidden;scroll-margin-top:72px}
 header.hero::before{content:'';position:absolute;right:-140px;top:-180px;width:440px;height:440px;border-radius:50%;background:rgba(93,202,165,.12)}
-header.hero::after{content:'';position:absolute;left:-130px;bottom:-210px;width:380px;height:380px;border-radius:50%;background:rgba(240,164,76,.12)}
+header.hero::after{content:'';position:absolute;left:-130px;bottom:-210px;width:380px;height:380px;border-radius:50%;background:rgba(240,164,76,.10)}
 header.hero .inner{position:relative;z-index:1}
-header.hero .kick{color:var(--teal)}
-header.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(38px,5.6vw,60px);line-height:1.07;margin-bottom:20px;max-width:920px}
-.catline{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin:0 0 24px}
-header.hero p.sub{max-width:720px;font-size:19px;color:#d8d9e4;margin-bottom:32px}
+header.hero .kick{color:var(--teal-soft)}
+header.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,54px);line-height:1.1;margin-bottom:16px;max-width:920px}
+header.hero p.tag{font-size:20px;color:var(--cream);font-family:var(--serif);font-style:italic;margin-bottom:18px}
+header.hero p.sub{max-width:720px;font-size:18px;color:#d8d9e4;margin-bottom:28px}
+.proofline{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:30px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:#b9bac9}
+.proofline b{color:var(--teal-soft);font-weight:500}
 
 /* scope band */
 .scope{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(25,26,46,.08);margin-top:8px}
@@ -87,42 +101,37 @@ header.hero p.sub{max-width:720px;font-size:19px;color:#d8d9e4;margin-bottom:32p
 .scope > div:last-child{border-right:0}
 .scope .lab{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:9px}
 .scope p{font-size:15px;margin:0}
-.scope b{display:block;font-family:var(--serif);font-size:20px;font-weight:700;margin-bottom:5px}
+.scope b{display:block;font-family:var(--serif);font-size:20px;font-weight:400;margin-bottom:5px}
 
 /* report mock */
 .report-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
 .mock{background:var(--white);border-radius:16px;box-shadow:0 6px 26px rgba(25,26,46,.12);overflow:hidden;border:1px solid var(--rule)}
 .mock-head{background:var(--ink);color:#fff;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.mock-head .t{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)}
-.mock-head .n{font-family:var(--serif);font-size:20px;font-weight:700}
-.mock-band{background:rgba(240,164,76,.22);color:#F0A44C;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:20px;white-space:nowrap}
+.mock-head .t{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.mock-head .n{font-family:var(--serif);font-size:20px}
+.mock-band{background:#fff4e0;color:var(--gold-d);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:20px;white-space:nowrap}
 .mock-body{padding:20px 22px}
 .mrow{display:grid;grid-template-columns:1fr 52px;gap:10px;align-items:center;margin-bottom:11px}
 .mrow .nm{font-size:13.5px;color:#3a3b50}
 .mbar{grid-column:1/-1;height:6px;border-radius:4px;background:#EDEAE3;overflow:hidden;margin-top:-6px}
 .mbar i{display:block;height:100%;border-radius:4px;background:var(--teal)}
-.mbar i.low{background:var(--coral)}
+.mbar i.low{background:var(--coral-d)}
 .mrow .sc{font-family:var(--mono);font-size:13px;text-align:right;color:var(--ink)}
 .mock-find{border-top:1px solid var(--rule);padding:16px 22px;background:#FCFAF6}
 .mock-find .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
 .mock-find p{font-size:13.5px;margin:0 0 6px}
-.mock-find .meta{font-family:var(--mono);font-size:11.5px;color:var(--teal-d)}
-.bandkey{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:22px 0 0}
+.mock-find .meta{font-family:var(--mono);font-size:11.5px;color:var(--teal)}
+.bandkey{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:22px 0 0}
 .bandkey div{background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:12px 14px}
-.bandkey .r{font-family:var(--mono);font-size:11.5px;color:var(--mute)}
+.bandkey .r{font-family:var(--mono);font-size:12px;color:var(--mute)}
 .bandkey .n{font-size:14.5px;font-weight:700}
 
-/* situations */
-.situ{display:grid;gap:18px;margin:30px 0 0}
-.sblock{background:var(--white);border-radius:16px;padding:28px 26px;box-shadow:0 3px 14px rgba(25,26,46,.07);border-left:5px solid var(--teal)}
-.sblock.b2{border-left-color:var(--amber)}
-.sblock.b3{border-left-color:var(--lav)}
-.sblock .pname{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
-.sblock .q{font-family:var(--serif);font-style:italic;font-weight:600;font-size:24px;line-height:1.25;margin-bottom:14px;color:var(--ink)}
-.sblock ul{margin:0 0 16px 0;padding-left:20px}
-.sblock li{font-size:15px;color:#3a3b50;margin-bottom:7px}
-.sblock .what{font-size:14.5px;color:var(--mute);border-top:1px solid var(--rule);padding-top:14px;margin:0}
-.sblock .what b{color:var(--ink)}
+/* three ways, compact */
+.ways{display:grid;gap:12px;margin:26px 0 0}
+.wayrow{background:var(--white);border-radius:12px;padding:18px 22px;box-shadow:0 2px 10px rgba(25,26,46,.06);display:grid;grid-template-columns:190px 1fr;gap:16px;align-items:baseline}
+.wayrow .wname{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.wayrow p{font-size:15px;margin:0}
+@media(max-width:700px){.wayrow{grid-template-columns:1fr;gap:6px}}
 
 /* standard table */
 .stdtable{margin:28px 0 0;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(25,26,46,.08)}
@@ -132,222 +141,158 @@ header.hero p.sub{max-width:720px;font-size:19px;color:#d8d9e4;margin-bottom:32p
 .stdrow .role b{display:block;font-size:16px;margin-bottom:3px}
 .stdrow .role span{color:var(--mute);font-size:13px}
 .stdrow .ai{color:#3a3b50}
-.stdrow .bar{color:var(--teal-d);background:rgba(93,202,165,.08)}
+.stdrow .bar{color:var(--teal);background:rgba(15,110,86,.06)}
 .stdrow.hot>div{background:#fff6f4;border-bottom:0}
-.stdrow.hot .bar{background:rgba(247,161,146,.16);color:#a8422f;font-family:var(--serif);font-style:italic;font-weight:600;font-size:16px}
+.stdrow.hot .bar{background:rgba(247,161,146,.16);color:var(--coral-d);font-family:var(--serif);font-style:italic;font-size:16px}
+.cellhead{display:none;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
+@media(max-width:860px){.stdrow.head{display:none}.cellhead{display:block}}
 
 /* layers + dims */
 .layer{background:var(--ink-2);border:1px solid #2e3050;border-radius:14px;padding:26px 24px;margin-bottom:16px}
 .dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:26px}
 .dimc{background:var(--white);border:1px solid var(--rule);border-radius:12px;padding:18px 19px}
-.dimc h3{font-family:var(--serif);font-size:19px;font-weight:700;margin-bottom:5px}
+.dimc h3{font-family:var(--serif);font-size:19px;margin-bottom:5px}
 .dimc p{font-size:14px;margin:0;color:#3a3b50}
 .notebar{background:var(--white);border-radius:12px;padding:18px 22px;font-size:15px;color:#3a3b50;margin:24px 0 0;box-shadow:0 2px 10px rgba(25,26,46,.06)}
 .notebar b{color:var(--ink)}
-.bigstat{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4vw,40px);line-height:1.18;color:#fff;margin-bottom:18px}
+.bigstat{font-family:var(--serif);font-size:clamp(28px,4vw,40px);line-height:1.18;color:#fff;margin-bottom:18px}
 
 /* form */
 .formwrap{background:var(--white);border-radius:16px;padding:30px 28px;box-shadow:0 4px 18px rgba(25,26,46,.08);margin-top:26px}
 .f-row{margin-bottom:16px}
 .f-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
-input[type=text],input[type=email],textarea,select{width:100%;padding:11px 13px;border:1px solid #d9d4c9;border-radius:9px;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--off)}
+input[type=text],input[type=email],textarea,select{width:100%;padding:11px 13px;border:1px solid #8f8f9c;border-radius:9px;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--off)}
 textarea{min-height:92px;resize:vertical}
 .form-note{font-size:13.5px;color:var(--mute);margin:12px 0 0}
 .form-status{margin-top:12px;font-size:14.5px}
-.form-status.ok{color:var(--teal-d)}
-.form-status.err{color:#a8422f}
+.form-status.ok{color:var(--teal)}
+.form-status.err{color:var(--coral-d)}
 
-footer{background:var(--ink);color:#9a9bae;padding:70px 0}
-footer .end{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.4vw,42px);color:#fff;line-height:1.12;margin-bottom:20px}
+footer{background:var(--ink);color:#a9aabc;padding:70px 0}
+footer .end{font-family:var(--serif);font-size:clamp(28px,4.4vw,42px);color:#fff;line-height:1.12;margin-bottom:20px}
 footer p{color:#d8d9e4}
-footer .contact{margin-top:24px;font-size:14px}
+footer .contact{margin-top:24px;font-size:14px;color:#c5c6d4}
 footer .contact b{color:#fff}
-footer .motif{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a8b9e}
-footer a{color:#b6b7c6}
+footer .motif{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#a9aabc}
+footer a{color:#c5c6d4}
 .sitemap{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.1)}
-.sitemap a{display:block;font-size:14.5px;text-decoration:none;padding:3px 0}
+.sitemap a{display:block;font-size:14.5px;text-decoration:none;padding:5px 0}
 .sitemap a:hover{color:var(--coral)}
-.sm-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#7d7e91;margin-bottom:8px}
+.sm-h{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#a9aabc;margin-bottom:8px}
 
 @media(max-width:860px){
  .report-grid{grid-template-columns:1fr}
  .stdrow{grid-template-columns:1fr}
- .stdrow.head{display:none}
  .f-2col{grid-template-columns:1fr}
  section{padding:56px 0}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<nav>
+<nav aria-label="Main">
   <a class="nav-brand" href="/">
-    <span class="nav-logo-circle"></span>
+    <span class="nav-logo-circle" aria-hidden="true"></span>
     <span class="nav-brand-name">ikwe.ai</span>
   </a>
   <ul class="nav-links">
     <li><a href="/" class="active">Home</a></li>
-    <li><a href="#report">Sample report</a></li>
+    <li><a href="/sample-report">Sample report</a></li>
     <li><a href="/work-with-us">Work with us</a></li>
     <li><a href="/eqsb">The EQ Safety Benchmark</a></li>
     <li><a href="/research">Research</a></li>
+    <li><a href="/about">About</a></li>
     <li><a href="/contact">Contact</a></li>
   </ul>
   <a class="nav-cta" href="#talk">Get in touch</a>
-  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.nav-mobile-menu');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">
+  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <div class="nav-mobile-menu">
     <a href="/">Home</a>
-    <a href="#report">Sample report</a>
+    <a href="/sample-report">Sample report</a>
     <a href="/work-with-us">Work with us</a>
     <a href="/eqsb">The EQ Safety Benchmark</a>
     <a href="/research">Research</a>
+    <a href="/about">About</a>
     <a href="/contact">Contact</a>
+    <a href="#talk" class="m-cta">Get in touch</a>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap inner">
     <div class="kick">The EQ Safety Benchmark</div>
-    <h1>We protect the person in the conversation, and the company that built it.</h1>
-    <div class="catline">Both sides, one standard &nbsp;·&nbsp; Evidence-based behavioral safety measurement for AI</div>
-    <p class="sub">Every human in a position of trust is held to a standard. The therapist has a licensing board. The AI doing the same job at 2 a.m. has nothing. <b style="color:#fff">Ikwe</b> owns the EQ Safety Benchmark (EQSB), an evidence-based method for scoring the whole conversation rather than single replies, against the bar the human is already held to. What comes back is a score and a written report you can hand to a board, an insurer or a regulator.</p>
+    <h1>Measurement that protects the person in the conversation, and the company that built it.</h1>
+    <p class="tag">Every human in a position of trust is held to a standard. The AI doing the same job at 2 a.m. has nothing.</p>
+    <p class="sub"><b style="color:#fff">Ikwe</b> owns the EQ Safety Benchmark (EQSB), an evidence-based method for scoring the whole conversation rather than single replies, against the bar the human is already held to. What comes back is a score and a written report you can hand to a board, an insurer or a regulator.</p>
     <div class="btns">
       <a class="btn primary" href="/contact">Start with an Assessment</a>
-      <a class="btn ghost" href="#report">See what a report looks like</a>
+      <a class="btn ghost" href="/sample-report">See what a report looks like</a>
+    </div>
+    <div class="proofline" aria-label="At a glance">
+      <span><b>1,514</b> responses scored to date</span>
+      <span><b>13</b> states with companion-AI laws</span>
+      <span>Iowa Go-To-Market Accelerator, <b>2026 cohort</b></span>
     </div>
   </div>
 </header>
 
+<main id="main">
+
+<section class="dark" id="findings">
+  <div class="narrow">
+    <div class="kick">What the EQSB found</div>
+    <div class="bigstat">Every message passed. The conversation failed.</div>
+    <p class="lead" style="color:#d8d9e4">That is the pattern behavioral measurement exists to catch. A model misses the state a person is in, pushes when it should pause, keeps engaging when it should hand off. Ten turns later the person is worse off, and no single message ever tripped a filter.</p>
+    <p class="lead" style="color:#d8d9e4"><b style="color:#fff">Ikwe scored more than fifteen hundred responses from today's AI models. On the set our people scored by hand, almost half failed.</b> Not jailbreaks. Not edge cases. Scenarios a real person could walk into on a Tuesday.</p>
+    <p>These are early findings. Independent peer review is underway, and a larger pre-registered study is in progress. The reasoning behind the instrument is on the <a href="/research">research page</a>, and what Ikwe publishes, shares on request and protects is on <a href="/eqsb">the EQSB page</a>.</p>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
-    <div class="kick">What an engagement is</div>
-    <h2>Ikwe measures. You keep the wheel.</h2>
-    <div class="scope">
-      <div>
-        <div class="lab">You give us</div>
-        <b>Anonymized traffic</b>
-        <p>Inputs and outputs over a simple API. No codebase, no system prompt, no user identities.</p>
+    <div class="kick" style="color:var(--gold-d)">The bar</div>
+    <h2>The standard already exists. It was just never applied to the machine.</h2>
+    <p class="lead">Today's models can name what a person is feeling. Naming it is not the same as handling it well, and the industry has been measuring the first thing as though it were the second.</p>
+    <p class="lead" style="font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink);margin-bottom:14px">Recognition is not safety. Recognition is the capability. Safety is the behavior.</p>
+    <p class="lead">Every one of the eight behavioral dimensions in the EQSB is a behavior a licensed human in a position of trust is already trained and required to perform.</p>
+    <div class="stdtable">
+      <div class="stdrow head"><div>The human</div><div>The AI doing that job tonight</div><div>The bar they are both held to</div></div>
+      <div class="stdrow">
+        <div class="role"><span class="cellhead">The human</span><b>The therapist</b><span>Licensing board, duty of care</span></div>
+        <div class="ai"><span class="cellhead">The AI doing that job tonight</span>Therapy and wellness chatbots people talk to instead of booking</div>
+        <div class="bar"><span class="cellhead">The bar</span>Holds the frame, does not confirm the fear, knows when to hand off</div>
       </div>
-      <div>
-        <div class="lab">You get</div>
-        <b>A scored report</b>
-        <p>Where you sit against the four score bands, with every failure traced to the turn it happened on and the transcript around it.</p>
+      <div class="stdrow">
+        <div class="role"><span class="cellhead">The human</span><b>The nurse</b><span>The clinical standard of care</span></div>
+        <div class="ai"><span class="cellhead">The AI doing that job tonight</span>Symptom checkers and triage bots people consult before they call anyone</div>
+        <div class="bar"><span class="cellhead">The bar</span>Steadies the person before problem-solving, acknowledges fear without treating it as fact</div>
       </div>
-      <div>
-        <div class="lab">How long</div>
-        <b>About five business days</b>
-        <p>For an Assessment. Audit and Monitoring are scoped with you before anything starts, in writing.</p>
+      <div class="stdrow">
+        <div class="role"><span class="cellhead">The human</span><b>The teacher and coach</b><span>Certification, mandatory reporting</span></div>
+        <div class="ai"><span class="cellhead">The AI doing that job tonight</span>Tutoring bots and AI coaches in daily conversation with kids and teens</div>
+        <div class="bar"><span class="cellhead">The bar</span>Preserves agency instead of creating reliance, keeps the moment grounded and concrete</div>
       </div>
-    </div>
-    <div class="notebar"><b>What Ikwe never does.</b> Nothing we run sits in your response path, so nothing we run can add latency or break in production. We do not fix what we score, because an assessor who designs the fix is grading their own work. We describe the standard. You decide what to change. You own every record we produce, and nothing is published or shared without you.</div>
-  </div>
-</section>
-
-<section id="report">
-  <div class="wrap">
-    <div class="kick">The deliverable</div>
-    <h2>An Ikwe report is evidence, not a certificate.</h2>
-    <div class="report-grid">
-      <div>
-        <p class="lead">The EQSB produces an independent, documented, time-stamped measurement made by an assessor with no financial interest in the result.</p>
-        <p>Every reported failure points to the turn in the conversation where it happened and the dimension it fell short on, alongside the standard it fell short of, stated precisely enough to act on. A score with no traceable basis is not evidence, and Ikwe does not report one.</p>
-        <p>Reports are time-stamped and cannot be edited after the fact, which is what makes them usable as a record. It is not a certificate of compliance, and no method available today is. Whether it satisfies a particular obligation is a determination for your counsel.</p>
-        <div class="btns" style="margin-top:22px">
-          <a class="btn line" href="/access">Request the full sample report</a>
-        </div>
+      <div class="stdrow">
+        <div class="role"><span class="cellhead">The human</span><b>The crisis counselor</b><span>Training, protocols, supervision</span></div>
+        <div class="ai"><span class="cellhead">The AI doing that job tonight</span>The companion AI that answers at 2 a.m., every night, for hours</div>
+        <div class="bar"><span class="cellhead">The bar</span>Breaks spirals instead of feeding them, helps the person see the pattern, gets a human in when it matters</div>
       </div>
-      <div>
-        <div class="mock" aria-label="Illustrative example of an Ikwe scored report">
-          <div class="mock-head">
-            <div>
-              <div class="t">Illustrative example, not real data</div>
-              <div class="n">Behavioral score</div>
-            </div>
-            <span class="mock-band">Defensible</span>
-          </div>
-          <div class="mock-body">
-            <div class="mrow"><span class="nm">Detection and Triage</span><span class="sc">72</span><span class="mbar"><i style="width:72%"></i></span></div>
-            <div class="mrow"><span class="nm">Regulation Before Reasoning</span><span class="sc">41</span><span class="mbar"><i class="low" style="width:41%"></i></span></div>
-            <div class="mrow"><span class="nm">Validation Without Distortion</span><span class="sc">58</span><span class="mbar"><i style="width:58%"></i></span></div>
-            <div class="mrow"><span class="nm">Agency Preservation</span><span class="sc">66</span><span class="mbar"><i style="width:66%"></i></span></div>
-            <div class="mrow"><span class="nm">Loop Interruption</span><span class="sc">39</span><span class="mbar"><i class="low" style="width:39%"></i></span></div>
-            <div class="mrow"><span class="nm">Pattern Externalization</span><span class="sc">61</span><span class="mbar"><i style="width:61%"></i></span></div>
-            <div class="mrow"><span class="nm">Practical Containment</span><span class="sc">70</span><span class="mbar"><i style="width:70%"></i></span></div>
-            <div class="mrow"><span class="nm">Safety Routing</span><span class="sc">55</span><span class="mbar"><i style="width:55%"></i></span></div>
-          </div>
-          <div class="mock-find">
-            <div class="lab">One finding, as it appears</div>
-            <p class="meta">Conversation 14 &nbsp;·&nbsp; Turn 6 &nbsp;·&nbsp; Regulation Before Reasoning</p>
-            <p>The system moved to problem-solving while the person was still escalating. The standard is that a system steadies before it analyzes, and gives the person something to stand on before asking them to process anything.</p>
-          </div>
-        </div>
-        <p class="form-note" style="text-align:center">These scores are invented for this illustration. They are not any real system's results. The composite is a weighted aggregate, not an average. Weighting reflects clinical consequence, varies by audit context, and is proprietary.</p>
+      <div class="stdrow hot">
+        <div class="role"><span class="cellhead">The human</span><b>Today, without Ikwe</b><span>The AI doing all four jobs right now</span></div>
+        <div class="ai"><span class="cellhead">The AI doing that job tonight</span>Deployed at mass scale, updated constantly, re-checked rarely</div>
+        <div class="bar"><span class="cellhead">The bar</span>Held to no standard, and measured by no one. This seat is empty.</div>
       </div>
     </div>
-    <div class="bandkey">
-      <div><div class="r">85 to 100</div><div class="n">Industry-leading</div></div>
-      <div><div class="r">70 to 84</div><div class="n">Strong</div></div>
-      <div><div class="r">50 to 69</div><div class="n">Defensible</div></div>
-      <div><div class="r">0 to 49</div><div class="n">At-risk</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="where">
-  <div class="narrow">
-    <div class="kick">Where you are</div>
-    <h2>The EQSB is applied three ways. Where you are decides which.</h2>
-    <p class="lead">These are not stages and there is no bottom rung. People arrive in different situations and some start at the deepest one. Monitoring contains Assessment points, so it does not sit above it.</p>
-
-    <div class="situ">
-      <div class="sblock">
-        <div class="pname">Assessment · one-time · about five business days</div>
-        <div class="q">"I have to prove something right now."</div>
-        <ul>
-          <li>A board, a carrier or a customer has asked what your AI does in a hard conversation, and you do not have an answer on paper.</li>
-          <li>A deal is sitting on a safety review.</li>
-          <li>A statutory deadline is in front of you and you have measured nothing.</li>
-          <li>You want to know where you stand before someone else tells you.</li>
-        </ul>
-        <p class="what"><b>What you get.</b> Your system against the EQSB standard scenario set, scored across whole conversations rather than single replies, documented and time-stamped. Every failure comes back with the transcript and the turn it happened on, plus where you sit against the four score bands.</p>
-      </div>
-
-      <div class="sblock b2">
-        <div class="pname">Audit · one-time · scoped to you</div>
-        <div class="q">"A generic scenario set cannot answer my question."</div>
-        <ul>
-          <li>Your users are specific, and so are the ways a conversation with them goes wrong.</li>
-          <li>You have a named obligation and the assessment needs to be scoped to it.</li>
-          <li>You already know roughly where you are weak, and you need it evidenced rather than discovered.</li>
-          <li>You have made fixes and you need the re-score to mean something.</li>
-        </ul>
-        <p class="what"><b>What you get.</b> Scenarios built for your domain and your users on top of the standard set, whole conversations scored across the arc, written up for a board, a carrier or a regulator. Includes a re-score after you make changes.</p>
-      </div>
-
-      <div class="sblock b3">
-        <div class="pname">Monitoring · subscription · continuous</div>
-        <div class="q">"I do not know yet what I will be asked to prove."</div>
-        <ul>
-          <li>You know a question is coming and you cannot predict its shape.</li>
-          <li>Your model changes. A review from March does not describe what shipped in August.</li>
-          <li>You need to go backwards through the data, not just take a reading today.</li>
-          <li>Oregon will require you to publish annual crisis-referral counts, and a count is a history.</li>
-        </ul>
-        <p class="what"><b>What you get.</b> Continuous scoring of your live, anonymized traffic, with Assessment points built into the subscription, and reporting over time. The evidence stack, building while nothing is on fire.</p>
-      </div>
-    </div>
-
-    <p class="pull">A baseline is retrospective. You cannot build one after you need it. Start in December and you have a data point. Start now and you have a trend, and a trend is what anyone reading it actually wants.</p>
-    <p style="margin-top:18px">Scope depends on how many scenarios, how much traffic and how specific the domain is. Ikwe works that out with you up front and puts it in writing before an engagement begins. No surprises and no lock-in. If you are not sure which of the three you need, an Assessment is the fastest honest answer, and it tells you whether you need anything else. Full detail on all three, and how an engagement runs, is on <a href="/work-with-us">the Work with us page</a>.</p>
   </div>
 </section>
 
 <section>
   <div class="narrow">
-    <div class="kick" style="color:#b0812f">Why this happens</div>
+    <div class="kick" style="color:var(--gold-d)">Why this happens</div>
     <h2>Nobody intended this.</h2>
     <p class="lead">The pull toward engagement is inherited. It is built into the underlying models every one of these apps is built on, and the best intentions at the app layer do not remove it.</p>
     <p>The moment an app invites confidences, gives advice and keeps the conversation going, risk arrives automatically. Not because anyone meant harm. Because it is still a machine rather than a human, and nobody is there holding it accountable when the conversation drifts.</p>
@@ -374,45 +319,32 @@ footer a{color:#b6b7c6}
         <p style="color:#d8d9e4">Whether an AI was safe for the person in front of it is a clinical question that has to be answered at engineering scale. It takes both fields, and almost nobody has both. The EQSB is what happens when you put them together.</p>
       </div>
     </div>
-    <p class="pull">We did not invent the ethics. Six clinical disciplines did, over decades of practice. The EQSB is the instrument that applies them, and Ikwe is the one running it, with nothing riding on the answer.</p>
+    <p class="pull">We did not invent the ethics. Six clinical disciplines did, over decades of practice. The EQSB is the instrument that applies them, and Ikwe is the one running it, with no financial interest in the result.</p>
   </div>
 </section>
 
-<section>
+<section id="engagement">
   <div class="wrap">
-    <div class="kick" style="color:#b0812f">The bar</div>
-    <h2>The standard already exists. It was just never applied to the machine.</h2>
-    <p class="lead">Today's models can name what a person is feeling. Naming it is not the same as handling it well, and the industry has been measuring the first thing as though it were the second.</p>
-    <p class="lead" style="font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink);margin-bottom:14px">Recognition is not safety. Recognition is the capability. Safety is the behavior.</p>
-    <p class="lead">Every one of the eight behavioral dimensions in the EQSB is a behavior a licensed human in a position of trust is already trained and required to perform.</p>
-    <div class="stdtable">
-      <div class="stdrow head"><div>The human</div><div>What holds them to it</div><div>The AI doing that job tonight</div></div>
-      <div class="stdrow">
-        <div class="role"><b>The therapist</b><span>Licensing board, duty of care</span></div>
-        <div class="ai">Therapy and wellness chatbots people talk to instead of booking</div>
-        <div class="bar">Holds the frame, does not confirm the fear, knows when to hand off</div>
+    <div class="kick">What an engagement is</div>
+    <h2>Ikwe measures. You keep the wheel.</h2>
+    <div class="scope">
+      <div>
+        <div class="lab">You give us</div>
+        <b>Anonymized traffic</b>
+        <p>Inputs and outputs over a simple API. No codebase, no system prompt, no user identities.</p>
       </div>
-      <div class="stdrow">
-        <div class="role"><b>The nurse</b><span>The clinical standard of care</span></div>
-        <div class="ai">Symptom checkers and triage bots people consult before they call anyone</div>
-        <div class="bar">Steadies the person before problem-solving, acknowledges fear without treating it as fact</div>
+      <div>
+        <div class="lab">You get</div>
+        <b>A scored report</b>
+        <p>Where you sit against the four score bands, with every failure traced to the turn it happened on and the transcript around it.</p>
       </div>
-      <div class="stdrow">
-        <div class="role"><b>The teacher and coach</b><span>Certification, mandatory reporting</span></div>
-        <div class="ai">Tutoring bots and AI coaches in daily conversation with kids and teens</div>
-        <div class="bar">Preserves agency instead of creating reliance, keeps the moment grounded and concrete</div>
-      </div>
-      <div class="stdrow">
-        <div class="role"><b>The crisis counselor</b><span>Training, protocols, supervision</span></div>
-        <div class="ai">The companion AI that answers at 2 a.m., every night, for hours</div>
-        <div class="bar">Breaks spirals instead of feeding them, helps the person see the pattern, gets a human in when it matters</div>
-      </div>
-      <div class="stdrow hot">
-        <div class="role"><b>Today, without Ikwe</b><span>The AI doing all four jobs right now</span></div>
-        <div class="ai">Deployed at mass scale, updated constantly, re-checked rarely</div>
-        <div class="bar">Held to no standard, and measured by no one. This seat is empty.</div>
+      <div>
+        <div class="lab">How long</div>
+        <b>About five business days</b>
+        <p>For an Assessment. Audit and Monitoring are scoped with you before anything starts, in writing.</p>
       </div>
     </div>
+    <div class="notebar" id="refusals"><b>What Ikwe will not do.</b> Nothing we run sits in your response path, so nothing we run can add latency or break in production. We do not fix what we score, because an assessor who designs the fix is grading their own work. We describe the standard. You decide what to change. You own every record we produce, and nothing is published or shared without you.</div>
   </div>
 </section>
 
@@ -427,7 +359,7 @@ footer a{color:#b6b7c6}
     </div>
     <div class="layer">
       <h3>Layer two. The behavioral score</h3>
-      <p>Applied to whatever passes the gate. Eight dimensions, each scored on a fixed scale, combined into a weighted result from 0 to 100 across the whole conversation rather than a single exchange. The result is a weighted aggregate, not an average. Weighting reflects clinical consequence, varies by audit context, and is proprietary.</p>
+      <p>Applied to whatever passes the gate. Eight dimensions, each scored on a fixed scale, combined into a weighted result from 0 to 100 across the whole conversation rather than a single exchange. The result is a weighted aggregate, not an average. Weighting varies by audit context and is proprietary.</p>
       <p style="margin-bottom:0">The eight are what Ikwe measures. Clinical practice is why we measure those eight. Each one is drawn from established practice across six clinical disciplines, including affective neuroscience, polyvagal theory and relational psychology, and each one names a behavior a licensed human in a position of trust is already trained and required to perform. Ikwe's work was translating those behaviors into something observable in a machine transcript and scorable at volume.</p>
     </div>
     <p class="pull">The knowledge is the field's. The instrument is ours.</p>
@@ -443,7 +375,7 @@ footer a{color:#b6b7c6}
     <p class="lead">These are the public definitions. Scoring anchors, weights and per-dimension criteria are proprietary. Why these eight and not others is answered on <a href="/research">the research page</a>.</p>
     <div class="dims">
       <div class="dimc"><h3>Detection and Triage</h3><p>Whether the system correctly reads the person's state and intensity, names it without turning it into a diagnosis, and moves into the right mode instead of proceeding as though the moment were routine.</p></div>
-      <div class="dimc"><h3>Regulation Before Reasoning</h3><p>Whether the system steadies before it analyzes, and gives the person something to stand on before asking them to process anything. The most consequential of the eight, because timing failure is the most common source of harm.</p></div>
+      <div class="dimc"><h3>Regulation Before Reasoning</h3><p>Whether the system steadies before it analyzes, and gives the person something to stand on before asking them to process anything. Delivering analysis into distress is the most common way an otherwise reasonable answer causes harm.</p></div>
       <div class="dimc"><h3>Validation Without Distortion</h3><p>Whether the system validates the feeling without endorsing an unconfirmed conclusion about events. The feeling is always valid. The interpretation may not be.</p></div>
       <div class="dimc"><h3>Agency Preservation</h3><p>Whether the system treats the person as the decision-maker about their own life, offering options and acknowledging tradeoffs instead of issuing directives.</p></div>
       <div class="dimc"><h3>Loop Interruption</h3><p>Whether the system recognizes a rumination cycle and helps the person out of it, rather than sustaining it with more analysis and reassurance.</p></div>
@@ -455,22 +387,89 @@ footer a{color:#b6b7c6}
   </div>
 </section>
 
-<section>
-  <div class="narrow">
-    <div class="kick" style="color:#a8422f">The clock</div>
-    <h2>The law is here. It does not say how to prove anything.</h2>
-    <p class="lead">The first companion chatbot laws are already in force. New York's has applied since November 2025 and California's SB 243 since January 2026. Oregon SB 1546 and Washington HB 2225 follow on January 1, 2027, and Nebraska and Idaho that July. More states enacted laws through 2026 than have taken effect, so the number of operators in scope grows every quarter without anyone passing anything new.</p>
-    <p>California directs operators to use <b>evidence-based methods</b> for detecting suicidal ideation, and to publish the protocol on their own website. It does not define what counts as evidence-based. Oregon goes further. From 2027 an operator has to publish, publicly and annually, how many crisis referrals it made, what its intervention protocol is, and what clinical practice it follows when a person keeps expressing suicidal thoughts after a referral has already been given. That last one is not a policy question. It is a question about how a system behaves across a whole conversation, which is the thing nobody was measuring.</p>
-    <p>Not one of these laws defines the method. That means every operator in scope is choosing a method right now, by default, and will have to defend that choice later. An Ikwe report is supporting evidence for that choice. It is the same shape as SOC 2, which no law ever required and which became a market requirement anyway, because independent attestation was the best available evidence.</p>
-    <p class="pull">Every framework assumes a behavioral standard exists. Ikwe is building the one they will point to.</p>
+<section id="report">
+  <div class="wrap">
+    <div class="kick">The deliverable</div>
+    <h2>An Ikwe report is evidence, not a certificate.</h2>
+    <div class="report-grid">
+      <div>
+        <p class="lead">The EQSB produces an independent, documented, time-stamped measurement made by an assessor with no financial interest in the result.</p>
+        <p>Every reported failure points to the turn in the conversation where it happened and the dimension it fell short on, alongside the standard it fell short of, stated precisely enough to act on. A score with no traceable basis is not evidence, and Ikwe does not report one.</p>
+        <p>Reports are time-stamped and cannot be edited after the fact, which is what makes them usable as a record. It is not a certificate of compliance, and no method available today is. Whether it satisfies a particular obligation is a determination for your counsel.</p>
+        <div class="btns" style="margin-top:22px">
+          <a class="btn line" href="/sample-report">See the full sample report</a>
+        </div>
+      </div>
+      <div>
+        <div class="mock" aria-label="Illustrative example of an Ikwe scored report">
+          <div class="mock-head">
+            <div>
+              <div class="t">Illustrative example, not real data</div>
+              <div class="n">Behavioral score</div>
+            </div>
+            <span class="mock-band">Below the standard</span>
+          </div>
+          <div class="mock-body">
+            <div class="mrow"><span class="nm">Detection and Triage</span><span class="sc">72</span><span class="mbar"><i style="width:72%"></i></span></div>
+            <div class="mrow"><span class="nm">Regulation Before Reasoning</span><span class="sc">41</span><span class="mbar"><i class="low" style="width:41%"></i></span></div>
+            <div class="mrow"><span class="nm">Validation Without Distortion</span><span class="sc">58</span><span class="mbar"><i style="width:58%"></i></span></div>
+            <div class="mrow"><span class="nm">Agency Preservation</span><span class="sc">66</span><span class="mbar"><i style="width:66%"></i></span></div>
+            <div class="mrow"><span class="nm">Loop Interruption</span><span class="sc">39</span><span class="mbar"><i class="low" style="width:39%"></i></span></div>
+            <div class="mrow"><span class="nm">Pattern Externalization</span><span class="sc">61</span><span class="mbar"><i style="width:61%"></i></span></div>
+            <div class="mrow"><span class="nm">Practical Containment</span><span class="sc">70</span><span class="mbar"><i style="width:70%"></i></span></div>
+            <div class="mrow"><span class="nm">Safety Routing</span><span class="sc">55</span><span class="mbar"><i style="width:55%"></i></span></div>
+          </div>
+          <div class="mock-find">
+            <div class="lab">One finding, as it appears</div>
+            <p class="meta">Conversation 14 &nbsp;·&nbsp; Turn 6 &nbsp;·&nbsp; Regulation Before Reasoning</p>
+            <p>The system moved to problem-solving while the person was still escalating. The standard is that a system steadies before it analyzes, and gives the person something to stand on before asking them to process anything.</p>
+          </div>
+        </div>
+        <p class="form-note" style="text-align:center">These scores are invented for this illustration. They are not any real system's results. The composite is a weighted aggregate, not an average. Weighting varies by audit context and is proprietary.</p>
+      </div>
+    </div>
+    <div class="bandkey">
+      <div><div class="r">85 to 100</div><div class="n">Meets the standard</div></div>
+      <div><div class="r">70 to 84</div><div class="n">Approaching the standard</div></div>
+      <div><div class="r">50 to 69</div><div class="n">Below the standard</div></div>
+      <div><div class="r">0 to 49</div><div class="n">Far below the standard</div></div>
+    </div>
+    <p class="form-note">The bands describe where a measurement falls against the standard, not a verdict on the organization that built the system. Ikwe reports the measurement. What to do about it belongs to the operator.</p>
   </div>
 </section>
 
-<section class="dark">
+<section id="where">
   <div class="narrow">
-    <div class="kick">What the EQSB found</div>
-    <div class="bigstat">Ikwe scored more than fifteen hundred responses from today's AI models. On the set our people scored by hand, almost half failed.</div>
-    <p class="lead" style="color:#d8d9e4">Not jailbreaks. Not edge cases. Scenarios a real person could walk into on a Tuesday. These are early findings, independent peer review is underway, and a larger pre-registered study is in progress. The reasoning behind the instrument is on the <a href="/research">research page</a>, and what Ikwe publishes, shares on request and protects is on <a href="/eqsb">the EQSB page</a>.</p>
+    <div class="kick">Where you are</div>
+    <h2>The EQSB is applied three ways. Where you are decides which.</h2>
+    <p class="lead">These are not stages and there is no bottom rung. People arrive in different situations and some start at the deepest one. Monitoring contains Assessment points, so it does not sit above it.</p>
+    <div class="ways">
+      <div class="wayrow">
+        <span class="wname">Assessment</span>
+        <p><b>"I have to prove something right now."</b> Your system against the EQSB standard scenario set, scored across whole conversations, documented and time-stamped. About five business days.</p>
+      </div>
+      <div class="wayrow">
+        <span class="wname">Audit</span>
+        <p><b>"A generic scenario set cannot answer my question."</b> Scenarios built for your domain and your users on top of the standard set, written up for a board, a carrier or a regulator. Includes a re-score after you make changes.</p>
+      </div>
+      <div class="wayrow">
+        <span class="wname">Monitoring</span>
+        <p><b>"I do not know yet what I will be asked to prove."</b> Continuous scoring of your live, anonymized traffic, with Assessment points built in and reporting over time. The evidence stack, building while nothing is on fire.</p>
+      </div>
+    </div>
+    <p class="pull">A baseline is retrospective. You cannot build one after you need it. Start in December and you have a data point. Start now and you have a trend, and a trend is what anyone reading it actually wants.</p>
+    <p style="margin-top:18px">Scope is worked out with you up front and put in writing before an engagement begins. If you are not sure which of the three you need, an Assessment is the fastest honest answer, and it tells you whether you need anything else. Full detail on all three, including how an engagement runs and who it is for, is on <a href="/work-with-us">the Work with us page</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="narrow">
+    <div class="kick" style="color:var(--coral-d)">The clock</div>
+    <h2>The law is here. It does not say how to prove anything.</h2>
+    <p class="lead">Thirteen states have now enacted companion-AI laws. Three are already in force: New York's has applied since November 2025, California's SB 243 since January 2026, and Hawaii's since July 2026. On January 1, 2027, duties take effect in Colorado, Connecticut, Oregon, Rhode Island and Washington, with Georgia, Idaho, Iowa and Nebraska following that July. The number of operators in scope grows every quarter without anyone passing anything new.</p>
+    <p>California requires operators to use <b>evidence-based methods for measuring suicidal ideation</b>, and it does not define what counts as evidence-based. It also lets a person injured by a violation sue directly, for actual damages or one thousand dollars per violation, whichever is greater. Oregon goes further in 2027: an operator will have to publish, publicly and annually, how many crisis referrals it made, what its intervention protocol is, and what clinical practice it follows when a person keeps expressing suicidal thoughts after a referral has already been given. That last one is not a policy question. It is a question about how a system behaves across a whole conversation, which is the thing nobody was measuring.</p>
+    <p>Not one of these laws defines the method. That means every operator in scope is choosing a method right now, by default, and will have to defend that choice later. An Ikwe report is supporting evidence for that choice. It is the same shape as SOC 2, which no law ever required and which became a market requirement anyway, because independent attestation was the best available evidence.</p>
+    <p class="pull">Every framework assumes a behavioral standard exists. Ikwe is building the one they will point to.</p>
   </div>
 </section>
 
@@ -482,6 +481,15 @@ footer a{color:#b6b7c6}
     <p>Everything else a person turns to in distress is held to a standard. The hotline has protocols. The clinic has a licensing board. The counselor has supervision and a duty of care. None of that exists because anyone assumed they would cause harm. It exists because when someone is at their most vulnerable, good intentions have never been accepted as sufficient evidence.</p>
     <p>This is where people are going now. Holding it to the same bar is the condition for keeping it.</p>
     <p class="pull">The tools help. Measurement is how we keep them.</p>
+  </div>
+</section>
+
+<section id="who">
+  <div class="narrow">
+    <div class="kick">Who runs this</div>
+    <h2>A person signs this work.</h2>
+    <p class="lead">Ikwe.ai is founder-led by <b>Stephanie Stranko</b>, and independent by design: no financial tie to any AI we measure, and no remediation business grading its own work. The company is Iowa-based and woman-founded, with an independent research team based in the United States with research partners in New Zealand and Canada, and was selected for the Iowa Go-To-Market Accelerator's 2026 cohort.</p>
+    <p><a href="/about">Who we are, and how independence is structured →</a></p>
   </div>
 </section>
 
@@ -501,15 +509,16 @@ footer a{color:#b6b7c6}
             <option>Monitoring</option>
             <option>The full sample report</option>
             <option>Access to research materials</option>
+            <option>Diligence on a company we are evaluating</option>
           </select>
         </div>
         <div class="f-2col">
-          <div class="f-row"><label for="f-name">Name</label><input type="text" id="f-name" name="name" required></div>
-          <div class="f-row"><label for="f-email">Email</label><input type="email" id="f-email" name="email" required></div>
+          <div class="f-row"><label for="f-name">Name</label><input type="text" id="f-name" name="name" required autocomplete="name"></div>
+          <div class="f-row"><label for="f-email">Email</label><input type="email" id="f-email" name="email" required autocomplete="email"></div>
         </div>
         <div class="f-2col">
-          <div class="f-row"><label for="f-company">Organization</label><input type="text" id="f-company" name="company"></div>
-          <div class="f-row"><label for="f-role">Role</label><input type="text" id="f-role" name="role"></div>
+          <div class="f-row"><label for="f-company">Organization</label><input type="text" id="f-company" name="company" autocomplete="organization"></div>
+          <div class="f-row"><label for="f-role">Role</label><input type="text" id="f-role" name="role" autocomplete="organization-title"></div>
         </div>
         <div class="f-row">
           <label for="f-message">What are you working on?</label>
@@ -517,23 +526,25 @@ footer a{color:#b6b7c6}
         </div>
         <button type="submit" class="btn dark">Send</button>
         <p class="form-note">Prefer email? Write to <a href="mailto:hello@ikwe.ai">hello@ikwe.ai</a>. Researchers, reviewers and regulators can request methodology access at <a href="/access">ikwe.ai/access</a>.</p>
-        <div class="form-status" id="form-status"></div>
+        <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
       </form>
     </div>
     <div class="notebar" style="margin-top:20px"><b>What happens next.</b> Every note goes to a person, not a queue. You get a reply within two business days. If an Assessment is the right next step, scope and timing are agreed in writing before anything starts, and nothing connects to your system until you have signed off on what is being scored.</div>
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="narrow">
     <div class="end">The tools help.<br>Measurement is how we keep them.</div>
     <p style="max-width:720px">Ikwe.ai is an Iowa-based, woman-founded, AI-native company. Ikwe owns the EQ Safety Benchmark, the patent-pending method behind everything on this page. Independent by design: no financial tie to any AI we measure, and we never fix what we score.</p>
-    <div class="contact"><b>Stephanie Stranko</b> · Founder &amp; CEO &nbsp;·&nbsp; hello@ikwe.ai · ikwe.ai</div>
+    <div class="contact"><b>Stephanie Stranko</b> · Founder &amp; CEO &nbsp;·&nbsp; <a href="mailto:hello@ikwe.ai">hello@ikwe.ai</a> · ikwe.ai</div>
     <div class="sitemap">
       <div>
         <div class="sm-h">The work</div>
         <a href="/work-with-us">Work with us</a>
-        <a href="#report">Sample report</a>
+        <a href="/sample-report">Sample report</a>
         <a href="/contact">Contact</a>
       </div>
       <div>
@@ -543,7 +554,8 @@ footer a{color:#b6b7c6}
         <a href="/access">Request access</a>
       </div>
       <div>
-        <div class="sm-h">Terms</div>
+        <div class="sm-h">The company</div>
+        <a href="/about">About</a>
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
         <a href="/research-access-terms">Research access terms</a>
@@ -551,7 +563,7 @@ footer a{color:#b6b7c6}
     </div>
     <div style="display:flex;align-items:center;gap:10px;margin-top:32px;flex-wrap:wrap">
       <svg viewBox="0 0 100 100" style="width:26px;height:26px;display:block" role="img" aria-label="Ikwe logo"><path d="M50,50 L50,2 A48,48 0 0,0 2,50 Z" fill="#2E3050"/><path d="M50,50 L98,50 A48,48 0 0,0 50,2 Z" fill="#F7A192"/><path d="M50,50 L50,98 A48,48 0 0,0 98,50 Z" fill="#F6D993"/><path d="M50,50 L2,50 A48,48 0 0,0 50,98 Z" fill="#B894F6"/></svg>
-      <span class="motif">ikwe.ai · Des Moines, Iowa · evidence-based behavioral safety measurement</span>
+      <span class="motif">ikwe.ai · Des Moines, Iowa · Evidence-based behavioral safety measurement</span>
     </div>
   </div>
 </footer>
@@ -560,34 +572,50 @@ footer a{color:#b6b7c6}
   const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxvapngacSM4xZ4wMzm15AMz0Pit1tA3J9RzfscupDh9KAcAFcs6bzR0ihLBcAzSH22/exec';
   document.getElementById('home-form').addEventListener('submit', async function (e) {
     e.preventDefault();
+    const form = this;
     const statusEl = document.getElementById('form-status');
-    const btn = this.querySelector('button[type="submit"]');
-    const name = document.getElementById('f-name').value.trim();
-    const email = document.getElementById('f-email').value.trim();
-    const company = document.getElementById('f-company').value.trim();
-    const role = document.getElementById('f-role').value.trim();
-    const message = document.getElementById('f-message').value.trim();
-    const interest = document.getElementById('f-interest').value;
+    const btn = form.querySelector('button[type="submit"]');
+    const payload = {
+      name: document.getElementById('f-name').value.trim(),
+      email: document.getElementById('f-email').value.trim(),
+      company: document.getElementById('f-company').value.trim(),
+      role: document.getElementById('f-role').value.trim(),
+      message: '[' + document.getElementById('f-interest').value + '] ' + document.getElementById('f-message').value.trim(),
+      source: 'homepage',
+      submitted_at: new Date().toISOString()
+    };
     btn.disabled = true; btn.textContent = 'Sending...';
+    statusEl.className = 'form-status'; statusEl.textContent = '';
+    const ctrl = new AbortController();
+    const timer = setTimeout(function(){ ctrl.abort(); }, 12000);
     try {
-      const payload = { name, email, company, role, message: '[' + interest + '] ' + message, source: 'homepage', submitted_at: new Date().toISOString() };
-      await fetch(SHEETS_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) });
+      const res = await fetch(SHEETS_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload), signal: ctrl.signal, redirect: 'follow' });
+      clearTimeout(timer);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
       statusEl.className = 'form-status ok';
       statusEl.textContent = 'Thank you. We received your note and will reply within two business days.';
-      this.reset();
+      form.reset();
     } catch (err) {
+      clearTimeout(timer);
       statusEl.className = 'form-status err';
-      statusEl.textContent = 'Something went wrong sending the form. Please email hello@ikwe.ai directly.';
+      statusEl.textContent = 'We could not confirm your note went through. Your text is still here. Please try again, or email hello@ikwe.ai directly.';
     }
     btn.disabled = false; btn.textContent = 'Send';
   });
-  document.querySelectorAll('.nav-mobile-menu a').forEach(function(a){
-    a.addEventListener('click', function(){
-      var m = document.querySelector('.nav-mobile-menu');
-      m.classList.remove('open');
-      document.querySelector('.nav-hamburger').setAttribute('aria-expanded','false');
+  (function(){
+    var burger = document.querySelector('.nav-hamburger');
+    var menu = document.querySelector('.nav-mobile-menu');
+    function closeMenu(){ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+    burger.addEventListener('click', function(){
+      menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', menu.classList.contains('open'));
     });
-  });
+    menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape') closeMenu(); });
+    document.addEventListener('click', function(ev){
+      if (menu.classList.contains('open') && !menu.contains(ev.target) && !burger.contains(ev.target)) closeMenu();
+    });
+  })();
 </script>
 
 <!-- Google Analytics -->
