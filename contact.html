@@ -1,142 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | ikwe.ai</title>
-  <meta name="description" content="Start a conversation, request an Assessment, or request access to our research materials.">
-  <link rel="canonical" href="https://ikwe.ai/contact">
-  <meta property="og:site_name" content="Ikwe.ai">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ikwe.ai/contact">
-  <meta property="og:title" content="Contact">
-  <meta property="og:description" content="Start a conversation, request an Assessment, or request access to our research materials.">
-  <meta property="og:image" content="https://ikwe.ai/og/contact.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | ikwe.ai</title>
+<meta name="description" content="Start a conversation, request an Assessment, or request access to our research materials.">
+<link rel="canonical" href="https://ikwe.ai/contact">
+<meta property="og:site_name" content="Ikwe.ai">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ikwe.ai/contact">
+<meta property="og:title" content="Contact">
+<meta property="og:description" content="Start a conversation, request an Assessment, or request access to our research materials.">
+<meta property="og:image" content="https://ikwe.ai/og/contact.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://ikwe.ai/og/contact.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --fs-display: clamp(2.2rem, 4.5vw, 3.2rem);
-      --fs-h2: clamp(1.6rem, 3vw, 2.3rem);
-      --fs-h3: 1.2rem;
-      --fs-lead: 1.05rem;
-      --fs-body: .95rem;
-      --fs-small: .85rem;
-      --fs-label: .75rem;
-      --ls-label: .1em;
-      --lav-deep: #3C3489;
-      --rule: #EEEEF2;
-      --navy:   #191A2E;
-      --coral:  #F7A192;
-      --lav:    #B894F6;
-      --cream:  #F6D993;
-      --teal:   #0F6E56;
-      --teal-light: #E1F5EE;
-      --teal-mid:   #5DCAA5;
-      --gray-soft:  #F7F6F2;
-      --white: #FFFFFF;
-      --text:  #191A2E;
-      --text-muted: #5a5a6e;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.7; color: var(--text); background: var(--white); }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..500&display=swap">
+<style>
+:root{
+ --ink:#191A2E;--ink-2:#20223A;--off:#F8F5F0;--white:#fff;
+ --teal:#0F6E56;--teal-soft:#5DCAA5;--teal-light:#E1F5EE;--coral:#F7A192;--coral-d:#a8422f;--cream:#F6D993;--lav:#B894F6;
+ --mute:#5c5d72;--rule:rgba(25,26,46,.09);
+ --serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--off);color:var(--ink);font-family:var(--sans);line-height:1.65;font-size:17px}
+section{padding:64px 0;border-bottom:1px solid var(--rule);scroll-margin-top:72px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.narrow{max-width:880px;margin:0 auto;padding:0 28px}
+.kick{font-family:var(--mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;margin-bottom:14px;color:var(--teal)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(27px,3.6vw,36px);line-height:1.16;margin-bottom:14px}
+h3{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.2;margin-bottom:6px}
+p{margin-bottom:14px;color:#3a3b50;max-width:76ch}
+p.lead{font-size:18.5px;color:var(--ink)}
+.hand{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--teal);margin-top:26px}
+.hand::after{content:" ↓"}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 18px;z-index:2000;border-radius:0 0 8px 0}
+.skip:focus{left:0}
 
-    nav { position: sticky; top: 0; z-index: 1000; background: var(--navy); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
-    .nav-brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
-    .nav-logo-circle { width: 26px; height: 26px; border-radius: 50%; background: conic-gradient(#1D1F35 0deg 90deg, var(--coral) 90deg 180deg, var(--lav) 180deg 270deg, var(--cream) 270deg 360deg); flex-shrink: 0; }
-    .nav-brand-name { font-family: 'DM Serif Display', serif; font-size: var(--fs-h3); color: var(--white); letter-spacing: .02em; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: var(--fs-small); font-weight: 400; transition: color .2s; }
-    .nav-links a:hover { color: var(--coral); }
-    .nav-links a.active { color: var(--white); }
-    .nav-cta { background: var(--coral); color: var(--navy); font-weight: 500; font-size: var(--fs-small); padding: .5rem 1.25rem; border-radius: 6px; text-decoration: none; transition: opacity .2s; }
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .75rem; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; background: transparent; border: none; z-index: 200; }
-    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: all .25s; }
-    .nav-mobile-menu { display: none; }
-    @media (max-width: 900px) {
-      .nav-links, .nav-cta { display: none; }
-      .nav-hamburger { display: flex; }
-      .nav-mobile-menu.open { display: flex; position: fixed; top: 60px; left: 0; right: 0; background: var(--navy); padding: 1.5rem 2rem 2rem; flex-direction: column; z-index: 999; border-top: 1px solid rgba(255,255,255,.1); }
-      .nav-mobile-menu a { color: rgba(255,255,255,.75); text-decoration: none; font-size: 1rem; padding: .9rem 0; border-bottom: 1px solid rgba(255,255,255,.07); }
-      .nav-mobile-menu a:last-child { border-bottom: none; }
-      .nav-mobile-menu a.m-cta { color: var(--coral); font-weight: 700; }
-    }
+/* reveal */
+@media (prefers-reduced-motion: no-preference){
+ .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+ .rv.in{opacity:1;transform:none}
+}
 
-    section { padding: 4rem 2rem; }
-    .container-narrow { max-width: 680px; margin: 0 auto; }
-    h1, h2, h3 { font-family: 'DM Serif Display', serif; line-height: 1.2; }
-    h1 { font-size: clamp(2rem, 4.5vw, 2.9rem); }
-    .eyebrow { display: inline-block; font-size: var(--fs-label); font-weight: 500; letter-spacing: var(--ls-label); text-transform: uppercase; margin-bottom: 1rem; color: var(--teal-mid); }
-    .lead { font-size: var(--fs-lead); color: var(--text-muted); line-height: 1.75; margin-top: .75rem; }
+/* nav */
+nav{position:sticky;top:0;z-index:1000;background:var(--ink);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.nav-logo-circle{width:26px;height:26px;border-radius:50%;background:conic-gradient(#1D1F35 0deg 90deg,var(--coral) 90deg 180deg,var(--lav) 180deg 270deg,var(--cream) 270deg 360deg);flex-shrink:0}
+.nav-brand-name{font-family:var(--serif);font-size:1.2rem;color:#fff;letter-spacing:.02em}
+.nav-links{display:flex;gap:1.6rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.78);text-decoration:none;font-size:.85rem}
+.nav-links a:hover{color:var(--coral)}
+.nav-links a.active{color:#fff}
+.nav-cta{background:var(--coral);color:var(--ink);font-weight:500;font-size:.85rem;padding:.5rem 1.25rem;border-radius:6px;text-decoration:none}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.75rem;min-width:44px;min-height:44px;justify-content:center;align-items:center;background:transparent;border:none}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.nav-mobile-menu{display:none}
+@media(max-width:960px){
+ .nav-links,.nav-cta{display:none}
+ .nav-hamburger{display:flex}
+ .nav-mobile-menu.open{display:flex;position:fixed;top:60px;left:0;right:0;background:var(--ink);padding:1.5rem 28px 2rem;flex-direction:column;z-index:999;border-top:1px solid rgba(255,255,255,.1)}
+ .nav-mobile-menu a{color:rgba(255,255,255,.85);text-decoration:none;font-size:1rem;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
+ .nav-mobile-menu a:last-child{border-bottom:none}
+ .nav-mobile-menu a.m-cta{color:var(--coral);font-weight:700}
+}
 
-    .page-head { background: var(--navy); color: var(--white); padding: 4.5rem 2rem 4rem; }
-    .page-head h1 { color: var(--white); }
-    .page-head .lead { color: rgba(255,255,255,.72); max-width: 560px; }
+/* page head */
+header.hero{background:var(--ink);color:#fff;padding:60px 0 52px;position:relative;overflow:hidden;scroll-margin-top:72px}
+header.hero::before{content:'';position:absolute;right:-140px;top:-180px;width:440px;height:440px;border-radius:50%;background:rgba(93,202,165,.12)}
+header.hero::after{content:'';position:absolute;left:-130px;bottom:-210px;width:380px;height:380px;border-radius:50%;background:rgba(240,164,76,.10)}
+header.hero .inner{position:relative;z-index:1}
+header.hero .kick{color:var(--teal-soft)}
+header.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.2vw,46px);line-height:1.12;margin-bottom:14px}
+header.hero p.lead{color:#d8d9e4;max-width:60ch}
 
-    /* form */
-    form { margin-top: 1rem; }
-    .f-row { margin-bottom: 1.4rem; }
-    .f-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-    @media (max-width: 640px) { .f-2col { grid-template-columns: 1fr; } }
-    label { display: block; font-size: var(--fs-small); font-weight: 600; color: var(--navy); margin-bottom: .4rem; }
-    label .opt { font-weight: 400; color: var(--text-muted); }
-    input[type="text"], input[type="email"], textarea, select {
-      width: 100%; padding: .7rem .9rem; font-family: 'DM Sans', sans-serif; font-size: var(--fs-body);
-      color: var(--text); background: var(--white); border: 1.5px solid #8f8f9c; border-radius: 8px; transition: border-color .2s;
-    }
-    input:focus, textarea:focus, select:focus { outline: none; border-color: var(--teal-mid); }
-    textarea { min-height: 130px; resize: vertical; }
+/* clock strip */
+.clockstrip{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:22px 0 4px}
+.cnode{background:var(--white);border:1px solid var(--rule);border-radius:12px;padding:14px 16px;border-top:4px solid var(--teal)}
+.cnode.c2{border-top-color:var(--cream)}
+.cnode.c3{border-top-color:var(--coral)}
+.cnode .t{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
+.cnode .d{font-size:14px;color:var(--ink);font-weight:700}
+.cnode .s{font-size:12.5px;color:var(--mute);margin-top:3px}
 
-    /* interest cards */
-    .interest-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .75rem; }
-    @media (max-width: 640px) { .interest-grid { grid-template-columns: 1fr; } }
-    .interest-grid input[type="radio"] { position: absolute; opacity: 0; }
-    .interest-card { display: block; border: 1.5px solid #8f8f9c; border-radius: 10px; padding: .9rem 1rem; cursor: pointer; transition: border-color .2s, background .2s; }
-    .interest-card strong { display: block; font-size: var(--fs-body); font-weight: 600; color: var(--navy); margin-bottom: .15rem; }
-    .interest-card span { font-size: var(--fs-label); color: var(--text-muted); line-height: 1.45; display: block; }
-    .interest-grid input[type="radio"]:checked + .interest-card { border-color: var(--teal); background: var(--teal-light); }
-    .interest-grid input[type="radio"]:focus-visible + .interest-card { outline: 2px solid var(--teal-mid); outline-offset: 2px; }
+/* form */
+.formwrap{background:var(--white);border-radius:16px;padding:28px 26px;box-shadow:0 4px 18px rgba(25,26,46,.08);margin-top:24px}
+.f-row{margin-bottom:15px}
+.f-2col{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+label .opt{text-transform:none;letter-spacing:.04em;color:var(--mute)}
+input[type=text],input[type=email],textarea,select{width:100%;padding:11px 13px;border:1px solid #8f8f9c;border-radius:9px;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--off)}
+textarea{min-height:110px;resize:vertical}
+.form-note{font-size:13px;color:var(--mute);margin:12px 0 0}
+.form-status{display:none;margin-top:14px;padding:14px 16px;border-radius:10px;font-size:14.5px}
+.form-status.ok{display:block;background:var(--teal-light);color:var(--teal);border:1px solid rgba(15,110,86,.2)}
+.form-status.err{display:block;background:#FCEBEB;color:#791F1F;border:1px solid rgba(226,75,74,.25)}
+.btn{display:inline-block;padding:13px 26px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer;border:none;font-family:var(--sans)}
+.btn-dark{background:var(--ink);color:#fff}
 
-    .btn { display: inline-block; padding: .8rem 2rem; border-radius: 8px; font-weight: 500; font-size: var(--fs-body); text-decoration: none; cursor: pointer; border: none; transition: opacity .2s, transform .15s; font-family: 'DM Sans', sans-serif; }
-    .btn:hover { opacity: .88; transform: translateY(-1px); }
-    .btn-dark { background: var(--navy); color: var(--white); }
-    .form-note { font-size: var(--fs-small); color: var(--text-muted); margin-top: 1rem; }
-    .form-status { display: none; margin-top: 1.25rem; padding: 1rem 1.25rem; border-radius: 10px; font-size: var(--fs-body); }
-    .form-status.ok { display: block; background: var(--teal-light); color: var(--teal); border: 1px solid rgba(15,110,86,.2); }
-    .form-status.err { display: block; background: #FCEBEB; color: #791F1F; border: 1px solid rgba(226,75,74,.25); }
+/* interest cards */
+.interest-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.interest-grid input[type=radio]{position:absolute;opacity:0}
+.interest-card{display:block;border:1.5px solid #8f8f9c;border-radius:10px;padding:13px 14px;cursor:pointer;text-transform:none;letter-spacing:0}
+.interest-card strong{display:block;font-family:var(--sans);font-size:15px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.interest-card span{display:block;font-family:var(--sans);font-size:12.5px;color:var(--mute);line-height:1.45}
+.interest-grid input[type=radio]:checked + .interest-card{border-color:var(--teal);background:var(--teal-light)}
+.interest-grid input[type=radio]:focus-visible + .interest-card{outline:3px solid var(--teal);outline-offset:2px}
+@media(max-width:640px){.interest-grid{grid-template-columns:1fr}}
+@media(max-width:860px){.f-2col{grid-template-columns:1fr}section{padding:52px 0}}
 
-    footer { background: #0f1020; color: #a9aabc; padding: 2.5rem 2rem; font-size: var(--fs-small); }
-    .foot-inner { max-width: 720px; margin: 0 auto; }
-    .foot-l strong { color: #c5c6d4; }
-    footer a { color: #c5c6d4; text-decoration: none; }
-    .sitemap { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap: 22px; margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.1); }
-    .sitemap a { display: block; font-size: .9rem; padding: 5px 0; }
-    .sitemap a:hover { color: var(--coral); }
-    .sm-h { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: #a9aabc; margin-bottom: .5rem; }
-    .skip { position: absolute; left: -9999px; top: 0; background: var(--navy); color: #fff; padding: 10px 18px; z-index: 2000; border-radius: 0 0 8px 0; }
-    .skip:focus { left: 0; }
-    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
-  </style>
+footer{background:var(--ink);color:#a9aabc;padding:64px 0}
+footer .end{font-family:var(--serif);font-size:clamp(26px,4vw,38px);color:#fff;line-height:1.14;margin-bottom:18px}
+footer p{color:#d8d9e4}
+footer .contact{margin-top:22px;font-size:14px;color:#c5c6d4}
+footer .contact b{color:#fff}
+footer .motif{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#a9aabc}
+footer a{color:#c5c6d4}
+.sitemap{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px;margin-top:30px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1)}
+.sitemap a{display:block;font-size:14.5px;text-decoration:none;padding:5px 0}
+.sitemap a:hover{color:var(--coral)}
+.sm-h{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#a9aabc;margin-bottom:8px}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<nav>
+<nav aria-label="Main">
   <a class="nav-brand" href="/">
-    <span class="nav-logo-circle"></span>
+    <span class="nav-logo-circle" aria-hidden="true"></span>
     <span class="nav-brand-name">ikwe.ai</span>
   </a>
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
-    <li><a href="/work-with-us">Work with us</a></li>
-    <li><a href="/eqsb">The EQ Safety Benchmark</a></li>
-    <li><a href="/research">Research</a></li>
     <li><a href="/contact" class="active">Contact</a></li>
   </ul>
   <a class="nav-cta" href="/contact">Get in touch</a>
@@ -145,36 +147,57 @@
   </button>
   <div class="nav-mobile-menu">
     <a href="/">Home</a>
-    <a href="/work-with-us">Work with us</a>
-    <a href="/eqsb">The EQ Safety Benchmark</a>
-    <a href="/research">Research</a>
-    <a href="/contact">Contact</a>
+    <a href="/contact" class="active">Contact</a>
     <a href="/contact" class="m-cta">Get in touch</a>
   </div>
 </nav>
 
-<main id="main">
-
-<header class="page-head">
-  <div class="container-narrow">
-    <span class="eyebrow">Contact</span>
+<header class="hero">
+  <div class="wrap inner">
+    <div class="kick">Contact</div>
     <h1>Start the conversation.</h1>
     <p class="lead">Tell us who you are and what you are working on. We reply within two business days.</p>
   </div>
 </header>
 
-<section>
-  <div class="container-narrow">
+<main id="main">
+
+<section id="next">
+  <div class="narrow">
+    <div class="rv">
+    <div class="kick">What happens next</div>
+    <div class="clockstrip">
+      <div class="cnode"><div class="t">When you send</div><div class="d">A person, not a queue</div><div class="s">Every note goes to a person. Nothing here is automated triage.</div></div>
+      <div class="cnode"><div class="t">Within two business days</div><div class="d">You get a reply</div><div class="s">From us, about what you sent and what makes sense next.</div></div>
+      <div class="cnode c2"><div class="t">If an Assessment is next</div><div class="d">Scope agreed in writing</div><div class="s">Scope and timing are agreed in writing before anything starts.</div></div>
+      <div class="cnode c3"><div class="t">Before anything runs</div><div class="d">Nothing connects until sign-off</div><div class="s">Nothing connects to your system until you have signed off on what is being scored.</div></div>
+    </div>
+    <p class="hand">The note itself, below</p>
+    </div>
+  </div>
+</section>
+
+<section id="form">
+  <div class="narrow">
+    <div class="formwrap rv">
     <form id="contact-form">
       <div class="f-row">
         <label>I am interested in</label>
         <div class="interest-grid">
           <input type="radio" name="interest" id="int-conv" value="A conversation" checked>
           <label class="interest-card" for="int-conv"><strong>A conversation</strong><span>Tell us what you are building or carrying, and we will talk it through.</span></label>
-          <input type="radio" name="interest" id="int-scan" value="An Assessment">
-          <label class="interest-card" for="int-scan"><strong>An Assessment</strong><span>The diagnostic. A first look at how your system behaves on our standard scenario set.</span></label>
+          <input type="radio" name="interest" id="int-assessment" value="An Assessment">
+          <label class="interest-card" for="int-assessment"><strong>An Assessment</strong><span>A first look at how your system behaves on our standard scenario set, scored and on the record.</span></label>
+          <input type="radio" name="interest" id="int-audit" value="An Audit">
+          <label class="interest-card" for="int-audit"><strong>An Audit</strong><span>The same standard, scoped to the question you have to answer, written up for whoever is asking.</span></label>
+          <input type="radio" name="interest" id="int-monitor" value="Monitoring">
+          <label class="interest-card" for="int-monitor"><strong>Monitoring</strong><span>Continuous scoring of your live, anonymized traffic, with a dashboard and check-ins.</span></label>
+          <input type="radio" name="interest" id="int-report" value="The full sample report">
+          <label class="interest-card" for="int-report"><strong>The full sample report</strong><span>A fully worked example of an Ikwe scored report, clearly labeled illustrative.</span></label>
+          <input type="radio" name="interest" id="int-diligence" value="Diligence on a company we are evaluating">
+          <label class="interest-card" for="int-diligence"><strong>Diligence</strong><span>For investors, insurers and buyers weighing a system they did not build.</span></label>
           <input type="radio" name="interest" id="int-materials" value="Access to materials">
-          <label class="interest-card" for="int-materials"><strong>Access to materials</strong><span>Our overview, methodology summary, and research materials, on request.</span></label>
+          <label class="interest-card" for="int-materials"><strong>Access to research materials</strong><span>Our overview, methodology summary, and research materials, on request.</span></label>
         </div>
       </div>
       <div class="f-2col">
@@ -205,14 +228,17 @@
       <p class="form-note">Prefer email? Write to <a href="mailto:hello@ikwe.ai" style="color: var(--teal)">hello@ikwe.ai</a>.</p>
       <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
     </form>
+    </div>
   </div>
 </section>
 
 </main>
 
 <footer>
-  <div class="foot-inner">
-    <div class="foot-l"><strong>ikwe.ai</strong> · Des Moines, Iowa · Evidence-based behavioral safety measurement</div>
+  <div class="narrow">
+    <div class="end">AI that helps people is worth keeping.<br>Measurement is how we keep it.</div>
+    <p style="max-width:720px">Ikwe.ai is an Iowa-based, woman-founded company. Ikwe owns the EQ Safety Benchmark, the patent-pending method behind everything on this page. Independent by design: no financial tie to any AI we measure, no financial interest in the result, and we never fix what we score.</p>
+    <div class="contact"><b>Stephanie Stranko</b> · Founder &amp; CEO &nbsp;·&nbsp; <a href="mailto:hello@ikwe.ai">hello@ikwe.ai</a> · ikwe.ai</div>
     <div class="sitemap">
       <div>
         <div class="sm-h">The work</div>
@@ -232,6 +258,10 @@
         <a href="/terms">Terms</a>
         <a href="/research-access-terms">Research access terms</a>
       </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;margin-top:30px;flex-wrap:wrap">
+      <svg viewBox="0 0 100 100" style="width:26px;height:26px;display:block" role="img" aria-label="Ikwe logo"><path d="M50,50 L50,2 A48,48 0 0,0 2,50 Z" fill="#2E3050"/><path d="M50,50 L98,50 A48,48 0 0,0 50,2 Z" fill="#F7A192"/><path d="M50,50 L50,98 A48,48 0 0,0 98,50 Z" fill="#F6D993"/><path d="M50,50 L2,50 A48,48 0 0,0 50,98 Z" fill="#B894F6"/></svg>
+      <span class="motif">ikwe.ai · Des Moines, Iowa · Evidence-based behavioral safety measurement</span>
     </div>
   </div>
 </footer>
@@ -296,6 +326,13 @@
     document.addEventListener('click', function(ev){
       if (menu.classList.contains('open') && !menu.contains(ev.target) && !burger.contains(ev.target)) closeMenu();
     });
+  })();
+  (function(){
+    if (!('IntersectionObserver' in window)) { document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
   })();
 </script>
 
