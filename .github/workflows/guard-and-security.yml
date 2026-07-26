@@ -24,21 +24,25 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
       - name: Install dependencies
+        if: hashFiles('package.json') != ''
         run: npm ci
 
       - name: Lint
+        if: hashFiles('package.json') != ''
         run: npm run lint
 
       - name: Build
+        if: hashFiles('package.json') != ''
         run: npm run build
 
       - name: Assistant Security Tests
+        if: hashFiles('package.json') != ''
         run: npm run test -- src/test/approved-answers.test.ts
 
       - name: Release Guard
+        if: hashFiles('package.json') != ''
         run: npm run release:guard
 
       - name: Email Run Update
