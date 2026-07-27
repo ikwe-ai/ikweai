@@ -124,6 +124,13 @@ footer a{color:#c5c6d4}
  section{padding:56px 0}
 }
 </style>
+<script>
+/* Clean URLs: GitHub Pages serves /page from page.html but does not redirect
+   /page.html, so rewrite the address bar to the canonical extensionless path. */
+(function(){var p=location.pathname,q=location.search+location.hash;
+if(p==='/index.html'){history.replaceState(null,'','/'+q);}
+else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>

@@ -70,3 +70,8 @@ _local-archive/
 # Orphaned build-copy folder removed from the deploy (Jul 15, 2026) — publish dir is repo root
 public/
 _to_delete/
+
+# Netlify leftovers: ikwe.ai is on GitHub Pages, which never reads these.
+# Kept locally for reference, not deployed.
+_redirects
+_headers
