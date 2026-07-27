@@ -126,12 +126,10 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       <ul class="materials">
         <li class="mat"><input type="checkbox" name="materials" value="Sample report (full)" id="m0" /><label for="m0" style="margin:0;"><span class="t">Sample report (full)</span><br><span class="d">The full sample scored report, anonymized and representative.</span></label></li>
         <li class="mat"><input type="checkbox" name="materials" value="One-pager" id="m1" /><label for="m1" style="margin:0;"><span class="t">One-pager</span><br><span class="d">What Ikwe does, the proof, who it is for, in a single page.</span></label></li>
-        <li class="mat"><input type="checkbox" name="materials" value="Investor sheet" id="m2" /><label for="m2" style="margin:0;"><span class="t">Investor sheet</span><br><span class="d">Category, moat, evidence, and model. Shared under agreement.</span></label></li>
-        <li class="mat"><input type="checkbox" name="materials" value="Pitch deck" id="m6" /><label for="m6" style="margin:0;"><span class="t">Pitch deck</span><br><span class="d">The full Ikwe.ai pitch. Confidential.</span></label></li>
         <li class="mat"><input type="checkbox" name="materials" value="Research findings" id="m3" /><label for="m3" style="margin:0;"><span class="t">Research findings</span><br><span class="d">EQ Safety Benchmark study summaries and methodology overview.</span></label></li>
-        <li class="mat"><input type="checkbox" name="materials" value="Open roles" id="m4" /><label for="m4" style="margin:0;"><span class="t">Open roles</span><br><span class="d">Founding role descriptions.</span></label></li>
+        <li class="mat"><input type="checkbox" name="materials" value="Careers" id="m4" /><label for="m4" style="margin:0;"><span class="t">Careers</span><br><span class="d">Current openings at Ikwe.</span></label></li>
         <li class="mat"><input type="checkbox" name="materials" value="An Assessment or product demo" id="m5" /><label for="m5" style="margin:0;"><span class="t">An Assessment or product demo</span><br><span class="d">See the EQ Safety Benchmark in action on your system.</span></label></li>
-        <li class="mat"><input type="checkbox" name="materials" value="Diligence on a company we are evaluating" id="m7" /><label for="m7" style="margin:0;"><span class="t">Diligence on a company we are evaluating</span><br><span class="d">An independent measurement of a system you are evaluating, buying, or backing.</span></label></li>
+        <li class="mat"><input type="checkbox" name="materials" value="Diligence on a system I did not build" id="m7" /><label for="m7" style="margin:0;"><span class="t">Diligence on a system I did not build</span><br><span class="d">An independent measurement of a system you are evaluating, buying, or backing.</span></label></li>
       </ul>
 
       <div class="lock"><strong>How this works.</strong> You request access here. We review who you are, then send the materials or a private link directly. Files are never posted with public download links.</div>
@@ -152,7 +150,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <option>Insurer</option>
         <option>Researcher / clinician</option>
         <option>Partner</option>
-        <option>Candidate (hiring)</option>
+        <option>Prospective team member</option>
         <option>Press</option>
         <option>Other</option>
       </select>
@@ -205,7 +203,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
   // Source + optional pre-selection from ?src= (e.g. /access?src=pitch)
   var params = new URLSearchParams(location.search);
   var src = (params.get('src') || 'request-access').toLowerCase();
-  var preselect = { pitch:'m6', research:'m3', investor:'m2', onepager:'m1', roles:'m4', scan:'m5', assessment:'m5', sample:'m0', report:'m0', diligence:'m7' };
+  var preselect = { research:'m3', onepager:'m1', assessment:'m5', sample:'m0', report:'m0', diligence:'m7' };
   if (preselect[src]) { var cb=document.getElementById(preselect[src]); if(cb) cb.checked=true; }
 
   var form=document.getElementById('access-form');
