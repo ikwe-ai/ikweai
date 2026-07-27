@@ -115,7 +115,7 @@ header.hero p.tag{font-size:18px;color:var(--cream);font-family:var(--serif);fon
 
 /* standard-and-check table */
 .stdtable{margin:24px 0 0;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(25,26,46,.08)}
-.stdrow{display:grid;grid-template-columns:1fr 1.4fr .8fr;background:var(--white)}
+.stdrow{display:grid;grid-template-columns:1fr 1.3fr 1.05fr;background:var(--white)}
 .stdrow>div{padding:16px 20px;border-bottom:1px solid var(--rule);font-size:14px}
 .stdrow.head>div{background:var(--ink);color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:11px 20px;border:0}
 .stdrow .role b{display:block;font-size:15.5px;margin-bottom:2px}
@@ -124,9 +124,9 @@ header.hero p.tag{font-size:18px;color:var(--cream);font-family:var(--serif);fon
 .stdrow .bar{color:var(--teal);background:rgba(15,110,86,.06)}
 .stdrow.hot>div{background:#fff6f4;border-bottom:0}
 .stdrow .tonight{display:block;margin-top:6px;font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--coral-d)}
-.stdrow .none{font-family:var(--serif);font-size:19px;color:#9a9bb0}
+.stdrow .ai b{display:block;font-family:var(--serif);font-weight:400;font-size:15.5px;color:var(--ink);margin-bottom:3px}
 .stdrow.hot .ai{background:rgba(247,161,146,.16)}
-.stdrow.hot .none{color:var(--coral-d);font-style:italic}
+.stdrow.hot .ai b{color:var(--coral-d);font-style:italic;font-size:16.5px}
 .cellhead{display:none;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
 @media(max-width:860px){.stdrow{grid-template-columns:1fr}.stdrow.head{display:none}.cellhead{display:block}}
 
@@ -326,35 +326,37 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <div class="rv">
     <div class="kick" style="color:var(--gold-d)">Nobody has been checking</div>
     <h2>The standard already exists. It was just never applied to the machine.</h2>
+    <p class="lead">Not only in mental health apps. In tutoring bots, workplace assistants, HR chatbots, patient-facing triage: anywhere a person brings something heavy to a machine because a person was not there.</p>
     </div>
     <div class="stdtable rv">
-      <div class="stdrow head"><div>The job</div><div>What the standard requires</div><div>What the AI is held to</div></div>
+      <div class="stdrow head"><div>The job</div><div>What the standard requires</div><div>What holds it to that today</div></div>
       <div class="stdrow">
         <div class="role"><span class="cellhead">The job</span><b>The therapist</b><span>Licensing board, duty of care</span><span class="tonight">Tonight: therapy and wellness chatbots</span></div>
         <div class="bar"><span class="cellhead">What the standard requires</span>Help, never harm. Hold the frame. Hand off when it is beyond you.</div>
-        <div class="ai"><span class="cellhead">What the AI is held to</span><span class="none">Nothing</span></div>
+        <div class="ai"><span class="cellhead">What holds it to that today</span><b>Terms of service</b>A content filter, and the company's own testing.</div>
       </div>
       <div class="stdrow">
         <div class="role"><span class="cellhead">The job</span><b>The nurse</b><span>The clinical standard of care</span><span class="tonight">Tonight: symptom checkers and triage bots</span></div>
         <div class="bar"><span class="cellhead">What the standard requires</span>Steady the person before solving anything. Never treat fear as fact.</div>
-        <div class="ai"><span class="cellhead">What the AI is held to</span><span class="none">Nothing</span></div>
+        <div class="ai"><span class="cellhead">What holds it to that today</span><b>A disclaimer</b>This is not medical advice. Consult a professional.</div>
       </div>
       <div class="stdrow">
         <div class="role"><span class="cellhead">The job</span><b>The teacher, the coach</b><span>Certification, mandatory reporting</span><span class="tonight">Tonight: tutoring bots and AI coaches</span></div>
         <div class="bar"><span class="cellhead">What the standard requires</span>Keep the decision with the person. Report what has to be reported.</div>
-        <div class="ai"><span class="cellhead">What the AI is held to</span><span class="none">Nothing</span></div>
+        <div class="ai"><span class="cellhead">What holds it to that today</span><b>Platform policy</b>And whatever the school or the employer negotiated.</div>
       </div>
       <div class="stdrow">
         <div class="role"><span class="cellhead">The job</span><b>The crisis counselor</b><span>Training, protocols, supervision</span><span class="tonight">Tonight: the companion AI at 2 a.m.</span></div>
         <div class="bar"><span class="cellhead">What the standard requires</span>Listen more than you talk. Break the spiral. Get a human in.</div>
-        <div class="ai"><span class="cellhead">What the AI is held to</span><span class="none">Nothing</span></div>
+        <div class="ai"><span class="cellhead">What holds it to that today</span><b>A keyword list</b>And a hotline number, once it trips.</div>
       </div>
       <div class="stdrow hot">
         <div class="role"><span class="cellhead">The job</span><b>One system, all four jobs</b><span>Deployed at scale, updated constantly, re-checked rarely</span></div>
         <div class="bar"><span class="cellhead">What the standard requires</span>The same bar. It does not change because the listener is a machine.</div>
-        <div class="ai"><span class="cellhead">What the AI is held to</span><span class="none">Nobody is checking</span></div>
+        <div class="ai"><span class="cellhead">What holds it to that today</span><b>A regulator, an insurer, or a court</b>Increasingly. All of them after the fact.</div>
       </div>
     </div>
+    <p class="pull rv">Every one of those is a promise, a filter, or a consequence after the fact. Not one of them checks what the system actually did in the conversation.</p>
     <p class="rv" style="max-width:78ch;margin-top:22px">Nobody meant for this. The pull toward keeping someone talking is inherited from the models underneath, and the best intentions at the app layer do not remove it. Harm does not need anyone to intend it. It only needs nobody to be checking.</p>
     <div class="split rv" role="img" aria-label="Clinicians know what helps; engineers know how to check; the harm lives in between, and Ikwe measures across that gap.">
       <div class="sfield"><h3>Clinicians know what helps</h3><p>Six disciplines settled what good care looks like. They cannot read a million conversations.</p></div>
