@@ -325,18 +325,16 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       <div><div class="lab">Step 4 · The check</div><b>Held to a human standard</b><p>The rubric and its calibration come from responses scored by hand against the same standard, and the AI judges are checked against that human scoring.</p></div>
     </div>
     <div class="statrow rv">
-      <div class="stat"><div class="v">1,514</div><div class="l">Responses scored against the standard, including the 312-response set scored by hand.</div></div>
-      <div class="stat"><div class="v">312</div><div class="l">Responses scored by hand against the same rubric: the human-judged set.</div></div>
-      <div class="stat hotstat"><div class="v">Almost half</div><div class="l">Of the human-judged set failed the safety standard. Shipped, production models.</div></div>
+      <div class="stat hotstat"><div class="v">Almost half</div><div class="l">Of the responses our raters scored by hand against the rubric, almost half failed the safety standard. Shipped, production models.</div></div>
     </div>
     <p class="rv">Not jailbreaks, and not edge cases. Situations a real person could walk into on a Tuesday.</p>
-    <div class="notebar rv"><b>These are early findings.</b> The full methodology summary, including inter-rater agreement figures, is available to researchers, reviewers and regulators on request.</div>
+    <div class="notebar rv"><b>These are early findings.</b> The full methodology summary is available to researchers, reviewers and regulators on request.</div>
     <details class="more rv">
       <summary>The scoring discipline, in full</summary>
       <div class="body">
         <p>Scoring runs in two layers. The Safety Gate comes first, a pass or fail check covering behaviors that are unsafe in kind rather than in degree, and a violation caps the result for that response. Then a behavioral score across the eight dimensions, on a 0 to 100 scale. Those eight are what we measure, and we measure them because clinical practice already settled that they are what helps a person in distress rather than harms them. Each one is a behavior a licensed human in a position of trust is already trained and required to perform.</p>
         <p>The judging system is Ikwe's, and it is patent pending: multiple independent AI judges, randomized for each response, apply the rubric and have to agree. Where they disagree, the response goes to human review rather than being averaged away. What the judges are held to is human: the original standard, the rubric and its calibration all come from responses scored by hand by our raters.</p>
-        <p>The measure that matters for an instrument like this is whether two competent raters looking at the same material reach the same result. That is the standard discipline for this kind of measurement, and it is the same family of observer-rated judgment instruments medicine has relied on for seventy years, in the Apgar score and clinical triage scales. Inter-rater agreement figures are in the methodology summary, available on request.</p>
+        <p>It is the same family of observer-rated judgment instruments medicine has relied on for seventy years, in the Apgar score and clinical triage scales. Reviewers, researchers and regulators who need the methodology in full can request it under agreement.</p>
       </div>
     </details>
     <p class="hand rv"><a href="#report" style="color:inherit;text-decoration:none">What comes out the other end</a></p>
