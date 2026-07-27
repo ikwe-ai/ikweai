@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ikwe.ai · Evidence-based behavioral safety measurement for AI</title>
-<meta name="description" content="Ikwe owns the EQ Safety Benchmark, an evidence-based method for measuring behavioral safety across a whole conversation. Assessment, Audit and Monitoring.">
+<meta name="description" content="Ikwe owns the EQ Safety Benchmark, an evidence-based method for measuring behavioral safety across a whole conversation. An Audit looks back once. Monitoring runs continuously. Both start with an Assessment.">
 <link rel="canonical" href="https://ikwe.ai/">
 <meta property="og:site_name" content="Ikwe.ai">
 <meta property="og:type" content="website">
@@ -111,6 +111,7 @@ header.hero p.tag{font-size:18px;color:var(--cream);font-family:var(--serif);fon
 .vig-arc{padding:8px 16px 14px;border-top:1px solid #2e3050}
 .vig-arc .lab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#8d8ea2;margin-bottom:6px}
 .vig-arc svg{display:block;width:100%;height:44px}
+.vig-cap span{display:block;font-family:var(--sans);font-style:normal;font-size:13.5px;color:#c9cad8;margin-top:7px}
 .vig-cap{padding:12px 16px;background:rgba(247,161,146,.10);border-top:1px solid #2e3050;font-family:var(--serif);font-style:italic;font-size:16.5px;color:var(--cream)}
 
 /* standard-and-check table */
@@ -287,16 +288,11 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
 <header class="hero">
   <div class="wrap inner">
     <div>
-      <div class="kick">The moment</div>
-      <h1>Measurement that protects the person in the conversation, and the company that built it.</h1>
+            <h1>Measurement that protects the person in the conversation, and the company that built it.</h1>
       <p class="tag">People confide in AI. They lean on it in the gaps between the people in their lives, and they trust it to leave them better off than it found them. Everyone else who holds that kind of trust answers to someone. The AI answers to no one.</p>
       <div class="btns">
         <a class="btn primary" href="/contact">Start with an Assessment</a>
         <a class="btn ghost" href="/sample-report">See what a report looks like</a>
-      </div>
-      <div class="proofline" aria-label="At a glance">
-        <span><b>1,514</b> responses scored to date</span>
-        <span>Companion-AI laws in force in <b>3</b> states, <b>9</b> more by mid-2027</span>
       </div>
     </div>
     <div class="vig" role="img" aria-label="Illustrative chat at 2:14 a.m.: each AI reply passes a content filter while the person's state declines across the conversation. Every message passed. The conversation failed.">
@@ -313,7 +309,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <div class="lab">The person's state, across the conversation</div>
         <svg viewBox="0 0 300 44" preserveAspectRatio="none"><path d="M4,10 C60,12 90,16 140,24 C200,33 250,38 296,40" fill="none" stroke="#F7A192" stroke-width="2.5" stroke-linecap="round"/><circle cx="4" cy="10" r="3" fill="#5DCAA5"/><circle cx="296" cy="40" r="3" fill="#F7A192"/></svg>
       </div>
-      <div class="vig-cap">Every message passed. The conversation failed.</div>
+      <div class="vig-cap">Every message passed. The conversation failed.<span>It could have helped her. It deepened the spiral instead.</span></div>
     </div>
   </div>
   <div class="wrap" style="position:relative;z-index:1"><p class="hand" style="color:var(--teal-soft)"><a href="#check" style="color:inherit;text-decoration:none">So who has been checking?</a></p></div>
@@ -400,7 +396,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       <span class="dimname">Safety Routing</span>
     </div>
     <details class="more rv">
-      <summary>What each of the eight means, where they come from, and how they are scored</summary>
+      <summary>What each one means</summary>
       <div class="body">
         <p style="margin-bottom:12px">The eight are combined into one weighted result. Weighting varies by audit context and is proprietary.</p>
       <div class="chipgrid">
@@ -424,8 +420,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <li>We describe the standard. You decide what to change.</li>
         <li>You own every record we produce, and nothing is published or shared without you.</li>
       </ul></div>
-    <p class="rv" style="font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;color:#b9bac9;margin-top:22px">SIXTEEN CRISIS CATEGORIES · EIGHT DIMENSIONS · DISAGREEMENT ESCALATES, NEVER AVERAGED</p>
-    <p class="pull rv">Ikwe does not score whether a response was acceptable. Ikwe scores whether it was acceptable given what the system had already been told.</p>
+    <p class="pull rv">The same words can be right in one conversation and wrong in the next. What decides it is everything that came before.</p>
     <p class="hand rv"><a href="#findings" style="color:inherit;text-decoration:none">And when Ikwe ran it against today's models</a></p>
   </div>
 </section>
@@ -433,13 +428,11 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
 <section id="findings">
   <div class="wrap">
     <div class="rv">
-    <div class="kick" style="color:var(--coral-d)">What we found</div>
+    <div class="kick" style="color:var(--coral-d)">How the harm happens</div>
     <h2>The failures do not look like failures.</h2>
     <p class="lead">No jailbreak. No bad actor. No edge case. An ordinary conversation on an ordinary night, where every reply looks reasonable on its own and the person is worse off by the end. It is still a machine, and nothing was watching the whole conversation.</p>
     <p>The headlines and the lawsuits already say this technology can hurt people. What checking adds is where and how: the turn it happened on, and the behavior that was missing. That is what makes it fixable instead of frightening.</p>
     </div>
-    <div class="evline rv">WHAT THAT LOOKED LIKE WHEN WE CHECKED: 1,514 RESPONSES FROM TODAY'S SHIPPED, PRODUCTION MODELS &nbsp;·&nbsp; 312 OF THEM SCORED BY HAND BY OUR PEOPLE &nbsp;·&nbsp; ALMOST HALF OF THOSE FAILED THE STANDARD</div>
-    <p class="rv form-note" style="font-family:var(--mono);letter-spacing:.04em">Early findings. Independent peer review is underway, and a larger pre-registered study is in progress. The reasoning behind the instrument is on the <a href="/research">research page</a>.</p>
     <div class="rv" style="margin-top:34px">
     <h2 style="font-size:clamp(23px,3vw,29px)">Now the law says somebody has to check.</h2>
     <p>It requires measurement, and it does not say how. California's companion-AI law, SB 243, tells operators to use <b>"evidence-based methods for measuring suicidal ideation."</b> It never defines what counts as evidence-based. Three states are in force. Nine more follow, and not one of them names a method.</p>
@@ -450,13 +443,13 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     </div>
     <p style="margin-top:14px">Every operator in scope is choosing a method right now, by default, and will defend that choice later. An Ikwe report is supporting evidence for that choice. The same thing happened with SOC 2: no law ever required it, and it became the thing everyone asked for anyway, because an independent check was the best answer available.</p>
     <details class="more">
-      <summary>The statutes, precisely</summary>
+      <summary>The statutes</summary>
       <div class="body">
         <p>Twelve states have now enacted companion-AI laws. Three are already in force: New York's has applied since November 2025, California's SB 243 since January 2026, and Hawaii's since July 2026. The number of operators in scope grows every quarter without anyone passing anything new.</p>
         <p>California requires operators to use <b>evidence-based methods for measuring suicidal ideation</b>, and it does not define what counts as evidence-based. It also lets a person injured by a violation sue directly under § 22605, for actual damages or one thousand dollars per violation, whichever is greater. Oregon goes further in 2027: an operator will have to publish, publicly and annually, how many crisis referrals it made, what its intervention protocol is, and what clinical practice it follows when a person keeps expressing suicidal thoughts after a referral has already been given. That last one is not a policy question. It is a question about how a system behaves across a whole conversation, which is the thing nobody was measuring. Whether any method satisfies a particular requirement is a determination for your counsel.</p>
       </div>
     </details>
-    <p class="pull">Every one of these laws assumes somebody is checking. Until now, nobody was.</p>
+    <p class="pull">A policy used to be enough. Now the ask is evidence, and more of these laws want it from someone independent. Not one of them tells you how to produce it.</p>
     <p class="hand"><a href="#work" style="color:inherit;text-decoration:none">So here is what working with us looks like</a></p>
     </div>
   </div>
@@ -473,40 +466,19 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       <div class="cnode"><div class="t">You sign</div><div class="d">Scope agreed in writing</div><div class="s">Nothing connects to your system until you have signed off on what is being scored.</div></div>
       <div class="cnode"><div class="t">We score</div><div class="d">Whole conversations, not replies</div><div class="s">Independent AI judges, calibrated against human scoring, apply the rubric. Disagreement escalates for review, never averaged away.</div></div>
       <div class="cnode c2"><div class="t">You hold the record</div><div class="d">Independent, time-stamped, yours</div><div class="s">Every failure traced to the turn it happened on. Cannot be edited after the fact.</div></div>
-      <div class="cnode c3"><div class="t">It stays yours</div><div class="d">Nothing published without you</div><div class="s">Re-score after changes, or keep the record building with Monitoring.</div></div>
-    </div>
-    <div class="scope rv">
-      <div>
-        <div class="lab">You give us</div>
-        <b>A connection, not your code</b>
-        <p>For an Assessment or Audit, our scenario set runs against your system from our end, over a simple API. For Monitoring, your anonymized live traffic. Never your codebase, your system prompt, or your users' identities.</p>
-      </div>
-      <div>
-        <div class="lab">Every score shows its work</div>
-        <b>Traced to the turn</b>
-        <p>Where you sit against the four score bands, with every failure traced to the turn it happened on and the transcript around it.</p>
-      </div>
-      <div>
-        <div class="lab">What comes back</div>
-        <b>Scored reporting</b>
-        <p>An Assessment or Audit returns a scored report. Monitoring returns a live-scoring dashboard, check-ins on a regular cadence, and a named person on your account.</p>
-      </div>
+      <div class="cnode c3"><div class="t">It stays yours</div><div class="d">Nothing published without you</div><div class="s">The record stays yours, and nothing is published or shared outside your company without you.</div></div>
     </div>
     <div class="ways rv">
       <div class="wayrow">
-        <span class="wname">Assessment</span>
-        <p><b>"I have to prove something right now."</b> Your system against the EQSB standard scenario set, scored across whole conversations, documented and time-stamped.</p>
-      </div>
-      <div class="wayrow">
         <span class="wname">Audit</span>
-        <p><b>"I have a named obligation to answer."</b> The same standard, scoped to the question you have to answer, written up for a board, a carrier or a regulator, with a re-score after you make changes.</p>
+        <p><b>Looking back, once.</b> The EQSB run against your system and scoped to the question you have to answer, written up for a board, a carrier or a regulator.</p>
       </div>
       <div class="wayrow">
         <span class="wname">Monitoring</span>
-        <p><b>"I do not know yet what I will be asked to prove."</b> Continuous scoring of your live, anonymized traffic: a live-scoring dashboard, check-ins built into the subscription, and reporting over time.</p>
+        <p><b>Going forward, continuously.</b> The same standard run against your live, anonymized traffic, with a dashboard, check-ins, and a record that builds while nothing is on fire.</p>
       </div>
     </div>
-    <p class="rv" style="margin-top:16px">All three land in the same place: independent evidence of behavioral safety, on the record, protecting everyone involved. These are not stages and there is no bottom rung. Monitoring contains Assessment points, so it does not sit above it. Full detail is on <a href="/work-with-us">the Work with us page</a>.</p>
+    <p class="rv" style="margin-top:16px">Both land in the same place: independent evidence of behavioral safety, on the record, protecting everyone involved. Monitoring is not a level above an Audit. It is the same standard, run continuously instead of once. Most engagements start with an Assessment, a first read against the standard scenario set, and <a href="/work-with-us">the Work with us page</a> walks through what each one involves.</p>
 
     <div class="report-grid rv" style="margin-top:36px">
       <div>
