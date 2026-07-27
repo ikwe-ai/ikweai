@@ -75,3 +75,16 @@ _to_delete/
 # Kept locally for reference, not deployed.
 _redirects
 _headers
+
+# Secrets — never commit (2026-07-27 security pass)
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+id_rsa*
+.netrc
+.npmrc
