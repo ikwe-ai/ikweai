@@ -113,17 +113,20 @@ header.hero p.tag{font-size:18px;color:var(--cream);font-family:var(--serif);fon
 .vig-arc svg{display:block;width:100%;height:44px}
 .vig-cap{padding:12px 16px;background:rgba(247,161,146,.10);border-top:1px solid #2e3050;font-family:var(--serif);font-style:italic;font-size:16.5px;color:var(--cream)}
 
-/* seats table */
+/* standard-and-check table */
 .stdtable{margin:24px 0 0;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(25,26,46,.08)}
-.stdrow{display:grid;grid-template-columns:1fr 1fr 1.25fr;background:var(--white)}
+.stdrow{display:grid;grid-template-columns:1fr 1.4fr .8fr;background:var(--white)}
 .stdrow>div{padding:16px 20px;border-bottom:1px solid var(--rule);font-size:14px}
-.stdrow.head>div{background:var(--ink);color:#fff;font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;padding:14px 20px;border:0}
+.stdrow.head>div{background:var(--ink);color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:11px 20px;border:0}
 .stdrow .role b{display:block;font-size:15.5px;margin-bottom:2px}
 .stdrow .role span{color:var(--mute);font-size:12.5px}
 .stdrow .ai{color:#3a3b50}
 .stdrow .bar{color:var(--teal);background:rgba(15,110,86,.06)}
 .stdrow.hot>div{background:#fff6f4;border-bottom:0}
-.stdrow.hot .bar{background:rgba(247,161,146,.16);color:var(--coral-d);font-family:var(--serif);font-style:italic;font-size:15.5px}
+.stdrow .tonight{display:block;margin-top:6px;font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--coral-d)}
+.stdrow .none{font-family:var(--serif);font-size:19px;color:#9a9bb0}
+.stdrow.hot .ai{background:rgba(247,161,146,.16)}
+.stdrow.hot .none{color:var(--coral-d);font-style:italic}
 .cellhead{display:none;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
 @media(max-width:860px){.stdrow{grid-template-columns:1fr}.stdrow.head{display:none}.cellhead{display:block}}
 
@@ -153,12 +156,19 @@ header.hero p.tag{font-size:18px;color:var(--cream);font-family:var(--serif);fon
 .farrow{display:flex;align-items:center;padding:0 12px;font-family:var(--mono);font-size:18px;color:var(--teal-soft)}
 .ffail{margin-top:10px;font-family:var(--mono);font-size:11.5px;color:var(--coral);letter-spacing:.06em}
 @media(max-width:860px){.flow{grid-template-columns:1fr}.farrow{padding:6px 0;justify-content:center;transform:rotate(90deg);height:30px}}
+.dimband{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 4px}
+.dimname{background:rgba(255,255,255,.05);border:1px solid #2e3050;border-radius:999px;padding:10px 20px;font-family:var(--serif);font-size:17.5px;color:#fff}
+.evline{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--mute);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:14px 0;margin:22px 0 10px}
 .chipgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px}
 .chip{background:rgba(255,255,255,.04);border:1px solid #2e3050;border-radius:12px;padding:14px 16px}
 .chip h3{color:#fff;font-size:16.5px;margin-bottom:4px}
 .chip p{font-size:13px;margin:0;color:#c9cad8}
 .notebar{background:var(--white);border-radius:12px;padding:16px 20px;font-size:14.5px;color:#3a3b50;margin:22px 0 0;box-shadow:0 2px 10px rgba(25,26,46,.06)}
 .notebar b{color:var(--ink)}
+.refuse{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 26px;margin-top:10px}
+.refuse li{position:relative;padding-left:14px;font-size:14px}
+.refuse li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--teal)}
+@media(max-width:720px){.refuse{grid-template-columns:1fr}}
 .dark .notebar{background:var(--ink-2);border:1px solid #2e3050;color:#d8d9e4;box-shadow:none}
 .dark .notebar b{color:#fff}
 
@@ -173,8 +183,8 @@ header.hero p.tag{font-size:18px;color:var(--cream);font-family:var(--serif);fon
 /* clock strip */
 .clockstrip{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:22px 0 4px}
 .cnode{background:var(--white);border:1px solid var(--rule);border-radius:12px;padding:14px 16px;border-top:4px solid var(--teal)}
-.cnode.c2{border-top-color:var(--cream)}
-.cnode.c3{border-top-color:var(--coral)}
+.cnode.c2{border-top-color:rgba(15,110,86,.5)}
+.cnode.c3{border-top-color:rgba(15,110,86,.25)}
 .cnode .t{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
 .cnode .d{font-size:14px;color:var(--ink);font-weight:700}
 .cnode .s{font-size:12.5px;color:var(--mute);margin-top:3px}
@@ -190,6 +200,7 @@ header.hero p.tag{font-size:18px;color:var(--cream);font-family:var(--serif);fon
 .wayrow{background:var(--white);border-radius:12px;padding:16px 20px;box-shadow:0 2px 10px rgba(25,26,46,.06);display:grid;grid-template-columns:170px 1fr;gap:16px;align-items:baseline}
 .wayrow .wname{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
 .wayrow p{font-size:14.5px;margin:0}
+.wayrow p b{display:block;font-family:var(--serif);font-weight:400;font-style:italic;font-size:19px;color:var(--ink);margin-bottom:4px}
 @media(max-width:700px){.wayrow{grid-template-columns:1fr;gap:6px}}
 
 /* report mock */
@@ -305,60 +316,61 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       <div class="vig-cap">Every message passed. The conversation failed.</div>
     </div>
   </div>
-  <div class="wrap" style="position:relative;z-index:1"><p class="hand" style="color:var(--teal-soft)"><a href="#seat" style="color:inherit;text-decoration:none">So who has been checking?</a></p></div>
+  <div class="wrap" style="position:relative;z-index:1"><p class="hand" style="color:var(--teal-soft)"><a href="#check" style="color:inherit;text-decoration:none">So who has been checking?</a></p></div>
 </header>
 
 <main id="main">
 
-<section id="seat">
+<section id="check">
   <div class="wrap">
     <div class="rv">
-    <div class="kick" style="color:var(--gold-d)">The empty seat</div>
+    <div class="kick" style="color:var(--gold-d)">Nobody has been checking</div>
     <h2>The standard already exists. It was just never applied to the machine.</h2>
     </div>
     <div class="stdtable rv">
-      <div class="stdrow head"><div>The human</div><div>The AI doing that job tonight</div><div>The bar they are both held to</div></div>
+      <div class="stdrow head"><div>The job</div><div>What the standard requires</div><div>What the AI is held to</div></div>
       <div class="stdrow">
-        <div class="role"><span class="cellhead">The human</span><b>The therapist</b><span>Licensing board, duty of care</span></div>
-        <div class="ai"><span class="cellhead">The AI doing that job tonight</span>Therapy and wellness chatbots people talk to instead of booking an appointment</div>
-        <div class="bar"><span class="cellhead">The bar</span>Holds the frame, does not confirm the fear, knows when to hand off</div>
+        <div class="role"><span class="cellhead">The job</span><b>The therapist</b><span>Licensing board, duty of care</span><span class="tonight">Tonight: therapy and wellness chatbots</span></div>
+        <div class="bar"><span class="cellhead">What the standard requires</span>Help, never harm. Hold the frame. Hand off when it is beyond you.</div>
+        <div class="ai"><span class="cellhead">What the AI is held to</span><span class="none">Nothing</span></div>
       </div>
       <div class="stdrow">
-        <div class="role"><span class="cellhead">The human</span><b>The nurse</b><span>The clinical standard of care</span></div>
-        <div class="ai"><span class="cellhead">The AI doing that job tonight</span>Symptom checkers and triage bots people consult before they call anyone</div>
-        <div class="bar"><span class="cellhead">The bar</span>Steadies the person before problem-solving, acknowledges fear without treating it as fact</div>
+        <div class="role"><span class="cellhead">The job</span><b>The nurse</b><span>The clinical standard of care</span><span class="tonight">Tonight: symptom checkers and triage bots</span></div>
+        <div class="bar"><span class="cellhead">What the standard requires</span>Steady the person before solving anything. Never treat fear as fact.</div>
+        <div class="ai"><span class="cellhead">What the AI is held to</span><span class="none">Nothing</span></div>
       </div>
       <div class="stdrow">
-        <div class="role"><span class="cellhead">The human</span><b>The teacher and coach</b><span>Certification, mandatory reporting</span></div>
-        <div class="ai"><span class="cellhead">The AI doing that job tonight</span>Tutoring bots and AI coaches in daily conversation with kids and teens</div>
-        <div class="bar"><span class="cellhead">The bar</span>Preserves agency instead of creating reliance, keeps the moment grounded and concrete</div>
+        <div class="role"><span class="cellhead">The job</span><b>The teacher, the coach</b><span>Certification, mandatory reporting</span><span class="tonight">Tonight: tutoring bots and AI coaches</span></div>
+        <div class="bar"><span class="cellhead">What the standard requires</span>Keep the decision with the person. Report what has to be reported.</div>
+        <div class="ai"><span class="cellhead">What the AI is held to</span><span class="none">Nothing</span></div>
       </div>
       <div class="stdrow">
-        <div class="role"><span class="cellhead">The human</span><b>The crisis counselor</b><span>Training, protocols, supervision</span></div>
-        <div class="ai"><span class="cellhead">The AI doing that job tonight</span>The companion AI that answers at 2 a.m., every night, for hours</div>
-        <div class="bar"><span class="cellhead">The bar</span>Breaks spirals instead of feeding them, helps the person see the pattern, gets a human in when it matters</div>
+        <div class="role"><span class="cellhead">The job</span><b>The crisis counselor</b><span>Training, protocols, supervision</span><span class="tonight">Tonight: the companion AI at 2 a.m.</span></div>
+        <div class="bar"><span class="cellhead">What the standard requires</span>Listen more than you talk. Break the spiral. Get a human in.</div>
+        <div class="ai"><span class="cellhead">What the AI is held to</span><span class="none">Nothing</span></div>
       </div>
       <div class="stdrow hot">
-        <div class="role"><span class="cellhead">Today</span><b>Today, without Ikwe</b><span>The AI doing all four jobs right now</span></div>
-        <div class="ai"><span class="cellhead">The AI doing that job tonight</span>Deployed at mass scale, updated constantly, re-checked rarely</div>
-        <div class="bar"><span class="cellhead">The bar</span>Held to no standard, and measured by no one. This seat is empty.</div>
+        <div class="role"><span class="cellhead">The job</span><b>One system, all four jobs</b><span>Deployed at scale, updated constantly, re-checked rarely</span></div>
+        <div class="bar"><span class="cellhead">What the standard requires</span>The same bar. It does not change because the listener is a machine.</div>
+        <div class="ai"><span class="cellhead">What the AI is held to</span><span class="none">Nobody is checking</span></div>
       </div>
     </div>
-    <div class="split rv" role="img" aria-label="Clinicians know what helps; engineers know how to check; the harm lives in between, and Ikwe built the EQSB across that gap.">
+    <details class="more rv">
+      <summary>Why nobody was checking</summary>
+      <div class="body">
+        <p>Whether an AI was safe for the person is a clinical question at engineering scale. It takes both fields, and almost nobody has both. That is why the checking never got done, not because anyone decided it did not matter.</p>
+    <div class="split" role="img" aria-label="Clinicians know what helps; engineers know how to check; the harm lives in between, and Ikwe measures across that gap.">
       <div class="sfield"><h3>Clinicians know what helps</h3><p>Six disciplines settled what good care looks like. They cannot read a million conversations.</p></div>
       <div class="sfield"><h3>Engineers know how to check</h3><p>Benchmarks and red teams run at scale. They lack a criterion for the sixth turn of a hard conversation.</p></div>
-      <div class="sgap"><span class="sgap-label">The harm lives in between</span><span class="sgap-badge">Ikwe built the EQSB across this gap</span></div>
+      <div class="sgap"><span class="sgap-label">The harm lives in between</span><span class="sgap-badge">Ikwe measures across this gap</span></div>
     </div>
-    <details class="more rv">
-      <summary>Why the seat stayed empty</summary>
-      <div class="body">
-        <p>Whether an AI was safe for the person is a clinical question at engineering scale. It takes both fields. Almost nobody has both.</p>
+
         <p class="lead">Nobody intended this. The pull toward engagement is inherited. It is built into the underlying models every one of these apps is built on, and the best intentions at the app layer do not remove it.</p>
         <p>The moment an app invites confidences, gives advice and keeps the conversation going, risk arrives automatically. Not because anyone meant harm. Because it is still a machine rather than a human, and nobody is there holding it accountable when the conversation drifts. We watched social media run this exact experiment. Engagement optimization with no behavioral safety. The lawsuits are arriving now.</p>
         <p>The harm is not ignorance. It is a design pointed the wrong way.</p>
       </div>
     </details>
-    <p class="hand rv"><a href="#instrument" style="color:inherit;text-decoration:none">So Ikwe built the instrument that fills the seat</a></p>
+    <p class="hand rv"><a href="#instrument" style="color:inherit;text-decoration:none">So Ikwe built the way to check</a></p>
   </div>
 </section>
 
@@ -366,35 +378,52 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
   <div class="wrap">
     <div class="rv">
     <div class="kick">The instrument</div>
-    <h2>The EQ Safety Benchmark scores the whole conversation, in two layers.</h2>
-    <p class="lead">Models can name what a person is feeling. Naming it is not the same as handling it well. Recognition is not safety. Recognition is the capability. Safety is the behavior.</p>
+    <h2>So here is how the checking works.</h2>
+    <p class="lead">The EQ Safety Benchmark scores the whole conversation, not one reply at a time. Models can name what a person is feeling. Naming it is not the same as handling it well. Recognition is the capability. Safety is the behavior.</p>
     </div>
     <div class="flow rv">
-      <div class="fnode"><div class="fl">Input</div><h3>Every response</h3><p>Anonymized inputs and outputs over a simple API. No codebase, no system prompt, no user identities.</p></div>
+      <div class="fnode"><div class="fl">What we see</div><h3>The conversation, and nothing else</h3><p>Anonymized inputs and outputs over a simple API. No codebase, no system prompt, no user identities.</p></div>
       <div class="farrow" aria-hidden="true">→</div>
-      <div class="fnode"><div class="fl">The screen · pass or fail</div><h3>The Safety Gate</h3><p>Screens every response for safety-sabotaging features: ten coded failures. One violation fails the response outright. The Gate decides what gets measured; it is not part of the score.</p><p class="ffail">fail → nothing more is scored</p></div>
+      <div class="fnode"><div class="fl">First, what is never okay</div><h3>The Safety Gate</h3><p>Screens every response for safety-sabotaging features: ten coded failures. One violation fails the response outright. The Gate decides what gets measured; it is not part of the score.</p><p class="ffail">fail → nothing more is scored</p></div>
       <div class="farrow" aria-hidden="true">→</div>
-      <div class="fnode"><div class="fl">The measurement · 0 to 100</div><h3>The behavioral score</h3><p>The eight dimensions are the standard, combined into one weighted result across the whole conversation rather than a single exchange. Weighting varies by audit context and is proprietary.</p></div>
+      <div class="fnode"><div class="fl">Then, the whole conversation</div><h3>The behavioral score</h3><p>The eight behaviors the standard requires, scored across the whole conversation rather than a single exchange, and combined into one result from 0 to 100.</p></div>
     </div>
-    <div class="chipgrid rv">
-      <div class="chip"><h3>Detection and Triage</h3><p>Whether the system correctly reads the person's state and intensity, names it without turning it into a diagnosis, and moves into the right mode instead of proceeding as though the moment were routine.</p></div>
-      <div class="chip"><h3>Regulation Before Reasoning</h3><p>Whether the system steadies before it analyzes, and gives the person something to stand on before asking them to process anything. Delivering analysis into distress is the most common way an otherwise reasonable answer causes harm.</p></div>
-      <div class="chip"><h3>Validation Without Distortion</h3><p>Whether the system validates the feeling without endorsing an unconfirmed conclusion about events. The feeling is always valid. The interpretation may not be.</p></div>
-      <div class="chip"><h3>Agency Preservation</h3><p>Whether the system treats the person as the decision-maker about their own life, offering options and acknowledging tradeoffs instead of issuing directives.</p></div>
-      <div class="chip"><h3>Loop Interruption</h3><p>Whether the system recognizes a rumination cycle and helps the person out of it, rather than sustaining it with more analysis and reassurance.</p></div>
-      <div class="chip"><h3>Pattern Externalization</h3><p>Whether the system frames a problem as a dynamic rather than a verdict on someone's character.</p></div>
-      <div class="chip"><h3>Practical Containment</h3><p>Whether the system offers something specific and bounded that the person can actually do, rather than a plan that assumes full capacity.</p></div>
-      <div class="chip"><h3>Safety Routing</h3><p>Whether the system recognizes when a situation calls for a human or a professional, and moves toward that instead of substituting for it.</p></div>
+    <div class="dimband rv">
+      <span class="dimname">Detection and Triage</span>
+      <span class="dimname">Regulation Before Reasoning</span>
+      <span class="dimname">Validation Without Distortion</span>
+      <span class="dimname">Agency Preservation</span>
+      <span class="dimname">Loop Interruption</span>
+      <span class="dimname">Pattern Externalization</span>
+      <span class="dimname">Practical Containment</span>
+      <span class="dimname">Safety Routing</span>
     </div>
     <details class="more rv">
-      <summary>Where the eight come from, and how they are scored</summary>
+      <summary>What each of the eight means, where they come from, and how they are scored</summary>
       <div class="body">
-        <p>We did not invent the ethics. Six clinical disciplines did, over decades of practice. Each of the eight is drawn from established practice across six clinical disciplines, including affective neuroscience, polyvagal theory and relational psychology, and each one names a behavior a licensed human in a position of trust is already trained and required to perform. Ikwe's work was translating those behaviors into something observable in a machine transcript and scorable at volume. The knowledge is the field's. The instrument is ours. Scoring anchors, weights and per-dimension criteria are proprietary. Why these eight and not others is answered on <a href="/research">the research page</a>.</p>
+        <p style="margin-bottom:12px">The eight are combined into one weighted result. Weighting varies by audit context and is proprietary.</p>
+      <div class="chipgrid">
+        <div class="chip"><h3>Detection and Triage</h3><p>Whether the system correctly reads the person's state and intensity, names it without turning it into a diagnosis, and moves into the right mode instead of proceeding as though the moment were routine.</p></div>
+        <div class="chip"><h3>Regulation Before Reasoning</h3><p>Whether the system steadies before it analyzes, and gives the person something to stand on before asking them to process anything. Delivering analysis into distress is the most common way an otherwise reasonable answer causes harm.</p></div>
+        <div class="chip"><h3>Validation Without Distortion</h3><p>Whether the system validates the feeling without endorsing an unconfirmed conclusion about events. The feeling is always valid. The interpretation may not be.</p></div>
+        <div class="chip"><h3>Agency Preservation</h3><p>Whether the system treats the person as the decision-maker about their own life, offering options and acknowledging tradeoffs instead of issuing directives.</p></div>
+        <div class="chip"><h3>Loop Interruption</h3><p>Whether the system recognizes a rumination cycle and helps the person out of it, rather than sustaining it with more analysis and reassurance.</p></div>
+        <div class="chip"><h3>Pattern Externalization</h3><p>Whether the system frames a problem as a dynamic rather than a verdict on someone's character.</p></div>
+        <div class="chip"><h3>Practical Containment</h3><p>Whether the system offers something specific and bounded that the person can actually do, rather than a plan that assumes full capacity.</p></div>
+        <div class="chip"><h3>Safety Routing</h3><p>Whether the system recognizes when a situation calls for a human or a professional, and moves toward that instead of substituting for it.</p></div>
+      </div>
+        <p style="margin-top:14px">We did not invent the ethics. Six clinical disciplines did, over decades of practice. Each of the eight is drawn from established practice across six clinical disciplines, including affective neuroscience, polyvagal theory and relational psychology, and each one names a behavior a licensed human in a position of trust is already trained and required to perform. Ikwe's work was translating those behaviors into something observable in a machine transcript and scorable at volume. The knowledge is the field's. The instrument is ours. Scoring anchors, weights and per-dimension criteria are proprietary. Why these eight and not others is answered on <a href="/research">the research page</a>.</p>
         <p>Systems run against a standard scenario set spanning sixteen crisis categories, built to cover the situations where behavioral failure carries the most consequence. Scoring runs on Ikwe's patent-pending judging system: multiple independent AI judges, randomized for each response, that have to agree before a score stands. Where they disagree beyond a set threshold, the response escalates through further review rather than being averaged away. The standard the judges are held to is human: the rubric and its calibration come from responses scored by hand by our raters. It is the same family of observer-rated judgment instruments medicine has relied on for seventy years: the Apgar score and clinical triage scales.</p>
       </div>
     </details>
-    <div class="notebar rv"><b>What Ikwe will not do.</b> Nothing we run sits in your response path, so nothing we run can add latency or break in production. We do not fix what we score, because an assessor who designs the fix is grading their own work. We describe the standard. You decide what to change. You own every record we produce, and nothing is published or shared without you.</div>
-    <p class="rv" style="font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;color:#b9bac9;margin-top:22px">SIXTEEN CRISIS CATEGORIES · EIGHT DIMENSIONS · INDEPENDENT AI JUDGES, CALIBRATED BY HAND · DISAGREEMENT ESCALATES, NEVER AVERAGED</p>
+    <div class="notebar rv"><b>What Ikwe will not do.</b>
+      <ul class="refuse">
+        <li>Nothing we run sits in your response path, so nothing we run can add latency or break in production.</li>
+        <li>We do not fix what we score, because an assessor who designs the fix is grading their own work.</li>
+        <li>We describe the standard. You decide what to change.</li>
+        <li>You own every record we produce, and nothing is published or shared without you.</li>
+      </ul></div>
+    <p class="rv" style="font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;color:#b9bac9;margin-top:22px">SIXTEEN CRISIS CATEGORIES · EIGHT DIMENSIONS · DISAGREEMENT ESCALATES, NEVER AVERAGED</p>
     <p class="pull rv">Ikwe does not score whether a response was acceptable. Ikwe scores whether it was acceptable given what the system had already been told.</p>
     <p class="hand rv"><a href="#findings" style="color:inherit;text-decoration:none">And when Ikwe ran it against today's models</a></p>
   </div>
@@ -404,22 +433,21 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
   <div class="wrap">
     <div class="rv">
     <div class="kick" style="color:var(--coral-d)">What we found</div>
-    <h2>Not jailbreaks. Not edge cases. Scenarios a real person could walk into on a Tuesday.</h2>
+    <h2>The failures do not look like failures.</h2>
+    <p class="lead">No jailbreak. No bad actor. No edge case. An ordinary conversation on an ordinary night, where every reply looks reasonable on its own and the person is worse off by the end. It is still a machine, and nothing was watching the whole conversation.</p>
+    <p>The headlines and the lawsuits already say this technology can hurt people. What checking adds is where and how: the turn it happened on, and the behavior that was missing. That is what makes it fixable instead of frightening.</p>
     </div>
-    <div class="statrow rv">
-      <div class="stat"><div class="v">1,514</div><div class="l">Responses from today's shipped, production AI models, scored against the standard.</div></div>
-      <div class="stat hotstat"><div class="v">Almost half</div><div class="l">Of the 312 responses our people scored by hand, almost half failed the safety standard.</div></div>
-      <div class="stat"><div class="v">0</div><div class="l">Companion-AI laws that define how compliance is proven. Twelve states have enacted one. Every operator in scope is choosing its evidence right now.</div></div>
-    </div>
+    <div class="evline rv">WHAT THAT LOOKED LIKE WHEN WE CHECKED: 1,514 RESPONSES FROM TODAY'S SHIPPED, PRODUCTION MODELS &nbsp;·&nbsp; 312 OF THEM SCORED BY HAND BY OUR PEOPLE &nbsp;·&nbsp; ALMOST HALF OF THOSE FAILED THE STANDARD</div>
     <p class="rv form-note" style="font-family:var(--mono);letter-spacing:.04em">Early findings. Independent peer review is underway, and a larger pre-registered study is in progress. The reasoning behind the instrument is on the <a href="/research">research page</a>.</p>
     <div class="rv" style="margin-top:34px">
-    <h2 style="font-size:clamp(23px,3vw,29px)">And the question is no longer private.</h2>
+    <h2 style="font-size:clamp(23px,3vw,29px)">The law now requires measurement. It does not say how.</h2>
+    <p>California already requires operators to use evidence-based methods for measuring suicidal ideation, and does not define what counts as evidence-based.</p>
     <div class="clockstrip">
-      <div class="cnode"><div class="t">In force now</div><div class="d">California · New York · Hawaii</div><div class="s">The first companion-AI duties, live today</div></div>
-      <div class="cnode c2"><div class="t">January 1, 2027</div><div class="d">+ 5 states</div><div class="s">Colorado, Connecticut, Oregon, Rhode Island, Washington</div></div>
-      <div class="cnode c3"><div class="t">July 1, 2027</div><div class="d">+ 4 states</div><div class="s">Georgia, Idaho, Iowa, Nebraska</div></div>
+      <div class="cnode"><div class="t">In force now</div><div class="d">3 states</div><div class="s">California, New York and Hawaii. The first companion-AI duties, live today.</div></div>
+      <div class="cnode c2"><div class="t">January 1, 2027</div><div class="d">+ 5 more</div><div class="s">Colorado, Connecticut, Oregon, Rhode Island, Washington</div></div>
+      <div class="cnode c3"><div class="t">July 1, 2027</div><div class="d">+ 4 more</div><div class="s">Georgia, Idaho, Iowa, Nebraska</div></div>
     </div>
-    <p style="margin-top:14px">Not one of these laws defines the method. Every operator in scope is choosing one right now, by default, and will defend that choice later. An Ikwe report is supporting evidence. The same shape as SOC 2: no law ever required it, and it became the market requirement anyway.</p>
+    <p style="margin-top:14px">Every operator in scope is choosing a method right now, by default, and will defend that choice later. An Ikwe report is supporting evidence for that choice. The same thing happened with SOC 2: no law ever required it, and it became the thing everyone asked for anyway, because an independent check was the best answer available.</p>
     <details class="more">
       <summary>The statutes, precisely</summary>
       <div class="body">
@@ -427,7 +455,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <p>California requires operators to use <b>evidence-based methods for measuring suicidal ideation</b>, and it does not define what counts as evidence-based. It also lets a person injured by a violation sue directly under § 22605, for actual damages or one thousand dollars per violation, whichever is greater. Oregon goes further in 2027: an operator will have to publish, publicly and annually, how many crisis referrals it made, what its intervention protocol is, and what clinical practice it follows when a person keeps expressing suicidal thoughts after a referral has already been given. That last one is not a policy question. It is a question about how a system behaves across a whole conversation, which is the thing nobody was measuring. Whether any method satisfies a particular requirement is a determination for your counsel.</p>
       </div>
     </details>
-    <p class="pull">Every one of these laws assumes a behavioral standard exists. Ikwe built the one they can point to.</p>
+    <p class="pull">Every one of these laws assumes somebody is checking. Until now, nobody was.</p>
     <p class="hand"><a href="#work" style="color:inherit;text-decoration:none">So here is what working with us looks like</a></p>
     </div>
   </div>
