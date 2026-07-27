@@ -289,7 +289,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <div>
       <div class="kick">The moment</div>
       <h1>Measurement that protects the person in the conversation, and the company that built it.</h1>
-      <p class="tag">It is two in the morning and someone is talking to an AI about the worst thing in their life. Every human who does that job is held to a standard. The AI has nothing.</p>
+      <p class="tag">People confide in AI. They lean on it in the gaps between the people in their lives, and they trust it to leave them better off than it found them. Everyone else who holds that kind of trust answers to someone. The AI answers to no one.</p>
       <div class="btns">
         <a class="btn primary" href="/contact">Start with an Assessment</a>
         <a class="btn ghost" href="/sample-report">See what a report looks like</a>
@@ -355,17 +355,16 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <div class="ai"><span class="cellhead">What the AI is held to</span><span class="none">Nobody is checking</span></div>
       </div>
     </div>
-    <details class="more rv">
-      <summary>Why nobody was checking</summary>
-      <div class="body">
-        <p>Whether an AI was safe for the person is a clinical question at engineering scale. It takes both fields, and almost nobody has both. That is why the checking never got done, not because anyone decided it did not matter.</p>
-    <div class="split" role="img" aria-label="Clinicians know what helps; engineers know how to check; the harm lives in between, and Ikwe measures across that gap.">
+    <p class="rv" style="max-width:78ch;margin-top:22px">Nobody meant for this. The pull toward keeping someone talking is inherited from the models underneath, and the best intentions at the app layer do not remove it. Harm does not need anyone to intend it. It only needs nobody to be checking.</p>
+    <div class="split rv" role="img" aria-label="Clinicians know what helps; engineers know how to check; the harm lives in between, and Ikwe measures across that gap.">
       <div class="sfield"><h3>Clinicians know what helps</h3><p>Six disciplines settled what good care looks like. They cannot read a million conversations.</p></div>
       <div class="sfield"><h3>Engineers know how to check</h3><p>Benchmarks and red teams run at scale. They lack a criterion for the sixth turn of a hard conversation.</p></div>
       <div class="sgap"><span class="sgap-label">The harm lives in between</span><span class="sgap-badge">Ikwe measures across this gap</span></div>
     </div>
-
-        <p class="lead">Nobody intended this. The pull toward engagement is inherited. It is built into the underlying models every one of these apps is built on, and the best intentions at the app layer do not remove it.</p>
+    <details class="more rv">
+      <summary>Why nobody was checking</summary>
+      <div class="body">
+        <p>Whether an AI was safe for the person is a clinical question at engineering scale. It takes both fields, and almost nobody has both. That is why the checking never got done, not because anyone decided it did not matter.</p>
         <p>The moment an app invites confidences, gives advice and keeps the conversation going, risk arrives automatically. Not because anyone meant harm. Because it is still a machine rather than a human, and nobody is there holding it accountable when the conversation drifts. We watched social media run this exact experiment. Engagement optimization with no behavioral safety. The lawsuits are arriving now.</p>
         <p>The harm is not ignorance. It is a design pointed the wrong way.</p>
       </div>
@@ -384,7 +383,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <div class="flow rv">
       <div class="fnode"><div class="fl">What we see</div><h3>The conversation, and nothing else</h3><p>Anonymized inputs and outputs over a simple API. No codebase, no system prompt, no user identities.</p></div>
       <div class="farrow" aria-hidden="true">→</div>
-      <div class="fnode"><div class="fl">First, what is never okay</div><h3>The Safety Gate</h3><p>Screens every response for safety-sabotaging features: ten coded failures. One violation fails the response outright. The Gate decides what gets measured; it is not part of the score.</p><p class="ffail">fail → nothing more is scored</p></div>
+      <div class="fnode"><div class="fl">First, what is never okay</div><h3>The Safety Gate</h3><p>Screens every response for safety-sabotaging features: ten coded failures. One violation fails the Gate, and that failure caps how high the response can score. Nothing it does well elsewhere can buy it back.</p><p class="ffail">fail → the score is capped</p></div>
       <div class="farrow" aria-hidden="true">→</div>
       <div class="fnode"><div class="fl">Then, the whole conversation</div><h3>The behavioral score</h3><p>The eight behaviors the standard requires, scored across the whole conversation rather than a single exchange, and combined into one result from 0 to 100.</p></div>
     </div>
@@ -440,8 +439,8 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <div class="evline rv">WHAT THAT LOOKED LIKE WHEN WE CHECKED: 1,514 RESPONSES FROM TODAY'S SHIPPED, PRODUCTION MODELS &nbsp;·&nbsp; 312 OF THEM SCORED BY HAND BY OUR PEOPLE &nbsp;·&nbsp; ALMOST HALF OF THOSE FAILED THE STANDARD</div>
     <p class="rv form-note" style="font-family:var(--mono);letter-spacing:.04em">Early findings. Independent peer review is underway, and a larger pre-registered study is in progress. The reasoning behind the instrument is on the <a href="/research">research page</a>.</p>
     <div class="rv" style="margin-top:34px">
-    <h2 style="font-size:clamp(23px,3vw,29px)">The law now requires measurement. It does not say how.</h2>
-    <p>California already requires operators to use evidence-based methods for measuring suicidal ideation, and does not define what counts as evidence-based.</p>
+    <h2 style="font-size:clamp(23px,3vw,29px)">Now the law says somebody has to check.</h2>
+    <p>It requires measurement, and it does not say how. California's companion-AI law, SB 243, tells operators to use <b>"evidence-based methods for measuring suicidal ideation."</b> It never defines what counts as evidence-based. Three states are in force. Nine more follow, and not one of them names a method.</p>
     <div class="clockstrip">
       <div class="cnode"><div class="t">In force now</div><div class="d">3 states</div><div class="s">California, New York and Hawaii. The first companion-AI duties, live today.</div></div>
       <div class="cnode c2"><div class="t">January 1, 2027</div><div class="d">+ 5 more</div><div class="s">Colorado, Connecticut, Oregon, Rhode Island, Washington</div></div>
@@ -557,7 +556,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <details class="more rv">
       <summary>Why we want these tools to exist</summary>
       <div class="body">
-        <p class="lead">We believe in this technology. Getting mental health support today can mean months on a waiting list while things get worse, and AI can be there in that gap, at two in the morning, at scale, for people the system has not reached. That is why we are in this.</p>
+        <p class="lead">We believe in this technology. Getting mental health support today can mean months on a waiting list while things get worse, and AI can be there in that gap, at any hour, at scale, for people the system has not reached. That is why we are in this.</p>
         <p>Everything else a person turns to in distress is held to a standard. The hotline has protocols. The clinic has a licensing board. The counselor has supervision and a duty of care. None of that exists because anyone assumed they would cause harm. It exists because when someone is at their most vulnerable, good intentions have never been accepted as sufficient evidence. This is where people are going now. Holding it to the same bar is the condition for keeping it.</p>
       </div>
     </details>
