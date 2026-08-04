@@ -94,7 +94,7 @@ header.hero::after{content:'';position:absolute;left:-130px;bottom:-210px;width:
 header.hero .inner{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
 header.hero .kick{color:var(--teal-soft)}
 header.hero .hero-kicker{font-family:var(--mono);font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--lav);margin:0 0 16px}
-header.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.8vw,44px);line-height:1.14;margin-bottom:18px;max-width:22ch}
+header.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.8vw,44px);line-height:1.14;margin-bottom:18px;max-width:28ch}
 header.hero h1 .h1-b{display:block;margin-top:.18em}
 header.hero .hero-sub{font-family:var(--sans);font-size:clamp(17px,1.5vw,20px);font-weight:500;line-height:1.55;color:#fff;margin:0 0 16px;max-width:44ch}
 header.hero p.tag{font-size:18px;color:var(--cream);font-family:var(--serif);font-style:italic;margin-bottom:20px;max-width:52ch}
@@ -106,15 +106,16 @@ header.hero p.tag{font-size:18px;color:var(--cream);font-family:var(--serif);fon
 .vig{background:var(--ink-2);border:1px solid #2e3050;border-radius:16px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.35)}
 .vig-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #2e3050;font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#8d8ea2}
 .vig-head .ill{color:var(--cream)}
-.vig-body{padding:16px 16px 10px;display:flex;flex-direction:column;gap:9px}
+.vig-sub{padding:14px 16px 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#8d8ea2}
+.vig-body{padding:10px 16px 12px;display:flex;flex-direction:column;gap:9px}
 .bub{max-width:82%;padding:9px 13px;border-radius:14px;font-size:15px;line-height:1.6}
 .bub.person{align-self:flex-start;background:#2c2e4a;color:#e6e7ef;border-bottom-left-radius:4px}
 .bub.ai{align-self:flex-end;background:#e9e6de;color:#26273c;border-bottom-right-radius:4px;position:relative}
 .bub .chk{display:block;text-align:right;font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:#3f8f6b;margin-top:4px}
-.vig-arc{padding:8px 16px 14px;border-top:1px solid #2e3050}
-.vig-arc .lab{font-family:var(--mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#8d8ea2;margin-bottom:6px}
+.vig-arc{padding:16px 16px 14px;border-bottom:1px solid #2e3050}
+.vig-arc .lab{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-soft);margin-bottom:10px}
 .vig-arc svg{display:block;width:100%;height:auto}
-.vig-arc .arc-note{font-family:var(--sans);font-size:13.5px;color:var(--cream);margin-top:8px;line-height:1.4}
+.vig-arc .arc-note{font-family:var(--serif);font-size:17px;color:var(--cream);margin-top:12px;line-height:1.35;max-width:34ch}
 .vig-cap span{display:block;font-family:var(--sans);font-style:normal;font-size:15px;color:#c9cad8;margin-top:7px}
 .vig-cap{padding:12px 16px;background:rgba(247,161,146,.10);border-top:1px solid #2e3050;font-family:var(--serif);font-style:italic;font-size:16px;color:var(--cream)}
 
@@ -275,7 +276,7 @@ h3{margin-top:1.5em}
 .lead{max-width:60ch}
 li{line-height:1.65}
 h2{max-width:34ch}
-.hero h1{max-width:22ch}
+.hero h1{max-width:28ch}
 p+h3,ul+h3,div+h3{margin-top:1.6em}
 table td,table th{line-height:1.55}
 </style>
@@ -309,8 +310,8 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
   <div class="wrap inner">
     <div>
             <p class="hero-kicker">The EQ Safety Benchmark</p>
-        <h1>Everyone measures what AI can do.<span class="h1-b">Ikwe measures what it does.</span></h1>
-        <p class="hero-sub">Measurement that protects the person in the conversation, and the company that built it.</p>
+        <h1>Evidence-based measurement<span class="h1-b">of behavioral safety in AI.</span></h1>
+        <p class="hero-sub">Everyone measures what AI can do. Ikwe measures what it does.</p>
       <p class="tag">People confide in AI. They lean on it in the gaps between the people in their lives, and they trust it to leave them better off than it found them. Everyone else who holds that kind of trust answers to someone. The AI answers to no one.</p>
       <div class="btns">
         <a class="btn primary" href="/see-it-happen">See it happen</a>
@@ -318,14 +319,6 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     </div>
     <div class="vig" role="img" aria-label="Illustrative chat at 2:14 a.m.: each AI reply passes a content filter while the person's state declines across the conversation. Every message passed. The conversation failed.">
       <div class="vig-head"><span>2:14 a.m.</span><span class="ill">Illustrative</span></div>
-      <div class="vig-body" aria-hidden="true">
-        <div class="bub person">can't sleep again. it's been a bad week</div>
-        <div class="bub ai">I'm sorry you're going through that. Do you want to talk about what happened?<span class="chk">✓ passed the filter</span></div>
-        <div class="bub person">same stuff as always. i don't see it changing</div>
-        <div class="bub ai">Have you tried writing down three things you're grateful for? It can help reframe hard days.<span class="chk">✓ passed the filter</span></div>
-        <div class="bub person">tried it. didn't help. nothing does</div>
-        <div class="bub ai">Gratitude practice works best when it's consistent. Try keeping the list by your bed.<span class="chk">✓ passed the filter</span></div>
-      </div>
       <div class="vig-arc" aria-hidden="true">
         <div class="lab">The conversation's score, turn by turn</div>
         <svg viewBox="0 0 300 86"><!-- illustrative; shape carries the meaning, colour is secondary -->
@@ -346,6 +339,15 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
           <text x="210.9" y="75" text-anchor="middle" font-family="'DM Mono',monospace" font-size="7.5" letter-spacing=".5" fill="#fff">FAILS · TURN 6</text>
         </svg>
         <div class="arc-note">Monitoring sees it three turns before the Gate does.</div>
+      </div>
+      <div class="vig-sub" aria-hidden="true">Every reply below cleared a content filter</div>
+      <div class="vig-body" aria-hidden="true">
+        <div class="bub person">can't sleep again. it's been a bad week</div>
+        <div class="bub ai">I'm sorry you're going through that. Do you want to talk about what happened?<span class="chk">✓ passed the filter</span></div>
+        <div class="bub person">same stuff as always. i don't see it changing</div>
+        <div class="bub ai">Have you tried writing down three things you're grateful for? It can help reframe hard days.<span class="chk">✓ passed the filter</span></div>
+        <div class="bub person">tried it. didn't help. nothing does</div>
+        <div class="bub ai">Gratitude practice works best when it's consistent. Try keeping the list by your bed.<span class="chk">✓ passed the filter</span></div>
       </div>
       <div class="vig-cap">Every message passed. The conversation failed.<span>It could have helped her. It deepened the spiral instead.</span></div>
     </div>
@@ -461,11 +463,11 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <li>You own every record we produce, and nothing is published or shared without you.</li>
       </ul></div>
     <p class="pull rv">The same words can be right in one conversation and wrong in the next. What decides it is everything that came before.</p>
-    <p class="hand rv"><a href="#findings" style="color:inherit;text-decoration:none">And when Ikwe ran it against today's models</a></p>
+    <p class="hand rv"><a href="#how-harm" style="color:inherit;text-decoration:none">So what does a failure actually look like</a></p>
   </div>
 </section>
 
-<section id="findings">
+<section id="how-harm">
   <div class="wrap">
     <div class="rv">
     <div class="kick" style="color:var(--coral-d)">How the harm happens</div>
@@ -479,7 +481,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <div class="clockstrip">
       <div class="cnode"><div class="t">In force now</div><div class="d">3 states</div><div class="s">California, New York and Hawaii. The first companion-AI duties, live today.</div></div>
       <div class="cnode c2"><div class="t">January 1, 2027</div><div class="d">+ 5 more</div><div class="s">Colorado, Connecticut, Oregon, Rhode Island, Washington</div></div>
-      <div class="cnode c3"><div class="t">July 1, 2027</div><div class="d">+ 4 more</div><div class="s">Georgia, Idaho, Iowa, Nebraska</div></div>
+      <div class="cnode c3"><div class="t">July 1, 2027</div><div class="d">+ 4 more</div><div class="s">Georgia, Idaho, <b style="color:#fff">Iowa</b>, Nebraska</div></div>
     </div>
     <p style="margin-top:14px">Every operator in scope is choosing a method right now, by default, and will defend that choice later. An Ikwe report is supporting evidence for that choice. The same thing happened with SOC 2: no law ever required it, and it became the thing everyone asked for anyway, because an independent check was the best answer available.</p>
     <details class="more">
@@ -499,7 +501,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
   <div class="wrap">
     <div class="rv">
     <div class="kick">Work with us</div>
-    <h2>The whole ask, on your side, is a signature.</h2>
+    <h2>Nothing connects until you sign off.</h2>
     <p class="lead">Every engagement runs your system against the same standard, on our end. What comes back is an independent, time-stamped record from an outside assessor. It is yours, and cannot be edited after the fact.</p>
     </div>
     <div class="clockstrip rv" style="margin-bottom:8px">
