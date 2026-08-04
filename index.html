@@ -88,6 +88,40 @@ nav{position:sticky;top:0;z-index:1000;background:var(--ink);padding:0 28px;disp
 .nav-cta{background:var(--coral);color:var(--ink);font-weight:500;font-size:15px;padding:.5rem 1.25rem;border-radius:6px;text-decoration:none}
 
 /* ============================================================
+   ACTION POINTS. Every section used to end with a scroll cue and
+   nothing else, so a reader convinced at section two had nowhere
+   to go but down. Each major section now offers the action that
+   matches where the reader is: a question, an Assessment, a call.
+   ============================================================ */
+.actbar{display:flex;align-items:center;justify-content:space-between;gap:18px 26px;flex-wrap:wrap;
+  margin:30px 0 0;padding:16px 20px;border:1px solid var(--rule);border-radius:14px;background:var(--white);
+  box-shadow:0 2px 10px rgba(25,26,46,.05)}
+.actbar .q{font-family:var(--serif);font-size:19px;line-height:1.35;color:var(--ink);max-width:46ch;margin:0}
+.actbar .a{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.btn-sm{display:inline-block;padding:10px 20px;border-radius:9px;font-weight:700;font-size:15px;text-decoration:none;
+  background:var(--teal);color:#fff;white-space:nowrap}
+.actbar .alt{font-size:15px;color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(15,110,86,.3);white-space:nowrap}
+.dark .actbar{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);box-shadow:none}
+.dark .actbar .q{color:#fff}
+.dark .actbar .alt{color:var(--teal-soft);border-bottom-color:rgba(93,202,165,.35)}
+.dark .btn-sm{background:var(--teal-soft);color:var(--ink)}
+@media(max-width:640px){
+  .actbar{flex-direction:column;align-items:flex-start;gap:14px;padding:15px 16px}
+  .actbar .q{font-size:17.5px}
+  .actbar .a{gap:14px}
+}
+
+/* a quiet persistent way back to the action, once past the hero */
+.jump{position:fixed;right:20px;bottom:20px;z-index:900;display:inline-flex;align-items:center;gap:9px;
+  padding:11px 18px;border-radius:30px;background:var(--teal);color:#fff;font-size:14.5px;font-weight:700;
+  text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.28);
+  opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s ease,transform .3s ease,visibility .3s}
+.jump.on{opacity:1;visibility:visible;transform:none}
+.jump::after{content:"\2193";font-family:var(--mono);opacity:.85}
+@media(max-width:640px){.jump{right:12px;bottom:12px;padding:10px 15px;font-size:13.5px}}
+@media(prefers-reduced-motion:reduce){.jump{transition:none}}
+
+/* ============================================================
    HERO. Designed against the reviewer findings, not tweaked.
    Priority order the reviewers established:
      1 what Ikwe is, in language Ikwe owns today
@@ -456,6 +490,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <p>The harm is not ignorance. It is a design pointed the wrong way.</p>
       </div>
     </details>
+    <div class="actbar rv"><p class="q">Not sure whether any of this reaches what you have built?</p><div class="a"><a class="btn-sm" href="#talk" data-intent="A conversation">Ask a question</a><a class="alt" href="/see-it-happen">See how a score is built</a></div></div>
     <p class="hand rv"><a href="#instrument" style="color:inherit;text-decoration:none">So Ikwe built the way to check</a></p>
   </div>
 </section>
@@ -510,6 +545,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <li>You own every record we produce, and nothing is published or shared without you.</li>
       </ul></div>
     <p class="pull rv">The same words can be right in one conversation and wrong in the next. What decides it is everything that came before.</p>
+    <div class="actbar rv"><p class="q">Want the same standard run against your own system?</p><div class="a"><a class="btn-sm" href="#talk" data-intent="An Assessment">Book an Assessment</a><a class="alt" href="/sample-report">See a sample report</a></div></div>
     <p class="hand rv"><a href="#how-harm" style="color:inherit;text-decoration:none">So what does a failure actually look like</a></p>
   </div>
 </section>
@@ -539,6 +575,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       </div>
     </details>
     <p class="pull">A policy used to be enough. Now the ask is evidence, and more of these laws want it from someone independent. Not one of them tells you how to produce it.</p>
+    <div class="actbar rv"><p class="q">Not sure which of these obligations reach you?</p><div class="a"><a class="btn-sm" href="#talk" data-intent="A conversation">Book a call</a><a class="alt" href="/work-with-us">How an engagement runs</a></div></div>
     <p class="hand"><a href="#work" style="color:inherit;text-decoration:none">So here is what working with us looks like</a></p>
     </div>
   </div>
@@ -576,6 +613,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <p>That is what the report is for: proof you can stand on, a defense you can hand to whoever is asking, and a map of where to improve when something falls below the standard.</p>
         <p>It is not a certificate of compliance, and no method available today is. Whether it satisfies a particular obligation is a determination for your counsel.</p>
         <div class="btns" style="margin-top:18px">
+          <a class="btn primary" href="#talk" data-intent="An Assessment">Book an Assessment</a>
           <a class="btn line" href="/sample-report">See the full sample report</a>
         </div>
       </div>
@@ -782,5 +820,37 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
   gtag('config', 'G-LV7G292YD8');
 </script>
 
+
+<a class="jump" id="jumpCta" href="#talk" data-intent="An Assessment">Book an Assessment</a>
+<script>
+/* Clicking any action point preselects what the reader asked for, so the form
+   opens already knowing why they came. Plain anchor behaviour without JS. */
+document.addEventListener('click', function (e) {
+  var a = e.target.closest ? e.target.closest('[data-intent]') : null;
+  if (!a) return;
+  var sel = document.getElementById('f-interest');
+  if (!sel) return;
+  var want = (a.getAttribute('data-intent') || '').toLowerCase();
+  for (var i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].value.toLowerCase().indexOf(want) !== -1) { sel.selectedIndex = i; break; }
+  }
+});
+/* The pill appears once the hero is behind you and gets out of the way
+   when the form itself is on screen. */
+(function () {
+  var pill = document.getElementById('jumpCta');
+  var hero = document.querySelector('header.hero');
+  var talk = document.getElementById('talk');
+  if (!pill || !hero || !talk || !('IntersectionObserver' in window)) return;
+  var pastHero = false, atForm = false;
+  function sync() { pill.classList.toggle('on', pastHero && !atForm); }
+  new IntersectionObserver(function (es) {
+    pastHero = !es[0].isIntersecting; sync();
+  }, { threshold: 0 }).observe(hero);
+  new IntersectionObserver(function (es) {
+    atForm = es[0].isIntersecting; sync();
+  }, { threshold: 0.12 }).observe(talk);
+})();
+</script>
 </body>
 </html>
