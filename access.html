@@ -120,7 +120,8 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
   <div class="container">
     <h2>What you can request</h2>
 
-    <form id="access-form">
+    <form id="access-form" name="research-access" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="research-access">
       <p class="hp" aria-hidden="true"><label for="bot-field">Leave this field empty</label><input name="bot-field" id="bot-field" tabindex="-1" autocomplete="off" /></p>
 
       <ul class="materials">
@@ -184,6 +185,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       <div>
         <div class="sm-h">The instrument</div>
         <a href="/eqsb">The EQ Safety Benchmark</a>
+        <a href="/see-it-happen">See it happen</a>
         <a href="/research">Research</a>
         <a href="/access">Request access</a>
       </div>
@@ -199,6 +201,29 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
 
 <script>
 (function(){
+  
+  /* Netlify Forms is the authoritative capture. The Google Sheet write is kept as a
+     secondary, non-blocking copy. If the Netlify POST fails, the caller falls back to a
+     native form submit so a submission can never disappear without the person seeing it. */
+  async function ikweSend(form, payload, signal){
+    var fd = new FormData(form);
+    fd.set('form-name', form.getAttribute('name'));
+    if (payload) {
+      if (payload.source) fd.set('source', payload.source);
+      if (payload.submitted_at) fd.set('submitted_at', payload.submitted_at);
+      if (payload.message) fd.set('message', payload.message);
+    }
+    try {
+      fetch(SHEETS_URL, { method:'POST', headers:{'Content-Type':'text/plain'},
+        body: JSON.stringify(payload), keepalive: true }).catch(function(){});
+    } catch (e) {}
+    return await fetch('/', {
+      method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body: new URLSearchParams(fd).toString(),
+      signal: signal
+    });
+  }
   var SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxvapngacSM4xZ4wMzm15AMz0Pit1tA3J9RzfscupDh9KAcAFcs6bzR0ihLBcAzSH22/exec';
   // Source + optional pre-selection from ?src= (e.g. /access?src=pitch)
   var params = new URLSearchParams(location.search);
@@ -245,13 +270,14 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     var ctrl=new AbortController();
     var timer=setTimeout(function(){ ctrl.abort(); }, 12000);
     try{
-      var res=await fetch(SHEETS_URL,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload),signal:ctrl.signal,redirect:'follow'});
+      var res=await ikweSend(form, payload, ctrl.signal);
       clearTimeout(timer);
       if(!res.ok) throw new Error('HTTP '+res.status);
       if(window.gtag) gtag('event','access_request_submitted',{event_category:'lead',source:payload.source});
       showSuccess();
     }catch(ex){
       clearTimeout(timer);
+      if (!form.dataset.nativeRetry) { form.dataset.nativeRetry = '1'; form.submit(); return; }
       showError('We could not confirm your request went through. Your answers are still here. Please try again, or email hello@ikwe.ai directly.');
     }
     btn.disabled=false; btn.textContent='Request access';

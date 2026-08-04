@@ -170,7 +170,9 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
 <section id="form">
   <div class="narrow">
     <div class="formwrap rv">
-    <form id="contact-form">
+    <form id="contact-form" name="contact" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <div class="f-row">
         <label>I am interested in</label>
         <div class="interest-grid">
@@ -239,6 +241,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       <div>
         <div class="sm-h">The instrument</div>
         <a href="/eqsb">The EQ Safety Benchmark</a>
+        <a href="/see-it-happen">See it happen</a>
         <a href="/research">Research</a>
         <a href="/access">Request access</a>
       </div>
@@ -257,6 +260,29 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
 </footer>
 
 <script>
+  
+  /* Netlify Forms is the authoritative capture. The Google Sheet write is kept as a
+     secondary, non-blocking copy. If the Netlify POST fails, the caller falls back to a
+     native form submit so a submission can never disappear without the person seeing it. */
+  async function ikweSend(form, payload, signal){
+    var fd = new FormData(form);
+    fd.set('form-name', form.getAttribute('name'));
+    if (payload) {
+      if (payload.source) fd.set('source', payload.source);
+      if (payload.submitted_at) fd.set('submitted_at', payload.submitted_at);
+      if (payload.message) fd.set('message', payload.message);
+    }
+    try {
+      fetch(SHEETS_URL, { method:'POST', headers:{'Content-Type':'text/plain'},
+        body: JSON.stringify(payload), keepalive: true }).catch(function(){});
+    } catch (e) {}
+    return await fetch('/', {
+      method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body: new URLSearchParams(fd).toString(),
+      signal: signal
+    });
+  }
   const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxvapngacSM4xZ4wMzm15AMz0Pit1tA3J9RzfscupDh9KAcAFcs6bzR0ihLBcAzSH22/exec';
   document.getElementById('contact-form').addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -278,7 +304,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     const ctrl = new AbortController();
     const timer = setTimeout(function(){ ctrl.abort(); }, 12000);
     try {
-      const res = await fetch(SHEETS_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload), signal: ctrl.signal, redirect: 'follow' });
+      const res = await ikweSend(form, payload, ctrl.signal);
       clearTimeout(timer);
       if (!res.ok) throw new Error('HTTP ' + res.status);
       statusEl.className = 'form-status ok';
@@ -286,6 +312,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       form.reset();
     } catch (err) {
       clearTimeout(timer);
+      if (!form.dataset.nativeRetry) { form.dataset.nativeRetry = '1'; form.submit(); return; }
       statusEl.className = 'form-status err';
       statusEl.textContent = 'We could not confirm your note went through. Your text is still here. Please try again, or email hello@ikwe.ai directly.';
     }
