@@ -17,8 +17,9 @@
 
 /eq-safety-benchmark  /eqsb      301
 
-/intake               /order     301
-/get-started          /order     301
+/intake               /work-with-us  301
+/get-started          /work-with-us  301
+/see-it-happen.html   /see-it-happen 301
 
 /public/privacy.html                /privacy                301
 /public/terms.html                  /terms                  301
