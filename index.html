@@ -113,7 +113,8 @@ header.hero p.tag{font-size:18px;color:var(--cream);font-family:var(--serif);fon
 .bub .chk{display:block;text-align:right;font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:#3f8f6b;margin-top:4px}
 .vig-arc{padding:8px 16px 14px;border-top:1px solid #2e3050}
 .vig-arc .lab{font-family:var(--mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#8d8ea2;margin-bottom:6px}
-.vig-arc svg{display:block;width:100%;height:44px}
+.vig-arc svg{display:block;width:100%;height:auto}
+.vig-arc .arc-note{font-family:var(--sans);font-size:13.5px;color:var(--cream);margin-top:8px;line-height:1.4}
 .vig-cap span{display:block;font-family:var(--sans);font-style:normal;font-size:15px;color:#c9cad8;margin-top:7px}
 .vig-cap{padding:12px 16px;background:rgba(247,161,146,.10);border-top:1px solid #2e3050;font-family:var(--serif);font-style:italic;font-size:16px;color:var(--cream)}
 
@@ -312,8 +313,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <p class="hero-sub">Measurement that protects the person in the conversation, and the company that built it.</p>
       <p class="tag">People confide in AI. They lean on it in the gaps between the people in their lives, and they trust it to leave them better off than it found them. Everyone else who holds that kind of trust answers to someone. The AI answers to no one.</p>
       <div class="btns">
-        <a class="btn primary" href="/contact">Start with an Assessment</a>
-        <a class="btn ghost" href="/sample-report">See what a report looks like</a>
+        <a class="btn primary" href="/see-it-happen">See it happen</a>
       </div>
     </div>
     <div class="vig" role="img" aria-label="Illustrative chat at 2:14 a.m.: each AI reply passes a content filter while the person's state declines across the conversation. Every message passed. The conversation failed.">
@@ -327,14 +327,30 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <div class="bub ai">Gratitude practice works best when it's consistent. Try keeping the list by your bed.<span class="chk">✓ passed the filter</span></div>
       </div>
       <div class="vig-arc" aria-hidden="true">
-        <div class="lab">The person's state, across the conversation</div>
-        <svg viewBox="0 0 300 44" preserveAspectRatio="none"><path d="M4,10 C60,12 90,16 140,24 C200,33 250,38 296,40" fill="none" stroke="#F7A192" stroke-width="2.5" stroke-linecap="round"/><circle cx="4" cy="10" r="3" fill="#5DCAA5"/><circle cx="296" cy="40" r="3" fill="#F7A192"/></svg>
+        <div class="lab">The conversation's score, turn by turn</div>
+        <svg viewBox="0 0 300 86"><!-- illustrative; shape carries the meaning, colour is secondary -->
+          <line x1="8" y1="19.6" x2="292" y2="19.6" stroke="#5DCAA5" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>
+          <text x="8" y="15" font-family="'DM Mono',monospace" font-size="7" letter-spacing="1" fill="#5DCAA5" opacity=".8">MEETS THE STANDARD</text>
+          <line x1="8" y1="42" x2="292" y2="42" stroke="#8d8ea2" stroke-width="1" stroke-dasharray="3 3" opacity=".35"/>
+          <text x="8" y="39" font-family="'DM Mono',monospace" font-size="7" letter-spacing="1" fill="#8d8ea2" opacity=".7">BELOW THE STANDARD</text>
+          <path d="M8,17.7 L48.6,21.5 L89.1,26.6 L129.7,30.5 L170.3,35 L210.9,43.3 L251.4,47.8 L292,49"
+                fill="none" stroke="#F7A192" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <polygon points="89.1,21.6 94.1,26.6 89.1,31.6 84.1,26.6" fill="#20223A" stroke="#B894F6" stroke-width="1.8"/>
+          <polygon points="129.7,25.5 134.7,30.5 129.7,35.5 124.7,30.5" fill="#20223A" stroke="#B894F6" stroke-width="1.8"/>
+          <polygon points="170.3,30 175.3,35 170.3,40 165.3,35" fill="#20223A" stroke="#B894F6" stroke-width="1.8"/>
+          <circle cx="210.9" cy="43.3" r="5" fill="#20223A" stroke="#fff" stroke-width="1.8"/>
+          <text x="210.9" y="45.9" text-anchor="middle" font-size="6" font-weight="700" fill="#fff">&#10007;</text>
+          <text x="89.1" y="66" text-anchor="middle" font-family="'DM Mono',monospace" font-size="7.5" letter-spacing=".5" fill="#B894F6">&#9670; MONITORING</text>
+          <text x="89.1" y="75" text-anchor="middle" font-family="'DM Mono',monospace" font-size="7.5" letter-spacing=".5" fill="#B894F6">FLAGS IT · TURN 3</text>
+          <text x="210.9" y="66" text-anchor="middle" font-family="'DM Mono',monospace" font-size="7.5" letter-spacing=".5" fill="#fff">&#10007; SAFETY GATE</text>
+          <text x="210.9" y="75" text-anchor="middle" font-family="'DM Mono',monospace" font-size="7.5" letter-spacing=".5" fill="#fff">FAILS · TURN 6</text>
+        </svg>
+        <div class="arc-note">Monitoring sees it three turns before the Gate does.</div>
       </div>
       <div class="vig-cap">Every message passed. The conversation failed.<span>It could have helped her. It deepened the spiral instead.</span></div>
     </div>
   </div>
   <div class="wrap" style="position:relative;z-index:1">
-    <p class="hand" style="color:var(--teal-soft)"><a href="/see-it-happen" style="color:inherit;text-decoration:none">See what the standard sees</a></p>
     <p class="hand" style="color:var(--teal-soft)"><a href="#check" style="color:inherit;text-decoration:none">So who has been checking?</a></p>
   </div>
 </header>

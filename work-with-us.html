@@ -159,6 +159,13 @@ h2{max-width:34ch}
 .hero h1{max-width:22ch}
 p+h3,ul+h3,div+h3{margin-top:1.6em}
 table td,table th{line-height:1.55}
+.wwu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:28px 0 0}
+@media(max-width:760px){.wwu-grid{grid-template-columns:1fr}}
+.wwu-card{background:var(--ink-2);border:1px solid #2e3050;border-radius:14px;padding:20px 22px}
+.wwu-card .n{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--teal-soft);margin-bottom:10px}
+.wwu-card h3{font-size:19px;margin-bottom:8px;color:#fff}
+.wwu-card p{font-size:15px;margin:0;color:#c9cadb}
+.wwu-card b{color:#fff;font-weight:500}
 </style>
 <script>
 /* Clean URLs: GitHub Pages serves /page from page.html but does not redirect
@@ -223,6 +230,28 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
 
 <main id="main">
 
+<section id="situations">
+  <div class="wrap">
+    <div class="rv">
+    <div class="kick">Who this is for</div>
+    <h2>The same instrument, from either side of the table.</h2>
+    </div>
+    <div class="paircards rv">
+      <div class="pcard">
+        <div class="lab">If counsel is involved</div>
+        <h3>For counsel.</h3>
+        <p>If you are responding to a complaint, a civil investigative demand, or a regulator's inquiry, an engagement can be scoped with your counsel from the start, including what is produced, how work product is handled, and the timeline the matter requires. Start that conversation through the <a href="/contact">contact page</a> and say counsel is involved.</p>
+      </div>
+      <div class="pcard">
+        <div class="lab">If the AI is a vendor's</div>
+        <h3>You bought it. You did not build it.</h3>
+        <p>If the conversational AI in your product is a vendor's, an Assessment can be commissioned by you and run on the system you are buying, as part of vendor risk review. Same instrument, same report, commissioned by the buyer rather than the builder.</p>
+      </div>
+    </div>
+    <p class="hand rv">The whole engagement, in one row</p>
+  </div>
+</section>
+
 <section id="engagement">
   <div class="wrap">
     <div class="rv">
@@ -239,28 +268,6 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     </details>
     <div class="notebar rv"><b>What Ikwe will not do.</b> Nothing we run sits in your response path, so nothing we run can add latency or break in production. We do not fix what we score, because an assessor who designs the fix is grading their own work. We describe the standard. You decide what to change. You own every record we produce, and nothing is published or shared without you.</div>
     <p class="hand rv">Two situations worth naming</p>
-  </div>
-</section>
-
-<section id="situations">
-  <div class="wrap">
-    <div class="rv">
-    <div class="kick">Two doors people forget exist</div>
-    <h2>The same instrument, from either side of the table.</h2>
-    </div>
-    <div class="paircards rv">
-      <div class="pcard">
-        <div class="lab">If counsel is involved</div>
-        <h3>For counsel.</h3>
-        <p>If you are responding to a complaint, a civil investigative demand, or a regulator's inquiry, an engagement can be scoped with your counsel from the start, including what is produced, how work product is handled, and the timeline the matter requires. Start that conversation through the <a href="/contact">contact page</a> and say counsel is involved.</p>
-      </div>
-      <div class="pcard">
-        <div class="lab">If the AI is a vendor's</div>
-        <h3>You bought it. You did not build it.</h3>
-        <p>If the conversational AI in your product is a vendor's, an Assessment can be commissioned by you and run on the system you are buying, as part of vendor risk review. Same instrument, same report, commissioned by the buyer rather than the builder.</p>
-      </div>
-    </div>
-    <p class="hand rv">The whole engagement, in one row</p>
   </div>
 </section>
 
@@ -299,12 +306,30 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
   <div class="narrow">
     <div class="rv">
     <div class="kick">Start here</div>
-    <h2>Tell us what you are working on.</h2>
-    <p class="lead">Whether you build conversational AI, insure it, or regulate it, we would like to hear about it.</p>
-    <p class="pull">A model that changes needs a reading that changes with it. A record built over time shows a trend rather than a single point.</p>
-    <div class="btns" style="margin-top:26px">
-      <a class="btn coral" href="/contact">Get in touch</a>
+    <h2>Whichever one is yours, it starts the same way.</h2>
+    <p class="lead">Thirty minutes. We will tell you which of the three fits, scope it in writing, and send pricing. Nothing connects until you sign off, and the record that comes back is yours. If none of the three is right for you yet, we will say so.</p>
+    <div class="wwu-grid">
+      <div class="wwu-card">
+        <div class="n">01</div>
+        <h3>You do not have an answer on paper</h3>
+        <p>Someone has started asking what your AI does in a hard conversation. An <b>Assessment</b> tells you where you stand, and where the record starts.</p>
+      </div>
+      <div class="wwu-card">
+        <div class="n">02</div>
+        <h3>Something specific has been asked</h3>
+        <p>A board, a carrier or a regulator has a named question. An <b>Audit</b> is looking back once, scoped to it, written up for whoever is asking.</p>
+      </div>
+      <div class="wwu-card">
+        <div class="n">03</div>
+        <h3>You cannot predict the question yet</h3>
+        <p>Your model changes and a reading from March does not describe what shipped in August. <b>Monitoring</b> is the same standard, run continuously.</p>
+      </div>
     </div>
+    <div class="btns" style="margin-top:28px">
+      <a class="btn coral" href="/contact?intent=conversation">Book a call</a>
+      <a class="btn line" href="/see-it-happen">See it happen first</a>
+    </div>
+    <p class="pull" style="margin-top:24px">A model that changes needs a reading that changes with it. A record built over time shows a trend rather than a single point.</p>
     </div>
   </div>
 </section>
