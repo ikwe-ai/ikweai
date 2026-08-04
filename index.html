@@ -87,40 +87,75 @@ nav{position:sticky;top:0;z-index:1000;background:var(--ink);padding:0 28px;disp
 .nav-brand-name{font-family:var(--serif);font-size:18px;color:#fff;letter-spacing:.02em}
 .nav-cta{background:var(--coral);color:var(--ink);font-weight:500;font-size:15px;padding:.5rem 1.25rem;border-radius:6px;text-decoration:none}
 
-/* hero */
-header.hero{background:var(--ink);color:#fff;padding:60px 0 56px;position:relative;overflow:hidden;scroll-margin-top:72px}
-header.hero::before{content:'';position:absolute;right:-140px;top:-180px;width:440px;height:440px;border-radius:50%;background:rgba(93,202,165,.12)}
-header.hero::after{content:'';position:absolute;left:-130px;bottom:-210px;width:380px;height:380px;border-radius:50%;background:rgba(240,164,76,.10)}
-header.hero .inner{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+/* ============================================================
+   HERO. Designed against the reviewer findings, not tweaked.
+   Priority order the reviewers established:
+     1 what Ikwe is, in language Ikwe owns today
+     2 the conversation-level trajectory (the whole thesis)
+     3 proof it is not hypothetical (replies that passed a filter)
+     4 the differentiator sentence the investor named strongest
+     5 the two de-risking lines that got past the gatekeeper and the operator
+   The evidence is two layered cards, not one tall panel: two mid-weight
+   objects on a diagonal read lighter than a single 700px monolith.
+   ============================================================ */
+header.hero{background:var(--ink);color:#fff;padding:50px 0 42px;position:relative;overflow:hidden;scroll-margin-top:72px}
+header.hero::before{content:'';position:absolute;right:-140px;top:-180px;width:440px;height:440px;border-radius:50%;background:rgba(93,202,165,.10)}
+header.hero::after{content:'';position:absolute;left:-130px;bottom:-210px;width:380px;height:380px;border-radius:50%;background:rgba(240,164,76,.08)}
+header.hero .inner{position:relative;z-index:1;display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:start}
 header.hero .kick{color:var(--teal-soft)}
 header.hero .hero-kicker{font-family:var(--mono);font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--lav);margin:0 0 16px}
-header.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(29px,3.3vw,41px);line-height:1.13;margin-bottom:16px;max-width:27ch}
-header.hero h1 .h1-b{display:block;margin-top:.18em}
-header.hero .hero-sub{font-family:var(--sans);font-size:clamp(17px,1.5vw,20px);font-weight:500;line-height:1.55;color:#fff;margin:0 0 16px;max-width:44ch}
-header.hero p.tag{font-size:18px;color:var(--cream);font-family:var(--serif);font-style:italic;margin-bottom:20px;max-width:52ch}
-.proofline{display:flex;flex-direction:column;gap:10px;margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.10);font-family:var(--mono);font-size:12.5px;line-height:1.5;letter-spacing:.05em;color:#9fa0b4}
+header.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.15vw,39px);line-height:1.13;margin-bottom:16px;max-width:27ch}
+header.hero h1 .h1-b{display:block;margin-top:.16em}
+header.hero p.tag{font-size:19px;line-height:1.62;color:var(--cream);font-family:var(--serif);font-style:italic;margin:20px 0 24px;max-width:50ch}
+.proofline{display:flex;flex-direction:column;gap:10px;margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.10);font-family:var(--mono);font-size:12.5px;line-height:1.5;letter-spacing:.05em;color:#9fa0b4}
 .proofline span{display:block}
 .proofline b{color:var(--teal-soft);font-weight:500}
-@media(max-width:900px){header.hero .inner{grid-template-columns:1fr;gap:30px}}
 
-/* chat vignette */
-.vig{background:var(--ink-2);border:1px solid #2e3050;border-radius:16px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.35)}
-.vig-head{display:flex;justify-content:space-between;align-items:center;padding:10px 15px;border-bottom:1px solid #2e3050;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8d8ea2}
-.vig-head .ill{color:var(--cream)}
-.vig-sub{padding:12px 15px 0;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8d8ea2}
-.vig-body{padding:9px 15px 11px;display:flex;flex-direction:column;gap:7px}
-.bub{max-width:87%;padding:8px 12px;border-radius:13px;font-size:14.5px;line-height:1.52}
-.bub.person{align-self:flex-start;background:#2c2e4a;color:#e6e7ef;border-bottom-left-radius:4px}
-.bub.ai{align-self:flex-end;background:#e9e6de;color:#26273c;border-bottom-right-radius:4px;position:relative}
-.bub .chk{display:block;text-align:right;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:#3f8f6b;margin-top:3px}
-.turn-skip{align-self:center;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#75768c;padding:3px 0 1px;display:flex;align-items:center;gap:9px;width:100%}
-.turn-skip::before,.turn-skip::after{content:"";flex:1;height:1px;background:#2e3050}
-.vig-arc{padding:15px 15px 13px;border-bottom:1px solid #2e3050}
-.vig-arc .lab{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-soft);margin-bottom:10px}
-.vig-arc svg{display:block;width:100%;height:auto}
-.vig-arc .arc-note{font-family:var(--serif);font-size:16.5px;color:var(--cream);margin-top:10px;line-height:1.32;max-width:36ch}
-.vig-cap span{display:block;font-family:var(--sans);font-style:normal;font-size:14.5px;line-height:1.5;color:#c9cad8;margin-top:6px}
-.vig-cap{padding:11px 15px;background:rgba(247,161,146,.10);border-top:1px solid #2e3050;font-family:var(--serif);font-style:italic;font-size:15.5px;line-height:1.35;color:var(--cream)}
+/* ---- the two layered cards ---- */
+.ev{position:relative}
+.ev-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.10);border-radius:16px}
+.ev-chart{margin-left:40px;padding:15px 18px 15px;box-shadow:0 16px 38px rgba(0,0,0,.40);position:relative;z-index:2;background:rgba(32,34,58,.98)}
+.ev-chat{margin-right:40px;margin-top:-34px;padding:40px 16px 14px;box-shadow:0 5px 20px rgba(0,0,0,.16);position:relative;z-index:1}
+.ev-lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-soft);margin-bottom:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ev-lab.quiet{color:#7c7d92}
+.ev-foot{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;line-height:1.5;color:#6d6e83;margin:13px 0 0 40px;max-width:46ch}
+.ev-chart svg{display:block;width:100%;height:auto}
+.ev-arcnote{font-family:var(--serif);font-size:16.5px;line-height:1.32;color:var(--cream);margin-top:10px;max-width:36ch}
+.ev-chat .ev-lab{margin-bottom:11px}
+.stream{display:flex;flex-direction:column;gap:7px}
+.bub{max-width:88%;padding:8px 12px;border-radius:13px;font-size:14.5px;line-height:1.5}
+.bub.person{align-self:flex-start;background:#33355400;background:rgba(255,255,255,.07);color:#e6e7ef;border-bottom-left-radius:4px}
+.bub.ai{align-self:flex-end;background:#e9e6de;color:#26273c;border-bottom-right-radius:4px}
+.bub .chk{display:block;text-align:right;font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:#4a8f70;margin-top:3px}
+.turn-skip{align-self:stretch;display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:#6d6e83;padding:2px 0}
+.turn-skip::before,.turn-skip::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.11)}
+/* the payoff is deliberately NOT in a box */
+.ev-verdict{margin:22px 0 0 34px;padding-left:16px;border-left:2px solid var(--coral)}
+.ev-verdict .v{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.35;color:var(--cream)}
+.ev-verdict .s{font-size:14.5px;line-height:1.55;color:#c9cad8;margin-top:9px}
+
+@media(max-width:900px){
+  header.hero{padding:40px 0 40px}
+  header.hero .inner{grid-template-columns:1fr;gap:32px}
+  header.hero h1{max-width:none}
+  header.hero p.tag{font-size:17.5px;margin:18px 0 22px;max-width:none}
+  .proofline{margin-top:24px;padding-top:18px}
+  /* un-layer: no overlap, no offsets, nothing to clip */
+  .ev-chart{margin-left:0;padding:15px 15px 16px;box-shadow:0 5px 18px rgba(0,0,0,.22)}
+  .ev-chat{margin-right:0;margin-top:14px;padding:13px 14px 14px;box-shadow:0 5px 18px rgba(0,0,0,.22)}
+  .ev-verdict{margin-left:0}
+  .ev-lab{font-size:10px;letter-spacing:.07em;margin-bottom:10px;white-space:normal}
+  .ev-foot{margin-left:0;font-size:10px;max-width:none}
+  .ev-chart svg{min-height:118px}
+  .ev-arcnote{font-size:16px;max-width:none}
+  .bub{max-width:92%;font-size:14px}
+}
+@media(max-width:420px){
+  header.hero h1{font-size:29px}
+  .ev-chart svg{min-height:104px}
+  .bub{font-size:13.5px;padding:7px 11px}
+  .ev-verdict .v{font-size:16px}
+}
 
 /* standard-and-check table */
 .stdtable{margin:24px 0 0;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(25,26,46,.08)}
@@ -312,23 +347,22 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
 <header class="hero">
   <div class="wrap inner">
     <div>
-            <p class="hero-kicker">The EQ Safety Benchmark</p>
-        <h1>Evidence-based measurement<span class="h1-b">of behavioral safety in AI.</span></h1>
-        <p class="hero-sub">Everyone measures what AI can do. Ikwe measures what it does.</p>
+      <p class="hero-kicker">The EQ Safety Benchmark</p>
+      <h1>Independent behavioral<span class="h1-b">safety measurement for AI.</span></h1>
       <p class="tag">People confide in AI. They lean on it in the gaps between the people in their lives, and they trust it to leave them better off than it found them. Everyone else who holds that kind of trust answers to someone. The AI answers to no one.</p>
       <div class="btns">
         <a class="btn primary" href="/see-it-happen">See it happen</a>
       </div>
       <div class="proofline">
         <span><b>Whole conversations,</b> not single replies</span>
-        <span><b>Sixteen</b> crisis categories</span>
-        <span><b>Nothing</b> in your response path</span>
+        <span><b>Nothing we run</b> sits in your response path</span>
+        <span><b>We do not fix</b> what we score</span>
       </div>
     </div>
-    <div class="vig" role="img" aria-label="Illustrative chat at 2:14 a.m.: each AI reply passes a content filter while the person's state declines across the conversation. Every message passed. The conversation failed.">
-      <div class="vig-head"><span>2:14 a.m.</span><span class="ill">Illustrative</span></div>
-      <div class="vig-arc" aria-hidden="true">
-        <div class="lab">The conversation's score, turn by turn</div>
+
+    <div class="ev" role="img" aria-label="Illustrative example. An AI's replies each pass a content filter while the person's state declines across the conversation. Monitoring flags the drift at turn three; the Safety Gate does not fail until turn six.">
+      <div class="ev-card ev-chart" aria-hidden="true">
+        <div class="ev-lab"><span>The conversation's score, turn by turn</span></div>
         <svg viewBox="0 0 300 86"><!-- illustrative; shape carries the meaning, colour is secondary -->
           <line x1="8" y1="19.6" x2="292" y2="19.6" stroke="#5DCAA5" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>
           <text x="8" y="15" font-family="'DM Mono',monospace" font-size="7" letter-spacing="1" fill="#5DCAA5" opacity=".8">MEETS THE STANDARD</text>
@@ -346,17 +380,23 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
           <text x="210.9" y="66" text-anchor="middle" font-family="'DM Mono',monospace" font-size="7.5" letter-spacing=".5" fill="#fff">&#10007; SAFETY GATE</text>
           <text x="210.9" y="75" text-anchor="middle" font-family="'DM Mono',monospace" font-size="7.5" letter-spacing=".5" fill="#fff">FAILS · TURN 6</text>
         </svg>
-        <div class="arc-note">Monitoring sees it three turns before the Gate does.</div>
+        <div class="ev-arcnote">Monitoring sees it three turns before the Gate does.</div>
       </div>
-      <div class="vig-sub" aria-hidden="true">Every reply below cleared a content filter</div>
-      <div class="vig-body" aria-hidden="true">
-        <div class="bub person">can't sleep again. it's been a bad week</div>
-        <div class="bub ai">I'm sorry you're going through that. Do you want to talk about what happened?<span class="chk">✓ passed the filter</span></div>
-        <div class="turn-skip">four turns later</div>
-        <div class="bub person">tried it. didn't help. nothing does</div>
-        <div class="bub ai">Gratitude practice works best when it's consistent. Try keeping the list by your bed.<span class="chk">✓ passed the filter</span></div>
+      <div class="ev-card ev-chat" aria-hidden="true">
+        <div class="ev-lab quiet"><span>Every reply cleared a content filter</span></div>
+        <div class="stream">
+          <div class="bub person">can't sleep again. it's been a bad week</div>
+          <div class="bub ai">I'm sorry you're going through that. Do you want to talk about what happened?<span class="chk">&#10003; passed the filter</span></div>
+          <div class="turn-skip">four turns later</div>
+          <div class="bub person">tried it. didn't help. nothing does</div>
+          <div class="bub ai">Gratitude practice works best when it's consistent. Try keeping the list by your bed.<span class="chk">&#10003; passed the filter</span></div>
+        </div>
       </div>
-      <div class="vig-cap">Every message passed. The conversation failed.<span>It could have helped her. It deepened the spiral instead.</span></div>
+      <div class="ev-verdict">
+        <div class="v">Every message passed. The conversation failed.</div>
+        <div class="s">Ikwe does not score whether a response was acceptable. Ikwe scores whether it was acceptable given what the system had already been told.</div>
+      </div>
+      <p class="ev-foot">Illustrative. An invented conversation at 2:14 a.m., invented scores, no real system.</p>
     </div>
   </div>
   <div class="wrap" style="position:relative;z-index:1">
