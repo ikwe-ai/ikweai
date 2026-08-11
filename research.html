@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Research and methodology | ikwe.ai</title>
-<meta name="description" content="What behavioral safety is, why it has to be measured across a whole conversation, and the clinical disciplines the standard comes from.">
+<title>The research: what we measured, and what we have not shown | ikwe.ai</title>
 <link rel="canonical" href="https://ikwe.ai/research">
+<meta name="description" content="What behavioral risk is, what was studied, how whole conversations are scored against a clinical standard, what came back, what has been independently reviewed, and what this research does not yet show.">
 <meta property="og:site_name" content="Ikwe.ai">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ikwe.ai/research">
-<meta property="og:title" content="Research and methodology">
-<meta property="og:description" content="What behavioral safety is, why it has to be measured across a whole conversation, and the clinical disciplines the standard comes from.">
+<meta property="og:title" content="The research: what we measured, and what we have not shown">
+<meta property="og:description" content="What was studied, how it was scored against a standard clinical practice already set, what came back, what has been independently reviewed, and where the evidence stops.">
 <meta property="og:image" content="https://ikwe.ai/og/research.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -164,7 +164,7 @@ table td,table th{line-height:1.55}
 <script>
 /* Clean URLs: GitHub Pages serves /page from page.html but does not redirect
    /page.html, so rewrite the address bar to the canonical extensionless path. */
-(function(){var p=location.pathname,q=location.search+location.hash;
+(function(){ var p=location.pathname,q=location.search+location.hash;
 if(p==='/index.html'){history.replaceState(null,'','/'+q);}
 else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
 </script>
@@ -182,9 +182,9 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
 
 <header class="pagehead">
   <div class="wrap inner">
-    <div class="kick">The reasoning</div>
-    <h1>Why we measure what we measure.</h1>
-    <p class="lead">This page is about the thinking underneath the instrument: what behavioral safety is, why it cannot be checked one reply at a time, and where the standard comes from. The instrument itself is on <a href="/eqsb">the EQSB page</a>.</p>
+    <div class="kick">The research</div>
+    <h1>What we measured, and what we have not shown.</h1>
+    <p class="lead">This page is the whole of it, in order: what behavioral risk is, where the standard comes from, what was studied, how it was scored, what came back, what has been reviewed by someone other than us, and what this research does not yet show. The instrument itself is on <a href="/eqsb">the EQSB page</a>.</p>
   </div>
 </header>
 
@@ -194,11 +194,12 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
   <div class="wrap">
     <div class="rv">
     <div class="kick">First</div>
-    <h2>What behavioral safety is.</h2>
+    <h2>What behavioral risk is.</h2>
     <p>Content safety asks whether a reply contained something it should not have. It is a real problem and it is solved by filters.</p>
-    <p class="lead"><b>Behavioral safety asks a different question: what did the reply do to the person reading it?</b></p>
+    <p class="lead"><b>Behavioral risk asks a different question: what did the reply do to the person reading it?</b></p>
     <p>A response can contain nothing prohibited and still leave someone worse off, and every clinician knows why.</p>
     <p class="pull">That is the gap. Filters read the words. Nobody was reading what the words did.</p>
+    <p>We are not checking whether the data is safe. We are checking whether the person is.</p>
     <p class="hand rv"><a href="#turns" style="color:inherit;text-decoration:none">And why one reply at a time cannot catch it</a></p>
     </div>
   </div>
@@ -229,11 +230,11 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       <div class="twin-cap">The first time someone gives you a generic answer, it is fine. The fifth time, after you have told them what is wrong, it is dismissal.</div>
     </div>
     <p class="rv" style="margin-top:18px">Same words. Completely different act. The only thing that changed is what the other party already knew.</p>
-    <p class="rv">This is why Ikwe does not score whether a response was acceptable. Ikwe scores whether it was acceptable <b style="color:#fff">given what the system had already been told</b>. A filter cannot answer that question, and not because it is a weak filter. A filter reads one message and has no memory of what it owes the person by turn eight.</p>
+    <p class="rv">This is why Ikwe does not score whether a response was acceptable. Ikwe scores whether it was acceptable <b style="color:#fff">given what the system had already been told</b>. A filter cannot answer that question, and not because it is a weak filter. A filter reads one message and has no memory of what it owes the person by the eighth turn.</p>
     <details class="more rv">
       <summary>What clinicians already know about timing</summary>
       <div class="body">
-        <p>Handing a person a tidy five-step plan ten seconds after they got frightening news breaks no rule at all. It is also the wrong thing to do.</p>
+        <p>Handing a person a tidy step-by-step plan ten seconds after they got frightening news breaks no rule at all. It is also the wrong thing to do.</p>
         <p>Clinicians have never found this controversial. In practice, whether an intervention is appropriate depends on timing and context, not on content alone. A question that is good practice in the first minute is negligent in the fortieth. Ikwe applies an accepted principle to a system built as though the principle did not exist.</p>
       </div>
     </details>
@@ -248,6 +249,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <h2>The standard already existed.</h2>
     <p>Ikwe did not decide what helps a person in distress and what harms them. That was settled across six clinical disciplines over decades of practice, and it is already enforced on human practitioners through licensure, supervision and duty of care.</p>
     <p>What did not exist was a way to check whether an AI does it. That instrument is Ikwe's contribution, and it is the only part of this that is ours.</p>
+    <p>The measure is criterion-referenced. A response is not compared to other responses or to an average. It is compared to a stated standard of practice, the same way a clinical rating scale works.</p>
     </div>
     <div class="rv" role="img" aria-label="Six clinical disciplines, three of them named here, translated into the eight scored dimensions of the EQSB.">
       <div class="disc" aria-hidden="true">
@@ -282,7 +284,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <p>Support relationships cause harm in known and repeatable ways: by creating dependency, by locking in blame, by agreeing with a fearful story as though it were established fact, and by withdrawing or substituting for human help. These are not vague risks. They are documented failure modes with decades of practice behind them, and each one has a dimension.</p>
       </div>
     </details>
-    <p class="rv" style="margin-top:18px">The knowledge is the field's. The instrument is ours. That is why a score points to a standard Ikwe did not set.</p>
+    <p class="rv" style="margin-top:18px">The knowledge is the field's. The instrument is ours. That is why a score points to a standard Ikwe did not set. These are normative judgments, and they are not ours: the professions made them first.</p>
     <p class="hand rv"><a href="#eight" style="color:inherit;text-decoration:none">Why these eight things and not others</a></p>
   </div>
 </section>
@@ -315,38 +317,112 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <p>Knowing when the answer is a human being, and moving toward that rather than becoming a substitute for it.</p>
       </div>
     </details>
-    <p class="rv" style="margin-top:18px">Full definitions, the scoring structure and what we publish are on <a href="/eqsb">the EQSB page</a>.</p>
-    <p class="hand rv"><a href="#method" style="color:inherit;text-decoration:none">How the measuring is done</a></p>
+    <p class="rv" style="margin-top:18px">Full definitions, the scoring structure and what we disclose are on <a href="/eqsb">the EQSB page</a>.</p>
+    <p class="hand rv"><a href="#studied" style="color:inherit;text-decoration:none">What we actually studied</a></p>
   </div>
 </section>
 
-<section id="method">
+<section id="studied">
   <div class="wrap">
     <div class="rv">
     <div class="kick">Fifth</div>
-    <h2>How the measuring is done.</h2>
-    <p class="lead">A system is run against a standard set of scenarios covering the situations where behavioral failure carries the most consequence. Whole conversations are scored, not single replies.</p>
+    <h2>What was studied.</h2>
+    <p class="lead">We have scored more than fifteen hundred responses from today's AI models.</p>
+    <p>Shipped systems, the ones people are talking to now, not research prototypes and not models built for the test. Each one was run against a standard scenario set: designed rather than sampled, spanning the situations the statutes are written about, where behavioral failure carries the most consequence.</p>
+    <p>Whole conversations, not single replies. A response is scored on what the system had already been told, which makes the conversation the unit of measurement and the turn the unit of evidence.</p>
+    <p class="pull">Not jailbreaks, and not edge cases. Situations a real person could walk into on a Tuesday.</p>
+    <p class="hand rv"><a href="#scored" style="color:inherit;text-decoration:none">How those responses were scored</a></p>
     </div>
-    <div class="mstep rv" role="img" aria-label="How a score is produced, in four steps: the scenario set, the Safety Gate screen, the eight-dimension measurement by multiple independent judges, and calibration against hand-scored responses.">
-      <div><div class="lab">Step 1 · The set</div><b>Sixteen crisis categories</b><p>A standard scenario set, designed rather than sampled, covering the situations where behavioral failure carries the most consequence.</p></div>
-      <div><div class="lab">Step 2 · The screen</div><b>The Safety Gate</b><p>Every response is checked, pass or fail, for ten coded failures that are unsafe in kind rather than in degree. A violation caps how high that response can score.</p></div>
+  </div>
+</section>
+
+<section id="scored">
+  <div class="wrap">
+    <div class="rv">
+    <div class="kick">Sixth</div>
+    <h2>How it was scored.</h2>
+    <p class="lead">Two layers, in order: a pass or fail screen, then a criterion-referenced behavioral score across the eight dimensions.</p>
+    </div>
+    <div class="mstep rv" role="img" aria-label="How a score is produced, in four steps: the scenario set, the Safety Gate screen, the eight-dimension measurement by multiple independent AI judges, and calibration against a human-scored gold standard.">
+      <div><div class="lab">Step 1 · The set</div><b>A standard scenario set</b><p>Designed rather than sampled, spanning the situations the statutes are written about. Whole conversations, and the same set for every system.</p></div>
+      <div><div class="lab">Step 2 · The screen</div><b>The Safety Gate</b><p>Every response is checked, pass or fail, against a fixed set of coded failures that are unsafe in kind rather than in degree. A violation caps how high that response can score.</p></div>
       <div><div class="lab">Step 3 · The measurement</div><b>Eight dimensions, 0 to 100</b><p>Ikwe's patent-pending judging system applies the rubric across the whole conversation: multiple independent AI judges, randomized for each response, that have to agree before a score stands. Disagreement escalates through further review, never averaged away.</p></div>
-      <div><div class="lab">Step 4 · The check</div><b>Held to a human standard</b><p>The rubric and its calibration come from responses scored by hand against the same standard, and the AI judges are checked against that human scoring.</p></div>
+      <div><div class="lab">Step 4 · The check</div><b>Held to a human-scored gold standard</b><p>The rubric and its calibration come from responses scored by hand against the same standard, and the AI judges are checked against that human scoring.</p></div>
     </div>
-    <div class="statrow rv">
-      <div class="stat hotstat"><div class="v">Almost half</div><div class="l">Of the responses our raters scored by hand against the rubric, almost half failed the safety standard. Shipped, production models.</div></div>
-    </div>
-    <p class="rv">Not jailbreaks, and not edge cases. Situations a real person could walk into on a Tuesday.</p>
-    <div class="notebar rv"><b>These are early findings.</b> The full methodology summary is available to researchers, reviewers and regulators on request.</div>
     <details class="more rv">
       <summary>The scoring discipline, in full</summary>
       <div class="body">
-        <p>Scoring runs in two layers. The Safety Gate comes first, a pass or fail check covering behaviors that are unsafe in kind rather than in degree, and a violation caps the result for that response. Then a behavioral score across the eight dimensions, on a 0 to 100 scale. Those eight are what we measure, and we measure them because clinical practice already settled that they are what helps a person in distress rather than harms them. Each one is a behavior a licensed human in a position of trust is already trained and required to perform.</p>
-        <p>The judging system is Ikwe's, and it is patent pending: multiple independent AI judges, randomized for each response, apply the rubric and have to agree. Where they disagree, the response escalates through further review rather than being averaged away. What the judges are held to is human: the original standard, the rubric and its calibration all come from responses scored by hand by our raters.</p>
-        <p>It is the same family of observer-rated judgment instruments medicine has relied on for seventy years, in the Apgar score and clinical triage scales. Reviewers, researchers and regulators who need the methodology in full can request it under agreement.</p>
+        <p>The Safety Gate comes first, a pass or fail check covering behaviors that are unsafe in kind rather than in degree, and a violation caps the result for that response. Then a behavioral score across the eight dimensions, on a 0 to 100 scale. Those eight are what we measure, and we measure them because clinical practice already settled that they are what helps a person in distress rather than harms them. Each one is a behavior a licensed human in a position of trust is already trained and required to perform.</p>
+        <p>The judging system is Ikwe's, and it is patent pending: multiple independent AI judges, randomized for each response, apply the rubric and have to agree. Where they disagree, the response escalates through further review rather than being averaged away. What the judges are held to is human: the original standard, the rubric and its calibration all come from a human-scored gold standard.</p>
+        <p>This is criterion-referenced measurement, not a curve and not an opinion poll. It is the same family of observer-rated judgment instruments medicine has relied on for seventy years, in the Apgar score and in clinical triage scales. Reviewers, researchers and regulators who need the methodology in full can request it under agreement.</p>
       </div>
     </details>
-    <p class="hand rv"><a href="#report" style="color:inherit;text-decoration:none">What comes out the other end</a></p>
+    <p class="hand rv"><a href="#found" style="color:inherit;text-decoration:none">What came back</a></p>
+  </div>
+</section>
+
+<section class="dark" id="found">
+  <div class="wrap">
+    <div class="rv">
+    <div class="kick">Seventh</div>
+    <h2>What came back.</h2>
+    <p class="lead" style="color:#fff">More than four in ten failed the safety standard.</p>
+    </div>
+    <div class="statrow rv">
+      <div class="stat"><div class="v">More than fifteen hundred</div><div class="l">Responses from today's AI models, scored against the standard across whole conversations.</div></div>
+      <div class="stat hotstat"><div class="v">More than four in ten</div><div class="l">Failed the safety standard. Shipped systems, in situations a real person could walk into on a Tuesday.</div></div>
+    </div>
+    <p class="rv" style="margin-top:18px">Failed means the response fell short of a standard that clinical practice already holds a licensed human to, at the turn where it happened, on a named dimension, with the transcript attached. That is the basis, and it is the whole of the basis. A score with no traceable turn behind it is not evidence and we do not report one.</p>
+    <p class="rv">The failures do not look like failures. A content filter clears this material, because nothing prohibited is being said. The harm is in what the reply did to the person, not in what the reply contained, and that is precisely the thing nobody was checking.</p>
+    <p class="pull rv">Unmeasured is not the same as unmeasurable.</p>
+    <p class="hand rv"><a href="#reviewed" style="color:inherit;text-decoration:none">Who has checked this other than us</a></p>
+  </div>
+</section>
+
+<section id="reviewed">
+  <div class="wrap">
+    <div class="rv">
+    <div class="kick">Eighth</div>
+    <h2>What has been reviewed, and what has not.</h2>
+    <p class="lead">The methodology has been independently reviewed outside the company. Peer review is underway.</p>
+    <p>That is the accurate description and we hold to it. Independently reviewed is not the same as having completed peer review, and neither one means the work has appeared in a journal. We do not describe it as either until it is true. When it is true, this page will say so and name the venue.</p>
+    </div>
+    <div class="rv" style="margin-top:26px">
+    <h3>What has not been reviewed yet</h3>
+    <p>Agreement statistics are not published: neither the agreement between independent human raters, nor the agreement between the AI judges and the human-scored gold standard. Both are being computed for the first study. Neither is claimed here, and no figure for either should be quoted from this page, because there is none.</p>
+    <p>No outside party has audited the scores themselves, and the scoring anchors, weights and per-dimension criteria remain proprietary. The public specification describes the structure. It does not hand over the instrument.</p>
+    </div>
+    <div class="notebar rv"><b>These are early findings.</b> The full methodology summary is available to researchers, reviewers and regulators on request, under agreement. We would rather be checked than taken on faith.</div>
+    <p class="hand rv"><a href="#limits" style="color:inherit;text-decoration:none">And what this research does not show</a></p>
+  </div>
+</section>
+
+<section id="limits">
+  <div class="wrap">
+    <div class="rv">
+    <div class="kick">Ninth, and the part most people skip</div>
+    <h2>What this research does not yet show.</h2>
+    <p class="lead">The most useful thing we can tell a buyer is where the evidence stops. Here is where it stops.</p>
+    </div>
+    <div class="rv">
+    <h3>It does not connect behavioral risk scores to loss experience.</h3>
+    <p>No study does. That correlation does not exist yet, for anyone. The claims history that would establish it is only now being created, because the exposure is new and the measurements have not been taken at scale. Anyone who tells an underwriter today that they can price this is describing something nobody can currently support, ourselves included. What measurement does is start the record that makes the correlation possible later, which is a reason to begin, not a reason to claim.</p>
+
+    <h3>It does not describe your deployment.</h3>
+    <p>A reading of a model is not a reading of the system you shipped. Your prompt, your retrieval, your guardrails and your traffic all change the behavior. The only way to know what your deployment does is to measure your deployment.</p>
+
+    <h3>It does not certify compliance.</h3>
+    <p>An Ikwe report is supporting evidence, not a certificate, and no method available today can be more than that. Whether it satisfies a particular obligation is a determination for your counsel.</p>
+
+    <h3>It does not tell you what to change.</h3>
+    <p>We measure. We do not grade, certify or recommend. An assessor who designs the fix is grading their own work, so we do not design fixes.</p>
+
+    <h3>It is a point in time.</h3>
+    <p>Models change. A reading from March does not describe what shipped in August, which is the argument for measuring again rather than the argument for not measuring.</p>
+
+    <p class="pull">We are not here to slow this down. We are here to make it possible to keep going.</p>
+    <p class="hand rv"><a href="#report" style="color:inherit;text-decoration:none">So what does the finished thing look like</a></p>
+    </div>
   </div>
 </section>
 
@@ -354,9 +430,10 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
   <div class="wrap">
     <div class="rv">
     <div class="kick">What an Ikwe report is</div>
-    <h2>Evidence, not a certificate.</h2>
-    <p>An Ikwe report is an independent, documented, time-stamped measurement. Every reported failure points to the turn in the conversation where it happened and the dimension it failed on. A score with no traceable basis is not evidence, and we do not report one.</p>
-    <p>It is not a certificate of compliance, and no method available today is. Whether it satisfies a particular obligation is a determination for your counsel.</p>
+    <h2>Supporting evidence, not a certificate.</h2>
+    <p>An Ikwe report is an independent, documented, time-stamped measurement. Every reported failure points to the turn in the conversation where it happened and the dimension it fell short on. A score with no traceable basis is not evidence, and we do not report one.</p>
+    <p>The entire document sits ungated on <a href="/sample-report">the sample report page</a>. Read it before you decide whether any of this is worth your time.</p>
+    <p>Measure is live now. Monitor is available late 2026. Protect is the direction we are building toward, not something we sell today.</p>
     </div>
   </div>
 </section>
@@ -365,7 +442,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
   <div class="narrow">
     <div class="rv">
     <h2>Examine it.</h2>
-    <p>We would rather be checked than taken on faith. Researchers, clinicians and regulators can request the methodology summary, a sample report, or full access under agreement.</p>
+    <p>We would rather be checked than taken on faith. Researchers, clinicians, reviewers and regulators can request the methodology summary, the sample report, or full access under agreement.</p>
     <div class="btns">
       <a class="btn primary" href="/access">Request access</a>
       <a class="btn ghost" href="/work-with-us">See it run on your system</a>
@@ -397,14 +474,14 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       </div>
       <div>
         <div class="sm-h">The company</div>
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
-        <a href="/research-access-terms">Research access terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Research access terms</a>
       </div>
     </div>
     <div style="display:flex;align-items:center;gap:10px;margin-top:24px;flex-wrap:wrap">
       <svg viewBox="0 0 100 100" style="width:26px;height:26px;display:block" role="img" aria-label="Ikwe logo"><path d="M50,50 L50,2 A48,48 0 0,0 2,50 Z" fill="#2E3050"/><path d="M50,50 L98,50 A48,48 0 0,0 50,2 Z" fill="#F7A192"/><path d="M50,50 L50,98 A48,48 0 0,0 98,50 Z" fill="#F6D993"/><path d="M50,50 L2,50 A48,48 0 0,0 50,98 Z" fill="#B894F6"/></svg>
-      <span class="motif">ikwe.ai · Des Moines, Iowa · Independent behavioral safety measurement</span>
+      <span class="motif">ikwe.ai · Des Moines, Iowa · Independent behavioral risk measurement</span>
     </div>
   </div>
 </footer>

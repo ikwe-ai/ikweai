@@ -88,3 +88,6 @@ _headers
 id_rsa*
 .netrc
 .npmrc
+
+# v2 preview folder — never deploy a draft site from the repo root
+v2/

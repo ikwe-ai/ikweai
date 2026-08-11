@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | ikwe.ai</title>
-<meta name="description" content="Start a conversation, request an Assessment, or request access to our research materials.">
 <link rel="canonical" href="https://ikwe.ai/contact">
+<meta name="description" content="Start a conversation, ask about Measure, or request access to our research materials. Every note goes to a person, and a reply comes back within two business days.">
 <meta property="og:site_name" content="Ikwe.ai">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ikwe.ai/contact">
 <meta property="og:title" content="Contact">
-<meta property="og:description" content="Start a conversation, request an Assessment, or request access to our research materials.">
+<meta property="og:description" content="Start a conversation, ask about Measure, or request access to our research materials. Every note goes to a person, and a reply comes back within two business days.">
 <meta property="og:image" content="https://ikwe.ai/og/contact.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -127,7 +127,7 @@ table td,table th{line-height:1.55}
 <script>
 /* Clean URLs: GitHub Pages serves /page from page.html but does not redirect
    /page.html, so rewrite the address bar to the canonical extensionless path. */
-(function(){var p=location.pathname,q=location.search+location.hash;
+(function(){ var p=location.pathname,q=location.search+location.hash;
 if(p==='/index.html'){history.replaceState(null,'','/'+q);}
 else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
 </script>
@@ -160,7 +160,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <div class="clockstrip">
       <div class="cnode"><div class="t">When you send</div><div class="d">A person, not a queue</div><div class="s">Every note goes to a person. Nothing here is automated triage.</div></div>
       <div class="cnode"><div class="t">Within two business days</div><div class="d">You get a reply</div><div class="s">From us, about what you sent and what makes sense next.</div></div>
-      <div class="cnode c2"><div class="t">If an Assessment is next</div><div class="d">Scope agreed in writing</div><div class="s">Scope and timing are agreed in writing before anything starts.</div></div>
+      <div class="cnode c2"><div class="t">If a Measure engagement is next</div><div class="d">Scope agreed in writing</div><div class="s">Scope and timing are agreed in writing before anything starts.</div></div>
       <div class="cnode c3"><div class="t">Before anything runs</div><div class="d">Nothing connects until sign-off</div><div class="s">Nothing connects to your system until you have signed off on what is being scored.</div></div>
     </div>
     <p class="hand">The note itself, below</p>
@@ -179,12 +179,10 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <div class="interest-grid">
           <input type="radio" name="interest" id="int-conv" value="A conversation" checked>
           <label class="interest-card" for="int-conv"><strong>A conversation</strong><span>Tell us what you are building or carrying, and we will talk it through.</span></label>
-          <input type="radio" name="interest" id="int-assessment" value="An Assessment">
-          <label class="interest-card" for="int-assessment"><strong>An Assessment</strong><span>A first look at how your system behaves on our standard scenario set, scored and on the record.</span></label>
-          <input type="radio" name="interest" id="int-audit" value="An Audit">
-          <label class="interest-card" for="int-audit"><strong>An Audit</strong><span>The same standard, scoped to the question you have to answer, written up for whoever is asking.</span></label>
-          <input type="radio" name="interest" id="int-monitor" value="Monitoring">
-          <label class="interest-card" for="int-monitor"><strong>Monitoring</strong><span>Continuous scoring of your live, anonymized traffic, with a dashboard and check-ins.</span></label>
+          <input type="radio" name="interest" id="int-measure" value="Measure">
+          <label class="interest-card" for="int-measure"><strong>Measure</strong><span>Live now. Your system scored against the standard scenario set, returned as a report tied to the obligation you have to answer, then a re-score after you make changes.</span></label>
+          <input type="radio" name="interest" id="int-monitor" value="Monitor">
+          <label class="interest-card" for="int-monitor"><strong>Monitor</strong><span>Available late 2026. The same standard running continuously against your live anonymized traffic, as a subscription.</span></label>
           <input type="radio" name="interest" id="int-report" value="The full sample report">
           <label class="interest-card" for="int-report"><strong>The full sample report</strong><span>A fully worked example of an Ikwe scored report, clearly labeled illustrative.</span></label>
           <input type="radio" name="interest" id="int-diligence" value="Diligence on a system I did not build">
@@ -218,7 +216,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <textarea id="f-message" name="message" placeholder="A sentence or two is plenty."></textarea>
       </div>
       <button type="submit" class="btn btn-dark">Send</button>
-        <p class="reassure">Thirty minutes. We will tell you which of the three fits, scope it in writing, and send pricing. Nothing connects until you sign off, and the record that comes back is yours. If none of the three is right for you yet, we will say so.</p>
+        <p class="reassure">Thirty minutes. We will tell you what is worth measuring first and scope it in writing. Nothing connects until you sign off, and the record that comes back is yours. If none of this is right for you yet, we will say so.</p>
       <p class="form-note">Prefer email? Write to <a href="mailto:hello@ikwe.ai" style="color: var(--teal)">hello@ikwe.ai</a>.</p>
       <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
     </form>
@@ -249,14 +247,14 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       </div>
       <div>
         <div class="sm-h">The company</div>
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
-        <a href="/research-access-terms">Research access terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Research access terms</a>
       </div>
     </div>
     <div style="display:flex;align-items:center;gap:10px;margin-top:30px;flex-wrap:wrap">
       <svg viewBox="0 0 100 100" style="width:26px;height:26px;display:block" role="img" aria-label="Ikwe logo"><path d="M50,50 L50,2 A48,48 0 0,0 2,50 Z" fill="#2E3050"/><path d="M50,50 L98,50 A48,48 0 0,0 50,2 Z" fill="#F7A192"/><path d="M50,50 L50,98 A48,48 0 0,0 98,50 Z" fill="#F6D993"/><path d="M50,50 L2,50 A48,48 0 0,0 50,98 Z" fill="#B894F6"/></svg>
-      <span class="motif">ikwe.ai · Des Moines, Iowa · Independent behavioral safety measurement</span>
+      <span class="motif">ikwe.ai · Des Moines, Iowa · Independent behavioral risk measurement</span>
     </div>
   </div>
 </footer>
@@ -324,6 +322,9 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     var params = new URLSearchParams(location.search);
     var intent = (params.get('intent') || '').trim().toLowerCase();
     if (!intent) return;
+    /* Legacy intents from older links map onto the current layers. */
+    var aliases = { assessment:'measure', audit:'measure', monitoring:'monitor' };
+    if (aliases[intent]) intent = aliases[intent];
     var radios = document.querySelectorAll('#contact-form input[name="interest"]');
     for (var i = 0; i < radios.length; i++) {
       if (radios[i].value.toLowerCase().indexOf(intent) !== -1) { radios[i].checked = true; break; }

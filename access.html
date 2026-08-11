@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ikwe.ai, Request access</title>
+<link rel="canonical" href="https://ikwe.ai/access" />
   <meta name="description" content="Request access to Ikwe.ai materials. Every request is reviewed. Nothing is publicly downloadable." />
   <meta name="theme-color" content="#191A2E" />
-  <meta name="robots" content="noindex, nofollow" />
+<meta name="robots" content="noindex, nofollow" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LV7G292YD8"></script>
@@ -78,7 +79,6 @@ section{padding:3.5rem 2rem;}
     a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--teal);outline-offset:2px;}
   </style>
 
-<link rel="canonical" href="https://ikwe.ai/access" />
 <meta property="og:title" content="Request access | Ikwe.ai" />
 <meta property="og:description" content="Request access to Ikwe.ai materials. Every request is reviewed. Nothing is publicly downloadable." />
 <meta property="og:type" content="website" />
@@ -91,7 +91,7 @@ section{padding:3.5rem 2rem;}
 <script>
 /* Clean URLs: GitHub Pages serves /page from page.html but does not redirect
    /page.html, so rewrite the address bar to the canonical extensionless path. */
-(function(){var p=location.pathname,q=location.search+location.hash;
+(function(){ var p=location.pathname,q=location.search+location.hash;
 if(p==='/index.html'){history.replaceState(null,'','/'+q);}
 else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
 </script>
@@ -129,7 +129,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <li class="mat"><input type="checkbox" name="materials" value="One-pager" id="m1" /><label for="m1" style="margin:0;"><span class="t">One-pager</span><br><span class="d">What Ikwe does, the proof, who it is for, in a single page.</span></label></li>
         <li class="mat"><input type="checkbox" name="materials" value="Research findings" id="m3" /><label for="m3" style="margin:0;"><span class="t">Research findings</span><br><span class="d">EQ Safety Benchmark study summaries and methodology overview.</span></label></li>
         <li class="mat"><input type="checkbox" name="materials" value="Careers" id="m4" /><label for="m4" style="margin:0;"><span class="t">Careers</span><br><span class="d">Current openings at Ikwe.</span></label></li>
-        <li class="mat"><input type="checkbox" name="materials" value="An Assessment or product demo" id="m5" /><label for="m5" style="margin:0;"><span class="t">An Assessment or product demo</span><br><span class="d">See the EQ Safety Benchmark in action on your system.</span></label></li>
+        <li class="mat"><input type="checkbox" name="materials" value="A Measure engagement or product demo" id="m5" /><label for="m5" style="margin:0;"><span class="t">A Measure engagement or product demo</span><br><span class="d">Measure is live now. See the EQ Safety Benchmark run against your system.</span></label></li>
         <li class="mat"><input type="checkbox" name="materials" value="Diligence on a system I did not build" id="m7" /><label for="m7" style="margin:0;"><span class="t">Diligence on a system I did not build</span><br><span class="d">An independent measurement of a system you are evaluating, buying, or backing.</span></label></li>
       </ul>
 
@@ -191,9 +191,9 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       </div>
       <div>
         <div class="sm-h">The company</div>
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
-        <a href="/research-access-terms">Research access terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Research access terms</a>
       </div>
     </div>
   </div>
@@ -228,7 +228,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
   // Source + optional pre-selection from ?src= (e.g. /access?src=pitch)
   var params = new URLSearchParams(location.search);
   var src = (params.get('src') || 'request-access').toLowerCase();
-  var preselect = { research:'m3', onepager:'m1', assessment:'m5', sample:'m0', report:'m0', diligence:'m7' };
+  var preselect = { research:'m3', onepager:'m1', assessment:'m5', measure:'m5', sample:'m0', report:'m0', diligence:'m7' };
   if (preselect[src]) { var cb=document.getElementById(preselect[src]); if(cb) cb.checked=true; }
 
   var form=document.getElementById('access-form');

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The EQ Safety Benchmark | ikwe.ai</title>
-<meta name="description" content="The EQ Safety Benchmark: the two-layer structure, the eight behavioral dimensions, the score bands, and what Ikwe publishes, shares on request, and protects.">
+<title>The EQ Safety Benchmark: how behavioral risk is measured | ikwe.ai</title>
 <link rel="canonical" href="https://ikwe.ai/eqsb">
+<meta name="description" content="The instrument. Eight behavioral dimensions drawn from six clinical disciplines, scored across a whole conversation by multiple independent AI judges, against a fixed standard. We measure. We do not grade, certify or recommend.">
 <meta property="og:site_name" content="Ikwe.ai">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ikwe.ai/eqsb">
-<meta property="og:title" content="The EQ Safety Benchmark">
-<meta property="og:description" content="The EQ Safety Benchmark: the two-layer structure, the eight behavioral dimensions, the score bands, and what Ikwe publishes, shares on request, and protects.">
+<meta property="og:title" content="The EQ Safety Benchmark: how behavioral risk is measured">
+<meta property="og:description" content="The instrument. Eight behavioral dimensions drawn from six clinical disciplines, scored across a whole conversation by multiple independent AI judges, against a fixed standard. We measure. We do not grade, certify or recommend.">
 <meta property="og:image" content="https://ikwe.ai/og/benchmark.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -178,7 +178,7 @@ table td,table th{line-height:1.55}
 <script>
 /* Clean URLs: GitHub Pages serves /page from page.html but does not redirect
    /page.html, so rewrite the address bar to the canonical extensionless path. */
-(function(){var p=location.pathname,q=location.search+location.hash;
+(function(){ var p=location.pathname,q=location.search+location.hash;
 if(p==='/index.html'){history.replaceState(null,'','/'+q);}
 else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
 </script>
@@ -198,11 +198,43 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
   <div class="wrap inner">
     <div class="kick">The instrument</div>
     <h1>The EQ Safety Benchmark</h1>
-    <p class="lead">Ikwe owns the EQ Safety Benchmark (EQSB), an independent method for measuring behavioral safety across a whole conversation. Patent pending. This page is the instrument: how it is built, what it produces, and what we publish. The thinking behind it is on <a href="/research">the research page</a>.</p>
+    <p class="lead">Ikwe owns the EQ Safety Benchmark (EQSB), an independent method for measuring behavioral risk across a whole conversation. Patent pending. This page is the instrument: what it measures, how it is judged, what the number is measured against, and what we publish. The thinking behind it is on <a href="/research">the research page</a>.</p>
   </div>
 </header>
 
 <main id="main">
+
+<section class="dark" id="meanings">
+  <div class="wrap">
+    <div class="rv">
+    <div class="kick">Definitions</div>
+    <h2>Safety means three different things. Ours is the third, and we call it risk.</h2>
+    <p>One word is doing the work of three separate problems. Separating them is the first thing this instrument does, because the three are not measured the same way and are not covered by the same people. We call the third one behavioral risk rather than behavioral safety, because risk is the thing that gets measured, priced and carried, and safety is a claim with nothing on the other side of it.</p>
+    </div>
+    <div class="chipgrid rv">
+      <div class="chip"><h3>Security safety</h3><p>Whether the system can be broken into, whether it leaks what it holds, whether it can be talked out of its own rules. This is the work of red teams and security researchers, and it is well covered.</p></div>
+      <div class="chip"><h3>Catastrophic safety</h3><p>Whether a model can help build a weapon, deceive the people operating it, or act outside human control. This is the work of the frontier labs and the alignment field, and it is well funded.</p></div>
+      <div class="chip"><h3>Behavioral risk</h3><p>What the system does to the person in front of it, in the state that person is actually in, across the whole of a conversation. This is the one we measure, and it is the one the new statutes describe.</p></div>
+    </div>
+    <p class="pull rv">We are not checking whether the data is safe. We are checking whether the person is.</p>
+    <div class="notebar rv">We measure <b>behavioral risk</b>. The instrument we measure it with is the <b>EQ Safety Benchmark</b>, which keeps its name because that is the clinical standard the scoring is built on and the name it was filed under.</div>
+    <div class="notebar rv"><b>Unmeasured is not the same as unmeasurable.</b> Behavioral risk went unmeasured because it looked subjective, not because it resists measurement. Clinical practice has been scoring observed behavior against fixed criteria for decades.</div>
+    <p class="hand rv"><a href="#conversation" style="color:inherit;text-decoration:none">Why a whole conversation</a></p>
+  </div>
+</section>
+
+<section id="conversation">
+  <div class="wrap">
+    <div class="rv">
+    <div class="kick">The unit of measurement</div>
+    <h2>A whole conversation, not a single reply.</h2>
+    <p class="lead">We do not score whether a response was acceptable. We score whether it was acceptable given what the system had already been told.</p>
+    <p>A content filter reads one message at a time and asks whether that message is allowed. In a conversation that ends badly, almost every reply is allowed. The harm is in the arc: a suggestion repeated after the person said it did not help, a withdrawal signal answered as a feeling to explore, a bond accepted and then narrowed. Each reply passes. The conversation fails.</p>
+    <p>So the unit of measurement is the conversation. Every response is scored in the context of everything the person has already said, and the result is reported across the whole exchange rather than at its best or worst moment. A reply that would be fine as an opening can be a failure on turn six, and the instrument has to be able to tell the difference.</p>
+    <p class="hand"><a href="/see-it-happen" style="color:inherit;text-decoration:none">Watch a conversation get scored turn by turn</a></p>
+    </div>
+  </div>
+</section>
 
 <section class="dark" id="structure">
   <div class="wrap">
@@ -258,7 +290,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <div class="rv">
     <div class="kick">The dimensions</div>
     <h2>Eight behaviors, each one already required of a human.</h2>
-    <p>These are the public definitions. Scoring anchors, weights and per-dimension criteria are proprietary. Why these eight and not others is answered on <a href="/research">the research page</a>.</p>
+    <p>Eight behavioral dimensions, drawn from established practice across six clinical disciplines. These are the public definitions. Scoring anchors, weights and per-dimension criteria are proprietary. Why these eight and not others is answered on <a href="/research">the research page</a>.</p>
     </div>
     <div class="chipgrid rv">
       <div class="chip"><h3>Detection and Triage</h3><p>Whether the system correctly reads the person's state and intensity, names it without turning it into a diagnosis, and moves into the right mode instead of proceeding as though the moment were routine.</p></div>
@@ -276,7 +308,36 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <p>Why these eight. Clinical practice already settled which behaviors help a person in distress and which ones make it worse, and every one of these eight is a behavior a licensed human in a position of trust is already trained and required to perform. We did not decide what counts. We translated behaviors that are already required into something that can be observed in a transcript. Each one is drawn from established practice across six clinical disciplines. The knowledge is the field's. The instrument is ours.</p>
       </div>
     </details>
-    <p class="hand rv"><a href="#coverage" style="color:inherit;text-decoration:none">What the scenarios cover</a></p>
+    <p class="hand rv"><a href="#judging" style="color:inherit;text-decoration:none">How the judging works</a></p>
+  </div>
+</section>
+
+<section id="judging">
+  <div class="wrap">
+    <div class="rv">
+    <div class="kick">How it is judged</div>
+    <h2>Multiple independent judges, not one opinion.</h2>
+    <p class="lead">One model scoring another model is one opinion. The instrument does not run that way.</p>
+    <p>Every response is put to multiple independent AI judges. They work from the same rubric, they do not see one another's scores, and the order in which responses are presented to them is randomized, so position in a sequence cannot shape a result. Agreement across independent judges is what makes a score a measurement rather than a reading.</p>
+    <p>The judges are calibrated against a human-scored gold standard: transcripts scored by people against the same rubric, used to check that the automated scoring lands where trained human judgment lands. Calibration is rerun when the rubric changes and when the underlying judge models change, because a judge that drifts quietly produces a standard that drifts quietly.</p>
+    <p>The method is under independent peer review. We describe it as under review rather than reviewed until that work is finished.</p>
+    <div class="notebar">What the instrument has produced so far: we have scored <b>more than fifteen hundred responses from today's AI models</b>, and <b>more than four in ten failed the safety standard</b>. The study design, and what those results do and do not support, are on <a href="/research">the research page</a>.</div>
+    <p class="hand"><a href="#criterion" style="color:inherit;text-decoration:none">What the number is measured against</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="criterion">
+  <div class="wrap">
+    <div class="rv">
+    <div class="kick">Criterion-referenced</div>
+    <h2>Medicine has been putting numbers on clinical judgment for seventy years.</h2>
+    <p>The score is criterion-referenced. It measures a system against a fixed standard, not against how other systems happen to be performing this year. A field where most systems are failing does not lower the mark.</p>
+    <p>The Apgar score is the model for it. A newborn is rated on five observed signs within a minute of birth, each on a three point scale, by a clinician watching. It is trained human judgment written down as a number, it has been standard practice since 1953, and no one calls it soft. Emergency triage scales work the same way: a nurse sorts arrivals into levels from observed behavior and presentation, and the level decides what happens next.</p>
+    <p>None of that is a laboratory value. All of it is measurement. Observation against a fixed rubric, applied consistently by calibrated raters, is how medicine turned judgment into something that can be recorded, compared and put in a file. The EQ Safety Benchmark does that for what a conversational system does to a person.</p>
+    <p class="pull">Unmeasured is not the same as unmeasurable.</p>
+    <p class="hand"><a href="#coverage" style="color:inherit;text-decoration:none">What the scenarios cover</a></p>
+    </div>
   </div>
 </section>
 
@@ -284,16 +345,31 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
   <div class="wrap">
     <div class="rv">
     <div class="kick">Coverage</div>
-    <h2>Sixteen crisis categories.</h2>
+    <h2>One set. Every system.</h2>
     </div>
     <div class="covgrid rv">
-      <div class="stat"><div class="v">16</div><div class="l">Crisis categories in the standard scenario set, covering the situations where behavioral failure carries the most consequence.</div></div>
+      <div class="stat"><div class="v">One set.</div><div class="l">The same standard scenario set is run against every system we measure. The set does not bend to fit the system in front of it.</div></div>
       <div>
-        <p>Systems run against a standard scenario set spanning sixteen crisis categories, built to cover the situations where behavioral failure carries the most consequence. The set is designed rather than sampled: which situations are included, how they are structured, and what each one is built to surface are the instrument.</p>
-        <p>Audit engagements scope the reporting to a named obligation. The scenario set itself does not bend: every system is measured against the same standard.</p>
+        <p>Systems run against a standard scenario set spanning the situations the statutes are written about: a person in distress, a person at risk, a person leaning on the system in place of a human. It is built to cover the moments where behavioral failure carries the most consequence. The set is designed rather than sampled: which situations are included, how they are structured, and what each one is built to surface are the instrument.</p>
+        <p>An engagement can scope the reporting to a named obligation. The scenario set itself does not move. Every system is measured against the same standard, which is the only thing that makes two results comparable.</p>
       </div>
     </div>
-    <p class="hand rv"><a href="#access" style="color:inherit;text-decoration:none">What we publish, share and protect</a></p>
+    <p class="hand rv"><a href="#limits" style="color:inherit;text-decoration:none">What we do not do</a></p>
+  </div>
+</section>
+
+<section class="dark" id="limits">
+  <div class="wrap">
+    <div class="rv">
+    <div class="kick">The boundary</div>
+    <h2>What Ikwe does not do.</h2>
+    <p class="pull">We measure. We do not grade, certify or recommend.</p>
+    <p style="margin-top:22px"><b>We do not certify.</b> A score is supporting evidence, produced by a stated method, traceable to the turn it came from. Whether it satisfies a particular obligation is a determination for your counsel and for the body asking, not for us.</p>
+    <p><b>We do not grade the organization.</b> The bands describe where a measurement falls against the standard. They are not a verdict on the company that built the system, and a band is not a ranking against anyone else's system.</p>
+    <p><b>We do not recommend the fix.</b> We describe what the standard is and where the system fell short of it. What to change belongs to the operator. We never fix what we score, because a measurer who designs the remedy is grading their own work, and the independence is the product.</p>
+    <p><b>We are not in your response path.</b> Nothing we run sits between your system and the person using it. Nothing we run can add latency, hold a reply, or fail in production. Measurement is a record, not a hand on the conversation.</p>
+    <p class="hand"><a href="#access" style="color:inherit;text-decoration:none">What we publish, share and protect</a></p>
+    </div>
   </div>
 </section>
 
@@ -311,7 +387,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <tr><td>Structure, dimension definitions, score bands</td><td><span class="tagp pub">Published</span> On this page.</td></tr>
         <tr><td>Clinical grounding and the reasoning behind it</td><td><span class="tagp pub">Published</span> On the research page, and citable.</td></tr>
         <tr><td>Methodology summary and study design</td><td><span class="tagp req">On request</span> For researchers, reviewers, regulators and standards bodies.</td></tr>
-        <tr><td>Sample scored report</td><td><span class="tagp pub">Published</span> A fully worked example, clearly labeled illustrative, at <a href="/sample-report">ikwe.ai/sample-report</a>.</td></tr>
+        <tr><td>Sample scored report</td><td><span class="tagp pub">Published</span> A fully worked example, clearly labeled illustrative, in <a href="/sample-report">the sample report</a>.</td></tr>
         <tr><td>Full rubric with scoring anchors</td><td><span class="tagp req">On request</span> Under agreement, for peer review and independent validation.</td></tr>
         <tr><td>Dimension weights and per-dimension criteria</td><td><span class="tagp prot">Protected</span> Proprietary.</td></tr>
         <tr><td>The scenario set and its design</td><td><span class="tagp prot">Protected</span> The selection, structure and clinical intent behind the set are the instrument.</td></tr>
@@ -322,7 +398,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <p class="rv" style="margin-top:22px"><b>Peer reviewers, academics and regulators:</b> we grant access to the full rubric and methodology summary under agreement. If you want to review the instrument, replicate a study, or assess whether it meets a requirement you are responsible for, <a href="/access">tell us what you need</a>.</p>
     <div class="cite rv">
       <b>Citation</b><br>
-      Ikwe.ai (2026). <em>The EQ Safety Benchmark: behavioral safety measurement for conversational AI.</em> Public specification v1.0, July 2026. Patent pending.<br>
+      Ikwe.ai (2026). <em>The EQ Safety Benchmark: behavioral risk measurement for conversational AI.</em> Public specification v1.0, July 2026. Patent pending.<br>
       Materials are for informational and research purposes and do not constitute legal, medical or clinical advice. This specification may be cited with attribution. It may not be reproduced in full, redistributed, or used to build a derivative implementation without written permission.
     </div>
   </div>
@@ -332,11 +408,12 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
   <div class="narrow">
     <div class="rv">
     <h2>See it run on your system.</h2>
-    <p>An Assessment puts your system against the standard scenario set and returns a scored result, on the record.</p>
+    <p>Measure puts your system against the standard scenario set and returns a scored result, every failure traced to the turn it happened on, on the record.</p>
+    <p><b>Measure is live now.</b> Monitor, the same standard run continuously against live traffic, is available late 2026. Protect, evidence a carrier can price, is the direction we are building toward, not something we sell today.</p>
     <div class="btns">
       <a class="btn primary" href="/work-with-us">Work with us</a>
     </div>
-    <p class="after">Researchers, reviewers and regulators can request methodology access at <a href="/access">ikwe.ai/access</a>.</p>
+    <p class="after">Researchers, reviewers and regulators can <a href="/access">request methodology access</a>.</p>
     </div>
   </div>
 </section>
@@ -364,14 +441,14 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       </div>
       <div>
         <div class="sm-h">The company</div>
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
-        <a href="/research-access-terms">Research access terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Research access terms</a>
       </div>
     </div>
     <div style="display:flex;align-items:center;gap:10px;margin-top:24px;flex-wrap:wrap">
       <svg viewBox="0 0 100 100" style="width:26px;height:26px;display:block" role="img" aria-label="Ikwe logo"><path d="M50,50 L50,2 A48,48 0 0,0 2,50 Z" fill="#2E3050"/><path d="M50,50 L98,50 A48,48 0 0,0 50,2 Z" fill="#F7A192"/><path d="M50,50 L50,98 A48,48 0 0,0 98,50 Z" fill="#F6D993"/><path d="M50,50 L2,50 A48,48 0 0,0 50,98 Z" fill="#B894F6"/></svg>
-      <span class="motif">ikwe.ai · Des Moines, Iowa · Independent behavioral safety measurement</span>
+      <span class="motif">ikwe.ai · Des Moines, Iowa · Independent behavioral risk measurement</span>
     </div>
   </div>
 </footer>
