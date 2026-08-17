@@ -91,3 +91,6 @@ id_rsa*
 
 # v2 preview folder — never deploy a draft site from the repo root
 v2/
+
+# Internal working notes: keep out of the public repo and out of the publish root
+_SITE_CHANGES_*.md

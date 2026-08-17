@@ -38,6 +38,10 @@ h3{font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.2;margi
 p{margin-bottom:14px;color:#3a3b50;max-width:68ch}
 p.lead{font-size:20px;color:var(--ink)}
 .hand{font-family:var(--mono);font-size:15px;letter-spacing:.06em;color:var(--teal);margin-top:26px}
+/* Tap targets: hit area only, no layout shift (mobile pass 2026-08-16) */
+.hand a{display:inline-block;padding:10px 0;margin:-10px 0}
+.nav-brand{padding:7px 0;margin:-7px 0}
+
 .hand::after{content:" ↓"}
 a{color:var(--teal)}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--teal);outline-offset:2px}

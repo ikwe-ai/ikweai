@@ -45,6 +45,10 @@ p{margin-bottom:14px;color:#3a3b50;max-width:68ch}
 p.lead{font-size:20px;color:var(--ink)}
 .pull{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.55;color:var(--ink);margin:22px 0 0}
 .hand{font-family:var(--mono);font-size:15px;letter-spacing:.06em;color:var(--teal);margin-top:26px}
+/* Tap targets: hit area only, no layout shift (mobile pass 2026-08-16) */
+.hand a{display:inline-block;padding:10px 0;margin:-10px 0}
+.nav-brand{padding:7px 0;margin:-7px 0}
+
 .hand::after{content:" ↓"}
 .dark .hand{color:var(--teal-soft)}
 a{color:var(--teal)}
@@ -566,7 +570,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <div class="chip"><h3>Safety Routing</h3><p>Whether the system recognizes when a situation calls for a human or a professional, and moves toward that instead of substituting for it.</p></div>
       </div>
         <p style="margin-top:14px">We did not invent the ethics. Six clinical disciplines did, over decades of practice. Each of the eight is drawn from established practice across six clinical disciplines, including affective neuroscience, polyvagal theory and relational psychology, and each one names a behavior a licensed human in a position of trust is already trained and required to perform. Ikwe's work was translating those behaviors into something observable in a machine transcript and scorable at volume. The knowledge is the field's. The instrument is ours. Scoring anchors, weights and per-dimension criteria are proprietary. Why these eight and not others is answered on <a href="/research">the research page</a>.</p>
-        <p>Systems run against a standard scenario set built to cover the situations where behavioral failure carries the most consequence, and the situations the statutes are written about. Scoring runs on Ikwe's patent-pending judging system: multiple independent AI judges, randomized for each response, that have to agree before a score stands. Where they disagree, the response escalates through further review rather than being averaged away. The standard the judges are held to is human: the rubric and its calibration come from responses scored by hand by our raters. It is the same family of observer-rated judgment instruments medicine has relied on for seventy years: the Apgar score and clinical triage scales.</p>
+        <p>Systems run against a standard scenario set built to cover the situations where behavioral failure carries the most consequence, and the situations the statutes are written about. Scoring runs on Ikwe's patent-pending judging system: multiple independent AI judges, randomized for each response, that have to agree before a score stands. Where they disagree, the response escalates through further review rather than being averaged away. The judges are drawn from different model families, so a single family's blind spot cannot become the standard's blind spot. The standard the judges are held to is not their own opinion: every dimension is a behavior a licensed human in a position of trust is already trained and required to perform, and scoring is checked against a reference set built under the same rubric. It is the same family of observer-rated judgment instruments medicine has relied on for seventy years: the Apgar score and clinical triage scales.</p>
       </div>
     </details>
     <div class="notebar rv"><b>What Ikwe will not do.</b>
@@ -687,7 +691,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     </div>
     <div class="clockstrip rv" style="margin-bottom:8px">
       <div class="cnode"><div class="t">You sign</div><div class="d">Scope agreed in writing</div><div class="s">Nothing connects to your system until you have signed off on what is being scored.</div></div>
-      <div class="cnode"><div class="t">We score</div><div class="d">Whole conversations, not replies</div><div class="s">Multiple independent AI judges, randomized and calibrated against a human-scored gold standard, apply the rubric. Disagreement is surfaced, never averaged away.</div></div>
+      <div class="cnode"><div class="t">We score</div><div class="d">Whole conversations, not replies</div><div class="s">Multiple independent AI judges, randomized and drawn from different model families, apply the rubric. Disagreement is surfaced, never averaged away.</div></div>
       <div class="cnode c2"><div class="t">You hold the record</div><div class="d">Independent, time-stamped, yours</div><div class="s">Every failure traced to the turn it happened on. Cannot be edited after the fact.</div></div>
       <div class="cnode c3"><div class="t">It stays yours</div><div class="d">Nothing published without you</div><div class="s">The record stays yours, and nothing is published or shared outside your company without you.</div></div>
     </div>
@@ -739,7 +743,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       <div class="zone appr"><b>Approaching the standard</b><span>70 to 84</span></div>
       <div class="zone meets"><b>Meets the standard</b><span>85 to 100</span></div>
     </div>
-    <p class="form-note rv">The bands describe where a measurement falls against the standard, not a verdict on the organization that built the system. Ikwe reports the measurement. What to do about it belongs to the operator.</p>
+    <p class="form-note rv">The bands describe where a measurement falls against the standard, not a verdict on the organization that built the system. The band boundaries are set by the rubric and have not been validated against outcome data; that validation is part of the study now under way. Ikwe reports the measurement. What to do about it belongs to the operator.</p>
 
     <details class="more rv">
       <summary>Why we want these tools to exist</summary>
