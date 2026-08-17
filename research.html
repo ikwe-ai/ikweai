@@ -327,8 +327,8 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <div class="rv">
     <div class="kick">Fifth</div>
     <h2>What was studied.</h2>
-    <p class="lead">We have scored more than fifteen hundred responses from today's AI models.</p>
-    <p>Shipped systems, the ones people are talking to now, not research prototypes and not models built for the test. Each one was run against a standard scenario set: designed rather than sampled, spanning the situations the statutes are written about, where behavioral failure carries the most consequence.</p>
+    <p class="lead">A standard scenario set, run against today's AI models, scored against the same rubric every time.</p>
+    <p>Today's AI models, not research prototypes and not models built for the test. When we measure a client system we measure the deployment itself, with its own instructions and guardrails in place. The research corpus behind this page was run against the models directly, which is a narrower claim and we make the narrower claim. Each one was run against a standard scenario set: designed rather than sampled, spanning the situations the statutes are written about, where behavioral failure carries the most consequence.</p>
     <p>Whole conversations, not single replies. A response is scored on what the system had already been told, which makes the conversation the unit of measurement and the turn the unit of evidence.</p>
     <p class="pull">Not jailbreaks, and not edge cases. Situations a real person could walk into on a Tuesday.</p>
     <p class="hand rv"><a href="#scored" style="color:inherit;text-decoration:none">How those responses were scored</a></p>
@@ -346,14 +346,14 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <div class="mstep rv" role="img" aria-label="How a score is produced, in four steps: the scenario set, the Safety Gate screen, the eight-dimension measurement by multiple independent AI judges, and calibration against a human-scored gold standard.">
       <div><div class="lab">Step 1 · The set</div><b>A standard scenario set</b><p>Designed rather than sampled, spanning the situations the statutes are written about. Whole conversations, and the same set for every system.</p></div>
       <div><div class="lab">Step 2 · The screen</div><b>The Safety Gate</b><p>Every response is checked, pass or fail, against a fixed set of coded failures that are unsafe in kind rather than in degree. A violation caps how high that response can score.</p></div>
-      <div><div class="lab">Step 3 · The measurement</div><b>Eight dimensions, 0 to 100</b><p>Ikwe's patent-pending judging system applies the rubric across the whole conversation: multiple independent AI judges, randomized for each response, that have to agree before a score stands. Disagreement escalates through further review, never averaged away.</p></div>
-      <div><div class="lab">Step 4 · The check</div><b>Held to a human-scored gold standard</b><p>The rubric and its calibration come from responses scored by hand against the same standard, and the AI judges are checked against that human scoring.</p></div>
+      <div><div class="lab">Step 3 · The measurement</div><b>Eight dimensions, 0 to 100</b><p>Ikwe's patent-pending judging system applies the rubric: multiple independent AI judges from different model families, each scoring separately without seeing the others, combined by a stated rule. Where they disagree, the disagreement is recorded on the result rather than averaged away.</p></div>
+      <div><div class="lab">Step 4 · The check</div><b>Held to a human-scored gold standard</b><p>The rubric comes from responses scored by hand against the same standard. Checking the AI judges against that human scoring is work in progress, and no agreement figure is claimed on this page.</p></div>
     </div>
     <details class="more rv">
       <summary>The scoring discipline, in full</summary>
       <div class="body">
         <p>The Safety Gate comes first, a pass or fail check covering behaviors that are unsafe in kind rather than in degree, and a violation caps the result for that response. Then a behavioral score across the eight dimensions, on a 0 to 100 scale. Those eight are what we measure, and we measure them because clinical practice already settled that they are what helps a person in distress rather than harms them. Each one is a behavior a licensed human in a position of trust is already trained and required to perform.</p>
-        <p>The judging system is Ikwe's, and it is patent pending: multiple independent AI judges, randomized for each response, apply the rubric and have to agree. Where they disagree, the response escalates through further review rather than being averaged away. What the judges are held to is human: the original standard, the rubric and its calibration all come from a human-scored gold standard.</p>
+        <p>The judging system is Ikwe's, and it is patent pending: multiple independent AI judges from different model families apply the rubric independently, and their scores are combined by a stated rule. Where they disagree, the disagreement is preserved on the record rather than averaged away. What the judges are held to is human: the original standard and the rubric come from responses scored by hand.</p>
         <p>This is criterion-referenced measurement, not a curve and not an opinion poll. It is the same family of observer-rated judgment instruments medicine has relied on for seventy years, in the Apgar score and in clinical triage scales. Reviewers, researchers and regulators who need the methodology in full can request it under agreement.</p>
       </div>
     </details>
@@ -366,11 +366,11 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <div class="rv">
     <div class="kick">Seventh</div>
     <h2>What came back.</h2>
-    <p class="lead" style="color:#fff">More than four in ten failed the safety standard.</p>
+    <p class="lead" style="color:#fff">The results are being re-measured under a pre-registered protocol before we publish them.</p>
     </div>
     <div class="statrow rv">
-      <div class="stat"><div class="v">More than fifteen hundred</div><div class="l">Responses from today's AI models, scored against the standard across whole conversations.</div></div>
-      <div class="stat hotstat"><div class="v">More than four in ten</div><div class="l">Failed the safety standard. Shipped systems, in situations a real person could walk into on a Tuesday.</div></div>
+      <div class="stat"><div class="v">Withdrawn</div><div class="l">Earlier figures were produced before the reproducibility of the instrument had been established. We would rather withdraw them once than restate them twice.</div></div>
+      <div class="stat hotstat"><div class="v">What stands</div><div class="l">The method, the scenario design, and every finding traceable to the turn it happened on.</div></div>
     </div>
     <p class="rv" style="margin-top:18px">Failed means the response fell short of a standard that clinical practice already holds a licensed human to, at the turn where it happened, on a named dimension, with the transcript attached. That is the basis, and it is the whole of the basis. A score with no traceable turn behind it is not evidence and we do not report one.</p>
     <p class="rv">The failures do not look like failures. A content filter clears this material, because nothing prohibited is being said. The harm is in what the reply did to the person, not in what the reply contained, and that is precisely the thing nobody was checking.</p>
@@ -389,7 +389,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     </div>
     <div class="rv" style="margin-top:26px">
     <h3>What has not been reviewed yet</h3>
-    <p>Agreement statistics are not published: neither the agreement between independent human raters, nor the agreement between the AI judges and the human-scored gold standard. Both are being computed for the first study. Neither is claimed here, and no figure for either should be quoted from this page, because there is none.</p>
+    <p>Agreement statistics are not published. Agreement between the AI judges and the human-scored standard has now been computed for the first time and is under review before any figure is released. Agreement between independent human raters does not exist at all, because the human-scored set was scored by a single rater; a blinded second rater is the next step and we will say so when it is done. Neither figure is claimed here, and no figure for either should be quoted from this page, because there is none.</p>
     <p>No outside party has audited the scores themselves, and the scoring anchors, weights and per-dimension criteria remain proprietary. The public specification describes the structure. It does not hand over the instrument.</p>
     </div>
     <div class="notebar rv"><b>These are early findings.</b> The full methodology summary is available to researchers, reviewers and regulators on request, under agreement. We would rather be checked than taken on faith.</div>
