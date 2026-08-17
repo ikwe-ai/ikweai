@@ -62,6 +62,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 /* nav */
 nav{position:sticky;top:0;z-index:1000;background:var(--ink);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:60px}
 .nav-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+/* Tap targets: hit area only, no layout shift (mobile pass 2026-08-16) */
+.hand a{display:inline-block;padding:10px 0;margin:-10px 0}
+.nav-brand{padding:7px 0;margin:-7px 0}
+
 .nav-logo-circle{width:26px;height:26px;border-radius:50%;background:conic-gradient(#1D1F35 0deg 90deg,var(--coral) 90deg 180deg,var(--lav) 180deg 270deg,var(--cream) 270deg 360deg);flex-shrink:0}
 .nav-brand-name{font-family:var(--serif);font-size:18px;color:#fff;letter-spacing:.02em}
 .nav-cta{background:var(--coral);color:var(--ink);font-weight:500;font-size:15px;padding:.5rem 1.25rem;border-radius:6px;text-decoration:none}

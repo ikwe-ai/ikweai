@@ -32,6 +32,10 @@
     body{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;color:var(--text);background:var(--white);}
     nav{position:sticky;top:0;z-index:1000;background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
     .nav-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;}
+/* Tap targets: hit area only, no layout shift (mobile pass 2026-08-16) */
+.hand a{display:inline-block;padding:10px 0;margin:-10px 0}
+.nav-brand{padding:7px 0;margin:-7px 0}
+
     .nav-logo-circle{width:26px;height:26px;border-radius:50%;background:conic-gradient(#1D1F35 0deg 90deg,var(--coral) 90deg 180deg,var(--lav) 180deg 270deg,var(--cream) 270deg 360deg);border:1.5px solid rgba(247,161,146,0.35);flex-shrink:0;}
     .nav-brand-name{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--white);}
     .nav-cta{background:var(--coral);color:var(--navy);font-weight:500;font-size:.875rem;padding:.5rem 1.25rem;border-radius:6px;text-decoration:none;}

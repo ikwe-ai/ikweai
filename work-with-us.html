@@ -39,6 +39,10 @@ p{margin-bottom:14px;color:#3a3b50;max-width:68ch}
 p.lead{font-size:20px;color:var(--ink)}
 .pull{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.55;color:var(--ink);margin:22px 0 0}
 .hand{font-family:var(--mono);font-size:15px;letter-spacing:.06em;color:var(--teal);margin-top:26px}
+/* Tap targets: hit area only, no layout shift (mobile pass 2026-08-16) */
+.hand a{display:inline-block;padding:10px 0;margin:-10px 0}
+.nav-brand{padding:7px 0;margin:-7px 0}
+
 .hand::after{content:" ↓"}
 .dark .hand{color:var(--teal-soft)}
 a{color:var(--teal)}
