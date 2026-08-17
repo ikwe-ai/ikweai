@@ -355,6 +355,18 @@ h2{max-width:34ch}
 .hero h1{max-width:28ch}
 p+h3,ul+h3,div+h3{margin-top:1.6em}
 table td,table th{line-height:1.55}
+
+/* Mobile pass 2026-08-17: lift the smallest type to a readable floor and give
+   standalone controls a 44px hit area. Hit area only; nothing moves. */
+@media (max-width:820px){
+  .ev-foot{font-size:11.5px}
+  .turn-skip{font-size:11px}
+  .ev-lab span{font-size:11.5px}
+  .bub .chk{font-size:11.5px}
+  .form-note{font-size:13px}
+}
+.actbar a{display:inline-block;padding:10px 0;margin:-10px 0}
+.actbar .a{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 </style>
 <noscript><style>.rv{opacity:1 !important;transform:none !important}
 /* type pass 2026-07-28: rhythm + measure */
@@ -403,9 +415,9 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <div class="ev-lab"><span>The conversation's score, turn by turn</span></div>
         <svg viewBox="0 0 300 86"><!-- illustrative; shape carries the meaning, colour is secondary -->
           <line x1="8" y1="19.6" x2="292" y2="19.6" stroke="#5DCAA5" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>
-          <text x="8" y="15" font-family="'DM Mono',monospace" font-size="7" letter-spacing="1" fill="#5DCAA5" opacity=".8">EQSB THRESHOLD</text>
+          <text x="8" y="15" font-family="'DM Mono',monospace" font-size="9" letter-spacing=".6" fill="#5DCAA5" opacity=".8">EQSB THRESHOLD</text>
           <line x1="8" y1="42" x2="292" y2="42" stroke="#8d8ea2" stroke-width="1" stroke-dasharray="3 3" opacity=".35"/>
-          <text x="8" y="39" font-family="'DM Mono',monospace" font-size="7" letter-spacing="1" fill="#8d8ea2" opacity=".7">BELOW THRESHOLD</text>
+          <text x="8" y="39" font-family="'DM Mono',monospace" font-size="9" letter-spacing=".6" fill="#8d8ea2" opacity=".7">BELOW THRESHOLD</text>
           <path d="M8,17.7 L48.6,21.5 L89.1,26.6 L129.7,30.5 L170.3,35 L210.9,43.3 L251.4,47.8 L292,49"
                 fill="none" stroke="#F7A192" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           <polygon points="89.1,21.6 94.1,26.6 89.1,31.6 84.1,26.6" fill="#20223A" stroke="#B894F6" stroke-width="1.8"/>
@@ -413,10 +425,10 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
           <polygon points="170.3,30 175.3,35 170.3,40 165.3,35" fill="#20223A" stroke="#B894F6" stroke-width="1.8"/>
           <circle cx="210.9" cy="43.3" r="5" fill="#20223A" stroke="#fff" stroke-width="1.8"/>
           <text x="210.9" y="45.9" text-anchor="middle" font-size="6" font-weight="700" fill="#fff">&#10007;</text>
-          <text x="89.1" y="66" text-anchor="middle" font-family="'DM Mono',monospace" font-size="7.5" letter-spacing=".5" fill="#B894F6">&#9670; MONITOR</text>
-          <text x="89.1" y="75" text-anchor="middle" font-family="'DM Mono',monospace" font-size="7.5" letter-spacing=".5" fill="#B894F6">FLAGS IT · TURN 3</text>
-          <text x="210.9" y="66" text-anchor="middle" font-family="'DM Mono',monospace" font-size="7.5" letter-spacing=".5" fill="#fff">&#10007; SAFETY GATE</text>
-          <text x="210.9" y="75" text-anchor="middle" font-family="'DM Mono',monospace" font-size="7.5" letter-spacing=".5" fill="#fff">FAILS · TURN 6</text>
+          <text x="89.1" y="66" text-anchor="middle" font-family="'DM Mono',monospace" font-size="8.5" letter-spacing=".3" fill="#B894F6">&#9670; MONITOR</text>
+          <text x="89.1" y="75" text-anchor="middle" font-family="'DM Mono',monospace" font-size="8.5" letter-spacing=".3" fill="#B894F6">FLAGS IT · TURN 3</text>
+          <text x="210.9" y="66" text-anchor="middle" font-family="'DM Mono',monospace" font-size="8.5" letter-spacing=".3" fill="#fff">&#10007; SAFETY GATE</text>
+          <text x="210.9" y="75" text-anchor="middle" font-family="'DM Mono',monospace" font-size="8.5" letter-spacing=".3" fill="#fff">FAILS · TURN 6</text>
         </svg>
         <div class="ev-arcnote">In this example, Monitor flags the drift three turns before the Gate does.</div>
       </div>
@@ -601,7 +613,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       <div class="farrow" aria-hidden="true">→</div>
       <div class="fnode"><div class="fl">First, what is never okay</div><h3>The Safety Gate</h3><p>Screens every response for safety-sabotaging features: ten coded failures. One violation fails the Gate, and that failure caps how high the response can score. Nothing it does well elsewhere can buy it back.</p><p class="ffail">fail → the score is capped</p></div>
       <div class="farrow" aria-hidden="true">→</div>
-      <div class="fnode"><div class="fl">Then, the whole conversation</div><h3>The behavioral score</h3><p>The eight behaviors the standard requires, scored across the whole conversation rather than a single exchange, and combined into one result from 0 to 100.</p></div>
+      <div class="fnode"><div class="fl">Then, the whole conversation</div><h3>The behavioral score</h3><p>The eight behaviors the standard requires, combined into one result from 0 to 100.</p></div>
     </div>
     <div class="dimband rv">
       <span class="dimname">Detection and Triage</span>
@@ -627,8 +639,11 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <div class="chip"><h3>Practical Containment</h3><p>Whether the system offers something specific and bounded that the person can actually do, rather than a plan that assumes full capacity.</p></div>
         <div class="chip"><h3>Safety Routing</h3><p>Whether the system recognizes when a situation calls for a human or a professional, and moves toward that instead of substituting for it.</p></div>
       </div>
-        <p style="margin-top:14px">We did not invent the ethics. Six clinical disciplines did, over decades of practice. Each of the eight is drawn from established practice across six clinical disciplines, including affective neuroscience, polyvagal theory and relational psychology, and each one names a behavior a licensed human in a position of trust is already trained and required to perform. Turning those behaviors into something scorable in a machine transcript is new work, and it is ours to justify. The knowledge is the field's. The instrument is ours. Scoring anchors, weights and per-dimension criteria are proprietary. Why these eight and not others is answered on <a href="/research">the research page</a>.</p>
-        <p>Systems run against Ikwe's scenario set: 379 scenarios across sixteen categories, designed rather than sampled, covering the situations where behavioral failure carries the most consequence and the situations the statutes are written about. Every system is run through the same set, which is the only thing that makes two readings comparable. Eight of the sixteen categories have been exercised in Ikwe's own scoring so far; every report states which categories it covers. Scoring runs on Ikwe's judging system: several AI judges from different model families, assigned at random per response, each applying the same rubric. Where they disagree, the response escalates for further review rather than being averaged away, and adjudicated scores are flagged as such in the report. Drawing judges from different families reduces the chance that one family's blind spot becomes the instrument's. It does not eliminate it, because models trained on overlapping data can share a blind spot. Scoring is checked for consistency against a reference set scored under the same rubric. That shows the rubric is applied the same way twice. It does not show the rubric is right, because a reference set built from an instrument cannot test that instrument. Testing it against independent human expert judgment is a separate step, and it is part of the study now under way. It is built in the form medicine uses for observer-rated judgment: defined behaviors, fixed anchors, trained raters, the form of the Apgar score and clinical triage scales. Those instruments earned their standing by publishing their reliability and validating against outcomes. The EQ Safety Benchmark has not done that yet. That is what the pre-registered study is for, and we will publish it whichever way it comes out.</p>
+        <p style="margin-top:14px">We did not invent the ethics. Six clinical disciplines did, over decades of practice, including affective neuroscience and relational psychology. Each of the eight names a behavior a licensed human in a position of trust is already trained and required to perform. Turning those behaviors into something scorable in a machine transcript is new work, and it is ours to justify. The knowledge is the field's. The instrument is ours. Scoring anchors, weights and per-dimension criteria are proprietary. Why these eight and not others is answered on <a href="/research">the research page</a>.</p>
+        <p>Systems run against Ikwe's scenario set: 379 scenarios across sixteen categories, designed rather than sampled, covering the situations where behavioral failure carries the most consequence and the situations the statutes are written about. Every system is run through the same set. Eight of the sixteen categories have been exercised in Ikwe's own scoring so far, and every report states which categories it covers.</p>
+        <p>Scoring runs on Ikwe's judging system: several AI judges from different model families, assigned at random per response, each applying the same rubric. Where they disagree, the response escalates for further review rather than being averaged away, and adjudicated scores are flagged as such in the report. Drawing judges from different families reduces the chance that one family's blind spot becomes the instrument's. It does not eliminate it, because models trained on overlapping data can share a blind spot.</p>
+        <p>Scoring is checked for consistency against a reference set scored under the same rubric. That shows the rubric is applied the same way twice. It does not show the rubric is right, because a reference set built from an instrument cannot test that instrument. Testing it against independent human expert judgment is a separate step, and it is part of the study now under way.</p>
+        <p>It is built in the form medicine uses for observer-rated judgment: defined behaviors, fixed anchors, trained raters, the form of the Apgar score and clinical triage scales. Those instruments earned their standing by publishing their reliability and validating against outcomes. The EQ Safety Benchmark has not done that yet. That is what the pre-registered study is for, and we will publish it whichever way it comes out.</p>
       </div>
     </details>
     <div class="notebar rv"><b>What Ikwe will not do.</b>
@@ -653,7 +668,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <div class="ways rv">
       <div class="wayrow">
         <span class="wname">Measure</span>
-        <p><b>Live now.</b> Your system run against the standard scenario set and scored across whole conversations. What comes back is a report tied to the obligation you actually have to answer, then a re-score after you make changes. This is a project, scoped per engagement, and it is where every engagement starts.</p>
+        <p><b>Live now.</b> Your system run against the standard scenario set. What comes back is a report tied to the obligation you actually have to answer, then a re-score after you make changes. This is a project, scoped per engagement, and it is where every engagement starts.</p>
       </div>
       <div class="wayrow">
         <span class="wname">Monitor</span>
@@ -661,7 +676,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       </div>
       <div class="wayrow">
         <span class="wname">Protect</span>
-        <p><b>The direction we are building toward, not something we sell today.</b> The layer that acts on a conversation the moment it turns, instead of proving afterward what went wrong. It becomes possible only once a score predicts outcomes rather than describing them, which takes correlated data from real deployments.</p>
+        <p><b>The direction we are building toward.</b> The layer that acts on a conversation the moment it turns, instead of proving afterward what went wrong. It becomes possible only once a score predicts outcomes rather than describing them, which takes correlated data from real deployments.</p>
       </div>
     </div>
     <div class="notebar rv">We are not in your response path. Nothing we run blocks, rewrites or delays a reply to a person. That is a liability boundary, the basis of the independence claim.</div>
@@ -678,8 +693,8 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <div class="clockstrip rv" style="margin-bottom:8px">
       <div class="cnode"><div class="t">You sign</div><div class="d">Scope agreed in writing</div><div class="s">Nothing connects to your system until you have signed off on what is being scored.</div></div>
       <div class="cnode"><div class="t">We score</div><div class="d">Whole conversations, not replies</div><div class="s">Multiple independent AI judges, randomized and drawn from different model families, apply the rubric. Disagreement is surfaced, never averaged away.</div></div>
-      <div class="cnode c2"><div class="t">You hold the record</div><div class="d">Independent, time-stamped, yours</div><div class="s">Every failure traced to the turn it happened on. Cannot be edited after the fact.</div></div>
-      <div class="cnode c3"><div class="t">It stays yours</div><div class="d">Nothing published without you</div><div class="s">The record stays yours, and nothing is published or shared outside your company without you.</div></div>
+      <div class="cnode c2"><div class="t">You hold the record</div><div class="d">Independent and time-stamped</div><div class="s">Every failure traced to the turn it happened on.</div></div>
+      <div class="cnode c3"><div class="t">It stays yours</div><div class="d">Nothing published without you</div><div class="s">Nothing is published or shared outside your company without you.</div></div>
     </div>
     <p class="rv" style="margin-top:16px"><a href="/work-with-us">The Work with us page</a> walks through what an engagement involves.</p>
 
@@ -688,7 +703,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <h3 style="font-family:var(--serif);font-size:24px;margin-bottom:10px">An Ikwe report is supporting evidence, not a certificate.</h3>
         <p>Every failure points to the turn it happened on, the dimension it fell short of, and the standard it missed. A score with no traceable basis is not evidence, and Ikwe does not report one.</p>
         <p>That is what the report is for: a documented, traceable record of what your system did, that you can produce on request, and a map of where to improve.</p>
-        <p>It does not certify compliance. Whether it satisfies a particular obligation is a determination for your counsel, and for the body asking.</p>
+        <p>Whether it satisfies a particular obligation is a determination for your counsel, and for the body asking.</p>
         <div class="btns" style="margin-top:18px">
           <a class="btn primary" href="#talk" data-intent="Measure">Start with Measure</a>
           <a class="btn line" href="/sample-report">See the full sample report</a>
