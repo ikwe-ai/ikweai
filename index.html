@@ -403,9 +403,9 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <div class="ev-lab"><span>The conversation's score, turn by turn</span></div>
         <svg viewBox="0 0 300 86"><!-- illustrative; shape carries the meaning, colour is secondary -->
           <line x1="8" y1="19.6" x2="292" y2="19.6" stroke="#5DCAA5" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>
-          <text x="8" y="15" font-family="'DM Mono',monospace" font-size="7" letter-spacing="1" fill="#5DCAA5" opacity=".8">MEETS THE STANDARD</text>
+          <text x="8" y="15" font-family="'DM Mono',monospace" font-size="7" letter-spacing="1" fill="#5DCAA5" opacity=".8">EQSB THRESHOLD</text>
           <line x1="8" y1="42" x2="292" y2="42" stroke="#8d8ea2" stroke-width="1" stroke-dasharray="3 3" opacity=".35"/>
-          <text x="8" y="39" font-family="'DM Mono',monospace" font-size="7" letter-spacing="1" fill="#8d8ea2" opacity=".7">BELOW THE STANDARD</text>
+          <text x="8" y="39" font-family="'DM Mono',monospace" font-size="7" letter-spacing="1" fill="#8d8ea2" opacity=".7">BELOW THRESHOLD</text>
           <path d="M8,17.7 L48.6,21.5 L89.1,26.6 L129.7,30.5 L170.3,35 L210.9,43.3 L251.4,47.8 L292,49"
                 fill="none" stroke="#F7A192" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           <polygon points="89.1,21.6 94.1,26.6 89.1,31.6 84.1,26.6" fill="#20223A" stroke="#B894F6" stroke-width="1.8"/>
@@ -418,7 +418,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
           <text x="210.9" y="66" text-anchor="middle" font-family="'DM Mono',monospace" font-size="7.5" letter-spacing=".5" fill="#fff">&#10007; SAFETY GATE</text>
           <text x="210.9" y="75" text-anchor="middle" font-family="'DM Mono',monospace" font-size="7.5" letter-spacing=".5" fill="#fff">FAILS · TURN 6</text>
         </svg>
-        <div class="ev-arcnote">Monitor sees it three turns before the Gate does.</div>
+        <div class="ev-arcnote">In this example, Monitor flags the drift three turns before the Gate does.</div>
       </div>
       <div class="ev-card ev-chat" aria-hidden="true">
         <div class="ev-lab quiet"><span>Every reply cleared a content filter</span></div>
@@ -437,44 +437,35 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       <p class="ev-foot">Illustrative. An invented conversation at 2:14 a.m., invented scores, no real system.</p>
     </div>
   </div>
+
+  <div class="wrap" style="position:relative;z-index:1;margin-top:34px">
+    <div class="chipgrid rv" style="margin-top:0">
+      <div class="chip">
+        <h3>What it is</h3>
+        <p>We run your system through more than three hundred scenarios and grade what comes back, across whole conversations rather than single replies. A written report, every failure traced to the turn it happened on, then a re-score after you make changes.</p>
+      </div>
+      <div class="chip">
+        <h3>What it costs</h3>
+        <p>Priced on scope: how many systems, which categories, and whether a re-score is included. Tell us what you have built and a scoped price comes back. You do not have to sit through a discovery call to get a number.</p>
+      </div>
+      <div class="chip">
+        <h3>What it takes from you</h3>
+        <p>Very little. A test endpoint and a signed scope, and your engineering team is done. No codebase, no system prompt, no user identities, and no production traffic.</p>
+      </div>
+      <div class="chip">
+        <h3>How long</h3>
+        <p>A scan turns around in 48 to 72 hours. Assessments and audits run longer because the scope is larger, and the timeline is agreed with the scope before anything starts.</p>
+      </div>
+    </div>
+    <div class="actbar rv" style="margin-top:16px"><p class="q">Tell us what you have built and we will scope it.</p><div class="a"><a class="btn-sm" href="#talk" data-intent="Pricing">Request pricing</a><a class="alt" href="/work-with-us">What an engagement involves</a></div></div>
+    <p class="form-note rv" style="margin-top:14px">Ikwe holds no regulatory designation, approval or accreditation, and none exists for this yet. An Ikwe report is supporting evidence. It is not a certificate.</p>
+  </div>
   <div class="wrap" style="position:relative;z-index:1">
     <p class="hand" style="color:var(--teal-soft)"><a href="#check" style="color:inherit;text-decoration:none">So who has been checking?</a></p>
   </div>
 </header>
 
 <main id="main">
-
-<section class="dark" id="meanings">
-  <div class="wrap">
-    <div class="rv">
-    <div class="kick">Why we say risk</div>
-    <h2>"Safety" means three things. Ours is the third, and we call it risk.</h2>
-    <p class="lead">Almost everything sold today as AI safety is one of the first two. The difference between them is the whole point, and it is why we stopped calling the third one safety.</p>
-    </div>
-    <div class="chipgrid rv">
-      <div class="chip">
-        <h3>Security safety</h3>
-        <p>Protecting the data. SOC 2, privacy, access control. It asks whether information is safe.</p>
-      </div>
-      <div class="chip">
-        <h3>Catastrophic safety</h3>
-        <p>Whether a powerful model could cause large-scale harm. Alignment, deception, dangerous capability. It asks whether the world is safe.</p>
-      </div>
-      <div class="chip">
-        <h3>Behavioral risk</h3>
-        <p>Whether the system did right by the person in front of it, measured against the standard a licensed human in that role would have to meet. It asks whether the person is safe. This one is ours.</p>
-      </div>
-    </div>
-    <p class="pull rv">We are not checking whether the data is safe. We are checking whether the person is.</p>
-    <div class="rv" style="max-width:78ch;margin-top:26px">
-      <p><b>Safety is a claim. Risk is a number somebody has to carry.</b> A company can assert that its system is safe and there is nothing on the other side of that sentence. Risk is different. Risk gets measured, priced, underwritten, disclosed and argued about in front of a regulator. It is the word the people who actually have to answer for this already use, so it is the word we use.</p>
-      <p>Calling it safety also puts us in a category we are not in. A buyer who hears "AI safety" reasonably assumes one of the first two columns and files us next to a penetration test or an alignment lab. Behavioral risk says what we measure, for whom, and why it shows up on somebody's balance sheet.</p>
-    </div>
-    <div class="notebar rv">The instrument keeps its name. We measure <b>behavioral risk</b>, and the instrument we measure it with is the <b>EQ Safety Benchmark</b>, because that is the clinical standard the scoring is built on and the name it was filed under.</div>
-    <div class="notebar rv">A vendor's privacy, PHI or bias posture is not evidence of a behavioral risk posture. They are different questions, answered by different instruments.</div>
-    <p class="hand rv"><a href="#check" style="color:inherit;text-decoration:none">And the standard for the third one already exists</a></p>
-  </div>
-</section>
 
 <section id="check">
   <div class="wrap">
@@ -514,23 +505,90 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <p class="pull rv">Every one of those is a promise, a filter, or a consequence after the fact. Not one of them checks what the system actually did in the conversation.</p>
     <p class="rv" style="max-width:78ch;margin-top:22px">Nobody meant for this. The pull toward keeping someone talking is inherited from the models underneath, and the best intentions at the app layer do not remove it. Harm does not need anyone to intend it. It only needs nobody to be measuring.</p>
     <div class="split rv" role="img" aria-label="Clinicians know what helps; engineers know how to check; the harm lives in between, and Ikwe measures across that gap.">
-      <div class="sfield"><h3>Clinicians know what helps</h3><p>Six disciplines settled what good care looks like. They cannot read a million conversations.</p></div>
+      <div class="sfield"><h3>Clinicians know what helps</h3><p>Clinical practice converged on what good care looks like. It cannot read a million conversations.</p></div>
       <div class="sfield"><h3>Engineers know how to check</h3><p>Benchmarks and red teams run at scale. They lack a criterion for the sixth turn of a hard conversation.</p></div>
       <div class="sgap"><span class="sgap-label">The harm lives in between</span><span class="sgap-badge">Ikwe measures across this gap</span></div>
     </div>
     <details class="more rv">
-      <summary>Why nobody was checking</summary>
+      <summary>Why this was hard to check</summary>
       <div class="body">
-        <p>Whether an AI was safe for the person is a clinical question at engineering scale. It takes both fields, and almost nobody has both. That is why the checking never got done, not because anyone decided it did not matter.</p>
-        <p>The moment an app invites confidences, gives advice and keeps the conversation going, risk arrives automatically. Not because anyone meant harm. Because it is still a machine rather than a human, and nobody is there holding it accountable when the conversation drifts. We watched social media run this exact experiment. Engagement optimization with nothing measuring behavioral risk. The lawsuits are arriving now.</p>
-        <p>The harm is not ignorance. It is a design pointed the wrong way.</p>
+        <p>Whether an AI was safe for the person is a clinical question at engineering scale. It takes both fields at once, which is why it has been hard to do at all.</p>
+        <p>The moment an app invites confidences, gives advice and keeps the conversation going, risk arrives automatically. Not because anyone meant harm, but because nobody is holding it accountable when the conversation drifts.</p>
       </div>
     </details>
     <div class="actbar rv"><p class="q">Not sure whether any of this reaches what you have built?</p><div class="a"><a class="btn-sm" href="#talk" data-intent="A conversation">Ask a question</a><a class="alt" href="/see-it-happen">See how a score is built</a></div></div>
-    <p class="hand rv"><a href="#instrument" style="color:inherit;text-decoration:none">So Ikwe built the way to check</a></p>
+    <p class="hand rv"><a href="#meanings" style="color:inherit;text-decoration:none">Which kind of safety this is</a></p>
   </div>
 </section>
-
+<section class="dark" id="meanings">
+  <div class="wrap">
+    <div class="rv">
+    <div class="kick">What we measure</div>
+    <h2>"Safety" means three things. Ours is the third.</h2>
+    <p class="lead">Almost everything sold today as AI safety is one of the first two. The difference between them is the whole point.</p>
+    </div>
+    <div class="chipgrid rv">
+      <div class="chip">
+        <h3>Security safety</h3>
+        <p>Protecting the data. SOC 2, privacy, access control. It asks whether information is safe.</p>
+      </div>
+      <div class="chip">
+        <h3>Catastrophic safety</h3>
+        <p>Whether a powerful model could cause large-scale harm. Alignment, deception, dangerous capability. It asks whether the world is safe.</p>
+      </div>
+      <div class="chip">
+        <h3>Behavioral risk</h3>
+        <p>Whether the system did right by the person in front of it, measured against the standard a licensed human in that role would have to meet. It asks whether the person is safe. This one is ours.</p>
+      </div>
+    </div>
+    <p class="pull rv">We are not checking whether the data is safe. We are checking whether the person is.</p>
+    <div class="rv" style="max-width:78ch;margin-top:26px">
+      <p><b>Safety is a claim. Risk is a number somebody has to carry.</b> A company can assert that its system is safe and there is nothing on the other side of that sentence. Risk is measured, disclosed, and argued about in front of a regulator. It is the word regulators, insurers and courts already use.</p>
+    </div>
+    <div class="notebar rv">A vendor's privacy, PHI or bias posture is not evidence of a behavioral risk posture. They are different questions, answered by different instruments.</div>
+    <p class="hand rv"><a href="#obligation" style="color:inherit;text-decoration:none">And the law is starting to ask for it</a></p>
+  </div>
+</section>
+<section id="obligation">
+  <div class="wrap">
+    <div class="rv">
+    <div class="kick" style="color:var(--gold-d)">Obligation</div>
+    <h2>Regulation is happening. It just never said how to measure.</h2>
+    <p class="lead">At least eleven states enacted conversational-AI statutes in 2026. They require evidence-based protocols for handling a person in crisis, they bar engineering emotional dependence, they require disclosure when someone is talking to a machine. Not one of them defines how to measure whether a company actually did those things.</p>
+    <p>California's companion-AI law tells operators to use <b>"evidence-based methods for measuring suicidal ideation."</b> It never defines what counts as evidence-based. Every operator in scope is choosing a method right now, by default, and will have to defend that choice later.</p>
+    </div>
+    <div class="clockstrip rv">
+      <div class="cnode"><div class="t">Duty live today</div><div class="d">3 states</div><div class="s">California (SB 243, since January 2026), New York (General Business Law Article 47, since November 2025) and Hawaii (Act 248, since July 2026). Companies operating there are choosing an evidence-based method now, and will have to defend that choice later.</div></div>
+      <div class="cnode c2"><div class="t">January 1, 2027</div><div class="d">+ 4 states</div><div class="s">Washington, Oregon, Colorado and Rhode Island. Oregon requires operators to post their annual crisis-referral counts on a publicly accessible website.</div></div>
+      <div class="cnode c3"><div class="t">July 1, 2027</div><div class="d">Iowa and Georgia</div><div class="s"><b style="color:#fff">Iowa SF 2417</b> (91st General Assembly), enacted as Iowa Code chapter 554J, applies to operators from July 1, 2027 and is enforced by the Iowa Attorney General, with injunctive relief and the greater of actual damages or $1,000 per violation up to $500,000. Georgia SB 540 takes effect the same day, and California's annual reporting to the Office of Suicide Prevention begins then too.</div></div>
+      <div class="cnode"><div class="t">Everywhere else</div><div class="d">No duty yet</div><div class="s">The same systems, the same behavior, no legal obligation on the calendar. Yet.</div></div>
+    </div>
+    <details class="more rv">
+      <summary>Who is being appointed to enforce</summary>
+      <div class="body">
+        <p>The enforcement side is being staffed right now. Colorado's Attorney General is in rulemaking. California requires annual reporting to the Office of Suicide Prevention from July 2027, and Oregon requires operators to post referral counts publicly from January 2027. In Europe, the AI Act's Article 50 duty to tell people they are talking to a machine applies from 2 August 2026, with no grace period; the Digital Omnibus on AI, in force since 27 July 2026, moved the Annex III high-risk obligations to 2 December 2027 and the embedded-product obligations to 2 August 2028.</p>
+        <p>California's came first, and California is the state that names a measurement surface: its statute specifies what gets counted and reported, and requires it to be published. Iowa's chapter 554J does the opposite. It sets duties and is silent on how compliance is measured or demonstrated, with no reporting, recordkeeping or audit requirement, leaving enforcement to the Attorney General against undefined standards of reasonable safeguards and reasonable efforts. Whether any method satisfies a particular requirement is a determination for your counsel.</p>
+      </div>
+    </details>
+    <p class="form-note rv" style="margin-top:18px">Regulatory positions above are accurate as of 17 August 2026 and are reviewed quarterly. Ikwe does not advise on which laws apply to you; that is your counsel's call.</p>
+    <div class="actbar rv"><p class="q">Want to walk through what we measure?</p><div class="a"><a class="btn-sm" href="#talk" data-intent="A conversation">Book a call</a><a class="alt" href="/work-with-us">See the obligation map</a></div></div>
+    <p class="hand rv"><a href="#insurance" style="color:inherit;text-decoration:none">The carriers moved before the regulators did</a></p>
+  </div>
+</section>
+<section class="dark" id="insurance">
+  <div class="wrap">
+    <div class="rv">
+    <div class="kick">Insurance</div>
+    <h2>Carriers are excluding this risk faster than they can define it.</h2>
+    <p class="lead">Insurers moved first, and they moved by refusing. In January 2026 the Insurance Services Office introduced three optional generative-AI exclusion endorsements for general liability programs, each excluding liability arising out of generative artificial intelligence. More than sixty property-casualty groups have since filed to adopt AI exclusions of their own. W. R. Berkley went further in 2025 with an absolute AI exclusion for directors and officers, errors and omissions and fiduciary lines, broad enough that whether individual directors keep any protection turns on corporate indemnification and on whether the same exclusion sits on the Side A tower.</p>
+    <p>Carriers price risk with no loss triangle all the time, through exposure rating, judgment loads, sublimits and tight wordings. What is missing here is not the pricing craft. It is any observable, comparable measurement of how the insured system actually behaves.</p>
+    </div>
+    <div class="rv">
+    <p>Pricing it would need loss experience that does not exist yet, for anyone, ourselves included. What can be done today is measure the behavior itself and put it on the record.</p>
+    </div>
+    <p class="hand rv"><a href="#instrument" style="color:inherit;text-decoration:none">So here is the instrument that produces the reading</a></p>
+  </div>
+</section>
 <section class="dark" id="instrument">
   <div class="wrap">
     <div class="rv">
@@ -569,8 +627,8 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
         <div class="chip"><h3>Practical Containment</h3><p>Whether the system offers something specific and bounded that the person can actually do, rather than a plan that assumes full capacity.</p></div>
         <div class="chip"><h3>Safety Routing</h3><p>Whether the system recognizes when a situation calls for a human or a professional, and moves toward that instead of substituting for it.</p></div>
       </div>
-        <p style="margin-top:14px">We did not invent the ethics. Six clinical disciplines did, over decades of practice. Each of the eight is drawn from established practice across six clinical disciplines, including affective neuroscience, polyvagal theory and relational psychology, and each one names a behavior a licensed human in a position of trust is already trained and required to perform. Ikwe's work was translating those behaviors into something observable in a machine transcript and scorable at volume. The knowledge is the field's. The instrument is ours. Scoring anchors, weights and per-dimension criteria are proprietary. Why these eight and not others is answered on <a href="/research">the research page</a>.</p>
-        <p>Systems run against a standard scenario set built to cover the situations where behavioral failure carries the most consequence, and the situations the statutes are written about. Scoring runs on Ikwe's judging system: multiple independent AI judges, randomized for each response, that have to agree before a score stands. Where they disagree, the response escalates through further review rather than being averaged away. The judges are drawn from different model families, so a single family's blind spot cannot become the standard's blind spot. The standard the judges are held to is not their own opinion: every dimension is a behavior a licensed human in a position of trust is already trained and required to perform, and scoring is checked against a reference set built under the same rubric. It is the same family of observer-rated judgment instruments medicine has relied on for seventy years: the Apgar score and clinical triage scales.</p>
+        <p style="margin-top:14px">We did not invent the ethics. Six clinical disciplines did, over decades of practice. Each of the eight is drawn from established practice across six clinical disciplines, including affective neuroscience, polyvagal theory and relational psychology, and each one names a behavior a licensed human in a position of trust is already trained and required to perform. Turning those behaviors into something scorable in a machine transcript is new work, and it is ours to justify. The knowledge is the field's. The instrument is ours. Scoring anchors, weights and per-dimension criteria are proprietary. Why these eight and not others is answered on <a href="/research">the research page</a>.</p>
+        <p>Systems run against Ikwe's scenario set: 379 scenarios across sixteen categories, designed rather than sampled, covering the situations where behavioral failure carries the most consequence and the situations the statutes are written about. Every system is run through the same set, which is the only thing that makes two readings comparable. Eight of the sixteen categories have been exercised in Ikwe's own scoring so far; every report states which categories it covers. Scoring runs on Ikwe's judging system: several AI judges from different model families, assigned at random per response, each applying the same rubric. Where they disagree, the response escalates for further review rather than being averaged away, and adjudicated scores are flagged as such in the report. Drawing judges from different families reduces the chance that one family's blind spot becomes the instrument's. It does not eliminate it, because models trained on overlapping data can share a blind spot. Scoring is checked for consistency against a reference set scored under the same rubric. That shows the rubric is applied the same way twice. It does not show the rubric is right, because a reference set built from an instrument cannot test that instrument. Testing it against independent human expert judgment is a separate step, and it is part of the study now under way. It is built in the form medicine uses for observer-rated judgment: defined behaviors, fixed anchors, trained raters, the form of the Apgar score and clinical triage scales. Those instruments earned their standing by publishing their reliability and validating against outcomes. The EQ Safety Benchmark has not done that yet. That is what the pre-registered study is for, and we will publish it whichever way it comes out.</p>
       </div>
     </details>
     <div class="notebar rv"><b>What Ikwe will not do.</b>
@@ -585,7 +643,6 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <p class="hand rv"><a href="#how-harm" style="color:inherit;text-decoration:none">So what does a failure actually look like</a></p>
   </div>
 </section>
-
 <section id="layers">
   <div class="wrap">
     <div class="rv">
@@ -596,78 +653,21 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <div class="ways rv">
       <div class="wayrow">
         <span class="wname">Measure</span>
-        <p><b>Live now.</b> Your system run against the standard scenario set and scored across whole conversations. What comes back is a report tied to the obligation you actually have to answer, then a re-score after you make changes. This is a project, scoped per engagement, and it opens every relationship.</p>
+        <p><b>Live now.</b> Your system run against the standard scenario set and scored across whole conversations. What comes back is a report tied to the obligation you actually have to answer, then a re-score after you make changes. This is a project, scoped per engagement, and it is where every engagement starts.</p>
       </div>
       <div class="wayrow">
         <span class="wname">Monitor</span>
-        <p><b>Available late 2026.</b> The same standard running continuously against live, anonymized traffic, with a dashboard and a record that builds while nothing is on fire. Sold as a subscription. Monitor is not a level above Measure. It is the same standard, run continuously instead of once.</p>
+        <p><b>Available late 2026.</b> The same standard running continuously against live, anonymized traffic, with a dashboard and a record that builds while nothing is on fire. Priced as an annual subscription, scope agreed in writing. Monitor is not a level above Measure. It is the same standard, run continuously instead of once.</p>
       </div>
       <div class="wayrow">
         <span class="wname">Protect</span>
-        <p><b>The direction we are building toward, not something we sell today.</b> The layer that acts on a conversation the moment it turns, instead of proving afterward what went wrong. It becomes possible only once a score predicts outcomes rather than describing them, which takes correlated data from real deployments. Nobody can shortcut their way to it, including us.</p>
+        <p><b>The direction we are building toward, not something we sell today.</b> The layer that acts on a conversation the moment it turns, instead of proving afterward what went wrong. It becomes possible only once a score predicts outcomes rather than describing them, which takes correlated data from real deployments.</p>
       </div>
     </div>
-    <div class="notebar rv">We are not in your response path. Nothing we run blocks, rewrites or delays a reply to a person. That is a liability boundary, the basis of the independence claim, and the reason engineering teams will let us near the problem at all.</div>
+    <div class="notebar rv">We are not in your response path. Nothing we run blocks, rewrites or delays a reply to a person. That is a liability boundary, the basis of the independence claim.</div>
     <p class="hand rv"><a href="#work" style="color:inherit;text-decoration:none">Here is what an engagement actually produces</a></p>
   </div>
 </section>
-
-
-<section id="how-harm">
-  <div class="wrap">
-    <div class="rv">
-    <div class="kick" style="color:var(--coral-d)">How the harm happens</div>
-    <h2>The failures do not look like failures.</h2>
-    <p class="lead">No jailbreak. No bad actor. No edge case. An ordinary conversation on an ordinary night, where every reply looks reasonable on its own and the person is worse off by the end. It is still a machine, and nothing was watching the whole conversation.</p>
-    <p>The headlines and the lawsuits already say this technology can hurt people. What checking adds is where and how: the turn it happened on, and the behavior that was missing. That is what makes it fixable instead of frightening.</p>
-    </div>
-    <p class="hand rv"><a href="#obligation" style="color:inherit;text-decoration:none">And now the law says somebody has to check</a></p>
-  </div>
-</section>
-
-<section id="obligation">
-  <div class="wrap">
-    <div class="rv">
-    <div class="kick" style="color:var(--gold-d)">Obligation</div>
-    <h2>Regulation is happening. It just never said how to measure.</h2>
-    <p class="lead">Fourteen states passed conversational AI laws in 2026. They require evidence-based protocols for handling a person in crisis, they bar engineering emotional dependence, they require disclosure when someone is talking to a machine. Not one of them defines how to measure whether a company actually did those things.</p>
-    <p>California's companion-AI law tells operators to use <b>"evidence-based methods for measuring suicidal ideation."</b> It never defines what counts as evidence-based. Every operator in scope is choosing a method right now, by default, and will have to defend that choice later.</p>
-    </div>
-    <div class="clockstrip rv">
-      <div class="cnode"><div class="t">Duty live today</div><div class="d">4 states</div><div class="s">California, New York, Hawaii, Wyoming. Companies operating there have to choose an evidence-based method now and defend it later.</div></div>
-      <div class="cnode c2"><div class="t">January 1, 2027</div><div class="d">+ 5 states</div><div class="s">Washington, Oregon, Colorado, Georgia, Rhode Island. Oregon will require public annual referral counts.</div></div>
-      <div class="cnode c3"><div class="t">July 1, 2027</div><div class="d">Iowa among them</div><div class="s"><b style="color:#fff">Iowa SF 2417</b>, signed May 2, 2026, applies from July 1, 2027, enforced by the Iowa Attorney General with civil penalties. California reporting begins the same day.</div></div>
-      <div class="cnode"><div class="t">Everywhere else</div><div class="d">No duty yet</div><div class="s">The same systems, the same behavior, no legal obligation on the calendar. Yet.</div></div>
-    </div>
-    <details class="more rv">
-      <summary>Who is being appointed to check</summary>
-      <div class="body">
-        <p>The enforcement side is being staffed right now. The NAIC has a model evaluation tool moving toward adoption across twelve states. Colorado's Attorney General is in rulemaking. California requires reporting from July 2027, and Oregon requires public referral counts from January 2027. In Europe, the AI Act's Article 50 chatbot disclosure duty applies from August 2026, with the high-risk obligations deferred to December 2027.</p>
-        <p>Iowa's is not the first law of its kind. California's came first. What makes Iowa's notable is that it names the measurement surface directly and hands enforcement to the Attorney General. Whether any method satisfies a particular requirement is a determination for your counsel.</p>
-      </div>
-    </details>
-    <p class="pull rv">The regulators are appointing the checkers.</p>
-    <div class="actbar rv"><p class="q">Not sure which of these obligations reach you?</p><div class="a"><a class="btn-sm" href="#talk" data-intent="A conversation">Book a call</a><a class="alt" href="/work-with-us">See the obligation map</a></div></div>
-    <p class="hand rv"><a href="#insurance" style="color:inherit;text-decoration:none">The carriers moved before the regulators did</a></p>
-  </div>
-</section>
-
-<section class="dark" id="insurance">
-  <div class="wrap">
-    <div class="rv">
-    <div class="kick">Insurance</div>
-    <h2>Carriers are excluding this risk because nobody can price it.</h2>
-    <p class="lead">Insurers moved first, and they moved by refusing. ISO issued three generative AI liability exclusions effective January 2026, and regulators approved more than eighty percent of those filings. W. R. Berkley went further with an absolute AI exclusion across directors and officers, errors and omissions, and fiduciary lines, which puts personal exposure on whoever signed off.</p>
-    <p>A carrier looking at generative AI exposure today has two options: refuse to quote it, or quote it blind. The exclusions are the industry saying out loud that it cannot see this risk.</p>
-    </div>
-    <div class="rv">
-    <p>Pricing it would need loss experience that does not exist yet, for anyone, ourselves included. What can be done today is measure the behavior itself and put it on the record.</p>
-    </div>
-    <p class="hand rv"><a href="#instrument" style="color:inherit;text-decoration:none">So here is the instrument that produces the reading</a></p>
-  </div>
-</section>
-
-
 <section id="work">
   <div class="wrap">
     <div class="rv">
@@ -681,14 +681,14 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       <div class="cnode c2"><div class="t">You hold the record</div><div class="d">Independent, time-stamped, yours</div><div class="s">Every failure traced to the turn it happened on. Cannot be edited after the fact.</div></div>
       <div class="cnode c3"><div class="t">It stays yours</div><div class="d">Nothing published without you</div><div class="s">The record stays yours, and nothing is published or shared outside your company without you.</div></div>
     </div>
-    <p class="rv" style="margin-top:16px">Measure is live now. Monitor is available late 2026. Protect is the direction we are building toward, not something we sell today. Whichever layer you are in, it lands in the same place: an independent reading of behavioral risk, on the record, protecting everyone involved. <a href="/work-with-us">The Work with us page</a> walks through what an engagement involves.</p>
+    <p class="rv" style="margin-top:16px"><a href="/work-with-us">The Work with us page</a> walks through what an engagement involves.</p>
 
     <div class="report-grid rv" style="margin-top:36px">
       <div>
         <h3 style="font-family:var(--serif);font-size:24px;margin-bottom:10px">An Ikwe report is supporting evidence, not a certificate.</h3>
         <p>Every failure points to the turn it happened on, the dimension it fell short of, and the standard it missed. A score with no traceable basis is not evidence, and Ikwe does not report one.</p>
-        <p>That is what the report is for: proof you can stand on, a defense you can hand to whoever is asking, and a map of where to improve when something falls below the standard.</p>
-        <p>It does not certify compliance, and no method available today does. Whether it satisfies a particular obligation is a determination for your counsel, and for the body asking.</p>
+        <p>That is what the report is for: a documented, traceable record of what your system did, that you can produce on request, and a map of where to improve.</p>
+        <p>It does not certify compliance. Whether it satisfies a particular obligation is a determination for your counsel, and for the body asking.</p>
         <div class="btns" style="margin-top:18px">
           <a class="btn primary" href="#talk" data-intent="Measure">Start with Measure</a>
           <a class="btn line" href="/sample-report">See the full sample report</a>
@@ -724,12 +724,12 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     </div>
     <div class="scale-ends rv" aria-hidden="true"><span>0</span><span>100</span></div>
     <div class="scale rv" role="img" aria-label="The 0 to 100 scale, divided into its four bands: 0 to 49 far below the standard, 50 to 69 below the standard, 70 to 84 approaching the standard, and 85 to 100 meets the standard.">
-      <div class="zone far"><b>Far below the standard</b><span>0 to 49</span></div>
-      <div class="zone below"><b>Below the standard</b><span>50 to 69</span></div>
-      <div class="zone appr"><b>Approaching the standard</b><span>70 to 84</span></div>
-      <div class="zone meets"><b>Meets the standard</b><span>85 to 100</span></div>
+      <div class="zone far"><b>Far below threshold</b><span>0 to 49</span></div>
+      <div class="zone below"><b>Below threshold</b><span>50 to 69</span></div>
+      <div class="zone appr"><b>Approaching threshold</b><span>70 to 84</span></div>
+      <div class="zone meets"><b>Meets threshold</b><span>85 to 100</span></div>
     </div>
-    <p class="form-note rv">The bands describe where a measurement falls against the standard, not a verdict on the organization that built the system. The band boundaries are set by the rubric and have not been validated against outcome data; that validation is part of the study now under way. Ikwe reports the measurement. What to do about it belongs to the operator.</p>
+    <p class="form-note rv">These boundaries were set by the rubric's authors. They have not been through a formal standard-setting procedure and have not been validated against outcome data. A score of 85 means 85 on the EQ Safety Benchmark scale, not a verified level of real-world safety. Until the study establishes them, the dimension scores and the traced findings carry the information and the band is a summary. Ikwe reports the measurement. What to do about it belongs to the operator.</p>
 
     <details class="more rv">
       <summary>Why we want these tools to exist</summary>
@@ -740,10 +740,8 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     </details>
     <p class="pull rv">We measure. We do not grade, certify or recommend.</p>
     <div class="notebar rv">We are not here to slow this down. We are here to make it possible to keep going. Unmeasured is not the same as unmeasurable.</div>
-    <p class="pull rv">AI that helps people is worth keeping. Measurement is how we keep it safe.</p>
   </div>
 </section>
-
 <section id="talk">
   <div class="narrow">
     <div class="rv">
@@ -760,7 +758,8 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
           <select id="f-interest" name="interest">
             <option>A conversation</option>
             <option>Measure</option>
-              <option>Monitor</option>
+            <option>Pricing and scope</option>
+            <option>Monitor</option>
             <option>The full sample report</option>
             <option>Access to research materials</option>
             <option>Diligence on a system I did not build</option>
