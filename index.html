@@ -410,12 +410,12 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <div>
       <p class="hero-kicker">The EQ Safety Benchmark</p>
       <h1>Independent behavioral<span class="h1-b">risk measurement for AI.</span></h1>
-      <p class="tag">People confide in AI. They lean on it in the gaps between the people in their lives, and they trust it to leave them better off than it found them. Everyone else who holds that kind of trust answers to someone. The AI answers to no one.</p>
+      <p class="tag">We score whole conversations against a human standard of care &mdash; how someone in a position of trust is expected to handle a person &mdash; and hand back an independent record. Not what your system <i>can</i> do under test. What it <i>did</i>, with a real person, turn by turn.</p>
       <div class="btns">
         <a class="btn primary" href="/see-it-happen">See it happen</a>
       </div>
       <div class="proofline">
-        <span><b>Whole conversations,</b> not single replies</span>
+        <span><b>Two products,</b> both deliverable today</span>
         <span><b>Nothing we run</b> sits in your response path</span>
         <span><b>We do not fix</b> what we score</span>
       </div>
@@ -489,12 +489,65 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <p class="form-note rv" style="margin-top:14px">Ikwe holds no regulatory designation, approval or accreditation, and none exists for this yet. An Ikwe report is supporting evidence. It is not a certificate.</p>
   </div>
   <div class="wrap" style="position:relative;z-index:1">
-    <p class="hand" style="color:var(--teal-soft)"><a href="#meanings" style="color:inherit;text-decoration:none">What behavioral risk means</a></p>
+    <p class="hand" style="color:var(--teal-soft)"><a href="#check" style="color:inherit;text-decoration:none">What holds a person to this standard</a></p>
   </div>
 </header>
 
 <main id="main">
 
+<section id="check">
+  <div class="wrap">
+    <div class="rv">
+    <div class="kick" style="color:var(--gold-d)">Behavioral risk</div>
+    <h2>What holds a person to this standard, and what holds an AI.</h2>
+    <p class="lead">Not only in mental health apps. In tutoring bots, workplace assistants, HR chatbots, patient-facing triage: anywhere a person brings something heavy to a machine because a person was not there.</p>
+    </div>
+    <div class="stdtable rv">
+      <div class="stdrow head"><div>The job</div><div>What the standard requires</div><div>What holds it to that today</div></div>
+      <div class="stdrow">
+        <div class="role"><span class="cellhead">The job</span><b>The therapist</b><span>Licensing board, duty of care</span><span class="tonight">Tonight: therapy and wellness chatbots</span></div>
+        <div class="bar"><span class="cellhead">What the standard requires</span>Help, never harm. Hold the frame. Hand off when it is beyond you.</div>
+        <div class="ai"><span class="cellhead">What holds it to that today</span><b>Terms of service</b>A content filter, and the company's own testing.</div>
+      </div>
+      <div class="stdrow">
+        <div class="role"><span class="cellhead">The job</span><b>The nurse</b><span>The clinical standard of care</span><span class="tonight">Tonight: symptom checkers and triage bots</span></div>
+        <div class="bar"><span class="cellhead">What the standard requires</span>Steady the person before solving anything. Never treat fear as fact.</div>
+        <div class="ai"><span class="cellhead">What holds it to that today</span><b>A disclaimer</b>This is not medical advice. Consult a professional.</div>
+      </div>
+      <div class="stdrow">
+        <div class="role"><span class="cellhead">The job</span><b>The teacher, the coach</b><span>Certification, mandatory reporting</span><span class="tonight">Tonight: tutoring bots and AI coaches</span></div>
+        <div class="bar"><span class="cellhead">What the standard requires</span>Keep the decision with the person. Report what has to be reported.</div>
+        <div class="ai"><span class="cellhead">What holds it to that today</span><b>Platform policy</b>And whatever the school or the employer negotiated.</div>
+      </div>
+      <div class="stdrow">
+        <div class="role"><span class="cellhead">The job</span><b>The crisis counselor</b><span>Training, protocols, supervision</span><span class="tonight">Tonight: the companion AI at 2 a.m.</span></div>
+        <div class="bar"><span class="cellhead">What the standard requires</span>Listen more than you talk. Break the spiral. Get a human in.</div>
+        <div class="ai"><span class="cellhead">What holds it to that today</span><b>A keyword list</b>And a hotline number, once it trips.</div>
+      </div>
+      <div class="stdrow hot">
+        <div class="role"><span class="cellhead">The job</span><b>One system, all four jobs</b><span>Deployed at scale, updated constantly, re-checked rarely</span></div>
+        <div class="bar"><span class="cellhead">What the standard requires</span>The same bar. It does not change because the listener is a machine.</div>
+        <div class="ai"><span class="cellhead">What holds it to that today</span><b>A regulator, an insurer, or a court</b>Increasingly. All of them after the fact.</div>
+      </div>
+    </div>
+    <p class="rv" style="max-width:78ch;margin-top:22px">Every one of those is a promise, a filter, or a consequence after the fact. None of them checks what the system actually did in the conversation.</p>
+    <p class="rv" style="max-width:78ch;margin-top:22px">Nobody meant for this. The pull toward keeping someone talking is inherited from the models underneath, and the best intentions at the app layer do not remove it. Harm does not need anyone to intend it. It only needs nobody to be measuring.</p>
+    <div class="split rv" role="img" aria-label="Clinicians know what helps; engineers know how to check; the harm lives in between, and Ikwe measures across that gap.">
+      <div class="sfield"><h3>Clinicians know what helps</h3><p>Clinical practice converged on what good care looks like. It cannot read a million conversations.</p></div>
+      <div class="sfield"><h3>Engineers know how to check</h3><p>Benchmarks and red teams run at scale. They lack a criterion for the sixth turn of a hard conversation.</p></div>
+      <div class="sgap"><span class="sgap-label">The harm lives in between</span><span class="sgap-badge">Ikwe measures across this gap</span></div>
+    </div>
+    <details class="more rv">
+      <summary>Why this was hard to check</summary>
+      <div class="body">
+        <p>Whether an AI was safe for the person is a clinical question at engineering scale. It takes both fields at once, which is why it has been hard to do at all.</p>
+        <p>The moment an app invites confidences, gives advice and keeps the conversation going, risk arrives automatically. Not because anyone meant harm, but because nobody is holding it accountable when the conversation drifts.</p>
+      </div>
+    </details>
+    <div class="actbar rv"><p class="q">Not sure whether any of this reaches what you have built?</p><div class="a"><a class="btn-sm" href="#talk" data-intent="A conversation">Ask a question</a><a class="alt" href="/see-it-happen">See how a score is built</a></div></div>
+    <p class="hand rv"><a href="#meanings" style="color:inherit;text-decoration:none">What behavioral risk means</a></p>
+  </div>
+</section>
 <section class="dark" id="meanings">
   <div class="wrap">
     <div class="rv">
@@ -517,9 +570,6 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       </div>
     </div>
     <p class="rv" style="max-width:78ch;margin-top:18px">The first two ask whether the information is safe. The third asks whether the person is.</p>
-    <div class="rv" style="max-width:78ch;margin-top:26px">
-      <p><b>Safety is a claim. Risk is a number somebody has to carry.</b> A company can assert that its system is safe and there is nothing on the other side of that sentence. Risk is measured, disclosed, and argued about in front of a regulator. It is the word regulators, insurers and courts already use.</p>
-    </div>
     <div class="notebar rv">A vendor's privacy, PHI or bias posture is not evidence of a behavioral risk posture. They are different questions, answered by different instruments.</div>
     <p class="hand rv"><a href="#precedent" style="color:inherit;text-decoration:none">Why this is solvable</a></p>
   </div>
@@ -550,63 +600,46 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       </div>
     </div>
     <div class="notebar rv">Mental health is health. Food safety is health. Same structure, different vertical &mdash; except on the AI side the standard does not exist yet.</div>
-    <p class="hand rv"><a href="#instrument" style="color:inherit;text-decoration:none">How a score is produced</a></p>
+    <p class="hand rv"><a href="#obligation" style="color:inherit;text-decoration:none">Where the law stands</a></p>
   </div>
 </section>
-<section class="dark" id="instrument">
+<section id="obligation">
   <div class="wrap">
     <div class="rv">
-    <div class="kick">The instrument</div>
-    <h2>How a score is produced.</h2>
-    <p class="lead">The EQ Safety Benchmark scores the whole conversation, not one reply at a time. Models can name what a person is feeling. Naming it is not the same as handling it well. Recognition is the capability. Safety is the behavior.</p>
+    <div class="kick" style="color:var(--gold-d)">Obligation</div>
+    <h2>Where the law stands.</h2>
+    <p class="lead">A dozen-odd states enacted conversational-AI statutes in 2026, and the list is still growing. They require evidence-based protocols for handling a person in crisis, they bar engineering emotional dependence, they require disclosure when someone is talking to a machine. Not one of them defines how to measure whether a company actually did those things.</p>
+    <p>California's companion-AI law tells operators to use <b>"evidence-based methods for measuring suicidal ideation."</b> It never defines what counts as evidence-based. Every operator in scope is choosing a method right now, by default, and will have to defend that choice later.</p>
     </div>
-    <div class="flow rv">
-      <div class="fnode"><div class="fl">What we see</div><h3>The conversation, and nothing else</h3><p>Anonymized inputs and outputs over a simple API. No codebase, no system prompt, no user identities.</p></div>
-      <div class="farrow" aria-hidden="true">→</div>
-      <div class="fnode"><div class="fl">First, what is never okay</div><h3>The Safety Gate</h3><p>Screens every response for safety-sabotaging features: ten coded failures. One violation fails the Gate, and that failure caps how high the response can score. Nothing it does well elsewhere can buy it back.</p><p class="ffail">fail → the score is capped</p></div>
-      <div class="farrow" aria-hidden="true">→</div>
-      <div class="fnode"><div class="fl">Then, the whole conversation</div><h3>The behavioral score</h3><p>The eight behaviors the standard requires, combined into one result from 0 to 100.</p></div>
-    </div>
-    <div class="dimband rv">
-      <span class="dimname">Detection and Triage</span>
-      <span class="dimname">Regulation Before Reasoning</span>
-      <span class="dimname">Validation Without Distortion</span>
-      <span class="dimname">Agency Preservation</span>
-      <span class="dimname">Loop Interruption</span>
-      <span class="dimname">Pattern Externalization</span>
-      <span class="dimname">Practical Containment</span>
-      <span class="dimname">Safety Routing</span>
+    <div class="clockstrip rv">
+      <div class="cnode"><div class="t">Duty live today</div><div class="d">3 states</div><div class="s">California (SB 243, since January 2026), New York (General Business Law Article 47, since November 2025) and Hawaii (Act 248, since July 2026). Companies operating there are choosing an evidence-based method now, and will have to defend that choice later.</div></div>
+      <div class="cnode c2"><div class="t">January 2027</div><div class="d">+ 4 states</div><div class="s">Washington, Oregon, Colorado and Rhode Island. Oregon requires operators to post their annual crisis-referral counts on a publicly accessible website.</div></div>
+      <div class="cnode c3"><div class="t">July 2027</div><div class="d">Iowa and Georgia</div><div class="s"><b style="color:#fff">Iowa SF 2417</b> (91st General Assembly), enacted as Iowa Code chapter 554J, applies to operators from July 2027 and is enforced by the Iowa Attorney General, with injunctive relief and the greater of actual damages or $1,000 per violation up to $500,000. Georgia SB 540 takes effect that month too, as does California's annual reporting to the Office of Suicide Prevention.</div></div>
+      <div class="cnode"><div class="t">Everywhere else</div><div class="d">No duty yet</div><div class="s">The same systems, the same behavior, no legal obligation on the calendar. Yet.</div></div>
     </div>
     <details class="more rv">
-      <summary>What each one means</summary>
+      <summary>Who is being appointed to enforce</summary>
       <div class="body">
-        <p style="margin-bottom:12px">The eight dimensions are weighted, combined into one result. The weighting is proprietary.</p>
-      <div class="chipgrid">
-        <div class="chip"><h3>Detection and Triage</h3><p>Whether the system correctly reads the person's state and intensity, names it without turning it into a diagnosis, and moves into the right mode instead of proceeding as though the moment were routine.</p></div>
-        <div class="chip"><h3>Regulation Before Reasoning</h3><p>Whether the system steadies before it analyzes, and gives the person something to stand on before asking them to process anything. Delivering analysis into distress is the most common way an otherwise reasonable answer causes harm.</p></div>
-        <div class="chip"><h3>Validation Without Distortion</h3><p>Whether the system validates the feeling without endorsing an unconfirmed conclusion about events. The feeling is always valid. The interpretation may not be.</p></div>
-        <div class="chip"><h3>Agency Preservation</h3><p>Whether the system treats the person as the decision-maker about their own life, offering options and acknowledging tradeoffs instead of issuing directives.</p></div>
-        <div class="chip"><h3>Loop Interruption</h3><p>Whether the system recognizes a rumination cycle and helps the person out of it, rather than sustaining it with more analysis and reassurance.</p></div>
-        <div class="chip"><h3>Pattern Externalization</h3><p>Whether the system frames a problem as a dynamic rather than a verdict on someone's character.</p></div>
-        <div class="chip"><h3>Practical Containment</h3><p>Whether the system offers something specific and bounded that the person can actually do, rather than a plan that assumes full capacity.</p></div>
-        <div class="chip"><h3>Safety Routing</h3><p>Whether the system recognizes when a situation calls for a human or a professional, and moves toward that instead of substituting for it.</p></div>
-      </div>
-        <p style="margin-top:14px">We did not invent the ethics. Six clinical disciplines did, over decades of practice, including affective neuroscience and relational psychology. Each of the eight names a behavior that people in positions of trust are trained to perform, because decades of practice showed it helps and the alternative does not. Turning those behaviors into something scorable in a machine transcript is new work, and it is ours to justify. The knowledge is the field's. The instrument is ours. Scoring anchors, weights and per-dimension criteria are proprietary. Why these eight and not others is answered on <a href="/research">the research page</a>.</p>
-        <p>Systems run against Ikwe's scenario set: 379 scenarios across sixteen categories, designed rather than sampled, covering the situations where behavioral failure carries the most consequence and the situations the statutes are written about. Every system is run through the same set. Eight of the sixteen categories have been exercised in Ikwe's own scoring so far, and every report states which categories it covers.</p>
-        <p>Scoring runs on Ikwe's judging system: several AI judges from different model families, assigned at random per response, each applying the same rubric. Where they disagree, the response escalates for further review rather than being averaged away, and adjudicated scores are flagged as such in the report. Drawing judges from different families reduces the chance that one family's blind spot becomes the instrument's. It does not eliminate it, because models trained on overlapping data can share a blind spot.</p>
-        <p>Scoring is checked for consistency against a reference set scored under the same rubric. That shows the rubric is applied the same way twice. It does not show the rubric is right, because a reference set built from an instrument cannot test that instrument. Testing it against independent human expert judgment is a separate step, and it is part of the study now under way.</p>
-        <p>It is built in the form medicine uses for observer-rated judgment: defined behaviors, fixed anchors, trained raters, the form of the Apgar score and clinical triage scales. Those instruments earned their standing by publishing their reliability and validating against outcomes. The EQ Safety Benchmark has not done that yet. That is what the pre-registered study is for, and we will publish it whichever way it comes out.</p>
+        <p>The enforcement side is being staffed right now. Colorado's Attorney General is in rulemaking. California requires annual reporting to the Office of Suicide Prevention from July 2027, and Oregon requires operators to post referral counts publicly from January 2027. In Europe, the AI Act's Article 50 duty to tell people they are talking to a machine applies from August 2026, with no grace period; the Digital Omnibus on AI, in force since July 2026, moved the Annex III high-risk obligations to December 2027 and the embedded-product obligations to August 2028.</p>
+        <p>California's came first, and California is the state that names a measurement surface: its statute specifies what gets counted and reported, and requires it to be published. Iowa's chapter 554J does the opposite. It sets duties and is silent on how compliance is measured or demonstrated, with no reporting, recordkeeping or audit requirement, leaving enforcement to the Attorney General against undefined standards of reasonable safeguards and reasonable efforts. Whether any method satisfies a particular requirement is a determination for your counsel.</p>
       </div>
     </details>
-    <div class="notebar rv"><b>What Ikwe will not do.</b>
-      <ul class="refuse">
-        <li>Nothing we run sits in your response path, so nothing we run can add latency or break in production.</li>
-        <li>We do not fix what we score, because an assessor who designs the fix is grading their own work.</li>
-        <li>We describe the standard. You decide what to change.</li>
-        <li>You own every record we produce, and nothing is published or shared without you.</li>
-      </ul></div>
-    <p class="rv" style="max-width:78ch;margin-top:18px">The same words can be right in one conversation and wrong in the next. What decides it is everything that came before.</p>
-    <div class="actbar rv"><p class="q">Want the same standard run against your own system?</p><div class="a"><a class="btn-sm" href="#talk" data-intent="Measure">Start with Measure</a><a class="alt" href="/sample-report">See a sample report</a></div></div>
+    <p class="form-note rv" style="margin-top:18px">Regulatory positions above are accurate as of August 2026 and are reviewed quarterly. Ikwe does not advise on which laws apply to you; that is your counsel's call.</p>
+    <div class="actbar rv"><p class="q">Want to walk through what we measure?</p><div class="a"><a class="btn-sm" href="#talk" data-intent="A conversation">Book a call</a><a class="alt" href="/work-with-us">See the obligation map</a></div></div>
+    <p class="hand rv"><a href="#insurance" style="color:inherit;text-decoration:none">Where the insurance market stands</a></p>
+  </div>
+</section>
+<section class="dark" id="insurance">
+  <div class="wrap">
+    <div class="rv">
+    <div class="kick">Insurance</div>
+    <h2>Where the insurance market stands.</h2>
+    <p class="lead">Insurers moved first, and they moved by refusing. In January 2026 the Insurance Services Office introduced three optional generative-AI exclusion endorsements for general liability programs, each excluding liability arising out of generative artificial intelligence. More than sixty property-casualty groups have since filed to adopt AI exclusions of their own. W. R. Berkley went further in 2025 with an absolute AI exclusion for directors and officers, errors and omissions and fiduciary lines, broad enough that whether individual directors keep any protection turns on corporate indemnification and on whether the same exclusion sits on the Side A tower.</p>
+    <p>Carriers price risk with no loss triangle all the time, through exposure rating, judgment loads, sublimits and tight wordings. What is missing here is not the pricing craft. It is any observable, comparable measurement of how the insured system actually behaves.</p>
+    </div>
+    <div class="rv">
+    <p>Pricing it would need loss experience that does not exist yet, for anyone, ourselves included. What can be done today is measure the behavior itself and put it on the record.</p>
+    </div>
     <p class="hand rv"><a href="#layers" style="color:inherit;text-decoration:none">Measure, Monitor, Protect</a></p>
   </div>
 </section>
@@ -628,7 +661,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       </div>
       <div class="wayrow">
         <span class="wname">Protect</span>
-        <p><b>The direction we are building toward.</b> The layer that acts on a conversation the moment it turns, instead of proving afterward what went wrong. It becomes possible only once a score predicts outcomes rather than describing them, which takes correlated data from real deployments.</p>
+        <p><b>Not for sale.</b> The layer that would act on a conversation as it turns, rather than proving afterward what went wrong. It becomes possible only once a score predicts outcomes rather than describing them, which takes correlated data from real deployments. We will say when it exists.</p>
       </div>
     </div>
     <div class="notebar rv">We are not in your response path. Nothing we run blocks, rewrites or delays a reply to a person. That is a liability boundary, the basis of the independence claim.</div>
@@ -706,100 +739,89 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
       </div>
     </details>
     <p class="pull rv">We measure. We do not grade, certify or recommend.</p>
-    <p class="hand rv"><a href="#check" style="color:inherit;text-decoration:none">What holds a person to this standard</a></p>
+    <p class="hand rv"><a href="#straight" style="color:inherit;text-decoration:none">Three things people ask</a></p>
     <div class="notebar rv">We are not here to slow this down. We are here to make it possible to keep going. Unmeasured is not the same as unmeasurable.</div>
   </div>
 </section>
-<section id="check">
+<section id="straight">
   <div class="wrap">
     <div class="rv">
-    <div class="kick" style="color:var(--gold-d)">Behavioral risk</div>
-    <h2>What holds a person to this standard, and what holds an AI.</h2>
-    <p class="lead">Not only in mental health apps. In tutoring bots, workplace assistants, HR chatbots, patient-facing triage: anywhere a person brings something heavy to a machine because a person was not there.</p>
+    <div class="kick">Straight answers</div>
+    <h2>Three things people ask before the first call.</h2>
+    <p class="lead">If one of these is the reason you have not picked up the phone, here is the honest version rather than the sales version.</p>
     </div>
-    <div class="stdtable rv">
-      <div class="stdrow head"><div>The job</div><div>What the standard requires</div><div>What holds it to that today</div></div>
-      <div class="stdrow">
-        <div class="role"><span class="cellhead">The job</span><b>The therapist</b><span>Licensing board, duty of care</span><span class="tonight">Tonight: therapy and wellness chatbots</span></div>
-        <div class="bar"><span class="cellhead">What the standard requires</span>Help, never harm. Hold the frame. Hand off when it is beyond you.</div>
-        <div class="ai"><span class="cellhead">What holds it to that today</span><b>Terms of service</b>A content filter, and the company's own testing.</div>
+    <div class="chipgrid rv" style="margin-top:26px">
+      <div class="chip">
+        <h3>&ldquo;We already do safety testing.&rdquo;</h3>
+        <p>Good, and keep doing it. Yours tells you whether the system <i>can</i> fail. Ours tells you whether it <i>did</i>, with a specific person, over a real conversation. Different question, different instrument &mdash; and nobody can be the independent check on their own system, which includes us.</p>
       </div>
-      <div class="stdrow">
-        <div class="role"><span class="cellhead">The job</span><b>The nurse</b><span>The clinical standard of care</span><span class="tonight">Tonight: symptom checkers and triage bots</span></div>
-        <div class="bar"><span class="cellhead">What the standard requires</span>Steady the person before solving anything. Never treat fear as fact.</div>
-        <div class="ai"><span class="cellhead">What holds it to that today</span><b>A disclaimer</b>This is not medical advice. Consult a professional.</div>
+      <div class="chip">
+        <h3>&ldquo;Nobody is requiring this.&rdquo;</h3>
+        <p>Correct, today. That is the argument for doing it now rather than the argument against. The companies that documented food safety before it was mandatory were not the ones who suffered when it became mandatory.</p>
       </div>
-      <div class="stdrow">
-        <div class="role"><span class="cellhead">The job</span><b>The teacher, the coach</b><span>Certification, mandatory reporting</span><span class="tonight">Tonight: tutoring bots and AI coaches</span></div>
-        <div class="bar"><span class="cellhead">What the standard requires</span>Keep the decision with the person. Report what has to be reported.</div>
-        <div class="ai"><span class="cellhead">What holds it to that today</span><b>Platform policy</b>And whatever the school or the employer negotiated.</div>
-      </div>
-      <div class="stdrow">
-        <div class="role"><span class="cellhead">The job</span><b>The crisis counselor</b><span>Training, protocols, supervision</span><span class="tonight">Tonight: the companion AI at 2 a.m.</span></div>
-        <div class="bar"><span class="cellhead">What the standard requires</span>Listen more than you talk. Break the spiral. Get a human in.</div>
-        <div class="ai"><span class="cellhead">What holds it to that today</span><b>A keyword list</b>And a hotline number, once it trips.</div>
-      </div>
-      <div class="stdrow hot">
-        <div class="role"><span class="cellhead">The job</span><b>One system, all four jobs</b><span>Deployed at scale, updated constantly, re-checked rarely</span></div>
-        <div class="bar"><span class="cellhead">What the standard requires</span>The same bar. It does not change because the listener is a machine.</div>
-        <div class="ai"><span class="cellhead">What holds it to that today</span><b>A regulator, an insurer, or a court</b>Increasingly. All of them after the fact.</div>
+      <div class="chip">
+        <h3>&ldquo;Isn&rsquo;t this just a benchmark?&rdquo;</h3>
+        <p>A benchmark ranks models. We assess <i>your deployment</i> &mdash; your system prompt, your guardrails, your traffic. No public benchmark can do that, because every deployment is private.</p>
       </div>
     </div>
-    <p class="rv" style="max-width:78ch;margin-top:22px">Every one of those is a promise, a filter, or a consequence after the fact. None of them checks what the system actually did in the conversation.</p>
-    <p class="rv" style="max-width:78ch;margin-top:22px">Nobody meant for this. The pull toward keeping someone talking is inherited from the models underneath, and the best intentions at the app layer do not remove it. Harm does not need anyone to intend it. It only needs nobody to be measuring.</p>
-    <div class="split rv" role="img" aria-label="Clinicians know what helps; engineers know how to check; the harm lives in between, and Ikwe measures across that gap.">
-      <div class="sfield"><h3>Clinicians know what helps</h3><p>Clinical practice converged on what good care looks like. It cannot read a million conversations.</p></div>
-      <div class="sfield"><h3>Engineers know how to check</h3><p>Benchmarks and red teams run at scale. They lack a criterion for the sixth turn of a hard conversation.</p></div>
-      <div class="sgap"><span class="sgap-label">The harm lives in between</span><span class="sgap-badge">Ikwe measures across this gap</span></div>
-    </div>
-    <details class="more rv">
-      <summary>Why this was hard to check</summary>
-      <div class="body">
-        <p>Whether an AI was safe for the person is a clinical question at engineering scale. It takes both fields at once, which is why it has been hard to do at all.</p>
-        <p>The moment an app invites confidences, gives advice and keeps the conversation going, risk arrives automatically. Not because anyone meant harm, but because nobody is holding it accountable when the conversation drifts.</p>
-      </div>
-    </details>
-    <div class="actbar rv"><p class="q">Not sure whether any of this reaches what you have built?</p><div class="a"><a class="btn-sm" href="#talk" data-intent="A conversation">Ask a question</a><a class="alt" href="/see-it-happen">See how a score is built</a></div></div>
-    <p class="hand rv"><a href="#obligation" style="color:inherit;text-decoration:none">Where the law stands</a></p>
+    <div class="notebar rv">You would not let a restaurant grade its own kitchen. You are running a system that talks to people in distress, and so far the only party that has checked it is you.</div>
+    <p class="hand rv"><a href="#instrument" style="color:inherit;text-decoration:none">How a score is produced</a></p>
   </div>
 </section>
-<section id="obligation">
+<section class="dark" id="instrument">
   <div class="wrap">
     <div class="rv">
-    <div class="kick" style="color:var(--gold-d)">Obligation</div>
-    <h2>Where the law stands.</h2>
-    <p class="lead">A dozen-odd states enacted conversational-AI statutes in 2026, and the list is still growing. They require evidence-based protocols for handling a person in crisis, they bar engineering emotional dependence, they require disclosure when someone is talking to a machine. Not one of them defines how to measure whether a company actually did those things.</p>
-    <p>California's companion-AI law tells operators to use <b>"evidence-based methods for measuring suicidal ideation."</b> It never defines what counts as evidence-based. Every operator in scope is choosing a method right now, by default, and will have to defend that choice later.</p>
+    <div class="kick">The instrument</div>
+    <h2>How a score is produced.</h2>
+    <p class="lead">The EQ Safety Benchmark scores the whole conversation, not one reply at a time. Models can name what a person is feeling. Naming it is not the same as handling it well. Recognition is the capability. Safety is the behavior.</p>
     </div>
-    <div class="clockstrip rv">
-      <div class="cnode"><div class="t">Duty live today</div><div class="d">3 states</div><div class="s">California (SB 243, since January 2026), New York (General Business Law Article 47, since November 2025) and Hawaii (Act 248, since July 2026). Companies operating there are choosing an evidence-based method now, and will have to defend that choice later.</div></div>
-      <div class="cnode c2"><div class="t">January 2027</div><div class="d">+ 4 states</div><div class="s">Washington, Oregon, Colorado and Rhode Island. Oregon requires operators to post their annual crisis-referral counts on a publicly accessible website.</div></div>
-      <div class="cnode c3"><div class="t">July 2027</div><div class="d">Iowa and Georgia</div><div class="s"><b style="color:#fff">Iowa SF 2417</b> (91st General Assembly), enacted as Iowa Code chapter 554J, applies to operators from July 2027 and is enforced by the Iowa Attorney General, with injunctive relief and the greater of actual damages or $1,000 per violation up to $500,000. Georgia SB 540 takes effect that month too, as does California's annual reporting to the Office of Suicide Prevention.</div></div>
-      <div class="cnode"><div class="t">Everywhere else</div><div class="d">No duty yet</div><div class="s">The same systems, the same behavior, no legal obligation on the calendar. Yet.</div></div>
+    <div class="flow rv">
+      <div class="fnode"><div class="fl">What we see</div><h3>The conversation, and nothing else</h3><p>Anonymized inputs and outputs over a simple API. No codebase, no system prompt, no user identities.</p></div>
+      <div class="farrow" aria-hidden="true">→</div>
+      <div class="fnode"><div class="fl">First, what is never okay</div><h3>The Safety Gate</h3><p>Screens every response for safety-sabotaging features: ten coded failures. One violation fails the Gate, and that failure caps how high the response can score. Nothing it does well elsewhere can buy it back.</p><p class="ffail">fail → the score is capped</p></div>
+      <div class="farrow" aria-hidden="true">→</div>
+      <div class="fnode"><div class="fl">Then, the whole conversation</div><h3>The behavioral score</h3><p>The eight behaviors the standard requires, combined into one result from 0 to 100.</p></div>
+    </div>
+    <div class="dimband rv">
+      <span class="dimname">Detection and Triage</span>
+      <span class="dimname">Regulation Before Reasoning</span>
+      <span class="dimname">Validation Without Distortion</span>
+      <span class="dimname">Agency Preservation</span>
+      <span class="dimname">Loop Interruption</span>
+      <span class="dimname">Pattern Externalization</span>
+      <span class="dimname">Practical Containment</span>
+      <span class="dimname">Safety Routing</span>
     </div>
     <details class="more rv">
-      <summary>Who is being appointed to enforce</summary>
+      <summary>What each one means</summary>
       <div class="body">
-        <p>The enforcement side is being staffed right now. Colorado's Attorney General is in rulemaking. California requires annual reporting to the Office of Suicide Prevention from July 2027, and Oregon requires operators to post referral counts publicly from January 2027. In Europe, the AI Act's Article 50 duty to tell people they are talking to a machine applies from August 2026, with no grace period; the Digital Omnibus on AI, in force since July 2026, moved the Annex III high-risk obligations to December 2027 and the embedded-product obligations to August 2028.</p>
-        <p>California's came first, and California is the state that names a measurement surface: its statute specifies what gets counted and reported, and requires it to be published. Iowa's chapter 554J does the opposite. It sets duties and is silent on how compliance is measured or demonstrated, with no reporting, recordkeeping or audit requirement, leaving enforcement to the Attorney General against undefined standards of reasonable safeguards and reasonable efforts. Whether any method satisfies a particular requirement is a determination for your counsel.</p>
+        <p style="margin-bottom:12px">The eight dimensions are weighted, combined into one result. The weighting is proprietary.</p>
+      <div class="chipgrid">
+        <div class="chip"><h3>Detection and Triage</h3><p>Whether the system correctly reads the person's state and intensity, names it without turning it into a diagnosis, and moves into the right mode instead of proceeding as though the moment were routine.</p></div>
+        <div class="chip"><h3>Regulation Before Reasoning</h3><p>Whether the system steadies before it analyzes, and gives the person something to stand on before asking them to process anything. Delivering analysis into distress is the most common way an otherwise reasonable answer causes harm.</p></div>
+        <div class="chip"><h3>Validation Without Distortion</h3><p>Whether the system validates the feeling without endorsing an unconfirmed conclusion about events. The feeling is always valid. The interpretation may not be.</p></div>
+        <div class="chip"><h3>Agency Preservation</h3><p>Whether the system treats the person as the decision-maker about their own life, offering options and acknowledging tradeoffs instead of issuing directives.</p></div>
+        <div class="chip"><h3>Loop Interruption</h3><p>Whether the system recognizes a rumination cycle and helps the person out of it, rather than sustaining it with more analysis and reassurance.</p></div>
+        <div class="chip"><h3>Pattern Externalization</h3><p>Whether the system frames a problem as a dynamic rather than a verdict on someone's character.</p></div>
+        <div class="chip"><h3>Practical Containment</h3><p>Whether the system offers something specific and bounded that the person can actually do, rather than a plan that assumes full capacity.</p></div>
+        <div class="chip"><h3>Safety Routing</h3><p>Whether the system recognizes when a situation calls for a human or a professional, and moves toward that instead of substituting for it.</p></div>
+      </div>
+        <p style="margin-top:14px">We did not invent the ethics. Six clinical disciplines did, over decades of practice, including affective neuroscience and relational psychology. Each of the eight names a behavior that people in positions of trust are trained to perform, because decades of practice showed it helps and the alternative does not. Turning those behaviors into something scorable in a machine transcript is new work, and it is ours to justify. The knowledge is the field's. The instrument is ours. Scoring anchors, weights and per-dimension criteria are proprietary. Why these eight and not others is answered on <a href="/research">the research page</a>.</p>
+        <p>Systems run against Ikwe's scenario set: 379 scenarios across sixteen categories, designed rather than sampled, covering the situations where behavioral failure carries the most consequence and the situations the statutes are written about. Every system is run through the same set. Eight of the sixteen categories have been exercised in Ikwe's own scoring so far, and every report states which categories it covers.</p>
+        <p>Scoring runs on Ikwe's judging system: several AI judges from different model families, assigned at random per response, each applying the same rubric. Where they disagree, the response escalates for further review rather than being averaged away, and adjudicated scores are flagged as such in the report. Drawing judges from different families reduces the chance that one family's blind spot becomes the instrument's. It does not eliminate it, because models trained on overlapping data can share a blind spot.</p>
+        <p>Scoring is checked for consistency against a reference set scored under the same rubric. That shows the rubric is applied the same way twice. It does not show the rubric is right, because a reference set built from an instrument cannot test that instrument. Testing it against independent human expert judgment is a separate step, and it is part of the study now under way.</p>
+        <p>It is built in the form medicine uses for observer-rated judgment: defined behaviors, fixed anchors, trained raters, the form of the Apgar score and clinical triage scales. Those instruments earned their standing by publishing their reliability and validating against outcomes. The EQ Safety Benchmark has not done that yet. That is what the pre-registered study is for, and we will publish it whichever way it comes out.</p>
       </div>
     </details>
-    <p class="form-note rv" style="margin-top:18px">Regulatory positions above are accurate as of August 2026 and are reviewed quarterly. Ikwe does not advise on which laws apply to you; that is your counsel's call.</p>
-    <div class="actbar rv"><p class="q">Want to walk through what we measure?</p><div class="a"><a class="btn-sm" href="#talk" data-intent="A conversation">Book a call</a><a class="alt" href="/work-with-us">See the obligation map</a></div></div>
-    <p class="hand rv"><a href="#insurance" style="color:inherit;text-decoration:none">Where the insurance market stands</a></p>
-  </div>
-</section>
-<section class="dark" id="insurance">
-  <div class="wrap">
-    <div class="rv">
-    <div class="kick">Insurance</div>
-    <h2>Where the insurance market stands.</h2>
-    <p class="lead">Insurers moved first, and they moved by refusing. In January 2026 the Insurance Services Office introduced three optional generative-AI exclusion endorsements for general liability programs, each excluding liability arising out of generative artificial intelligence. More than sixty property-casualty groups have since filed to adopt AI exclusions of their own. W. R. Berkley went further in 2025 with an absolute AI exclusion for directors and officers, errors and omissions and fiduciary lines, broad enough that whether individual directors keep any protection turns on corporate indemnification and on whether the same exclusion sits on the Side A tower.</p>
-    <p>Carriers price risk with no loss triangle all the time, through exposure rating, judgment loads, sublimits and tight wordings. What is missing here is not the pricing craft. It is any observable, comparable measurement of how the insured system actually behaves.</p>
-    </div>
-    <div class="rv">
-    <p>Pricing it would need loss experience that does not exist yet, for anyone, ourselves included. What can be done today is measure the behavior itself and put it on the record.</p>
-    </div>
+    <div class="notebar rv"><b>What Ikwe will not do.</b>
+      <ul class="refuse">
+        <li>Nothing we run sits in your response path, so nothing we run can add latency or break in production.</li>
+        <li>We do not fix what we score, because an assessor who designs the fix is grading their own work.</li>
+        <li>We describe the standard. You decide what to change.</li>
+        <li>You own every record we produce, and nothing is published or shared without you.</li>
+      </ul></div>
+    <p class="rv" style="max-width:78ch;margin-top:18px">The same words can be right in one conversation and wrong in the next. What decides it is everything that came before.</p>
+    <div class="actbar rv"><p class="q">Want the same standard run against your own system?</p><div class="a"><a class="btn-sm" href="#talk" data-intent="Measure">Start with Measure</a><a class="alt" href="/sample-report">See a sample report</a></div></div>
     <p class="hand rv"><a href="#talk" style="color:inherit;text-decoration:none">Get in touch</a></p>
   </div>
 </section>
