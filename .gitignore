@@ -94,3 +94,9 @@ v2/
 
 # Internal working notes: keep out of the public repo and out of the publish root
 _SITE_CHANGES_*.md
+
+# FUSE mount temp artifacts from in-place edits — never commit
+.fuse_hidden*
+
+# FUSE temp artifacts
+.fuse_hidden*
