@@ -378,6 +378,15 @@ table td,table th{line-height:1.55}
   .chartkey b{font-style:normal}
   .chartkey .ck-note{flex:1 0 100%;color:#9a9cb0;font-size:12px}
 }
+
+/* Mobile tap targets, pass 2 (2026-09-09): every interactive element ≥44px.
+   At the END of the sheet on purpose so it wins the cascade. Hit area only. */
+.chip{position:relative}
+.chip h3 a::after{content:"";position:absolute;inset:0}
+.actbar .alt{display:inline-block;padding:12px 0;margin:-12px 0}
+details.more summary{padding:12px 0}
+.sitemap a{display:block;padding:9px 0}
+.nav-cta{padding:.7rem 1.25rem}
 </style>
 <noscript><style>.rv{opacity:1 !important;transform:none !important}
 /* type pass 2026-07-28: rhythm + measure */

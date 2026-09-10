@@ -378,6 +378,24 @@ table td,table th{line-height:1.55}
   .chartkey b{font-style:normal}
   .chartkey .ck-note{flex:1 0 100%;color:#9a9cb0;font-size:12px}
 }
+
+/* Mobile tap targets, pass 2 (2026-09-09): every interactive element ≥44px.
+   At the END of the sheet on purpose so it wins the cascade. Hit area only. */
+.chip{position:relative}
+.chip h3 a::after{content:"";position:absolute;inset:0}
+.actbar .alt{display:inline-block;padding:12px 0;margin:-12px 0}
+details.more summary{padding:12px 0}
+.sitemap a{display:block;padding:9px 0}
+.nav-cta{padding:.7rem 1.25rem}
+
+/* Homepage grids (2026-09-09): auto-fit counts pixels, not cards, so six doors
+   went 4+2 at 1280 and the before/after pair floated in a half-empty row.
+   Column counts that match the card counts, from tablet up. */
+@media(min-width:820px){
+  .hero .chipgrid{grid-template-columns:repeat(2,1fr)}   /* two layers + what comes back + cost: 2×2 */
+  #sides .chipgrid{grid-template-columns:repeat(2,1fr)}  /* before | after */
+  #for .chipgrid{grid-template-columns:repeat(3,1fr)}    /* six doors: 3×2 */
+}
 </style>
 <noscript><style>.rv{opacity:1 !important;transform:none !important}
 /* type pass 2026-07-28: rhythm + measure */

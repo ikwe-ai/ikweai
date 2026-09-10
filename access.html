@@ -81,7 +81,16 @@ section{padding:3.5rem 2rem;}
     .skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:10px 18px;z-index:2000;border-radius:0 0 8px 0;}
     .skip:focus{left:0;}
     a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--teal);outline-offset:2px;}
-  </style>
+  
+/* Mobile tap targets, pass 2 (2026-09-09): every interactive element ≥44px.
+   At the END of the sheet on purpose so it wins the cascade. Hit area only. */
+.chip{position:relative}
+.chip h3 a::after{content:"";position:absolute;inset:0}
+.actbar .alt{display:inline-block;padding:12px 0;margin:-12px 0}
+details.more summary{padding:12px 0}
+.sitemap a{display:block;padding:9px 0}
+.nav-cta{padding:.7rem 1.25rem}
+</style>
 
 <meta property="og:title" content="Request access | Ikwe.ai" />
 <meta property="og:description" content="Request access to Ikwe.ai materials. Every request is reviewed. Nothing is publicly downloadable." />

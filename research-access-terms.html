@@ -53,6 +53,15 @@ footer a{color:#c5c6d4}
 .sitemap a{display:block;font-size:14.5px;text-decoration:none;padding:5px 0}
 .sitemap a:hover{color:var(--coral)}
 .sm-h{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#a9aabc;margin-bottom:8px}
+
+/* Mobile tap targets, pass 2 (2026-09-09): every interactive element ≥44px.
+   At the END of the sheet on purpose so it wins the cascade. Hit area only. */
+.chip{position:relative}
+.chip h3 a::after{content:"";position:absolute;inset:0}
+.actbar .alt{display:inline-block;padding:12px 0;margin:-12px 0}
+details.more summary{padding:12px 0}
+.sitemap a{display:block;padding:9px 0}
+.nav-cta{padding:.7rem 1.25rem}
 </style>
 <!-- Favicon -->
 <link rel="icon" href="/favicon.ico" sizes="any" />

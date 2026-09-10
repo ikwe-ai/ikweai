@@ -193,6 +193,15 @@ footer p{max-width:720px;margin-bottom:18px}
 .sitemap a{display:block;margin-bottom:7px}
 .sm-h{font-family:var(--mono);font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:#8a8ca4;margin-bottom:10px}
 .motif{font-family:var(--mono);font-size:13px;letter-spacing:.05em;color:#8a8ca4}
+
+/* Mobile tap targets, pass 2 (2026-09-09): every interactive element ≥44px.
+   At the END of the sheet on purpose so it wins the cascade. Hit area only. */
+.chip{position:relative}
+.chip h3 a::after{content:"";position:absolute;inset:0}
+.actbar .alt{display:inline-block;padding:12px 0;margin:-12px 0}
+details.more summary{padding:12px 0}
+.sitemap a{display:block;padding:9px 0}
+.nav-cta{padding:.7rem 1.25rem}
 </style>
 </head>
 <body>
