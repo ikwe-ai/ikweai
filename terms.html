@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..500&display=swap">
 <style>
-:root{--bg:#141218;--bg-2:#1a171f;--bg-3:#211e26;--bg-card:#1e1b23;--bg-hover:#282530;--text:#E8E4DF;--text-2:rgba(232,228,223,.62);--text-3:rgba(232,228,223,.38);--border:rgba(232,228,223,.06);--border-2:rgba(232,228,223,.10);--border-3:rgba(232,228,223,.16);--rose:#C4A69A;--serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace;--ink:#191A2E;--coral:#F7A192;--lav:#B894F6;--cream:#F6D993;}
+:root{--bg:#141218;--bg-2:#1a171f;--bg-3:#211e26;--bg-card:#1e1b23;--bg-hover:#282530;--text:#E8E4DF;--text-2:rgba(232,228,223,.62);--text-3:rgba(232,228,223,.38);--border:rgba(232,228,223,.06);--border-2:rgba(232,228,223,.10);--border-3:rgba(232,228,223,.16);--rose:#C4A69A;--serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace;--ink:#191A2E;--navy:#2E3050;--coral:#F7A192;--lav:#B894F6;--cream:#F6D993;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}a{color:inherit;text-decoration:none;}.container{max-width:1060px;margin:0 auto;padding:0 32px;}.container--narrow{max-width:720px;margin:0 auto;padding:0 32px;}
 a:focus-visible,button:focus-visible{outline:3px solid var(--coral);outline-offset:2px;}
 .skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 18px;z-index:2000;border-radius:0 0 8px 0;}
@@ -33,7 +33,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--coral);outline-offs
 /* nav */
 nav{position:sticky;top:0;z-index:1000;background:var(--ink);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:60px}
 .nav-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
-.nav-logo-circle{width:26px;height:26px;border-radius:50%;background:conic-gradient(#1D1F35 0deg 90deg,var(--coral) 90deg 180deg,var(--lav) 180deg 270deg,var(--cream) 270deg 360deg);flex-shrink:0}
+.nav-logo-circle{width:26px;height:26px;border-radius:50%;background:conic-gradient(var(--coral) 0deg 90deg,var(--cream) 90deg 180deg,var(--lav) 180deg 270deg,var(--navy) 270deg 360deg);flex-shrink:0}
 .nav-brand-name{font-family:var(--serif);font-size:1.2rem;color:#fff;letter-spacing:.02em}
 .nav-cta{background:var(--coral);color:var(--ink);font-weight:500;font-size:.85rem;padding:.5rem 1.25rem;border-radius:6px;text-decoration:none}
 .kicker{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--rose);margin-bottom:16px;}
@@ -137,7 +137,7 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
 <footer>
   <div class="narrow">
     <div class="end">The tools help.<br>Measurement is how we keep them.</div>
-    <p style="max-width:720px">Ikwe owns the EQ Safety Benchmark, the patent-pending method behind everything on this page. Independent by design: we never fix what we score. Ikwe.ai is an Iowa-based company, minority and woman owned.</p>
+    <p style="max-width:720px">Ikwe owns the EQ Safety Benchmark, the method behind everything on this page. Independent by design: we never fix what we score. Ikwe.ai is an Iowa-based company.</p>
     <div class="contact"><b>Ikwe.ai</b> &nbsp;·&nbsp; <a href="mailto:hello@ikwe.ai">hello@ikwe.ai</a> &nbsp;·&nbsp; Des Moines, Iowa</div>
     <div class="sitemap">
       <div>
