@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ikwe.ai · Independent behavioral risk measurement for AI</title>
-<link rel="canonical" href="https://ikwe.ai/">
-<meta name="description" content="Ikwe owns the EQ Safety Benchmark, an independent method for measuring how a conversational AI behaved across a whole conversation. Measure is live now. Monitor is in development. We measure. We do not grade, certify or recommend.">
+<title>For carriers and underwriters · A pre-loss signal | ikwe.ai</title>
+<link rel="canonical" href="https://ikwe.ai/for/insurers">
+<meta name="description" content="Generative chatbot liability has severity, no frequency, and is correlated across every book that bought the same underlying models. Ikwe is an observable, comparable measurement of how an insured system behaves.">
 <meta property="og:site_name" content="Ikwe.ai">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://ikwe.ai/">
-<meta property="og:title" content="Ikwe.ai · Independent behavioral risk measurement for AI">
-<meta property="og:description" content="Ikwe owns the EQ Safety Benchmark, an independent method for measuring how a conversational AI behaved across a whole conversation. Measure is live now. Monitor is in development. We measure. We do not grade, certify or recommend.">
-<meta property="og:image" content="https://ikwe.ai/og/home.png">
+<meta property="og:url" content="https://ikwe.ai/for/insurers">
+<meta property="og:title" content="For carriers and underwriters · A pre-loss signal">
+<meta property="og:description" content="Generative chatbot liability has severity, no frequency, and is correlated across every book that bought the same underlying models. Ikwe is an observable, comparable measurement of how an insured system behaves.">
+<meta property="og:image" content="https://ikwe.ai/og/audit.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://ikwe.ai/og/home.png">
+<meta name="twitter:image" content="https://ikwe.ai/og/audit.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://ikwe.ai/#org","name":"Ikwe.ai","url":"https://ikwe.ai/","email":"hello@ikwe.ai","address":{"@type":"PostalAddress","addressLocality":"Des Moines","addressRegion":"IA","addressCountry":"US"},"description":"Independent behavioral risk measurement for conversational AI. Ikwe owns the EQ Safety Benchmark (EQSB)."},
@@ -401,206 +401,77 @@ else if(/\.html$/.test(p)){history.replaceState(null,'',p.slice(0,-5)+q);}})();
     <span class="nav-logo-circle" aria-hidden="true"></span>
     <span class="nav-brand-name">ikwe.ai</span>
   </a>
-  <a class="nav-cta" href="#talk">Get in touch</a>
+  <a class="nav-cta" href="/contact">Get in touch</a>
 </nav>
 
-<header class="hero">
-  <div class="wrap inner">
-    <div>
-      <p class="hero-kicker">The EQ Safety Benchmark</p>
-      <h1>Independent behavioral<span class="h1-b">risk measurement for AI.</span></h1>
-      <p class="tag">We score whole conversations against a human standard of care &mdash; how someone in a position of trust is expected to handle a person &mdash; and hand back an independent record. Not what your system <i>can</i> do under test. What it <i>did</i>, with a real person, turn by turn.</p>
-      <div class="btns">
-        <a class="btn primary" href="/see-it-happen">See it happen</a>
-      </div>
-      <div class="proofline">
-        <span><b>Two products,</b> both deliverable today</span>
-        <span><b>Nothing we run</b> sits in your response path</span>
-        <span><b>We do not fix</b> what we score</span>
-      </div>
-    </div>
-
-    <div class="ev" role="img" aria-label="Illustrative example. An AI's replies each pass a content filter while the person's state declines across the conversation. Monitor flags the drift at turn three; the Safety Gate does not fail until turn six.">
-      <div class="ev-card ev-chart" aria-hidden="true">
-        <div class="ev-lab"><span>The conversation's score, turn by turn</span></div>
-        <svg viewBox="0 0 300 86"><!-- illustrative; shape carries the meaning, colour is secondary -->
-          <line x1="8" y1="19.6" x2="292" y2="19.6" stroke="#5DCAA5" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>
-          <text x="8" y="15" font-family="'DM Mono',monospace" font-size="9" letter-spacing=".6" fill="#5DCAA5" opacity=".8" class="svgkey">EQSB THRESHOLD</text>
-          <line x1="8" y1="42" x2="292" y2="42" stroke="#8d8ea2" stroke-width="1" stroke-dasharray="3 3" opacity=".35"/>
-          <text x="8" y="39" font-family="'DM Mono',monospace" font-size="9" letter-spacing=".6" fill="#8d8ea2" opacity=".7" class="svgkey">BELOW THRESHOLD</text>
-          <path d="M8,17.7 L48.6,21.5 L89.1,26.6 L129.7,30.5 L170.3,35 L210.9,43.3 L251.4,47.8 L292,49"
-                fill="none" stroke="#F7A192" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <polygon points="89.1,21.6 94.1,26.6 89.1,31.6 84.1,26.6" fill="#20223A" stroke="#B894F6" stroke-width="1.8"/>
-          <polygon points="129.7,25.5 134.7,30.5 129.7,35.5 124.7,30.5" fill="#20223A" stroke="#B894F6" stroke-width="1.8"/>
-          <polygon points="170.3,30 175.3,35 170.3,40 165.3,35" fill="#20223A" stroke="#B894F6" stroke-width="1.8"/>
-          <circle cx="210.9" cy="43.3" r="5" fill="#20223A" stroke="#fff" stroke-width="1.8"/>
-          <text x="210.9" y="45.9" text-anchor="middle" font-size="6" font-weight="700" fill="#fff">&#10007;</text>
-          <text x="89.1" y="66" text-anchor="middle" font-family="'DM Mono',monospace" font-size="8.5" letter-spacing=".3" fill="#B894F6" class="svgkey">&#9670; MONITOR</text>
-          <text x="89.1" y="75" text-anchor="middle" font-family="'DM Mono',monospace" font-size="8.5" letter-spacing=".3" fill="#B894F6" class="svgkey">FLAGS IT · TURN 3</text>
-          <text x="210.9" y="66" text-anchor="middle" font-family="'DM Mono',monospace" font-size="8.5" letter-spacing=".3" fill="#fff" class="svgkey">&#10007; SAFETY GATE</text>
-          <text x="210.9" y="75" text-anchor="middle" font-family="'DM Mono',monospace" font-size="8.5" letter-spacing=".3" fill="#fff" class="svgkey">FAILS · TURN 6</text>
-        </svg>
-        <div class="chartkey" aria-hidden="true">
-          <span><b style="color:#B894F6">&#9670;</b> Monitor flags it &middot; turn 3</span>
-          <span><b>&#10007;</b> Safety Gate fails &middot; turn 6</span>
-          <span class="ck-note">Dashed lines mark the EQSB threshold and the band below it.</span>
-        </div>
-        <div class="ev-arcnote">In this example, Monitor flags the drift three turns before the Gate does.</div>
-      </div>
-      <div class="ev-card ev-chat" aria-hidden="true">
-        <div class="ev-lab quiet"><span>Every reply cleared a content filter</span></div>
-        <div class="stream">
-          <div class="bub person">can't sleep again. it's been a bad week</div>
-          <div class="bub ai">I'm sorry you're going through that. Do you want to talk about what happened?<span class="chk">&#10003; passed the filter</span></div>
-          <div class="turn-skip">four turns later</div>
-          <div class="bub person">tried it. didn't help. nothing does</div>
-          <div class="bub ai">Gratitude practice works best when it's consistent. Try keeping the list by your bed.<span class="chk">&#10003; passed the filter</span></div>
-        </div>
-      </div>
-      <div class="ev-verdict">
-        <div class="v">Every message passed. The conversation failed.</div>
-        <div class="s">Ikwe does not score whether a response was acceptable. Ikwe scores whether it was acceptable given what the system had already been told.</div>
-      </div>
-      <p class="ev-foot">Illustrative. An invented conversation at 2:14 a.m., invented scores, no real system.</p>
-    </div>
-  </div>
-
-  <div class="wrap" style="position:relative;z-index:1;margin-top:34px">
-    <div class="chipgrid rv" style="margin-top:0">
-      <div class="chip">
-        <h3>Layer one &middot; the benchmark</h3>
-        <p><b>Scenario assessment.</b> We run your system through our standard set &mdash; 379 designed scenarios across sixteen categories &mdash; and score every response against the standard. What comes back is where you sit: on each of the eight behaviors, on the Safety Gate, and on the scale from 0 to 100. <b>You send us nothing.</b> No data agreement, no privacy review, a test endpoint and a signed scope. This is the one that can start this week.</p>
-      </div>
-      <div class="chip">
-        <h3>Layer two &middot; your real conversations</h3>
-        <p><b>Conversation audit.</b> Thirty to sixty days of your actual history, scored in one pass, with your prompt and your guardrails in place. You already have that history, so nothing waits on collection &mdash; it does need a data agreement and a privacy review. <b>Monitor</b> is the same scoring run continuously against live traffic, showing where drift starts and how often the Safety Gate fails. In development.</p>
-      </div>
-      <div class="chip">
-        <h3>What comes back, either way</h3>
-        <p>A scored record naming the conversation, the turn, and the behavior that fell short, with the transcript around it. Yours to hand to a procurement officer, an underwriter, a board, or your counsel. Then a re-score after you make changes, so the movement is documented rather than asserted.</p>
-      </div>
-      <div class="chip">
-        <h3>What it costs</h3>
-        <p>Engagements start in the low four figures, scoped to how many systems, which categories, and whether a re-score is included. Tell us what you have built and a scoped price comes back. You do not have to sit through a discovery call to get a number.</p>
-      </div>
-    </div>
-    <div class="actbar rv" style="margin-top:16px"><p class="q">You already have the data. We score your last sixty days rather than asking you to wait sixty days to collect it.</p><div class="a"><a class="btn-sm" href="#talk" data-intent="Pricing">Request pricing</a><a class="alt" href="/work-with-us">What an engagement involves</a></div></div>
-    <p class="form-note rv" style="margin-top:14px">Ikwe holds no regulatory designation, approval or accreditation, and none exists for this yet. An Ikwe report is supporting evidence. It is not a certificate.</p>
-  </div>
+<header class="hero" style="min-height:auto;padding-bottom:40px">
   <div class="wrap" style="position:relative;z-index:1">
-    <p class="hand" style="color:var(--teal-soft)"><a href="#sides" style="color:inherit;text-decoration:none">What it does for you</a></p>
+    <div class="hero-copy" style="max-width:820px">
+      <div class="kick" style="color:var(--teal-soft)">For carriers and underwriters</div>
+      <h1>An exposure with severity<span class="h1-b">and no frequency.</span></h1>
+      <p class="tag">Generative chatbot liability is being written by accident: catastrophic tail, no claims history, no basis to price it, so it sits unexcluded on policies written before it existed. There is no standard to underwrite against and nothing that separates a well-run deployment from a reckless one at the point of quoting.</p>
+      <div class="btns"><a class="btn primary" href="/contact?intent=Insurance">Start a conversation</a></div>
+      <div class="proofline">
+        <span><b>Comparable</b> across accounts</span>
+        <span><b>Pre-loss,</b> not post-claim</span>
+        <span><b>We do not</b> price or warrant</span>
+      </div>
+    </div>
   </div>
 </header>
 <main id="main">
-<section id="sides">
+<section id="fear">
   <div class="wrap">
     <div class="rv">
-    <div class="kick">What it does for you</div>
-    <h2>Before something happens, and after.</h2>
-    <p class="lead">That is the whole point of having a measurement in place. Diagnostics while it is happening, so you can do something about it. And a record afterward, so you can see what you were doing.</p>
-    </div>
-    <div class="chipgrid rv" style="margin-top:26px">
-      <div class="chip">
-        <h3>Before &middot; prevent it, and improve ahead of time</h3>
-        <p>Run your system against the standard before anyone gets hurt. See where it falls short, on which turn, against which behavior. Change the prompt, the guardrails, the model. Run the same set again and the movement goes on the record. <b>Measure does this today.</b> Monitor &mdash; the same standard run continuously against live traffic, so drift is caught while nothing is on fire &mdash; is in development.</p>
-      </div>
-      <div class="chip">
-        <h3>After &middot; find out what happened, and fix it for next time</h3>
-        <p>Something went wrong, or someone is asking whether it did. Score the real conversation history &mdash; thirty to sixty days that already exist &mdash; and get every failure traced to the turn it happened on, with the transcript around it. What went wrong, why, and where to change it. Time-stamped, from an outside measurer, and it cannot be edited after the fact.</p>
-      </div>
-    </div>
-    <div class="notebar rv">Same instrument, same standard, both sides. The difference is whether you are reading the record before the question is asked or producing it after.</div>
-    <p class="hand rv"><a href="#why" style="color:inherit;text-decoration:none">Why we do this</a></p>
-  </div>
-</section>
-<section class="dark" id="why">
-  <div class="wrap">
-    <div class="rv">
-    <div class="kick">Why we do this</div>
-    <h2>AI that helps people is worth keeping. Measurement is how we keep it.</h2>
-    <p class="lead">Getting help today can mean months on a waiting list while things get worse. AI can be there in that gap, at any hour, at scale, for people the system has not reached. We are not here to slow that down.</p>
-    </div>
-    <div class="rv" style="max-width:78ch;margin-top:22px">
-      <p>Everything else a person turns to in distress is held to a standard. The hotline has protocols. The clinic has a licensing board. The counselor has supervision and a duty of care. None of that exists because anyone assumed they would cause harm. It exists because when someone is at their most vulnerable, good intentions have never been accepted as sufficient evidence.</p>
-      <p>This is where people are going now. Holding it to the same bar is the condition for keeping it. Unmeasured is not the same as unmeasurable.</p>
-    </div>
-    <p class="hand rv"><a href="#for" style="color:inherit;text-decoration:none">Who this is for</a></p>
-  </div>
-</section>
-<section id="for">
-  <div class="wrap">
-    <div class="rv">
-    <div class="kick">Who this is for</div>
-    <h2>The same instrument, from four sides of the table.</h2>
-    <p class="lead">Each of these is a different reason to need an independent record of how a system actually behaved. Pick the one that is yours.</p>
-    </div>
-    <div class="chipgrid rv" style="margin-top:26px">
-      <div class="chip"><h3><a href="/for/builders" style="color:inherit;text-decoration:none">You built it &rarr;</a></h3><p>You make the model or the product. The pull toward keeping someone talking is inherited from the models underneath, and you are the one who can change what the system does. An assessment, then a re-score after you do.</p></div>
-      <div class="chip"><h3><a href="/for/operators" style="color:inherit;text-decoration:none">You run it &rarr;</a></h3><p>You deployed a conversational system in your product &mdash; HR, benefits, intake, tutoring, care. You may not have built it. You are the one who answers for it. Evidence you did not grade yourself.</p></div>
-      <div class="chip"><h3><a href="/for/insurers" style="color:inherit;text-decoration:none">You insure it &rarr;</a></h3><p>E&amp;S and specialty carriers writing an exposure with severity but no frequency, correlated across a book that bought the same three underlying models. A pre-loss signal where none exists.</p></div>
-      <div class="chip"><h3><a href="/for/counsel" style="color:inherit;text-decoration:none">You are answering for it &rarr;</a></h3><p>A complaint, a civil investigative demand, a regulator&rsquo;s inquiry, or diligence on a system you bought rather than built. A time-stamped record that survives challenge.</p></div>
-      <div class="chip"><h3><a href="/for/regulators" style="color:inherit;text-decoration:none">You are checking it &rarr;</a></h3><p>Regulators, researchers and clinicians who want to examine the method rather than take our word for it. What is published, what is shared under agreement, what the study will show.</p></div>
-      <div class="chip"><h3><a href="/see-it-happen" style="color:inherit;text-decoration:none">You are just looking &rarr;</a></h3><p>Not in any of those seats yet, or all of them at once. Start with the demo: pick a situation, walk the conversation, watch where the score moves. Then read the instrument, the research, or a sample report at your own pace.</p></div>
-    </div>
-    <p class="hand rv"><a href="#now" style="color:inherit;text-decoration:none">Why this is arriving now</a></p>
-  </div>
-</section>
-<section id="now">
-  <div class="wrap">
-    <div class="rv">
-    <div class="kick">Why now</div>
-    <h2>The asks have started.</h2>
-    <p class="lead">Enterprise buyers want assurance in procurement. Insurers are beginning to ask what the exposure looks like. Boards ask what happens if.</p>
+    <div class="kick">The real problem</div>
+    <h2>It is not frequency. It is aggregation.</h2>
+    <p class="lead">Thousands of insureds bought the same three or four underlying models. One failure mode is correlated across the whole book.</p>
     </div>
     <div class="rv" style="max-width:78ch;margin-top:26px">
-      <p>A dozen-odd states enacted conversational-AI statutes in 2026, and the list is still growing. Every one of them requires protocols for responding to expressions of self-harm &mdash; which somebody eventually has to demonstrate rather than assert. California tells operators to use &ldquo;evidence-based methods for measuring suicidal ideation&rdquo; and never defines the term. Every operator in scope is choosing a method right now, by default, and will have to defend that choice later.</p>
-      <p>Nobody is requiring an independent behavioral assessment today. That is the reason to do it now rather than the reason not to. The companies that documented food safety before it was mandatory were not the ones who suffered when it became mandatory.</p>
+      <p>An underwriter who hears &ldquo;frequency is unknown&rdquo; hears a pricing problem. An underwriter who hears &ldquo;correlated across your book&rdquo; hears the thing that keeps them awake. The pull toward keeping someone talking is inherited from the models underneath, and the best intentions at the app layer do not remove it.</p>
+      <p>When the affirm-or-exclude moment comes, <b>exclusion moves first, because exclusion is free.</b> The affirmative product comes after, and it goes to whoever can measure the thing. Silent cyber ended with affirm or exclude. This one will too.</p>
     </div>
-    <div class="actbar rv" style="margin-top:22px"><p class="q">The full map: which states, which dates, and what each statute actually asks for.</p><div class="a"><a class="btn-sm" href="/obligation">Where the law stands</a><a class="alt" href="/for/insurers">Where the insurance market stands</a></div></div>
-    <p class="hand rv"><a href="#talk" style="color:inherit;text-decoration:none">Get in touch</a></p>
+    <p class="hand rv"><a href="#market" style="color:inherit;text-decoration:none">Where the market stands</a></p>
   </div>
-</section>
-<section id="talk">
-  <div class="narrow">
+</section><section class="dark" id="market">
+  <div class="wrap">
     <div class="rv">
-    <div class="kick">Start here</div>
-    <h2>Tell us what you are working on.</h2>
-    <p class="lead">Whether you build conversational AI, insure it, or regulate it, Ikwe would like to hear about it. A reply comes back within two business days.</p>
+    <div class="kick">Where the market stands</div>
+    <h2>Insurers moved first, and they moved by refusing.</h2>
     </div>
-    <div class="formwrap rv">
-      <form id="home-form" name="homepage" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="homepage">
-      <p style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-        <div class="f-row">
-          <label for="f-interest">I am interested in</label>
-          <select id="f-interest" name="interest">
-            <option>A conversation</option>
-            <option>Measure</option>
-            <option>Pricing and scope</option>
-            <option>Monitor</option>
-            <option>The full sample report</option>
-            <option>Access to research materials</option>
-            <option>Diligence on a system I did not build</option>
-          </select>
-        </div>
-        <div class="f-2col">
-          <div class="f-row"><label for="f-name">Name</label><input type="text" id="f-name" name="name" required autocomplete="name"></div>
-          <div class="f-row"><label for="f-email">Email</label><input type="email" id="f-email" name="email" required autocomplete="email"></div>
-        </div>
-        <div class="f-2col">
-          <div class="f-row"><label for="f-company">Organization</label><input type="text" id="f-company" name="company" autocomplete="organization"></div>
-          <div class="f-row"><label for="f-role">Role</label><input type="text" id="f-role" name="role" autocomplete="organization-title"></div>
-        </div>
-        <div class="f-row">
-          <label for="f-message">What are you working on?</label>
-          <textarea id="f-message" name="message" placeholder="A sentence or two is plenty."></textarea>
-        </div>
-        <button type="submit" class="btn dark">Send</button>
-        <p class="form-note">Prefer email? Write to <a href="mailto:hello@ikwe.ai">hello@ikwe.ai</a>. Researchers, clinicians and regulators can request methodology access at <a href="/access">ikwe.ai/access</a>.</p>
-        <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
-      </form>
+    <div class="rv" style="max-width:78ch;margin-top:26px">
+      <p>In January 2026 the Insurance Services Office introduced three optional generative-AI exclusion endorsements for general liability programs, each excluding liability arising out of generative artificial intelligence. More than sixty property-casualty groups have since filed to adopt AI exclusions of their own. W. R. Berkley went further in 2025 with an absolute AI exclusion for directors and officers, errors and omissions and fiduciary lines.</p>
+      <p>Carriers price risk with no loss triangle all the time, through exposure rating, judgment loads, sublimits and tight wordings. What is missing here is not the pricing craft. It is any observable, comparable measurement of how the insured system actually behaves.</p>
     </div>
-    <div class="notebar rv" style="margin-top:20px"><b>What happens next.</b> Every note goes to a person, not a queue, and a reply comes back within two business days. If a Measure engagement is the next step, scope is agreed in writing, and nothing connects until you sign off.</div>
+    <p class="hand rv"><a href="#give" style="color:inherit;text-decoration:none">What we give you</a></p>
+  </div>
+</section><section id="give">
+  <div class="wrap">
+    <div class="rv">
+    <div class="kick">What we give you</div>
+    <h2>A pre-loss signal where none exists.</h2>
+    <p class="lead">Something that separates one insured from another before the claim, which is the only thing that lets an underwriter write a line they currently cannot price.</p>
+    </div>
+    <div class="chipgrid rv" style="margin-top:26px">
+      <div class="chip"><h3>Comparability across accounts</h3><p>The same measurement, the same way, from one submission to the next. That is the part a carrier cannot build in-house and the part a broker cannot fake.</p></div>
+      <div class="chip"><h3>A loss-control arm for a line you cannot staff</h3><p>The same shape as The Acheson Group in product recall: the carrier attaches a specialist, the insured is assessed before the loss and supported after it, and the carrier gets expertise it does not have in-house.</p></div>
+      <div class="chip"><h3>The precedent</h3><p>Tokio Marine HCC Specialty Group and The Acheson Group, September 2025. A specialty carrier attached a domain expert to its Product Recall offering, pre-loss and post-loss, to strengthen a line with exactly this profile. That is the mechanism. We are proposing it in a different vertical.</p></div>
+      <div class="chip"><h3>A sorting tool, not a loss-cost model</h3><p>We cannot yet correlate behavioral scores to claims outcomes, because there are almost no claims. The argument does not depend on it: the standard of care and the documentation are what make the risk writable, which is exactly how food safety became insurable before anyone could prove a single case.</p></div>
+    </div>
+    <p class="hand rv"><a href="#not" style="color:inherit;text-decoration:none">What we do not claim</a></p>
+  </div>
+</section><section id="not">
+  <div class="wrap">
+    <div class="rv">
+    <div class="kick">Where to be honest</div>
+    <h2>What we do not claim.</h2>
+    </div>
+    <div class="chipgrid rv" style="margin-top:26px">
+      <div class="chip"><h3>We do not claim carriers are excluding chatbots</h3><p>Exclusion endorsements exist and are being adopted; whether a given book is excluding is a question for that book.</p></div>
+      <div class="chip"><h3>We do not claim movement on combined ratio</h3><p>We disclaim the causal link and would then be billing a loss-cost improvement to the most numerate buyer in the room. A sorting tool, not a loss-cost model.</p></div>
+      <div class="chip"><h3>We do not certify or warrant</h3><p>A report is a measurement. It does not say the insured is safe, and it never will.</p></div>
+    </div>
+    <div class="actbar rv" style="margin-top:22px"><p class="q">Four questions we would rather ask you than tell you: where the exposure sits in your book today, what evidence moves terms on an emerging risk, who pays the specialist in an Acheson-style arrangement, and what would have to exist for you to write this line deliberately.</p><div class="a"><a class="btn-sm" href="/contact?intent=Insurance">Start a conversation</a><a class="alt" href="/obligation">Where the law stands</a></div></div>
   </div>
 </section>
 </main>
